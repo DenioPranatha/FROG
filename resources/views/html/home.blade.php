@@ -8,3 +8,5 @@
 {{-- ardo tes 3 --}}
 {{-- ardo tes 4 --}}
 {{--  --}}
+
+{{-- {{ikiiki tampan sekali, aku jatuh cinta pada iki iki}} --}}
