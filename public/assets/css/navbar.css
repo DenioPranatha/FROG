@@ -35,6 +35,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+    /* font-family: 'M PLUS Rounded 1c'; */
+    font-family: 'M PLUS 1';
 }
 
 ol, ul {
@@ -60,13 +62,39 @@ table {
 .navbar{
     /* background-color: pink; */
     height: fit-content;
+    color: #522E93;
+    font-size: 18px;
+    font-weight: 900;
+    /* padding: 0px 42px; */
+}
+
+.container-fluid{
+    /* background-color: pink; */
     padding: 0px 42px;
+    /* height: 30px; */
+    /* margin: 0%; */
+    /* padding: 0%; */
+
 }
 
 .line{
-    width: 100%;
+    /* width: 100%; */
     height: 1px;
     background-color: rgba(59, 52, 134, 0.03);
-    /* background-color: pink; */
+    /* background-color: blue; */
     box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.27);
+    /* margin: 0; */
+    /* padding: 0%; */
+}
+
+.nav2{
+    width: 42%;
+    /* background-color: aqua; */
+}
+
+.logOut{
+    background-color: #522E93;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 7px 12px;
 }
