@@ -13,7 +13,7 @@
 
 .searchLogo{
     position: absolute;
-    right: 225;
+    right: 205;
 }
 
 input[type=text]{
@@ -35,12 +35,19 @@ input[type=text]{
     padding-left: 42px;
     padding-right: 42px;
     padding-bottom: 10px;
-
 }
 
-.carousel-item img{
-    /* object-fit: cover;
-    object-position: center;
-    overflow: hidden; */
-    /* padding: 0px 42px; */
+.recommendDiv{
+    /* background-color: pink; */
+    width: 100%;
+    height: 280px;
+    padding: 20px 42px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.section-title{
+    font-family: 'Ubuntu';
+
 }

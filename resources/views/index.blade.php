@@ -17,7 +17,6 @@
             </form>
         </div>
         <div class="bannerDiv">
-
             <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="2000">
@@ -31,8 +30,11 @@
                     </div>
                 </div>
             </div>
-
-
+        </div>
+        <div class="recommendDiv">
+            <div class="section-title">
+                Recommended for you
+            </div>
         </div>
     </div>
 @endsection

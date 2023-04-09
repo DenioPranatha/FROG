@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
 
     {{-- font style --}}
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=M PLUS Rounded 1c' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=M PLUS 1' rel='stylesheet'>
 
