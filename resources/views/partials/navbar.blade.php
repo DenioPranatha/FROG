@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top bg-body-tertiary p-0 m-0 pt-1">
+<nav class="navbar sticky-top bg-body-tertiary p-0 m-0 pt-1 nav-main">
     <div class="container-fluid">
         <a class="navbar-brand nav1 h-100" href="{{ route('index') }}">
             <svg width="120" height="43" viewBox="0 0 146 52" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
