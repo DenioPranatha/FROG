@@ -1,27 +1,27 @@
+<link rel="stylesheet" href="assets/css/events.css">
+
 @extends('layouts.main')
 
 @section('title', 'Events')
 
 @section('content')
-    <h1>ini events </h1>
     {{-- <a class="btn btn-primary" href="{{ route('product') }}">product</a> --}}
 
     <div class="banner">
-        <img src="..." class="img-fluid" alt="Responsive image">
+        <img src="assets/img/banner.png" class="img-fluid" alt="Responsive image">
     </div>
     <div class="header" data-aos="fade-up" data-aos-duration="1000">Popular Events</div>
-
     <div id="carouselExample" class="carousel">
         <div class="carousel-inner">
             @for($i = 0; $i < 10; $i++)
             <div class="carousel-item">
                 <a href="" class="custom-card">
-                <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
-                    <img src="img/rtb.webp" class="card-img">
-                    <div class="caption">
-                        <p>RTB Chinese New Year Jualan</p>
+                    <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                        <img src="assets/img/rtb.webp" class="card-img">
+                        <div class="caption">
+                            <p>RTB Chinese New Year Jualan</p>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             @endfor
@@ -63,7 +63,7 @@
         @for($i = 0; $i < 25; $i++)
         <a href="" class="custom-card">
             <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-once="true">
-                <img src="img/rtb.webp" class="card-img">
+                <img src="assets/img/rtb.webp" class="card-img">
                 <div class="caption">
                     <p>RTB Chinese New Year Jualan</p>
                 </div>
@@ -90,4 +90,10 @@
             </svg>
         </div>
     </div>
-@endsection
+    @endsection
+
+{{-- <script src="assets/js/events.js"></script> --}}
+
+{{-- <script type="text/javascript" src="assets/js/events.js"></script> --}}
+
+<script type="text/javascript" src="{{URL::asset('assets/js/events.js')}}"></script>
