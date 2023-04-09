@@ -15,8 +15,33 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('/html/navbar');
+    return view('layouts.navbar');
 });
+
+Route::get('/index', function () {
+    return view('index');
+})->name('index');
+
+Route::get('/events', function () {
+    return view('events');
+})->name('events');
+
+// Route::get('/events/product', function () {
+//     return view('product');
+// })->name('product');
+
+Route::get('/myevents', function () {
+    return view('myevents');
+})->name('myevents');
+
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
 
 Auth::routes();
 

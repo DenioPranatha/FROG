@@ -98,3 +98,12 @@ table {
     border-radius: 5px;
     padding: 7px 12px;
 }
+
+.logOut:hover{
+    color: #FFFFFF;
+}
+
+.active{
+    color: red;
+    content: "";
+}
