@@ -59,6 +59,9 @@ table {
 }
 /* css reset */
 
+
+
+/* navbar */
 .navbar{
     /* background-color: pink; */
     height: fit-content;
@@ -71,7 +74,7 @@ table {
 .container-fluid{
     /* background-color: pink; */
     padding: 0px 42px;
-    /* height: 30px; */
+    height: 53px;
     /* margin: 0%; */
     /* padding: 0%; */
 
@@ -101,9 +104,28 @@ table {
 
 .logOut:hover{
     color: #FFFFFF;
+    /* height: 50px; */
 }
 
-.active{
-    color: red;
-    content: "";
+.nav2{
+    /* background-color: yellow; */
+    padding: 0;
+    height: 100%;
 }
+
+.navbar .active{
+    border-bottom: #522E93 solid 3px;
+}
+
+.nav-text:hover{
+    border-bottom: #522E93 solid 3px;
+}
+
+.nav-link:hover{
+    transform: scale(1.03);
+}
+
+.cart:hover, .profile:hover{
+    transform: scale(1.05);
+}
+/* navbar */
