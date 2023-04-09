@@ -1,0 +1,64 @@
+.banner{
+    width: 1356px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.header{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 33px;
+    padding: 21px 42px;
+}
+
+.carousel-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 40px;
+    flex-wrap: wrap;
+}
+
+.card-carousel{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    position: relative;
+    width: 212.8px;
+    height: 210px;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD;
+    margin: 10.5px;
+}
+
+.card-img{
+    border: 1px solid black;
+    width: 200px;
+    height: 150px;
+}
+
+.caption{
+    padding: 5px;
+    font-size: 17px;
+}
+
+.search-row{
+    display: flex;
+    width: 100vw;
+    padding: 42px;
+    flex-direction: row;
+}
+
+.form-group{
+    width: 420px;
+}
+
+.bubble-box{
+    position: relative;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    margin: 0 10.5px;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
