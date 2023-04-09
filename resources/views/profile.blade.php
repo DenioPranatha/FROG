@@ -1,6 +1,6 @@
 @extends('layouts.navbar')
 
-@section('nama')
+@section('content')
     <h1>ini profile </h1>
 @endsection
 

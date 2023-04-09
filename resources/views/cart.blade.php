@@ -1,6 +1,6 @@
 @extends('layouts.navbar')
 
-@section('nama')
+@section('content')
     <h1>ini cart </h1>
 @endsection
 

@@ -54,8 +54,8 @@
         <div class="line w-100"></div>
     </nav>
 
-    <div class="nama">
-        @yield('nama')
+    <div class="content">
+        @yield('content')
     </div>
 
 

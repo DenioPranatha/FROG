@@ -1,6 +1,6 @@
 @extends('layouts.navbar')
 
-@section('nama')
+@section('content')
     <h1>ini myevents </h1>
 @endsection
 
