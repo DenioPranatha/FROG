@@ -30,9 +30,12 @@
 
     @include('partials.footer')
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
     {{-- bootstrap js --}}
     <script src="node_modules/aos/dist/aos.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @yield('js')
 
     {{-- script for animate on scroll --}}
     <script>
