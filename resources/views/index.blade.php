@@ -33,7 +33,7 @@
         </div>
         <div class="recommendDiv">
             <div class="section-title">
-                Recommended events for you
+                Recommended events for you only
             </div>
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
