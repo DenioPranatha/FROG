@@ -1,4 +1,6 @@
 pada saat awal menjalankan:
+npm install
+npm run build
 npm install aos --save
 npm i bootstrap-icons
 npm i cloudinary
