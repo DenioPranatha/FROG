@@ -33,7 +33,7 @@
         </div>
         <div class="recommendDiv">
             <div class="section-title">
-                Recommended for you
+                Recommended events for you
             </div>
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
@@ -56,7 +56,7 @@
                                 <p class="card-text">Lorem Ipsum  dolor sit amet a</p>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div class="carousel-item">
                         <div class="card">
                             <div class="img-wrapper">
