@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="assets/css/events.css">
+@section('css')
+    <link rel="stylesheet" href="assets/css/events.css">
+@endsection
 
 @extends('layouts.main')
 
