@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="assets/css/index.css">
+@section('css')
+    <link rel="stylesheet" href="assets/css/index.css">
+@endsection
 
 @extends('layouts.main')
 

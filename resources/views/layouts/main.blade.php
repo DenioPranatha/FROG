@@ -19,6 +19,7 @@
     {{-- main css --}}
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    @yield('css')
 </head>
 <body>
 
