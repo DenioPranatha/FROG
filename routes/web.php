@@ -26,6 +26,10 @@ Route::get('/events', function () {
     return view('events');
 })->name('events');
 
+Route::get('/eventDetail', function () {
+    return view('eventDetail');
+})->name('eventDetail');
+
 // Route::get('/events/product', function () {
 //     return view('product');
 // })->name('product');

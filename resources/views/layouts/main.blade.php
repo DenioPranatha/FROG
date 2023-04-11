@@ -24,9 +24,9 @@
 
     @include('partials.navbar')
 
-    <div class="content">
-        @yield('content')
-    </div>
+    {{-- <div class="content">
+    </div> --}}
+    @yield('content')
 
     @include('partials.footer')
 

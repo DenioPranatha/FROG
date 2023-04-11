@@ -13,11 +13,21 @@
     <div class="header" data-aos="fade-up" data-aos-duration="1000">Popular Events</div>
     <div id="carouselExample" class="carousel">
         <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="" class="custom-card">
+                    <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                        <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
+                        <div class="caption">
+                            <p>RTB Chinese New Year Jualan</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
             @for($i = 0; $i < 10; $i++)
             <div class="carousel-item">
                 <a href="" class="custom-card">
                     <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
-                        <img src="assets/img/rtb.webp" class="card-img">
+                        <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
                         <div class="caption">
                             <p>RTB Chinese New Year Jualan</p>
                         </div>
