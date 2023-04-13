@@ -1,0 +1,137 @@
+/* css reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: 'M PLUS 1';
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+    /* font-family: 'M PLUS Rounded 1c'; */
+    font-family: 'M PLUS 1';
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* css reset */
+
+
+
+/* navbar */
+.nav-main{
+    background-color: white;
+}
+
+.navbar{
+    /* background-color: pink; */
+    height: fit-content;
+    color: #522E93;
+    font-size: 18px;
+    font-weight: 900;
+    /* padding: 0px 42px; */
+}
+
+.container-fluid{
+    /* background-color: pink; */
+    padding: 0px 42px;
+    height: 53px;
+    /* margin: 0%; */
+    /* padding: 0%; */
+
+}
+
+.line{
+    /* width: 100%; */
+    height: 1px;
+    background-color: rgba(59, 52, 134, 0.03);
+    /* background-color: blue; */
+    /* background-color: blue; */
+    box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.27);
+    /* margin: 0; */
+    /* padding: 0%; */
+    margin-bottom: 10px;
+    /* z-index: 2; */
+}
+
+.nav2{
+    width: 42%;
+    /* background-color: aqua; */
+}
+
+.logOut{
+    background-color: #522E93;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 7px 12px;
+}
+
+.logOut:hover{
+    color: #FFFFFF;
+    /* height: 50px; */
+}
+
+.nav2{
+    /* background-color: yellow; */
+    padding: 0;
+    height: 100%;
+}
+
+.navbar .active{
+    border-bottom: #522E93 solid 3px;
+}
+
+.nav-text:hover{
+    border-bottom: #522E93 solid 3px;
+}
+
+.nav-link:hover{
+    transform: scale(1.03);
+}
+
+.cart:hover, .profile:hover{
+    transform: scale(1.05);
+}
+/* navbar */
