@@ -5,6 +5,8 @@ npm install aos --save
 npm i bootstrap-icons
 npm i cloudinary
 
+nikol tes
+
 yang perlu ditulis di tiap page:
 
 {{-- bootstrap css --}}
