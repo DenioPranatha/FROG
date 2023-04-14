@@ -6,6 +6,7 @@ npm i bootstrap-icons
 npm i cloudinary
 
 nikol tes
+riskya tes
 
 yang perlu ditulis di tiap page:
 
