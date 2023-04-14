@@ -7,6 +7,7 @@ npm i cloudinary
 
 nikol tes
 riskya tes
+riskya tes 2
 
 yang perlu ditulis di tiap page:
 
