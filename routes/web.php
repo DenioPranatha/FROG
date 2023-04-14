@@ -36,7 +36,7 @@ Route::get('/eventDetail', function () {
 
 Route::get('/myevents', function () {
     return view('myEvents');
-})->name('myevents');
+})->name('myEvents');
 
 Route::get('/myEventDetail', function () {
     return view('myEventDetail');
@@ -57,4 +57,4 @@ Route::get('/profile', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
