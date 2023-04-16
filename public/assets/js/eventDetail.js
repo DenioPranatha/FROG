@@ -12,6 +12,26 @@ if(window.matchMedia("(min-width:576px)").matches){
     var cardWidth = $('.carousel-item').width();
     var scrollPosition = 0;
     var current = document.getElementsByClassName("active");
+    var n = document.getElementsByClassName("carousel-control-next");
+    var p = document.getElementsByClassName("carousel-control-prev");
+
+    var a = $('.slide');
+    a.scroll(function(){
+        var str1 = p[0].className.toString();
+        var str2 = n[0].className.toString();
+        if(a.scrollLeft() >= 800){
+            if(str1.includes(" active")){
+                p[0].className = p[0].className.replace(" active", "");
+                n[0].className += " active";
+            }
+        }
+        if(a.scrollLeft() <= 100){
+            if(str2.includes(" active")){
+                n[0].className = n[0].className.replace(" active", "");
+                p[0].className += " active";
+            }
+        }
+    });
 
     $('.carousel-control-next').on('click', function(){
         if(scrollPosition < (carousel-(cardWidth))){
@@ -19,8 +39,7 @@ if(window.matchMedia("(min-width:576px)").matches){
             $('.slide').animate({scrollLeft: scrollPosition}, 1000);
         }
 
-        console.log('prev')
-
+        console.log(a.scrollLeft());
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
 
@@ -32,12 +51,12 @@ if(window.matchMedia("(min-width:576px)").matches){
             $('.slide').animate({scrollLeft: scrollPosition}, 1000);
         }
 
-        console.log('next')
-
+        console.log('next');
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
 
     });
+
 }else{
     $(myCarouselElement).addClass('slide');
 }
@@ -58,7 +77,28 @@ if(window.matchMedia("(min-width:576px)").matches){
     var scrollPosition1 = 0;
     var current1 = document.getElementsByClassName("active1");
 
-    $('.carousel-control-next1').on('click', function(){
+    var n1 = document.getElementsByClassName("carousel-control-next1");
+    var p1 = document.getElementsByClassName("carousel-control-prev1");
+
+    var a1 = $('.slide1');
+    a1.scroll(function(){
+        var str3 = p1[0].className.toString();
+        var str4 = n1[0].className.toString();
+        if(a1.scrollLeft() >= 750){
+            if(str3.includes(" active")){
+                p1[0].className = p1[0].className.replace(" active active1", "");
+                n1[0].className += " active active1";
+            }
+        }
+        if(a1.scrollLeft() <= 100){
+            if(str4.includes(" active")){
+                n1[0].className = n1[0].className.replace(" active active1", "");
+                p1[0].className += " active active1";
+            }
+        }
+    });
+
+    $('.carousel-control-next1').on('click', function(){ //jika button next diklik
         if(scrollPosition1 < (carousel1-(cardWidth1))){
             scrollPosition1 = scrollPosition1 + cardWidth1;
             $('.slide1').animate({scrollLeft: scrollPosition1}, 1000);
@@ -71,7 +111,7 @@ if(window.matchMedia("(min-width:576px)").matches){
 
     });
 
-    $('.carousel-control-prev1').on('click', function(){
+    $('.carousel-control-prev1').on('click', function(){ //jika button prev diklik
         if(scrollPosition1 > 0){
             scrollPosition1 = scrollPosition1 - cardWidth1;
             $('.slide1').animate({scrollLeft: scrollPosition1}, 1000);
