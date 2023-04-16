@@ -1,3 +1,7 @@
+@section('css')
+    <link rel="stylesheet" href="assets/css/profile.css">
+@endsection
+
 @extends('layouts.main')
 
 @section('title', 'Profile')

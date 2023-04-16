@@ -26,21 +26,29 @@ Route::get('/events', function () {
     return view('events');
 })->name('events');
 
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
+
 Route::get('/eventDetail', function () {
     return view('eventDetail');
 })->name('eventDetail');
 
-// Route::get('/events/product', function () {
-//     return view('product');
-// })->name('product');
-
 Route::get('/myevents', function () {
-    return view('myevents');
-})->name('myevents');
+    return view('myEvents');
+})->name('myEvents');
+
+Route::get('/myEventDetail', function () {
+    return view('myEventDetail');
+})->name('myEventDetail');
 
 Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
+
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
 
 Route::get('/profile', function () {
     return view('profile');
@@ -55,4 +63,4 @@ Route::get('/coba', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
