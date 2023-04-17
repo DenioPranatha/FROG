@@ -131,16 +131,27 @@ input[type=text]{
     border: 1px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
     margin: 10.5px;
+    /* background-color: pink; */
+    border-radius: 0;
 }
 
 .recommendDiv .card-img{
     width: 200px;
     height: 150px;
+    border-radius: 0;
 }
 
 .recommendDiv .caption{
     padding: 5px;
-    font-size: 17px;
+    /* background-color: pink; */
+    /* height: 100px; */
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    padding: 8px 13px;
 }
 
 .recommendDiv .caption:hover{
@@ -183,8 +194,6 @@ input[type=text]{
 
 .slide{
     display: flex;
-    /* width: 100vw; */
-    /* height: 1600px; */
     scroll-snap-type: x mandatory;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -193,20 +202,3 @@ input[type=text]{
     margin-bottom: 63px;
 
 }
-
-
-/* ....................................... */
-
-
-/*
-.carousel-inner{
-    display: flex;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-.carousel-item{
-    display: block;
-    flex: 0 0 15%;
-    margin: 1px;
-} */
