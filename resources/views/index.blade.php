@@ -156,9 +156,13 @@
                         <p>Categorydga</p>
                     </div>
                     @endfor
+                <a href="events">
+                    <div class="categoriesCart">
+                        <p>See more...</p>
+                    </div>
+                </a>
             </div>
         </div>
-
     </div>
 @endsection
 

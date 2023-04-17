@@ -511,4 +511,8 @@ input[type=text]{
     line-height: 26px;
     color: rgba(0, 0, 0, 0.73);
 }
+
+.categories a{
+    text-decoration: none;
+}
 /* categories */
