@@ -1,6 +1,6 @@
 .index{
     /* background-color: aqua; */
-    height: 2000px;
+    /* height: 2000px; */
 }
 
 /* search */
@@ -46,6 +46,22 @@ input[type=text]{
     padding: 20px 42px;
     font-family: 'Ubuntu';
     font-size: 30px;
+}
+
+.section-title2{
+    padding: 40px 42px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* section title */
 
@@ -174,7 +190,7 @@ input[type=text]{
 /* product recommendation */
 .recProductsDiv{
     /* background-color: pink; */
-    padding-bottom: 30px;
+    padding-bottom: 80px;
 }
 
 .products{
@@ -291,9 +307,6 @@ input[type=text]{
 
 .button{
     filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
-    width: 200px;
-    height: 60px;
-    background-color: #522E93;
     font-family: 'M PLUS 1';
     font-style: normal;
     font-weight: 700;
@@ -301,9 +314,15 @@ input[type=text]{
     line-height: 43px;
     color: #FFFFFF;
     margin: auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 2px;
 }
 
 .seeMore{
+    background-color: #522E93;
+    width: 200px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -315,3 +334,126 @@ input[type=text]{
     font-size: 45px;
 }
 /* product recommendation */
+
+/* charity destination */
+.charityDestDiv{
+    background-color: #673AB7;
+    width: 100%;
+    /* height: 900px; */
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+
+.slider {
+    /* margin-bottom: 30px; */
+    position: relative;
+    /* background-color: pink; */
+    padding-top: 0;
+}
+
+.slider .owl-item.active.center .slider-card {
+    transform: scale(1);
+    opacity: 1;
+    background-color: white;
+    color: #000000;
+    border: 1px solid #CDCDCD;
+    border-radius: 20px;
+    /* background-color: yellow; */
+    /* z-index: 10; */
+    /* width: 100px; */
+}
+
+.slider-card {
+    background: #fff;
+    padding: 0px 0px;
+    margin: 50px -30px 90px -30px;
+    border-radius: 20px;
+    filter: drop-shadow(4px 4px 0px #CDCDCD);
+    transform: scale(0.75);
+    opacity: 0.5;
+    transition: all 0.3s;
+    border: 1px solid #CDCDCD;
+    /* width: 350px; */
+    /* z-index: -2; */
+    /* background-color: yellow; */
+}
+
+.slider-card img {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 60px);
+    left: -10px;
+    opacity: 1;
+    font-size: 50px !important;
+    z-index: 1;
+    /* color: #FFFFFF; */
+    /* width: 50px;
+    height: 50px;
+    background-color: #f44336; */
+}
+
+.owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 60px);
+    right: -10px;
+    opacity: 1;
+    font-size: 50px !important;
+    z-index: 1;
+    /* width: 50px; */
+    /* height: 50px; */
+    /* display: block !important; */
+    /* background-color: #f44336; */
+}
+
+.owl-dots {
+    display: none;
+}
+
+.charityText{
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.charityLoc{
+    padding-bottom: 30px;
+}
+
+.charityLoc .bi.bi-geo-alt{
+    font-size: 20px;
+    color: #522E93;
+}
+
+.charityLoc p{
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #522E93;
+    margin-left: 5px;
+}
+
+.findDest{
+    /* width: 200px; */
+    /* height: 60px; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #FFFFFF;
+    color: #673AB7;
+    padding: 5px 15px;
+    font-weight: 900;
+    margin-top: -40px;
+    font-size: smaller;
+    /* background-color: yellow; */
+}
+/* charity destination */
+

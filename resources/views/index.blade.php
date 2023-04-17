@@ -102,6 +102,40 @@
                 </div>
             </div>
         </div>
+        <div class="charityDestDiv">
+            <div class="section-title2">
+                Charity Destination
+            </div>
+            <section id="slider">
+                <div class="container">
+                    <div class="slider">
+                        <div class="owl-carousel">
+                            @for ( $i=0 ; $i<5 ; $i++)
+                                <div class="slider-card">
+                                    <div class="d-flex justify-content-center align-items-center mb-4">
+                                        <img src="{{ asset("assets/img/PantiAsuhan.png") }}" alt="" >
+                                    </div>
+                                    <h5 class="mb-0 text-center charityText"><b>Panti Asuhan Bhakti Kasih</b></h5>
+                                    <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <p class="text-center">Bogor, Jawa Barat</p>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <div class="button">
+                <div class="findDest">
+                    <p>Find Destination</p>
+                    <i class="bi bi-arrow-right-short"></i>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 @endsection
 
