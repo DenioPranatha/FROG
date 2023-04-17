@@ -42,7 +42,7 @@
                     <div class="carousel-item active">
                         <a href="" class="custom-card">
                             <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
-                                <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
+                                <div class="card-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
                                 <div class="caption">
                                     <p>Event Charity RTB Chinese New Year</p>
                                 </div>
@@ -53,7 +53,7 @@
                     <div class="carousel-item">
                         <a href="" class="custom-card">
                             <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
-                                <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
+                                <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
                                 <div class="caption">
                                     <p>Event Charity RTB Chinese New Year</p>
                                 </div>
@@ -71,6 +71,23 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
+            </div>
+        </div>
+        <div class="recProductsDiv">
+            <div class="section-title">
+                Recommended products for you
+            </div>
+            <div class="products d-flex flex-wrap">
+                @for ( $i=0 ; $i<10 ; $i++)
+                    <a href="" class="custom-card">
+                        <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                            <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
+                            <div class="caption">
+                                <p>Event Charity RTB Chinese New Year</p>
+                            </div>
+                        </div>
+                    </a>
+                @endfor
             </div>
         </div>
     </div>
