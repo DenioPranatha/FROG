@@ -37,7 +37,7 @@
             <div class="section-title">
                 Recommended events for you
             </div>
-            <div id="carouselExample" class="carousel slide">
+            {{-- <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="card">
@@ -138,8 +138,46 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+            </div> --}}
+            <div id="carouselExample" class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="" class="custom-card">
+                            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                                <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
+                                <div class="caption">
+                                    <p>RTB Chinese New Year Jualan</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @for($i = 0; $i < 10; $i++)
+                    <div class="carousel-item">
+                        <a href="" class="custom-card">
+                            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                                <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
+                                <div class="caption">
+                                    <p>RTB Chinese New Year Jualan</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endfor
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </div>
 @endsection
 
+@section('js')
+    <script type="text/javascript" src="{{URL::asset('assets/js/index.js')}}"></script>
+@endsection

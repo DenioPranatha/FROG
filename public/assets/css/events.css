@@ -107,7 +107,6 @@ a.custom-card:hover {
     display: block;
 }
 
-
 .carousel-control-prev, .carousel-control-next,
 .carousel-control-prev1, .carousel-control-next1{
     width: 6vh;
@@ -119,7 +118,6 @@ a.custom-card:hover {
     transform: translateY(-50%);
     border-radius: 50%;
 }
-
 
 .carousel-control-prev:hover, .carousel-control-next:hover,
 .carousel-control-prev1:hover, .carousel-control-next1:hover{
