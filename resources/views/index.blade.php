@@ -79,15 +79,27 @@
             </div>
             <div class="products d-flex flex-wrap">
                 @for ( $i=0 ; $i<10 ; $i++)
-                    <a href="" class="custom-card">
+                    <a href="events" class="custom-card">
                         <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
                             <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
                             <div class="caption">
-                                <p>Event Charity RTB Chinese New Year</p>
+                                <p class="namaProduk">Basreng Pedas</p>
+                                <p class="namaEvent">Event RTB</p>
+                                {{-- <p class="namaEvent"><a href="eventDetail">Event RTB</a></p> --}}
+                                {{-- <a href="eventDetail" class="namaEvent">Event RTB</a> --}}
+                                {{-- <a href="eventDetail"><p class="namaEvent">Event RTB</p></a> --}}
+                                <p class="hargaProduk">Rp100000</p>
+                                <p class="stokProduk">Stock:<b> 21</b></p>
                             </div>
                         </div>
                     </a>
                 @endfor
+            </div>
+            <div class="button">
+                <div class="seeMore">
+                    <p>See more</p>
+                    <i class="bi bi-arrow-right-short"></i>
+                </div>
             </div>
         </div>
     </div>

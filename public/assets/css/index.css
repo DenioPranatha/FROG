@@ -172,20 +172,21 @@ input[type=text]{
 /* event recommendation */
 
 /* product recommendation */
-.products{
+.recProductsDiv{
     /* background-color: pink; */
+    padding-bottom: 30px;
+}
+
+.products{
     height: fit-content;
-    /* height: 800px; */
     align-items: start;
-    /* justify-content: stretch; */
-    /* justify-content: start; */
     padding: 0px 42px;
     padding-bottom: 30px;
 }
 
 .recProductsDiv a.custom-card{
     height: fit-content;
-    /* margin: 0; */
+    /* height: 400px; */
     width: 20%;
 }
 
@@ -203,12 +204,14 @@ input[type=text]{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     position: relative;
     width: 201px;
-    height: 203px;
+    /* height: 203px; */
+    height: 241px;
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
     margin: 10.5px;
     /* background-color: pink; */
+    /* background-color: yellow; */
     border-radius: 0;
 }
 
@@ -225,7 +228,7 @@ input[type=text]{
 .recProductsDiv .caption{
     padding: 5px;
     /* background-color: pink; */
-    /* height: 100px; */
+    /* height: 150px; */
     font-family: 'M PLUS 1';
     font-style: normal;
     font-weight: 400;
@@ -237,5 +240,78 @@ input[type=text]{
 
 .recProductsDiv .caption:hover{
     text-decoration-color: #673AB7;
+}
+
+.namaProduk{
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+/* a.namaEvent{
+    text-decoration-line: none;
+} */
+
+.namaEvent{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: flex-end;
+    text-decoration-line: underline;
+    color: #7A6A97;
+    margin-bottom: 3px;
+    /* background-color: yellow; */
+}
+
+.hargaProduk{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    color: #522E93;
+}
+
+.stokProduk{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: flex-end;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 2px;
+}
+
+.button{
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
+    width: 200px;
+    height: 60px;
+    background-color: #522E93;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 43px;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.seeMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background-color: yellow; */
+}
+
+.bi-arrow-right-short{
+    font-size: 45px;
 }
 /* product recommendation */
