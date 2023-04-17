@@ -134,7 +134,30 @@
                 </div>
             </div>
         </div>
-
+        <div class="categoriesDiv">
+            <div class="section-title3">
+                Categories
+            </div>
+            <div class="categories">
+                @for ($i =0 ; $i <3 ; $i++)
+                    <div class="categoriesCart">
+                        <p>Category 1</p>
+                    </div>
+                    <div class="categoriesCart">
+                        <p>asdfhajdfhjadfadf</p>
+                    </div>
+                    <div class="categoriesCart">
+                        <p>Cated</p>
+                    </div>
+                    <div class="categoriesCart">
+                        <p>Cated</p>
+                    </div>
+                    <div class="categoriesCart">
+                        <p>Categorydga</p>
+                    </div>
+                    @endfor
+            </div>
+        </div>
 
     </div>
 @endsection
