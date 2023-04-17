@@ -84,24 +84,12 @@
         @endfor
     </div>
 
-
-
-
-    <div class="pagination-container">
-        <div class="prev">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-        </div>
-        @for($i = 1; $i<=6; $i++)
-        <a class="page-num">{{ $i }}</a>
-        @endfor
-        <div class="next">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-        </div>
+    <div class="more-products">
+        <div class="line1"></div>
+        <button class="more">More Products</button>
+        <div class="line1"></div>
     </div>
+
     @endsection
 
 

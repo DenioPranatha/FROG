@@ -55,6 +55,12 @@ Route::get('/profile', function () {
 })->name('profile');
 
 
+//bisa dihapus aja
+Route::get('/coba', function () {
+    return view('cobaEventDetail');
+})->name('coba');
+
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

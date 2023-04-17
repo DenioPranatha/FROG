@@ -152,29 +152,6 @@ a.custom-card:hover {
     outline:none;
 }
 
-.pagination-container{
-    width: 98vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 21px 0 42px 0;
-    bottom: 0px;
-
-}
-
-.page-num{
-    width: 50px;
-    height: 50px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 17px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration-color: #673AB7;
-    color: #673AB7;
-}
-
 .next, .prev {
     width: 25px;
     height: 25px;
@@ -190,19 +167,25 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.description{
+.desc{
     display: flex;
     flex-direction: column;
-    padding: 21px;
+    justify-content: space-between;
+    padding-left: 21px;
+    height: 370px;
 }
 
 .desc-img{
-    width: 400px;
+    width: 450px;
+    border: 1px solid #CDCDCD;
 }
 
 .desc-headline{
     font-size: 25px;
-    margin-bottom: 21px;
+}
+
+.desc-caption{
+    text-align: justify;
 }
 
 .slide{
@@ -309,6 +292,7 @@ a.custom-card:hover {
 .nav-button:hover,
 .nav-button1:hover{
     color: #522E93;
+    transform: translateY(-20px);
 }
 
 .nav-cont .active, .nav-cont1 .active{
@@ -337,7 +321,7 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     position: relative;
     width: 201px;
-    height: 270px;
+    height: 250px;
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
@@ -347,6 +331,10 @@ a.custom-card:hover {
 .caption1{
     padding: 8px 10px;
     font-size: 17px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .small{
@@ -382,4 +370,63 @@ a.custom-card:hover {
 
 .nav-line{
     margin-top: -20px;
+}
+
+.invisible{
+    height: 1380px;
+
+}
+
+.progress-container{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.progress{
+    width: 100%;
+    height: 1.25rem;
+    border-radius: 8px;
+    margin: 10px;
+    border: 1px solid #CDCDCD;
+}
+
+.progress-bar{
+    background-color: #673AB7;
+}
+
+.date{
+    text-align: center;
+}
+
+.more-products{
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+    justify-content: space-around;
+    align-items: center;
+    margin: 21px;
+}
+
+.more{
+    padding: 12px;
+    color:#522E93;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    border: 3px solid #522E93;
+    background-color: white;
+}
+
+.more:hover{
+    background-color: #522E93;
+    color: white;
+}
+
+.line1{
+    border: 1px solid #522E93;
+    width: 400px;
+    box-shadow: none;
 }
