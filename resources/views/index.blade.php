@@ -40,25 +40,11 @@
             <div id="carouselExample" class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href="eventDetail" class="custom-card">
-                            <div class="card">
-                                <div class="card-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
-                                <div class="caption">
-                                    <p>Event Charity RTB Chinese New Year</p>
-                                </div>
-                            </div>
-                        </a>
+                        @include('partials.eventCart')
                     </div>
                     @for($i = 0; $i < 10; $i++)
                     <div class="carousel-item">
-                        <a href="eventDetail" class="custom-card">
-                            <div class="card">
-                                <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
-                                <div class="caption">
-                                    <p>Event Charity RTB Chinese New Year</p>
-                                </div>
-                            </div>
-                        </a>
+                        @include('partials.eventCart')
                     </div>
                     @endfor
                 </div>

@@ -157,69 +157,6 @@ input[type=text]{
     margin: 0 35px;
     flex-wrap: nowrap;
     height: fit-content;
-    /* background-color: yellow; */
-}
-
-.recommendDiv .catalog-container{
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    margin: 0 30px;
-    flex-wrap: wrap;
-}
-
-.recommendDiv a.custom-card,
-.recommendDiv a.custom-card:hover {
-    color: inherit;
-    text-decoration-line: none;
-}
-
-.recommendDiv a.custom-card:hover {
-    color: #673AB7;
-}
-
-/* .recommendDiv a.custom-card{
-    height: fit-content;
-    height: 240px;
-    width: 219px;
-} */
-
-.recommendDiv .card{
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    position: relative;
-    width: 219px;
-    height: 240px;
-    background: #FFFFFF;
-    border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
-    border-radius: 0;
-}
-
-.recommendDiv .card-img{
-    width: 219px;
-    height: 165px;
-    border-radius: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.recommendDiv .caption{
-    padding: 0px 15px;
-    font-family: 'M PLUS 1';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    height: 75px;
-    text-align: center;
-}
-
-.recommendDiv .caption:hover{
-    text-decoration-color: #673AB7;
 }
 
 .recommendDiv .carousel-inner{

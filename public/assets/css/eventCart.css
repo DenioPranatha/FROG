@@ -1,0 +1,47 @@
+.eventCartPage a.custom-card,
+.eventCartPage a.custom-card:hover {
+    color: inherit;
+    text-decoration-line: none;
+}
+
+.eventCartPage a.custom-card:hover {
+    color: #673AB7;
+}
+
+.eventCartPage .card{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    position: relative;
+    width: 219px;
+    height: 240px;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD;
+    border-radius: 0;
+}
+
+.eventCartPage .card-img{
+    width: 219px;
+    height: 165px;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.eventCartPage .caption{
+    padding: 0px 15px;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    text-align: center;
+}
+
+.eventCartPage .caption:hover{
+    text-decoration-color: #673AB7;
+}
