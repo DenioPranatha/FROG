@@ -1,3 +1,66 @@
+/* button */
+.btn-1{
+    background-color: #522E93;
+    color: #FFFFFF;
+    padding: 0;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 43px;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
+    border-radius: 0;
+}
+
+.btn-1:hover{
+    background-color: #522E93;
+    color: #FFFFFF;
+    padding: 0;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 43px;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
+    border-radius: 0;
+}
+
+.seeMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+}
+
+.findDest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 250px;
+    font-size: smaller;
+}
+
+.btn-2{
+    margin-top: -40px;
+    background-color: #FFFFFF;
+    color: #522E93;
+    z-index: 12;
+}
+
+.btn-2:hover{
+    margin-top: -40px;
+    background-color: #FFFFFF;
+    color: #522E93;
+    z-index: 12;
+}
+
+.bi-arrow-right-short{
+    font-size: 45px;
+}
+/* button */
+
 /* search */
 .searchDiv{
     background-color: white;
@@ -6,7 +69,7 @@
     /* margin-bottom: 10px; */
     padding-bottom: 4px;
     position: fixed;
-    z-index: 2;
+    z-index: 15;
     /* background-color: pink; */
 }
 
@@ -294,10 +357,6 @@ input[type=text]{
     color: #000000;
 }
 
-/* a.namaEvent{
-    text-decoration-line: none;
-} */
-
 .namaEvent{
     font-family: 'Ubuntu';
     font-style: normal;
@@ -330,39 +389,6 @@ input[type=text]{
     align-items: flex-end;
     color: rgba(0, 0, 0, 0.7);
     margin-top: 2px;
-}
-
-.button{
-    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
-    font-family: 'M PLUS 1';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 43px;
-    color: #FFFFFF;
-    margin: auto;
-    width: fit-content;
-    height: fit-content;
-    padding: 5px 2px;
-}
-
-.button:hover{
-    cursor: pointer;
-}
-
-.seeMore{
-    background-color: #522E93;
-    width: 200px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    /* background-color: yellow; */
-}
-
-.bi-arrow-right-short{
-    font-size: 45px;
 }
 /* product recommendation */
 
@@ -469,23 +495,6 @@ input[type=text]{
     line-height: 26px;
     color: #522E93;
     margin-left: 5px;
-}
-
-.findDest{
-    /* width: 200px; */
-    /* height: 60px; */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #FFFFFF;
-    color: #673AB7;
-    padding: 5px 15px;
-    font-weight: 900;
-    margin-top: -40px;
-    font-size: smaller;
-    /* background-color: yellow; */
 }
 /* charity destination */
 

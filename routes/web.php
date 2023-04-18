@@ -54,6 +54,10 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
+Route::get('/destination', function () {
+    return view('destination');
+})->name('destination');
+
 
 //bisa dihapus aja
 Route::get('/coba', function () {

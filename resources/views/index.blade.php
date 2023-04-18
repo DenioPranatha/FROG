@@ -95,11 +95,13 @@
                     </a>
                 @endfor
             </div>
-            <div class="button">
-                <div class="seeMore">
-                    <p>See more</p>
-                    <i class="bi bi-arrow-right-short"></i>
-                </div>
+            <div class="btnDiv w-100 h-100 d-flex justify-content-center">
+                <a class="btn btn-1" href="products" role="button">
+                    <div class="seeMore">
+                        <p>See more</p>
+                        <i class="bi bi-arrow-right-short"></i>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="charityDestDiv">
@@ -125,13 +127,22 @@
                         </div>
                     </div>
                 </div>
-
             </section>
-            <div class="button">
-                <div class="findDest">
-                    <p>Find Destination</p>
-                    <i class="bi bi-arrow-right-short"></i>
+            {{-- <a href="destination" class="btnClass">
+                <div class="button">
+                    <div class="findDest">
+                        <p>Find Destination</p>
+                        <i class="bi bi-arrow-right-short"></i>
+                    </div>
                 </div>
+            </a> --}}
+            <div class="btnDiv w-100 h-100 d-flex justify-content-center">
+                <a class="btn btn-1 btn-2" href="destination" role="button">
+                    <div class="findDest">
+                        <p>Find Destination</p>
+                        <i class="bi bi-arrow-right-short"></i>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="categoriesDiv">
