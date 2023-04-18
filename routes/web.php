@@ -26,10 +26,6 @@ Route::get('/products', function () {
     return view('products');
 })->name('products');
 
-Route::get('/eventCart', function () {
-    return view('partials.eventCart');
-})->name('eventCart');
-
 Route::get('/productDetail', function () {
     return view('productDetail');
 })->name('productDetail');
