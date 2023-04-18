@@ -41,7 +41,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <a href="" class="custom-card">
-                            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                            <div class="card">
                                 <div class="card-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
                                 <div class="caption">
                                     <p>Event Charity RTB Chinese New Year</p>
@@ -52,7 +52,7 @@
                     @for($i = 0; $i < 10; $i++)
                     <div class="carousel-item">
                         <a href="" class="custom-card">
-                            <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                            <div class="card">
                                 <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
                                 <div class="caption">
                                     <p>Event Charity RTB Chinese New Year</p>
@@ -80,7 +80,7 @@
             <div class="products d-flex flex-wrap">
                 @for ( $i=0 ; $i<10 ; $i++)
                     <a href="events" class="custom-card">
-                        <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
+                        <div class="card">
                             <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
                             <div class="caption">
                                 <p class="namaProduk">Basreng Pedas</p>
