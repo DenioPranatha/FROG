@@ -47,33 +47,13 @@
         <div class="productsDiv">
             <div class="products d-flex flex-wrap">
                 @for ( $i=0 ; $i<20 ; $i++)
-                    <a href="events" class="custom-card">
-                        <div class="card">
-                            <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
-                            <div class="caption">
-                                <p class="namaProduk">Basreng Pedas</p>
-                                <p class="namaEvent">Event RTB</p>
-                                <p class="hargaProduk">Rp100000</p>
-                                <p class="stokProduk">Stock:<b> 21</b></p>
-                            </div>
-                        </div>
-                    </a>
+                    @include('partials.productCart')
                 @endfor
             </div>
             <span id="more">
                 <div class="products d-flex flex-wrap">
                     @for ( $i=0 ; $i<20 ; $i++)
-                        <a href="events" class="custom-card">
-                            <div class="card">
-                                <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
-                                <div class="caption">
-                                    <p class="namaProduk">Basreng Pedas</p>
-                                    <p class="namaEvent">Event RTB</p>
-                                    <p class="hargaProduk">Rp100000</p>
-                                    <p class="stokProduk">Stock:<b> 21</b></p>
-                                </div>
-                            </div>
-                        </a>
+                        @include('partials.productCart')
                     @endfor
                 </div>
             </span>
@@ -90,27 +70,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-{{-- <div class="lagi2 d-flex">
-    <div class="search">
-        ini search
-    </div>
-    <div class="lagi">
-        @for($i = 0; $i < 10; $i++)
-            <div class="bljr">
-                <img src="{{ asset("assets/img/gelang.png") }}" alt="">
-            </div>
-        @endfor
-    </div>
-</div> --}}
 @endsection
 
 @section('js')

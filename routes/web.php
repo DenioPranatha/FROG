@@ -22,13 +22,21 @@ Route::get('/index', function () {
     return view('index');
 })->name('index');
 
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
-
 Route::get('/products', function () {
     return view('products');
 })->name('products');
+
+Route::get('/productCart', function () {
+    return view('partials.productCart');
+})->name('productCart');
+
+Route::get('/productDetail', function () {
+    return view('productDetail');
+})->name('productDetail');
+
+Route::get('/events', function () {
+    return view('events');
+})->name('events');
 
 Route::get('/eventDetail', function () {
     return view('eventDetail');
@@ -57,13 +65,6 @@ Route::get('/profile', function () {
 Route::get('/destination', function () {
     return view('destination');
 })->name('destination');
-
-
-//bisa dihapus aja
-Route::get('/coba', function () {
-    return view('cobaEventDetail');
-})->name('coba');
-
 
 Auth::routes();
 

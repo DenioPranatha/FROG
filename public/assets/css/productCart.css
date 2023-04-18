@@ -1,0 +1,107 @@
+.productCartPage{
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.productCartPage a.custom-card{
+    height: fit-content;
+    width: 215px;
+}
+
+.productCartPage a.custom-card,
+.productCartPage a.custom-card:hover {
+    color: inherit;
+    text-decoration-line: none;
+}
+
+.productCartPage a.custom-card:hover {
+    color: #673AB7;
+}
+
+.productCartPage .card{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    position: relative;
+    width: 215px;
+    /* height: 203px; */
+    /* height: 241px; */
+    height: 255px;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD;
+    /* margin: 10.5px; */
+    /* margin-bottom: 20px;
+    margin-right: 20px; */
+    /* background-color: pink; */
+    /* background-color: yellow; */
+    border-radius: 0;
+}
+
+.productCartPage .card-img{
+    width: 215px;
+    height: 165px;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-color: yellow; */
+}
+
+.productCartPage .caption{
+    padding: 5px;
+    /* background-color: pink; */
+    /* height: 150px; */
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    padding: 8px 13px;
+}
+
+.productCartPage .caption:hover{
+    text-decoration-color: #673AB7;
+}
+
+.namaProduk{
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.namaEvent{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: flex-end;
+    text-decoration-line: underline;
+    color: #7A6A97;
+    margin-bottom: 3px;
+    /* background-color: yellow; */
+}
+
+.hargaProduk{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    color: #522E93;
+}
+
+.stokProduk{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-size: 10px;
+    line-height: 13px;
+    display: flex;
+    align-items: flex-end;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 2px;
+}

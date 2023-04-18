@@ -14,7 +14,7 @@
         </a>
         <div class="navbar nav2 h-100">
             <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active('index') }}" aria-current="page" href="{{ route('index') }}">Home</a>
-            <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active(['events', 'products', 'eventDetail']) }}" href="{{ route('events') }}">Events</a>
+            <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active(['events', 'products', 'eventDetail', 'productDetail']) }}" href="{{ route('events') }}">Events</a>
             <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active(['myEvents', 'myEventDetail']) }}" href="{{ route('myEvents') }}">My Events</a>
             <a class="nav-link h-100 d-flex align-items-center cart" href="{{ route('cart') }}">
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -20,6 +20,7 @@
     {{-- main css --}}
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/productCart.css">
     @yield('css')
 </head>
 <body>

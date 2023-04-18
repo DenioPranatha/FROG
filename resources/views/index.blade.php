@@ -40,7 +40,7 @@
             <div id="carouselExample" class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href="" class="custom-card">
+                        <a href="eventDetail" class="custom-card">
                             <div class="card">
                                 <div class="card-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
                                 <div class="caption">
@@ -51,7 +51,7 @@
                     </div>
                     @for($i = 0; $i < 10; $i++)
                     <div class="carousel-item">
-                        <a href="" class="custom-card">
+                        <a href="eventDetail" class="custom-card">
                             <div class="card">
                                 <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
                                 <div class="caption">
@@ -79,17 +79,7 @@
             </div>
             <div class="products d-flex flex-wrap">
                 @for ( $i=0 ; $i<10 ; $i++)
-                    <a href="events" class="custom-card">
-                        <div class="card">
-                            <div class="card-img" style="background-image: url({{ asset('assets/img/gelang.png') }})"></div>
-                            <div class="caption">
-                                <p class="namaProduk">Basreng Pedas</p>
-                                <p class="namaEvent">Event RTB</p>
-                                <p class="hargaProduk">Rp100000</p>
-                                <p class="stokProduk">Stock:<b> 21</b></p>
-                            </div>
-                        </div>
-                    </a>
+                    @include('partials.productCart')
                 @endfor
             </div>
             <div class="btnDiv w-100 h-100 d-flex justify-content-center">
