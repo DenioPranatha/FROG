@@ -14,9 +14,10 @@
 .carousel, .carousel1{
     display: flex;
     justify-content: center;
-    margin: 0 35px;
+    margin: auto;
     flex-wrap: nowrap;
     height: 220px;
+    width: 90vw;
 }
 
 .carousel1{
@@ -24,11 +25,16 @@
 }
 
 .catalog-container{
-    width: 90vw;
+    width: 96vw;
     display: flex;
     justify-content: center;
     margin: 0 30px;
     flex-wrap: wrap;
+}
+
+#section1{
+    width: 90vw;
+    margin: 0px;
 }
 
 a.custom-card,
@@ -49,7 +55,8 @@ a.custom-card:hover {
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
-    margin: 10.5px;
+    margin: 12px;
+    border-radius: 0%;
 }
 
 .card-img{
@@ -58,7 +65,7 @@ a.custom-card:hover {
 }
 
 .caption{
-    padding: 5px;
+    padding: 9px;
     font-size: 17px;
 }
 
@@ -93,8 +100,8 @@ a.custom-card:hover {
 
 .carousel-inner{
     display: flex;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .carousel-item, .carousel-item1{
@@ -109,8 +116,11 @@ a.custom-card:hover {
 
 .carousel-control-prev, .carousel-control-next,
 .carousel-control-prev1, .carousel-control-next1{
-    width: 6vh;
-    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vh;
+    height: 8vh;
     background-color: #181823;
     border: 50%;
     top: 50%;
@@ -132,9 +142,10 @@ a.custom-card:hover {
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 17.5px;
     margin: 0 10.5px;
-    padding-top: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -405,21 +416,21 @@ a.custom-card:hover {
     width: 98vw;
     justify-content: space-around;
     align-items: center;
-    margin: 21px;
+    margin: 42px 18px 84px 18px;
 }
 
 .more{
-    padding: 12px;
-    color:#522E93;
+    padding: 14px;
+    color: white;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    border: 3px solid #522E93;
-    background-color: white;
+    border: 0px;
+    background-color: #522E93;
 }
 
 .more:hover{
-    background-color: #522E93;
+    background-color: #673AB7;
     color: white;
 }
 

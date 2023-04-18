@@ -11,7 +11,7 @@ if(window.matchMedia("(min-width:576px)").matches){
     var carousel = $('.slide')[0].scrollWidth;
     var cardWidth = $('.carousel-item').width();
     var scrollPosition = 0;
-    var current = document.getElementsByClassName("active");
+    var current = document.getElementsByClassName("active2");
     var n = document.getElementsByClassName("carousel-control-next");
     var p = document.getElementsByClassName("carousel-control-prev");
 
@@ -21,14 +21,14 @@ if(window.matchMedia("(min-width:576px)").matches){
         var str2 = n[0].className.toString();
         if(a.scrollLeft() >= 800){
             if(str1.includes(" active")){
-                p[0].className = p[0].className.replace(" active", "");
-                n[0].className += " active";
+                p[0].className = p[0].className.replace(" active active2", "");
+                n[0].className += " active active2";
             }
         }
         if(a.scrollLeft() <= 100){
             if(str2.includes(" active")){
-                n[0].className = n[0].className.replace(" active", "");
-                p[0].className += " active";
+                n[0].className = n[0].className.replace(" active active2", "");
+                p[0].className += " active active2";
             }
         }
     });
@@ -39,9 +39,8 @@ if(window.matchMedia("(min-width:576px)").matches){
             $('.slide').animate({scrollLeft: scrollPosition}, 1000);
         }
 
-        console.log(a.scrollLeft());
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
+        current[0].className = current[0].className.replace(" active active2", "");
+        this.className += " active active2";
 
     });
 
@@ -50,10 +49,8 @@ if(window.matchMedia("(min-width:576px)").matches){
             scrollPosition = scrollPosition - cardWidth;
             $('.slide').animate({scrollLeft: scrollPosition}, 1000);
         }
-
-        console.log('next');
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
+        current[0].className = current[0].className.replace(" active active2", "");
+        this.className += " active active2";
 
     });
 
