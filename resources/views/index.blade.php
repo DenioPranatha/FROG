@@ -85,9 +85,6 @@
                             <div class="caption">
                                 <p class="namaProduk">Basreng Pedas</p>
                                 <p class="namaEvent">Event RTB</p>
-                                {{-- <p class="namaEvent"><a href="eventDetail">Event RTB</a></p> --}}
-                                {{-- <a href="eventDetail" class="namaEvent">Event RTB</a> --}}
-                                {{-- <a href="eventDetail"><p class="namaEvent">Event RTB</p></a> --}}
                                 <p class="hargaProduk">Rp100000</p>
                                 <p class="stokProduk">Stock:<b> 21</b></p>
                             </div>
@@ -128,14 +125,6 @@
                     </div>
                 </div>
             </section>
-            {{-- <a href="destination" class="btnClass">
-                <div class="button">
-                    <div class="findDest">
-                        <p>Find Destination</p>
-                        <i class="bi bi-arrow-right-short"></i>
-                    </div>
-                </div>
-            </a> --}}
             <div class="btnDiv w-100 h-100 d-flex justify-content-center">
                 <a class="btn btn-1 btn-2" href="destination" role="button">
                     <div class="findDest">
