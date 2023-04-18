@@ -5,7 +5,8 @@ const Carousel = new bootstrap.Carousel(myCarouselElement, {
 });
 if(window.matchMedia("(min-width:576px)").matches){
     var carousel = $('.recommendDiv .carousel-inner')[0].scrollWidth;
-    var cardWidth = $('.recommendDiv .carousel-item').width()*1.017;
+    // var cardWidth = $('.recommendDiv .carousel-item').width()*1.017;
+    var cardWidth = $('.recommendDiv .carousel-item').width()*1;
 
     var scrollPosition = 0;
 
@@ -13,7 +14,7 @@ if(window.matchMedia("(min-width:576px)").matches){
         if(scrollPosition < (carousel-(cardWidth*5))){
             console.log('next');
             scrollPosition = scrollPosition + cardWidth;
-            $('.recommendDiv .carousel-inner').animate({scrollLeft: scrollPosition}, 500);
+            $('.recommendDiv .carousel-inner').animate({scrollLeft: scrollPosition},500);
         }
 
     });
@@ -22,7 +23,7 @@ if(window.matchMedia("(min-width:576px)").matches){
         if(scrollPosition > 0){
             console.log('prev');
             scrollPosition = scrollPosition - cardWidth;
-            $('.recommendDiv .carousel-inner').animate({scrollLeft: scrollPosition}, 500);
+            $('.recommendDiv .carousel-inner').animate({scrollLeft: scrollPosition},500);
         }
     });
 }else{
