@@ -3,23 +3,15 @@
     /* height: 2000px; */
     /* background-color: pink; */
     padding: 30px 42px;
+    margin-bottom: 30px;
 }
 
+/* left cart */
 .leftCart{
     width: 64%;
     /* width: 70%; */
     /* background-color: yellow; */
     /* height: 1000px; */
-}
-
-.rightCart{
-    /* width: 27.7%; */
-    width: 30%;
-    margin-left: 42px;
-    background-color: blue;
-    height: 250px;
-    position: fixed;
-    right: 42px;
 }
 
 .cartTitle{
@@ -351,3 +343,94 @@
     cursor: pointer;
     font-size: 18px;
 }
+/* left cart */
+
+/* right cart */
+.rightCart{
+    /* width: 27.7%; */
+    width: 30%;
+    margin-left: 42px;
+    /* background-color: blue; */
+    /* height: 250px; */
+    position: fixed;
+    right: 42px;
+    background: #FFFFFF;
+    border: 2px solid #522E93;
+    box-shadow: 4px 4px 0px #522E93;
+    padding: 17px 15px;
+}
+
+.summaryTitle{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #522E93;
+}
+
+.summaryLine{
+    height: 2px;
+    width: 100%;
+    background-color: #522E93;
+    margin: 5px 0px;
+    margin-bottom: 13px;
+}
+
+.summaryTotalItem{
+    padding: 0px 5px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+}
+
+.summaryTotalPayment{
+    padding: 0px 5px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    color: #673AB7;
+    margin-top: 8px;
+}
+
+.btn{
+    background-color: #673AB7;
+    color: #FFFFFF;
+    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    width: 200px;
+    height: 45px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnClass{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+/* right cart */

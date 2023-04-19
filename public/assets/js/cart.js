@@ -2,7 +2,6 @@
 let minBtn = document.getElementsByClassName('minus');
 let plusBtn = document.getElementsByClassName('plus');
 let qty = document.getElementsByClassName('prodQty');
-// alert(minBtn.length)
 
 for(let i=0; i<minBtn.length; i++){
     plusBtn[i].addEventListener('click', ()=>{

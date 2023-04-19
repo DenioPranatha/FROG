@@ -90,7 +90,23 @@
             @endfor
         </div>
         <div class="rightCart">
-
+            <div class="summaryTitle">
+                Order Summary
+            </div>
+            <div class="summaryLine"></div>
+            <div class="summaryTotalItem">
+                <p class="totalItemText">Total Items</p>
+                <p class="totalItem">6 Items</p>
+            </div>
+            <div class="summaryTotalPayment">
+                <p class="totalPaymentText">Total Payment</p>
+                <p class="totalPayment">Rp590000</p>
+            </div>
+            <div class="btnClass d-flex justify-content-center">
+                <a href="checkout" class="btn">
+                    Checkout Now!
+                </a>
+            </div>
         </div>
     </div>
 @endsection
