@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="productQty d-flex justify-content-center align-items-center">
                                                 <form action="" method="get">
-                                                    <input type="text" name="productQty" id="productQty" value="1">
+                                                    <input type="text" name="productQty" id="productQty" value="1" class="prodQty">
                                                 </form>
                                             </div>
                                             <div class="plus d-flex justify-content-center align-items-center" id="plus">
@@ -93,5 +93,9 @@
 
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script type="text/javascript" src="{{URL::asset('assets/js/cart.js')}}"></script>
 @endsection
 
