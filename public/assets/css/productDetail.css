@@ -6,7 +6,171 @@
 
 .upperPart{
     width: 100%;
-    height: 1000px;
-    background-color: pink;
+    /* height: 1000px; */
+    /* background-color: pink; */
+    padding: 50px 70px;
 
+}
+
+.imgDiv{
+    /* background-color: yellow; */
+    width: 42%;
+    /* height: 500px; */
+}
+
+.productImage{
+    width: 100%;
+    height: 325px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
+}
+
+.descDiv{
+    width: 52%;
+    /* height: 500px; */
+    /* background-color: aqua; */
+    margin-left: 43px;
+}
+
+.qtyStockDiv{
+    /* background-color: yellow; */
+    height: 25px;
+}
+
+.productName{
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+a.eventName{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: flex-end;
+    text-decoration-line: underline;
+    color: #7A6A97;
+}
+
+.productPrice{
+    font-family: 'Ubuntu';
+    margin: 20px 0px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 34px;
+    display: flex;
+    align-items: flex-end;
+    color: #522E93;
+}
+
+.qtyText{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.qtyDiv{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+    height: 100%;
+}
+
+.productStock{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: flex-end;
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 15px;
+}
+
+.productDesc{
+    margin-top: 20px;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+}
+
+.minus, .plus{
+    background-color: pink;
+    width: 25px;
+    height: 100%;
+    border: 1px solid;
+    background-color: white;
+    filter: drop-shadow(3px 2px 4px rgba(0, 0, 0, 0.4));
+    text-align: center;
+}
+
+.productQty{
+    width: 45px;
+    height: 100%;
+    text-align: center;
+}
+
+.btnGroup{
+    /* background-color: yellow; */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cart2{
+    border-radius: 30px;
+    border: 3px solid #522E93;
+    background-color: white;
+    width: 180px;
+    height: 43px;
+
+}
+
+.cartText{
+    margin-left: 6px;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 30px;
+    color: #522E93;
+}
+
+.buy2{
+    border-radius: 30px;
+    border: 3px solid #522E93;
+    background-color: #522E93;
+    width: 180px;
+    height: 43px;
+}
+
+.buyText{
+    margin-left: 6px;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 30px;
+    color: #FFFFFF;
 }
