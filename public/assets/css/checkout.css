@@ -1,0 +1,547 @@
+
+.container{
+    position: relative;
+    display: flex;
+    /* gap: 3px; */
+    left: 0px;
+}
+
+.checkout-box{
+    position: relative;
+    /* align-items: flex; */
+    margin-left: 40px;
+    margin-top: 20px;
+    /* border: 2px solid blue; */
+    width: 950px;
+    /* display: flex; */
+    /* gap: 10px; */
+}
+
+.checkout-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 42px;
+    color: #522E93;
+    font-weight: bold;
+}
+
+.checkout-linebar{
+    color: #522E93;
+    border-width: 4px;
+    height: 0px;
+    top: 0px;
+    margin-top: 0px;
+    width: 910px;
+}
+
+.title-shipping-address{
+    position: relative;
+    display: flex;
+    gap: 4px;
+    color: #522E93;
+}
+
+
+.location-icon {
+    width: 50;
+}
+
+.shipping-address{
+    margin-top: 0px;
+    align-items: flex-start;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 22px;
+    color: black;
+    font-weight:500;
+}
+
+
+.box-address{
+    background-color: #CDCDCD;
+    width: 910px;
+    height: 105px;
+    margin-top: 8px;
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.rincian-data{
+    position: relative;
+    padding-left: 15px;
+    padding-top: 15px;
+    margin-right: 10px;
+}
+
+.nama{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    color: black;
+    font-weight: bolder;
+    padding-bottom: 6px;
+}
+
+.nomor-telepon{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    color: black;
+    padding-bottom: 6px;
+}
+
+.alamat{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.change-address{
+    /* border: 1px solid red; */
+    width: 200px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding-left: 10px;
+}
+
+.box-change-address{
+    width: 172px;
+    height: 54px;
+    display: flex;
+    box-sizing: border-box;
+    border: 3px solid #522E93;
+    border-radius: 25px;
+    align-items: center;
+    align-content: center;
+    padding-left: 10px;
+}
+
+.pen-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.title-shipping-address{
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.title-ordered-product{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+
+}
+
+.ordered-icon{
+    width: 50;
+}
+
+.ordered-product{
+    margin-top: 0px;
+    align-items: flex-start;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 22px;
+    color: black;
+    font-weight:500;
+}
+
+.product-box{
+    /* border: 1px solid blue; */
+    padding-top: 10px;
+}
+
+.title-event{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: #522E93;
+    font-weight: 700;
+    margin-left: 12px;
+    margin-bottom: 3px;
+}
+
+.event-linebar{
+    color: #522E93;
+    border-width: 4px;
+    height: 1px;
+    top: 0px;
+    margin-top: 0px;
+    width: 895px;
+    margin-left: 12px;
+}
+
+.product-detail-box{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    padding-top: 1px;
+    margin-bottom: 20px;
+}
+
+.gambar-produk {
+    /* border: 1px solid red; */
+    margin-left: 15px;
+    width: 150px;
+    height: 130px;
+}
+
+.detail{
+    /* border: 1px solid black; */
+    width: 420px;
+    height: 80px;
+    padding-top: 8px;
+}
+
+
+.title-product{
+    font-family: 'M PLUS 1';
+    font-size: 20px;
+    color: #522E93;
+    font-weight: bolder;
+    margin-left: 3px;
+    margin-bottom: 5px;
+}
+
+.quantity{
+    font-family: 'M PLUS 1';
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+
+.span-quantity{
+    font-family: 'M PLUS 1';
+    font-size: 16px;
+    color: black;
+    font-weight:bolder;
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+
+.harga{
+    margin-left: 30px;
+    /* border: 1px solid black; */
+    width: 250px;
+    height: 80px;
+    padding-top: 8px;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.title-harga{
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+.option-shipping-box{
+    position: relative;
+    display: flex;
+    gap: 4px;
+    padding-top: 15px;
+
+    /* border: 1px solid red; */
+}
+
+.title-option-shipping{
+    position: relative;
+    display: flex;
+    gap: 4px;
+
+}
+
+.shipping-icon{
+    width: 50;
+}
+
+.shipping-option-title{
+    margin-top: 0px;
+    align-items: flex-start;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 22px;
+    color: black;
+    font-weight:500;
+}
+
+.grid-box{
+    /* border: 1px solid black; */
+    width: 750px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.box{
+    /* border: 2px solid black; */
+    width: 180px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 0px;
+
+    border: 1.5px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD;
+
+
+}
+
+.box:hover{
+    border: 2px solid #673AB7;
+    box-shadow: 4px 4px 0px #673AB7;
+
+    transform: scale(1.13);
+}
+
+.gambar-jne{
+    width: 140px;
+    height: 140px;
+    margin-left: 8px;
+    margin-top: -20px;
+    /* padding-bottom: 100px; */
+}
+
+.gambar-pos{
+    margin-top: 15px;
+}
+
+.gambar-jnt{
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.gambar-tiki{
+    margin-top: 35px;
+    margin-left: 10px;
+}
+
+.option-payment-box{
+    position: relative;
+    display: flex;
+    gap: 4px;
+    padding-top: 15px;
+}
+
+.title-option-payment{
+    position: relative;
+    display: flex;
+    gap: 4px;
+
+}
+
+.payment-icon{
+    width: 50;
+}
+
+.payment-option-title{
+    margin-top: 0px;
+    align-items: flex-start;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 22px;
+    color: black;
+    font-weight:500;
+}
+
+.gambar-bca{
+    width: 150px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.gambar-gopay{
+    margin-top: 32px;
+    margin-left: 20px;
+    width: 130px;
+    /* height: 100px; */
+}
+
+.gambar-dana{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.gambar-spay{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+
+
+
+
+.gabung-box{
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+
+.summary-checkout{
+    border: 2px solid red;
+    width: 400px;
+    height: 310px;
+    align-items: baseline;
+    margin-top: 100px;
+    /* border-color: #522E93;    */
+    box-sizing: border-box;
+    background: #FFFFFF;
+    /* border: 2px solid #522E93; */
+    box-shadow: 4px 4px 0px 0px #522E93;
+    border: 2px solid #522E93;
+    position: fixed;
+    display: block;
+    margin-left: 1030px;
+    margin-top: 50px;
+
+}
+
+.box-summary {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.title-checkout-summary{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #522E93;
+}
+
+.checkout-summary-linebar{
+    color: #522E93;
+    border-width: 4px;
+    height: 0px;
+    top: 0px;
+    margin-top: 0px;
+    width: 330px;
+}
+
+.subtotal{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.nominal{
+    margin-left: 15px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.shipping-subtotal{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    /* gap: 10px; */
+}
+
+.shipping-nominal{
+    margin-left: 25px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    /* margin-bottom: 20px; */
+    /* margin-left: 30px; */
+
+}
+
+.rp-1{
+    margin-left: 90px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.rp-2{
+    margin-left: 100px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.total-payment{
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    color: #673AB7;
+    margin-bottom: 50px;
+}
+
+.rp-3{
+    margin-left: 97px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.total-nominal{
+    margin-left: 17px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    color: #673AB7;
+
+}
+
+.pay-button{
+    /* position: relative;
+    align-items: center;
+    justify-content: center; */
+    margin-left: 60px;
+    width: 220px;
+    height: 51px;
+    background: #673AB7;
+    border: 1px solid #673AB7;
+    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding-top: 15px;
+}
+
+.pay-now-title{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    /* display: inline; */
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
