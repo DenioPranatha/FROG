@@ -7,5 +7,12 @@
 @section('title', 'Product Detail')
 
 @section('content')
-    <h1>ini Product Detail </h1>
+    <div class="productDetail">
+        <div class="upperPart">
+            <div class="imgDiv"></div>
+            <div class="descDiv">
+                
+            </div>
+        </div>
+    </div>
 @endsection
