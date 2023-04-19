@@ -426,6 +426,42 @@
     text-align: center;
 }
 
+.btn:hover{
+    background-color: #673AB7;
+    color: #FFFFFF;
+    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    width: 200px;
+    height: 45px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+a.btn:focus{
+    background-color: #673AB7;
+    color: #FFFFFF;
+    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    width: 200px;
+    height: 45px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .btnClass{
     /* background-color: yellow; */
     width: 100%;

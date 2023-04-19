@@ -16,7 +16,7 @@
             <div class="selectAll d-flex align-items-center">
                 <div class="checkHelp">
                     <label class="checkDiv">
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="selectAll" id="selectAll">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="selectEvent d-flex align-items-center">
                         <div class="checkHelp">
                             <label class="checkDiv">
-                                <input type="checkbox" name="" id="">
+                                <input type="checkbox" name="eventCheck" id="" class="eventCheck">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -49,7 +49,7 @@
                             <div class="eachProduct d-flex align-items-center">
                                 <div class="checkHelp">
                                     <label class="checkDiv">
-                                        <input type="checkbox" name="" id="">
+                                        <input type="checkbox" name="itemCheck" id="" class="itemCheck">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -109,6 +109,69 @@
             </div>
         </div>
     </div>
+
+    {{-- <div class="cartCard">
+        <div class="selectEvent d-flex align-items-center">
+            <div class="checkHelp">
+                <label class="checkDiv">
+                    <input type="checkbox" name="eventCheck" id="eventCheck" class="eventCheck">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="eventCart">
+                Charity Action of RTB
+            </div>
+        </div>
+        <div class="lineCart"></div>
+        <div class="productCart d-flex ">
+            <p class="productCartText">Product Details</p>
+            <p class="productPriceText">Price</p>
+            <p class="productTotalText">Total</p>
+        </div>
+        <div class="productCartLine"></div>
+        <div class="productGroup">
+            @for ($i = 0; $i < 2; $i++)
+                <div class="eachProduct d-flex align-items-center">
+                    <div class="checkHelp">
+                        <label class="checkDiv">
+                            <input type="checkbox" name="itemCheck" id="" class="itemCheck">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="eachProductImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div>
+                    <div class="eachProductDesc">
+                        <div class="productDescName">Makaroni Pedas</div>
+                        <div class="productDescQtyText">Quantity:</div>
+                        <div class="productDescQty d-flex justify-content-start align-items-center">
+                            <div class="qtyDiv d-flex justify-content-center align-items-center">
+                                <div class="minus d-flex justify-content-center align-items-center" id="minus">
+                                    -
+                                </div>
+                                <div class="productQty d-flex justify-content-center align-items-center">
+                                    <form action="" method="get">
+                                        <input type="text" name="productQty" id="productQty" value="1" class="prodQty">
+                                    </form>
+                                </div>
+                                <div class="plus d-flex justify-content-center align-items-center" id="plus">
+                                    +
+                                </div>
+                            </div>
+                            <div class="trash d-flex align-items-center">
+                                <div class="slash"></div>
+                                <i class="bi bi-trash3"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eachProductPrice">
+                        <p class="eachProductPrice2">Rp100000</p>
+                    </div>
+                    <div class="eachProductTotal">
+                        <p class="eachProductTotal2">Rp200000</p>
+                    </div>
+                </div>
+            @endfor
+        </div>
+    </div> --}}
 @endsection
 
 @section('js')
