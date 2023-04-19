@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="productDetail">
-        <div class="upperPart d-flex justidy-content-center">
+        <div class="upperPart d-flex">
             <div class="imgDiv">
                 <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div>
             </div>
@@ -51,6 +51,19 @@
                         </div>
                     </a>
                 </div>
+            </div>
+        </div>
+        <div class="lowerPart">
+            <div class="otherTitle d-flex align-items-center">
+                <div class="otherText">
+                    Other products from this event
+                </div>
+                <div class="otherLine ms-3"></div>
+            </div>
+            <div class="products2 d-flex flex-wrap">
+                @for ( $i=0 ; $i<5 ; $i++)
+                    @include('partials.productCart')
+                @endfor
             </div>
         </div>
     </div>
