@@ -4,7 +4,7 @@
 
 @extends('layouts.main')
 
-@section('title', 'Profile')
+@section('title', 'Event Detail')
 
 @section('content')
 
@@ -48,17 +48,9 @@
         <div class="slide">
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
-                    @for($i = 0; $i < 25; $i++)
+                    @for($i = 0; $i < 16; $i++)
                     <a href="" class="custom-card">
-                        <div class="card1">
-                            <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
-                            <div class="caption1">
-                                <div><b>Basreng Pedas</b></div>
-                                <a class="purple small">Event RTB 1</a>
-                                <div class="purple">Rp. 1000</div>
-                                <div class="small">Stock: 21</div>
-                            </div>
-                        </div>
+                        @include('partials.productCart')
                     </a>
                     @endfor
 

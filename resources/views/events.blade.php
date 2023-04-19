@@ -18,12 +18,7 @@
             @for($i = 0; $i < 10; $i++)
             <div class="carousel-item">
                 <a href="/eventDetail" class="custom-card">
-                    <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true">
-                        <img src="{{ asset('assets/img/rtb.webp') }}" class="card-img">
-                        <div class="caption">
-                            <p>RTB Chinese New Year Jualan</p>
-                        </div>
-                    </div>
+                    @include('partials.eventCart')
                 </a>
             </div>
             @endfor
@@ -41,8 +36,8 @@
 
     <br>
     <div class="search-row">
-        <div class="form-group bubble-box">
-            <input type="text" name="search-event" id="search-event" placeholder="Search Event or categories" class="no-outline">
+        <div class="form-group bubble-box" id="form-group">
+            <input type="text" name="search-event" id="search-event" placeholder="Search event or category" class="no-outline">
             <button class="search-button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="search">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -64,16 +59,11 @@
     <div class="catalog-container">
         @for($i = 0; $i < 25; $i++)
             <a href="/eventDetail" class="custom-card">
-                <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-once="true">
-                    <img src="assets/img/rtb.webp" class="card-img">
-                    <div class="caption">
-                        <p>RTB Chinese New Year Jualan</p>
-                    </div>
-                </div>
+                @include('partials.eventCart')
             </a>
         @endfor
     </div>
-    
+
     <div class="more-products">
         <div class="line1"></div>
         <button class="more">More Products</button>
