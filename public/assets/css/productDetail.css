@@ -95,6 +95,10 @@ a.eventName{
     height: 100%;
 }
 
+#productQty{
+    all: unset;
+}
+
 .productStock{
     font-family: 'Ubuntu';
     font-style: normal;
@@ -126,6 +130,7 @@ a.eventName{
     background-color: white;
     filter: drop-shadow(3px 2px 4px rgba(0, 0, 0, 0.4));
     text-align: center;
+    cursor: pointer;
 }
 
 .productQty{

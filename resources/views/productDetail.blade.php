@@ -19,13 +19,15 @@
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">
                     <div class="qtyDiv d-flex justify-content-center align-items-center">
-                        <div class="minus d-flex justify-content-center">
+                        <div class="minus d-flex justify-content-center" id="minus">
                             -
                         </div>
                         <div class="productQty d-flex justify-content-center align-items-center">
-                            55
+                            <form action="" method="get">
+                                <input type="text" name="productQty" id="productQty" value="1">
+                            </form>
                         </div>
-                        <div class="plus d-flex justify-content-center">
+                        <div class="plus d-flex justify-content-center" id="plus">
                             +
                         </div>
                     </div>
@@ -67,4 +69,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script type="text/javascript" src="{{URL::asset('assets/js/productDetail.js')}}"></script>
 @endsection
