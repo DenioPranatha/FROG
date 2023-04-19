@@ -16,8 +16,8 @@
     justify-content: center;
     margin: auto;
     flex-wrap: nowrap;
-    height: 220px;
-    width: 90vw;
+    height: 260px;
+    width: 98vw;
 }
 
 .carousel1{
@@ -25,15 +25,15 @@
 }
 
 .catalog-container{
-    width: 96vw;
+    width: 98vw;
     display: flex;
     justify-content: center;
-    margin: 0 30px;
+    margin: 0 0px;
     flex-wrap: wrap;
 }
 
 #section1{
-    width: 90vw;
+    width: 100vw;
     margin: 0px;
 }
 
@@ -76,8 +76,13 @@ a.custom-card:hover {
 .search-row{
     display: flex;
     width: 98vw;
-    padding: 42px;
+    margin: 21px;
+    padding: 8px;
     flex-direction: row;
+    position: sticky;
+    top: 57px;
+    z-index: 1;
+    background-color: white;
 }
 
 .form-group{
@@ -199,8 +204,8 @@ a.custom-card:hover {
 
 .slide{
     display: flex;
-    width: 100vw;
-    height: 1600px;
+    width: 102vw;
+    height: 1400px;
     scroll-snap-type: x mandatory;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -310,16 +315,20 @@ a.custom-card:hover {
 }
 
 .nav-cont{
+    background-color: white;
+    position: sticky;
+    top: 35px;
+    z-index: 1;
     margin: auto;
     height: 4rem;
-    width: 100vw;
+    width: 97vw;
     margin: 20px 20px 20px 20px;
 }
 
 .nav-cont1{
-    height: 4rem;
-    width: 20vw;
-    margin: -20px;
+    height: 3rem;
+    width: 19vw;
+    padding-bottom: 15px;
 }
 
 .grafik{
@@ -379,10 +388,13 @@ a.custom-card:hover {
 
 .nav-line{
     margin-top: -20px;
+    position: sticky;
+    top: 98px;
+    z-index: 1;
 }
 
 .invisible{
-    height: 1380px;
+    height: 1140px;
 
 }
 
@@ -413,7 +425,7 @@ a.custom-card:hover {
 .more-products{
     display: flex;
     flex-direction: row;
-    width: 98vw;
+    width: 96vw;
     justify-content: space-around;
     align-items: center;
     margin: 42px 18px 84px 18px;
