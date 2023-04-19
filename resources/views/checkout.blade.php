@@ -165,26 +165,12 @@
                 <div class="pay-button">
                     <h1 class="pay-now-title">Pay Now !</h1>
                 </div>
-
-
-
             </div>
-
-
         </div>
-
     </div>
+</div>
+@endsection
 
-
-
-
-    </div>
-
-
-
-    @section('js')
-    <script type="text/javascript" src="{{URL::asset('assets/js/checkout.js')}}"></script>
-    @endsection
-
-
+@section('js')
+<script type="text/javascript" src="{{URL::asset('assets/js/checkout.js')}}"></script>
 @endsection

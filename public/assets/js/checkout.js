@@ -4,7 +4,7 @@
 // }
 
 
-function chooseitem(){
-  alert("hai");
-}
+// function chooseitem(){
+//   alert("hai");
+// }
 console.log("hai");
