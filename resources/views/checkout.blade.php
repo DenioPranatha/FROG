@@ -1,6 +1,5 @@
 @section('css')
     <link rel="stylesheet" href="assets/css/checkout.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 @endsection
 
 @extends('layouts.main')
@@ -31,110 +30,147 @@
                     </div>
 
                     <div class="change-address" id="change-address">
-                        <button class="box-change-address" data-toggle="modal" data-target="#exampleModal" onclick="togglepopup()">
+                        <button type="button" class="box-change-address" class="box-change-address" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="togglepopup()">
                             <img src="assets/img/pen.svg" class="pen-icon">
                             <h2 class="title-shipping-address">Change Address</h2>
                         </button>
                     </div>
                 </div>
 
-                {{-- //////////////////////// --}}
 
-                <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog " role="document">
-                    <div class="modal-content modal-css">
-                    {{-- <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div> --}}
-                    <div class="modal-body modal-css">
-                        <form class="form-css">
-                            {{-- <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                {{-- ################################# --}}
+                                        <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content modal-css">
+                            <div class="modal-header">
+                            {{-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> --}}
+                            {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
                             </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea> --}}
+                            <div class="modal-body modal-css">
 
-                                <div class="view-box-change-address">
-                                    <h1 class="current-address-title">Current Address</h1>
+                            <form class="form-css">
+                                {{-- <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div> --}}
 
-                                    <div class="box-address-change">
-                                        <div class="rincian-data-change">
-                                            <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
-                                            <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
-                                            <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
-                                            </h3>
+                                <form class="form-css">
+                                    {{-- <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+
+
+
+                            {{-- ==============  --}}
+                            <div class="view-box-change-address">
+                                <h1 class="current-address-title">Current Address</h1>
+
+                                <div class="box-address-change">
+                                    <div class="rincian-data-change">
+                                        <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
+                                        <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
+                                        <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                <h1 class="current-address-title">New Address</h1>
+
+                                <form action="#" class="form-change" autocomplete="off">
+
+                                    <div class="name-container">
+                                        <div class="first-name">
+
+                                            <label for="fname" class="first-name-title">First name</label><br>
+                                            <input type="text" autocomplete="off" id="fname" name="fname" placeholder="First Name" class="first-name-box">
+
+                                        </div>
+                                        <div class="last-name">
+
+                                            <label for="lname" class="last-name-title">Last name</label><br>
+                                            <input type="text" autocomplete="off" id="lname" name="lname" placeholder="Last Name" class="last-name-box">
+
                                         </div>
                                     </div>
 
-                                    <h1 class="current-address-title">New Address</h1>
+                                    <div class="phone-number">
 
-                                    <form action="#">
+                                        <label for="pname" class="phone-number-title">Phone Number</label><br>
+                                        <input type="text" autocomplete="off" id="pname" name="pname" placeholder="+62 | Phone Number" class="phone-number-box">
 
-                                        <div class="name-container">
-                                            <div class="first-name">
+                                    </div>
 
-                                                <label for="fname" class="first-name-title">First name</label><br>
-                                                <input type="text" id="fname" name="fname" placeholder="First Name" class="first-name-box">
+                                    <div class="new-address">
 
-                                            </div>
-                                            <div class="last-name">
+                                        <label for="naddress" class="new-address-title">Address</label><br>
+                                        <input type="text" autocomplete="off" id="naddress" name="naddress" class="new-address-box">
 
-                                                <label for="lname" class="last-name-title">Last name</label><br>
-                                                <input type="text" id="lname" name="lname" placeholder="Last Name" class="last-name-box">
+                                    </div>
 
-                                            </div>
-                                        </div>
+                                    <div class="button-grid">
+                                        <div class="save-button">
 
-                                        <div class="phone-number">
+                                            {{-- <button onclick="closepopup()" class="save-button-box">Back</button> --}}
+                                            <button class="save-button-box">Save Changes</button>
 
-                                            <label for="pname" class="phone-number-title">Phone Number</label><br>
-                                            <input type="text" id="pname" name="pname" placeholder="Phone Number" class="phone-number-box">
+                                            {{-- <input type="submit" value="Save Changes" id="sbutton" name="sbutton"   onclick="closepopup()" class="save-button-box"> --}}
 
                                         </div>
 
-                                        <div class="new-address">
+                                        {{-- <div class="back-button">
 
-                                            <label for="naddress" class="new-address-title">Address</label><br>
-                                            <input type="text" id="naddress" name="naddress" class="new-address-box">
+                                            <button onclick="closepopup()" class="back-button">Back</button>
 
-                                        </div>
-
-                                        <div class="button-grid">
-                                            <div class="save-button">
-
-                                                {{-- <button onclick="closepopup()" class="save-button-box">Back</button> --}}
-                                                <button class="save-button-box">Save Changes</button>
-
-                                                {{-- <input type="submit" value="Save Changes" id="sbutton" name="sbutton"   onclick="closepopup()" class="save-button-box"> --}}
-
-                                            </div>
-
-                                            {{-- <div class="back-button">
-
-                                                <button onclick="closepopup()" class="back-button">Back</button>
-
-                                            </div> --}}
+                                        </div> --}}
 
 
-                                        </div>
+                                    </div>
 
-                                    </form>
+                                </form>
+                            </form>
 
-                            </div>
-                        </form>
+                        </div>
+
+
+
+
+
+                         {{-- ================= --}}
+
+
+
+
+
+                        </div>
+                        {{-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> --}}
                     </div>
-                    {{-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div> --}}
                     </div>
                 </div>
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+                {{-- ################################# --}}
+
+
+
+                {{-- //////////////////////// --}}
+
+
+
+
 
 
                 {{-- //////////////////////// --}}
@@ -149,8 +185,8 @@
                     <hr class="event-linebar">
 
                     <div class="product-detail-box">
-                        <div class="gambar">
-                            <img src="assets/img/basreng.png" class=gambar-produk>
+                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
+                            {{-- <img src="assets/img/basreng.png" class=gambar-produk> --}}
                         </div>
                         <div class="detail">
                             <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
@@ -162,8 +198,8 @@
                     </div>
 
                     <div class="product-detail-box">
-                        <div class="gambar">
-                            <img src="assets/img/kaos.png" class="gambar-produk">
+                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/kaos.png") }})">
+                            {{-- <img src="assets/img/kaos.png" class="gambar-produk"> --}}
                         </div>
                         <div class="detail">
                             <h1 class="title-product">T-Shirt Nak Edgy</h1>
@@ -179,8 +215,8 @@
                     <hr class="event-linebar">
 
                     <div class="product-detail-box">
-                        <div class="gambar">
-                            <img src="assets/img/gelang.png" class=gambar-produk>
+                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/gelang.png") }})">
+                            {{-- <img src="assets/img/gelang.png" class=gambar-produk> --}}
                         </div>
                         <div class="detail">
                             <h1 class="title-product">Gelang UWU</h1>
@@ -192,8 +228,8 @@
                     </div>
 
                     <div class="product-detail-box">
-                        <div class="gambar">
-                            <img src="assets/img/basreng.png" class="gambar-produk">
+                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
+                            {{-- <img src="assets/img/basreng.png" class="gambar-produk"> --}}
                         </div>
                         <div class="detail">
                             <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
@@ -254,7 +290,7 @@
 
             </div>
 
-            <div class="summary-checkout">
+            <div class="summary-checkout" id="summary-checkout">
                 <div class="box-summary">
                     <h1 class="title-checkout-summary">Checkout Summary</h1>
                     <hr class="checkout-summary-linebar">
@@ -266,9 +302,9 @@
                     <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">590.000</span></h1>
 
 
-                    <div class="pay-button">
+                    <button type="submit" class="pay-button">
                         <h1 class="pay-now-title">Pay Now !</h1>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -357,7 +393,7 @@
 @endsection
 
 @section('js')
-<script type="text/javascript" defer src="{{URL::asset('assets/js/checkout.js')}}"></script>
+    <script type="text/javascript" defer src="{{URL::asset('assets/js/checkout.js')}}"></script>
 @endsection
 
 {{-- hi --}}
