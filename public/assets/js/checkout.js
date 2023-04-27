@@ -93,7 +93,7 @@ function chooseitem_2(){
 let summarycheckout = document.getElementById('summary-checkout');
 var body = document.body;
 var html = document.documentElement;
-var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
+var bodyH = Math.max(body.scrollHeight,  body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
 var position = bodyH-708;
 
 window.onscroll = function(){
@@ -103,6 +103,6 @@ window.onscroll = function(){
     }
     else{
         summarycheckout.style.position = 'fixed';
-        summarycheckout.style.top = '15%';
+        summarycheckout.style.top = '10%';
     }
 };
