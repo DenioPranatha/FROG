@@ -120,6 +120,7 @@ a.eventName{
     display: flex;
     align-items: flex-end;
     color: #000000;
+    text-align: justify;
 }
 
 .minus, .plus{
