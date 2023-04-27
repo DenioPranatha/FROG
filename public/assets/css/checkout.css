@@ -11,6 +11,7 @@
     /* align-items: flex; */
     margin-left: 40px;
     margin-top: 20px;
+    margin-bottom: 50px;
     /* border: 2px solid blue; */
     width: 800px;
     /* display: flex; */
@@ -192,6 +193,10 @@
     margin-left: 15px;
     width: 150px;
     height: 130px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .detail{
@@ -363,15 +368,17 @@
 
 .gambar-jne{
     width: 140px;
-    height: 140px;
-    margin-left: 8px;
-    margin-top: -20px;
+    height: 120px;
+    margin-left: 0px;
+    margin-top: -10px;
     /* padding-bottom: 100px; */
 }
 
 .gambar-pos{
     margin-top: 0px;
-    margin-left: -5px;
+    margin-left: -25px;
+    width: 210px;
+    height: 80px;
 }
 
 .gambar-jnt{
@@ -379,11 +386,15 @@
     justify-content: center;
     margin-left: 0px;
     margin-top: 0px;
+    width: 70px;
+    height: 70px;
 }
 
 .gambar-tiki{
     margin-top: 0px;
     margin-left: 0px;
+    width: 120px;
+    height: 40px;
 }
 
 .option-payment-box{
@@ -414,9 +425,9 @@
 }
 
 .gambar-bca{
-    width: 150px;
-    height: 80px;
-    margin-top: 0px;
+    width: 140px;
+    height: 110px;
+    margin-top: -10px;
     margin-left: 0px;
 }
 
@@ -430,11 +441,15 @@
 .gambar-dana{
     margin-top: 0px;
     margin-left: 0px;
+    width: 120px;
+    height: 40px;
 }
 
 .gambar-spay{
-    margin-top: 30px;
+    margin-top: 25px;
     margin-left: 40px;
+    width: 100px;
+    height: 50px;
 }
 
 
@@ -576,6 +591,9 @@
     box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     padding-top: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .pay-button:hover{
@@ -601,6 +619,11 @@
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+    margin-top: -11px;
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
 }
 
@@ -866,3 +889,11 @@ input::placeholder{
     /* display: none; */
     margin-left: -400px;
 }
+
+.modal-header{
+    outline: none;
+    border: none;
+    display: none;
+    background: none;
+}
+
