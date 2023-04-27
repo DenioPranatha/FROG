@@ -145,6 +145,25 @@ itemCheck.forEach((element)=>{
     })
 })
 
+
+// buat stop scroll yg bagian kanan
+let rightCart = document.getElementById('rightCart');
+var body = document.body;
+var html = document.documentElement;
+var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
+var position = bodyH-541
+
+window.onscroll = function(){
+    if(window.scrollY >= (bodyH-630)) { // change target to number
+        rightCart.style.position = 'absolute';
+        rightCart.style.top = position+'px';
+    }
+    else{
+        rightCart.style.position = 'fixed';
+        rightCart.style.top = '15%';
+    }
+};
+
 // // buat centang smua ato ga centang smua per event
 // for(let i=0; i<eventCheckLen; i++){
 //     eventCheck[i].addEventListener('click', ()=>{
