@@ -1,8 +1,31 @@
 .banner{
-    width: 1200px;
+    width: 96vw;
     height: 300px;
-    border: 1px solid black;
-    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 32px 0 0 21px;
+    flex-wrap: nowrap;
+    height: fit-content;
+    width: 96vw;
+
+}
+
+.banner-inner{
+    display: flex;
+    width: 98vw;
+    overflow: hidden;
+}
+
+.banner-item{
+    display: block;
+    flex: 0 0 100%;
 }
 
 .header{
@@ -11,30 +34,35 @@
     padding: 21px 42px;
 }
 
-.carousel, .carousel1{
+.carousel{
     display: flex;
     justify-content: center;
     margin: auto;
     flex-wrap: nowrap;
-    height: 260px;
+    height: fit-content;
     width: 98vw;
 }
 
 .carousel1{
     padding-top: 6rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: nowrap;
+    height: fit-content;
+    width: 98vw;
 }
 
 .catalog-container{
     width: 98vw;
     display: flex;
     justify-content: center;
-    margin: 0 0px;
     flex-wrap: wrap;
 }
 
 #section1{
     width: 100vw;
-    margin: 0px;
+    margin-top: 42px;
 }
 
 a.custom-card,
@@ -186,12 +214,17 @@ a.custom-card:hover {
     flex-direction: column;
     justify-content: space-between;
     padding-left: 21px;
-    height: 370px;
+    height: 400px;
 }
 
 .desc-img{
     width: 450px;
+    height: 337.5px;
     border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .desc-headline{
@@ -200,31 +233,42 @@ a.custom-card:hover {
 
 .desc-caption{
     text-align: justify;
+    line-height: normal;
 }
 
 .slide{
     display: flex;
     width: 102vw;
-    height: 1400px;
+    height: fit-content;
     scroll-snap-type: x mandatory;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
     overflow-x: scroll;
-    margin-bottom: 63px;
+}
 
+.slide::-webkit-scrollbar {
+    display: none;
+}
+
+.slide1::-webkit-scrollbar {
+    display: none;
+}
+
+.slide .slide1 {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .slide1{
     display: flex;
     width: 100vw;
-    height: 1200px;
+    height: fit-content;
     scroll-snap-type: x mandatory;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
     overflow-x: scroll;
-    margin-bottom: 63px;
 
 }
 
@@ -232,14 +276,12 @@ a.custom-card:hover {
     flex: none;
     scroll-snap-align: start;
     scroll-margin-left: 50px;
-    margin-bottom: 63px;
 }
 
 .slide1 section{
     flex: none;
     scroll-snap-align: start;
     scroll-margin-left: 50px;
-    margin-bottom: 63px;
 }
 
 .stat-container{
@@ -254,6 +296,7 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 21px;
     font-weight: 600;
+    height: 45px;
 }
 
 .purple{
@@ -264,13 +307,19 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 18px;
     font-weight: 600;
+    height: 30px;
+    display: flex;
+    text-align: center;
+    padding-top: 5px;
 }
 
 .rincian-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    width: 92vw;
+    margin: 21px 0 30px 0;
 }
 
 .rec{
@@ -278,12 +327,21 @@ a.custom-card:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 17vw;
-    border: 1px solid #CDCDCD;
+    width: 21vw;
+    border: 2px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
-    margin: 21px;
-    padding: 21px;
-    border-radius: 5%;
+    padding: 15px 0;
+    border-radius: 5px;
+    transition: transform .2s ease;
+}
+
+.rec:hover{
+    cursor: pointer;
+    transform: scale(1.075);
+}
+
+.grafik-time{
+    margin-top: 16px;
 }
 
 .nav-button,
@@ -371,14 +429,13 @@ a.custom-card:hover {
     background-color: #522E93;
     color: white;
     text-decoration: none;
-    width: 10rem;
+    width: 455px;
     height: 2.5rem;
     justify-content: center;
     align-items: center;
     margin: 21px;
-    font-size: 18px;
+    font-size: 19px;
     border-radius: 5px;
-
 }
 
 .donate:hover{
@@ -391,11 +448,6 @@ a.custom-card:hover {
     position: sticky;
     top: 98px;
     z-index: 1;
-}
-
-.invisible{
-    height: 1140px;
-
 }
 
 .progress-container{
@@ -451,3 +503,11 @@ a.custom-card:hover {
     width: 400px;
     box-shadow: none;
 }
+
+#more {
+    display: none;
+}
+
+/* #more1 {
+    display: none;
+} */
