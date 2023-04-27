@@ -21,13 +21,13 @@
         <div class="bannerDiv">
             <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="2000">
+                    <div class="carousel-item active" data-bs-interval="3000">
                         <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Logo">
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div class="carousel-item" data-bs-interval="3000">
                         <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Code">
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div class="carousel-item" data-bs-interval="3000">
                         <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Prediction Team">
                     </div>
                 </div>
