@@ -355,6 +355,4 @@
 </div>
 @endsection
 
-@section('js')
-<script type="text/javascript" defer src="{{URL::asset('assets/js/checkout.js')}}"></script>
-@endsection
+
