@@ -27,7 +27,7 @@
                         </a>
                         <a href="#">
                             <div class="card-section-box-icon2">
-                                <img src="assets/img/edit 1 (1).svg" alt="">
+                                <img src="assets/img/pencil-square.svg" alt="">
                             </div>
                         </a>
                     </div>
@@ -49,7 +49,18 @@
                         </a>
                         <a href="#">
                             <div class="card-section-box-icon2">
-                                <img src="assets/img/edit 1 (1).svg" alt="">
+                                <img src="assets/img/pencil-square.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </a>
+            <a href="myEventDetail" class="card-container">
+                <div class="card-add">
+                    <div class="card-section-box-add">
+                        <a href="#">
+                            <div class="card-section-box-add-img">
+                                <img src="assets/img/add-button.svg" alt="" width="100px" height="100px">
                             </div>
                         </a>
                     </div>
