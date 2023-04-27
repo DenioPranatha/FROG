@@ -36,7 +36,7 @@ if(window.matchMedia("(min-width:576px)").matches){
     $('.carousel-control-next').on('click', function(){
         if(scrollPosition < (carousel-(cardWidth))){
             scrollPosition = scrollPosition + cardWidth;
-            $('.slide').animate({scrollLeft: scrollPosition}, 1000);
+            $('.slide').animate({scrollLeft: scrollPosition}, 200);
         }
 
         current[0].className = current[0].className.replace(" active active2", "");
@@ -47,7 +47,7 @@ if(window.matchMedia("(min-width:576px)").matches){
     $('.carousel-control-prev').on('click', function(){
         if(scrollPosition > 0){
             scrollPosition = scrollPosition - cardWidth;
-            $('.slide').animate({scrollLeft: scrollPosition}, 1000);
+            $('.slide').animate({scrollLeft: scrollPosition}, 200);
         }
         current[0].className = current[0].className.replace(" active active2", "");
         this.className += " active active2";
@@ -98,7 +98,7 @@ if(window.matchMedia("(min-width:576px)").matches){
     $('.carousel-control-next1').on('click', function(){ //jika button next diklik
         if(scrollPosition1 < (carousel1-(cardWidth1))){
             scrollPosition1 = scrollPosition1 + cardWidth1;
-            $('.slide1').animate({scrollLeft: scrollPosition1}, 1000);
+            $('.slide1').animate({scrollLeft: scrollPosition1}, 200);
         }
 
         console.log('prev')
@@ -111,7 +111,7 @@ if(window.matchMedia("(min-width:576px)").matches){
     $('.carousel-control-prev1').on('click', function(){ //jika button prev diklik
         if(scrollPosition1 > 0){
             scrollPosition1 = scrollPosition1 - cardWidth1;
-            $('.slide1').animate({scrollLeft: scrollPosition1}, 1000);
+            $('.slide1').animate({scrollLeft: scrollPosition1}, 200);
         }
 
         console.log('next')
@@ -123,3 +123,14 @@ if(window.matchMedia("(min-width:576px)").matches){
 }else{
     $(myCarouselElement1).addClass('slide');
 }
+
+moreBtn = document.getElementById("myBtn");
+moreProducts = document.getElementById("more");
+moreProducts1 = document.getElementById("more1");
+inv = document.getElementsByClassName("invisible");
+
+moreBtn.addEventListener('click', function(){
+    moreProducts.style.display = "inline";
+    // moreProducts1.style.display = "inline";
+})
+

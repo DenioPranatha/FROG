@@ -7,11 +7,21 @@
 @section('title', 'Events')
 
 @section('content')
-    {{-- <a class="btn btn-primary" href="{{ route('product') }}">product</a> --}}
 
-    <div class="banner">
-        <img src="assets/img/banner.png" class="img-fluid" alt="Responsive image">
+    <div class="banner-container" id="banner" data-bs-ride="carousel">
+        <div class="banner-inner">
+            <div class="banner-item">
+                <div class="banner d-block" style="background-image: url({{ asset('assets/img/banner.png') }})"></div>
+            </div>
+            <div class="banner-item">
+                <div class="banner d-block" style="background-image: url({{ asset('assets/img/banner.png') }})"></div>
+            </div>
+            <div class="banner-item">
+                <div class="banner d-block" style="background-image: url({{ asset('assets/img/banner.png') }})"></div>
+            </div>
+        </div>
     </div>
+
     <div class="header" data-aos="fade-up" data-aos-duration="1000">Popular Events</div>
     <div id="carouselExample" class="carousel">
         <div class="carousel-inner">
@@ -57,26 +67,32 @@
     <br>
 
     <div class="catalog-container">
-        @for($i = 0; $i < 25; $i++)
+        @for($i = 0; $i < 20; $i++)
             <a href="/eventDetail" class="custom-card">
                 @include('partials.eventCart')
             </a>
         @endfor
     </div>
 
+    <span id="more">
+        <div class="catalog-container">
+            @for ( $i=0 ; $i<20 ; $i++)
+                <a href="/eventDetail" class="custom-card">
+                    @include('partials.eventCart')
+                </a>
+            @endfor
+        </div>
+    </span>
+
     <div class="more-products">
         <div class="line1"></div>
-        <button class="more">More Products</button>
+        <button class="more" id="myBtn">More Products</button>
         <div class="line1"></div>
     </div>
+
+
     @endsection
 
-
-{{-- <script src="assets/js/events.js"></script> --}}
-
-{{-- <script type="text/javascript" src="assets/js/events.js"></script> --}}
-
-{{-- <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script> --}}
 @section('js')
     <script type="text/javascript" src="{{URL::asset('assets/js/events.js')}}"></script>
 @endsection

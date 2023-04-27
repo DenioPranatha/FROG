@@ -10,7 +10,7 @@
 
     <div class="desc-container">
         <div class="pic">
-            <img src="{{ asset('assets/img/rtb.webp') }}" class="desc-img" alt="">
+            <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
             <a class="donate" href="#section1">Donate now!</a>
         </div>
         <div class="desc">
@@ -54,9 +54,19 @@
                     </a>
                     @endfor
 
+                    <span id="more">
+                        <div class="catalog-container">
+                            @for ( $i=0 ; $i<20 ; $i++)
+                            <a href="" class="custom-card">
+                                @include('partials.productCart')
+                            </a>
+                            @endfor
+                        </div>
+                    </span>
+
                     <div class="more-products">
                         <div class="line1"></div>
-                        <button class="more">More Products</button>
+                        <button class="more" id="myBtn">More Products</button>
                         <div class="line1"></div>
                     </div>
 
@@ -83,8 +93,8 @@
                             <div class="stat-subheadline purple">Rp. 123.000,00</div>
                         </div>
                         <div class="rec">
-                            <div class="stat-subheadline">Dana Tersalurkan</div>
-                            <div class="stat-subheadline purple">Rp. 123.000,00</div>
+                            <div class="stat-subheadline">Best Seller</div>
+                            <div class="stat-subheadline purple">Basreng Pedas</div>
                         </div>
                     </div>
                     <br>
@@ -116,10 +126,6 @@
                 </section>
             </div>
         </div>
-    </div>
-
-    <div class="invisible">
-
     </div>
 
 @endsection
