@@ -281,7 +281,7 @@ a.custom-card:hover {
 .slide1 section{
     flex: none;
     scroll-snap-align: start;
-    scroll-margin-left: 50px;
+    scroll-margin-left: 25px;
 }
 
 .stat-container{
@@ -346,6 +346,7 @@ a.custom-card:hover {
 
 .nav-button,
 .nav-button1{
+    color: #522E93;
     position: relative;
     width: 6rem;
     height: 2.75rem;
@@ -356,7 +357,6 @@ a.custom-card:hover {
     outline: none;
     border: 0px;
     background-color: transparent;
-    color: #522E93;
     opacity: 1;
     justify-content: center;
 }
@@ -373,6 +373,7 @@ a.custom-card:hover {
 }
 
 .nav-cont{
+    color: #522E93;
     background-color: white;
     position: sticky;
     top: 35px;
@@ -380,10 +381,11 @@ a.custom-card:hover {
     margin: auto;
     height: 4rem;
     width: 97vw;
-    margin: 20px 20px 20px 20px;
+    margin: 20px 0px 20px 0px;
 }
 
 .nav-cont1{
+    color: #522E93;
     height: 3rem;
     width: 19vw;
     padding-bottom: 15px;
@@ -508,6 +510,20 @@ a.custom-card:hover {
     display: none;
 }
 
-/* #more1 {
-    display: none;
-} */
+.blank{
+    width: 40vw;
+    height: 300px;
+    background-color: #CDCDCD;
+}
+
+#section3, #section4{
+    margin: 0;
+    padding: 0;
+}
+
+#section-donate{
+    position: absolute;
+    z-index: -1;
+    top: 520px;
+
+}

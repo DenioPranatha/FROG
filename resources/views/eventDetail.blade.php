@@ -7,11 +7,11 @@
 @section('title', 'Event Detail')
 
 @section('content')
-
+    <div id="section-donate"></div>
     <div class="desc-container">
         <div class="pic">
             <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
-            <a class="donate" href="#section1">Donate now!</a>
+            <a class="donate" href="#section-donate">Donate now!</a>
         </div>
         <div class="desc">
             <div class="desc-headline">
@@ -110,12 +110,12 @@
                             <div class="slide1">
                                 <div class="carousel-item1">
                                     <section class="catalog-container" id="section3">
-                                        <img src="{{ asset('assets/img/grafik.svg') }}" alt="">
+                                        <div class="blank"></div>
                                     </section>
                                 </div>
                                 <div class="carousel-item1">
                                     <section class="catalog-container" id="section4">
-                                        <img src="{{ asset('assets/img/rtb.webp') }}" alt="">
+                                        <div class="blank"></div>
                                     </section>
                                 </div>
                             </div>

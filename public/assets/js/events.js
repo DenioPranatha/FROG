@@ -60,7 +60,7 @@ var interval = setInterval(function() {
             counter = 0;
         }
     }
- }, 2000);
+ }, 5000);
 
 //bingung
 

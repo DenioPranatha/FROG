@@ -86,7 +86,7 @@
 
     <div class="more-products">
         <div class="line1"></div>
-        <button class="more" id="myBtn">More Products</button>
+        <button class="more" id="myBtn">More Events</button>
         <div class="line1"></div>
     </div>
 
