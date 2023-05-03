@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('payment_details', function (Blueprint $table) {
             $table->id();
+            $table->integer('qty');
+            $table->integer('itemPrice');
+            $table->integer('itemModal');
             $table->timestamps();
         });
     }
