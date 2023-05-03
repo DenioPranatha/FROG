@@ -10,7 +10,7 @@
 
     <div class="desc-container">
         <div class="pic">
-            <img src="{{ asset('assets/img/rtb.webp') }}" class="desc-img" alt="">
+            <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
             <a class="donate" href="#section1">Edit Event</a>
         </div>
         <div class="desc">
@@ -55,10 +55,10 @@
                         @if ($i == 0)
                             {{-- <a href="#" class="custom-card"> --}}
                                 <div class="productCartPage">
-                                    <a href="#" class="custom-card">
+                                    <a href="addProduct" class="custom-card">
                                         <div class="card">
                                             <div class="add-icon">
-                                                <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
+                                               <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
                                             </div>
                                             <div class="caption-add">
                                                 <p class="namaProduk">Add Product</p>
@@ -137,72 +137,15 @@
                         <div class="purchase-history-headline">
                             <div class="purchasehistory-subheadline">Purchase History</div>
                             <div class="see-all">
-                                <a href="#">
+                                <a href="allHistory">
                                     See All
                                 </a>
                             </div>
                         </div>
-                        <div class="card-container">
-                            <div class="container-flex-left">
-                                <a href="#" class="card-ph">
-                                    <div class="card-ph">
-                                        <div class="history-header">
-                                            <div class="history-image">
-                                                <img class="product-image" src="assets/img/basreng.png" alt="">
-                                            </div>
-                                            <div class="history-title">
-                                                <p class="product-name">Basreng Pedas Rasa Jeruk</p>
-                                                <p class="quantity">Quantity : 2</p>
-                                            </div>
-                                        </div>
-                                        <div class="line-ph"></div>
-                                        <div class="history-body">
-                                            <div class="history-information-left">
-                                                <p>Buyer</p>
-                                                <p>Purchase Date</p>
-                                                <p>Purchase Totals</p>
-                                                <p>Total Donation</p>
-                                            </div>
-                                            <div class="history-information-right">
-                                                <p>Alfredo Wijaya Kusuma</p>
-                                                <p>12 maret 2023</p>
-                                                <p class="price">Rp. 20.000</p>
-                                                <p class="price">Rp. 10.000</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="container-flex-right">
-                                <a href="#" class="card-ph">
-                                    <div class="card-ph">
-                                        <div class="history-header">
-                                            <div class="history-image">
-                                                <img class="product-image" src="assets/img/basreng.png" alt="">
-                                            </div>
-                                            <div class="history-title">
-                                                <p class="product-name">Basreng Pedas Rasa Jeruk</p>
-                                                <p class="quantity">Quantity : 2</p>
-                                            </div>
-                                        </div>
-                                        <div class="line-ph"></div>
-                                        <div class="history-body">
-                                            <div class="history-information-left">
-                                                <p>Buyer</p>
-                                                <p>Purchase Date</p>
-                                                <p>Purchase Totals</p>
-                                                <p>Total Donation</p>
-                                            </div>
-                                            <div class="history-information-right">
-                                                <p>Alfredo Wijaya Kusuma</p>
-                                                <p>12 maret 2023</p>
-                                                <p class="price">Rp. 20.000</p>
-                                                <p class="price">Rp. 10.000</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="card-container d-flex flex-wrap">
+                            @for ($i = 0; $i < 2; $i++)
+                                @include('partials.historyCard')
+                            @endfor
                         </div>
                     </div>
                 </section>

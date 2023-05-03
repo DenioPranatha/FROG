@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/productCart.css">
     <link rel="stylesheet" href="assets/css/eventCart.css">
+    <link rel="stylesheet" href="assets/css/historyCard.css">
     @yield('css')
 </head>
 <body>

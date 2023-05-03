@@ -62,102 +62,10 @@
 .card-container{
     margin-left: 30px;
     margin-bottom: 84px;
-    display: flex;
+    /* display: flex; */
     gap: 42px;
 }
 
-.card-ph{
-    margin-top: 42px;
-    text-decoration: none;
-    color: #000000;
-    width: 540px;
-    height: 280px;
-    background: #FFFFFF;
-    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25), 1px 0 .4em rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-
-    transition: all .2s ease-in-out;
-}
-
-.card-ph:hover{
-    transform: scale(1.02);
-}
-
-.history-header{
-    display: flex;
-}
-
-.product-image{
-    margin-left: 42px;
-    margin-top: 26px;
-    width: 100px;
-    height: 70px;
-}
-
-.history-title{
-    margin-left: 21px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-}
-
-.product-name{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 29px;
-    margin-bottom: -9px;
-}
-
-.quantity{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 22px;
-}
-
-.line-ph{
-    margin-top: 21px;
-    margin-bottom: 21px;
-    width: 498px;
-    margin-left: 21px;
-    border: 1.8px solid #000000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-.history-body{
-    margin-left: 42px;
-    display: flex;
-    margin-right: 42px;
-    margin-top: 5px;
-}
-
-.history-information-left{
-    width: 200px;
-}
-
-.history-information-left p{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 22px;
-    margin-bottom: 5px;
-}
-
-.history-information-right{
-    width: 200px;
-    margin-left: 150px;
-    text-align: right;
-}
-
-.history-information-right p{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 22px;
-    margin-bottom: 5px;
-}
 
 .price{
     font-weight: 500;
@@ -314,28 +222,32 @@ a.custom-card:hover {
     flex-direction: column;
     justify-content: space-between;
     padding-left: 21px;
-    height: 480px;
+    height: 400px;
 }
 
 .desc-img{
     width: 450px;
+    height: 337.5px;
     border: 1px solid #CDCDCD;
-    filter: drop-shadow(5px 5px 0px rgba(0, 0, 0, 0.25));
+    box-shadow: 4px 4px 0px #CDCDCD;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .desc-headline{
     font-size: 25px;
-    margin-bottom: 21px;
+    /* margin-bottom: 21px; */
 }
 
 .desc-caption{
     text-align: justify;
-    line-height: 26px;
-    margin-bottom: 21px;
+    line-height: normal;
+    /* margin-bottom: 21px; */
 }
 
 .desc-point{
-    margin-bottom: 21px;
+    /* margin-bottom: 21px; */
 }
 
 .slide{
@@ -348,7 +260,14 @@ a.custom-card:hover {
     overflow: hidden;
     overflow-x: scroll;
     margin-bottom: 63px;
+}
 
+.slide::-webkit-scrollbar {
+    display: none;
+}
+
+.slide1::-webkit-scrollbar {
+    display: none;
 }
 
 .slide1{
@@ -390,7 +309,7 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 21px;
     font-weight: 600;
-    margin-bottom: 21px;
+    height: 45px;
 }
 
 .purple{
@@ -401,14 +320,19 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 21px;
+    height: 30px;
+    display: flex;
+    text-align: center;
+    padding-top: 5px;
 }
 
 .rincian-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+    width: 92vw;
+    margin: 21px 0 30px 0;
 }
 
 .rec{
@@ -416,12 +340,12 @@ a.custom-card:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    border: 1px solid #CDCDCD;
+    width: 21vw;
+    border: 2px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
-    margin: 21px 21px 21px 0px;
-    padding: 21px;
-    border-radius: 5%;
+    padding: 15px 0;
+    border-radius: 5px;
+    transition: transform .2s ease;
 }
 
 .purchase-history{
@@ -438,20 +362,17 @@ a.custom-card:hover {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 14px;
 }
 
 .see-all{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 21px;
     margin-left: auto;
 
 }
 
 .see-all a{
-    text-decoration: none;
     color: black;
 }
 
@@ -544,14 +465,13 @@ a.custom-card:hover {
     background-color: #522E93;
     color: white;
     text-decoration: none;
-    width: 28rem;
-    height: 4rem;
+    width: 455px;
+    height: 2.5rem;
     justify-content: center;
     align-items: center;
     margin: 21px;
     font-size: 18px;
     border-radius: 5px;
-
 }
 
 .donate:hover{
@@ -577,8 +497,8 @@ a.custom-card:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 21px;
-    margin-bottom: 21px;
+    /* margin-top: 21px;
+    margin-bottom: 21px; */
 }
 
 .progress{

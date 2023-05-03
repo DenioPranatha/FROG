@@ -1,0 +1,15 @@
+.container{
+    /* border: solid 1px; */
+    margin-left: 21px;
+    margin-top: 21px;
+    margin-bottom: 84px;
+}
+
+.flex-container{
+    width: 95vw;
+    gap: 42px;
+}
+
+.container h1{
+    font-size: 35px;
+}

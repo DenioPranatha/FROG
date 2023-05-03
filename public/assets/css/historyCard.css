@@ -1,0 +1,93 @@
+.card-ph{
+    margin-top: 42px;
+    text-decoration: none;
+    color: #000000;
+    width: 540px;
+    height: 280px;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 0px #CDCDCD, 1px 0 .4em rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor:default;
+    /* transition: all .2s ease-in-out; */
+}
+
+/* .card-ph:hover{
+    transform: scale(1.02);
+} */
+
+.history-header{
+    display: flex;
+    height: 117px;
+}
+
+.product-image{
+    margin-left: 42px;
+    margin-top: 26px;
+    width: 100px;
+    height: 70px;
+}
+
+.history-title{
+    margin-left: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.product-name{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: -9px;
+    color: #522E93;
+}
+
+.quantity{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #522E93;
+}
+
+.line-ph{
+    margin-bottom: 21px;
+    width: 498px;
+    margin-left: 21px;
+    border: 1.8px solid #522E93;
+}
+
+.history-body{
+    margin-left: 42px;
+    display: flex;
+    margin-right: 42px;
+    margin-top: 5px;
+}
+
+.history-information-left{
+    width: 200px;
+}
+
+.history-information-left p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+.history-information-right{
+    width: 200px;
+    margin-left: 150px;
+    text-align: right;
+}
+
+.history-information-right p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
