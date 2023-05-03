@@ -62,6 +62,14 @@ Route::get('/destination', function () {
     return view('destination');
 })->name('destination');
 
+Route::get('/addProduct', function () {
+    return view('addProduct');
+})->name('addProduct');
+
+Route::get('/allHistory', function () {
+    return view('allHistory');
+})->name('allHistory');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
