@@ -352,6 +352,10 @@ input[type=text]{
     margin-bottom: 25px;
 }
 
+.categoriesCart:hover{
+    cursor: pointer;
+}
+
 .categoriesCart p{
     font-family: 'M PLUS 1';
     font-style: normal;

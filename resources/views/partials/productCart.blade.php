@@ -6,7 +6,7 @@
                 <p class="namaProduk">Basreng Pedas</p>
                 <p class="namaEvent">Event RTB</p>
                 <p class="hargaProduk">Rp100000</p>
-                <p class="stokProduk">Stock:<b> 21</b></p>
+                <p class="stokProduk">Stock:&nbsp;<b> 21</b></p>
             </div>
         </div>
     </a>

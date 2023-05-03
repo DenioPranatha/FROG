@@ -116,23 +116,23 @@
             </div>
             <div class="categories">
                 @for ($i =0 ; $i <3 ; $i++)
-                    <div class="categoriesCart">
+                    <a href="products" class="categoriesCart">
                         <p>Category 1</p>
-                    </div>
-                    <div class="categoriesCart">
+                    </a>
+                    <a href="products" class="categoriesCart">
                         <p>asdfhajdfhjadfadf</p>
-                    </div>
-                    <div class="categoriesCart">
+                    </a>
+                    <a href="products" class="categoriesCart">
                         <p>Cated</p>
-                    </div>
-                    <div class="categoriesCart">
+                    </a>
+                    <a href="products" class="categoriesCart">
                         <p>Cated</p>
-                    </div>
-                    <div class="categoriesCart">
+                    </a>
+                    <a href="products" class="categoriesCart">
                         <p>Categorydga</p>
-                    </div>
+                    </a>
                     @endfor
-                <a href="events">
+                <a href="products">
                     <div class="categoriesCart">
                         <p>See more...</p>
                     </div>
