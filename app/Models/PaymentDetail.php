@@ -11,4 +11,11 @@ class PaymentDetail extends Model
 
     protected $guarded = ['id'];
 
+    public function paymentHeader(){
+        return $this->belongsTo(PaymentHeader::class);
+    }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
 }

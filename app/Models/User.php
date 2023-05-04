@@ -14,4 +14,12 @@ class User extends Model
     public function event(){
         return $this->hasMany(Event::class);
     }
+
+    public function paymentHeader(){
+        return $this->hasMany(PaymentHeader::class);
+    }
+
+    public function cartHeader(){
+        return $this->hasMany(CartHeader::class);
+    }
 }

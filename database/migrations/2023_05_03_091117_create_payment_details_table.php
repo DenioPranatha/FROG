@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('payment_details', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->primary(['payment_header_id', 'product_id']);
+            $table->foreignId('payment_header_id');
+            $table->foreignId('product_id');
             $table->integer('qty');
             $table->integer('item_price');
             $table->integer('item_modal');

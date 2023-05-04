@@ -27,6 +27,8 @@ class DatabaseSeeder extends Seeder
 
         Event::create([
             'category_id' => 1,
+            'destination_id' => 1,
+            'user_id' => 1,
             'name' => 'nicole',
             'start_date' => '2023-01-01',
             'end_date' => '2023-01-01',
@@ -36,6 +38,8 @@ class DatabaseSeeder extends Seeder
 
         Event::create([
             'category_id' => 1,
+            'destination_id' => 1,
+            'user_id' => 1,
             'name' => 'nicole2',
             'start_date' => '2023-01-01',
             'end_date' => '2023-01-01',
@@ -45,6 +49,8 @@ class DatabaseSeeder extends Seeder
 
         Event::create([
             'category_id' => 2,
+            'destination_id' => 1,
+            'user_id' => 1,
             'name' => 'nicole3',
             'start_date' => '2023-01-01',
             'end_date' => '2023-01-01',
@@ -56,10 +62,20 @@ class DatabaseSeeder extends Seeder
             'name' => 'banjir'
         ]);
 
-        // PaymentDetail::create([
-        //     'qty' => 10,
-        //     'item_price' => 10000,
-        //     'item_modal' => 8000
-        // ]);
+        PaymentDetail::create([
+            'payment_header_id' => 1,
+            'product_id' => 1,
+            'qty' => 10,
+            'item_price' => 10000,
+            'item_modal' => 8000
+        ]);
+
+        PaymentDetail::create([
+            'payment_header_id' => 2,
+            'product_id' => 1,
+            'qty' => 100,
+            'item_price' => 10000,
+            'item_modal' => 8000
+        ]);
     }
 }

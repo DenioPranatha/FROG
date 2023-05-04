@@ -11,4 +11,19 @@ class Product extends Model
 
     protected $guarded = ['id'];
 
+    public function paymentDetail(){
+        return $this->hasMany(PaymentDetail::class);
+    }
+
+    public function cartDetail(){
+        return $this->hasMany(CartDetail::class);
+    }
+
+    public function event(){
+        return $this->belongsTo(Event::class);
+    }
+
+    public function productCategory(){
+        return $this->belongsTo(ProductCategory::class);
+    }
 }

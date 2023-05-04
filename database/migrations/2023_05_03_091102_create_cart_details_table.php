@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cart_details', function (Blueprint $table) {
+            $table->primary(['cart_header_id', 'product_id']);
+            $table->foreignId('cart_header_id');
+            $table->foreignId('product_id');
             $table->integer('detail_qty');
             $table->timestamps();
-
-            // $table->id('id');
-            // $table->bigIncrements('id');
-            // $table->primary('detailQty');
         });
     }
 
