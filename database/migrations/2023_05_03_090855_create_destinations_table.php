@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image', 55);
             $table->string('location', 55);
             $table->string('link');
-            $table->Integer('personCount');
+            $table->Integer('person_count');
             $table->string('contact', 55);
             $table->timestamps();
         });
