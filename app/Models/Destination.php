@@ -15,4 +15,8 @@ class Destination extends Model
         return $this->hasMany(Event::class);
     }
 
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
 }

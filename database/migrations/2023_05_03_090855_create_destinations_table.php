@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
             $table->string('name', 55);
             $table->string('description', 100);
             $table->string('image', 55);

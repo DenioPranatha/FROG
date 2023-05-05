@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Destination;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\PaymentDetail;
@@ -26,10 +27,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Event::create([
-            'category_id' => 1,
-            'destination_id' => 1,
+            'destination_id' => 2,
             'user_id' => 1,
-            'name' => 'nicole',
+            'name' => 'rtb bantu banjir',
             'start_date' => '2023-01-01',
             'end_date' => '2023-01-01',
             'description' => 'tes',
@@ -37,10 +37,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Event::create([
-            'category_id' => 1,
             'destination_id' => 1,
             'user_id' => 1,
-            'name' => 'nicole2',
+            'name' => 'bli bantu panti asuhan',
             'start_date' => '2023-01-01',
             'end_date' => '2023-01-01',
             'description' => 'tes',
@@ -48,18 +47,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Event::create([
-            'category_id' => 2,
             'destination_id' => 1,
             'user_id' => 1,
             'name' => 'nicole3',
-            'start_date' => '2023-01-01',
-            'end_date' => '2023-01-01',
+            'start_date' => '2023-01-29',
+            'end_date' => '2023-01-29',
             'description' => 'tes',
             'image' => 'tes.png'
         ]);
 
         Category::create([
-            'name' => 'banjir'
+            'name' => 'bencana alam'
+        ]);
+
+        Category::create([
+            'name' => 'panti asuhan'
+        ]);
+
+        Destination::create([
+            'category_id' => 2,
+            'name' => 'panti asuhan ceria',
+            'description' => 'tes',
+            'image' => 'tes.png',
+            'location' => 'lokasi',
+            'link' => 'asfdkhhaskdg.com',
+            'person_count' => 1000,
+            'contact' => '07858172'
+        ]);
+
+        Destination::create([
+            'category_id' => 1,
+            'name' => 'banjir cianjur',
+            'description' => 'tes',
+            'image' => 'tes.png',
+            'location' => 'lokasi',
+            'link' => 'asfdkhhaskdg.com',
+            'person_count' => 50000,
+            'contact' => '07858172'
         ]);
 
         PaymentDetail::create([
