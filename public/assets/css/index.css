@@ -278,6 +278,14 @@ input[type=text]{
     /* background-color: #f44336; */
 }
 
+.owl-nav .owl-prev span{
+    color: white;
+}
+
+.owl-nav .owl-next span{
+    color: white;
+}
+
 .owl-nav .owl-next {
     position: absolute;
     top: calc(50% - 60px);

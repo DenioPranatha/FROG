@@ -1,3 +1,5 @@
+{{-- @dd($events) --}}
+
 @section('css')
     <link rel="stylesheet" href="assets/css/index.css">
 @endsection
@@ -42,11 +44,35 @@
                     <div class="carousel-item active">
                         @include('partials.eventCart')
                     </div>
-                    @for($i = 0; $i < 10; $i++)
+
+                    {{-- @for($i = 0; $i < 10; $i++)
                     <div class="carousel-item">
                         @include('partials.eventCart')
                     </div>
-                    @endfor
+                    @endfor --}}
+
+                    {{-- @forelse ($events as $event)
+                        <div class="carousel-item">
+                            @include('partials.eventCart', ['event' => $event])
+                        </div>
+                    @empty
+                        <p>no events found</p>
+                    @endforelse --}}
+
+                    @foreach ($events as $event)
+                    <div class="carousel-item">
+                        @include('partials.eventCart')
+                    </div>
+                    @endforeach
+
+                    {{-- @each('partials.eventcart', $events, 'event', 'kosong') --}}
+
+                    {{-- $tes = [
+                        'nama' => 'nicole',
+                        'umur' => '20'
+                    ]
+
+                    @include('partials.eventCart', $tes) --}}
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -85,18 +111,31 @@
                 <div class="container">
                     <div class="slider">
                         <div class="owl-carousel">
-                            @for ( $i=0 ; $i<5 ; $i++)
+                            {{-- @for ( $i=0 ; $i<5 ; $i++)
                                 <div class="slider-card">
                                     <div class="d-flex justify-content-center align-items-center mb-4">
                                         <img src="{{ asset("assets/img/PantiAsuhan.png") }}" alt="" >
                                     </div>
-                                    <h5 class="mb-0 text-center charityText"><b>Panti Asuhan Bhakti Kasih</b></h5>
+                                    <h5 class="mb-0 text-center charityText"><b>Panti Asuhan Bhakti Kasih Banjir</b></h5>
                                     <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
                                         <i class="bi bi-geo-alt"></i>
                                         <p class="text-center">Bogor, Jawa Barat</p>
                                     </div>
                                 </div>
-                            @endfor
+                            @endfor --}}
+
+                            @foreach ($destinations as $destination)
+                                <div class="slider-card">
+                                    <div class="d-flex justify-content-center align-items-center mb-4">
+                                        <img src="{{ asset("assets/img/PantiAsuhan.png") }}" alt="" >
+                                    </div>
+                                    <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
+                                    <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <p class="text-center">{{ $destination->location }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -115,7 +154,7 @@
                 Categories
             </div>
             <div class="categories">
-                @for ($i =0 ; $i <3 ; $i++)
+                {{-- @for ($i =0 ; $i <3 ; $i++)
                     <a href="products" class="categoriesCart">
                         <p>Category 1</p>
                     </a>
@@ -131,7 +170,13 @@
                     <a href="products" class="categoriesCart">
                         <p>Categorydga</p>
                     </a>
-                    @endfor
+                @endfor --}}
+
+                @foreach ($productCategories as $productCategory)
+                    <a href="products" class="categoriesCart">
+                        <p>{{ $productCategory->name }}</p>
+                    </a>
+                @endforeach
                 <a href="products">
                     <div class="categoriesCart">
                         <p>See more...</p>

@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\Destination;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Event;
+use App\Models\ProductCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +18,17 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'events' => Event::all(),
+        'destinations' => Destination::all(),
+        'productCategories' => ProductCategory::all()
+    ]);
 })->name('index');
 
 Route::get('/index', function () {
-    return view('index');
+    return view('index', [
+        'events' => Event::all()
+    ]);
 })->name('index');
 
 Route::get('/products', function () {

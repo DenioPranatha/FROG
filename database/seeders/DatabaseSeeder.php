@@ -8,6 +8,7 @@ use App\Models\Destination;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\PaymentDetail;
+use App\Models\ProductCategory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -86,6 +87,28 @@ class DatabaseSeeder extends Seeder
             'contact' => '07858172'
         ]);
 
+        Destination::create([
+            'category_id' => 2,
+            'name' => 'panti asuhan abc',
+            'description' => 'tes',
+            'image' => 'tes.png',
+            'location' => 'lokasi',
+            'link' => 'asfdkhhaskdg.com',
+            'person_count' => 1000,
+            'contact' => '07858172'
+        ]);
+
+        Destination::create([
+            'category_id' => 1,
+            'name' => 'banjir bandang',
+            'description' => 'tes',
+            'image' => 'tes.png',
+            'location' => 'lokasi',
+            'link' => 'asfdkhhaskdg.com',
+            'person_count' => 50000,
+            'contact' => '07858172'
+        ]);
+
         PaymentDetail::create([
             'payment_header_id' => 1,
             'product_id' => 1,
@@ -100,6 +123,26 @@ class DatabaseSeeder extends Seeder
             'qty' => 100,
             'item_price' => 10000,
             'item_modal' => 8000
+        ]);
+
+        ProductCategory::create([
+            'name' => 'pakaian'
+        ]);
+
+        ProductCategory::create([
+            'name' => 'makanan'
+        ]);
+
+        ProductCategory::create([
+            'name' => 'kebutuhan rumah'
+        ]);
+
+        ProductCategory::create([
+            'name' => 'snack'
+        ]);
+
+        ProductCategory::create([
+            'name' => 'alat tulis'
         ]);
     }
 }
