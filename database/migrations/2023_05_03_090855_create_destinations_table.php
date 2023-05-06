@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->string('name', 55);
-            $table->string('description', 100);
+            $table->string('description', 755);
             $table->string('image', 55);
             $table->string('location', 55);
-            $table->string('link');
+            $table->string('link', 500);
             $table->Integer('person_count');
             $table->string('contact', 55);
             $table->timestamps();

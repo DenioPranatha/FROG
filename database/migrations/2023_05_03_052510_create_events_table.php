@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('destination_id');
             $table->foreignId('user_id');
-            $table->string('name', 100);
-            $table->string('start_date');
+            $table->string('name', 55);
+            $table->date('start_date');
             $table->date('end_date');
-            $table->string('description', 255);
+            $table->string('description', 455);
             $table->string('image', 55);
             $table->timestamps();
         });
