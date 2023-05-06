@@ -150,15 +150,20 @@ class DatabaseSeeder extends Seeder
 
         // <!-- 2 -->
         CartHeader::create([
-            'user_id' => 2
+            'user_id' => 1
         ]);
 
         // <!-- 3 -->
         CartHeader::create([
-            'user_id' => 3
+            'user_id' => 2
         ]);
 
         // <!-- 4 -->
+        CartHeader::create([
+            'user_id' => 3
+        ]);
+
+        // <!-- 5 -->
         CartHeader::create([
             'user_id' => 4
         ]);
