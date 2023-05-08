@@ -96,7 +96,8 @@
                                     </div>
                                     <div class="eachProductTotal">
                                         <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p>
-                                        @php($total += (($cartDetail->product->price)*($cartDetail->qty)))
+                                        {{-- <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p> --}}
+                                        {{-- @php($total += (($cartDetail->product->price)*($cartDetail->qty))) --}}
                                     </div>
                                 </div>
                             @endif
@@ -218,11 +219,11 @@
             <div class="summaryLine"></div>
             <div class="summaryTotalItem">
                 <p class="totalItemText">Total Items</p>
-                <p class="totalItem">{{ $count }} Items</p>
+                <p class="totalItem">0 Items</p>
             </div>
             <div class="summaryTotalPayment">
                 <p class="totalPaymentText">Total Payment</p>
-                <p class="totalPayment">Rp{{ $total }}</p>
+                <p class="totalPayment">Rp0</p>
             </div>
             <div class="btnClass d-flex justify-content-center">
                 <a href="checkout" class="btn">

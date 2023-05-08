@@ -1,22 +1,69 @@
 // const { forEach } = require("lodash");
 
+let eachProductTotal2 = document.getElementsByClassName('eachProductTotal2');
+let eachProductPrice2 = document.getElementsByClassName('eachProductPrice2');
+
 // kotak plus min
 let minBtn = document.getElementsByClassName('minus');
 let plusBtn = document.getElementsByClassName('plus');
 let qty = document.getElementsByClassName('prodQty');
 
+// alert(qty[0].value)
+
 for(let i=0; i<minBtn.length; i++){
+    total = 0
+
     plusBtn[i].addEventListener('click', ()=>{
+        priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+        priceTemp = parseInt(priceTemp)
+
         qty[i].value++;
+
+        // buat hitung total price
+        total = qty[i].value*priceTemp
+        total = 'Rp' + total.toString()
+
+        eachProductTotal2[i].innerHTML = total
+        totalPayment.innerHTML = calculatePrice()
     })
 
     minBtn[i].addEventListener('click',  ()=>{
         if (qty[i].value>1){
+            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = parseInt(priceTemp)
+
             qty[i].value--;
+
+            // buat hitung total price
+            total = qty[i].value*priceTemp
+            total = 'Rp' + total.toString()
+            eachProductTotal2[i].innerHTML = total
+            totalPayment.innerHTML = calculatePrice()
         }
         else{
+            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = parseInt(priceTemp)
+
             qty[i].value = 1;
+
+            // buat hitung total price
+            total = qty[i].value*priceTemp
+            total = 'Rp' + total.toString()
+            eachProductTotal2[i].innerHTML = total
+            totalPayment.innerHTML = calculatePrice()
         }
+    })
+
+    prodQty[i].addEventListener('click', ()=>{
+        console.log('tes')
+        priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+        priceTemp = parseInt(priceTemp)
+
+        // buat hitung total price
+        total = qty[i].value*priceTemp
+        total = 'Rp' + total.toString()
+        eachProductTotal2[i].innerHTML = total
+        totalPayment.innerHTML = calculatePrice()
     })
 }
 // kotak plus min
@@ -25,6 +72,8 @@ for(let i=0; i<minBtn.length; i++){
 let checkAll = document.getElementById("selectAll");
 let eventCheck = document.getElementsByName("eventCheck");
 let itemCheck = document.getElementsByName("itemCheck");
+let totalItem = document.getElementsByClassName("totalItem")[0];
+let totalPayment = document.getElementsByClassName("totalPayment")[0];
 let eventCheckLen = eventCheck.length;
 let itemCheckLen = itemCheck.length;
 
@@ -73,6 +122,7 @@ checkAll.addEventListener('click', ()=>{
             itemCheck[i].checked = false;
         }
     }
+    totalPayment.innerHTML = calculatePrice()
 })
 
 // buat event
@@ -95,7 +145,7 @@ eventCheck.forEach((element)=>{
                     itemCheck[i].checked = true;
                 }
             }
-        // uncheck si event
+            // uncheck si event
         }else{
             checkAll.checked = false;
             element.checked = false;
@@ -103,6 +153,7 @@ eventCheck.forEach((element)=>{
                 itemCheck[i].checked = false;
             }
         }
+        totalPayment.innerHTML = calculatePrice()
     })
 })
 
@@ -135,15 +186,35 @@ itemCheck.forEach((element)=>{
                     eventCheck[i].checked = false;
                 }
             }
-        // uncheck si item
+            // uncheck si item
         }else{
             checkAll.checked = false;
             for(let i=0; i<eventCheckLen; i++){
                 eventCheck[i].checked = false;
             }
         }
+        totalPayment.innerHTML = calculatePrice()
+        // tes = totalPayment
+        // console.log("Halo")
     })
 })
+
+// buat hitung total payment
+function calculatePrice(){
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        // console.log("hai")
+        if(itemCheck[i].checked == true){
+            temp = eachProductTotal2[i].innerHTML.substring(2)
+            // alert(temp)
+            total += parseInt(temp)
+        }
+    }
+    // alert(total)
+    total = 'Rp' + total.toString()
+    // alert(total)
+    return total
+}
 
 
 // buat stop scroll yg bagian kanan
