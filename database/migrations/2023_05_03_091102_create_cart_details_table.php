@@ -17,7 +17,7 @@ return new class extends Migration
             $table->primary(['cart_header_id', 'product_id']);
             $table->foreignId('cart_header_id');
             $table->foreignId('product_id');
-            $table->integer('detail_qty');
+            $table->integer('qty');
             $table->timestamps();
         });
     }

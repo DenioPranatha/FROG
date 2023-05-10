@@ -11,7 +11,7 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    public function event(){
-        return $this->hasMany(Event::class);
+    public function destination(){
+        return $this->hasMany(Destination::class);
     }
 }

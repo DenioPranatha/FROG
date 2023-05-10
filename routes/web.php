@@ -1,5 +1,15 @@
 <?php
 
+use App\Models\CartDetail;
+use App\Models\CartHeader;
+use App\Models\Category;
+use App\Models\Destination;
+use App\Models\Event;
+use App\Models\PaymentDetail;
+use App\Models\PaymentHeader;
+use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +25,19 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'events' => Event::all(),
+        'destinations' => Destination::all(),
+        'productCategories' => ProductCategory::all()
+    ]);
 })->name('index');
 
 Route::get('/index', function () {
-    return view('index');
+    return view('index', [
+        'events' => Event::all(),
+        'destinations' => Destination::all(),
+        'productCategories' => ProductCategory::all()
+    ]);
 })->name('index');
 
 Route::get('/products', function () {
@@ -47,7 +65,13 @@ Route::get('/myEventDetail', function () {
 })->name('myEventDetail');
 
 Route::get('/cart', function () {
-    return view('cart');
+    return view('cart', [
+        // 'cartHeaders' => CartHeader::where('user_id', 4)->get(),
+        'cartHeaders' => CartHeader::all(),
+        'cartDetails' => CartDetail::all(),
+        // 'count' => 0
+        // 'cartDetails' => CartDetail::where('cart_header_id', 1)->get()
+    ]);
 })->name('cart');
 
 Route::get('/checkout', function () {

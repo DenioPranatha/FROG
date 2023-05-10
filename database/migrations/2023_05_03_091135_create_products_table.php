@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('product_category_id');
             $table->string('name', 55);
             $table->integer('stock');
-            $table->string('description', 1000);
+            $table->string('description', 455);
             $table->integer('price');
             $table->integer('modal');
             $table->string('image', 55);
