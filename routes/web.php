@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Models\CartDetail;
 use App\Models\CartHeader;
 use App\Models\Category;
@@ -48,13 +49,8 @@ Route::get('/productDetail', function () {
     return view('productDetail');
 })->name('productDetail');
 
-Route::get('/events', function () {
-    return view('events');
-})->name('events');
-
-Route::get('/eventDetail', function () {
-    return view('eventDetail');
-})->name('eventDetail');
+Route::get('/events', [EventController::class, 'index'])->name('events');
+Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
 
 Route::get('/myevents', function () {
     return view('myEvents');

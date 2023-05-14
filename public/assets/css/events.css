@@ -54,15 +54,18 @@
 }
 
 .catalog-container{
-    width: 98vw;
+    width: 96vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    margin-left: 1.3vw;
 }
 
 #section1{
     width: 100vw;
     margin-top: 42px;
+    justify-content: center;
+    margin-left: 0px;
 }
 
 a.custom-card,
@@ -524,5 +527,32 @@ a.custom-card:hover {
     position: absolute;
     z-index: -1;
     top: 520px;
-
 }
+
+.not-found{
+    width: 98vw;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 42px;
+}
+
+#purple-but{
+    background-color: #522E93;
+    color: #FFFFFF;
+}
+
+#purple-but:hover{
+    background-color: #673AB7;
+}
+
+.section5{
+    scroll-behavior: auto;
+}
+/* html {
+    scroll-behavior:
+} */

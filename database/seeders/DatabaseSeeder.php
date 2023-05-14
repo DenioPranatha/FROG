@@ -832,7 +832,7 @@ class DatabaseSeeder extends Seeder
         ]);
     // PAYMENT HEADER
 
-    // PRODUCT
+    // 
         // <!-- 1 -->
         Product::create([
             'event_id' => 1,
@@ -1226,6 +1226,7 @@ class DatabaseSeeder extends Seeder
         // ProductCategory::create([
         //     'name' => 'alat tulis'
         // ]);
+
 
     }
 }
