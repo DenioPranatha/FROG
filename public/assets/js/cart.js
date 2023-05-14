@@ -1,5 +1,7 @@
 // const { forEach } = require("lodash");
 
+let totalItem = document.getElementsByClassName("totalItem")[0];
+let totalPayment = document.getElementsByClassName("totalPayment")[0];
 let eachProductTotal2 = document.getElementsByClassName('eachProductTotal2');
 let eachProductPrice2 = document.getElementsByClassName('eachProductPrice2');
 
@@ -7,8 +9,11 @@ let eachProductPrice2 = document.getElementsByClassName('eachProductPrice2');
 let minBtn = document.getElementsByClassName('minus');
 let plusBtn = document.getElementsByClassName('plus');
 let qty = document.getElementsByClassName('prodQty');
+let qtyForm = document.getElementsByClassName('qtyForm');
 
 // alert(qty[0].value)
+// alert(totalItem.value)
+// alert(totalPayment.value)
 
 for(let i=0; i<minBtn.length; i++){
     total = 0
@@ -25,6 +30,7 @@ for(let i=0; i<minBtn.length; i++){
 
         eachProductTotal2[i].innerHTML = total
         totalPayment.innerHTML = calculatePrice()
+        totalItem.innerHTML = calculateItem()
     })
 
     minBtn[i].addEventListener('click',  ()=>{
@@ -39,6 +45,7 @@ for(let i=0; i<minBtn.length; i++){
             total = 'Rp' + total.toString()
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
+            totalItem.innerHTML = calculateItem()
         }
         else{
             priceTemp = eachProductPrice2[i].innerHTML.substring(2)
@@ -51,11 +58,12 @@ for(let i=0; i<minBtn.length; i++){
             total = 'Rp' + total.toString()
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
+            totalItem.innerHTML = calculateItem()
         }
     })
-
-    prodQty[i].addEventListener('click', ()=>{
-        console.log('tes')
+    qtyForm[i].addEventListener("change", ()=>{
+        // console.log('tes')
+        // alert('hai')
         priceTemp = eachProductPrice2[i].innerHTML.substring(2)
         priceTemp = parseInt(priceTemp)
 
@@ -64,23 +72,24 @@ for(let i=0; i<minBtn.length; i++){
         total = 'Rp' + total.toString()
         eachProductTotal2[i].innerHTML = total
         totalPayment.innerHTML = calculatePrice()
+        totalItem.innerHTML = calculateItem()
     })
 }
 // kotak plus min
 
+
 // checkbox
 let checkAll = document.getElementById("selectAll");
+// let checkAll = document.getElementsByClassName("selectAll2")[0];
 let eventCheck = document.getElementsByName("eventCheck");
 let itemCheck = document.getElementsByName("itemCheck");
-let totalItem = document.getElementsByClassName("totalItem")[0];
-let totalPayment = document.getElementsByClassName("totalPayment")[0];
+// let totalItem = document.getElementsByClassName("totalItem")[0];
 let eventCheckLen = eventCheck.length;
 let itemCheckLen = itemCheck.length;
 
 eventCheck = Array.prototype.slice.call(eventCheck);
 itemCheck = Array.prototype.slice.call(itemCheck);
 
-// console.log("hai");
 
 function allItemChecked(){
     temp = true
@@ -88,6 +97,19 @@ function allItemChecked(){
         if(itemCheck[i].checked == false){
             temp = false;
             return temp
+        }
+    }
+    return true
+}
+
+function itemEventChecked(eventId){
+    temp = true
+    for(let i=0; i<itemCheckLen; i++){
+        if(itemCheck[i].classList.contains(eventId) == true){
+            if(itemCheck[i].checked == false){
+                temp = false
+                return temp
+            }
         }
     }
     return true
@@ -104,8 +126,10 @@ function allEventChecked(){
     return true
 }
 
+
 // buat centang smua ato ga centang smua
 checkAll.addEventListener('click', ()=>{
+    // alert('yes')
     if(checkAll.checked == true){
         for(let i=0; i<eventCheckLen; i++){
             eventCheck[i].checked = true;
@@ -123,6 +147,7 @@ checkAll.addEventListener('click', ()=>{
         }
     }
     totalPayment.innerHTML = calculatePrice()
+    totalItem.innerHTML = calculateItem()
 })
 
 // buat event
@@ -142,18 +167,23 @@ eventCheck.forEach((element)=>{
                 checkAll.checked = false;
                 element.checked = true;
                 for(let i=0; i<itemCheck.length; i++){
-                    itemCheck[i].checked = true;
+                    if(itemCheck[i].classList.contains(element.id)){
+                        itemCheck[i].checked = true;
+                    }
                 }
             }
-            // uncheck si event
+        // uncheck si event
         }else{
             checkAll.checked = false;
             element.checked = false;
             for(let i=0; i<itemCheck.length; i++){
-                itemCheck[i].checked = false;
+                if(itemCheck[i].classList.contains(element.id)){
+                    itemCheck[i].checked = false;
+                }
             }
         }
         totalPayment.innerHTML = calculatePrice()
+        totalItem.innerHTML = calculateItem()
     })
 })
 
@@ -173,6 +203,7 @@ itemCheck.forEach((element)=>{
                 }
                 // kalo ga smua event kechecked
                 else{
+                    // alert("ngaco")
                     checkAll.checked = true;
                     for(let i=0; i<eventCheckLen; i++){
                         eventCheck[i].checked = true;
@@ -183,21 +214,31 @@ itemCheck.forEach((element)=>{
             else{
                 checkAll.checked = false;
                 for(let i=0; i<eventCheckLen; i++){
-                    eventCheck[i].checked = false;
+                    // kalo smua item di event itu ke checked
+                    if(itemEventChecked(eventCheck[i].id) == true){
+                        eventCheck[i].checked = true;
+                    }
+                    // kalo ada item di event itu yg ms blom ke checked
+                    else{
+                        eventCheck[i].checked = false;
+                    }
                 }
             }
-            // uncheck si item
+        // uncheck si item
         }else{
             checkAll.checked = false;
             for(let i=0; i<eventCheckLen; i++){
-                eventCheck[i].checked = false;
+                if(element.classList.contains(eventCheck[i].id)){
+                    eventCheck[i].checked = false;
+                }
             }
+
         }
         totalPayment.innerHTML = calculatePrice()
-        // tes = totalPayment
-        // console.log("Halo")
+        totalItem.innerHTML = calculateItem()
     })
 })
+
 
 // buat hitung total payment
 function calculatePrice(){
@@ -212,6 +253,23 @@ function calculatePrice(){
     }
     // alert(total)
     total = 'Rp' + total.toString()
+    // alert(total)
+    return total
+}
+
+// buat hitung total items
+function calculateItem(){
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        // console.log("hai")
+        if(itemCheck[i].checked == true){
+            temp = parseInt(qty[i].value)
+            // alert(temp)
+            total += temp
+        }
+    }
+    // alert(total)
+    total = total.toString() + ' Items'
     // alert(total)
     return total
 }

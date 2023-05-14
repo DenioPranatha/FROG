@@ -122,7 +122,7 @@ class DatabaseSeeder extends Seeder
 
         // <!-- 13 -->
         CartDetail::create([
-            'cart_header_id' => 4,
+            'cart_header_id' => 5,
             'product_id' => 2,
             'qty' => 22
         ]);
@@ -138,6 +138,27 @@ class DatabaseSeeder extends Seeder
         CartDetail::create([
             'cart_header_id' => 5,
             'product_id' => 5,
+            'qty' => 20
+        ]);
+
+        // <!-- 16 -->
+        CartDetail::create([
+            'cart_header_id' => 6,
+            'product_id' => 4,
+            'qty' => 30
+        ]);
+
+        // <!-- 17 -->
+        CartDetail::create([
+            'cart_header_id' => 7,
+            'product_id' => 5,
+            'qty' => 20
+        ]);
+
+        // <!-- 18 -->
+        CartDetail::create([
+            'cart_header_id' => 7,
+            'product_id' => 6,
             'qty' => 20
         ]);
     // CART DETAIL
@@ -164,6 +185,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // <!-- 5 -->
+        CartHeader::create([
+            'user_id' => 4
+        ]);
+
+        // <!-- 6 -->
+        CartHeader::create([
+            'user_id' => 4
+        ]);
+
+        // <!-- 7 -->
         CartHeader::create([
             'user_id' => 4
         ]);

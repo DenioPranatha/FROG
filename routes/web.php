@@ -62,7 +62,8 @@ Route::get('/myEventDetail', function () {
 
 Route::get('/cart', function () {
     return view('cart', [
-        'cartHeaders' => CartHeader::where('user_id', 1)->get(),
+        // 'cartHeaders' => CartHeader::where('user_id', 4)->get(),
+        'cartHeaders' => CartHeader::all(),
         'cartDetails' => CartDetail::all(),
         // 'count' => 0
         // 'cartDetails' => CartDetail::where('cart_header_id', 1)->get()
