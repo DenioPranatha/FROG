@@ -1,39 +1,44 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/events.css">
+    <link rel="stylesheet" href="/assets/css/events.css">
 @endsection
 
 @extends('layouts.main')
-
+{{-- gimana cara back 1 directory --}}
 @section('title', 'Event Detail')
 
 @section('content')
     <div id="section-donate"></div>
     <div class="desc-container">
         <div class="pic">
-            <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
+            <div class="desc-img" style="background-image: url({{ asset('/assets/img/rtb.webp') }})"></div>
             <a class="donate" href="#section-donate">Donate now!</a>
         </div>
         <div class="desc">
+            <?php
+                $passed = date_diff($start, $rn)->format("%d");
+                $range = date_diff($start, $end)->format("%d");
+                $per = 100*$passed/$range;
+            ?>
             <div class="desc-headline">
-                <b>RTB Chinese New Year Jualan</b>
+                <b>{{ $event->name }}</b>
             </div>
             <div class="purple">
-                Day 15
+                Day {{ $passed }}
             </div>
             <div class="progress-container">
                 <div class="date">0</div>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: {{ $per }}%" aria-valuenow="{{ $per }}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <div class="date">30</div>
+                <div class="date">{{ $range }}</div>
             </div>
             <div class="desc-caption">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia! Sed ab mollitia ex consequuntur consequatur amet dolore magni fugit, aperiam hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur.
+                {{ $event->description }}
             </div>
-            <div><b>Penyelenggara:</b> Lorem Ipsum</div>
-            <div><b>Tanggal Berlangsung:</b> Lorem Ipsum - Lorem Ipsum</div>
-            <div><b>Tujuan Penggalangan Dana:</b> Lorem Ipsum</div>
-            <div><b>Kategori:</b> Lorem Ipsum</div>
+            <div><b>Penyelenggara:</b> {{ $event->user->username }}</div>
+            <div><b>Tanggal Berlangsung:</b> {{ $start->format("d M Y") }} - {{ $end->format("d M Y")}}</div>
+            <div><b>Tujuan Penggalangan Dana:</b> {{ $event->destination->name }}</div>
+            <div><b>Kategori:</b> {{ $event->destination->category->name }}</div>
         </div>
     </div>
 
@@ -48,13 +53,11 @@
         <div class="slide">
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
-                    @for($i = 0; $i < 16; $i++)
-                    <a href="" class="custom-card">
-                        @include('partials.productCart')
-                    </a>
-                    @endfor
+                    @foreach($products as $product)
+                        @include('partials.productCart', ['product' => $product, 'event' => $event])
+                    @endforeach
 
-                    <span id="more">
+                    {{-- <span id="more">
                         <div class="catalog-container">
                             @for ( $i=0 ; $i<20 ; $i++)
                             <a href="" class="custom-card">
@@ -62,7 +65,7 @@
                             </a>
                             @endfor
                         </div>
-                    </span>
+                    </span> --}}
 
                     <div class="more-products">
                         <div class="line1"></div>
@@ -76,25 +79,25 @@
             <div class="carousel-item">
                 <section class="stat-container"  id="section2">
                     <div class="stat-headline">Total Dana Terkumpul</div>
-                    <div class="stat-headline purple">Rp. 100.000,00</div>
+                    <div class="stat-headline purple">Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}</div>
                     <br>
                     <div class="stat-subheadline">Rincian</div>
                     <div class="rincian-container">
                         <div class="rec">
                             <div class="stat-subheadline">Partisipan</div>
-                            <div class="stat-subheadline purple">1000 Orang</div>
+                            <div class="stat-subheadline purple">{{ $user_total->unique('user_id')->count() }} Orang</div>
                         </div>
                         <div class="rec">
                             <div class="stat-subheadline">Modal</div>
-                            <div class="stat-subheadline purple">Rp. 123.000,00 </div>
+                            <div class="stat-subheadline purple">Rp. {{ number_format( $total->sum('modal') , 0 , ' ' , ' ' ) }} </div>
                         </div>
                         <div class="rec">
                             <div class="stat-subheadline">Total Penjualan</div>
-                            <div class="stat-subheadline purple">Rp. 123.000,00</div>
+                            <div class="stat-subheadline purple">Rp. {{ number_format( $total->sum('total') , 0 , ' ' , ' ' ) }}</div>
                         </div>
                         <div class="rec">
                             <div class="stat-subheadline">Best Seller</div>
-                            <div class="stat-subheadline purple">Basreng Pedas</div>
+                            <div class="stat-subheadline purple">{{ ($top ? "-" : $top->name) }}</div>
                         </div>
                     </div>
                     <br>
@@ -115,12 +118,12 @@
                                 </div>
                                 <div class="carousel-item1">
                                     <section class="catalog-container" id="section4">
-                                        <div class="blank"></div>
+                                        <h1 class="h2">Dashboard</h1>
+                                        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
                                     </section>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                 </section>
@@ -131,5 +134,5 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{URL::asset('assets/js/eventDetail.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/eventDetail.js')}}"></script>
 @endsection
