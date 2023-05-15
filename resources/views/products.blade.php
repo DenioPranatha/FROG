@@ -46,15 +46,21 @@
         </div>
         <div class="productsDiv">
             <div class="products d-flex flex-wrap">
-                @for ( $i=0 ; $i<20 ; $i++)
+                {{-- @for ( $i=0 ; $i<20 ; $i++)
                     @include('partials.productCart')
-                @endfor
+                @endfor --}}
+                @foreach ($products as $product)
+                    @include('partials.productCart', ['product' => $product])
+                @endforeach
             </div>
             <span id="more">
                 <div class="products d-flex flex-wrap">
-                    @for ( $i=0 ; $i<20 ; $i++)
+                    @foreach ($products as $product)
+                        @include('partials.productCart', ['product' => $product])
+                    @endforeach
+                    {{-- @for ( $i=0 ; $i<20 ; $i++)
                         @include('partials.productCart')
-                    @endfor
+                    @endfor --}}
                 </div>
             </span>
             <div class="fullBtn h-100 w-100 d-flex justify-content-around align-items-center">

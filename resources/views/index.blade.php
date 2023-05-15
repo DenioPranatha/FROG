@@ -42,7 +42,8 @@
             <div id="carouselExample" class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        @include('partials.eventCart')
+                        @include('partials.eventCart', ['event' => $events[0]])
+                        {{-- @include('partials.eventCart') --}}
                     </div>
 
                     {{-- @for($i = 0; $i < 10; $i++)
@@ -59,9 +60,10 @@
                         <p>no events found</p>
                     @endforelse --}}
 
-                    @foreach ($events as $event)
+                    @foreach ($events->skip(1) as $event)
                     <div class="carousel-item">
-                        @include('partials.eventCart')
+                        @include('partials.eventCart', ['event' => $event])
+                        {{-- @include('partials.eventCart') --}}
                     </div>
                     @endforeach
 
@@ -90,9 +92,13 @@
                 Recommended products for you
             </div>
             <div class="products d-flex flex-wrap">
-                @for ( $i=0 ; $i<10 ; $i++)
-                    @include('partials.productCart')
-                @endfor
+                @foreach ($products as $product)
+                    @include('partials.productCart', ['product' => $product])
+                @endforeach
+
+                {{-- @for ( $i=0 ; $i<10 ; $i++)
+                    @include('partials.eventCart', ['event' => $event])
+                @endfor --}}
             </div>
             <div class="btnDiv w-100 h-100 d-flex justify-content-center">
                 <a class="btn btn-1" href="products" role="button">

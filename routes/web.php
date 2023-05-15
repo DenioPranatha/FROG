@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index', [
         'events' => Event::all(),
+        'products' => Product::all(),
         'destinations' => Destination::all(),
         'productCategories' => ProductCategory::all()
     ]);
@@ -36,13 +37,16 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index', [
         'events' => Event::all(),
+        'products' => Product::all(),
         'destinations' => Destination::all(),
         'productCategories' => ProductCategory::all()
     ]);
 })->name('index');
 
 Route::get('/products', function () {
-    return view('products');
+    return view('products', [
+        'products' => Product::all()
+    ]);
 })->name('products');
 
 Route::get('/productDetail', function () {
