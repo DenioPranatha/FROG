@@ -12,6 +12,7 @@
     "lodash": "^4.17.19",
     "postcss": "^8.1.14",
     "sass": "^1.56.1",
+    "sweetalert2": "^11.7.5",
     "vite": "^4.0.0"
   },
   "name": "code",
@@ -59,7 +60,7 @@
     "rollup": "^3.20.2",
     "source-map-js": "^1.0.2",
     "supports-preserve-symlinks-flag": "^1.0.0",
-    "sweetalert2": "^11.7.3",
+    "sweetalert": "^2.1.2",
     "to-regex-range": "^5.0.1",
     "vite-plugin-full-reload": "^1.0.5"
   },
