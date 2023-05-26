@@ -88,10 +88,10 @@
                     {{-- <a href="#" class="add-product">
 
                     </a> --}}
-                    @for($i = 0; $i < 16; $i++)
-                        @if ($i == 0)
+                    {{-- @for($i = 0; $i < 16; $i++)
+                        @if ($i == 0) --}}
                             {{-- <a href="#" class="custom-card"> --}}
-                                <div class="productCartPage">
+                                {{-- <div class="productCartPage">
                                     <a href="addProduct" class="custom-card">
                                         <div class="card">
                                             <div class="add-icon">
@@ -102,14 +102,32 @@
                                             </div>
                                         </div>
                                     </a>
-                                </div>
+                                </div> --}}
                             {{-- </a> --}}
-                        @else
+                        {{-- @else
                             <a href="" class="custom-card">
                                 @include('partials.productCart')
                             </a>
                         @endif
-                    @endfor
+                    @endfor --}}
+
+                    <div class="productCartPage">
+                        <a href="addProduct" class="custom-card">
+                            <div class="card">
+                                <div class="add-icon">
+                                   <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
+                                </div>
+                                <div class="caption-add">
+                                    <p class="namaProduk">Add Product</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @foreach ($products as $product)
+                        <a href="" class="custom-card">
+                            @include('partials.productCart', ['product' => $product])
+                        </a>
+                    @endforeach
 
                     <div class="more-products">
                         <div class="line1"></div>
