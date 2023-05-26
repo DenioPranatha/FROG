@@ -1,5 +1,6 @@
 @section('css')
     <link rel="stylesheet" href="assets/css/checkout.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
 
 @extends('layouts.main')
@@ -14,8 +15,7 @@
 
             <div class="checkout-box">
                 <h1 class="checkout-title">Checkout</h1>
-                <hr class="checkout-linebar">
-
+                <div class="checkout-linebar"></div>
                 <div class="title-shipping-address">
                     <img src="assets/img/location.svg" class="location-icon">
                     <h2 class="shipping-address">Shipping Address</h2>
@@ -37,209 +37,113 @@
                     </div>
                 </div>
 
-
-                {{-- ################################# --}}
-                                        <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
                         <div class="modal-content modal-css">
-                            <div class="modal-header">
-                            {{-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> --}}
-                            {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
-                            </div>
+                            <div class="modal-header"></div>
                             <div class="modal-body modal-css">
 
-                            <form class="form-css">
-                                {{-- <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div> --}}
+                                <form class="form-css needs-validation" novalidate>
 
-                                <form class="form-css">
-                                    {{-- <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
+                                    <div class="view-box-change-address">
+                                        <h1 class="current-address-title">Current Address</h1>
 
-
-
-                            {{-- ==============  --}}
-                            <div class="view-box-change-address">
-                                <h1 class="current-address-title">Current Address</h1>
-
-                                <div class="box-address-change">
-                                    <div class="rincian-data-change">
-                                        <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
-                                        <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
-                                        <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <h1 class="current-address-title">New Address</h1>
-
-                                <form action="#" class="form-change" autocomplete="off">
-
-                                    <div class="name-container">
-                                        <div class="first-name">
-
-                                            <label for="fname" class="first-name-title">First name</label><br>
-                                            <input type="text" autocomplete="off" id="fname" name="fname" placeholder="First Name" class="first-name-box">
-
-                                        </div>
-                                        <div class="last-name">
-
-                                            <label for="lname" class="last-name-title">Last name</label><br>
-                                            <input type="text" autocomplete="off" id="lname" name="lname" placeholder="Last Name" class="last-name-box">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="phone-number">
-
-                                        <label for="pname" class="phone-number-title">Phone Number</label><br>
-                                        <input type="text" autocomplete="off" id="pname" name="pname" placeholder="+62 | Phone Number" class="phone-number-box">
-
-                                    </div>
-
-                                    <div class="new-address">
-
-                                        <label for="naddress" class="new-address-title">Address</label><br>
-                                        <input type="text" autocomplete="off" id="naddress" name="naddress" class="new-address-box">
-
-                                    </div>
-
-                                    <div class="button-grid">
-                                        <div class="save-button">
-
-                                            {{-- <button onclick="closepopup()" class="save-button-box">Back</button> --}}
-                                            <button class="save-button-box">Save Changes</button>
-
-                                            {{-- <input type="submit" value="Save Changes" id="sbutton" name="sbutton"   onclick="closepopup()" class="save-button-box"> --}}
-
+                                        <div class="box-address-change">
+                                            <div class="rincian-data-change">
+                                                <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
+                                                <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
+                                                <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
+                                                </h3>
+                                            </div>
                                         </div>
 
-                                        {{-- <div class="back-button">
+                                        <h1 class="current-address-title">New Address</h1>
 
-                                            <button onclick="closepopup()" class="back-button">Back</button>
+                                        <div action="#" class="form-change needs-validation" novalidate name="newaddress-form" method="post" autocomplete="off">
+                                            <div class="name-container">
 
-                                        </div> --}}
+                                                <div class="first-name">
 
+                                                    <label for="fname"  class="first-name-title">First name</label><br>
+                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="First Name">
+                                                    <div class="invalid-feedback fnameval" id ="fnameval">
+                                                        Please input your first name
+                                                    </div>
+                                                </div>
 
+                                                <div class="last-name">
+
+                                                    <label for="lname"  class="last-name-title">Last name</label><br>
+                                                    <input type="text" class="form-control last-name-box"  id="last-name-box" required minlength = "3" maxlength = "25" name="lastname" autocomplete="off"  name="lname" placeholder="Last Name" >
+                                                    <div class="invalid-feedback lnameval" id="lnameval">
+                                                        Please input your last name
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="phone-number">
+                                                <label for="pname" class="phone-number-title">Phone Number</label><br>
+
+                                                <div class="flex-num-plus">
+                                                    <div class="plus">+62 |</div>
+                                                    <div class="input-container">
+                                                        <input type="number" class="form-control phone-number-box" id="phone-number-box" required  min="999999999" max="99999999999999"  name="phonenumber" name="answer-1" autocomplete="off" placeholder="Phone Number">
+                                                        <div class="invalid-feedback numval" id="numval">
+                                                            Please input your phone number
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="new-address">
+                                                <label for="naddress" class="new-address-title">Address</label><br>
+                                                <textarea type="text" class="form-control new-address-box" id="new-address-box" required  minlength="15" maxlength="100" name="newaddress" autocomplete="nope"  required name="naddress"  placeholder="Address..."></textarea>
+                                                <div class="invalid-feedback addressval" id="addressval">
+                                                    Please input your address
+                                                </div>
+
+                                            </div>
+
+                                            <div class="button-grid">
+                                                <div class="save-button">
+                                                    <button type="submit" name="submit" class="save-button-box">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
                                 </form>
-                            </form>
-
+                            </div>
                         </div>
-
-
-
-
-
-                         {{-- ================= --}}
-
-
-
-
-
-                        </div>
-                        {{-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> --}}
-                    </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-                {{-- ################################# --}}
-
-
-
-                {{-- //////////////////////// --}}
-
-
-
-
-
-
-                {{-- //////////////////////// --}}
 
                 <div class="title-ordered-product">
                     <img src="assets/img/cart.svg" class="ordered-icon">
                     <h2 class="ordered-product">Ordered Product</h2>
                 </div>
 
-                <div class="product-box">
-                    <h1 class="title-event">Charity Action Of RTB</h1>
-                    <hr class="event-linebar">
+                @for ($j = 0 ; $j < 2 ; $j++)
+                    <div class="product-box">
+                        <h1 class="title-event">Charity Action Of RTB</h1>
+                        <div class="event-linebar"></div>
 
-                    <div class="product-detail-box">
-                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
-                            {{-- <img src="assets/img/basreng.png" class=gambar-produk> --}}
-                        </div>
-                        <div class="detail">
-                            <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
-                            <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
-                        </div>
-                        <div class="harga">
-                            <h1 class="title-harga">Rp 200.000</h1>
-                        </div>
+                        @for ($i = 0; $i < 2 ; $i++)
+                            <div class="product-detail-box">
+                                <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
+                                </div>
+                                <div class="detail">
+                                    <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
+                                    <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
+                                </div>
+                                <div class="harga">
+                                    <h1 class="title-harga">Rp 200.000</h1>
+                                </div>
+                            </div>
+
+                        @endfor
                     </div>
-
-                    <div class="product-detail-box">
-                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/kaos.png") }})">
-                            {{-- <img src="assets/img/kaos.png" class="gambar-produk"> --}}
-                        </div>
-                        <div class="detail">
-                            <h1 class="title-product">T-Shirt Nak Edgy</h1>
-                            <h1 class="quantity"> Quantity : <span class="span-quantity"> 1 Items</span></h1>
-                        </div>
-                        <div class="harga">
-                            <h1 class="title-harga">Rp 150.000</h1>
-                        </div>
-                    </div>
-
-
-                    <h1 class="title-event">Tanah Longsor Payung</h1>
-                    <hr class="event-linebar">
-
-                    <div class="product-detail-box">
-                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/gelang.png") }})">
-                            {{-- <img src="assets/img/gelang.png" class=gambar-produk> --}}
-                        </div>
-                        <div class="detail">
-                            <h1 class="title-product">Gelang UWU</h1>
-                            <h1 class="quantity"> Quantity : <span class="span-quantity"> 1 Items</span></h1>
-                        </div>
-                        <div class="harga">
-                            <h1 class="title-harga">Rp 200.000</h1>
-                        </div>
-                    </div>
-
-                    <div class="product-detail-box">
-                        <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
-                            {{-- <img src="assets/img/basreng.png" class="gambar-produk"> --}}
-                        </div>
-                        <div class="detail">
-                            <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
-                            <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
-                        </div>
-                        <div class="harga">
-                            <h1 class="title-harga">Rp 150.000</h1>
-                        </div>
-                    </div>
-                </div>
+                @endfor
 
                 <div class="option-shipping-box">
                     <div class="title-option-shipping">
@@ -249,17 +153,17 @@
                 </div>
 
                 <div class="grid-box">
-                    <button class="box-1" onclick="chooseitem_1">
-                        <img src="assets/img/jne.png" class="gambar-jne">
+                    <button class="box-1">
+                        <div class="gambar-jne" style="background-image: url({{ asset("assets/img/jne.png") }})"></div>
                     </button>
-                    <button class="box-1" onclick="chooseitem_1">
-                        <img src="assets/img/pos.png" class="gambar-pos">
+                    <button class="box-1">
+                        <div class="gambar-pos" style="background-image: url({{ asset("assets/img/pos.png") }})"></div>
                     </button>
-                    <button class="box-1" onclick="chooseitem_1">
-                        <img src="assets/img/jnt.png" class="gambar-jnt">
+                    <button class="box-1">
+                        <div class="gambar-jnt" style="background-image: url({{ asset("assets/img/jnt.png") }})"></div>
                     </button>
-                    <button class="box-1" onclick="chooseitem_1">
-                        <img src="assets/img/tiki.png" class="gambar-tiki">
+                    <button class="box-1"  >
+                        <div class="gambar-tiki" style="background-image: url({{ asset("assets/img/tiki.png") }})"></div>
                     </button>
 
                 </div>
@@ -273,18 +177,18 @@
                 </div>
 
                 <div class="grid-box">
-                    <button class="box-2" onclick="chooseitem_2">
-                        <img src="assets/img/bca.png" class="gambar-bca">
+                    <button class="box-2">
+                        <div class="gambar-bca" style="background-image: url({{ asset("assets/img/bca.png") }})" ></div>
                     </button>
-                    <button class="box-2" onclick="chooseitem_2">
-                        <img src="assets/img/gopay.png" class="gambar-gopay">
+                    <button class="box-2">
+                        <div class="gambar-gopay" style="background-image: url({{ asset("assets/img/gopay.png") }})" ></div>
                     </button>
-                    <button class="box-2" onclick="chooseitem_2">
-                        <img src="assets/img/dana.png" class="gambar-dana">
+                    <button class="box-2">
+                        <div class="gambar-dana" style="background-image: url({{ asset("assets/img/dana.png") }})" ></div>
                     </button>
-                    <div class="box-2" onclick="chooseitem_2">
-                        <img src="assets/img/spay.png" class="gambar-spay">
-                    </div>
+                    <button class="box-2" >
+                        <div class="gambar-spay" style="background-image: url({{ asset("assets/img/spay.png") }})" ></div>
+                    </button>
 
                 </div>
 
@@ -293,7 +197,7 @@
             <div class="summary-checkout" id="summary-checkout">
                 <div class="box-summary">
                     <h1 class="title-checkout-summary">Checkout Summary</h1>
-                    <hr class="checkout-summary-linebar">
+                    <div class="checkout-summary-linebar"></div>
 
                     <h1 class="subtotal">Subtotal (6 Barang) <span class="rp-1">Rp</span><span class="nominal">590.000</span></h1>
 
@@ -302,7 +206,7 @@
                     <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">590.000</span></h1>
 
 
-                    <button type="submit" class="pay-button">
+                    <button type="button" class="pay-button" id="type-success" >
                         <h1 class="pay-now-title">Pay Now !</h1>
                     </button>
                 </div>
@@ -310,90 +214,34 @@
         </div>
     </div>
 
-
-
-    {{-- <div class="view-box-change-address">
-        <h1 class="current-address-title">Current Address</h1>
-
-        <div class="box-address-change">
-            <div class="rincian-data-change">
-                <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
-                <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
-                <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
-                </h3>
-            </div>
-        </div>
-
-        <h1 class="current-address-title">New Address</h1>
-
-        <form action="#">
-
-            <div class="name-container">
-                <div class="first-name">
-
-                    <label for="fname" class="first-name-title">First name</label><br>
-                    <input type="text" id="fname" name="fname" placeholder="First Name" class="first-name-box">
-
-                </div>
-                <div class="last-name">
-
-                    <label for="lname" class="last-name-title">Last name</label><br>
-                    <input type="text" id="lname" name="lname" placeholder="Last Name" class="last-name-box">
-
-                </div>
-            </div>
-
-            <div class="phone-number">
-
-                <label for="pname" class="phone-number-title">Phone Number</label><br>
-                <input type="text" id="pname" name="pname" placeholder="Phone Number" class="phone-number-box">
-
-            </div>
-
-            <div class="new-address">
-
-                <label for="naddress" class="new-address-title">Address</label><br>
-                <input type="text" id="naddress" name="naddress" class="new-address-box">
-
-            </div>
-
-            <div class="button-grid">
-                <div class="save-button">
-
-                    <input type="submit" id="sbutton" name="sbutton" value="Save Changes"  onclick="closepopup()" class="save-button-box">
-
-                </div>
-
-                <div class="back-button">
-
-                    <button onclick="closepopup()" class="back-button">Back</button>
-
-                </div>
-
-
-            </div>
-
-        </form> --}}
-
-
-
-
-
-
-
-        {{-- <h1 class="address-title-change">Address</h1>
-
-        <div class="address-box"> --}}
-
-        {{-- </div> --}}
-
-
-    </div>
 </div>
 @endsection
 
 @section('js')
     <script type="text/javascript" defer src="{{URL::asset('assets/js/checkout.js')}}"></script>
+
+
+    <script>
+        (function () {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event){
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+    </script>
+
+
 @endsection
 
 {{-- hi --}}
