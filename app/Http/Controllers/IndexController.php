@@ -20,4 +20,5 @@ class IndexController extends Controller
             'productCategories' => ProductCategory::all()
         ]);
     }
+
 }
