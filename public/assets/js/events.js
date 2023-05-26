@@ -49,7 +49,6 @@ if(window.matchMedia("(min-width:576px)").matches){
 
 var interval = setInterval(function() {
     if(counter<bannerCount-1){
-        console.log('Hello');
         bannerPosition = bannerPosition + bannerWidth;
         counter++;
         $('.banner-inner').animate({scrollLeft: bannerPosition}, 750);
@@ -68,9 +67,63 @@ var interval = setInterval(function() {
     $(myCarouselElement).addClass('slide');
 }
 
-moreBtn = document.getElementById("myBtn");
-moreProducts = document.getElementById("more");
+// moreBtn = document.getElementById("myBtn");
+// moreProducts = document.getElementById("more");
 
-moreBtn.addEventListener('click', function(){
-    moreProducts.style.display = "inline";
-})
+// moreBtn.addEventListener('click', function(){
+//     moreProducts.style.display = "inline";
+// })
+
+$(document).ready(function(){
+    // ketika keyword ditulis
+    $(document).on('click', '#myBtn1', function(){
+        // console.log("Hai");
+        var searchValue = $('#search-event').val();
+        var categoryValue = $('.bubble-box.purple-but').attr('value');
+        var lim = $('#myBtn1').val();
+        console.log(lim);
+        $(this).fadeOut(100);
+        loadFilteredContent(searchValue, categoryValue, lim);
+    });
+
+    $('#search-event').on('keyup', function(){
+        var searchValue = $('#search-event').val();
+        var categoryValue = $('.bubble-box.purple-but').attr('value');
+        // var lim = $('#myBtn').val();
+        var lim = 1;
+        loadFilteredContent(searchValue, categoryValue, lim);
+    });
+
+    $('.bubble-box').on('click', function(){
+        // perlu masukin value yang kepencet ke #category-event dengan input-hidden
+        $('.bubble-box').removeClass('purple-but');
+        $(this).addClass('purple-but');
+        var searchValue = $('#search-event').val();
+        var categoryValue = $(this).attr('value');
+        // var lim = $('#myBtn').val();
+        var lim = 1;
+        loadFilteredContent(searchValue, categoryValue, lim);
+    });
+
+    function loadFilteredContent(searchValue, categoryValue, lim) {
+        var url = '/events/result';
+        var parameters = [];
+
+        if(lim){
+            parameters.push('pg=' + encodeURIComponent(lim));
+        }
+        if (searchValue) {
+            parameters.push('search-event=' + encodeURIComponent(searchValue));
+        }
+        if (categoryValue && categoryValue !== 'All') {
+            parameters.push('category-event=' + encodeURIComponent(categoryValue));
+        }
+
+        if (parameters.length > 0) {
+            url += '?' + parameters.join('&');
+        }
+        console.log(url);
+        $('#result-container').load(url);
+    }
+
+});

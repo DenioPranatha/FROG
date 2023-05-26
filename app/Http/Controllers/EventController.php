@@ -22,21 +22,39 @@ class EventController extends Controller
     public function index()
     {
         //
+        $pg = 1;
         $popEvents = Event::latest();
+        $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+        $c = count($events);
+        $events = $events->take(10);
+        if($c <= 10)$pg = -1;
 
         return response(view('events', [
-            'events' => Event::latest()->filter(request(['search-event', 'category-event']))->get(),
+            'events' => $events,
             'popular' => $popEvents->get(),
-            'cat' => Category::limit(3)->get()
+            'cat' => Category::limit(3)->get(),
+            'pg' => $pg
         ]));
     }
 
-    public function coba(){
-        // $popular
-        $detail = PaymentDetail::all();
-        //payment detail . paymentDetailQty diambil dan dijumlahin berdasarkan product ID
-        dump($detail);
+    public function result(Request $request)
+    {
+        //
+        $pg = (int)$request->query('pg');
+        $pge = 10*$pg;
+        $popEvents = Event::latest();
+        $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+        $c = count($events);
+        $events = $events->take($pge);
+        $popular = $popEvents->get();
+        $cat = Category::limit(3)->get();
+        if($pge >= $c)$pg = -1;
+
+        $eventsHtml = view('eventsResult', compact('events', 'popular', 'cat', 'pg'))->render();
+
+        return $eventsHtml;
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -81,11 +99,22 @@ class EventController extends Controller
         ->groupBy('payment_header_id')
         ->get();
 
-        $user_total = PaymentDetail::join('payment_headers', 'payment_details.payment_header_id', '=', 'payment_headers.id')
+        $user_count = PaymentDetail::join('payment_headers', 'payment_details.payment_header_id', '=', 'payment_headers.id')
         ->whereHas('product', function($p) use ($event){
             $p->where('event_id', $event->id);
         })
         ->get();
+
+        $user_total = PaymentDetail::join('payment_headers', 'payment_details.payment_header_id', '=', 'payment_headers.id')
+        ->addselect(PaymentDetail::raw('SUM(qty * item_price) as total'))
+        ->addselect('date')
+        ->whereHas('product', function($p) use ($event){
+            $p->where('event_id', $event->id);
+        })
+        ->groupBy('date')
+        ->get();
+
+        // dd(str($user_total));
 
         $top = PaymentDetail::
         addselect(PaymentDetail::raw('SUM(qty) as quantity'))
@@ -99,6 +128,8 @@ class EventController extends Controller
             $top = $top->where('quantity', $top->max('quantity'));
             $top = Product::find($top[0]['pid']);
         }
+
+
         // dd($top);
 
 
@@ -110,6 +141,7 @@ class EventController extends Controller
             'products' => $products,
             'total' => $total,
             'user_total' => $user_total,
+            'user_count' => $user_count,
             'top' => $top
         ]));
 

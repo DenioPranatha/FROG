@@ -35,10 +35,10 @@
             <div class="desc-caption">
                 {{ $event->description }}
             </div>
-            <div><b>Penyelenggara:</b> {{ $event->user->username }}</div>
-            <div><b>Tanggal Berlangsung:</b> {{ $start->format("d M Y") }} - {{ $end->format("d M Y")}}</div>
-            <div><b>Tujuan Penggalangan Dana:</b> {{ $event->destination->name }}</div>
-            <div><b>Kategori:</b> {{ $event->destination->category->name }}</div>
+            <div><b>Created By:</b> {{ $event->user->username }}</div>
+            <div><b>Event Duration:</b> {{ $start->format("d M Y") }} - {{ $end->format("d M Y")}}</div>
+            <div><b>Charity Destination:</b> {{ $event->destination->name }}</div>
+            <div><b>Category:</b> {{ $event->destination->category->name }}</div>
         </div>
     </div>
 
@@ -78,21 +78,21 @@
 
             <div class="carousel-item">
                 <section class="stat-container"  id="section2">
-                    <div class="stat-headline">Total Dana Terkumpul</div>
+                    <div class="stat-headline">Funds Collected</div>
                     <div class="stat-headline purple">Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}</div>
                     <br>
-                    <div class="stat-subheadline">Rincian</div>
+                    <div class="stat-subheadline">Detail</div>
                     <div class="rincian-container">
                         <div class="rec">
-                            <div class="stat-subheadline">Partisipan</div>
-                            <div class="stat-subheadline purple">{{ $user_total->unique('user_id')->count() }} Orang</div>
+                            <div class="stat-subheadline">Participants</div>
+                            <div class="stat-subheadline purple">{{ $user_count->unique('user_id')->count() }} Orang</div>
                         </div>
                         <div class="rec">
                             <div class="stat-subheadline">Modal</div>
                             <div class="stat-subheadline purple">Rp. {{ number_format( $total->sum('modal') , 0 , ' ' , ' ' ) }} </div>
                         </div>
                         <div class="rec">
-                            <div class="stat-subheadline">Total Penjualan</div>
+                            <div class="stat-subheadline">Total Income</div>
                             <div class="stat-subheadline purple">Rp. {{ number_format( $total->sum('total') , 0 , ' ' , ' ' ) }}</div>
                         </div>
                         <div class="rec">
@@ -101,25 +101,24 @@
                         </div>
                     </div>
                     <br>
-                    <div class="stat-subheadline">Grafik Penjualan</div>
+                    <div class="stat-subheadline">Income Graph</div>
 
                     <div class="grafik-time">
                         <div id="nav-cont1" class="nav-cont1 nav nav-underline justify-content-center">
-                            <button class="nav-button1 carousel-control-prev1 nav-link nav-item active active1" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">Harian</button>
-                            <button class="nav-button1 carousel-control-next1 nav-link nav-item" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">Bulanan</button>
+                            <button class="nav-button1 carousel-control-prev1 nav-link nav-item active active1" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">Daily</button>
+                            <button class="nav-button1 carousel-control-next1 nav-link nav-item" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">Weekly</button>
                         </div>
 
                         <div id="carouselExample1" class="carousel1">
                             <div class="slide1">
                                 <div class="carousel-item1">
                                     <section class="catalog-container" id="section3">
-                                        <div class="blank"></div>
+                                        <canvas id="myChart" height="100px" width="400px"></canvas>
                                     </section>
                                 </div>
                                 <div class="carousel-item1">
                                     <section class="catalog-container" id="section4">
-                                        <h1 class="h2">Dashboard</h1>
-                                        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+                                        <canvas id="myChart" height="100px"></canvas>
                                     </section>
                                 </div>
                             </div>
@@ -135,4 +134,78 @@
 
 @section('js')
     <script type="text/javascript" src="{{URL::asset('/assets/js/eventDetail.js')}}"></script>
+    <script type="text/javascript">
+        const ourData = @json($user_total);
+        // const filteredData = ourData.filter(item => item.date === x).map(item => item.total);
+        console.log('hello');
+        function generateDateLabels(startDate, count) {
+            var labels = [];
+            labels["Date"] = [];
+            labels["Value"] = [];
+            // const x = "";
+
+            const currentDate = new Date(startDate);
+
+            for (let i = 0; i < count; i++) {
+                const x = currentDate.toISOString().split('T')[0];
+                const filteredData = ourData.filter(item => item.date === x).map(item => item.total);
+                labels["Date"].push(x);
+                let temp = ourData.filter(item => item.date === x);//
+                if(Object.keys(temp).length){
+                    labels["Value"].push(filteredData);
+                }else{
+                    labels["Value"].push(0);
+                }
+                currentDate.setDate(currentDate.getDate() + 1);
+
+            }
+
+            return labels;
+        }
+
+
+        const labelCount = 7; // Number of date labels to generate
+        const dateLabels = generateDateLabels(@json($rn->format("Y-m-d")), labelCount);
+        console.log(dateLabels);
+        // console.log(inValues);
+
+        var dte =  @json($user_total->pluck('date')->toArray());
+
+        var total =  @json($user_total->pluck('total')->toArray());;
+
+        const data = {
+        labels: dateLabels["Date"],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: dateLabels["Value"],
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day'
+                        }
+                    }
+                }
+            }
+        }]
+        };
+
+        const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+        };
+
+        const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+        );
+
+
+</script>
+
+
 @endsection
