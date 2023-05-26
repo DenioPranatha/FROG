@@ -1,3 +1,7 @@
+/* body {
+    scroll-behavior: auto;
+} */
+
 .banner{
     width: 96vw;
     height: 300px;
@@ -170,7 +174,7 @@ a.custom-card:hover {
     opacity: 1;
 }
 
-.bubble-box{
+.bubble-box, #bubble-box{
     position: relative;
     height: 35px;
     background: #FFFFFF;
@@ -541,7 +545,7 @@ a.custom-card:hover {
     margin-bottom: 42px;
 }
 
-#purple-but{
+.purple-but{
     background-color: #522E93;
     color: #FFFFFF;
 }
@@ -553,6 +557,17 @@ a.custom-card:hover {
 .section5{
     scroll-behavior: auto;
 }
-/* html {
-    scroll-behavior:
-} */
+
+[data-scroll] {
+    scroll-behavior: auto !important;
+}
+
+body{
+    scroll-behavior: auto;
+}
+
+.gap{
+    height: 100px;
+}
+
+

@@ -6,6 +6,8 @@ npm install bootstrap@v5.2.3
 npm i bootstrap-icons
 npm i cloudinary
 npm install jquery
+npm install chart.js
+npm install date-fns chartjs-adapter-date-fns --save
 
 yang perlu ditulis di tiap page:
 

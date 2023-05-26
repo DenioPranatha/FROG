@@ -50,6 +50,7 @@ Route::get('/productDetail', function () {
 })->name('productDetail');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
+Route::get('/events/result', [EventController::class, 'result'])->name('events');
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
 
 Route::get('/myevents', function () {
