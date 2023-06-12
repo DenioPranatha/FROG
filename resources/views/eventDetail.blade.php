@@ -112,8 +112,23 @@
                         <div id="carouselExample1" class="carousel1">
                             <div class="slide1">
                                 <div class="carousel-item1">
+                                    <div class="dropdown">
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Date Range
+                                        </a>
+                                        <?php
+                                            use Carbon\Carbon;
+                                            $date = Carbon::createFromFormat('d M Y', $start->format("d M Y"));
+                                            $date = $date->addDays(7);
+                                        ?>
+
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <li><a class="dropdown-item" id="dropdown-item" href="#">{{ $start->format("d M Y") }} - {{ $date->format("d M Y") }}</a></li>
+                                          <li><a class="dropdown-item" id="dropdown-item" href="#">{{ $date->format("d M Y") }} - {{ $date->format("d M Y") }}</a></li>
+                                        </ul>
+                                    </div>
                                     <section class="catalog-container" id="section3">
-                                        <canvas id="myChart" height="100px" width="400px"></canvas>
+                                        <canvas id="myChart"></canvas>
                                     </section>
                                 </div>
                                 <div class="carousel-item1">
@@ -165,7 +180,7 @@
 
 
         const labelCount = 7; // Number of date labels to generate
-        const dateLabels = generateDateLabels(@json($rn->format("Y-m-d")), labelCount);
+        const dateLabels = generateDateLabels(@json($date->addDays(14)->format("Y-m-d")), labelCount);
         console.log(dateLabels);
         // console.log(inValues);
 
@@ -176,7 +191,7 @@
         const data = {
         labels: dateLabels["Date"],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Daily Sale',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: dateLabels["Value"],

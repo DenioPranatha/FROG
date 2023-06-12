@@ -525,6 +525,9 @@ a.custom-card:hover {
 #section3, #section4{
     margin: 0;
     padding: 0;
+    /* height: 99%; */
+    display: flex;
+    justify-content: center;
 }
 
 #section-donate{
@@ -568,6 +571,12 @@ body{
 
 .gap{
     height: 100px;
+}
+
+#myChart{
+    border: 1px solid red;
+    width: 800px !important;
+    height: 400px !important;
 }
 
 
