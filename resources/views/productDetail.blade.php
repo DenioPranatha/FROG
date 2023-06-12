@@ -1,5 +1,5 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/productDetail.css">
+    <link rel="stylesheet" href="/assets/css/productDetail.css">
 @endsection
 
 @extends('layouts.main')
@@ -10,12 +10,13 @@
     <div class="productDetail">
         <div class="upperPart d-flex">
             <div class="imgDiv">
-                <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div>
+                {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
+                <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div>
             </div>
             <div class="descDiv">
-                <p class="productName">Makaroni Pedas</p>
-                <a href="eventDetail" class="eventName">Event RTB 1</a>
-                <p class="productPrice">Rp100000</p>
+                <p class="productName">{{ $product->name }}</p>
+                <a href="/eventDetail" class="eventName">{{ $product->event->name }}</a>
+                <p class="productPrice">Rp{{ $product->price }}</p>
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">
                     <div class="qtyDiv d-flex justify-content-center align-items-center">
@@ -32,12 +33,12 @@
                         </div>
                     </div>
                     <div class="stockDiv">
-                        <p class="productStock">Stock:&nbsp;<b>21</b></p>
+                        <p class="productStock">Stock:&nbsp;<b>{{ $product->stock }}</b></p>
                     </div>
                 </div>
-                <p class="productDesc">Basreng pedas dengan aroma daun jeruk yang menggugah selera. Digoreng hangat yea. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining</p>
+                <p class="productDesc">{{ $product->description }}</p>
                 <div class="btnGroup d-flex justify-content-center align-items-center">
-                    <a href="cart" class="btn p-0">
+                    <a href="/cart" class="btn p-0">
                         <div class="cart2 d-flex justify-content-center align-items-center">
                             <div class="cartSvg">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +48,7 @@
                             <div class="cartText">Cart</div>
                         </div>
                     </a>
-                    <a href="checkout" class="btn p-0 ms-3">
+                    <a href="/checkout" class="btn p-0 ms-3">
                         <div class="buy2 d-flex justify-content-center align-items-center">
                             <div class="buyText">Buy Now!</div>
                         </div>
@@ -63,14 +64,14 @@
                 <div class="otherLine ms-3"></div>
             </div>
             <div class="products2 d-flex flex-wrap">
-                @for ( $i=0 ; $i<5 ; $i++)
-                    @include('partials.productCart')
-                @endfor
+                @foreach ($products as $product)
+                    @include('partials.productCart', ['product' => $product])
+                @endforeach
             </div>
         </div>
     </div>
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{URL::asset('assets/js/productDetail.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></script>
 @endsection

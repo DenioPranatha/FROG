@@ -31,9 +31,11 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/index', [IndexController::class, 'index'])->name('index');
+// Route::post('products', [IndexController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::get('/productDetail', [ProductController::class, 'detail'])->name('productDetail');
+Route::post('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/productDetail/{product:id}', [ProductController::class, 'detail'])->name('productDetail');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);

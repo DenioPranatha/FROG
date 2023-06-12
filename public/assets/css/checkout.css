@@ -758,7 +758,7 @@ button.boxbtn2{
     margin-bottom: 7px;
 }
 
-.first-name-box{
+.first-name-box  {
     width: 313px;
     height: 34px;
     box-sizing: border-box;
@@ -795,6 +795,7 @@ input{
 
     text-decoration: none;
     outline: none;
+
 }
 
 input::placeholder{
@@ -859,7 +860,7 @@ input::placeholder{
 
 
 .save-button-box{
-    background: #673AB7;
+    background: #522E93;
     border: 1px solid #673AB7;
     box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
@@ -997,4 +998,39 @@ textarea{
     z-index: 2;
     /* border: 1px solid red; */
     margin-top: 7.5px;
+}
+
+/* .form-control{
+    border: 0;
+} */
+
+.cancel-btn{
+    background: #FFFFFF;
+    border: 1px solid #522E93;
+    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    width: 110px;
+    height: 38px;
+    box-sizing: border-box;
+    margin-left:  8px;
+    color: #522E93;
+    font-weight: bold;
+    /* margin-top: -5px; */
+}
+
+.cancel-btn:hover{
+    background-color: #ffffff;
+    color: #522E93;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+
+.save-button{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+
 }

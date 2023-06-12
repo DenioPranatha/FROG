@@ -1,6 +1,8 @@
 @section('css')
     <link rel="stylesheet" href="assets/css/checkout.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>` --}}
 @endsection
 
 @extends('layouts.main')
@@ -49,14 +51,14 @@
                                     <div class="view-box-change-address">
                                         <h1 class="current-address-title">Current Address</h1>
 
-                                        <div class="box-address-change">
+                                        {{-- <div class="box-address-change">
                                             <div class="rincian-data-change">
                                                 <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
                                                 <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
                                                 <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
                                                 </h3>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <h1 class="current-address-title">New Address</h1>
 
@@ -108,6 +110,8 @@
                                             <div class="button-grid">
                                                 <div class="save-button">
                                                     <button type="submit" name="submit" class="save-button-box">Save Changes</button>
+                                                    {{-- <button type="button" class="cancel-btn">Cancel</button> --}}
+                                                    <button type="button" class=" btn-secondary cancel-btn" data-bs-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -240,6 +244,10 @@
             })
         })()
     </script>
+
+    <script src="sweetalert2.all.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 @endsection

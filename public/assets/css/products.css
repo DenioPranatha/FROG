@@ -49,6 +49,11 @@ input[type=text]{
     margin-bottom: 25px;
 }
 
+a.categoriesCart {
+    text-decoration: none;
+    color: black;
+}
+
 /* product */
 .productsDiv{
     width: 100%;
