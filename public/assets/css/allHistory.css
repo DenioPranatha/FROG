@@ -7,9 +7,12 @@
 
 .flex-container{
     width: 95vw;
-    gap: 42px;
+    gap: 21px;
 }
 
 .container h1{
-    font-size: 35px;
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-size: 32px;
+    margin-bottom: 42px;
 }
