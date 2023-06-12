@@ -36,7 +36,7 @@ Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/productDetail', [ProductController::class, 'detail'])->name('productDetail');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
-Route::get('/events/result', [EventController::class, 'result'])->name('events');
+Route::get('/events/result', [EventController::class, 'result']);
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
 
 Route::get('/myevents', function () {
