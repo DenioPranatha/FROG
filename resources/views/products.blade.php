@@ -31,7 +31,8 @@
                         @csrf
                         <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
 
-                        <button type="submit" class="categoriesCart"
+                        {{-- @dd($cat_id) --}}
+                        <button type="submit" class="categoriesCart" value="{{ $productCategory->id }}"
                             @if ($loop->iteration == $cat_id)
                                 style="background-color: #522E93; color: white;"
                             @endif>
@@ -42,7 +43,7 @@
             </div>
         </div>
         <div class="productsDiv">
-            <div class="products d-flex flex-wrap">
+            {{-- <div class="products d-flex flex-wrap">
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])
                 @endforeach
@@ -51,9 +52,9 @@
                         <h5 class="w-100 d-flex justify-content-center">Product with category {{ $productCategories->where('id', $request->cat_id)->first()->name }} is not found</h5>
                     </div>
                 @endif
-            </div>
+            </div> --}}
             {{-- @dd($pg) --}}
-            @php
+            {{-- @php
                 $i = $pg + 1;
             @endphp
             <div class="fullBtn h-100 w-100 d-flex justify-content-around align-items-center">
@@ -66,7 +67,9 @@
                     </button>
                 </div>
                 <div class="lineBtn"></div>
-            </div>
+            </div> --}}
+
+            @include('productsResult')
         </div>
     </div>
 @endsection

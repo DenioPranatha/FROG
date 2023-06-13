@@ -25,13 +25,12 @@ class ProductController extends Controller
         }
 
         $pg = 1;
+        $count = count($products);
+        $products = $products->take(5);
 
-        // if(count($products) > 5){
-        //     $pg = true;
-        // }
-        // else{
-        //     $pg = false;
-        // }
+        //jika panjang smua kurang dari atau sama dengan 5, maka $pg = -1
+        if($count <= 5) $pg = -1;
+
 
         // dd(count($products));
         // dd($cat_id);
@@ -47,6 +46,55 @@ class ProductController extends Controller
         ]);
 
 
+    }
+
+    public function result(Request $request)
+    {
+        //
+        // dd($request);
+        // dump($request);
+
+        // kalo pencet salah satu kategori dr home
+        if($request->has('cat_id')){
+            $products = Product::where('product_category_id', $request->cat_id)->get();
+            $cat_id = $request->cat_id;
+        }
+
+        // kalo pencet all ato see more ato akses dr url
+        else{
+            $products = Product::all();
+            $cat_id = 0;
+        }
+
+        $pg = (int)$request->query('pg');
+        $pge = 5*$pg;
+        $c = count($products);
+        if($pge >= $c)$pg = -1;
+
+        // dump($pge);
+
+
+        // dd($products);
+
+        return view('productsResult', [
+            'products' => $products->take($pge),
+            'productCategories' => ProductCategory::all(),
+            'request' => $request,
+            'cat_id' => $cat_id,
+            'pg' => $pg
+        ]);
+
+        // $popEvents = Event::latest();
+        // $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+
+        // $events = $events->take($pge);
+        // $popular = $popEvents->get();
+        // $cat = Category::limit(3)->get();
+
+
+        // $eventsHtml = view('eventsResult', compact('events', 'popular', 'cat', 'pg'))->render();
+
+        // return $eventsHtml;
     }
 
     // ini buat product detail
