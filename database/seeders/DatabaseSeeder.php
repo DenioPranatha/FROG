@@ -25,22 +25,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-
-    // CART DETAIL
-        // <!-- 1 -->
-        CartDetail::create([
-            'cart_header_id' => 1,
-            'product_id' => 1,
-            'qty' => 10
+        $this->call([
+            CartDetailSeeder::class,
+            CartHeaderSeeder::class,
+            CategorySeeder::class,
+            DestinationSeeder::class,
+            EventSeeder::class,
+            PaymentHeaderSeeder::class,
+            PaymentDetailSeeder::class,
+            ProductSeeder::class,
+            ProductCategorySeeder::class,
+            UserSeeder::class
         ]);
 
+<<<<<<< HEAD
+=======
         // <!-- 2 -->
         CartDetail::create([
             'cart_header_id' => 1,
@@ -1249,6 +1248,7 @@ class DatabaseSeeder extends Seeder
 
 
 
+>>>>>>> 440b64546195723bad4d9803f7dbc20793335317
         // Event::create([
         //     'destination_id' => 2,
         //     'user_id' => 1,

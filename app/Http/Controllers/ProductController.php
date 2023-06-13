@@ -55,8 +55,8 @@ class ProductController extends Controller
         // dump($request);
 
         // kalo pencet salah satu kategori dr home
-        if($request->has('cat_id')){
-            $products = Product::where('product_category_id', $request->cat_id)->get();
+        if($request->query('cat-id')){
+            $products = Product::where('product_category_id', $request->query('cat-id'))->get();
             $cat_id = $request->cat_id;
         }
 

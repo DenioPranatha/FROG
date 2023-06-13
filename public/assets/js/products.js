@@ -12,8 +12,10 @@ $(document).ready(function(){
         var lim = $('#myBtn1').val();
         $(this).fadeOut(100);
 
+        var categoryValue = $('#cat_id1').val();
+
         //Masukin ke function penggabung
-        loadFilteredContent(lim);
+        loadFilteredContent(lim, categoryValue);
     });
 
     // ketika category diklik
@@ -25,7 +27,7 @@ $(document).ready(function(){
     //     loadFilteredContent(categoryValue, lim);
     // });
 
-    function loadFilteredContent(lim) {
+    function loadFilteredContent(lim, categoryValue) {
         var url = '/products/result';
         var parameters = [];
 
@@ -37,10 +39,11 @@ $(document).ready(function(){
             parameters.push('pg=' + encodeURIComponent(lim));
         }
 
-        // if (categoryValue) {
-        //     parameters.push('cat-id=' + encodeURIComponent(categoryValue));
-        //     // parameters.push('cat-id=' + categoryValue);
-        // }
+        console.log(categoryValue);
+        if (categoryValue) {
+            parameters.push('cat-id=' + encodeURIComponent(categoryValue));
+            // parameters.push('cat-id=' + categoryValue);
+        }
 
         if (parameters.length > 0) {
             url += '?' + parameters.join('&');

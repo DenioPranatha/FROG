@@ -1,10 +1,3 @@
-// function sleep(milliseconds) {
-//     const date = Date.now();
-//     let currentDate = null;
-//     do {
-//       currentDate = Date.now();
-//     } while (currentDate - date < milliseconds);
-// }
 
 const myCarouselElement = document.querySelector('#carouselExample')
 
@@ -61,18 +54,11 @@ var interval = setInterval(function() {
     }
  }, 5000);
 
-//bingung
 
 }else{
     $(myCarouselElement).addClass('slide');
 }
 
-// moreBtn = document.getElementById("myBtn");
-// moreProducts = document.getElementById("more");
-
-// moreBtn.addEventListener('click', function(){
-//     moreProducts.style.display = "inline";
-// })
 
 
 // jquery untuk searching
