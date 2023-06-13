@@ -32,7 +32,7 @@
                         <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
 
                         {{-- @dd($cat_id) --}}
-                        <button type="submit" class="categoriesCart" value="{{ $productCategory->id }}"
+                        <button type="submit" class="categoriesCart" value="{{ $cat_id }}"
                             @if ($loop->iteration == $cat_id)
                                 style="background-color: #522E93; color: white;"
                             @endif>
@@ -40,6 +40,7 @@
                         </button>
                     </form>
                 @endforeach
+                <input type="hidden" name="cat_id1" id="cat_id1" value="{{ $cat_id }}">
             </div>
         </div>
         <div class="productsDiv">
@@ -55,7 +56,7 @@
             </div> --}}
             {{-- @dd($pg) --}}
             {{-- @php
-                $i = $pg + 1;
+            $i = $pg + 1;
             @endphp
             <div class="fullBtn h-100 w-100 d-flex justify-content-around align-items-center">
                 <div class="lineBtn"></div>
