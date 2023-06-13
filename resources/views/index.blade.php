@@ -44,7 +44,6 @@
                     <div class="carousel-item active">
                         @include('partials.eventCart', ['event' => $events[0]])
                     </div>
-
                     @foreach ($events->skip(1) as $event)
                         <div class="carousel-item">
                             @include('partials.eventCart', ['event' => $event])
@@ -91,12 +90,13 @@
                             @foreach ($destinations as $destination)
                                 <a href="/destination">
                                     <div class="slider-card">
-                                        <div class="d-flex justify-content-center align-items-center mb-4">
-                                            <div class="destImg" style="background-image: url({{ asset("/assets/img/PantiAsuhan.png") }})"></div>
+                                        <div class="kotakLuar d-flex justify-content-center align-items-center mb-4">
+                                            {{-- <div class="destImg" style="background-image: url({{ asset("/assets/img/banner.png") }})"></div> --}}
                                             {{-- <img src="{{ asset("/assets/img/PantiAsuhan.png") }}" alt="" > --}}
+                                            <div class="destImg" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div>
                                         </div>
                                         <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
-                                        <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
+                                        <div class="charityLoc pt-1 d-flex justify-content-center align-items-center">
                                             <i class="bi bi-geo-alt"></i>
                                             <p class="text-center">{{ $destination->location }}</p>
                                         </div>

@@ -20,49 +20,43 @@
         </div>
         <div class="categoriesDiv">
             <div class="categories">
-                <a href="/products" class="categoriesCart">
+                <a href="/products" class="categoriesCart"
+                    @if ($cat_id == 0)
+                        style="background-color: #522E93; color: white;"
+                    @endif>
                     <p>All</p>
                 </a>
                 @foreach ($productCategories as $productCategory)
-                    {{-- <div class="categoriesCart">
-                        <p>{{ $category->name }}</p>
-                    </div> --}}
                     <form action="/products" method="POST">
                         @csrf
                         <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
 
-                        <button type="submit" class="categoriesCart">
+                        {{-- @dd($cat_id) --}}
+                        <button type="submit" class="categoriesCart" value="{{ $productCategory->id }}"
+                            @if ($loop->iteration == $cat_id)
+                                style="background-color: #522E93; color: white;"
+                            @endif>
                             <p>{{ $productCategory->name }}</p>
                         </button>
-
                     </form>
                 @endforeach
             </div>
         </div>
         <div class="productsDiv">
-            <div class="products d-flex flex-wrap">
+            {{-- <div class="products d-flex flex-wrap">
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])
                 @endforeach
-                {{-- @dd(count($products)) --}}
                 @if (count($products) == 0)
-                    {{-- @dd($request->cat_id) --}}
-                    {{-- @dd($productCategories) --}}
-                    {{-- @dd($catId) --}}
-                    {{-- @dd($productCategories->where('id', $request->cat_id)->first()->name) --}}
-                    {{-- @dd($productCategories->where('id', $request->cat_id)->get()) --}}
                     <div class="w-100 p-4">
                         <h5 class="w-100 d-flex justify-content-center">Product with category {{ $productCategories->where('id', $request->cat_id)->first()->name }} is not found</h5>
                     </div>
                 @endif
-            </div>
-            {{-- <span id="more">
-                <div class="products d-flex flex-wrap">
-                    @foreach ($products as $product)
-                        @include('partials.productCart', ['product' => $product])
-                    @endforeach
-                </div>
-            </span> --}}
+            </div> --}}
+            {{-- @dd($pg) --}}
+            {{-- @php
+                $i = $pg + 1;
+            @endphp
             <div class="fullBtn h-100 w-100 d-flex justify-content-around align-items-center">
                 <div class="lineBtn"></div>
                 <div class="btnDiv m-0 p-0 d-flex justify-content-center align-items-center" id="myBtn">
@@ -73,7 +67,9 @@
                     </button>
                 </div>
                 <div class="lineBtn"></div>
-            </div>
+            </div> --}}
+
+            @include('productsResult')
         </div>
     </div>
 @endsection
