@@ -19,6 +19,7 @@
 }
 
 .container-left p{
+    font-family: 'M PLUS 1';
     font-style: normal;
     font-weight: 400;
     font-size: 2.5vw;
@@ -43,7 +44,9 @@
 }
 
 .container-right p{
+    font-family: 'M PLUS 1';
     font-style: normal;
+    color: #522E93;
     font-weight: 400;
     font-size: 35px;
     line-height: 40px;
@@ -89,6 +92,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .container-price p{
+    font-family: 'M PLUS 1';
+    font-style: normal;
     font-size: 16px;
 }
 
@@ -165,12 +170,12 @@ input[type=file]{
 }
 
 #product-price{
-    padding-left: 4.5vw;
+    padding-left: 4.8vw;
     width: 38vw;
 }
 
 #product-modal{
-    padding-left: 4.5vw;
+    padding-left: 4.8vw;
     width: 38vw;
 
 }
@@ -183,9 +188,9 @@ input[type=file]{
     margin-top: -1.2vw;
 }
 
-#product-stock input[type=number]{
+/* #product-stock input[type=number]{
 
-}
+} */
 
 .price::-webkit-inner-spin-button,
 .price::-webkit-outer-spin-button {
@@ -200,6 +205,8 @@ input[type=file]{
 }
 
 .invalid-feedback p{
+    font-family: 'M PLUS 1';
+    font-style: normal;
     font-size: 1.1vw;
     margin-top: -1vw;
     margin-bottom: -1.2vw;

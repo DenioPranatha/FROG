@@ -30,12 +30,12 @@
                     <div class="date">30</div>
                 </div>
                 <div class="desc-caption">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia! Sed ab mollitia ex consequuntur consequatur amet dolore magni fugit, aperiam hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia!
                 </div>
-                <div class="desc-point"><b>Penyelenggara:</b> Lorem Ipsum</div>
-                <div class="desc-point"><b>Tanggal Berlangsung:</b> Lorem Ipsum - Lorem Ipsum</div>
-                <div class="desc-point"><b>Tujuan Penggalangan Dana:</b> Lorem Ipsum</div>
-                <div class="desc-point"><b>Kategori:</b> Lorem Ipsum</div>
+                <div class="desc-point"><b>Created By:</b> Lorem Ipsum</div>
+                <div class="desc-point"><b>Event Duration:</b> Lorem Ipsum - Lorem Ipsum</div>
+                <div class="desc-point"><b>Charity Destination:</b> Lorem Ipsum</div>
+                <div class="desc-point"><b>Category:</b> Lorem Ipsum</div>
             </div>
         </div>
     </div>
@@ -63,13 +63,13 @@
                     <div class="date">30</div>
                 </div>
                 <div class="desc-caption">
-                    <textarea id="edit-desc" placeholder="Input Your New Description" class="edit-desc" style="width: 48vw; height:12.5vw;"></textarea>
+                    <textarea id="edit-desc" placeholder="Input Your New Description" class="edit-desc" style="width: 48vw; height:10vw;"></textarea>
                     {{-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia! Sed ab mollitia ex consequuntur consequatur amet dolore magni fugit, aperiam hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur. --}}
                 </div>
-                <div class="desc-point"><b>Penyelenggara:</b> Lorem Ipsum</div>
-                <div class="desc-point"><b>Tanggal Berlangsung:</b> Lorem Ipsum - Lorem Ipsum</div>
-                <div class="desc-point"><b>Tujuan Penggalangan Dana:</b> Lorem Ipsum</div>
-                <div class="desc-point"><b>Kategori:</b> Lorem Ipsum</div>
+                <div class="desc-point"><b>Created By:</b> Lorem Ipsum</div>
+                <div class="desc-point"><b>Event Duration:</b> Lorem Ipsum - Lorem Ipsum</div>
+                <div class="desc-point"><b>Charity Destination:</b> Lorem Ipsum</div>
+                <div class="desc-point"><b>Category:</b> Lorem Ipsum</div>
             </div>
         </div>
     </div>
@@ -140,13 +140,13 @@
 
             <div class="carousel-item">
                 <section class="stat-container"  id="section2">
-                    <div class="stat-headline">Total Dana Terkumpul</div>
+                    <div class="stat-headline">Funds Collected</div>
                     <div class="stat-headline purple">Rp. 100.000,00</div>
                     <br>
-                    <div class="stat-subheadline">Rincian</div>
+                    <div class="stat-subheadline">Detail</div>
                     <div class="rincian-container">
                         <div class="rec">
-                            <div class="stat-subheadline">Partisipan</div>
+                            <div class="stat-subheadline">Funds Collected</div>
                             <div class="stat-subheadline purple">1000 Orang</div>
                         </div>
                         <div class="rec">
@@ -154,7 +154,7 @@
                             <div class="stat-subheadline purple">Rp. 123.000,00 </div>
                         </div>
                         <div class="rec">
-                            <div class="stat-subheadline">Total Penjualan</div>
+                            <div class="stat-subheadline">Total Income</div>
                             <div class="stat-subheadline purple">Rp. 123.000,00</div>
                         </div>
                         <div class="rec">
@@ -163,12 +163,12 @@
                         </div>
                     </div>
                     <br>
-                    <div class="stat-subheadline">Grafik Penjualan</div>
+                    <div class="stat-subheadline">Income Graph</div>
 
                     <div class="grafik-time">
                         <div id="nav-cont1" class="nav-cont1 nav nav-underline justify-content-center">
-                            <button class="nav-button1 carousel-control-prev1 nav-link nav-item active active1" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">Harian</button>
-                            <button class="nav-button1 carousel-control-next1 nav-link nav-item" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">Bulanan</button>
+                            <button class="nav-button1 carousel-control-prev1 nav-link nav-item active active1" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">Daily</button>
+                            <button class="nav-button1 carousel-control-next1 nav-link nav-item" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">Weekly</button>
                         </div>
 
                         <div id="carouselExample1" class="carousel1">
