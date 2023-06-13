@@ -67,6 +67,7 @@ function showPreview(event){
       var preview = document.getElementById("img");
       preview.src = src;
       preview.style.display = "block";
+    //   product_img.style.backgroundImage = preview.src;
     }
 }
 

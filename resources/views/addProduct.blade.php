@@ -12,7 +12,7 @@
             <p>Add image</p>
             <div class="img-container">
                 <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
-                <input type="file" id="img-input" onchange="showPreview(event)">
+                <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)">
                 <img id="img">
             </div>
         </div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <textarea class="form-control" name="product-desc" id="product-desc" placeholder="Product-Description.." maxlength="450" required ></textarea>
+                <textarea class="form-control" name="product-desc" id="product-desc" placeholder="Product Description" maxlength="450" required ></textarea>
                 <div class="invalid-feedback desc-invalid">
                     Please Input your Description
                 </div>

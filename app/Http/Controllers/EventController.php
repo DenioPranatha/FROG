@@ -22,11 +22,22 @@ class EventController extends Controller
     public function index()
     {
         //
+        //pg adalah jumlah batch see more
+        //pg = -1 ketika see more engga butuh
+        //pg = 1 ketika sekarang ada di batch pertama dan see more dibutuhin
+        //pg = 2 ketika sekarang ada di batch kedua dan see more dibutuhin, dst
+        //pg akan bertambah ketika see more diklik
         $pg = 1;
         $popEvents = Event::latest();
+        //masukin events yang difilter berdasarkan search-event dan category-event
+        //function filter bisa diliat di scopeFilter Event.php
         $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+        //panjang smua events sekarang
         $c = count($events);
+        //ambil 10 dari smue events
         $events = $events->take(10);
+
+        //jika panjang smua kurang dari atau sama dengan 10, maka $pg = -1
         if($c <= 10)$pg = -1;
 
         return response(view('events', [
