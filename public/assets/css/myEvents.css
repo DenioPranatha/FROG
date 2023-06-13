@@ -4,9 +4,13 @@
 }
 
 .section-title{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
     margin-top: 42px;
     margin-bottom: 42px;
-    font-weight:bold;
+    /* font-weight:bold; */
     font-size: 35px;
     color: #522E93;
 }
@@ -19,12 +23,13 @@
 
 .card{
     width: 1160px;
-    height: 300px;
+    height: 296.5px;
     margin-bottom: 42px;
     border: none;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-
+    box-shadow: 4px 0px 0px #CDCDCD;
     transition: all .2s ease-in-out;
 }
 
@@ -68,6 +73,7 @@
 }
 
 .card-section-box-text p{
+    font-family: 'M PLUS 1';
     text-align: center;
     margin-right: -100px;
     font-style: normal;
@@ -147,9 +153,13 @@
 }
 
 .section-title-finished{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
     margin-top: 84px;
     margin-bottom: 42px;
-    font-weight:bold;
+    /* font-weight:bold; */
     font-size: 35px;
     color: #522E93;
 }

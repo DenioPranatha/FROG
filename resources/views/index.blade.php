@@ -1,7 +1,7 @@
 {{-- @dd($events) --}}
 
 @section('css')
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 @endsection
 
 @extends('layouts.main')
@@ -43,38 +43,13 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         @include('partials.eventCart', ['event' => $events[0]])
-                        {{-- @include('partials.eventCart') --}}
                     </div>
 
-                    {{-- @for($i = 0; $i < 10; $i++)
-                    <div class="carousel-item">
-                        @include('partials.eventCart')
-                    </div>
-                    @endfor --}}
-
-                    {{-- @forelse ($events as $event)
+                    @foreach ($events->skip(1) as $event)
                         <div class="carousel-item">
                             @include('partials.eventCart', ['event' => $event])
                         </div>
-                    @empty
-                        <p>no events found</p>
-                    @endforelse --}}
-
-                    @foreach ($events->skip(1) as $event)
-                    <div class="carousel-item">
-                        @include('partials.eventCart', ['event' => $event])
-                        {{-- @include('partials.eventCart') --}}
-                    </div>
                     @endforeach
-
-                    {{-- @each('partials.eventcart', $events, 'event', 'kosong') --}}
-
-                    {{-- $tes = [
-                        'nama' => 'nicole',
-                        'umur' => '20'
-                    ]
-
-                    @include('partials.eventCart', $tes) --}}
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -95,13 +70,9 @@
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])
                 @endforeach
-
-                {{-- @for ( $i=0 ; $i<10 ; $i++)
-                    @include('partials.eventCart', ['event' => $event])
-                @endfor --}}
             </div>
             <div class="btnDiv w-100 h-100 d-flex justify-content-center">
-                <a class="btn btn-1" href="products" role="button">
+                <a class="btn btn-1" href="/products" role="button">
                     <div class="seeMore">
                         <p>See more</p>
                         <i class="bi bi-arrow-right-short"></i>
@@ -117,37 +88,27 @@
                 <div class="container">
                     <div class="slider">
                         <div class="owl-carousel">
-                            {{-- @for ( $i=0 ; $i<5 ; $i++)
-                                <div class="slider-card">
-                                    <div class="d-flex justify-content-center align-items-center mb-4">
-                                        <img src="{{ asset("assets/img/PantiAsuhan.png") }}" alt="" >
-                                    </div>
-                                    <h5 class="mb-0 text-center charityText"><b>Panti Asuhan Bhakti Kasih Banjir</b></h5>
-                                    <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
-                                        <i class="bi bi-geo-alt"></i>
-                                        <p class="text-center">Bogor, Jawa Barat</p>
-                                    </div>
-                                </div>
-                            @endfor --}}
-
                             @foreach ($destinations as $destination)
-                                <div class="slider-card">
-                                    <div class="d-flex justify-content-center align-items-center mb-4">
-                                        <img src="{{ asset("assets/img/PantiAsuhan.png") }}" alt="" >
+                                <a href="/destination">
+                                    <div class="slider-card">
+                                        <div class="d-flex justify-content-center align-items-center mb-4">
+                                            <div class="destImg" style="background-image: url({{ asset("/assets/img/PantiAsuhan.png") }})"></div>
+                                            {{-- <img src="{{ asset("/assets/img/PantiAsuhan.png") }}" alt="" > --}}
+                                        </div>
+                                        <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
+                                        <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
+                                            <i class="bi bi-geo-alt"></i>
+                                            <p class="text-center">{{ $destination->location }}</p>
+                                        </div>
                                     </div>
-                                    <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
-                                    <div class="charityLoc pt-2 d-flex justify-content-center align-items-center">
-                                        <i class="bi bi-geo-alt"></i>
-                                        <p class="text-center">{{ $destination->location }}</p>
-                                    </div>
-                                </div>
+                                </a>
                             @endforeach
                         </div>
                     </div>
                 </div>
             </section>
             <div class="btnDiv w-100 h-100 d-flex justify-content-center">
-                <a class="btn btn-1 btn-2" href="destination" role="button">
+                <a class="btn btn-1 btn-2" href="/destination" role="button">
                     <div class="findDest">
                         <p>Find Destination</p>
                         <i class="bi bi-arrow-right-short"></i>
@@ -160,32 +121,25 @@
                 Categories
             </div>
             <div class="categories">
-                {{-- @for ($i =0 ; $i <3 ; $i++)
-                    <a href="products" class="categoriesCart">
-                        <p>Category 1</p>
-                    </a>
-                    <a href="products" class="categoriesCart">
-                        <p>asdfhajdfhjadfadf</p>
-                    </a>
-                    <a href="products" class="categoriesCart">
-                        <p>Cated</p>
-                    </a>
-                    <a href="products" class="categoriesCart">
-                        <p>Cated</p>
-                    </a>
-                    <a href="products" class="categoriesCart">
-                        <p>Categorydga</p>
-                    </a>
-                @endfor --}}
-
                 @foreach ($productCategories as $productCategory)
-                    <a href="products" class="categoriesCart">
+                    {{-- <a href="/products" class="categoriesCart">
                         <p>{{ $productCategory->name }}</p>
-                    </a>
+                    </a> --}}
+
+                    <form action="/products" method="POST">
+                        @csrf
+                        <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
+
+                        <button type="submit" class="categoriesCart">
+                            <p>{{ $productCategory->name }}</p>
+                        </button>
+
+                    </form>
+
                 @endforeach
-                <a href="products">
+                <a href="/products">
                     <div class="categoriesCart">
-                        <p>See more...</p>
+                        <p>See all products...</p>
                     </div>
                 </a>
             </div>
@@ -194,5 +148,5 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{URL::asset('assets/js/index.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/index.js')}}"></script>
 @endsection

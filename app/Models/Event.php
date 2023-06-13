@@ -14,8 +14,12 @@ class Event extends Model
     public function scopeFilter($query, array $filters){
 
         $query->when($filters['search-event'] ?? false, function($query, $search){
-            return $query->where('name', 'like', '%' . $search . '%')
-            ->orWhere('description', 'like', '%' . $search . '%');
+            // return $query->where('name', 'like', '%' . $search . '%')
+            // ->orWhere('description', 'like', '%' . $search . '%');
+            return $query->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('description', 'like', '%' . $search . '%');
+            });
         });
 
         $query->when($filters['category-event'] ?? false, function($query, $cat){
@@ -26,6 +30,7 @@ class Event extends Model
             });
         });
 
+        return $query;
     }
 
     public function destination(){

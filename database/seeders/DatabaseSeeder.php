@@ -863,7 +863,7 @@ class DatabaseSeeder extends Seeder
         ]);
     // PAYMENT HEADER
 
-    // 
+    //
         // <!-- 1 -->
         Product::create([
             'event_id' => 1,

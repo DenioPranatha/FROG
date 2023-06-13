@@ -51,7 +51,7 @@
     <div class="search-row">
         <form action="/events#section5">
             @csrf
-            <div class="form-group bubble-box" id="form-group">
+            <div id="bubble-box">
                 <input type="text" name="search-event" id="search-event" placeholder="Search event or category" class="no-outline" value={{ request('search-event') }}>
                 <button class="search-button" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="search">
@@ -60,43 +60,16 @@
                 </button>
             </div>
         </form>
+        <button class="bubble-box" value="All">All</button>
+
         @foreach ($cat as $c)
-            <a href="/events?category-event={{ $c->name }}#section5" class="custom-card">
-                <div class="bubble-box"  id="{{ str(request('category-event')) == $c->name ? 'purple-but' : '' }}">{{ $c->name }}</div>
-            </a>
+            <button class="bubble-box" value="{{ $c->name }}">{{ $c->name }}</button>
         @endforeach
 
     </div>
     <br>
 
-    @if(count($events) != 0)
-        <div class="catalog-container">
-            @foreach($events as $event)
-                @include('partials.eventCart', ['event' => $event])
-            @endforeach
-        </div>
-
-        {{-- <span id="more">
-            <div class="catalog-container">
-                @for ( $i=0 ; $i<20 ; $i++)
-                    <a href="/eventDetail" class="custom-card">
-                        @include('partials.eventCart')
-                    </a>
-                @endfor
-            </div>
-        </span> --}}
-
-        <div class="more-products">
-            <div class="line1"></div>
-            <button class="more" id="myBtn">More Events</button>
-            <div class="line1"></div>
-        </div>
-    @elseif(request('category-event'))
-        <div class="not-found justify-content-center">Event with category "{{ request('category-event') }}" is not found</div>
-    @else
-        <div class="not-found justify-content-center">Event with keyword "{{ request('search-event') }}" is not found</div>
-    @endif
-
+    @include('eventsResult')
 
 
 @endsection
