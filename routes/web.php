@@ -35,10 +35,11 @@ Route::get('/index', [IndexController::class, 'index'])->name('index');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::post('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'detail'])->name('productDetail');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
-Route::get('/events/result', [EventController::class, 'result'])->name('events');
+Route::get('/events/result', [EventController::class, 'result']);
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
 
 Route::get('/myevents', function () {

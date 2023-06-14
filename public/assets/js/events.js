@@ -1,10 +1,3 @@
-// function sleep(milliseconds) {
-//     const date = Date.now();
-//     let currentDate = null;
-//     do {
-//       currentDate = Date.now();
-//     } while (currentDate - date < milliseconds);
-// }
 
 const myCarouselElement = document.querySelector('#carouselExample')
 
@@ -61,46 +54,54 @@ var interval = setInterval(function() {
     }
  }, 5000);
 
-//bingung
 
 }else{
     $(myCarouselElement).addClass('slide');
 }
 
-// moreBtn = document.getElementById("myBtn");
-// moreProducts = document.getElementById("more");
 
-// moreBtn.addEventListener('click', function(){
-//     moreProducts.style.display = "inline";
-// })
 
+// jquery untuk searching
 $(document).ready(function(){
-    // ketika keyword ditulis
+    // ketika see more diclick
     $(document).on('click', '#myBtn1', function(){
-        // console.log("Hai");
+        //input dari kolom search
         var searchValue = $('#search-event').val();
+        //input dari cat sekarang
         var categoryValue = $('.bubble-box.purple-but').attr('value');
+        //input berapa batch see more yg harus keload di kondisi sekarang
         var lim = $('#myBtn1').val();
-        console.log(lim);
         $(this).fadeOut(100);
+
+        //Masukin ke function penggabung
         loadFilteredContent(searchValue, categoryValue, lim);
     });
 
+    //ketika kolom search diisi
     $('#search-event').on('keyup', function(){
+        //input dari kolom search
         var searchValue = $('#search-event').val();
+        //input dari cat sekarang
         var categoryValue = $('.bubble-box.purple-but').attr('value');
-        // var lim = $('#myBtn').val();
+        //input berapa batch see more yg harus keload
         var lim = 1;
+
+        //Masukin ke function penggabung
         loadFilteredContent(searchValue, categoryValue, lim);
     });
 
+    //ketika category diklik
     $('.bubble-box').on('click', function(){
-        // perlu masukin value yang kepencet ke #category-event dengan input-hidden
+
+        //pindahin warna purple
         $('.bubble-box').removeClass('purple-but');
         $(this).addClass('purple-but');
+
+        //input dari kolom search
         var searchValue = $('#search-event').val();
+        //input dari cat sekarang
         var categoryValue = $(this).attr('value');
-        // var lim = $('#myBtn').val();
+        //input berapa batch see more yg harus keload
         var lim = 1;
         loadFilteredContent(searchValue, categoryValue, lim);
     });
@@ -109,6 +110,8 @@ $(document).ready(function(){
         var url = '/events/result';
         var parameters = [];
 
+        //periksa apakah lim, searchValue, dan categoryValue dimasukin di fungsi di atas
+        //Kalo iya, tambah di get ?search-event=banjir
         if(lim){
             parameters.push('pg=' + encodeURIComponent(lim));
         }
@@ -122,7 +125,10 @@ $(document).ready(function(){
         if (parameters.length > 0) {
             url += '?' + parameters.join('&');
         }
-        console.log(url);
+        // console.log(url);
+        //load secara live, tapi yang diload satu container aja, yaitu result container
+        //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
+        //cari di eventsResult.blade.php
         $('#result-container').load(url);
     }
 
