@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
-    // ini buat nunjukin smua produk
-    public function index(Request $request){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        //
         // dd($request);
 
         // kalo pencet salah satu kategori dr home
@@ -44,8 +52,101 @@ class ProductController extends Controller
             'cat_id' => $cat_id,
             'pg' => $pg
         ]);
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        return view('addProduct', [
+            'categories' => Category::all()
+        ]);
+    }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        // dd($request);
+        $validatedData = $request->validate([
+            'name' => 'required|min:3|max:15',
+            'category_id' => 'required',
+            'stock' => 'required|numeric|min:1',
+            'price' => 'required|numeric|min:1',
+            'modal' => 'required|numeric|min:1',
+            'description' => 'required|max:450'
+        ]);
+
+        // $validatedData['event_id'] = ;
+        // $validatedData['image'] = ;
+
+        // $validatedData['user_id'] = auth()->user()->id;
+        // $validatedData['excerpt'] = str::limit($request->body, 200);
+
+        Product::create($validatedData);
+
+        return redirect('/products')->with('success', 'New post has been added!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Product $product)
+    {
+        //
+        return view('productDetail', [
+            // ini buat nunjukin rekomendasi dari event yg sama di product detail
+            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
+
+            // ini buat product detailnya
+            'product' => $product
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Product $product)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Product $product)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Product $product)
+    {
+        //
     }
 
     public function result(Request $request)
@@ -96,21 +197,4 @@ class ProductController extends Controller
 
         // return $eventsHtml;
     }
-
-    // ini buat product detail
-    public function detail(Product $product){
-        // dd($product);
-        return view('productDetail', [
-            // ini buat nunjukin rekomendasi dari event yg sama di product detail
-            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
-
-            // ini buat product detailnya
-            'product' => $product
-        ]);
-    }
-
-    // public function store(Request $request){
-    //     // dd($request);
-    //     return view('products');
-    // }
 }

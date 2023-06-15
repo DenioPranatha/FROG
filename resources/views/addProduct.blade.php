@@ -19,60 +19,80 @@
         </div>
         <div class="container-right">
             <p>Add Product</p>
-            <form id="form" class="needs-validation" novalidate>
+            <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate>
+                @csrf
+
                 <div class="product-name-container">
-                    <input class="form-control" placeholder="Product Name" type="text" name="product-name" id="product-name" minlength="3" maxlength="15" required />
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Product Name
-                    </div>
+                    <input class="form-control @error('name') is-invalid @enderror" placeholder="Product Name" type="text" name="name" id="product-name" required>
+                    @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="category-container">
-                    <select name="product-category" id="product-category" class="form-control" required>
+                    <select name="category_id" id="product-category" class="form-control @error('category_id') is-invalid @enderror" required>
                         <option value="" disabled selected>Category</option>
-                        <option value="makanan-ringan">Makanan Ringan</option>
-                        <option value="minuman">Minuman</option>
-                        <option value="baju">Baju</option>
-                        <option value="aksesoris">Aksesoris</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
-                    <div class="invalid-feedback">
-                        Please Select your Category
-                    </div>
+                    @error('category_id')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="stock-container">
-                    <input class="form-control" type="number" name="product-stock" id="product-stock" placeholder="Stock" min="0" required>
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Stock
-                    </div>
+                    <input class="form-control @error('stock') is-invalid @enderror" type="number" name="stock" id="product-stock" placeholder="Stock" required>
+                    @error('stock')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="d-flex container-price">
                     <div class="rp-container d-flex justify-content-center align-items-center z-1 position-absolute">
                         <p>Rp</p>
                     </div>
                     <div class="product-price-container">
-                        <input class="form-control price" type="number" name="product-price" id="product-price" placeholder="Price" required>
-                        <div class="invalid-feedback">
-                            Please Input your Price
-                        </div>
+                        <input class="form-control price @error('price') is-invalid @enderror" type="number" name="price" id="product-price" placeholder="Price" required>
                     </div>
                 </div>
+                @error('price')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+
                 <div class="d-flex container-price">
                     <div class="rp-container d-flex justify-content-center align-items-center z-1 position-absolute">
                         <p>Rp</p>
                     </div>
                     <div class="product-modal-container">
-                        <input class="form-control prod-modal" type="number" name="product-modal" id="product-modal" placeholder="Modal" required>
-                        <div class="invalid-feedback">
-                            Please Input your Modal
-                        </div>
+                        <input class="form-control prod-modal @error('modal') is-invalid @enderror" type="number" name="modal" id="product-modal" placeholder="Modal" required>
                     </div>
                 </div>
-                <textarea class="form-control" name="product-desc" id="product-desc" placeholder="Product Description" maxlength="450" required ></textarea>
-                <div class="invalid-feedback desc-invalid">
-                    Please Input your Description
-                </div>
+                @error('modal')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="product-desc" placeholder="Product Description" required ></textarea>
+                @error('description')
+                    <div class="invalid-feedback m-0">
+                        {{ $message }}
+                    </div>
+                @enderror
+
                 <div class="d-flex justify-content-center align-items-center">
                     <input type="submit" name="submit" value="Add Product"/>
                 </div>
+
             </form>
         </div>
     </div>
@@ -80,7 +100,7 @@
 
 @section('js')
     <script type="text/javascript" src="{{URL::asset('assets/js/addproduct.js')}}"></script>
-    <script>
+    {{-- <script>
         (function () {
             'use strict'
 
@@ -98,5 +118,5 @@
             }, false)
             })
         })()
-    </script>
+    </script> --}}
 @endsection
