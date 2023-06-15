@@ -36,7 +36,7 @@ class SignupController extends Controller
         // User::create($validatedData);
 
         User::create([
-            // 'name' => $validatedData['name'],
+            'name' => $validatedData['name'],
             'username' => $validatedData['username'],
             'email' => $validatedData['email'],
             'password' => $validatedData['password'],

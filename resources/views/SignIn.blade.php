@@ -29,21 +29,21 @@
             <div class="line"></div>
             <div class="content d-flex flex-column justify-content-center align-items-center">
 
+                <p class="heading">Sign In</p>
+
                 @if (session()->has('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
                         {{ session('success') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
 
                 @if (session()->has('loginError'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
                         {{ session('loginError') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-
-                <p class="heading">Sign In</p>
 
                 <form action="/signin" method="POST" id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center">
                     @csrf
