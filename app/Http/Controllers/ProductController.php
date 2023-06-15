@@ -26,10 +26,10 @@ class ProductController extends Controller
 
         $pg = 1;
         $count = count($products);
-        $products = $products->take(5);
+        $products = $products->take(25);
 
-        //jika panjang smua kurang dari atau sama dengan 5, maka $pg = -1
-        if($count <= 5) $pg = -1;
+        //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
+        if($count <= 25) $pg = -1;
 
 
         // dd(count($products));
@@ -67,7 +67,7 @@ class ProductController extends Controller
         }
 
         $pg = (int)$request->query('pg');
-        $pge = 5*$pg;
+        $pge = 25*$pg;
         $c = count($products);
         if($pge >= $c)$pg = -1;
 

@@ -87,7 +87,8 @@
     line-height: 14px;
     display: flex;
     align-items: flex-end;
-    text-decoration-line: underline;
+    /* text-decoration-line: underline; */
+    text-decoration-line: none;
     color: #673AB7;
     margin-bottom: 3px;
     /* background-color: yellow; */
