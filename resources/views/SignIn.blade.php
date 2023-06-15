@@ -16,7 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 
     {{-- main css --}}
-    <link rel="stylesheet" href="assets/css/SignIn.css">
+    <link rel="stylesheet" href="assets/css/signin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
@@ -28,15 +28,33 @@
             <div class="image" style="background-image: url('assets/img/Charity-cuate 1.png')"></div>
             <div class="line"></div>
             <div class="content d-flex flex-column justify-content-center align-items-center">
-                <p class="heading">Log In</p>
 
-                <form id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center" autocomplete="false" novalidate>
+                @if (session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if (session()->has('loginError'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                <p class="heading">Sign In</p>
+
+                <form action="/signin" method="POST" id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center">
+                    @csrf
                     <div class="username">
-                        <p>Username or Email</p>
-                        <input type="text" id="username" class="form-control rounded" placeholder="Username or Email" required>
-                        <div id="invalid-feedback1" class="invalid-feedback">
-                            Please Input your Username or Email
-                        </div>
+                        <p>Username</p>
+                        <input type="text" name="username" id="username" class="form-control rounded @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}" autofocus required>
+                        @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="password">
@@ -46,15 +64,11 @@
                             <i toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></i>
                         </div>
 
-                        <input id="pass_log_id" type="password" name="pass" class="form-control rounded" placeholder="Password" required>
-
-                        <div id="invalid-feedback2" class="invalid-feedback">
-                            Please Input your Password
-                        </div>
+                        <input id="pass_log_id" type="password" name="password" class="form-control rounded" placeholder="Password" required>
 
                     </div>
 
-                    <button type="submit" name="submit" value="Login">Login</button>
+                    <button type="submit">Sign In</button>
 
                     <div class="account d-flex flex-row">
                         <p>Don't have an account ?</p>
@@ -72,7 +86,7 @@
     <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
     <script src="/node_modules/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="assets/js/signIn.js"></script>
-    <script>
+    {{-- <script>
         // script for bootstrap validation
         (function () {
             'use strict'
@@ -91,7 +105,7 @@
             }, false)
             })
         })()
-    </script>
+    </script> --}}
 
 </body>
 </html>

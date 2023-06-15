@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MyEventDetailController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SigninController;
+use App\Http\Controllers\SignupController;
 use App\Models\CartDetail;
 use App\Models\CartHeader;
 use App\Models\Category;
@@ -78,13 +80,19 @@ Route::get('/allHistory', function () {
     return view('allHistory');
 })->name('allHistory');
 
-Route::get('/signin', function () {
-    return view('SignIn');
-})->name('SignIn');
+// Route::get('/signin', function () {
+//     return view('signin');
+// })->name('signin');
 
-Route::get('/signup', function () {
-    return view('SignUp');
-})->name('SignUp');
+// Route::get('/signup', function () {
+//     return view('signup');
+// })->name('signup');
+
+Route::get('/signin', [SigninController::class, 'index'])->name('signin');
+Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin');
+
+Route::get('/signup', [SignupController::class, 'index'])->name('signup');
+Route::post('/signup', [SignupController::class, 'store'])->name('signup');
 
 
 Auth::routes();
