@@ -15,8 +15,10 @@
         </div>
         <div class="desc">
             <?php
-                $passed = date_diff($start, $rn)->format("%d");
-                $range = date_diff($start, $end)->format("%d");
+                $passed = $start->diff($rn);
+                $passed = $passed->days;
+                $range = $start->diff($end);
+                $range = $range->days;
                 $per = 100*$passed/$range;
             ?>
             <div class="desc-headline">
@@ -85,7 +87,7 @@
                     <div class="rincian-container">
                         <div class="rec">
                             <div class="stat-subheadline">Participants</div>
-                            <div class="stat-subheadline purple">{{ $user_count->unique('user_id')->count() }} Orang</div>
+                            <div class="stat-subheadline purple">{{ $user_count->unique('user_id')->count() }} Person</div>
                         </div>
                         <div class="rec">
                             <div class="stat-subheadline">Modal</div>
@@ -117,18 +119,27 @@
                                           Date Range
                                         </a>
                                         <?php
-                                            use Carbon\Carbon;
-                                            $date = Carbon::createFromFormat('d M Y', $start->format("d M Y"));
-                                            $date = $date->addDays(7);
+                                            $datePrint = $start->format('Y-m-d');
+                                            $datePrint = new DateTime($datePrint);
                                         ?>
 
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                          <li><a class="dropdown-item" id="dropdown-item" href="#">{{ $start->format("d M Y") }} - {{ $date->format("d M Y") }}</a></li>
-                                          <li><a class="dropdown-item" id="dropdown-item" href="#">{{ $date->format("d M Y") }} - {{ $date->format("d M Y") }}</a></li>
+                                            @while($datePrint < $end)
+                                                <?php
+                                                    $temp = $datePrint->format("d M Y");
+                                                    $datePrint->add(new DateInterval('P' . 7 . 'D'));
+                                                    $datePrint = $datePrint->format('Y-m-d');
+                                                    $datePrint = new DateTime($datePrint);
+                                                ?>
+                                                <li>
+                                                    <input type="hidden" name="graph-date" id="graph-date" value="{{ $temp }}">
+                                                    <button type="submit" class="dropdown-item" id="dropdown-item" href="#" value="{{ $temp }}">{{ $temp }} - {{ $datePrint->format("d M Y") }}</button>
+                                                </li>
+                                            @endwhile
                                         </ul>
                                     </div>
                                     <section class="catalog-container" id="section3">
-                                        <canvas id="myChart"></canvas>
+                                        @include('chartResult');
                                     </section>
                                 </div>
                                 <div class="carousel-item1">
@@ -150,75 +161,104 @@
 @section('js')
     <script type="text/javascript" src="{{URL::asset('/assets/js/eventDetail.js')}}"></script>
     <script type="text/javascript">
+
+        console.log('masuk sini');
+
         const ourData = @json($user_total);
-        // const filteredData = ourData.filter(item => item.date === x).map(item => item.total);
-        console.log('hello');
+        console.log(ourData);
+
+        //fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
         function generateDateLabels(startDate, count) {
             var labels = [];
             labels["Date"] = [];
             labels["Value"] = [];
-            // const x = "";
 
+            //buat startdate
             const currentDate = new Date(startDate);
 
             for (let i = 0; i < count; i++) {
+                //masukkin start date ke format ISO
                 const x = currentDate.toISOString().split('T')[0];
-                const filteredData = ourData.filter(item => item.date === x).map(item => item.total);
+                //masukin ISO date ke label
                 labels["Date"].push(x);
+                //Jika ada item date yang == x, push value dari filtered data, selain itu
                 let temp = ourData.filter(item => item.date === x);//
                 if(Object.keys(temp).length){
+                    //If, ada item date yang == x, masukin item total ke filtered data
+                    const filteredData = temp.map(item => item.total);
                     labels["Value"].push(filteredData);
                 }else{
                     labels["Value"].push(0);
                 }
+                //++ di date
                 currentDate.setDate(currentDate.getDate() + 1);
-
             }
-
             return labels;
         }
 
-
-        const labelCount = 7; // Number of date labels to generate
-        const dateLabels = generateDateLabels(@json($date->addDays(14)->format("Y-m-d")), labelCount);
-        console.log(dateLabels);
-        // console.log(inValues);
-
-        var dte =  @json($user_total->pluck('date')->toArray());
-
-        var total =  @json($user_total->pluck('total')->toArray());;
+        const labelCount = 7; //Number of date labels to generate
+        const dateLabels = generateDateLabels(@json($start->format("Y-m-d")), labelCount);
+        // var dte =  @json($user_total->pluck('date')->toArray());
+        // var total =  @json($user_total->pluck('total')->toArray());
+        //buat graph
 
         const data = {
-        labels: dateLabels["Date"],
-        datasets: [{
-            label: 'Daily Sale',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: dateLabels["Value"],
-            options: {
-                scales: {
-                    x: {
-                        type: 'time',
-                        time: {
-                            unit: 'day'
+            labels: dateLabels["Date"],
+            datasets: [{
+                label: 'Daily Sale',
+                backgroundColor: 'rgb(82, 46, 147)',
+                borderColor: 'rgb(255, 255, 255)',
+                data: dateLabels["Value"],
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day'
+                            }
                         }
                     }
                 }
-            }
-        }]
+            }]
         };
 
         const config = {
-        type: 'bar',
-        data: data,
-        options: {}
+            type: 'bar',
+            data: data,
+            options: {}
         };
 
         const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
+            document.getElementById('myChart'),
+            config
         );
 
+    $(document).ready(function(){
+
+        $('.dropdown-item').on('click', function(){
+            var graphDate = $(this).attr('value');
+            console.log(graphDate);
+
+            const dateLabels1 = generateDateLabels(graphDate, labelCount);
+            myChart.data.labels = dateLabels1["Date"];
+            myChart.data.datasets[0].data = dateLabels1["Value"];
+            console.log('masuk sini');
+            // let id = @json($event->id);
+            // var url = '/eventDetail/' + id.toString() + '/result';
+            // var parameters = [];
+
+            // parameters.push('graph-start=' + encodeURIComponent(graphDate));
+            // url += '?' + parameters.join('&');
+            // console.log(url);
+            // $('#chart-result').load(url);
+            myChart.update();
+
+        });
+
+
+
+
+    });
 
 </script>
 

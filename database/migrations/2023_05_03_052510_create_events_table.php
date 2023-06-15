@@ -18,8 +18,11 @@ return new class extends Migration
             $table->foreignId('destination_id');
             $table->foreignId('user_id');
             $table->string('name', 55);
+            $table->string('slug', 25);
             $table->date('start_date');
             $table->date('end_date');
+            $table->integer('duration');
+            $table->string('status', 55);
             $table->string('description', 455);
             $table->string('image', 55);
             $table->timestamps();

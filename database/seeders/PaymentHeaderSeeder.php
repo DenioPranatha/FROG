@@ -55,6 +55,20 @@ class PaymentHeaderSeeder extends Seeder
             'total_price' => 956400,
             'total_modal' => 364000
         ]);
+
+        // <!-- 6-10 -->
+        for($i = 0; $i < 5; $i++){
+            $tanggal = (string)(26+$i);
+            $strTanggal = '2023-03-'.$tanggal;
+
+            PaymentHeader::create([
+                'user_id' => 1,
+                'date' => $strTanggal,
+                'total_price' => 10500,
+                'total_modal' => 7000
+            ]);
+
+        }
     // PAYMENT HEADER
     }
 }
