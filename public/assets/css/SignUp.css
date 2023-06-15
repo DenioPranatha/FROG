@@ -1,0 +1,263 @@
+body{
+    background-color: #522E93 !important;
+    font-family: 'Ubuntu';
+}
+
+.container{
+    width: 100%;
+    height: 67vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-white{
+    margin-top: -2vw;
+    background-color: white;
+    width: 100%;
+    height: 57vw;
+}
+
+.image{
+    width: 55%;
+    height: 37vw;
+    background-size: 95% 32vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.line{
+    height: 85%;
+    width: 0.1vw;
+    background-color: #522E93;
+}
+
+.content{
+    padding-left: 4vw;
+    width: 40%;
+    height: 37vw;
+    gap: 1.8vw;
+}
+
+.heading{
+    margin-top: 1vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 28px;
+    color: #522E93;
+    margin-bottom: 0.5vw;
+}
+
+.name{
+    gap: 1.5vw;
+}
+
+.name p{
+    margin-bottom: -0.5vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #522E93;
+}
+
+.name input{
+    margin-top: 0.8vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    width: 15vw;
+    height: 2.8vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.username p{
+    margin-bottom: -0.5vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #522E93;
+}
+
+input[type="text"]
+{
+    font-size:15px;
+}
+
+input[type="password"]
+{
+    font-size:15px;
+}
+
+input[type="email"]
+{
+    font-size:15px;
+}
+
+.username input{
+    margin-top: 0.8vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    width: 31.5vw;
+    height: 2.8vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.email p{
+    margin-bottom: -0.5vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #522E93;
+}
+
+.email input{
+    margin-top: 0.8vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    width: 31.5vw;
+    height: 2.8vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.password p{
+    margin-bottom: -0.5vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #522E93;
+}
+
+.password input{
+    padding-left: 3.5vw;
+    margin-top: 0.8vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    width: 31.5vw;
+    height: 2.8vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.confirm-password p{
+    margin-bottom: -0.5vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #522E93;
+}
+
+.confirm-password input{
+    margin-top: 0.8vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    width: 31.5vw;
+    height: 2.8vw;
+    padding-left: 3.5vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.address p{
+    margin-bottom: -0.5vw;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #522E93;
+}
+
+.address textarea{
+    margin-top: 0.8vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    width: 31.5vw;
+    height: 6vw;
+    resize: none;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.errormsg{
+    margin-bottom: 2vw;
+}
+
+input[type=text]:focus{
+    outline: 1px solid #522E93;
+}
+
+.needs-validation button{
+    border-radius: 15px;
+}
+
+button{
+    border: none;
+    width: 13vw;
+    height: 3vw;
+    background: #522E93;
+    color: white;
+}
+
+.account{
+    margin-top: -0.5vw;
+    font-size: 13px;
+    gap: 0.5vw;
+}
+
+.needs-validation{
+    gap: 1.2vw;
+}
+
+.invalid-feedback{
+    margin-top: 0vw;
+    margin-bottom: -1vw;
+}
+
+#invalid-feedback1{
+    margin-left: 0.2vw;
+    margin-bottom: -1vw;
+}
+
+#invalid-feedback2{
+    margin-left: 0.2vw;
+    margin-bottom: -1vw;
+}
+
+.account a{
+    color: #522E93;
+}
+
+.content button{
+    margin-top: 1.5vw;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+.fa{
+    font-size: 1vw;
+    color: #ffff;
+}
+
+.eye-container{
+    position: absolute;
+    z-index: 2;
+    background-color: #522E93;
+    margin-top: 0.85vw;
+    margin-left: 0vw;
+    width: 3vw;
+    height: 2.7vw;
+    border-radius: 5px 0px 0px 5px;
+}
+
+

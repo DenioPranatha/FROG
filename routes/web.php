@@ -79,6 +79,15 @@ Route::get('/allHistory', function () {
     return view('allHistory');
 })->name('allHistory');
 
+Route::get('/signin', function () {
+    return view('SignIn');
+})->name('SignIn');
+
+Route::get('/signup', function () {
+    return view('SignUp');
+})->name('SignUp');
+
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

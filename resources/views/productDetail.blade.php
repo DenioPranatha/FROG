@@ -15,7 +15,7 @@
             </div>
             <div class="descDiv">
                 <p class="productName">{{ $product->name }}</p>
-                <a href="/eventDetail" class="eventName">{{ $product->event->name }}</a>
+                <a href="/eventDetail/{{ $product->event->id }}" class="eventName">{{ $product->event->name }}</a>
                 <p class="productPrice">Rp{{ $product->price }}</p>
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">

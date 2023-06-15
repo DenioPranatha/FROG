@@ -16,6 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=M PLUS Rounded 1c' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=M PLUS 1' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
     {{-- main css --}}
     <link rel="stylesheet" href="/assets/css/navbar.css">

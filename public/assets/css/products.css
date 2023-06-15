@@ -31,10 +31,12 @@ input[type=text]{
 }
 
 .categories{
-    padding: 0px 42px;
+    /* padding: 0px 42px; */
+    padding: 0px 100px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    font-size: 15px;
 }
 
 .categoriesCart{
@@ -63,7 +65,9 @@ a.categoriesCart {
 .products{
     height: fit-content;
     align-items: start;
-    padding: 0px 42px;
+    /* padding: 0px 42px; */
+    padding: 5px 100px;
+    padding-bottom: 30px;
 }
 /* product */
 
