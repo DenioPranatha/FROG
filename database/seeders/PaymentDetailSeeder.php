@@ -132,6 +132,17 @@ class PaymentDetailSeeder extends Seeder
             'item_price' => 23100,
             'item_modal' => 15400
         ]);
+
+        for($i = 6; $i < 11; $i++){
+
+            PaymentDetail::create([
+                'payment_header_id' => $i,
+                'product_id' => 4,
+                'qty' => 1,
+                'item_price' => 10500,
+                'item_modal' => 7000
+            ]);
+        }
     // PAYMENT DETAIL
     }
 }
