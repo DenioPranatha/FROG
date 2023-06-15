@@ -13,7 +13,8 @@
             <div class="img-container">
                 <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
                 <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)">
-                <img id="img">
+                {{-- <img id="img"> --}}
+                <div id="img"></div>
             </div>
         </div>
         <div class="container-right">

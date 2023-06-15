@@ -3,6 +3,8 @@
 // const imgContainer = document.querySelector(".custom__image-container");
 // const imgFiles = [];
 
+const { preview } = require("vite");
+
 // const addImgHandler = () => {
 //   const file = imgInputHelper.files[0];
 //   if (!file) return;
@@ -63,19 +65,24 @@ const img_input = document.getElementById("img-input");
 
 function showPreview(event){
     if(event.target.files.length > 0){
-      var src = URL.createObjectURL(event.target.files[0]);
-      var preview = document.getElementById("img");
-      preview.src = src;
-      preview.style.display = "block";
+        // var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("img");
+        // preview.src = src;
+        // preview.style.display = "block";
+        // alert(event.target.files[0]);
+        preview.style.height = "100px";
+        preview.style.width = "100px";
+        preview.style.backgroundImage = URL.createObjectURL(event.target.files[0]);
+        preview.style.backgroundRepeat = "no-repeat";
     //   product_img.style.backgroundImage = preview.src;
     }
 }
 
 img_input.addEventListener("input", (event) => {
-      input_label.style.display = "none";
-      img_input.style.display = "none";
-      product_img.style.display = "block";
-  });
+    input_label.style.display = "none";
+    img_input.style.display = "none";
+    product_img.style.display = "block";
+});
 
 // declare variable
 
