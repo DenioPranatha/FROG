@@ -89,6 +89,23 @@ Route::get('/allHistory', function () {
 Route::get('/signin', [SigninController::class, 'index'])->name('signin');
 Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin');
 
+Route::get('/approval', function () {
+    return view('approval', [
+        'event' => Event::all(),
+    ]);
+})->name('approval');
+
+Route::get('/approvalDetail', function () {
+    return view('approvalDetail');
+})->name('approvalDetail');
+
+Route::get('/createEvent', function () {
+    return view('createEvent');
+})->name('createEvent');
+
+Route::get('/createDestination', function () {
+    return view('createDestination');
+})->name('createDestination');
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
 

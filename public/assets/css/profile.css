@@ -33,6 +33,7 @@
 
     background: #FFFFFF;
     border: 2px solid #CFCFCF;
+    border-radius: 15px;
     box-shadow: 6px 6px 0px #522E93, inset 0px 0px 0px 2px #CDCDCD;
 }
 
@@ -71,11 +72,12 @@
 }
 
 .img-container{
-    border: 10px solid #522E93;
+    border: 6px solid #522E93;
     width: 18vw;
     height: 18vw;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     /* background-size: 10vw; */
 }
 
@@ -91,6 +93,66 @@ button{
     font-weight: 500;
     font-size: 18px;
     line-height: 30px;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
 
     color: #FFFFFF;
 }
+
+.box input{
+    width: 28vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.change-content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2vw;
+}
+
+.change-content h3{
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.change-content input{
+    font-family: 'Poppins';
+    font-size: 15px;
+    height: 3vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    padding-left: 1vw;
+}
+
+textarea{
+    font-size: 15px;
+    height: 5vw;
+    color: #522E93;
+    border: 1px solid #522E93;
+    padding-left: 1vw;
+    padding-top: 0.5vw;
+    resize: none;
+}
+
+#edit{
+    display: none;
+}
+
+.edit-photo{
+    /* border: 1px solid red; */
+    background-color: #522E93;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 10px;
+    align-self: flex-end;
+    z-index: 2;
+    position: absolute;
+    margin-left: 13vw;
+}
+
+.edit-photo i{
+    font-size: 2vw;
+    color: white;
+}
+
+
+
