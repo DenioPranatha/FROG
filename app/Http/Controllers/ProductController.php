@@ -22,7 +22,7 @@ class ProductController extends Controller
 
         // kalo pencet salah satu kategori dr home
         if($request->has('cat_id')){
-            $products = Product::where('product_category_id', $request->cat_id)->get();
+            $products = Product::where('category_id', $request->cat_id)->get();
             $cat_id = $request->cat_id;
         }
 
@@ -63,7 +63,7 @@ class ProductController extends Controller
     {
         //
         return view('addProduct', [
-            'categories' => Category::all()
+            'productCategories' => ProductCategory::all()
         ]);
     }
 
@@ -86,7 +86,7 @@ class ProductController extends Controller
             'description' => 'required|max:450'
         ]);
 
-        // $validatedData['event_id'] = ;
+        $validatedData['event_id'] = 4;
         // $validatedData['image'] = ;
 
         // $validatedData['user_id'] = auth()->user()->id;

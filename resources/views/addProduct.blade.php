@@ -34,11 +34,11 @@
                 <div class="category-container">
                     <select name="category_id" id="product-category" class="form-control @error('category_id') is-invalid @enderror" required>
                         <option value="" disabled selected>Category</option>
-                        @foreach ($categories as $category)
-                            @if (old('category_id') == $category->id)
-                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                        @foreach ($productCategories as $productCategory)
+                            @if (old('category_id') == $productCategory->id)
+                                <option value="{{ $productCategory->id }}" selected>{{ $productCategory->name }}</option>
                             @else
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
                             @endif
                         @endforeach
                     </select>
