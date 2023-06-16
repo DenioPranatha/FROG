@@ -252,3 +252,6 @@ button{
     box-shadow: 4px 4px 8px #CDCDCD;
 }
 
+.msg-desc{
+    padding-left: 5vw;
+}
