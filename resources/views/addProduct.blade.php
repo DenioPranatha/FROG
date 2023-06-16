@@ -23,7 +23,7 @@
                 @csrf
 
                 <div class="product-name-container">
-                    <input class="form-control @error('name') is-invalid @enderror" placeholder="Product Name" type="text" name="name" id="product-name" required>
+                    <input class="form-control @error('name') is-invalid @enderror" placeholder="Product Name" type="text" name="name" id="product-name" required value="{{ old('name') }}">
                     @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -35,7 +35,11 @@
                     <select name="category_id" id="product-category" class="form-control @error('category_id') is-invalid @enderror" required>
                         <option value="" disabled selected>Category</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @if (old('category_id') == $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                            @else
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endif
                         @endforeach
                     </select>
                     @error('category_id')
@@ -46,12 +50,13 @@
                 </div>
 
                 <div class="stock-container">
-                    <input class="form-control @error('stock') is-invalid @enderror" type="number" name="stock" id="product-stock" placeholder="Stock" required>
+                    <input class="form-control @error('stock') is-invalid @enderror" type="number" name="stock" id="product-stock" placeholder="Stock" required value="{{ old('stock') }}">
                     @error('stock')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror
+
                 </div>
 
                 <div class="d-flex container-price">
@@ -59,30 +64,30 @@
                         <p>Rp</p>
                     </div>
                     <div class="product-price-container">
-                        <input class="form-control price @error('price') is-invalid @enderror" type="number" name="price" id="product-price" placeholder="Price" required>
+                        <input class="form-control price @error('price') is-invalid @enderror" type="number" name="price" id="product-price" placeholder="Price" required value="{{ old('price') }}">
+                        @error('price')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
-                @error('price')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
 
                 <div class="d-flex container-price">
                     <div class="rp-container d-flex justify-content-center align-items-center z-1 position-absolute">
                         <p>Rp</p>
                     </div>
                     <div class="product-modal-container">
-                        <input class="form-control prod-modal @error('modal') is-invalid @enderror" type="number" name="modal" id="product-modal" placeholder="Modal" required>
+                        <input class="form-control prod-modal @error('modal') is-invalid @enderror" type="number" name="modal" id="product-modal" placeholder="Modal" required value="{{ old('modal') }}">
+                        @error('modal')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
-                @error('modal')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
 
-                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="product-desc" placeholder="Product Description" required ></textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="product-desc" placeholder="Product Description" required>{{ old('description') }}</textarea>
                 @error('description')
                     <div class="invalid-feedback m-0">
                         {{ $message }}
