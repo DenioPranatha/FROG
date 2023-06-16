@@ -8,20 +8,21 @@
 
 @section('content')
     <div class="container">
-        <div class="container-left">
-            <p>Add image</p>
-            <div class="img-container">
-                <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
-                <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)">
-                {{-- <img id="img"> --}}
-                <div id="img"></div>
+        <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate>
+            @csrf
+            <div class="container-left">
+                <p>Add image</p>
+                <div class="img-container">
+                    {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
+                    <input class="form-control" type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
+                    <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></label>
+                    <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;" onchange="showPreview(event)">
+                    {{-- <img id="img"> --}}
+                    <div id="img"></div>
+                </div>
             </div>
-        </div>
-        <div class="container-right">
-            <p>Add Product</p>
-            <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate>
-                @csrf
-
+            <div class="container-right">
+                <p>Add Product</p>
                 <div class="product-name-container">
                     <input class="form-control @error('name') is-invalid @enderror" placeholder="Product Name" type="text" name="name" id="product-name" required value="{{ old('name') }}">
                     @error('name')
@@ -89,17 +90,18 @@
 
                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="product-desc" placeholder="Product Description" required>{{ old('description') }}</textarea>
                 @error('description')
-                    <div class="invalid-feedback m-0">
+                    <div class="invalid-feedback m-0 msg-desc">
                         {{ $message }}
                     </div>
                 @enderror
 
                 <div class="d-flex justify-content-center align-items-center">
-                    <input type="submit" name="submit" value="Add Product"/>
+                    {{-- <input type="submit" name="submit" value="Add Product"/> --}}
+                    <button type="submit" name="submit" value="Add Event">Add Product</button>
                 </div>
 
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 @endsection
 

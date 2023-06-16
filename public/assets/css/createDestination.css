@@ -11,7 +11,7 @@
 
 .container-left{
     width: 43vw;
-    height: 66vw;
+    height: 67vw;
     background-color: #522E93;
 
     display: flex;
@@ -35,7 +35,7 @@
     height: 60vw;
     margin-top: 3vw;
     margin-left: -4vw;
-    padding-top: 1.2vw;
+    padding-top: 1vw;
     background-color: white;
     border: 3px solid #CDCDCD;
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -54,6 +54,7 @@
     font-weight: 400;
     font-size: 35px;
     line-height: 40px;
+    margin-bottom: 1vw;
 }
 
 .container-right form{
@@ -115,7 +116,7 @@ input[type=number]::-webkit-inner-spin-button {
 #product-desc{
     padding-top: 1vw;
     padding-left: 1vw;
-    height: 15vw;
+    height: 10vw;
     width: 38vw
 }
 
@@ -152,13 +153,6 @@ input[type=submit]{
     background-color: #764EBE;
     color: white;
 }
-
-/* button{
-    width: 10vw;
-    height: 5vw;
-    background-color: #764EBE;
-    color: white;
-} */
 
 input[type=file]{
     display: none;
@@ -252,6 +246,5 @@ button{
     box-shadow: 4px 4px 8px #CDCDCD;
 }
 
-.msg-desc{
-    padding-left: 5vw;
-}
+
+
