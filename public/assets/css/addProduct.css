@@ -153,6 +153,13 @@ input[type=submit]{
     color: white;
 }
 
+/* button{
+    width: 10vw;
+    height: 5vw;
+    background-color: #764EBE;
+    color: white;
+} */
+
 input[type=file]{
     display: none;
 

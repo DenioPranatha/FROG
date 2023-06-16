@@ -16,7 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 
     {{-- main css --}}
-    <link rel="stylesheet" href="assets/css/SignUp.css">
+    <link rel="stylesheet" href="assets/css/signup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
@@ -31,47 +31,55 @@
 
                 <p class="heading">Create Your Account</p>
 
-                <form id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center" novalidate>
-                    <div class="name d-flex flex-row">
+                <form action="/signup" method="POST" id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center" novalidate>
+                    @csrf
+                    {{-- <div class="name d-flex flex-row">
                         <div class="firstname">
                             <p>First Name</p>
+                            <input type="text" name="firstname" id="firstname" class="form-control rounded @error('firstname') is-invalid @enderror" placeholder="First Name" value="{{ old('firstname') }}" required>
 
-                            <input type="text" id="firstname" class="form-control rounded" placeholder="First Name" required minlength="3" maxlength="25">
-
-                            <div id="invalid-feedback1" class="invalid-feedback">
-                                Please Input your First Name
-                            </div>
+                            @error('firstname')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="lastname">
                             <p>Last Name</p>
+                            <input type="text" name="lastname" id="lastname" class="form-control rounded" placeholder="Last Name" value="{{ old('lastname') }}" required>
 
-                            <input type="text" id="lastname" class="form-control rounded" placeholder="Last Name" required minlength="3" maxlength="25">
-
-                            <div id="invalid-feedback2" class="invalid-feedback">
-                                Please Input your Last Name
-                            </div>
                         </div>
+                    </div> --}}
+
+                    <div class="name">
+                        <p>Name</p>
+                        <input type="text" name="name" id="name" class="form-control rounded @error('name') is-invalid @enderror" placeholder="Name" value="{{ old('name') }}" required>
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="username">
                         <p>Username</p>
-
-                        <input type="text" id="username" class="form-control rounded" placeholder="Username " required minlength="3" maxlength="25">
-
-                        <div id="invalid-feedback3" class="invalid-feedback">
-                            Please Input your Username
-                        </div>
+                        <input type="text" name="username" id="username" class="form-control rounded @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}" required>
+                        @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="email">
                         <p>Email</p>
-
-                        <input type="email"  id="email" class="form-control rounded" placeholder="Email" required maxlength="254" >
-
-                        <div id="invalid-feedback4" class="invalid-feedback">
-                            Please Input your Email
-                        </div>
+                        <input type="email" name="email" id="email" class="form-control rounded @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}" required>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="password">
@@ -81,11 +89,12 @@
                             <i toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></i>
                         </div>
 
-                        <input id="pass_log_id" type="password" name="pass" class="form-control rounded" placeholder="Password" required>
-
-                        <div id="invalid-feedback5" class="invalid-feedback">
-                            Please Input your Password
-                        </div>
+                        <input id="pass_log_id" type="password" name="password" class="form-control rounded @error('password') is-invalid @enderror" placeholder="Password" required>
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="confirm-password">
@@ -95,24 +104,35 @@
                             <i toggle="#password-field2" class="fa fa-fw fa-eye field_icon toggle-password2"></i>
                         </div>
 
-                        <input type="password" id="confirm-password" class="form-control rounded" placeholder="Confirm Password" required>
-
-                        <div id="invalid-feedback6" class="invalid-feedback">
-                            Please Confirm your Password
+                        <input type="password" id="confirm-password" name="password_confirmation" class="form-control rounded @error('password_confirmation') is-invalid @enderror" placeholder="Confirm Password" required>
+                        @error('password_confirmation')
+                        <div class="invalid-feedback">
+                            {{ $message }}
                         </div>
+                        @enderror
+                    </div>
+
+                    <div class="phone">
+                        <p>Phone</p>
+                        <input type="text" name="phone" id="phone" class="form-control rounded @error('phone') is-invalid @enderror" placeholder="Phone" value="{{ old('phone') }}" required>
+                        @error('phone')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="address">
                         <p>Address</p>
-
-                        <textarea type="text" id="address" class="form-control rounded" placeholder="Address" required minlength="10" maxlength="100"></textarea>
-
-                        <div id="invalid-feedback7" class="invalid-feedback errormsg">
-                            Please Input your address
-                        </div>
+                        <textarea type="text" name="address" id="address" class="form-control rounded @error('address') is-invalid @enderror" placeholder="Address" required>{{ old('address') }}</textarea>
+                        @error('address')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
-                    <button type="submit" name="submit" value="SignUp">Create Account</button>
+                    <button type="submit">Create Account</button>
 
                     <div class="account d-flex flex-row">
                         <p>Already Have an Account ?</p>
@@ -132,7 +152,7 @@
     <script src="/node_modules/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
     <script src="assets/js/signUp.js"></script>
-    <script>
+    {{-- <script>
         // script for bootstrap validation
         (function () {
             'use strict'
@@ -147,11 +167,11 @@
                 event.stopPropagation()
                 }
 
-                form.classList.add('was-validated')
+                // form.classList.add('was-validated')
             }, false)
             })
         })()
-    </script>
+    </script> --}}
 
 </body>
 </html>

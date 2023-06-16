@@ -12,7 +12,6 @@ $(document).ready(function(){
         var lim = $('#myBtn1').val();
         $(this).fadeOut(100);
 
-        var categoryValue = $('#cat_id1').val();
 
         //Masukin ke function penggabung
         loadFilteredContent(lim, categoryValue);

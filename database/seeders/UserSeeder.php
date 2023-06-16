@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
         // USER
         // <!-- 1 -->
         User::create([
+            'name' => 'Ardo Damarjati',
             'username' => 'ardod',
             'email' => 'damarjatiardo@gmail.com',
             'phone' => '083891725775',
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
 
         // <!-- 2 -->
         User::create([
+            'name' => 'Denio Pranatha',
             'username' => 'deniop',
             'email' => 'deniopranatha@gmail.com',
             'phone' => '081232120178',
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
 
         // <!-- 3 -->
         User::create([
+            'name' => 'Nicole Felice',
             'username' => 'nikolp',
             'email' => 'nicolefeliceee@gmail.com',
             'phone' => '081994097967',
@@ -45,6 +48,7 @@ class UserSeeder extends Seeder
 
         // <!-- 4 -->
         User::create([
+            'name' => 'Riskyaaa',
             'username' => 'riskyap',
             'email' => 'riskyaputra3004@gmail.com',
             'phone' => '081376092561',

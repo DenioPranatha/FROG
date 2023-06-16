@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MyEventDetailController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SigninController;
+use App\Http\Controllers\SignupController;
 use App\Models\CartDetail;
 use App\Models\CartHeader;
 use App\Models\Category;
@@ -35,12 +37,22 @@ Route::get('/index', [IndexController::class, 'index'])->name('index');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::post('/products', [ProductController::class, 'index'])->name('products');
+// Route::resource('products', ProductController::class)->names([
+//     'index' => 'users.index',
+//     'create' => 'users.create',
+//     'store' => 'users.store',
+//     'show' => 'users.show',
+//     'edit' => 'users.edit',
+//     'update' => 'users.update',
+//     'destroy' => 'users.destroy',
+// ]);
 Route::get('/products/result', [ProductController::class, 'result']);
-Route::get('/productDetail/{product:id}', [ProductController::class, 'detail'])->name('productDetail');
+Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
+Route::get('/eventDetail/{event:id}/result', [EventController::class, 'chart']);
 
 Route::get('/myevents', function () {
     return view('myEvents');
@@ -50,11 +62,8 @@ Route::get('/myEventDetail', [MyEventDetailController::class, 'index'])->name('m
 
 Route::get('/cart', function () {
     return view('cart', [
-        // 'cartHeaders' => CartHeader::where('user_id', 4)->get(),
         'cartHeaders' => CartHeader::all(),
         'cartDetails' => CartDetail::all(),
-        // 'count' => 0
-        // 'cartDetails' => CartDetail::where('cart_header_id', 1)->get()
     ]);
 })->name('cart');
 
@@ -70,21 +79,15 @@ Route::get('/destination', function () {
     return view('destination');
 })->name('destination');
 
-Route::get('/addProduct', function () {
-    return view('addProduct');
-})->name('addProduct');
+Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
+Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct');
 
 Route::get('/allHistory', function () {
     return view('allHistory');
 })->name('allHistory');
 
-Route::get('/signin', function () {
-    return view('SignIn');
-})->name('SignIn');
-
-Route::get('/signup', function () {
-    return view('SignUp');
-})->name('SignUp');
+Route::get('/signin', [SigninController::class, 'index'])->name('signin');
+Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin');
 
 Route::get('/approval', function () {
     return view('approval', [
@@ -103,6 +106,8 @@ Route::get('/createEvent', function () {
 Route::get('/createDestination', function () {
     return view('createDestination');
 })->name('createDestination');
+Route::get('/signup', [SignupController::class, 'index'])->name('signup');
+Route::post('/signup', [SignupController::class, 'store'])->name('signup');
 
 Auth::routes();
 
