@@ -8,18 +8,20 @@
 
 @section('content')
     <div class="container">
-        <div class="container-left">
-            <p>Add image</p>
-            <div class="img-container">
-                <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
-                <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)">
-                {{-- <img id="img"> --}}
-                <div id="img"></div>
+        <form id="form" class="needs-validation" novalidate>
+            <div class="container-left">
+                <p>Add image</p>
+                <div class="img-container">
+                    {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
+                    <input class="form-control" type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
+                    <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></label>
+                    <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;" onchange="showPreview(event)">
+                    {{-- <img id="img"> --}}
+                    <div id="img"></div>
+                </div>
             </div>
-        </div>
-        <div class="container-right">
-            <p>Add Product</p>
-            <form id="form" class="needs-validation" novalidate>
+            <div class="container-right">
+                <p>Add Product</p>
                 <div class="product-name-container">
                     <input class="form-control" placeholder="Product Name" type="text" name="product-name" id="product-name" minlength="3" maxlength="15" required />
                     <div id="invalid-feedback1" class="invalid-feedback">
@@ -71,10 +73,11 @@
                     Please Input your Description
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <input type="submit" name="submit" value="Add Product"/>
+                    {{-- <input type="submit" name="submit" value="Add Product"/> --}}
+                    <button type="submit" name="submit" value="Add Event">Add Product</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 @endsection
 

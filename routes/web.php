@@ -86,6 +86,23 @@ Route::get('/signup', function () {
     return view('SignUp');
 })->name('SignUp');
 
+Route::get('/approval', function () {
+    return view('approval', [
+        'event' => Event::all(),
+    ]);
+})->name('approval');
+
+Route::get('/approvalDetail', function () {
+    return view('approvalDetail');
+})->name('approvalDetail');
+
+Route::get('/createEvent', function () {
+    return view('createEvent');
+})->name('createEvent');
+
+Route::get('/createDestination', function () {
+    return view('createDestination');
+})->name('createDestination');
 
 Auth::routes();
 

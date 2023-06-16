@@ -11,7 +11,7 @@
 
 .container-left{
     width: 43vw;
-    height: 66vw;
+    height: 60vw;
     background-color: #522E93;
 
     display: flex;
@@ -32,10 +32,10 @@
 
 .container-right{
     width: 48vw;
-    height: 60vw;
+    height: 54vw;
     margin-top: 3vw;
     margin-left: -4vw;
-    padding-top: 1.2vw;
+    padding-top: 1vw;
     background-color: white;
     border: 3px solid #CDCDCD;
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -54,6 +54,7 @@
     font-weight: 400;
     font-size: 35px;
     line-height: 40px;
+    margin-bottom: 1vw;
 }
 
 .container-right form{
