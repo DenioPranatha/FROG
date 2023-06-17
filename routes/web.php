@@ -87,6 +87,13 @@ Route::get('/signup', function () {
     return view('SignUp');
 })->name('SignUp');
 
+Route::get('/destinationAdmin', function(){
+    return view('admin.destinationAdmin');
+})->name('destinationAdmin');
+
+Route::get('/approval', function(){
+    return view('admin.waitingListAdmin');
+})->name('approval');
 
 Auth::routes();
 

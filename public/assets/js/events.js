@@ -9,7 +9,7 @@ const Carousel = new bootstrap.Carousel(myCarouselElement, {
 
 if(window.matchMedia("(min-width:576px)").matches){
     var carousel = $('.carousel-inner')[0].scrollWidth;
-    var cardWidth = $('.carousel-item').width()*1.017;
+    var cardWidth = $('.carousel-item').width()*1.01;
     var bannerWidth = $('.banner-item').width();
     var bannerCount = $('.banner-item').length;
     var counter = 0;

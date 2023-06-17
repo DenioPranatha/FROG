@@ -14,10 +14,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 32px 0 0 21px;
+    padding: 42px 100px;
     flex-wrap: nowrap;
     height: fit-content;
-    width: 96vw;
+    /* width: 96vw; */
 
 }
 
@@ -35,7 +35,7 @@
 .header{
     font-family: 'Ubuntu', sans-serif;
     font-size: 33px;
-    padding: 21px 42px;
+    padding: 21px 100px;
 }
 
 .carousel{
@@ -44,32 +44,38 @@
     margin: auto;
     flex-wrap: nowrap;
     height: fit-content;
-    width: 98vw;
+    width: 85vw;
 }
 
 .carousel1{
-    padding-top: 6rem;
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     margin: auto;
     flex-wrap: nowrap;
     height: fit-content;
-    width: 98vw;
+    width: 85vw;
 }
 
 .catalog-container{
-    width: 96vw;
+    /* border: 1px solid black; */
+    /* width: 100vw; */
     display: flex;
     justify-content: flex-start;
+    /* align-self: center; */
+    /* border: 1px solid black; */
     flex-wrap: wrap;
-    margin-left: 1.3vw;
+    /* margin-left: 1.3vw; */
 }
 
 #section1{
-    width: 100vw;
-    margin-top: 42px;
-    justify-content: center;
-    margin-left: 0px;
+    width: 98vw;
+    padding: 42px 0px 42px 25px;
+    /* justify-content: center; */
+}
+
+#result-container{
+    padding: 42px 80px 42px 120px;
 }
 
 a.custom-card,
@@ -85,13 +91,13 @@ a.custom-card:hover {
 .card{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     position: relative;
-    width: 201px;
-    height: 203px;
+    /* width: 201px;
+    height: 203px; */
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
-    margin: 12px;
-    border-radius: 0%;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    /* margin: 12px; */
+    border-radius: 10px;
 }
 
 .card-img{
@@ -110,9 +116,10 @@ a.custom-card:hover {
 
 .search-row{
     display: flex;
-    width: 96vw;
+    /* width: 96vw;
     margin: 21px;
-    padding: 8px;
+    padding: 8px; */
+    padding: 11px 100px 11px 100px;
     flex-direction: row;
     position: sticky;
     top: 57px;
@@ -140,18 +147,19 @@ a.custom-card:hover {
 
 .carousel-inner{
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 20px;
+    margin-right: 20px;
 }
 
 .carousel-item, .carousel-item1{
     display: block;
-    flex: 0 0 15%;
-    margin: 1px;
+    /* flex: 0 0 15%; */
+    margin-right: 60px;
 }
 
 .carousel-item1{
     display: block;
+    /* border: 1px solid black; */
 }
 
 .carousel-control-prev, .carousel-control-next,
@@ -179,7 +187,7 @@ a.custom-card:hover {
     height: 35px;
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 17.5px;
     margin: 0 10.5px;
     padding-left: 10px;
@@ -209,8 +217,8 @@ a.custom-card:hover {
 /* EVENT */
 
 .desc-container{
-    width: 90vw;
-    margin: 40px;
+    /* width: 90vw; */
+    margin: 40px 100px 40px 100px;
     display: flex;
     flex-direction: row;
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -228,7 +236,8 @@ a.custom-card:hover {
     width: 450px;
     height: 337.5px;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px #CDCDCD;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -262,7 +271,7 @@ a.custom-card:hover {
     display: none;
 }
 
-.slide .slide1 {
+.slide, .slide1 {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -270,6 +279,9 @@ a.custom-card:hover {
 .slide1{
     display: flex;
     width: 100vw;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+    padding: 0px 20px;
     height: fit-content;
     scroll-snap-type: x mandatory;
     flex-direction: row;
@@ -291,8 +303,9 @@ a.custom-card:hover {
 }
 
 .stat-container{
-    width: 90vw;
-    margin: 40px;
+    width: 80vw;
+    margin: 20px;
+    /* padding: 30px; */
     display: flex;
     flex-direction: column;
 
@@ -320,12 +333,15 @@ a.custom-card:hover {
 }
 
 .rincian-container{
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-self: center;
     justify-content: space-between;
-    width: 92vw;
+    width: 65vw;
     margin: 21px 0 30px 0;
+
 }
 
 .rec{
@@ -333,11 +349,11 @@ a.custom-card:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 21vw;
-    border: 2px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    width: 15vw;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
     padding: 15px 0;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: transform .2s ease;
 }
 
@@ -401,16 +417,16 @@ a.custom-card:hover {
     width: 100px;
 }
 
-.card1{
+/* .card1{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     position: relative;
     width: 201px;
     height: 250px;
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
     margin: 10.5px;
-}
+} */
 
 .caption1{
     padding: 8px 10px;
@@ -443,7 +459,8 @@ a.custom-card:hover {
     align-items: center;
     margin: 21px;
     font-size: 19px;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD;
 }
 
 .donate:hover{
@@ -483,12 +500,13 @@ a.custom-card:hover {
 }
 
 .more-products{
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    width: 96vw;
+    width: 81vw;
     justify-content: space-around;
     align-items: center;
-    margin: 42px 18px 84px 18px;
+    margin: 42px 0px 84px 0px;
 }
 
 .more{
@@ -573,10 +591,16 @@ body{
     height: 100px;
 }
 
-#myChart{
-    border: 1px solid red;
-    width: 800px !important;
+#myChart, #myChart1{
+    border: 1px solid #522E93;
+    width: 700px !important;
     height: 400px !important;
 }
+
+.chart-result{
+    /* width: 900px; */
+    padding: 42px 130px 84px 130px;
+}
+
 
 
