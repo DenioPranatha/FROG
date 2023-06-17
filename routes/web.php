@@ -76,6 +76,8 @@ Route::get('/createDestination', function () {
 })->name('createDestination');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cartMinus', [CartController::class, 'minus']);
+Route::post('/cartPlus', [CartController::class, 'plus']);
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
