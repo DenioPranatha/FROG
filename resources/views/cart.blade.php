@@ -85,17 +85,36 @@
                                             <div class="productDescQtyText">Quantity:</div>
                                             <div class="productDescQty d-flex justify-content-start align-items-center">
                                                 <div class="qtyDiv d-flex justify-content-center align-items-center">
-                                                    <div class="minus d-flex justify-content-center align-items-center" id="minus">
-                                                        -
-                                                    </div>
+
+                                                    <form action="/cartMinus" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="num" class="numMinus">
+                                                        <input type="hidden" name="cart_header_id" value="{{ $cartDetail->cartHeader->id }}">
+                                                        <input type="hidden" name="product_id" value="{{ $cartDetail->product->id }}">
+                                                        <button onclick="cartMinus()" class="minus d-flex justify-content-center align-items-center m-0 pb-1" style="height: 18.5px" id="minus">
+                                                            -
+                                                        </button>
+                                                        {{-- <div class="minus d-flex justify-content-center align-items-center" id="minus">
+                                                            -
+                                                        </div> --}}
+                                                    </form>
                                                     <div class="productQty d-flex justify-content-center align-items-center">
                                                         <form action="" method="get" class="qtyForm">
                                                             <input type="text" name="productQty" id="productQty" value="{{ $cartDetail->qty }}" class="prodQty">
                                                         </form>
                                                     </div>
-                                                    <div class="plus d-flex justify-content-center align-items-center" id="plus">
+                                                    <form action="/cartPlus" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="num" class="numPlus">
+                                                        <input type="hidden" name="cart_header_id" value="{{ $cartDetail->cartHeader->id }}">
+                                                        <input type="hidden" name="product_id" value="{{ $cartDetail->product->id }}">
+                                                        <button onclick="cartPlus()" class="plus d-flex justify-content-center align-items-center m-0 pb-1" style="height: 18.5px" id="plus">
+                                                            +
+                                                        </button>
+                                                    </form>
+                                                    {{-- <div class="plus d-flex justify-content-center align-items-center" id="plus">
                                                         +
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                                 <div class="trash d-flex align-items-center">
                                                     <div class="slash"></div>
