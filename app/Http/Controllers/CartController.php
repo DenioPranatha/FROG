@@ -16,4 +16,20 @@ class CartController extends Controller
             'cartDetails' => CartDetail::all(),
         ]);
     }
+
+    public function minus(Request $request){
+        // dd($request);
+        $validatedData['qty'] = $request->num;
+        CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
+
+        return redirect()->back();
+    }
+
+    public function plus(Request $request){
+        // dd($request);
+        $validatedData['qty'] = $request->num;
+        CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
+
+        return redirect()->back();
+    }
 }

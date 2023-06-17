@@ -17,39 +17,80 @@ class CartHeaderSeeder extends Seeder
     {
         // CART HEADER
         // <!-- 1 -->
-        CartHeader::create([
-            'user_id' => 1
-        ]);
+        // CartHeader::create([
+        //     // 'event_id' =>
+        //     'user_id' => 1
+        // ]);
 
-        // <!-- 2 -->
-        CartHeader::create([
-            'user_id' => 1
-        ]);
+        // // <!-- 2 -->
+        // CartHeader::create([
+        //     'user_id' => 1
+        // ]);
 
-        // <!-- 3 -->
-        CartHeader::create([
-            'user_id' => 2
-        ]);
+        // // <!-- 3 -->
+        // CartHeader::create([
+        //     'user_id' => 2
+        // ]);
 
-        // <!-- 4 -->
-        CartHeader::create([
-            'user_id' => 3
-        ]);
+        // // <!-- 4 -->
+        // CartHeader::create([
+        //     'user_id' => 3
+        // ]);
 
-        // <!-- 5 -->
-        CartHeader::create([
-            'user_id' => 4
-        ]);
+        // // <!-- 5 -->
+        // CartHeader::create([
+        //     'user_id' => 4
+        // ]);
 
-        // <!-- 6 -->
-        CartHeader::create([
-            'user_id' => 4
-        ]);
+        // // <!-- 6 -->
+        // CartHeader::create([
+        //     'user_id' => 4
+        // ]);
 
-        // <!-- 7 -->
-        CartHeader::create([
-            'user_id' => 4
-        ]);
+        // // <!-- 7 -->
+        // CartHeader::create([
+        //     'user_id' => 4
+        // ]);
     // CART HEADER
+
+
+
+
+//     // CART HEADER
+//     // <!-- 1 -->
+//     CartHeader::create([
+//         'user_id' => 1
+//     ]);
+
+//     // <!-- 2 -->
+//     CartHeader::create([
+//         'user_id' => 1
+//     ]);
+
+//     // <!-- 3 -->
+//     CartHeader::create([
+//         'user_id' => 2
+//     ]);
+
+//     // <!-- 4 -->
+//     CartHeader::create([
+//         'user_id' => 3
+//     ]);
+
+//     // <!-- 5 -->
+//     CartHeader::create([
+//         'user_id' => 4
+//     ]);
+
+//     // <!-- 6 -->
+//     CartHeader::create([
+//         'user_id' => 4
+//     ]);
+
+//     // <!-- 7 -->
+//     CartHeader::create([
+//         'user_id' => 4
+//     ]);
+// // CART HEADER
     }
 }
