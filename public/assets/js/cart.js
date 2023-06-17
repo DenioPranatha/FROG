@@ -90,7 +90,7 @@ let itemCheckLen = itemCheck.length;
 eventCheck = Array.prototype.slice.call(eventCheck);
 itemCheck = Array.prototype.slice.call(itemCheck);
 
-
+// ngecek smua item ke cek ato ngga
 function allItemChecked(){
     temp = true
     for(let i = 0; i < itemCheck.length; i++){

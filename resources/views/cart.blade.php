@@ -7,6 +7,7 @@
 @section('title', 'Cart')
 
 @section('content')
+{{-- @dd(auth()->user()->id) --}}
     <div class="cartPage d-flex">
         <div class="leftCart">
             <div class="cartTitle">
@@ -26,9 +27,11 @@
                     @php($total = 0)
                     @php($count = 0)
                     @foreach ($cartHeaders as $cartHeader)
-                        @if ($cartHeader->user_id == 4)
+                        @if ($cartHeader->user_id == auth()->user()->id)
                             @foreach ($cartDetails as $cartDetail)
-                                @if ($cartDetail->cartHeader->user->id == 4 && $cartDetail->cartHeader->id == ($loop->parent->index+1))
+                                {{-- @if ($cartDetail->cartHeader->user->id == auth()->user()->id && $cartDetail->cartHeader->event_id == ($loop->parent->index+1)) --}}
+
+                                @if ($cartHeader->id == $cartDetail->cart_header_id)
                                     @php($count++)
                                 @endif
                             @endforeach
@@ -40,7 +43,7 @@
             </div>
 
             @foreach ($cartHeaders as $cartHeader)
-                @if ($cartHeader->user_id == 4)
+                @if ($cartHeader->user_id == auth()->user()->id)
                     {{-- <p>{{ $loop->index }}</p> --}}
                     <div class="cartCard">
                         <div class="selectEvent d-flex align-items-center">
@@ -51,7 +54,7 @@
                                 </label>
                             </div>
                             <div class="eventCart">
-                                Charity Action of RTB
+                                {{ $cartHeader->event->name }}
                             </div>
                         </div>
                         <div class="lineCart"></div>
@@ -63,8 +66,12 @@
                         <div class="productCartLine"></div>
                         <div class="productGroup">
                             @foreach ($cartDetails as $cartDetail)
+                                {{-- @if ($cartHeader->id == $cartDetail->cart_header_id)
+
+                                @endif --}}
                                 {{-- <p>{{ $loop->parent->index }}</p> --}}
-                                @if ($cartDetail->cartHeader->user->id == 4 && $cartDetail->cartHeader->id == ($loop->parent->index+1))
+                                {{-- @if ($cartDetail->cartHeader->user->id == auth()->user()->id && $cartDetail->cartHeader->event_id == ($loop->parent->index+1)) --}}
+                                @if ($cartHeader->id == $cartDetail->cart_header_id)
                                     <div class="eachProduct d-flex align-items-center">
                                         <div class="checkHelp">
                                             <label class="checkDiv">
@@ -72,7 +79,7 @@
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
-                                        <div class="eachProductImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div>
+                                        <div class="eachProductImage" style="background-image: url({{ asset('/assets/images/product').'/'.$cartDetail->product->image}} )"></div>
                                         <div class="eachProductDesc">
                                             <div class="productDescName">{{ $cartDetail->product->name }}</div>
                                             <div class="productDescQtyText">Quantity:</div>
@@ -101,122 +108,15 @@
                                         </div>
                                         <div class="eachProductTotal">
                                             <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p>
-                                            {{-- <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p> --}}
-                                            {{-- @php($total += (($cartDetail->product->price)*($cartDetail->qty))) --}}
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
-
-                            {{-- @for ($i = 0; $i < 2; $i++)
-                                <div class="eachProduct d-flex align-items-center">
-                                    <div class="checkHelp">
-                                        <label class="checkDiv">
-                                            <input type="checkbox" name="itemCheck" id="" class="itemCheck">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="eachProductImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div>
-                                    <div class="eachProductDesc">
-                                        <div class="productDescName">Makaroni Pedas</div>
-                                        <div class="productDescQtyText">Quantity:</div>
-                                        <div class="productDescQty d-flex justify-content-start align-items-center">
-                                            <div class="qtyDiv d-flex justify-content-center align-items-center">
-                                                <div class="minus d-flex justify-content-center align-items-center" id="minus">
-                                                    -
-                                                </div>
-                                                <div class="productQty d-flex justify-content-center align-items-center">
-                                                    <form action="" method="get">
-                                                        <input type="text" name="productQty" id="productQty" value="1" class="prodQty">
-                                                    </form>
-                                                </div>
-                                                <div class="plus d-flex justify-content-center align-items-center" id="plus">
-                                                    +
-                                                </div>
-                                            </div>
-                                            <div class="trash d-flex align-items-center">
-                                                <div class="slash"></div>
-                                                <i class="bi bi-trash3"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="eachProductPrice">
-                                        <p class="eachProductPrice2">Rp100000</p>
-                                    </div>
-                                    <div class="eachProductTotal">
-                                        <p class="eachProductTotal2">Rp200000</p>
-                                    </div>
-                                </div>
-                            @endfor --}}
                         </div>
                     </div>
                 @endif
             @endforeach
 
-            {{-- @for ($j = 0; $j < 2; $j++)
-                <div class="cartCard">
-                    <div class="selectEvent d-flex align-items-center">
-                        <div class="checkHelp">
-                            <label class="checkDiv">
-                                <input type="checkbox" name="eventCheck" id="" class="eventCheck">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="eventCart">
-                            Charity Action of RTB
-                        </div>
-                    </div>
-                    <div class="lineCart"></div>
-                    <div class="productCart d-flex ">
-                        <p class="productCartText">Product Details</p>
-                        <p class="productPriceText">Price</p>
-                        <p class="productTotalText">Total</p>
-                    </div>
-                    <div class="productCartLine"></div>
-                    <div class="productGroup">
-                        @for ($i = 0; $i < 2; $i++)
-                            <div class="eachProduct d-flex align-items-center">
-                                <div class="checkHelp">
-                                    <label class="checkDiv">
-                                        <input type="checkbox" name="itemCheck" id="" class="itemCheck">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="eachProductImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div>
-                                <div class="eachProductDesc">
-                                    <div class="productDescName">Makaroni Pedas</div>
-                                    <div class="productDescQtyText">Quantity:</div>
-                                    <div class="productDescQty d-flex justify-content-start align-items-center">
-                                        <div class="qtyDiv d-flex justify-content-center align-items-center">
-                                            <div class="minus d-flex justify-content-center align-items-center" id="minus">
-                                                -
-                                            </div>
-                                            <div class="productQty d-flex justify-content-center align-items-center">
-                                                <form action="" method="get">
-                                                    <input type="text" name="productQty" id="productQty" value="1" class="prodQty">
-                                                </form>
-                                            </div>
-                                            <div class="plus d-flex justify-content-center align-items-center" id="plus">
-                                                +
-                                            </div>
-                                        </div>
-                                        <div class="trash d-flex align-items-center">
-                                            <div class="slash"></div>
-                                            <i class="bi bi-trash3"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="eachProductPrice">
-                                    <p class="eachProductPrice2">Rp100000</p>
-                                </div>
-                                <div class="eachProductTotal">
-                                    <p class="eachProductTotal2">Rp200000</p>
-                                </div>
-                            </div>
-                        @endfor
-                    </div>
-                </div>
-            @endfor --}}
         </div>
         <div class="rightCart" id="rightCart">
             <div class="summaryTitle">
