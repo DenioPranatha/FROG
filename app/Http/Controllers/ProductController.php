@@ -6,7 +6,10 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Http\Controllers\Controller;
+use App\Models\CartDetail;
+use App\Models\CartHeader;
 use App\Models\Category;
+use App\Models\Event;
 
 class ProductController extends Controller
 {
@@ -172,10 +175,6 @@ class ProductController extends Controller
         $c = count($products);
         if($pge >= $c)$pg = -1;
 
-        // dump($pge);
-
-
-        // dd($products);
 
         return view('productsResult', [
             'products' => $products->take($pge),
@@ -185,16 +184,81 @@ class ProductController extends Controller
             'pg' => $pg
         ]);
 
-        // $popEvents = Event::latest();
-        // $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+    }
 
-        // $events = $events->take($pge);
-        // $popular = $popEvents->get();
-        // $cat = Category::limit(3)->get();
+    public function add(Request $request){
+
+        // UNTUK MASUKIN CART HEADER
+
+        // ambil seluruh cart header yang dimiliki oleh si user itu
+        $chs = CartHeader::where('user_id', auth()->user()->id)->get();
+
+        // flag buat tandain udh ada produk dr event itu blm di keranjangnya
+        // kalo ada flagnya 1, kalo gada 0
+        $flag = 0;
+
+        // ngecek udah ada produk dr event itu blm di keranjangnya
+        foreach($chs as $ch){
+            if($request->event_id == $ch->event_id && auth()->user()->id == $ch->user_id){
+                // dd($request);
+                $flag = 1;
+            }
+        }
+
+        // kalo blm ada, baru insert di database
+        if($flag == 0){
+            $validatedDataHeader['event_id'] = $request->event_id;
+            $validatedDataHeader['user_id'] = auth()->user()->id;
+            CartHeader::create($validatedDataHeader);
+        }
 
 
-        // $eventsHtml = view('eventsResult', compact('events', 'popular', 'cat', 'pg'))->render();
+        // UNTUK MASUKIN CART DETAIL
 
-        // return $eventsHtml;
+        // buat dapetin cart header dari cart detail saat ini
+        $chid = CartHeader::where('user_id', auth()->user()->id)->where('event_id', $request->event_id)->first();
+
+        // buat dapetin smua produk yang event id nya sama dengan cart header id saat ini
+        $cds = CartDetail::where('cart_header_id', $chid->id)->get();
+
+        // kalo produknya blom ada di keranjang
+        $flag2 = 0;
+
+        foreach($cds as $cd){
+            // udah ada di keranjang
+            if($cd->product_id == $request->product_id){
+                $line = $cd;
+                $flag2 = 1;
+            }
+        }
+
+        // kalau produknya udah ada di keranjang, tambahin qty nya dgn qty yg baru
+        if($flag2 == 1){
+            // dd($line);
+            $validatedData['qty'] = $line->qty + $request->qty;
+            // $validatedData['cart_header_id'] = $line->cart_header_id;
+            // $validatedData['product_id'] = $line->product_id;
+            CartDetail::where('cart_header_id', $chid->id)->where('product_id', $request->product_id)->update($validatedData);
+        }
+
+        // masukin ke keranjang
+        else{
+            // input ke database cart detail
+            $validatedDataDetail['cart_header_id'] = $chid->id;
+            $validatedDataDetail['product_id'] = $request->product_id;
+            $validatedDataDetail['qty'] = $request->qty;
+            CartDetail::create($validatedDataDetail);
+        }
+
+        // return redirect('/products')->with('success', 'New post has been added!');
+
+        return redirect()->back()->with('success', 'Product has been added to cart!');
+    }
+
+    public function buy(Request $request){
+        // dump($request);
+        // redirect('/checkout');
+        return redirect('/checkout')->with('success', 'New post has been added!');
+        // return view("checkout");
     }
 }

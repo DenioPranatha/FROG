@@ -53,9 +53,11 @@ Route::post('/products', [ProductController::class, 'index'])->name('products');
 // ]);
 Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
+Route::post('/cartAdd', [ProductController::class, 'add']);
+Route::post('/buyNow', [ProductController::class, 'buy']);
 
-Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
 Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct');
+Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
@@ -98,6 +100,13 @@ Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin'
 
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
+Route::get('/destinationAdmin', function(){
+    return view('admin.destinationAdmin');
+})->name('destinationAdmin');
+
+Route::get('/approval', function(){
+    return view('admin.waitingListAdmin');
+})->name('approval');
 
 Auth::routes();
 
