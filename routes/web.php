@@ -100,6 +100,13 @@ Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin'
 
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
+Route::get('/destinationAdmin', function(){
+    return view('admin.destinationAdmin');
+})->name('destinationAdmin');
+
+Route::get('/approval', function(){
+    return view('admin.waitingListAdmin');
+})->name('approval');
 
 Auth::routes();
 
