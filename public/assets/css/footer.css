@@ -3,8 +3,10 @@ footer{
     height: 250px;
     padding: 15px 42px;
     color: white;
-	font-family: 'M PLUS 1';
+	font-family: 'Poppins';
 
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .mid{
