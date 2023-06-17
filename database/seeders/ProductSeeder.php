@@ -19,7 +19,7 @@ class ProductSeeder extends Seeder
         // <!-- 1 -->
         Product::create([
             'event_id' => 1,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Bantet',
             'stock' => 830,
             'description' => 'Makaroi bantet Khas Tasikmalaya yang disajikan untuk anda dengan rasa yang tidak akan mengecewakan, Makaroni BANTET tasikmalaya Varian Daun jeruk gurih Maknyuss. PRODUK READY',
@@ -31,7 +31,7 @@ class ProductSeeder extends Seeder
         // <!-- 2 -->
         Product::create([
             'event_id' => 1,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Kerupuk Seblak',
             'stock' => 560,
             'description' => 'Kerupuk seblak daun jeruk isi 1/4 atau 250 gram DIJAMIN BIKIN NAGIHHHH Varian rasa Daun jeruk Nikmat di mulut. Semua cemilan yang saya ada InsyaAllah bikin nagih dan soal rasa gausah di ragukan lagi!!"',
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
         // <!-- 3 -->
         Product::create([
             'event_id' => 1,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Jeruk',
             'stock' => 340,
             'description' => 'Makaroni bantet kemasan 500 gram atau 1/2 Kg. Soal rasa InsyaAllah tidak mengecewakan silahkan rasakan sensasi makaroni bantet dari kami. Tersedia rasa Daun jeruk yang nikmat.',
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
         // <!-- 4 -->
         Product::create([
             'event_id' => 1,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Kripik Usus',
             'stock' => 675,
             'description' => 'Kripik Usus tidak bau amis, menggunakan bubuk cabe asli dan rasa rempah kunyit nya kerasa banget pokoknya bumbu melimpah ruah dijamin rasa yang dijual di toko cemilan sartika tidak mengecewakan. Produk ready, stok produksi setiap hari & tangan pertama Home made. Dijamin bikin nagih. RASA PEDAS DAUN JERUK ISI 100 GR',
@@ -67,7 +67,7 @@ class ProductSeeder extends Seeder
         // <!-- 5 -->
         Product::create([
             'event_id' => 1,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Uril',
             'stock' => 235,
             'description' => 'ISI 250 GRAM / 1/4 KG Makaroni uril home made tidak keras ~  Kriuk bangett. Tersedia 3 varian rasa Asin gurih, Pedas gurih dan Ekstra pedas gurih. PRODUK READY, PENGEMASAN CEPAT',
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
         // <!-- 6 -->
         Product::create([
             'event_id' => 2,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Daun ',
             'stock' => 172,
             'description' => '"Basreng yang super renyah + gurih dengan varian pedas dan original , pas bgt buat nemenin
@@ -92,7 +92,7 @@ class ProductSeeder extends Seeder
         // <!-- 7 -->
         Product::create([
             'event_id' => 2,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Cikruh',
             'stock' => 543,
             'description' => 'Makaroni kriuk cikruh kemasan 250 gr dibuat home made jadi insyaAllah rasa tidak mengecewakan tidak keras sama sekali. Ada 3 rasa Ori gurih, Pedas gurih dan Extra pedas gurih',
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
         // <!-- 8 -->
         Product::create([
             'event_id' => 2,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Kerang',
             'stock' => 274,
             'description' => 'ISI 250 Gram & 500 Gram, Insyaallah bikin nagih soal rasa gausah diraguin lagi. Tersedia 3 varian rasa, Asin gurih, Pedas gurih dan Ekstra pedas gurih. Produk Ready Pengemasan Cepat !',
@@ -116,7 +116,7 @@ class ProductSeeder extends Seeder
         // <!-- 9 -->
         Product::create([
             'event_id' => 2,
-            'product_category_id' => 1,
+            'category_id' => 1,
             'name' => 'Makaroni Mini',
             'stock' => 186,
             'description' => 'Makaroi kerang mini Khas Tasikmalaya yang disajikan untuk anda dengan rasa yang tidak akan mengecewakan produk tersedia dengan berbagai varian rasa.',
@@ -128,7 +128,7 @@ class ProductSeeder extends Seeder
         // <!-- 10 -->
         Product::create([
             'event_id' => 3,
-            'product_category_id' => 2,
+            'category_id' => 2,
             'name' => 'Cuanki Tahu',
             'stock' => 500,
             'description' => 'Sekarang bisa nikmatin bumbu yang pedas syeger gurih  kapanpun, paket cuanki instan abah isi 1paket cuanki: 3cuanki lidah, 4cuanki tahu, 10cuanki mini, bumbu abah, cabe bubuk abah, minyak bawang dan jeruk limo/purut (TERGANTUNG MUSIM). Rasakan sensasi nya , segera order produk selalu ready"',
@@ -140,7 +140,7 @@ class ProductSeeder extends Seeder
         // <!-- 11 -->
         Product::create([
             'event_id' => 3,
-            'product_category_id' => 4,
+            'category_id' => 4,
             'name' => 'Kaos Oblong',
             'stock' => 1000,
             'description' => 'Kaos polos basic V neck soft spandex bahan streck lembut dan adem. Tersedia ukuran S, M, L, dan XL. Model Body fit  cocok buat di pakai sehari-hari / outfit, bisa buat di sablon sendiri, buat dalaman di padukan dengan kemeja / jaket, buat seragam dan komunita',
@@ -153,7 +153,7 @@ class ProductSeeder extends Seeder
         // <!-- 12 -->
         Product::create([
             'event_id' => 3,
-            'product_category_id' => 10,
+            'category_id' => 10,
             'name' => 'Sweeter Hoodie',
             'stock' => 567,
             'description' => 'Sweeteer bahan Babbyterry adem dan nyaman dipakai. Motif sablon premium dan tidak mudah luntur saat dicuci. Produksi homemade dengan harga lebih terjangkau. Tersedia ukuran L dan XL',
@@ -166,7 +166,7 @@ class ProductSeeder extends Seeder
         // <!-- 13 -->
         Product::create([
             'event_id' => 4,
-            'product_category_id' => 4,
+            'category_id' => 4,
             'name' => 'Kaos V-Neck',
             'stock' => 1100,
             'description' => 'Kaos polos basic V neck soft spandex bahan streck lembut dan adem. Tersedia berbagai ukuran yang cocok untuk kamu. Model kaos ini adalah katun, sehingga adem untuk digunakan dengan motif v-neck.',
@@ -177,7 +177,7 @@ class ProductSeeder extends Seeder
         // <!-- 14 -->
         Product::create([
             'event_id' => 4,
-            'product_category_id' => 4,
+            'category_id' => 4,
             'name' => 'Kaos Polos',
             'stock' => 142,
             'description' => 'Kaos oblong dibuat dengan bahan yang sangat nyaman dipakai berkegiatan sehari-hari, saat olahraga maupun saat tidur. Dengan bahan halus dan lembut membuat singlet ini nyaman untuk dipakai dan juga tidak menyebabkan iritasi. Berbahan katun, anti gerah, anti lembab sehingga mudah menyerap keringat dan tentunya super nyaman banget dipakai. oblong pria ini dapat digunakan dari segala macam kalangan, dari mulai pria remaja hingga pria dewasa.',
@@ -189,7 +189,7 @@ class ProductSeeder extends Seeder
         // <!-- 15 -->
         Product::create([
             'event_id' => 4,
-            'product_category_id' => 5,
+            'category_id' => 5,
             'name' => 'Jedai Bangkok',
             'stock' => 831,
             'description' => 'Jepit Badai Thailand, Ukuran panjang 5 cm. Produk random gigi /cakar. Material plastik solid hard tidak mudah pecah. Kualitas nomor satu, Cengkaraman jepitnya kuat dan mengigit rambut. Produk original import dari Bangkok Thailand. Ukuran Reguler bukan Medium atau Mini Poni. Berkualitas Original terjamin tidak tipu tipu. Produk dikirim random gerigi 6 atau 10 sesuai dengan stok.',

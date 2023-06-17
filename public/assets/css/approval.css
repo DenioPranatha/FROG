@@ -1,0 +1,27 @@
+.container{
+    margin-top: 3vw;
+    margin-bottom: 10vw;
+    gap: 3vw;
+}
+
+.container h3{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.card-container{
+    /* border: 1px solid blue; */
+    width: 90vw;
+    gap: 1vw;
+}
+
+.card-test{
+    /* border: 1px solid red; */
+    margin-bottom: 1vw;
+}

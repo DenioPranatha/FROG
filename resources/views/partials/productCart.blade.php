@@ -6,7 +6,7 @@
             <div class="caption">
                 <p class="namaProduk">{{ $product->name }}</p>
                 {{-- <p class="namaEvent">{{ $event->name }}</p> --}}
-                <p class="namaEvent">{{ $product->event->name }}</p>
+                <p class="namaEvent">{{ $product->event->slug }}</p>
                 <p class="hargaProduk">Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }}</p>
                 {{-- <p class="stokProduk">Stock:&nbsp;<b> {{ $product->stock }}</b></p> --}}
             </div>
