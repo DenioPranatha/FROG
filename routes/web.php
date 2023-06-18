@@ -38,6 +38,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/index', [IndexController::class, 'index'])->name('index');
+Route::get('/index/result', [IndexController::class, 'result'])->name('index');
 // Route::post('products', [IndexController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');

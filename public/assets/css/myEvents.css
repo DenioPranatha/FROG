@@ -7,8 +7,6 @@
     /* margin-bottom: 84px; */
 
     /* margin-bottom: 100px; */
-
-    border: 1px solid red;
 }
 
 .section-title{
@@ -24,7 +22,7 @@
 }
 
 .card-container{
-    margin-top: -8px;   
+    margin-top: -8px;
     text-decoration: none;
     color: black;
 
@@ -89,13 +87,13 @@
     filter: drop-shadow(4px 4px 8px #CDCDCD);
     border-radius: 10px;
 
-    
+
 }
 
 .card-section-box-text{
     width: 1000px;
 
-   
+
 }
 
 .card-section-box-text p{

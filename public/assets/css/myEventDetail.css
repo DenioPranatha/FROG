@@ -392,6 +392,11 @@ button{
     margin-bottom: 21px;
 }
 
+.purple-but{
+    background-color: #522E93;
+    color: #FFFFFF;
+}
+
 .stat-subheadline{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 18px;
@@ -644,4 +649,15 @@ button{
 
 .edit-photo i{
     font-size: 6vw;
+}
+
+#myChart, #myChart1{
+    border: 1px solid #522E93;
+    width: 700px !important;
+    height: 400px !important;
+}
+
+.chart-result{
+    /* width: 900px; */
+    padding: 42px 130px 84px 130px;
 }
