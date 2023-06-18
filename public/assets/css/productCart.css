@@ -72,8 +72,8 @@
     text-decoration-color: #673AB7;
 }
 
-.namaProduk {
-    font-family: 'M PLUS 1';
+.caption .namaProduk {
+    /* font-family: 'M PLUS 1'; */
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -81,11 +81,11 @@
     color: #000000;
 }
 
-.namaEvent {
+.caption .namaEvent {
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 14px;
     display: flex;
     align-items: flex-end;
@@ -96,7 +96,7 @@
     /* background-color: yellow; */
 }
 
-.hargaProduk {
+.caption .hargaProduk {
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 700;
@@ -105,7 +105,7 @@
     color: #522E93;
 }
 
-.stokProduk {
+.caption .stokProduk {
     font-family: 'Ubuntu';
     font-style: normal;
     font-size: 10px;
