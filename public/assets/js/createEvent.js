@@ -65,16 +65,18 @@ const img_input = document.getElementById("img-input");
 
 function showPreview(event){
     if(event.target.files.length > 0){
-        // var src = URL.createObjectURL(event.target.files[0]);
+        // alert('masuk')
+        var src = URL.createObjectURL(event.target.files[0]);
         var preview = document.getElementById("img");
-        // preview.src = src;
-        // preview.style.display = "block";
+        preview.src = src;
+        preview.style.display = "block";
+
         // alert(event.target.files[0]);
-        preview.style.height = "100px";
-        preview.style.width = "100px";
-        preview.style.backgroundImage = URL.createObjectURL(event.target.files[0]);
-        preview.style.backgroundRepeat = "no-repeat";
-    //   product_img.style.backgroundImage = preview.src;
+        // preview.style.height = "100px";
+        // preview.style.width = "100px";
+        // preview.style.backgroundImage = URL.createObjectURL(event.target.files[0]);
+        // preview.style.backgroundRepeat = "no-repeat";
+        product_img.style.backgroundImage = preview.src;
     }
 }
 
@@ -83,6 +85,18 @@ img_input.addEventListener("input", (event) => {
     img_input.style.display = "none";
     product_img.style.display = "block";
 });
+
+// const img = document.getElementById('img');
+// const imginput = document.getElementById('img-input');
+// const reader = new FileReader();
+// reader.addEventListener("load", function () {
+//     imginput.style.backgroundImage = `url(${ reader.result })`;
+// }, false);
+// img-input.addEventListener('change',function() {
+//   const image = this.files[0];
+//   if(image) reader.readAsDataURL(image);
+// }, false)
+
 
 
 // Avoid duration out of range
