@@ -1,5 +1,5 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/myEventDetail.css">
+    <link rel="stylesheet" href="/assets/css/myEventDetail.css">
 @endsection
 
 @extends('layouts.main')
@@ -121,7 +121,7 @@
                     @endfor --}}
 
                     <div class="productCartPage">
-                        <a href="addProduct" class="custom-card">
+                        <a href="/addProduct" class="custom-card">
                             <div class="card">
                                 <div class="add-icon">
                                    <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
@@ -281,4 +281,167 @@
 
 @section('js')
     <script type="text/javascript" src="{{URL::asset('assets/js/myeventdetail.js')}}"></script>
+    <script type="text/javascript">
+    const ourData = @json($user_total);
+
+//fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
+function generateDateLabels(startDate, count) {
+    var labels = [];
+    labels["Date"] = [];
+    labels["Value"] = [];
+
+    //buat startdate
+    const currentDate = new Date(startDate);
+
+    for (let i = 0; i < count; i++) {
+        //masukkin start date ke format ISO
+        const x = currentDate.toISOString().split('T')[0];
+        //masukin ISO date ke label
+        // labels["Date"].push(currentDate);
+        const formattedDate = currentDate.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+        });
+        labels["Date"].push(formattedDate);
+        //Jika ada item date yang == x, push value dari filtered data, selain itu
+        let temp = ourData.filter(item => item.date === x);
+        if(Object.keys(temp).length){
+            //If, ada item date yang == x, masukin item total ke filtered data
+            const filteredData = temp.map(item => item.total);
+            labels["Value"].push(filteredData);
+                }else{
+                    labels["Value"].push(0);
+                }
+                //++ di date
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            return labels;
+        }
+
+        const labelCount = 7; //Number of date labels to generate
+        const dateLabels = generateDateLabels(@json($start->format("Y-m-d")), labelCount);
+        // console.log(@json($start->format("Y-m-d")));
+        // var dte =  @json($user_total->pluck('date')->toArray());
+        // var total =  @json($user_total->pluck('total')->toArray());
+        //buat graph
+
+        const data = {
+            labels: dateLabels["Date"],
+            datasets: [{
+                label: 'Daily Sale',
+                backgroundColor: 'rgb(82, 46, 147)',
+                borderColor: 'rgb(255, 255, 255)',
+                data: dateLabels["Value"],
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'MMM D',
+                                },
+                            },
+                        },
+                    },
+                },
+            }],
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+            );
+
+        //fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
+        function generateWeekLabels(startDate) {
+            var labels1 = [];
+            labels1["Week"] = [];
+            labels1["Value"] = [];
+            var currentDate = new Date(startDate);
+            var cnt = @json($weekCount);
+            cnt = parseInt(cnt);
+
+            for (let i = 1; i <= cnt; i++) {
+                //masukkin nama week
+                const y = "Week " + i.toString();
+                console.log(y);
+                //masukin week ke label
+                labels1["Week"].push(y);
+
+                var res = 0;
+
+                for(let j = 1; j<=7; j++){
+                    const x = currentDate.toISOString().split('T')[0];
+                    let temp = ourData.filter(item => item.date === x);//
+                    if(Object.keys(temp).length){
+                        //If, ada item date yang == x, masukin item total ke filtered data
+                        const filteredData = temp.map(item => item.total);
+                        res = res + parseInt(filteredData);
+                    }
+                    //++ di date
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+
+                labels1["Value"].push(res);
+
+            }
+            return labels1;
+        }
+
+            const weekLabels = generateWeekLabels(@json($start->format("Y-m-d")));
+
+            const data1 = {
+                labels: weekLabels["Week"],
+                datasets: [{
+                    label: 'Weekly Sale',
+                    backgroundColor: 'rgb(82, 46, 147)',
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: weekLabels["Value"],
+                    options: {
+                        scales: {
+                                x: {
+                                    type: 'time',
+                                    time: {
+                                            unit: 'day'
+                                        }
+                                    }
+                                }
+                            }
+                        }]
+                    };
+
+        const config1 = {
+            type: 'bar',
+            data: data1,
+            options: {}
+        };
+
+        const myChart1 = new Chart(
+            document.getElementById('myChart1'),
+            config1
+        );
+        console.log("halo1");
+
+    $(document).ready(function(){
+
+        $('.dropdown-item').on('click', function(){
+            var graphDate = $(this).attr('value');
+            console.log(graphDate);
+            const dateLabels1 = generateDateLabels(graphDate, labelCount);
+            myChart.data.labels = dateLabels1["Date"];
+            myChart.data.datasets[0].data = dateLabels1["Value"];
+            console.log('masuk sini');
+            myChart.update();
+
+        });
+
+    });
+    </script>
 @endsection

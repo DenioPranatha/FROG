@@ -43,4 +43,22 @@ class IndexController extends Controller
         ]);
     }
 
+    public function result(Request $request)
+    {
+        //
+        $pg = (int)$request->query('pg');
+        $pge = 10*$pg;
+        $popEvents = Event::latest();
+        $events = Event::latest()->filter(request(['search-event']))->get();
+        $c = count($events);
+        $events = $events->take($pge);
+        // $popular = $popEvents->get();
+        // $cat = Category::limit(3)->get();
+        if($pge >= $c)$pg = -1;
+
+        $eventsHtml = view('indexResult', compact('events', 'pg'))->render();
+
+        return $eventsHtml;
+    }
+
 }
