@@ -1,3 +1,4 @@
+
 #edit-content {
     display: none;
 }
@@ -29,7 +30,7 @@
 }
 
 .catalog-container{
-    /* border: 1px solid; */
+    /* border: 1px solid red; */
     width: 98vw;
     display: flex;
     justify-content: center;
@@ -43,8 +44,8 @@
 }
 
 #section1{
-    width: 100vw;
-    margin: 0px;
+    padding: 21px 0px 42px 25px;
+    width: 98vw;
 }
 
 .add-icon{
@@ -80,6 +81,7 @@ a.custom-card,
 a.custom-card:hover {
   color: inherit;
   text-decoration-line: none;
+  /* margin-right: -1vw; */
 }
 
 a.custom-card:hover {
@@ -94,7 +96,7 @@ a.custom-card:hover {
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
     box-shadow: 4px 4px 0px #CDCDCD;
-    margin: 12px;
+    /* margin: 12px; */
     border-radius: 0%;
 }
 
@@ -214,11 +216,13 @@ a.custom-card:hover {
 
 .desc-container{
 
-    width: 90vw;
-    margin: 40px;
+    /* width: 90vw; */
+    /* margin: 40px; */
     display: flex;
     flex-direction: row;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 40px 100px 40px 100px;
+    /* padding-right: 85px; */
 }
 
 .desc{
@@ -227,20 +231,39 @@ a.custom-card:hover {
     justify-content: space-between;
     padding-left: 21px;
     height: 400px;
+    /* border: 1px solid black; */
+    width: 100%;
 }
 
 .desc-img{
     width: 450px;
     height: 337.5px;
+/* <<<<<<< main
+======= */
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+/* >>>>>>> main */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+/* <<<<<<< main */
+    border-radius: 20px;
+    border: 1px solid #CDCDCD;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+/* ======= */
+    /* border: 1px solid #CDCDCD;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    border-radius: 20px; */
+/* >>>>>>> main */
 }
 
 .desc-headline{
     font-size: 25px;
+    display: flex;
+    /* height: 75px; */
+    align-items: center;
     /* margin-bottom: 21px; */
 }
 
@@ -255,20 +278,46 @@ a.custom-card:hover {
 }
 
 .edit-desc{
-    border: none;
-    box-shadow: 4px 4px 0px #CDCDCD, inset 0px 0px 0px 2px #CDCDCD;
+/* <<<<<<< main */
+    border: 1px solid #CDCDCD;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
     font-size: 1.4vw;
 }
 
 .edit-title{
-    border: none;
-    box-shadow: 2px 2px 0px #CDCDCD, inset 0px 0px 0px 2px #CDCDCD;
+    border: 1px solid #CDCDCD;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
     font-size: 1.4vw;
+/* ======= */
+    height: 120px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD, inset 0px 0px 0px 1px #CDCDCD;
+    font-size: 14px;
+}
+
+.edit-title{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD, inset 0px 0px 0px 0px #CDCDCD;
+    font-size: 18px;
+/* >>>>>>> main */
 }
 
 textarea{
     resize: none;
+/* <<<<<<< main */
     padding-left: 0.5vw;
+    padding-top: 0.5vw;
+    width: 40vw;
+
+/* ======= */
+    /* padding-left: 0.5vw; */
+/* >>>>>>> main */
 }
 
 button{
@@ -464,7 +513,7 @@ button{
     height: 250px;
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
     margin: 10.5px;
 }
 
@@ -499,11 +548,16 @@ button{
     align-items: center;
     margin: 21px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
+/* <<<<<<< main */
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+/* ======= */
+    box-shadow: 4px 4px 8px #CDCDCD;
+/* >>>>>>> main */
 }
 
 .donate:hover{
-    background-color: #673AB7;
+    background-color: #522E93;
     color: white;
 }
 
@@ -574,4 +628,20 @@ button{
     border: 1px solid #522E93;
     width: 400px;
     box-shadow: none;
+}
+
+.edit-photo{
+    width: 450px;
+    height: 337.5px;
+    background-color: #CDCDCD;
+    opacity: 0.8;
+
+    border-radius: 20px;
+    border: 1px solid #CDCDCD;
+    position: absolute;
+    z-index: 2;
+}
+
+.edit-photo i{
+    font-size: 6vw;
 }

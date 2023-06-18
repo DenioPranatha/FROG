@@ -78,6 +78,12 @@ html {
     font-size: 16px;
     font-weight: 900;
     /* padding: 0px 42px; */
+
+    font-family: 'Poppins';
+}
+
+.navbar a{
+    font-family: 'Poppins';
 }
 
 .container-fluid{

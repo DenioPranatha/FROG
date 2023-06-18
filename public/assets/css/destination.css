@@ -1,43 +1,242 @@
-.destination{
-    background-color: yellow;
-    height: 2000px;
-    width: 100%;
-    padding: 0px 100px;
-}
 
 /* search */
-.searchDiv{
-    /* background-color: white; */
+.owl-carousel a{
+    text-decoration: none;
+    color: black;
+}
+
+/* .kotakLuar{
+    width: 80%;
+    background-color: yellow;
+} */
+
+.destImg{
     width: 100%;
-    height: 40px;
-    background-color: pink;
-    /* margin-bottom: 10px; */
-    /* padding-bottom: 4px; */
-    /* position: fixed; */
-    /* z-index: 15; */
+    height: 300px;
+    /* background-color: yellow; */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.charityDestDiv{
+    background-color: #673AB7;
+    width: 100%;
+    /* height: 900px; */
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+
+.slider {
+    /* margin-bottom: 30px; */
+    position: relative;
     /* background-color: pink; */
+    padding-top: 0;
 }
 
-.searchLogo{
-    margin-left: -43px;
+.slider .owl-item.active.center .slider-card {
+    transform: scale(1);
+    opacity: 1;
+    background-color: white;
+    color: #000000;
+    border: 1px solid #CDCDCD;
+    /* border-radius: 20px; */
+    /* background-color: yellow; */
+    /* z-index: 10; */
+    /* width: 100px; */
 }
 
-input[type=text]{
-    all: unset;
-    width: 30%;
-    height: 33px;
-    background-color: #FFFFFF;
-    border: 2px solid #CDCDCD;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    padding-left: 20px;
-    font-family: 'Poppins';
+.slider-card {
+    /* border: 1px solid red; */
+
+    background: #fff;
+    /* background-color: yellow; */
+    /* width: 120%; */
+    padding: 0px 0px;
+    margin: 30px -32px 80px -32px;
+    /* margin: 0px -80px 30px -80px; */
+    /* border-radius: 20px; */
+    /* filter: drop-shadow(4px 4px 0px #CDCDCD); */
+    transform: scale(0.75);
+    opacity: 0.5;
+    transition: all 0.3s;
+    border: 1px solid #CDCDCD;
+    /* width: 350px; */
+    /* z-index: -2; */
+    /* background-color: yellow; */
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+}
+
+
+.slider-card img {
+    /* border-radius: 5px 5px 0px 0px; */
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+}
+
+.owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 60px);
+    left: -30px;
+    opacity: 1;
+    font-size: 50px !important;
+    z-index: 1;
+    /* color: white; */
+    /* color: #FFFFFF; */
+    /* width: 50px;
+    height: 50px; */
+    /* background-color: #f44336; */
+}
+
+.owl-nav .owl-prev span{
+    color: white;
+}
+
+.owl-nav .owl-next span{
+    color: white;
+}
+
+.owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 60px);
+    right: -30px;
+    opacity: 1;
+    font-size: 50px !important;
+    z-index: 1;
+    /* width: 50px; */
+    /* height: 50px; */
+    /* display: block !important; */
+    /* background-color: #f44336; */
+}
+
+.owl-dots {
+    display: none;
+}
+
+.charityText{
+    font-family: 'M PLUS 1';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.charityLoc{
+    padding-bottom: 30px;
+}
+
+.charityLoc .bi.bi-geo-alt{
+    font-size: 20px;
+    color: #522E93;
+}
+
+.charityLoc p{
+    font-family: 'M PLUS 1';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-
-
-color: rgba(0, 0, 0, 0.49);
+    font-size: 16px;
+    line-height: 26px;
+    color: #522E93;
+    margin-left: 5px;
 }
-/* search */
+
+.section-title2{
+    padding: 40px 42px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title3{
+    padding: 40px 42px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    color: black;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-all-card{
+    padding-left: 100px;
+    /* border: 1px solid red; */
+    gap: 2vw;
+    margin-bottom: 6vw;
+}
+
+.container-card{
+
+}
+
+.card{
+    width: 25vw;
+    height: 32vw;
+    gap: 2.5vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+    box-shadow: 4px 4px 8px rgba(205, 205, 205, 1);
+}
+
+.shadow{
+    width: 25vw;
+    height: 32vw;
+    gap: 2.5vw;
+
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.385394) 53.44%, #000000 99.99%);
+    border-radius: 20px;
+    position: absolute;
+    /* z-index: 2; */
+
+    padding-left: 2vw;
+    padding-bottom: 1.5vw;
+}
+
+.head{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.sub{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.trash{
+    margin-bottom: 0.4vw;
+}
+
+.trash button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
