@@ -42,36 +42,44 @@
 
     {{-- Edit content --}}
     <div id="edit-content" class="container-editcontent">
-        <div class="desc-container">
-            <div class="pic">
-                <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
-                <button id="change-view-button-edit" class="donate" href="#section1">Save Changes</button>
-            </div>
-            <div class="desc">
-                <div class="desc-headline">
-                    <textarea id="edit-title" placeholder="Input Your New Title" class="edit-title" style="width: 48vw; height:2.5vw;"></textarea>
-                    {{-- <b>RTB Chinese New Year Jualan</b> --}}
-                </div>
-                <div class="purple">
-                    Day 15
-                </div>
-                <div class="progress-container">
-                    <div class="date">0</div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <form action="">
+            <div class="desc-container">
+                <div class="pic">
+                    <div class="edit-pic d-flex flex-row">
+                        <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
+                        <div class="edit-photo d-flex justify-content-center align-items-center">
+                            <label for="file" style="cursor: pointer"><i class="bi bi-camera"></i></label>
+                            <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;">
+                        </div>
                     </div>
-                    <div class="date">30</div>
+                    <button id="change-view-button-edit" class="donate" href="#section1">Save Changes</button>
                 </div>
-                <div class="desc-caption">
-                    <textarea id="edit-desc" placeholder="Input Your New Description" class="edit-desc" style="width: 48vw; height:10vw;"></textarea>
-                    {{-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia! Sed ab mollitia ex consequuntur consequatur amet dolore magni fugit, aperiam hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur. --}}
+                <div class="desc">
+                    <div class="desc-headline">
+                        <textarea id="edit-title" placeholder="Input Your New Title" class="edit-title rounded"></textarea>
+                        {{-- <b>RTB Chinese New Year Jualan</b> --}}
+                    </div>
+                    <div class="purple">
+                        Day 15
+                    </div>
+                    <div class="progress-container">
+                        <div class="date">0</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="date">30</div>
+                    </div>
+                    <div class="desc-caption">
+                        <textarea id="edit-desc" placeholder="Input Your New Description" class="edit-desc rounded" style="height:10vw;"></textarea>
+                        {{-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia! Sed ab mollitia ex consequuntur consequatur amet dolore magni fugit, aperiam hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur. --}}
+                    </div>
+                    <div class="desc-point"><b>Created By:</b> Lorem Ipsum</div>
+                    <div class="desc-point"><b>Event Duration:</b> Lorem Ipsum - Lorem Ipsum</div>
+                    <div class="desc-point"><b>Charity Destination:</b> Lorem Ipsum</div>
+                    <div class="desc-point"><b>Category:</b> Lorem Ipsum</div>
                 </div>
-                <div class="desc-point"><b>Created By:</b> Lorem Ipsum</div>
-                <div class="desc-point"><b>Event Duration:</b> Lorem Ipsum - Lorem Ipsum</div>
-                <div class="desc-point"><b>Charity Destination:</b> Lorem Ipsum</div>
-                <div class="desc-point"><b>Category:</b> Lorem Ipsum</div>
             </div>
-        </div>
+        </form>
     </div>
 
     <div id="nav-cont" class="nav-cont nav nav-underline justify-content-center">
