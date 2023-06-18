@@ -240,6 +240,10 @@ a.custom-card:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    /* border: 1px solid #CDCDCD;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    border-radius: 20px; */
 }
 
 .desc-headline{

@@ -1,9 +1,9 @@
 .productCartPage{
-    margin-right: 20px;
+    margin-right: 25px;
     margin-bottom: 20px;
 }
 
-.productCartPage a.custom-card{
+.productCartPage a.custom-card {
     height: fit-content;
     /* width: 215px; */
     /* width: 180px; */
@@ -19,7 +19,7 @@
     color: #673AB7;
 }
 
-.productCartPage .card{
+.productCartPage .card {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     position: relative;
     /* width: 215px; */
@@ -27,6 +27,7 @@
     /* height: 203px; */
     /* height: 241px; */
     height: 227px;
+    /* height: 227px; */
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
     box-shadow: 4px 4px 8px #CDCDCD;
@@ -38,7 +39,7 @@
     border-radius: 10px;
 }
 
-.productCartPage .card-img{
+.productCartPage .card-img {
     /* width: 214px; */
     width: 100%;
     height: 165px;
@@ -52,11 +53,12 @@
     /* background-color: yellow; */
 }
 
-.productCartPage .caption{
+.productCartPage .caption {
     padding: 5px;
     /* background-color: pink; */
     /* height: 150px; */
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -66,11 +68,11 @@
     padding-left: 15px;
 }
 
-.productCartPage .caption:hover{
+.productCartPage .caption:hover {
     text-decoration-color: #673AB7;
 }
 
-.namaProduk{
+.namaProduk {
     font-family: 'M PLUS 1';
     font-style: normal;
     font-weight: 700;
@@ -79,7 +81,7 @@
     color: #000000;
 }
 
-.namaEvent{
+.namaEvent {
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 400;
@@ -94,7 +96,7 @@
     /* background-color: yellow; */
 }
 
-.hargaProduk{
+.hargaProduk {
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 700;
@@ -103,7 +105,7 @@
     color: #522E93;
 }
 
-.stokProduk{
+.stokProduk {
     font-family: 'Ubuntu';
     font-style: normal;
     font-size: 10px;
