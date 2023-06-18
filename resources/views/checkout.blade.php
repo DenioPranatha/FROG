@@ -67,21 +67,21 @@
 
                                                 <div class="first-name">
 
-                                                    <label for="fname"  class="first-name-title">First name</label><br>
-                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="First Name">
+                                                    <label for="fname"  class="first-name-title">Name</label><br>
+                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="Name">
                                                     <div class="invalid-feedback fnameval" id ="fnameval">
-                                                        Please input your first name
+                                                        Please input your name
                                                     </div>
                                                 </div>
 
-                                                <div class="last-name">
+                                                {{-- <div class="last-name">
 
                                                     <label for="lname"  class="last-name-title">Last name</label><br>
                                                     <input type="text" class="form-control last-name-box"  id="last-name-box" required minlength = "3" maxlength = "25" name="lastname" autocomplete="off"  name="lname" placeholder="Last Name" >
                                                     <div class="invalid-feedback lnameval" id="lnameval">
                                                         Please input your last name
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
 
                                             <div class="phone-number">
