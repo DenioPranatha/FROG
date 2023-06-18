@@ -5,10 +5,12 @@
     width: 540px;
     height: 280px;
     background: #FFFFFF;
-    box-shadow: 4px 6px 0px #CDCDCD, 1px 0 .4em rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 6px 0px #CDCDCD, 1px 0 .4em rgba(0, 0, 0, 0.25); */
     border-radius: 10px;
     cursor:default;
     /* transition: all .2s ease-in-out; */
+
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
 }
 
 /* .card-ph:hover{
@@ -40,20 +42,20 @@
 }
 
 .product-name{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 29px;
     margin-bottom: -9px;
     color: #522E93;
 }
 
 .quantity{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
     color: #522E93;
 }
@@ -77,10 +79,11 @@
 }
 
 .history-information-left p{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 22px;
     margin-bottom: 5px;
 }
@@ -92,7 +95,8 @@
 }
 
 .history-information-right p{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
