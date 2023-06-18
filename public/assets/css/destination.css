@@ -1,0 +1,43 @@
+.destination{
+    background-color: yellow;
+    height: 2000px;
+    width: 100%;
+    padding: 0px 100px;
+}
+
+/* search */
+.searchDiv{
+    /* background-color: white; */
+    width: 100%;
+    height: 40px;
+    background-color: pink;
+    /* margin-bottom: 10px; */
+    /* padding-bottom: 4px; */
+    /* position: fixed; */
+    /* z-index: 15; */
+    /* background-color: pink; */
+}
+
+.searchLogo{
+    margin-left: -43px;
+}
+
+input[type=text]{
+    all: unset;
+    width: 30%;
+    height: 33px;
+    background-color: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding-left: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+
+color: rgba(0, 0, 0, 0.49);
+}
+/* search */
