@@ -10,7 +10,7 @@
     <div id="section-donate"></div>
     <div class="desc-container">
         <div class="pic">
-            <div class="desc-img" style="background-image: url({{ asset('/assets/img/rtb.webp') }})"></div>
+            <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
             <a class="donate" href="#section-donate">Donate now!</a>
         </div>
         <div class="desc">

@@ -11,7 +11,7 @@
         <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate>
             @csrf
             <div class="container-left">
-                <p>Add image</p>
+                {{-- <p>Add image</p> --}}
                 <div class="img-container">
                     {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
                     <input class="form-control" type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
@@ -20,6 +20,7 @@
                     {{-- <img id="img"> --}}
                     <div id="img"></div>
                 </div>
+                <p>Add image</p>
             </div>
             <div class="container-right">
                 <p>Add Product</p>

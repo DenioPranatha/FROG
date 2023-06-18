@@ -36,10 +36,10 @@
             </div>
         </div>
         <div class="recommendDiv">
-            <div class="section-title">
+            <div class="section-title-first">
                 Recommended events for you
             </div>
-            <div id="carouselExample" class="carousel">
+            <div id="carouselExample" class="carousel d-flex flex-wrap">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         @include('partials.eventCart', ['event' => $events[0]])
