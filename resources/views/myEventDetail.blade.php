@@ -50,6 +50,27 @@
 
     {{-- Edit content --}}
     <div id="edit-content" class="container-editcontent">
+
+        <form action="">
+            <div class="desc-container">
+                <div class="pic">
+                    <div class="edit-pic d-flex flex-row">
+                        <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
+                        <div class="edit-photo d-flex justify-content-center align-items-center">
+                            <label for="file" style="cursor: pointer"><i class="bi bi-camera"></i></label>
+                            <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;">
+                        </div>
+                    </div>
+                    <button id="change-view-button-edit" class="donate" href="#section1">Save Changes</button>
+                </div>
+                <div class="desc">
+                    <div class="desc-headline">
+                        <textarea id="edit-title" placeholder="Input Your New Title" class="edit-title rounded"></textarea>
+                        {{-- <b>RTB Chinese New Year Jualan</b> --}}
+                    </div>
+                    <div class="purple">
+                        Day 15
+
         <form action="/myEventDetail/edit" method="POST">
             @csrf
             <div class="desc-container">
