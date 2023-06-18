@@ -1,7 +1,6 @@
 
     {{-- {{ $lim }} --}}
     @if(count($events) != 0)
-    
         <div class="catalog-container">
             @foreach($events as $event)
                 @include('partials.eventCart', ['event' => $event])
