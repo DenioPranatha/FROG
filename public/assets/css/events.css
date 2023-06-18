@@ -39,13 +39,13 @@
 }
 
 .carousel{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     margin: auto;
     flex-wrap: nowrap;
     height: fit-content;
-    width: 85vw;
+    width: 88.3vw;
 }
 
 .carousel1{
@@ -150,7 +150,7 @@ a.custom-card:hover {
 
 .carousel-inner{
     display: flex;
-    padding-left: 20px;
+    padding-left: 25px;
     margin-right: 20px;
 }
 

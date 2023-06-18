@@ -54,23 +54,22 @@
             </div>
             <div id="carouselExample" class="carousel d-flex flex-wrap">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    {{-- <div class="carousel-item active">
                         @include('partials.eventCart', ['event' => $events[0]])
-                    </div>
-                    @foreach ($events->skip(1) as $event)
+                    </div> --}}
+                    @foreach ($events as $event)
                         <div class="carousel-item">
                             @include('partials.eventCart', ['event' => $event])
                         </div>
                     @endforeach
                 </div>
-
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
