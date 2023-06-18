@@ -33,37 +33,36 @@
                 </div>
             </form> --}}
         </div>
-        <div id="result-container">
-            <div class="bannerDiv">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Logo">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Code">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Prediction Team">
-                        </div>
+        <div class="bannerDiv">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Logo">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Code">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Prediction Team">
                     </div>
                 </div>
             </div>
-            <div class="recommendDiv">
-                <div class="section-title">
-                    Recommended events for you
-                </div>
-                <div id="carouselExample" class="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            @include('partials.eventCart', ['event' => $events[0]])
-                        </div>
-                        @foreach ($events->skip(1) as $event)
-                            <div class="carousel-item">
-                                @include('partials.eventCart', ['event' => $event])
-                            </div>
-                        @endforeach
+        </div>
+        <div class="recommendDiv">
+            <div class="section-title-first">
+                Recommended events for you
+            </div>
+            <div id="carouselExample" class="carousel d-flex flex-wrap">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        @include('partials.eventCart', ['event' => $events[0]])
                     </div>
+                    @foreach ($events->skip(1) as $event)
+                        <div class="carousel-item">
+                            @include('partials.eventCart', ['event' => $event])
+                        </div>
+                    @endforeach
+                </div>
 
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

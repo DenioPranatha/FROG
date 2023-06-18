@@ -25,8 +25,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.25));
-    border-radius: 15px;
+    /* filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.25)); */
+    /* border-radius: 15px; */
+
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    border-radius: 20px;
 }
 
 .descDiv{
@@ -42,10 +45,10 @@
 }
 
 .productName{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 25px;
     line-height: 36px;
 }
 
@@ -81,7 +84,7 @@ a.eventName:hover{
 .qtyText{
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 21px;
     display: flex;
@@ -94,7 +97,7 @@ a.eventName:hover{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 21px;
     color: #000000;
     height: 100%;
@@ -106,6 +109,7 @@ a.eventName:hover{
 
 .productStock{
     font-family: 'Ubuntu';
+    font-weight: 700;
     font-style: normal;
     font-size: 16px;
     line-height: 21px;
@@ -117,7 +121,7 @@ a.eventName:hover{
 
 .productDesc{
     margin-top: 22px;
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -152,17 +156,20 @@ a.eventName:hover{
 }
 
 .cart2{
-    border-radius: 30px;
+    /* border-radius: 30px; */
     border: 3px solid #522E93;
     background-color: white;
     width: 180px;
     height: 43px;
 
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    border-radius: 20px;
+
 }
 
 .cartText{
     margin-left: 6px;
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;
@@ -171,16 +178,19 @@ a.eventName:hover{
 }
 
 .buy2{
-    border-radius: 30px;
+    /* border-radius: 30px; */
     border: 3px solid #522E93;
     background-color: #522E93;
     width: 180px;
     height: 43px;
+
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    border-radius: 20px;
 }
 
 .buyText{
     margin-left: 6px;
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;

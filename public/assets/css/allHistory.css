@@ -11,8 +11,10 @@
 }
 
 .container h1{
-    font-family: 'M PLUS 1';
+    font-family: 'Ubuntu';
     font-style: normal;
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 42px;
+
+    margin-left: 60px;
 }
