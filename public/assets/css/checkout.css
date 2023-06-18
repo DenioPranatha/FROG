@@ -47,8 +47,9 @@
 .shipping-address{
     margin-top: 0px;
     align-items: flex-start;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 22px;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Poppins';
+    font-size: 20px;
     color: black;
     font-weight:500;
 }
@@ -111,7 +112,8 @@
     display: flex;
     box-sizing: border-box;
     border: 3px solid #522E93;
-    border-radius: 25px;
+    /* border-radius: 25px; */
+    border-radius: 20px;
     align-items: center;
     align-content: center;
     padding-left: 5px;
@@ -147,8 +149,9 @@
 .ordered-product{
     margin-top: 0px;
     align-items: flex-start;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 22px;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Poppins';
+    font-size: 20px;
     color: black;
     font-weight:500;
 }
@@ -194,6 +197,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
 }
 
 .detail{
@@ -204,7 +210,8 @@
 
 
 .title-product{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-size: 18px;
     color: #522E93;
     font-weight: bolder;
@@ -213,7 +220,8 @@
 }
 
 .quantity{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-size: 16px;
     color: black;
     font-weight: 400;
@@ -222,7 +230,8 @@
 }
 
 .span-quantity{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-size: 16px;
     color: black;
     font-weight:bolder;
@@ -271,8 +280,10 @@
 .shipping-option-title{
     margin-top: 0px;
     align-items: flex-start;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 22px;
+    /* font-family: 'Ubuntu', sans-serif;
+    font-size: 22px; */
+    font-family: 'Poppins';
+    font-size: 20px;
     color: black;
     font-weight:500;
 }
@@ -447,8 +458,10 @@ button.boxbtn2{
 .payment-option-title{
     margin-top: 0px;
     align-items: flex-start;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 22px;
+    /* font-family: 'Ubuntu', sans-serif;
+    font-size: 22px; */
+    font-family: 'Poppins';
+    font-size: 20px;
     color: black;
     font-weight:500;
 }
@@ -521,6 +534,9 @@ button.boxbtn2{
     margin-left: 870px;
     margin-top: 20px;
 
+    box-shadow: 4px 4px 8px #522E93;
+    border-radius: 20px;
+
 }
 
 .box-summary {
@@ -528,6 +544,8 @@ button.boxbtn2{
     margin-top: 30px;
     padding-left: 5px;
     padding-right: 5px;
+
+    
 }
 
 .title-checkout-summary{
@@ -635,12 +653,15 @@ button.boxbtn2{
     height: 51px;
     background: #522E93;
     border: 1px solid #522E93;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     padding-top: 15px;
     align-items: center;
     text-align: center;
     justify-content: center;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 .pay-button:hover{
@@ -693,6 +714,8 @@ button.boxbtn2{
 
     background: #FFFFFF;
     border: 3px solid #522E93;
+
+    border-radius: 10px;
 
 }
 
@@ -748,10 +771,14 @@ button.boxbtn2{
     display: flex;
     gap: 20px;
     padding-top: 10px;
+
+    /* border: 1px solid #764EBE;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px; */
 }
 
 .first-name-title{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
     font-size: 15px;
@@ -763,20 +790,28 @@ button.boxbtn2{
     height: 34px;
     box-sizing: border-box;
     background: #FFFFFF;
-    border: 1px solid #764EBE;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+    /* border: 1px solid #764EBE; */
+    /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25); */
     text-decoration: none;
     padding-left: 12px;
     margin-left: 0px;
 
+    border: 1px solid #764EBE;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
+
 }
 
 .last-name-title{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
     font-size: 15px;
     margin-bottom: 7px;
+
+    border: 1px solid #764EBE;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
 }
 
 .last-name-box{
@@ -1001,7 +1036,7 @@ textarea{
 }
 
 /* .form-control{
-    border: 0;
+    border-radius: 10px;
 } */
 
 .cancel-btn{
