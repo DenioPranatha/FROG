@@ -227,13 +227,16 @@ a.custom-card:hover {
     justify-content: space-between;
     padding-left: 21px;
     height: 400px;
+    /* border: 1px solid black; */
+    width: 100%;
 }
 
 .desc-img{
     width: 450px;
     height: 337.5px;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -241,6 +244,9 @@ a.custom-card:hover {
 
 .desc-headline{
     font-size: 25px;
+    display: flex;
+    /* height: 75px; */
+    align-items: center;
     /* margin-bottom: 21px; */
 }
 
@@ -255,20 +261,27 @@ a.custom-card:hover {
 }
 
 .edit-desc{
+    height: 120px;
+    width: 100%;
+    padding: 10px;
     border: none;
-    box-shadow: 4px 4px 0px #CDCDCD, inset 0px 0px 0px 2px #CDCDCD;
-    font-size: 1.4vw;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD, inset 0px 0px 0px 1px #CDCDCD;
+    font-size: 14px;
 }
 
 .edit-title{
-    border: none;
-    box-shadow: 2px 2px 0px #CDCDCD, inset 0px 0px 0px 2px #CDCDCD;
-    font-size: 1.4vw;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD, inset 0px 0px 0px 0px #CDCDCD;
+    font-size: 18px;
 }
 
 textarea{
     resize: none;
-    padding-left: 0.5vw;
+    /* padding-left: 0.5vw; */
 }
 
 button{
@@ -464,7 +477,7 @@ button{
     height: 250px;
     background: #FFFFFF;
     border: 1px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
     margin: 10.5px;
 }
 
@@ -499,7 +512,8 @@ button{
     align-items: center;
     margin: 21px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD;
 }
 
 .donate:hover{

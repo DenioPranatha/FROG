@@ -67,6 +67,7 @@ Route::get('/createEvent', function () {
 
 Route::get('/myevents', [MyEventController::class, 'index'])->name('myEvents');
 Route::get('/myEventDetail', [MyEventController::class, 'show'])->name('myEventDetail');
+Route::post('/myEventDetail/edit', [MyEventController::class, 'edit']);
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 Route::get('/createDestination', function () {
@@ -98,6 +99,7 @@ Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin'
 
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
+
 Route::get('/destinationAdmin', function(){
     return view('admin.destinationAdmin');
 })->name('destinationAdmin');
