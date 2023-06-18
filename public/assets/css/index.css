@@ -296,8 +296,10 @@ input[type=text] {
 
 .products {
     height: fit-content;
-    align-items: start;
-    padding: 0px 42px;
+    /* align-items: start; */
+    justify-content: flex-start;
+    /* width: 100vw; */
+    /* padding: 0px 42px; */
     padding: 0px 100px;
     padding-left: 100px;
     padding-right: 100px;

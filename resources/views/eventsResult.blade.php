@@ -1,4 +1,4 @@
-<div id="result-container">
+
     {{-- {{ $lim }} --}}
     @if(count($events) != 0)
         <div class="catalog-container">
@@ -14,7 +14,7 @@
         @if ($pg != -1)
             <div class="more-products">
                 <div class="line1"></div>
-                
+
                 {{-- masukkin next batch berapa ketika klik button --}}
                 <button class="more" id="myBtn1" value={{ $i }}>More Events</button>
                 <div class="line1"></div>
@@ -31,4 +31,4 @@
     @else
         <div class="not-found justify-content-center">Event with category "{{ request('category-event') }}" is not found</div>
     @endif
-</div>
+

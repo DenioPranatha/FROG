@@ -79,7 +79,7 @@
             </div>
 
             <div class="carousel-item">
-                <section class="stat-container"  id="section2">
+                <section class="stat-container" id="section2">
                     <div class="stat-headline">Funds Collected</div>
                     <div class="stat-headline purple">Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}</div>
                     <br>
@@ -115,36 +115,49 @@
                             <div class="slide1">
                                 <div class="carousel-item1">
                                     <div class="dropdown">
-                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <a class="btn purple-but dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                           Date Range
                                         </a>
                                         <?php
                                             $datePrint = $start->format('Y-m-d');
                                             $datePrint = new DateTime($datePrint);
+                                            $weekCount = 0;
                                         ?>
 
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             @while($datePrint < $end)
                                                 <?php
                                                     $temp = $datePrint->format("d M Y");
-                                                    $datePrint->add(new DateInterval('P' . 7 . 'D'));
+                                                    $temp1 = $datePrint->format("Y-m-d");
+                                                    $datePrint->add(new DateInterval('P' . 6 . 'D'));
                                                     $datePrint = $datePrint->format('Y-m-d');
                                                     $datePrint = new DateTime($datePrint);
                                                 ?>
                                                 <li>
                                                     <input type="hidden" name="graph-date" id="graph-date" value="{{ $temp }}">
-                                                    <button type="submit" class="dropdown-item" id="dropdown-item" href="#" value="{{ $temp }}">{{ $temp }} - {{ $datePrint->format("d M Y") }}</button>
+                                                    <button type="submit" class="dropdown-item" id="dropdown-item" href="#" value="{{ $temp1 }}">{{ $temp }} - {{ $datePrint->format("d M Y") }}</button>
                                                 </li>
+
+                                                <?php
+                                                    $datePrint->add(new DateInterval('P' . 1 . 'D'));
+                                                    $weekCount = $weekCount+1;
+                                                ?>
                                             @endwhile
                                         </ul>
                                     </div>
                                     <section class="catalog-container" id="section3">
-                                        @include('chartResult');
+                                        @include('chartResult')
                                     </section>
                                 </div>
                                 <div class="carousel-item1">
+                                    <div class="btn purple-but" href="#">
+                                        Weeks of {{ $start->format("d M Y") }} - {{ $end->format("d M Y")}}
+                                    </div>
+
                                     <section class="catalog-container" id="section4">
-                                        <canvas id="myChart" height="100px"></canvas>
+                                        <div class="chart-result">
+                                            <canvas id="myChart1"></canvas>
+                                        </div>
                                     </section>
                                 </div>
                             </div>
@@ -162,31 +175,33 @@
     <script type="text/javascript" src="{{URL::asset('/assets/js/eventDetail.js')}}"></script>
     <script type="text/javascript">
 
-        console.log('masuk sini');
+const ourData = @json($user_total);
 
-        const ourData = @json($user_total);
-        console.log(ourData);
+//fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
+function generateDateLabels(startDate, count) {
+    var labels = [];
+    labels["Date"] = [];
+    labels["Value"] = [];
 
-        //fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
-        function generateDateLabels(startDate, count) {
-            var labels = [];
-            labels["Date"] = [];
-            labels["Value"] = [];
+    //buat startdate
+    const currentDate = new Date(startDate);
 
-            //buat startdate
-            const currentDate = new Date(startDate);
-
-            for (let i = 0; i < count; i++) {
-                //masukkin start date ke format ISO
-                const x = currentDate.toISOString().split('T')[0];
-                //masukin ISO date ke label
-                labels["Date"].push(x);
-                //Jika ada item date yang == x, push value dari filtered data, selain itu
-                let temp = ourData.filter(item => item.date === x);//
-                if(Object.keys(temp).length){
-                    //If, ada item date yang == x, masukin item total ke filtered data
-                    const filteredData = temp.map(item => item.total);
-                    labels["Value"].push(filteredData);
+    for (let i = 0; i < count; i++) {
+        //masukkin start date ke format ISO
+        const x = currentDate.toISOString().split('T')[0];
+        //masukin ISO date ke label
+        // labels["Date"].push(currentDate);
+        const formattedDate = currentDate.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+        });
+        labels["Date"].push(formattedDate);
+        //Jika ada item date yang == x, push value dari filtered data, selain itu
+        let temp = ourData.filter(item => item.date === x);//
+        if(Object.keys(temp).length){
+            //If, ada item date yang == x, masukin item total ke filtered data
+            const filteredData = temp.map(item => item.total);
+            labels["Value"].push(filteredData);
                 }else{
                     labels["Value"].push(0);
                 }
@@ -198,6 +213,7 @@
 
         const labelCount = 7; //Number of date labels to generate
         const dateLabels = generateDateLabels(@json($start->format("Y-m-d")), labelCount);
+        // console.log(@json($start->format("Y-m-d")));
         // var dte =  @json($user_total->pluck('date')->toArray());
         // var total =  @json($user_total->pluck('total')->toArray());
         //buat graph
@@ -214,12 +230,15 @@
                         x: {
                             type: 'time',
                             time: {
-                                unit: 'day'
-                            }
-                        }
-                    }
-                }
-            }]
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'MMM D',
+                                },
+                            },
+                        },
+                    },
+                },
+            }],
         };
 
         const config = {
@@ -231,7 +250,81 @@
         const myChart = new Chart(
             document.getElementById('myChart'),
             config
+            );
+
+
+        //fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
+        console.log('halo3');
+        function generateWeekLabels(startDate) {
+                var labels1 = [];
+                labels1["Week"] = [];
+                labels1["Value"] = [];
+                var currentDate = new Date(startDate);
+                var cnt = @json($weekCount);
+                cnt = parseInt(cnt);
+
+                for (let i = 1; i <= cnt; i++) {
+                        //masukkin nama week
+                        const y = "Week " + i.toString();
+                        console.log(y);
+                        //masukin week ke label
+                        labels1["Week"].push(y);
+
+                        var res = 0;
+
+                        for(let j = 1; j<=7; j++){
+                                const x = currentDate.toISOString().split('T')[0];
+                                let temp = ourData.filter(item => item.date === x);//
+                                if(Object.keys(temp).length){
+                                        //If, ada item date yang == x, masukin item total ke filtered data
+                                        const filteredData = temp.map(item => item.total);
+                                        res = res + parseInt(filteredData);
+                                    }
+                                    //++ di date
+                                    currentDate.setDate(currentDate.getDate() + 1);
+
+                                }
+
+                                labels1["Value"].push(res);
+
+                            }
+                            return labels1;
+                        }
+
+                        const weekLabels = generateWeekLabels(@json($start->format("Y-m-d")));
+
+
+                        const data1 = {
+                                labels: weekLabels["Week"],
+                                datasets: [{
+                                        label: 'Weekly Sale',
+                                        backgroundColor: 'rgb(82, 46, 147)',
+                                        borderColor: 'rgb(255, 255, 255)',
+                                        data: weekLabels["Value"],
+                                        options: {
+                                                scales: {
+                                                        x: {
+                                                                type: 'time',
+                                                                time: {
+                                                                        unit: 'day'
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }]
+                                                };
+
+                                                const config1 = {
+                                                        type: 'bar',
+                                                        data: data1,
+                                                        options: {}
+                                                    };
+
+                                                    const myChart1 = new Chart(
+            document.getElementById('myChart1'),
+            config1
         );
+        console.log("halo1");
 
     $(document).ready(function(){
 
@@ -255,10 +348,8 @@
 
         });
 
-
-
-
     });
+
 
 </script>
 

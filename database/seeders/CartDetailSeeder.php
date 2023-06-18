@@ -15,134 +15,134 @@ class CartDetailSeeder extends Seeder
      */
     public function run()
     {
-        // CART DETAIL
-        // <!-- 1 -->
-        CartDetail::create([
-            'cart_header_id' => 1,
-            'product_id' => 1,
-            'qty' => 10
-        ]);
+    //     // CART DETAIL
+    //     // <!-- 1 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 1,
+    //         'product_id' => 1,
+    //         'qty' => 10
+    //     ]);
 
-        // <!-- 2 -->
-        CartDetail::create([
-            'cart_header_id' => 1,
-            'product_id' => 2,
-            'qty' => 20
-        ]);
+    //     // <!-- 2 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 1,
+    //         'product_id' => 2,
+    //         'qty' => 20
+    //     ]);
 
-        // <!-- 3 -->
-        CartDetail::create([
-            'cart_header_id' => 1,
-            'product_id' => 5,
-            'qty' => 35
-        ]);
+    //     // <!-- 3 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 1,
+    //         'product_id' => 5,
+    //         'qty' => 35
+    //     ]);
 
-        // <!-- 4 -->
-        CartDetail::create([
-            'cart_header_id' => 1,
-            'product_id' => 7,
-            'qty' => 1
-        ]);
-
-
-        // <!-- 5 -->
-        CartDetail::create([
-            'cart_header_id' => 2,
-            'product_id' => 1,
-            'qty' => 18
-        ]);
+    //     // <!-- 4 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 1,
+    //         'product_id' => 7,
+    //         'qty' => 1
+    //     ]);
 
 
-        // <!-- 6 -->
-        CartDetail::create([
-            'cart_header_id' => 2,
-            'product_id' => 5,
-            'qty' => 20
-        ]);
+    //     // <!-- 5 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 2,
+    //         'product_id' => 1,
+    //         'qty' => 18
+    //     ]);
 
-        // <!-- 7 -->
-        CartDetail::create([
-            'cart_header_id' => 2,
-            'product_id' => 10,
-            'qty' => 30
-        ]);
 
-        // <!-- 8 -->
-        CartDetail::create([
-            'cart_header_id' => 3,
-            'product_id' => 4,
-            'qty' => 50
-        ]);
+    //     // <!-- 6 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 2,
+    //         'product_id' => 5,
+    //         'qty' => 20
+    //     ]);
 
-        // <!-- 9 -->
-        CartDetail::create([
-            'cart_header_id' => 3,
-            'product_id' => 6,
-            'qty' => 20
-        ]);
+    //     // <!-- 7 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 2,
+    //         'product_id' => 10,
+    //         'qty' => 30
+    //     ]);
 
-        // <!-- 10 -->
-        CartDetail::create([
-            'cart_header_id' => 3,
-            'product_id' => 7,
-            'qty' => 10
-        ]);
+    //     // <!-- 8 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 3,
+    //         'product_id' => 4,
+    //         'qty' => 50
+    //     ]);
 
-        // <!-- 11 -->
-        CartDetail::create([
-            'cart_header_id' => 4,
-            'product_id' => 1,
-            'qty' => 12
-        ]);
+    //     // <!-- 9 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 3,
+    //         'product_id' => 6,
+    //         'qty' => 20
+    //     ]);
 
-        // <!-- 12 -->
-        CartDetail::create([
-            'cart_header_id' => 4,
-            'product_id' => 3,
-            'qty' => 18
-        ]);
+    //     // <!-- 10 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 3,
+    //         'product_id' => 7,
+    //         'qty' => 10
+    //     ]);
 
-        // <!-- 13 -->
-        CartDetail::create([
-            'cart_header_id' => 5,
-            'product_id' => 2,
-            'qty' => 22
-        ]);
+    //     // <!-- 11 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 4,
+    //         'product_id' => 1,
+    //         'qty' => 12
+    //     ]);
 
-        // <!-- 14 -->
-        CartDetail::create([
-            'cart_header_id' => 5,
-            'product_id' => 4,
-            'qty' => 30
-        ]);
+    //     // <!-- 12 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 4,
+    //         'product_id' => 3,
+    //         'qty' => 18
+    //     ]);
 
-        // <!-- 15 -->
-        CartDetail::create([
-            'cart_header_id' => 5,
-            'product_id' => 5,
-            'qty' => 20
-        ]);
+    //     // <!-- 13 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 5,
+    //         'product_id' => 2,
+    //         'qty' => 22
+    //     ]);
 
-        // <!-- 16 -->
-        CartDetail::create([
-            'cart_header_id' => 6,
-            'product_id' => 4,
-            'qty' => 30
-        ]);
+    //     // <!-- 14 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 5,
+    //         'product_id' => 4,
+    //         'qty' => 30
+    //     ]);
 
-        // <!-- 17 -->
-        CartDetail::create([
-            'cart_header_id' => 7,
-            'product_id' => 5,
-            'qty' => 20
-        ]);
+    //     // <!-- 15 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 5,
+    //         'product_id' => 5,
+    //         'qty' => 20
+    //     ]);
 
-        // <!-- 18 -->
-        CartDetail::create([
-            'cart_header_id' => 7,
-            'product_id' => 6,
-            'qty' => 20
-        ]);
-    // CART DETAIL
+    //     // <!-- 16 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 6,
+    //         'product_id' => 4,
+    //         'qty' => 30
+    //     ]);
+
+    //     // <!-- 17 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 7,
+    //         'product_id' => 5,
+    //         'qty' => 20
+    //     ]);
+
+    //     // <!-- 18 -->
+    //     CartDetail::create([
+    //         'cart_header_id' => 7,
+    //         'product_id' => 6,
+    //         'qty' => 20
+    //     ]);
+    // // CART DETAIL
     }
 }

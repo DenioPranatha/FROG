@@ -69,7 +69,9 @@
     </div>
     <br>
 
-    @include('eventsResult')
+    <div id="result-container">
+        @include('eventsResult')
+    </div>
 
 
 @endsection
