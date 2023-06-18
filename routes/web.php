@@ -73,9 +73,15 @@ Route::get('/myEventDetail', [MyEventController::class, 'show'])->name('myEventD
 Route::post('/myEventDetail/edit', [MyEventController::class, 'edit']);
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+
 Route::get('/createDestination', function () {
     return view('createDestination');
 })->name('createDestination');
+
+Route::get('/destinationAdmin', function(){
+    return view('admin.destinationAdmin');
+})->name('destinationAdmin');
+
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cartMinus', [CartController::class, 'minus']);
@@ -89,29 +95,21 @@ Route::get('/allHistory', function () {
     return view('allHistory');
 })->name('allHistory');
 
-Route::get('/approval', function () {
-    return view('approval', [
-        'event' => Event::all(),
-    ]);
-})->name('approval');
-
-Route::get('/approvalDetail', function () {
-    return view('approvalDetail');
-})->name('approvalDetail');
-
 Route::get('/signin', [SigninController::class, 'index'])->name('signin');
 Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin');
 
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
 
-Route::get('/destinationAdmin', function(){
-    return view('admin.destinationAdmin');
-})->name('destinationAdmin');
-
 Route::get('/approval', function(){
-    return view('admin.waitingListAdmin');
+    return view('approval', [
+        'events' => Event::all()
+    ]);
 })->name('approval');
+
+Route::get('/approvalDetail', function () {
+    return view('approvalDetail');
+})->name('approvalDetail');
 
 Auth::routes();
 
