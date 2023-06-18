@@ -172,38 +172,7 @@ class EventController extends Controller
     public function chart(Event $event, Request $request)
     {
         $start = new \DateTime($event->start_date);
-        // $end = new \DateTime($event->end_date);
-        // $rn = new \DateTime();
-        //apakah sudah ada request graph-start
-        // if($request->query('graph-start')){
-        // // tanggal start nya graph
-        // dump($request->query('graph-start'));
         $graph_start = new \DateTime($request->query('graph-start'));
-        // }else{
-        //     $graph_start = $start->format('Y-m-d');
-        //     $graph_start = new \DateTime($graph_start);
-        // }
-
-        //produk yang dimiliki event tsb
-        // $products = Product::all()->where('event_id', $event->id);
-        //pembayaran pembayaran terkait event ini
-        // $this_payment = PaymentDetail::whereHas('product', function($p) use ($event){
-        //     $p->where('event_id', $event->id);
-        // });
-
-        //cari sum total dan modal per payment header
-        // $total = $this_payment
-        // ->addselect(PaymentDetail::raw('SUM(qty * item_price) as total'))
-        // ->addselect(PaymentDetail::raw('SUM(qty * item_modal) as modal'))
-        // ->groupBy('payment_header_id')
-        // ->get();
-
-        //kelompokkan transaksi terkait event ini. Alasan dimerge sama p header adalah kita pengen grup berdasar user id nya
-        // $user_count = PaymentDetail::join('payment_headers', 'payment_details.payment_header_id', '=', 'payment_headers.id')
-        // ->whereHas('product', function($p) use ($event){
-        //     $p->where('event_id', $event->id);
-        // })
-        // ->get();
 
         //mencari total pemasukan per hari
         $user_total = PaymentDetail::join('payment_headers', 'payment_details.payment_header_id', '=', 'payment_headers.id')
@@ -214,20 +183,6 @@ class EventController extends Controller
         })
         ->groupBy('date')
         ->get();
-
-        //mencari top product
-        // $top = PaymentDetail::
-        // addselect(PaymentDetail::raw('SUM(qty) as quantity'))
-        // ->addselect(PaymentDetail::raw('product_id as pid'))
-        // ->whereHas('product', function($p) use ($event){
-        //     $p->where('event_id', $event->id);
-        // })
-        // ->groupBy('product_id')
-        // ->get();
-        // if(!isEmpty($top)){
-        //     $top = $top->where('quantity', $top->max('quantity'));
-        //     $top = Product::find($top[0]['pid']);
-        // }
 
         return response(view('chartResult', [
             'event' => $event,
