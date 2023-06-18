@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/index', [IndexController::class, 'index'])->name('index');
-Route::get('/index/result', [IndexController::class, 'result'])->name('index');
+Route::get('/index/result', [IndexController::class, 'result']);
 // Route::post('products', [IndexController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
@@ -73,9 +73,15 @@ Route::get('/myEventDetail', [MyEventController::class, 'show'])->name('myEventD
 Route::post('/myEventDetail/edit', [MyEventController::class, 'edit']);
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+
 Route::get('/createDestination', function () {
     return view('createDestination');
 })->name('createDestination');
+
+Route::get('/destinationAdmin', function(){
+    return view('admin.destinationAdmin');
+})->name('destinationAdmin');
+
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cartMinus', [CartController::class, 'minus']);
@@ -94,10 +100,6 @@ Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin'
 
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
-
-Route::get('/destinationAdmin', function(){
-    return view('admin.destinationAdmin');
-})->name('destinationAdmin');
 
 Route::get('/approval', function(){
     return view('approval', [
