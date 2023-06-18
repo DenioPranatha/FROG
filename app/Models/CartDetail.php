@@ -9,6 +9,8 @@ class CartDetail extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function cartHeader(){
         return $this->belongsTo(CartHeader::class);
     }

@@ -44,4 +44,8 @@ class Event extends Model
     public function product(){
         return $this->hasMany(Product::class);
     }
+
+    public function cartHeader(){
+        return $this->hasMany(CartHeader::class);
+    }
 }

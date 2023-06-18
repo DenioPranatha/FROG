@@ -53,9 +53,11 @@ Route::post('/products', [ProductController::class, 'index'])->name('products');
 // ]);
 Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
+Route::post('/cartAdd', [ProductController::class, 'add']);
+Route::post('/buyNow', [ProductController::class, 'buy']);
 
-Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
 Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct');
+Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
@@ -75,6 +77,8 @@ Route::get('/createDestination', function () {
 })->name('createDestination');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cartMinus', [CartController::class, 'minus']);
+Route::post('/cartPlus', [CartController::class, 'plus']);
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 

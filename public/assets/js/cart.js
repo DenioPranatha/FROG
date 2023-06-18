@@ -11,6 +11,10 @@ let plusBtn = document.getElementsByClassName('plus');
 let qty = document.getElementsByClassName('prodQty');
 let qtyForm = document.getElementsByClassName('qtyForm');
 
+// buat submit form
+let numMinus = document.getElementsByClassName('numMinus');
+let numPlus = document.getElementsByClassName('numPlus');
+
 // alert(qty[0].value)
 // alert(totalItem.value)
 // alert(totalPayment.value)
@@ -23,6 +27,9 @@ for(let i=0; i<minBtn.length; i++){
         priceTemp = parseInt(priceTemp)
 
         qty[i].value++;
+
+        numPlus[i].value = qty[i].value;
+        plusBtn[i].submit;
 
         // buat hitung total price
         total = qty[i].value*priceTemp
@@ -39,6 +46,9 @@ for(let i=0; i<minBtn.length; i++){
             priceTemp = parseInt(priceTemp)
 
             qty[i].value--;
+
+            numMinus[i].value = qty[i].value;
+            minBtn[i].submit;
 
             // buat hitung total price
             total = qty[i].value*priceTemp
@@ -90,7 +100,7 @@ let itemCheckLen = itemCheck.length;
 eventCheck = Array.prototype.slice.call(eventCheck);
 itemCheck = Array.prototype.slice.call(itemCheck);
 
-
+// ngecek smua item ke cek ato ngga
 function allItemChecked(){
     temp = true
     for(let i = 0; i < itemCheck.length; i++){
@@ -293,82 +303,18 @@ window.onscroll = function(){
     }
 };
 
-// // buat centang smua ato ga centang smua per event
-// for(let i=0; i<eventCheckLen; i++){
-//     eventCheck[i].addEventListener('click', ()=>{
-//         if(eventCheck[i].checked == true){
-//             for(let j=0; j<itemCheckLen; j++){
-//                 itemCheck[j].checked = true;
-//             }
-//         }
-//         else if(eventCheck[i].checked == false){
-//             for(let j=0; j<itemCheckLen; j++){
-//                 itemCheck[j].checked = false;
-//             }
-//         }
-//     })
+// let minus = document.getElementById('minus');
+// let numMinus = document.getElementById('numMinus');
+// let plus = document.getElementById("plus");
+// let numPlus = document.getElementById('numPlus');
+
+// function cartMinus(){
+//     console.log(qty.value);
+//     numMinus.value = qty.value;
+//     minus.submit;
 // }
 
-// eventCheck.forEach((element, index) => {
-//     eventCheck[index].addEventListener('click', ()=>{
-//         if(eventCheck[index] == true){
-//             if(allChecked() == false){
-//                 checkAll.checked = false;
-//             }else{
-//                 checkAll.checked = true;
-//             }
-//         }else{
-//             checkAll.checked = false;
-//         }
-//     })
-// });
-
-// checkbox
-
-
-// BELAJAR
-// let eventCheck = document.getElementById("eventCheck");
-// let itemCheck = document.getElementsByName("itemCheck");
-
-// itemCheck = Array.prototype.slice.call(itemCheck);
-
-// function allChecked(){
-//     temp = true
-//     for(let i = 0; i < itemCheck.length; i++){
-//         if(itemCheck[i].checked == false){
-//             temp = false;
-//             return temp
-//         }
-//     }
-//     return true
+// function cartPlus(){
+//     numPlus.value = qty.value;
+//     plus.submit;
 // }
-
-// eventCheck.addEventListener('click', ()=>{
-//     if(eventCheck.checked == true){
-//         for(let i=0; i<itemCheck.length; i++){
-//             itemCheck[i].checked = true;
-//         }
-//     }else{
-//         for(let i=0; i<itemCheck.length; i++){
-//             itemCheck[i].checked = false;
-//         }
-//     }
-// })
-
-// itemCheck.forEach((element)=>{
-//     element.addEventListener('click', ()=>{
-//         if(element.checked == true){
-//             if(allChecked() == true){
-//                 eventCheck.checked = true;
-//                 element.checked = true;
-//             }else{
-//                 eventCheck.checked = false;
-//                 element.checked = true;
-//             }
-//         }else{
-//             eventCheck.checked = false;
-//             element.checked = false;
-//         }
-//     })
-// })
-// BELAJAR
