@@ -10,7 +10,7 @@
 <div class="container d-flex flex-column align-items-center">
     <h3>Waiting for Approval</h3>
     <div class="card-container d-flex flex-row justify-content-left flex-wrap">
-        @foreach ($event as $event )
+        @foreach ($events as $event)
             <div class="card-test">
                 @include('partials.eventCart', ['event' => $event])
             </div>

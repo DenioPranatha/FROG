@@ -89,16 +89,6 @@ Route::get('/allHistory', function () {
     return view('allHistory');
 })->name('allHistory');
 
-Route::get('/approval', function () {
-    return view('approval', [
-        'event' => Event::all(),
-    ]);
-})->name('approval');
-
-Route::get('/approvalDetail', function () {
-    return view('approvalDetail');
-})->name('approvalDetail');
-
 Route::get('/signin', [SigninController::class, 'index'])->name('signin');
 Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin');
 
@@ -110,8 +100,14 @@ Route::get('/destinationAdmin', function(){
 })->name('destinationAdmin');
 
 Route::get('/approval', function(){
-    return view('admin.waitingListAdmin');
+    return view('approval', [
+        'events' => Event::all()
+    ]);
 })->name('approval');
+
+Route::get('/approvalDetail', function () {
+    return view('approvalDetail');
+})->name('approvalDetail');
 
 Auth::routes();
 
