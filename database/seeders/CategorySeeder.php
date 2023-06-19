@@ -54,19 +54,13 @@ class CategorySeeder extends Seeder
     // <!-- 3 -->
 
     Category::create([
-        'name' => 'Nursing Home'
+        'name' => 'Health Assistance'
     ]);
 
     // <!-- 4 -->
 
     Category::create([
         'name' => 'Public Facilities'
-    ]);
-
-    // <!-- 5 -->
-
-    Category::create([
-        'name' => 'Health Assistance'
     ]);
     }
 }

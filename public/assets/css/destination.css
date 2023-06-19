@@ -1,5 +1,78 @@
+.atas{
+    /* background-color:#F3ECFF; */
+    background-color:white;
+    /* padding: 40px 100px; */
+    padding: 15px 100px;
+    width: 100%;
+    display: flex;
+    /* height: 40px; */
+}
 
 /* search */
+.searchDiv{
+    /* background-color: white; */
+    /* width: 100%; */
+    /* width: 380px; */
+    width: 31%;
+    height: 40px;
+    /* margin: 30px 0px; */
+}
+
+.searchLogo{
+    margin-left: -43px;
+}
+
+input[type=text]{
+    all: unset;
+    /* width: 30%; */
+    height: 36px;
+    background-color: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding-left: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.49);
+}
+/* search */
+
+/* categories */
+.categories{
+    /* background-color: yellow; */
+    width: 69%;
+    margin-left: 35px;
+    height: 40px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+.categoriesCard{
+    display: flex;
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* height: 100%; */
+    height: 40px;
+    padding: 0px 20px;
+    background: #FFFFFF;
+    border: 1px solid #CDCDCD;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
+    color: rgba(0, 0, 0, 0.73);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* categories */
+
 .owl-carousel a{
     text-decoration: none;
     color: black;
@@ -55,7 +128,7 @@
     /* background-color: yellow; */
     /* width: 120%; */
     padding: 0px 0px;
-    margin: 30px -32px 80px -32px;
+    margin: 30px -32px 20px -32px;
     /* margin: 0px -80px 30px -80px; */
     /* border-radius: 20px; */
     /* filter: drop-shadow(4px 4px 0px #CDCDCD); */
@@ -67,7 +140,7 @@
     /* z-index: -2; */
     /* background-color: yellow; */
 
-    box-shadow: 4px 4px 8px #CDCDCD;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
     border-radius: 20px;
 }
 
@@ -119,15 +192,16 @@
 }
 
 .charityText{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 32px;
 }
 
 .charityLoc{
-    padding-bottom: 30px;
+    padding-bottom: 25px;
 }
 
 .charityLoc .bi.bi-geo-alt{
@@ -136,13 +210,22 @@
 }
 
 .charityLoc p{
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 26px;
     color: #522E93;
     margin-left: 5px;
+}
+
+.container-card{
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+    margin-bottom: 15px;
 }
 
 .section-title2{
@@ -182,17 +265,21 @@
     /* border: 1px solid red; */
     gap: 2vw;
     margin-bottom: 6vw;
+    /* background-color: yellow; */
 }
 
 .card{
     width: 25vw;
     height: 32vw;
     gap: 2.5vw;
+    /* gap: 5vw; */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     border-radius: 20px;
 
     box-shadow: 4px 4px 8px rgba(205, 205, 205, 1);
+    /* background-color: blue; */
 }
 
 .shadow{
@@ -205,12 +292,27 @@
     position: absolute;
     /* z-index: 2; */
 
-    padding-left: 2vw;
+    /* padding-left: 2vw; */
     padding-bottom: 1.5vw;
+
+    /* background-color: blue; */
+    /* width: aut; */
+}
+
+.kotak{
+    /* background-color: green; */
+    /* width: 100%; */
+    width: fit-content;
+    height: fit-content;
+}
+
+.text{
+    /* background-color: brown; */
+    width: 100%;
 }
 
 .head{
-    font-family: 'Ubuntu';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -218,11 +320,17 @@
     color: #FFFFFF;
 }
 
+.kotak .bi.bi-geo-alt{
+    font-size: 17px;
+    margin-right: 5px;
+    color: white;
+}
+
 .sub{
-    font-family: 'Ubuntu';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 13px;
     line-height: 26px;
     color: #FFFFFF;
 }

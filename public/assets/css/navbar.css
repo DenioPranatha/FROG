@@ -23,7 +23,8 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: 'M PLUS 1';
+	/* font-family: 'M PLUS 1'; */
+	font-family: 'Poppins';
 	vertical-align: baseline;
 }
 
@@ -35,9 +36,11 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     /* font-family: 'M PLUS Rounded 1c'; */
-    font-family: 'M PLUS 1';
+    /* font-family: 'M PLUS 1'; */
+	font-family: 'Poppins';
     /* tambahan dari Denio */
     scroll-behavior: auto;
+    /* background-color:#F3ECFF; */
 }
 
 ol, ul {
@@ -75,7 +78,7 @@ html {
     /* background-color: pink; */
     height: fit-content;
     color: #522E93;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 900;
     /* padding: 0px 42px; */
 
@@ -110,14 +113,15 @@ html {
 
 .nav2{
     width: 42%;
+    width: 37%;
     /* background-color: aqua; */
 }
 
 .logOut{
     background-color: #522E93;
     color: #FFFFFF;
-    border-radius: 5px;
-    padding: 7px 12px;
+    border-radius: 10px;
+    padding: 10px 15px;
 }
 
 .logOut:hover{

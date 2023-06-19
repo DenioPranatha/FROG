@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Event;
 use App\Models\Product;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Models\PaymentDetail;
 use App\Models\PaymentHeader;
-use Faker\Provider\ar_EG\Payment;
-use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 
+use Faker\Provider\ar_EG\Payment;
 use function PHPUnit\Framework\isEmpty;
 
 class EventController extends Controller
@@ -43,7 +44,7 @@ class EventController extends Controller
         return response(view('events', [
             'events' => $events,
             'popular' => $popEvents->get(),
-            'cat' => Category::limit(3)->get(),
+            'cat' => Category::all(),
             'pg' => $pg
         ]));
     }
@@ -154,6 +155,14 @@ class EventController extends Controller
             $top = Product::find($top[0]['pid']);
         }
 
+
+        $pg = 1;
+        $count = count($products);
+        $products = $products->take(2);
+
+        //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
+        if($count <= 2) $pg = -1;
+
         return response(view('eventDetail', [
             'event' => $event,
             'start' => $start,
@@ -164,7 +173,8 @@ class EventController extends Controller
             'user_total' => $user_total,
             'user_count' => $user_count,
             'top' => $top,
-            'graph_start' => $graph_start
+            'graph_start' => $graph_start,
+            'pg' => $pg
         ]));
 
     }
@@ -190,6 +200,28 @@ class EventController extends Controller
             'user_total' => $user_total,
             'graph_start' => $graph_start
         ]));
+
+    }
+
+    public function showProductDetail(Request $request)
+    {
+        // kalo pencet see more ato akses dr url
+        $id = (int)$request->query('id');
+        $products = Product::all()->where('event_id', $id);
+
+        $pg = (int)$request->query('pg');
+        $pge = 2*$pg;
+        $c = count($products);
+        if($pge >= $c)$pg = -1;
+        dd($pge);
+
+        // return view('productsResult', [
+        //     'products' => $products->take($pge),
+        //     'productCategories' => ProductCategory::all(),
+        //     'request' => $request,
+        //     'pg' => $pg
+        // ]);
+
 
     }
 

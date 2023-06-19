@@ -63,7 +63,8 @@ Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduc
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
-Route::get('/eventDetail/{event:id}/result', [EventController::class, 'chart']);
+Route::get('/eventDetail/result', [EventController::class, 'showProductDetail']);
+
 Route::get('/createEvent', function () {
     return view('createEvent');
 })->name('createEvent');

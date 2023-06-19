@@ -24,8 +24,6 @@
             <div class="line1"></div>
         </div> --}}
 
-        
-
         <div class="fullBtn h-100 w-100 d-flex justify-content-around align-items-center">
             <div class="lineBtn"></div>
             <div class="btnDiv m-0 p-0 d-flex justify-content-center align-items-center" id="myBtn">

@@ -16,16 +16,16 @@ class IndexController extends Controller
     //
     public function index(){
         // ngambil 10 event dgn penjualan produk tertinggi
-        // $events = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
-        // ->join('products', 'events.id', '=', 'products.event_id')
-        // ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
-        // ->groupBy('events.id')
-        // ->orderBy('SUM', 'DESC')
-        // ->take(10)
-        // ->get();
+        $events = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
+        ->join('products', 'events.id', '=', 'products.event_id')
+        ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+        ->groupBy('events.id')
+        ->orderBy('SUM', 'DESC')
+        ->take(10)
+        ->get();
 
         //karna sekarang masih dikit yang terjual, pake events all dulu aj
-        $events = Event::all();
+        // $events = Event::all();
 
         // ngambil 15 produk dgn penjualan tertinggi
         $products = Product::select('products.*', DB::raw("SUM(payment_details.qty) as SUM"))

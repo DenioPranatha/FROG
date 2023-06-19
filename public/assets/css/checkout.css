@@ -308,8 +308,8 @@
     position: relative;
     margin-top: 0px;
 
-    border: 1.5px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    /* border: 1.5px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD; */
 
     text-decoration: none;
     background-color:#FFFFFF;
@@ -318,7 +318,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-
+    border: 1.5px solid #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
 }
 
 .box-1:hover{
@@ -353,11 +355,15 @@ button.boxbtn2{
     justify-content: center;
     position: relative;
     margin-top: 0px;
-    border: 1.5px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    /* border: 1.5px solid #CDCDCD;
+    box-shadow: 4px 4px 0px #CDCDCD; */
 
     text-decoration: none;
-    background-color:#FFFFFF    ;
+    background-color:#FFFFFF;
+
+    border: 1.5px solid #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
 /*
     width: 150px;
     height: 130px; */
@@ -670,9 +676,12 @@ button.boxbtn2{
     height: 51px;
     background: #673AB7;
     border: 1px solid #673AB7;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     padding-top: 15px;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 .pay-now-title{
@@ -711,16 +720,19 @@ button.boxbtn2{
 
     padding-left: 20px;
     padding-top: 20px;
+    /* padding-top: 50px; */
 
     background: #FFFFFF;
     border: 3px solid #522E93;
 
     border-radius: 10px;
 
+    margin-top: 50px;
+
 }
 
 .current-address-title{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: bolder;
     font-size: 20px;
@@ -831,10 +843,24 @@ input{
     text-decoration: none;
     outline: none;
 
+    
+
+}
+
+.input-container input{
+    border-radius: 10px;
+}
+
+.first-name input{
+    border-radius: 10px;
+}
+
+.new-address textarea{
+    border-radius: 10px;
 }
 
 input::placeholder{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -843,7 +869,7 @@ input::placeholder{
 
 .phone-number-title{
     margin-top: 15px;
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
     font-size: 15px;
@@ -856,12 +882,16 @@ input::placeholder{
     box-sizing: border-box;
     background: #FFFFFF;
     border: 1px solid #764EBE;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25); */
     text-decoration: none;
     padding-left: 52px;
     margin-left: 0px;
     /* margin-bottom: 10px; */
     padding-top: 4px;
+
+    /* border: 1px solid #764EBE; */
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
 }
 
 .new-address-title{
@@ -883,7 +913,7 @@ input::placeholder{
     box-sizing: border-box;
     background: #FFFFFF;
     border: 1px solid #764EBE;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25); */
     text-decoration: none;
     padding-left: 12px;
     margin-left: 0px;
@@ -891,19 +921,26 @@ input::placeholder{
     resize: none;
     outline: none;
     padding-top: 10px;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 10px;
 }
 
 
 .save-button-box{
     background: #522E93;
-    border: 1px solid #673AB7;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* border: 1px solid #673AB7; */
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     width: 166px;
     height: 38px;
     box-sizing: border-box;
     margin-left: -2px;
     color: #FFFFFF;
+
+    border: 1px solid #673AB7;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 .button-grid{
@@ -1039,11 +1076,13 @@ textarea{
     border-radius: 10px;
 } */
 
+
+
 .cancel-btn{
     background: #FFFFFF;
-    border: 1px solid #522E93;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* border: 1px solid #522E93; */
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     width: 110px;
     height: 38px;
     box-sizing: border-box;
@@ -1051,6 +1090,10 @@ textarea{
     color: #522E93;
     font-weight: bold;
     /* margin-top: -5px; */
+
+    border: 1px solid #673AB7;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 .cancel-btn:hover{

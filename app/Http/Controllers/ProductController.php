@@ -20,15 +20,11 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        // dd($request);
-
         // kalo pencet salah satu kategori dr home
         if($request->has('cat_id')){
             $products = Product::where('category_id', $request->cat_id)->get();
             $cat_id = $request->cat_id;
         }
-
         // kalo pencet all ato see more ato akses dr url
         else{
             $products = Product::all();
@@ -155,15 +151,16 @@ class ProductController extends Controller
     public function result(Request $request)
     {
         //
+        // dump("masuk sini");
         // dd($request);
         // dump($request);
+        // dd($request->has('cat_id'));
 
         // kalo pencet salah satu kategori dr home
         if($request->query('cat-id')){
-            $products = Product::where('product_category_id', $request->query('cat-id'))->get();
+            $products = Product::where('category_id', $request->query('cat-id'))->get();
             $cat_id = $request->cat_id;
         }
-
         // kalo pencet all ato see more ato akses dr url
         else{
             $products = Product::all();
@@ -187,7 +184,6 @@ class ProductController extends Controller
     }
 
     public function add(Request $request){
-
         // UNTUK MASUKIN CART HEADER
 
         // ambil seluruh cart header yang dimiliki oleh si user itu

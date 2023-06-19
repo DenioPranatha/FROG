@@ -55,9 +55,10 @@
         <div class="slide">
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
-                    @foreach($products as $product)
+                    @include('productsResult')
+                    {{-- @foreach($products as $product)
                         @include('partials.productCart', ['product' => $product, 'event' => $event])
-                    @endforeach
+                    @endforeach --}}
 
                     {{-- <span id="more">
                         <div class="catalog-container">
@@ -69,11 +70,11 @@
                         </div>
                     </span> --}}
 
-                    <div class="more-products">
+                    {{-- <div class="more-products">
                         <div class="line1"></div>
                         <button class="more" id="myBtn">More Products</button>
                         <div class="line1"></div>
-                    </div>
+                    </div> --}}
 
                 </section>
             </div>
@@ -163,7 +164,6 @@
                             </div>
                         </div>
                     </div>
-
                 </section>
             </div>
         </div>
@@ -175,48 +175,45 @@
     <script type="text/javascript" src="{{URL::asset('/assets/js/eventDetail.js')}}"></script>
     <script type="text/javascript">
 
-const ourData = @json($user_total);
+        const ourData = @json($user_total);
 
-//fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
-function generateDateLabels(startDate, count) {
-    var labels = [];
-    labels["Date"] = [];
-    labels["Value"] = [];
+        //fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
+        function generateDateLabels(startDate, count) {
+            var labels = [];
+            labels["Date"] = [];
+            labels["Value"] = [];
 
-    //buat startdate
-    const currentDate = new Date(startDate);
+            //buat startdate
+            const currentDate = new Date(startDate);
 
-    for (let i = 0; i < count; i++) {
-        //masukkin start date ke format ISO
-        const x = currentDate.toISOString().split('T')[0];
-        //masukin ISO date ke label
-        // labels["Date"].push(currentDate);
-        const formattedDate = currentDate.toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-        });
-        labels["Date"].push(formattedDate);
-        //Jika ada item date yang == x, push value dari filtered data, selain itu
-        let temp = ourData.filter(item => item.date === x);//
-        if(Object.keys(temp).length){
-            //If, ada item date yang == x, masukin item total ke filtered data
-            const filteredData = temp.map(item => item.total);
-            labels["Value"].push(filteredData);
+            for (let i = 0; i < count; i++) {
+                //masukkin start date ke format ISO
+                const x = currentDate.toISOString().split('T')[0];
+                //masukin ISO date ke label
+                // labels["Date"].push(currentDate);
+                const formattedDate = currentDate.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                });
+                labels["Date"].push(formattedDate);
+                //Jika ada item date yang == x, push value dari filtered data, selain itu
+                let temp = ourData.filter(item => item.date === x);//
+                if(Object.keys(temp).length){
+                    //If, ada item date yang == x, masukin item total ke filtered data
+                    const filteredData = temp.map(item => item.total);
+                    labels["Value"].push(filteredData);
                 }else{
                     labels["Value"].push(0);
                 }
                 //++ di date
                 currentDate.setDate(currentDate.getDate() + 1);
             }
+
             return labels;
         }
 
         const labelCount = 7; //Number of date labels to generate
         const dateLabels = generateDateLabels(@json($start->format("Y-m-d")), labelCount);
-        // console.log(@json($start->format("Y-m-d")));
-        // var dte =  @json($user_total->pluck('date')->toArray());
-        // var total =  @json($user_total->pluck('total')->toArray());
-        //buat graph
 
         const data = {
             labels: dateLabels["Date"],
@@ -250,108 +247,121 @@ function generateDateLabels(startDate, count) {
         const myChart = new Chart(
             document.getElementById('myChart'),
             config
-            );
+        );
 
 
         //fungsi untuk masukin tanggal dan hasil di masing masing tanggal tsb
-        console.log('halo3');
         function generateWeekLabels(startDate) {
-                var labels1 = [];
-                labels1["Week"] = [];
-                labels1["Value"] = [];
-                var currentDate = new Date(startDate);
-                var cnt = @json($weekCount);
-                cnt = parseInt(cnt);
+            var labels1 = [];
+            labels1["Week"] = [];
+            labels1["Value"] = [];
+            var currentDate = new Date(startDate);
+            var cnt = @json($weekCount);
+            cnt = parseInt(cnt);
 
-                for (let i = 1; i <= cnt; i++) {
-                        //masukkin nama week
-                        const y = "Week " + i.toString();
-                        console.log(y);
-                        //masukin week ke label
-                        labels1["Week"].push(y);
+            for (let i = 1; i <= cnt; i++) {
+                //masukkin nama week
+                const y = "Week " + i.toString();
+                //masukin week ke label
+                labels1["Week"].push(y);
 
-                        var res = 0;
+                var res = 0;
 
-                        for(let j = 1; j<=7; j++){
-                                const x = currentDate.toISOString().split('T')[0];
-                                let temp = ourData.filter(item => item.date === x);//
-                                if(Object.keys(temp).length){
-                                        //If, ada item date yang == x, masukin item total ke filtered data
-                                        const filteredData = temp.map(item => item.total);
-                                        res = res + parseInt(filteredData);
-                                    }
-                                    //++ di date
-                                    currentDate.setDate(currentDate.getDate() + 1);
+                for(let j = 1; j<=7; j++){
+                    const x = currentDate.toISOString().split('T')[0];
+                    let temp = ourData.filter(item => item.date === x);//
+                    if(Object.keys(temp).length){
+                        //If, ada item date yang == x, masukin item total ke filtered data
+                        const filteredData = temp.map(item => item.total);
+                        res = res + parseInt(filteredData);
+                    }
+                    //++ di date
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
 
-                                }
+                labels1["Value"].push(res);
 
-                                labels1["Value"].push(res);
+            }
+            return labels1;
+        }
 
+        const weekLabels = generateWeekLabels(@json($start->format("Y-m-d")));
+
+
+        const data1 = {
+            labels: weekLabels["Week"],
+            datasets: [{
+                label: 'Weekly Sale',
+                backgroundColor: 'rgb(82, 46, 147)',
+                borderColor: 'rgb(255, 255, 255)',
+                data: weekLabels["Value"],
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                    unit: 'day'
                             }
-                            return labels1;
                         }
+                    }
+                }
+            }]
+        };
 
-                        const weekLabels = generateWeekLabels(@json($start->format("Y-m-d")));
+        const config1 = {
+                type: 'bar',
+                data: data1,
+                options: {}
+        };
 
-
-                        const data1 = {
-                                labels: weekLabels["Week"],
-                                datasets: [{
-                                        label: 'Weekly Sale',
-                                        backgroundColor: 'rgb(82, 46, 147)',
-                                        borderColor: 'rgb(255, 255, 255)',
-                                        data: weekLabels["Value"],
-                                        options: {
-                                                scales: {
-                                                        x: {
-                                                                type: 'time',
-                                                                time: {
-                                                                        unit: 'day'
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }]
-                                                };
-
-                                                const config1 = {
-                                                        type: 'bar',
-                                                        data: data1,
-                                                        options: {}
-                                                    };
-
-                                                    const myChart1 = new Chart(
+        const myChart1 = new Chart(
             document.getElementById('myChart1'),
             config1
         );
-        console.log("halo1");
 
-    $(document).ready(function(){
+        $(document).ready(function(){
+            $('.dropdown-item').on('click', function(){
+                var graphDate = $(this).attr('value');
 
-        $('.dropdown-item').on('click', function(){
-            var graphDate = $(this).attr('value');
-            console.log(graphDate);
+                const dateLabels1 = generateDateLabels(graphDate, labelCount);
+                myChart.data.labels = dateLabels1["Date"];
+                myChart.data.datasets[0].data = dateLabels1["Value"];
+                myChart.update();
 
-            const dateLabels1 = generateDateLabels(graphDate, labelCount);
-            myChart.data.labels = dateLabels1["Date"];
-            myChart.data.datasets[0].data = dateLabels1["Value"];
-            console.log('masuk sini');
-            // let id = @json($event->id);
-            // var url = '/eventDetail/' + id.toString() + '/result';
-            // var parameters = [];
-
-            // parameters.push('graph-start=' + encodeURIComponent(graphDate));
-            // url += '?' + parameters.join('&');
-            // console.log(url);
-            // $('#chart-result').load(url);
-            myChart.update();
+            });
 
         });
 
-    });
+        $(document).on('click', '#myBtn1', function(){
+            //input berapa batch see more yg harus keload di kondisi sekarang
+            var lim = $('#myBtn1').val();
+            // console.log(lim);
+            $(this).fadeOut(100);
+            var eventId = @json($event->id);
+            var url = '/eventDetail/result';
+            var parameters = [];
+            // console.log("halo");
+
+            parameters.push('id='  + encodeURIComponent(eventId));
+
+            if(lim){
+                parameters.push('pg=' + encodeURIComponent(lim));
+            }
 
 
-</script>
+            url += '?' + parameters.join('&');
+
+            //load secara live, tapi yang diload satu container aja, yaitu result container
+            //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
+            //cari di eventsResult.blade.php
+            console.log(url);
+            $('#result-container').load(url);
+
+
+        });
+
+
+    </script>
 
 
 @endsection
