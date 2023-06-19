@@ -65,39 +65,54 @@ const img_input = document.getElementById("img-input");
 
 function showPreview(event){
     if(event.target.files.length > 0){
-        // alert('masuk')
         var src = URL.createObjectURL(event.target.files[0]);
         var preview = document.getElementById("img");
+        var before = document.getElementById('input-label')
+        // preview.style.backgroundImage =
         preview.src = src;
         preview.style.display = "block";
+        before.style.display = "none";
 
         // alert(event.target.files[0]);
         // preview.style.height = "100px";
         // preview.style.width = "100px";
         // preview.style.backgroundImage = URL.createObjectURL(event.target.files[0]);
         // preview.style.backgroundRepeat = "no-repeat";
-        product_img.style.backgroundImage = preview.src;
+        // product_img.style.backgroundImage = preview.src;
     }
 }
 
-img_input.addEventListener("input", (event) => {
-    input_label.style.display = "none";
-    img_input.style.display = "none";
-    product_img.style.display = "block";
-});
+// img_input.addEventListener("input", (event) => {
+//     input_label.style.display = "none";
+//     img_input.style.display = "none";
+//     product_img.style.display = "block";
+// });
 
 // const img = document.getElementById('img');
 // const imginput = document.getElementById('img-input');
 // const reader = new FileReader();
 // reader.addEventListener("load", function () {
-//     imginput.style.backgroundImage = `url(${ reader.result })`;
+//   img.style.backgroundImage = `url(${ reader.result })`;
 // }, false);
-// img-input.addEventListener('change',function() {
+// imginput.addEventListener('change',function() {
 //   const image = this.files[0];
 //   if(image) reader.readAsDataURL(image);
 // }, false)
 
+// const fileInput = document.getElementById('img-input');
 
+// const images =  document.querySelectorAll('.img');
+
+// fileInput.addEventListener('change', (e) =>{
+//     const file = e.target.files[0];
+
+//     let fileReader = new FileReader();
+//     fileReader.readAsDataURL(file);
+//     fileReader.onload = function (){
+//         images[0].setAttribute('src', fileReader.result);
+//         images[0].setAttribute('style', `background-image: url('${fileReader.result}')`);
+//     }
+// })
 
 // Avoid duration out of range
 function imposeMinMax(el){

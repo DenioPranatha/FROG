@@ -11,7 +11,7 @@
     <div class="container">
             <form id="form" class="needs-validation" novalidate>
                 <div class="container-left">
-                    <div class="img-container d-flex flex-row">
+                    <div class="img-container">
                         {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
                         <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
                         {{-- <img id="img"> --}}
@@ -19,7 +19,7 @@
                             <i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i>
                         </label>
                         <input type="file" id="img-input" accept=".jpg,.jpeg,.png" id="file" style="visibility:none;" onchange="showPreview(event)">
-                        <div id="img">cok</div>
+                        <img id="img" class="img">
                     </div>
                     <p>Add Event Image</p>
                 </div>
