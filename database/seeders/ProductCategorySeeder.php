@@ -66,6 +66,11 @@ class ProductCategorySeeder extends Seeder
         ProductCategory::create([
             'name' => 'Hoodie / Jacket'
         ]);
+
+        // 11
+        ProductCategory::create([
+            'name' => 'Logistic'
+        ]);
     // PRODUCT CATEGORY
     }
 }

@@ -14,7 +14,7 @@
     /* border-radius: 0; */
 
     border-radius: 20px;
-    box-shadow: 4px 4px 8px #CDCDCD;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
 }
 
 .btn-1:hover {
@@ -36,8 +36,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
-    width: 200px;
+    height: 55px;
+    width: 180px;
 
     border-radius: 20px;
     box-shadow: 4px 4px 8px #CDCDCD;
@@ -45,6 +45,7 @@
 
 .seeMore p {
     font-family: 'Poppins';
+    font-size: 18px;
 }
 
 .findDest {
@@ -52,8 +53,9 @@
     justify-content: center;
     align-items: center;
     height: 55px;
-    width: 250px;
-    font-size: smaller;
+    width: 240px;
+    box-shadow: none;
+    /* font-size: smaller; */
 
     /* border-radius: 20px;
     box-shadow: 4px 4px 8px #CDCDCD; */
@@ -61,7 +63,7 @@
 
 .findDest p {
     font-family: 'Poppins';
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .btn-2 {
@@ -113,6 +115,7 @@ input[type=text] {
     /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25); */
     /* border-radius: 25px; */
     padding-left: 20px;
+    /* font-size: 10px; */
 
     border-radius: 20px;
     box-shadow: 4px 4px 8px #CDCDCD;
@@ -333,8 +336,12 @@ input[type=text] {
     background-repeat: no-repeat;
     background-size: cover;
 
-    box-shadow: 4px 4px 8px #CDCDCD;
-    border-radius: 20px;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
+    /* border-radius: 20px; */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .charityDestDiv {
@@ -378,7 +385,7 @@ input[type=text] {
     /* background-color: yellow; */
     /* width: 120%; */
     padding: 0px 0px;
-    margin: 30px -32px 80px -32px;
+    margin: 30px -30px 80px -30px;
     /* margin: 0px -80px 30px -80px; */
     /* border-radius: 20px; */
     /* filter: drop-shadow(4px 4px 0px #CDCDCD); */
@@ -390,16 +397,17 @@ input[type=text] {
     /* z-index: -2; */
     /* background-color: yellow; */
 
-    box-shadow: 4px 4px 8px #CDCDCD;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
     border-radius: 20px;
 }
 
 
 .slider-card img {
     /* border-radius: 5px 5px 0px 0px; */
+    /* border-radius: 0px; */
 
     box-shadow: 4px 4px 8px #CDCDCD;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 .owl-nav .owl-prev {
