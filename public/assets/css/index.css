@@ -148,19 +148,21 @@ input[type=text] {
 
 .section-title-first{
     padding: 20px 0px;
+    padding-bottom: 10px;
     /* padding: 20px 100px; */
     /* padding-left: 100px; */
     font-family: 'Ubuntu';
     /* font-family: 'Poppins'; */
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .section-title {
     /* padding: 20px 42px; */
-    padding: 20px 100px;
+    padding: 10px 100px;
+    padding-bottom: 15px;
     /* padding-left: 100px; */
     font-family: 'Ubuntu';
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .section-title2 {
