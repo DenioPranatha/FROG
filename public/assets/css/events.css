@@ -80,7 +80,8 @@
 
 #result-container{
     /* border: 1px solid black; */
-    padding: 42px 90px 42px 110px;
+    /* padding: 42px 90px 42px 110px; */
+    padding: 5px 90px 42px 110px;
 }
 
 a.custom-card,
@@ -196,9 +197,9 @@ a.custom-card:hover {
     /* border: 1px solid #CDCDCD; */
     /* box-shadow: 4px 4px 8px #CDCDCD; */
     /* border-radius: 17.5px; */
-    margin: 0 10.5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-right: 9px;
+    padding-left: 12px;
+    padding-right: 12px;
     padding-bottom: 2px;
     display: flex;
     align-items: center;
@@ -211,7 +212,7 @@ a.custom-card:hover {
     /* width: 25px; */
 
     font-family: 'Poppins';
-    font-size: 15px;
+    font-size: 14px;
 
 }
 
