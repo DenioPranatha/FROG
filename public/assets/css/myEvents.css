@@ -47,7 +47,7 @@
 }
 
 .card:hover{
-    transform: scale(1.02);
+    transform: scale(1.01);
     text-decoration: none;
 }
 
@@ -71,7 +71,7 @@
     /* width: 1160px; */
     height: 220px;
     border-radius: 8px 8px 0px 0px;
-    filter: drop-shadow(4px 2px 0px #CDCDCD);
+    /* filter: drop-shadow(4px 2px 0px #CDCDCD); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -140,7 +140,7 @@
 }
 
 .card-section-box-icon1:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .card-section-box-icon1 img{
@@ -161,7 +161,7 @@
 }
 
 .card-section-box-icon2:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .card-section-box-finished{

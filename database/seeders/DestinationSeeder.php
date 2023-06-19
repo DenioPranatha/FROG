@@ -43,9 +43,9 @@ class DestinationSeeder extends Seeder
 
         // <!-- 3 -->
         Destination::create([
-            'category_id' => 3,
-            'name' => 'Panti Jompo Kasih Sayang',
-            'description' => 'Panti jompo Kasih Sayang yang berukuran 1800 meter, dihuni oleh 25 lansia yang diurusi oleh 7 pengurus. Kebanyakan lansia ini memang orang tidak mampu, terlantar, tuna netra dan ditemukan seorang diri tanpa adanya keluarga. Ditambah lagi, tak sedikit para lansia disini ditelantarkan oleh keluarga mereka. para pengurus dengan setia merawat para Lansia dengan keterbatasan yang ia miliki, hanya bermodalkan niat dan sebuah rumah untuk bisa menampung para lansia agar bisa hidup layak inilah yang dilakukan ibu yati seadanya, hanya untuk menolong para lansia yang di tinggalkan oleh keluarganya.',
+            'category_id' => 2,
+            'name' => 'Panti Asuhan Kasih Sayang',
+            'description' => 'Panti Asuhan Kasih Sayang yang berukuran 1800 meter, dihuni oleh 25 lansia yang diurusi oleh 7 pengurus. Kebanyakan lansia ini memang orang tidak mampu, terlantar, tuna netra dan ditemukan seorang diri tanpa adanya keluarga. Ditambah lagi, tak sedikit para lansia disini ditelantarkan oleh keluarga mereka. para pengurus dengan setia merawat para Lansia dengan keterbatasan yang ia miliki, hanya bermodalkan niat dan sebuah rumah untuk bisa menampung para lansia agar bisa hidup layak inilah yang dilakukan ibu yati seadanya, hanya untuk menolong para lansia yang di tinggalkan oleh keluarganya.',
             'image' => 'destination-3.jpg',
             'location' => 'Bekasi, Jawa Barat',
             'link' => 'https://www.google.com/maps/place/Panti+Jompo+Kasih+Sayang/@-6.2343413,107.0236068,17z/data=!3m1!4b1!4m6!3m5!1s0x2e698e968ff112df:0xb670c9679aa31287!8m2!3d-6.2343413!4d107.0236068!16s%2Fg%2F11gnr98c0z',
@@ -55,9 +55,9 @@ class DestinationSeeder extends Seeder
 
         // <!-- 4 -->
         Destination::create([
-            'category_id' => 3,
-            'name' => 'Panti Jompo Bhakti Abadi',
-            'description' => 'Lembaga Kesejahteraan Sosial Lanjut Usia (LKS-LU) / Panti Jompo BHAKTI ABADI tidak hanya melayani LANSIA didalam Lembaga (didalam Panti) tetapi juga berperan serta dalam membantu LANSIA yang berada disekitar Panti Jompo BHAKTI ABADI atau yang dikenal dengan istilah LANSIA BINAAN / Luar Lembaga. Ini merupakan wujud kepedulian LKS-LU BHAKTI ABADI terhadap LANSIA sekitar yang kurang mampu. Saat ini, Panti Jompo Bhakti Abadi memerlukan bantuan keuangan dari para donatur sekalian untuk kehidupan sehari-hari para lansia dan untuk keberlangsungan panti jompo ini.',
+            'category_id' => 2,
+            'name' => 'Panti Asuhan Bhakti Abadi',
+            'description' => 'Lembaga Kesejahteraan Sosial Lanjut Usia (LKS-LU) / Panti Asuhan BHAKTI ABADI tidak hanya melayani LANSIA didalam Lembaga (didalam Panti) tetapi juga berperan serta dalam membantu LANSIA yang berada disekitar Panti Asuhan BHAKTI ABADI atau yang dikenal dengan istilah LANSIA BINAAN / Luar Lembaga. Ini merupakan wujud kepedulian LKS-LU BHAKTI ABADI terhadap LANSIA sekitar yang kurang mampu. Saat ini, Panti asuhan Bhakti Abadi memerlukan bantuan keuangan dari para donatur sekalian untuk kehidupan sehari-hari para lansia dan untuk keberlangsungan panti asuhan ini.',
             'image' => 'destination-4.jpg',
             'location' => 'Jakarta Pusat, DKI Jakarta',
             'link' => 'https://www.google.com/maps/place/Yayasan+Bhakti+Abadi/@-6.1804494,106.8454789,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f44bdae9c6e5:0x46d40d3cd6a6d9a3!8m2!3d-6.1804494!4d106.8454789!16s%2Fg%2F11c5rqmhq6',
@@ -211,7 +211,7 @@ class DestinationSeeder extends Seeder
 
         // <!-- 17 -->
         Destination::create([
-            'category_id' => 5,
+            'category_id' => 3,
             'name' => 'Operasi Bibir Sumbing Smile Train',
             'description' => 'Sebagian besar dari mereka tidak bisa makan dan bicara dengan benar serta sering kali tak mampu bersekolah atau melakukan pekerjaan. Jutaan anak di dunia menderita sumbing yang tak tertangani.',
             'image' => 'destination-17.jpg',
@@ -261,7 +261,7 @@ class DestinationSeeder extends Seeder
         Destination::create([
             'category_id' => 2,
             'name' => 'Panti Wredha Hanna Bogor',
-            'description' => 'Panti ini ditujukan untuk melayani para orang tua yang relatif secara ekonomi tidak mampu pada sekitaar tahun 1970an. Pada awalnya panti ini hanya diperuntukkan untuk kaum wanita saja namun dengan perkembangan yang ada dengan didirikannya bangunan baru pada tahun 2004, panti mulai dihuni juga oleh kaum pria. Kapasitas hunian saat ini adalah 25 orang. Walau dengan keterbatasan dana, panti ini cukup diminati dan biasanya terisi penuh. Secara umum kondisi kesehatan penghuni dapat dikatakan baik dan dapat mengurus dirinya sendiri, walaupun terdapat sejumlah penghuni yang harus dibantu karena sudah sangat tua atau pikun/jompo.',
+            'description' => 'Panti ini ditujukan untuk melayani para orang tua yang relatif secara ekonomi tidak mampu pada sekitaar tahun 1970an. Pada awalnya panti ini hanya diperuntukkan untuk kaum wanita saja namun dengan perkembangan yang ada dengan didirikannya bangunan baru pada tahun 2004, panti mulai dihuni juga oleh kaum pria. Kapasitas hunian saat ini adalah 25 orang. Walau dengan keterbatasan dana, panti ini cukup diminati dan biasanya terisi penuh. Secara umum kondisi kesehatan penghuni dapat dikatakan baik dan dapat mengurus dirinya sendiri, walaupun terdapat sejumlah penghuni yang harus dibantu karena sudah sangat tua atau pikun/asuhan.',
             'image' => 'destination-21.jpg',
             'location' => 'Bogor, Jawa Barat',
             'link' => 'https://www.google.com/maps/place/Panti+Wredha+Hanna+Bogor/@-6.6262207,106.8117218,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c5f8cc824b55:0x8488f73ebe3dd770!8m2!3d-6.6262207!4d106.8117218!16s%2Fg%2F11bxf59w22',
@@ -271,8 +271,8 @@ class DestinationSeeder extends Seeder
 
         // <!-- 22 -->
         Destination::create([
-            'category_id' => 3,
-            'name' => 'Panti Jompo Pesona Agape Sejahtera',
+            'category_id' => 2,
+            'name' => 'Panti Asuhan Pesona Agape Sejahtera',
             'description' => 'Panti Wreda Pesona Agape Sejahtera merupakan tempat tinggal bagi para Lansia untuk menikmati hari tua dengan damai, sehat, dan sejahtera. Kami sebagai pengelola berusaha untuk dapat membuat para lansia dapat hidup berkecukupan, maka dari itu kami membutuhkan bantuan donasi dari saudara-saudara sekalian untuk keperluan sehari-hari.',
             'image' => 'destination-22.jpg',
             'location' => 'Bogor Selatan, Jawa Barat',
@@ -283,7 +283,7 @@ class DestinationSeeder extends Seeder
 
         // <!-- 23 -->
         Destination::create([
-            'category_id' => 3,
+            'category_id' => 2,
             'name' => 'Panti Werdha Graha Bina Asuh',
             'description' => 'Yayasan Graha Bina Asuh didirikan pada Tanggal 04 Maret 2017 dengan Visi melakukan ibadah yang murni, dan Misi yang menyediakan tempat bernaung yang aman serta nyaman bagi kaum Lansia, dan menjalankan konsep “Rumah Sendiri” bagi kaum Lansia sehingga menghasilkan generasi Lansia yang sehat secara fisik,rohani dan psikis.',
             'image' => 'destination-23.jpg',
@@ -319,7 +319,7 @@ class DestinationSeeder extends Seeder
 
         // <!-- 26 -->
         Destination::create([
-            'category_id' => 5,
+            'category_id' => 3,
             'name' => 'Operasi Bibir Sumbing Malang',
             'description' => 'Donasi dari bapak ibu sekalian akan sangat membantu untuk keberlangsungan SDN ini agar para siswa dapat tetap belajar dengan fokus.',
             'image' => 'destination-26.jpg',
@@ -331,7 +331,7 @@ class DestinationSeeder extends Seeder
 
         // <!-- 27 -->
         Destination::create([
-            'category_id' => 5,
+            'category_id' => 3,
             'name' => 'Berantas Kebutaan Akibat Katarak',
             'description' => 'Eyelink Foundation merupakan yayasan dari Eyelink yang menghimpun berbagai aktivitas sosial terkait kesehatan mata, khususnya berhubungan dengan misi pemberantasan kebutaan akibat gangguan mata. Telah melakukan operasi katarak secara gratis sebanyak 6000 mata selama lebih dari 12 tahun. Melalui campaign “Berantas Kebutaan Akibat Katarak” kami ingin menyelamatkan indonesia dari kebutaan akibat penyakit katarak. Kami ingin semua orang dapat melihat membantu penderita katarak yang tidak bisa mengakses fasilitas kesehatan agar dapat melihat keindahan dunia dengan jelas',
             'image' => 'destination-27.jpg',
@@ -367,7 +367,7 @@ class DestinationSeeder extends Seeder
 
         // <!-- 30 -->
         Destination::create([
-            'category_id' => 5,
+            'category_id' => 3,
             'name' => 'Bantuan HIV/AIDS Yayasan VSE',
             'description' => 'Yayasan VSE berusaha semaksimal mungkin agar tidak ada lagi anak-anak yang terkena penyakit HIV/AIDS. Kami juga berorientasi untuk membantu pendanaan dari anak-anak yang butuh dana pengobatan khusus akibat penyakit HIV/AIDS. Selain itu, kami berharap dapat menjaga anak - anak untuk tetap memiliki semangat sembuh. Maka dari itu donasi dari saudara sekalian sangat diperlukan untuk mendukung gerakan ini.',
             'image' => 'destination-30.jpg',
