@@ -48,7 +48,7 @@
     margin-left: 10px;
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 15px;
     line-height: 18px;
     display: flex;
@@ -77,12 +77,16 @@
     cursor: pointer;
     height: 0;
     width: 0;
+
+    /* border: 1px solid red; */
 }
 
 .checkHelp{
     background-color: pink;
     width: 18px;
     height: 18px;
+
+    /* border: 1px solid red; */
 }
 
 /* Create a custom checkbox */
@@ -166,7 +170,7 @@
     margin-left: 60px;
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     line-height: 18px;
     color: #000000;
@@ -175,18 +179,21 @@
 .productCartText{
     width: 64%;
     /* background-color: pink; */
+    font-family: 'Poppins';
 }
 
 .productPriceText{
     width: 18%;
     /* background-color: blue; */
     text-align: center;
+    font-family: 'Poppins';
 }
 
 .productTotalText{
     width: 18%;
     /* background-color: green; */
     text-align: center;
+    font-family: 'Poppins';
 }
 
 .productCartLine{
@@ -220,6 +227,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    border-radius: 10px;
 }
 
 .eachProductDesc{
@@ -238,7 +248,7 @@
 .eachProductPrice2{
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     line-height: 21px;
     display: flex;
@@ -258,7 +268,7 @@
 .eachProductTotal2{
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     line-height: 21px;
     display: flex;
@@ -305,7 +315,7 @@
 }
 
 .productDescName{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -318,9 +328,9 @@
 }
 
 .productDescQtyText{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     line-height: 23px;
     display: flex;
@@ -355,9 +365,13 @@
     position: fixed;
     right: 42px;
     background: #FFFFFF;
-    border: 2px solid #522E93;
-    box-shadow: 4px 4px 0px #522E93;
+    /* border: 2px solid #522E93; */
+    /* box-shadow: 4px 4px 0px #522E93; */
     padding: 17px 15px;
+
+    border: 2px solid #522E93;
+    box-shadow: 4px 4px 8px #522E93;
+    border-radius: 20px;
 }
 
 .summaryTitle{
@@ -393,6 +407,10 @@
     color: #000000;
 }
 
+.summaryTotalItem p{
+    font-family: 'Ubuntu';
+}
+
 .summaryTotalPayment{
     padding: 0px 5px;
     font-family: 'Ubuntu';
@@ -408,11 +426,15 @@
     margin-top: 8px;
 }
 
+.summaryTotalPayment p{
+    font-family: 'Ubuntu';
+}
+
 .btn{
     background-color: #522E93;
     color: #FFFFFF;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     width: 200px;
     height: 45px;
     font-family: 'Ubuntu';
@@ -424,13 +446,17 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    border: 1px solid #522E93;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 .btn:hover{
     background-color: #673AB7;
     color: #FFFFFF;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     width: 200px;
     height: 45px;
     font-family: 'Ubuntu';
@@ -442,13 +468,16 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 a.btn:focus{
     background-color: #673AB7;
     color: #FFFFFF;
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
     width: 200px;
     height: 45px;
     font-family: 'Ubuntu';
@@ -460,6 +489,9 @@ a.btn:focus{
     align-items: center;
     justify-content: center;
     text-align: center;
+
+        box-shadow: 4px 4px 8px #CDCDCD;
+        border-radius: 20px;
 }
 
 .btnClass{
@@ -468,5 +500,8 @@ a.btn:focus{
     height: 45px;
     margin-top: 25px;
     margin-bottom: 20px;
+
+    /* box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px; */
 }
 /* right cart */
