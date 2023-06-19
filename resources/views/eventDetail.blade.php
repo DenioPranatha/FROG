@@ -55,10 +55,10 @@
         <div class="slide">
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
-                    @include('productsResult')
-                    {{-- @foreach($products as $product)
+                    {{-- @include('productsResult') --}}
+                    @foreach($products as $product)
                         @include('partials.productCart', ['product' => $product, 'event' => $event])
-                    @endforeach --}}
+                    @endforeach
 
                     {{-- <span id="more">
                         <div class="catalog-container">

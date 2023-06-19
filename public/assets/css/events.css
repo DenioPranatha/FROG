@@ -79,6 +79,7 @@
 }
 
 #result-container{
+    /* border: 1px solid black; */
     padding: 42px 80px 42px 120px;
 }
 
@@ -194,8 +195,7 @@ a.custom-card:hover {
     /* border: 1px solid #CDCDCD; */
     /* box-shadow: 4px 4px 8px #CDCDCD; */
     /* border-radius: 17.5px; */
-    /* margin: 0 10.5px; */
-    margin-right: 8px;
+    margin: 0 10.5px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 2px;
