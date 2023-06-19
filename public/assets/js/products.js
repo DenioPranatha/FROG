@@ -11,8 +11,10 @@ $(document).ready(function(){
         //input berapa batch see more yg harus keload di kondisi sekarang
         var lim = $('#myBtn1').val();
         $(this).fadeOut(100);
-
-
+        var categoryValue = $('#cat_id1').val();
+        // var categoryValue = $('.categoriesCart').val();
+        // console.log("ini");
+        // console.log(categoryValue);
         //Masukin ke function penggabung
         loadFilteredContent(lim, categoryValue);
     });
@@ -23,14 +25,15 @@ $(document).ready(function(){
     //     var categoryValue = $(this).attr('value');
     //     //input berapa batch see more yg harus keload
     //     var lim = 1;
-    //     loadFilteredContent(categoryValue, lim);
+    //     loadFilteredContent(lim, categoryValue);
     // });
 
     function loadFilteredContent(lim, categoryValue) {
         var url = '/products/result';
         var parameters = [];
 
-        // console.log(categoryValue)
+        console.log("halo");
+        console.log(categoryValue);
 
         //periksa apakah lim, searchValue, dan categoryValue dimasukin di fungsi di atas
         //Kalo iya, tambah di get ?search-event=banjir
@@ -38,7 +41,7 @@ $(document).ready(function(){
             parameters.push('pg=' + encodeURIComponent(lim));
         }
 
-        console.log(categoryValue);
+        // console.log(categoryValue);
         if (categoryValue) {
             parameters.push('cat-id=' + encodeURIComponent(categoryValue));
             // parameters.push('cat-id=' + categoryValue);

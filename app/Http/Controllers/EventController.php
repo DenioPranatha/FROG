@@ -44,7 +44,7 @@ class EventController extends Controller
         return response(view('events', [
             'events' => $events,
             'popular' => $popEvents->get(),
-            'cat' => Category::limit(3)->get(),
+            'cat' => Category::all(),
             'pg' => $pg
         ]));
     }
