@@ -133,11 +133,12 @@ class PaymentDetailSeeder extends Seeder
             'item_modal' => 15400
         ]);
 
+        //ini buatan denio, jangan dihapus
         for($i = 6; $i < 11; $i++){
 
             PaymentDetail::create([
                 'payment_header_id' => $i,
-                'product_id' => mt_rand(10, 230),
+                'product_id' => 4,
                 'qty' => 1,
                 'item_price' => 10500,
                 'item_modal' => 7000
