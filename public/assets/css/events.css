@@ -55,7 +55,8 @@
     margin: auto;
     flex-wrap: nowrap;
     height: fit-content;
-    width: 85vw;
+    width: 80vw;
+    /* border: 1px solid black; */
 }
 
 .catalog-container{
@@ -78,7 +79,7 @@
 }
 
 #result-container{
-    padding: 42px 0px 42px 100px;
+    padding: 42px 80px 42px 120px;
 }
 
 a.custom-card,
@@ -157,12 +158,13 @@ a.custom-card:hover {
 .carousel-item, .carousel-item1{
     display: block;
     /* flex: 0 0 15%; */
-    margin-right: 10px;
+    margin-right: 60px;
 }
 
 .carousel-item1{
     display: block;
     /* border: 1px solid black; */
+
 }
 
 .carousel-control-prev, .carousel-control-next,
@@ -189,9 +191,6 @@ a.custom-card:hover {
     position: relative;
     height: 35px;
     background: #FFFFFF;
-    /* border: 1px solid #CDCDCD; */
-    /* box-shadow: 4px 4px 8px #CDCDCD; */
-    /* border-radius: 17.5px; */
     margin: 0 10.5px;
     padding-left: 10px;
     padding-right: 10px;
