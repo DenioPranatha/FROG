@@ -15,31 +15,58 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        // CATEGORY
-        // <!-- 1 -->
-        Category::create([
-            'name' => 'Bencana Alam'
-        ]);
+    //     // CATEGORY
+    //     // <!-- 1 -->
+    //     Category::create([
+    //         'name' => 'Bencana Alam'
+    //     ]);
 
-        // <!-- 2 -->
-        Category::create([
-            'name' => 'Panti Asuhan'
-        ]);
+    //     // <!-- 2 -->
+    //     Category::create([
+    //         'name' => 'Panti Asuhan'
+    //     ]);
 
-        // <!-- 3 -->
-        Category::create([
-            'name' => 'Panti Jompo'
-        ]);
+    //     // <!-- 3 -->
+    //     Category::create([
+    //         'name' => 'Panti Jompo'
+    //     ]);
 
-        // <!-- 4 -->
-        Category::create([
-            'name' => 'Fasilitas Umum'
-        ]);
+    //     // <!-- 4 -->
+    //     Category::create([
+    //         'name' => 'Fasilitas Umum'
+    //     ]);
 
-        // <!-- 5 -->
-        Category::create([
-            'name' => 'Bantuan Kesehatan'
-        ]);
-    // CATEGORY
+    //     // <!-- 5 -->
+    //     Category::create([
+    //         'name' => 'Bantuan Kesehatan'
+    //     ]);
+    // // CATEGORY
+    Category::create([
+        'name' => 'Natural Disasters'
+    ]);
+
+    // <!-- 2 -->
+
+    Category::create([
+        'name' => 'Orphanage'
+    ]);
+
+    // <!-- 3 -->
+
+    Category::create([
+        'name' => 'Nursing Home'
+    ]);
+
+    // <!-- 4 -->
+
+    Category::create([
+        'name' => 'Public Facilities'
+    ]);
+
+    // <!-- 5 -->
+
+    Category::create([
+        'name' => 'Health Assistance'
+    ]);
     }
 }

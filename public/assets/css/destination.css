@@ -55,7 +55,7 @@
     /* background-color: yellow; */
     /* width: 120%; */
     padding: 0px 0px;
-    margin: 30px -32px 80px -32px;
+    margin: 30px -32px 20px -32px;
     /* margin: 0px -80px 30px -80px; */
     /* border-radius: 20px; */
     /* filter: drop-shadow(4px 4px 0px #CDCDCD); */
@@ -67,7 +67,7 @@
     /* z-index: -2; */
     /* background-color: yellow; */
 
-    box-shadow: 4px 4px 8px #CDCDCD;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
     border-radius: 20px;
 }
 
@@ -145,6 +145,12 @@
     margin-left: 5px;
 }
 
+.container-card{
+    /* background-color: pink; */
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
+
 .section-title2{
     padding: 40px 42px;
     padding-bottom: 0px;
@@ -182,17 +188,21 @@
     /* border: 1px solid red; */
     gap: 2vw;
     margin-bottom: 6vw;
+    /* background-color: yellow; */
 }
 
 .card{
     width: 25vw;
     height: 32vw;
     gap: 2.5vw;
+    /* gap: 5vw; */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     border-radius: 20px;
 
     box-shadow: 4px 4px 8px rgba(205, 205, 205, 1);
+    /* background-color: blue; */
 }
 
 .shadow{
@@ -207,6 +217,18 @@
 
     padding-left: 2vw;
     padding-bottom: 1.5vw;
+
+    /* background-color: blue; */
+}
+
+.kotak{
+    /* background-color: green; */
+    /* width: 100%; */
+}
+
+.text{
+    /* background-color: brown; */
+    width: 100%;
 }
 
 .head{

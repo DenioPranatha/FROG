@@ -20,9 +20,6 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        // dd($request);
-
         // kalo pencet salah satu kategori dr home
         if($request->has('cat_id')){
             $products = Product::where('category_id', $request->cat_id)->get();
