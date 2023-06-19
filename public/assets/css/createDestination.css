@@ -178,11 +178,39 @@ input[type=file]{
     border-radius: 10px;
 }
 
-.img-container img{
+/* .img-container img{
     width: 28vw;
     height:28vw;
     display: none;
     border-radius: 10px;
+} */
+
+#img{
+    width: 28vw;
+    height:23vw;
+    display: none;
+    /* position: absolute;
+    z-index: 2; */
+    object-fit: cover;
+    border-radius: 10px;
+    /* background: transparent; */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.container-preview{
+    display: none;
+    width: 28vw;
+    height:23vw;
+    border-radius: 10px;
+}
+
+.container-preview label{
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    visibility: none;
+    background: transparent;
 }
 
 .form-control{
