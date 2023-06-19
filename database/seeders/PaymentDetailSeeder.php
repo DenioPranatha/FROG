@@ -19,7 +19,7 @@ class PaymentDetailSeeder extends Seeder
         // <!-- 1 -->
         PaymentDetail::create([
             'payment_header_id' => 1,
-            'product_id' => 1,
+            'product_id' => 45,
             'qty' => 10,
             'item_price' => 2700,
             'item_modal' => 1800
@@ -28,7 +28,7 @@ class PaymentDetailSeeder extends Seeder
         // <!-- 2 -->
         PaymentDetail::create([
             'payment_header_id' => 1,
-            'product_id' => 2,
+            'product_id' => 202,
             'qty' => 20,
             'item_price' => 11550,
             'item_modal' => 7700
@@ -37,7 +37,7 @@ class PaymentDetailSeeder extends Seeder
         // <!-- 3 -->
         PaymentDetail::create([
             'payment_header_id' => 1,
-            'product_id' => 5,
+            'product_id' => 50,
             'qty' => 35,
             'item_price' => 11500,
             'item_modal' => 7700
@@ -109,8 +109,8 @@ class PaymentDetailSeeder extends Seeder
         // <!-- 11 -->
         PaymentDetail::create([
             'payment_header_id' => 4,
-            'product_id' => 1,
-            'qty' => 12,
+            'product_id' => 20,
+            'qty' => 102,
             'item_price' => 2700,
             'item_modal' => 1800
         ]);
@@ -118,8 +118,8 @@ class PaymentDetailSeeder extends Seeder
         // <!-- 12 -->
         PaymentDetail::create([
             'payment_header_id' => 4,
-            'product_id' => 3,
-            'qty' => 18,
+            'product_id' => 70,
+            'qty' => 10,
             'item_price' => 23100,
             'item_modal' => 15400
         ]);
@@ -127,8 +127,8 @@ class PaymentDetailSeeder extends Seeder
         // <!-- 13 -->
         PaymentDetail::create([
             'payment_header_id' => 4,
-            'product_id' => 2,
-            'qty' => 22,
+            'product_id' => 40,
+            'qty' => 150,
             'item_price' => 23100,
             'item_modal' => 15400
         ]);
@@ -137,7 +137,7 @@ class PaymentDetailSeeder extends Seeder
 
             PaymentDetail::create([
                 'payment_header_id' => $i,
-                'product_id' => 4,
+                'product_id' => mt_rand(10, 230),
                 'qty' => 1,
                 'item_price' => 10500,
                 'item_modal' => 7000
