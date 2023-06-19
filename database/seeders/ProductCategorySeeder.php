@@ -18,32 +18,32 @@ class ProductCategorySeeder extends Seeder
         // PRODUCT CATEGORY
         // <!-- 1 -->
         ProductCategory::create([
-            'name' => 'Snack Asin'
+            'name' => 'Savoury Snack'
         ]);
 
         // <!-- 2 -->
         ProductCategory::create([
-            'name' => 'Makanan Berat'
+            'name' => 'Food'
         ]);
 
         // <!-- 3 -->
         ProductCategory::create([
-            'name' => 'Minuman'
+            'name' => 'Beverage'
         ]);
 
         // <!-- 4 -->
         ProductCategory::create([
-            'name' => 'Baju'
+            'name' => 'Clothes'
         ]);
 
         // <!-- 5 -->
         ProductCategory::create([
-            'name' => 'Aksesoris'
+            'name' => 'Accessories'
         ]);
 
         // <!-- 6 -->
         ProductCategory::create([
-            'name' => 'Premium'
+            'name' => 'Subscription'
         ]);
 
 
@@ -54,12 +54,12 @@ class ProductCategorySeeder extends Seeder
 
         // <!-- 8 -->
         ProductCategory::create([
-            'name' => 'Celana'
+            'name' => 'Pants'
         ]);
 
         // <!-- 9 -->
         ProductCategory::create([
-            'name' => 'Snack Manis'
+            'name' => 'Sweet Snack'
         ]);
 
         // <!-- 10 -->
