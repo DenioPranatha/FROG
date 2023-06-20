@@ -1,0 +1,106 @@
+
+.padding{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.container{
+    border: none;
+    width: 100%;
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+    background-color: #522e93;
+    padding-top: 5vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    gap: 2vw;
+}
+
+.destination-image{
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 36vw;
+    height: 26vw;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.destination-name{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+
+    color: #FFFFFF;
+}
+
+.destination-person{
+    gap: 1vw;
+    font-family: 'Poppins';
+    font-style:normal;
+    /* font-weight: 700; */
+    font-size: 15px;
+
+    color: #FFFFFF;
+}
+
+.destination-location{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+.destination-desc{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.button-one{
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+
+    gap: 0.5vw;
+    border: none;
+    width: 15vw;
+    height: 3.5vw;
+    border-radius: 15px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+
+    color: #522E93;
+}
+
+.button-two{
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+
+    gap: 0.8vw;
+    border: none;
+    width: 20vw;
+    height: 3.5vw;
+    border-radius: 15px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+
+    color: #522E93;
+}
+
+.button-container{
+    gap: 2vw;
+}
