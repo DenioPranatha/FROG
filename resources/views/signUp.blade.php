@@ -53,7 +53,7 @@
                     </div> --}}
 
                     <div class="name">
-                        <p>Name</p>
+                        <p>Name<span>*</span></p>
                         <input type="text" name="name" id="name" class="form-control rounded @error('name') is-invalid @enderror" placeholder="Name" value="{{ old('name') }}" required>
                         @error('name')
                             <div class="invalid-feedback">
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="username">
-                        <p>Username</p>
+                        <p>Username<span>*</span></p>
                         <input type="text" name="username" id="username" class="form-control rounded @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}" required>
                         @error('username')
                             <div class="invalid-feedback">
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="email">
-                        <p>Email</p>
+                        <p>Email<span>*</span></p>
                         <input type="email" name="email" id="email" class="form-control rounded @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}" required>
                         @error('email')
                             <div class="invalid-feedback">
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="password">
-                        <p>Password</p>
+                        <p>Password<span>*</span></p>
 
                         <div class="eye-container d-flex justify-content-center align-items-center">
                             <i toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></i>
@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="confirm-password">
-                        <p>Confirm Password</p>
+                        <p>Confirm Password<span>*</span></p>
 
                         <div class="eye-container d-flex justify-content-center align-items-center">
                             <i toggle="#password-field2" class="fa fa-fw fa-eye field_icon toggle-password2"></i>
@@ -113,7 +113,10 @@
                     </div>
 
                     <div class="phone">
-                        <p>Phone</p>
+                        <p>Phone<span>*</span></p>
+                        <div class="enamdua d-flex justify-content-center align-items-center">
+                            <p>+62</p>
+                        </div>
                         <input type="text" name="phone" id="phone" class="form-control rounded @error('phone') is-invalid @enderror" placeholder="Phone" value="{{ old('phone') }}" required>
                         @error('phone')
                             <div class="invalid-feedback">
@@ -123,7 +126,7 @@
                     </div>
 
                     <div class="address">
-                        <p>Address</p>
+                        <p>Address<span>*</span></p>
                         <textarea type="text" name="address" id="address" class="form-control rounded @error('address') is-invalid @enderror" placeholder="Address" required>{{ old('address') }}</textarea>
                         @error('address')
                             <div class="invalid-feedback">

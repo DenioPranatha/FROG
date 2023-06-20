@@ -67,10 +67,12 @@ function showPreview(event){
     if(event.target.files.length > 0){
         var src = URL.createObjectURL(event.target.files[0]);
         var preview = document.getElementById("img");
+        var previewCont = document.getElementById("preview-container");
         var before = document.getElementById('input-label')
         // preview.style.backgroundImage =
         preview.src = src;
-        preview.style.display = "block";
+        previewCont.style.display = "block";
+        preview.style.display = 'block';
         before.style.display = "none";
 
         // alert(event.target.files[0]);

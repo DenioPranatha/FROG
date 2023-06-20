@@ -122,6 +122,7 @@ input[type="email"]
 }
 
 .phone input{
+    padding-left: 3.5vw;
     margin-top: 0.8vw;
     color: #522E93;
     border: 1px solid #522E93;
@@ -283,4 +284,25 @@ input::-ms-clear {
     border-radius: 5px 0px 0px 5px;
 }
 
+span{
+    color: red;
+}
 
+
+.enamdua{
+    position: absolute;
+    z-index: 2;
+    background-color: #522E93;
+    margin-top: 0.85vw;
+    margin-left: 0vw;
+    width: 3vw;
+    height: 2.7vw;
+    border-radius: 5px 0px 0px 5px;
+    /* border: 1px solid red; */
+    border-right: 1px solid;
+}
+
+.enamdua p{
+    margin-bottom: 0vw;
+    color: white;
+}

@@ -19,7 +19,11 @@
                             <i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i>
                         </label>
                         <input type="file" id="img-input" accept=".jpg,.jpeg,.png" id="file" style="visibility:none;" onchange="showPreview(event)">
-                        <img id="img" class="img">
+                        <div class="container-preview" id="preview-container">
+                            <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()">
+                            </label>
+                            <img id="img" class="img">
+                        </div>
                     </div>
                     <p>Add Event Image</p>
                 </div>
