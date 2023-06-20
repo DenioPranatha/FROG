@@ -206,8 +206,8 @@ input[type=file]{
 
     background: #FFFFFF;
     /* box-shadow: 4px 4px 8px #CDCDCD; */
-    /* box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25); */
-    box-shadow: 4px 4px 8px #CDCDCD;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
     border-radius: 10px;
 }
 
@@ -215,7 +215,7 @@ input[type=file]{
     background: #FFFFFF;
     border-radius: 10px;
 
-    box-shadow: 4px 4px 8px #CDCDCD;
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
     /* border-radius: 10px; */
 }
 
@@ -237,6 +237,21 @@ input[type=file]{
     /* background: transparent; */
     /* background-size: cover;
     background-repeat: no-repeat; */
+}
+
+.container-preview{
+    display: none;
+    width: 28vw;
+    height:23vw;
+    border-radius: 10px;
+}
+
+.container-preview label{
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    visibility: none;
+    background: transparent;
 }
 
 .form-control{

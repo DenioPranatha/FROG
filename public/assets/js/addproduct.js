@@ -59,22 +59,24 @@ const { preview } = require("vite");
 // imgInputHelper.addEventListener("change", addImgHandler);
 
 // trying to make image preview hehe
-const product_img = document.getElementById("img");
-const input_label = document.getElementById("input-label");
-const img_input = document.getElementById("img-input");
-
 function showPreview(event){
     if(event.target.files.length > 0){
-        // var src = URL.createObjectURL(event.target.files[0]);
+        var src = URL.createObjectURL(event.target.files[0]);
         var preview = document.getElementById("img");
-        // preview.src = src;
-        // preview.style.display = "block";
+        var previewCont = document.getElementById("preview-container");
+        var before = document.getElementById('input-label')
+        // preview.style.backgroundImage =
+        preview.src = src;
+        previewCont.style.display = "block";
+        preview.style.display = 'block';
+        before.style.display = "none";
+
         // alert(event.target.files[0]);
-        preview.style.height = "100px";
-        preview.style.width = "100px";
-        preview.style.backgroundImage = URL.createObjectURL(event.target.files[0]);
-        preview.style.backgroundRepeat = "no-repeat";
-    //   product_img.style.backgroundImage = preview.src;
+        // preview.style.height = "100px";
+        // preview.style.width = "100px";
+        // preview.style.backgroundImage = URL.createObjectURL(event.target.files[0]);
+        // preview.style.backgroundRepeat = "no-repeat";
+        // product_img.style.backgroundImage = preview.src;
     }
 }
 
