@@ -26,7 +26,7 @@
     <div id="carouselExample" class="carousel">
         <div class="carousel-inner">
             @foreach($popular as $event)
-            <div class="carousel-item">
+            <div class="carousel-item2">
                 <a href="/eventDetail/{{ $event->id }}" class="custom-card">
                     @include('partials.eventCart', ['event' => $event])
                 </a>
@@ -67,10 +67,10 @@
         @endforeach
 
     </div>
-    
+
     <br>
 
-    <div id="result-container">
+    <div id="result-container1">
         @include('eventsResult')
     </div>
 

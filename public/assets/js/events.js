@@ -9,7 +9,7 @@ const Carousel = new bootstrap.Carousel(myCarouselElement, {
 
 if(window.matchMedia("(min-width:576px)").matches){
     var carousel = $('.carousel-inner')[0].scrollWidth;
-    var cardWidth = $('.carousel-item').width()*1.05;
+    var cardWidth = $('.carousel-item2').width()*1;
     var bannerWidth = $('.banner-item').width();
     var bannerCount = $('.banner-item').length;
     var counter = 0;
@@ -129,7 +129,7 @@ $(document).ready(function(){
         //load secara live, tapi yang diload satu container aja, yaitu result container
         //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
         //cari di eventsResult.blade.php
-        $('#result-container').load(url);
+        $('#result-container1').load(url);
     }
 
 });

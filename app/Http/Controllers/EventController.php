@@ -159,10 +159,10 @@ class EventController extends Controller
 
         $pg = 1;
         $count = count($products);
-        $products = $products->take(2);
+        $products = $products->take(10);
 
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
-        if($count <= 2) $pg = -1;
+        if($count <= 10) $pg = -1;
 
         return response(view('eventDetail', [
             'event' => $event,
@@ -204,24 +204,25 @@ class EventController extends Controller
 
     }
 
-    public function showProductDetail(Request $request)
+    public function showProductDetail(Request $request, Event $event)
     {
         // kalo pencet see more ato akses dr url
-        $id = (int)$request->query('id');
-        $products = Product::all()->where('event_id', $id);
+        // $id = (int)$request->query('id');
+        $products = Product::all()->where('event_id', $event->id);
+        // dump($products);
 
-        $pg = (int)$request->query('pg');
-        $pge = 2*$pg;
+        $pg = (int)$request->input('pg');
+        $pge = 10*$pg;
         $c = count($products);
         if($pge >= $c)$pg = -1;
-        dd($pge);
+        // dd($pge);
 
-        // return view('productsResult', [
-        //     'products' => $products->take($pge),
-        //     'productCategories' => ProductCategory::all(),
-        //     'request' => $request,
-        //     'pg' => $pg
-        // ]);
+        return view('productsResult', [
+            'products' => $products->take($pge),
+            // 'productCategories' => ProductCategory::all(),
+            // 'request' => $request,
+            'pg' => $pg
+        ]);
 
 
     }
