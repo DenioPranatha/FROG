@@ -64,14 +64,11 @@ Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
 Route::get('/eventDetail/result', [EventController::class, 'showProductDetail']);
-
-Route::get('/createEvent', function () {
-    return view('createEvent');
-})->name('createEvent');
+Route::get('/createEvent', [EventController::class, 'createForm'])->name('createEvent');
 
 Route::get('/myevents', [MyEventController::class, 'index'])->name('myEvents');
-Route::get('/myEventDetail', [MyEventController::class, 'show'])->name('myEventDetail');
-Route::post('/myEventDetail/edit', [MyEventController::class, 'edit']);
+Route::get('/myEventDetail/{event:id}/{isEdit}', [MyEventController::class, 'show'])->name('myEventDetail');
+Route::post('/myEventDetail/{event:id}/edit', [MyEventController::class, 'edit']);
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 

@@ -12,6 +12,7 @@ use App\Models\ProductCategory;
 
 use Faker\Provider\ar_EG\Payment;
 use function PHPUnit\Framework\isEmpty;
+use App\Models\Destination;
 
 class EventController extends Controller
 {
@@ -223,6 +224,14 @@ class EventController extends Controller
         // ]);
 
 
+    }
+
+    public function createForm(){
+        $destinations = Destination::all();
+
+        return view('createEvent', [
+            'destinations' => $destinations
+        ]);
     }
 
     /**

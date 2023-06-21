@@ -1,4 +1,4 @@
-.container{
+/* .container{ */
     /* margin-left: 42px;
     margin-bottom: 84px; */
 
@@ -7,7 +7,7 @@
     /* margin-bottom: 84px; */
 
     /* margin-bottom: 100px; */
-}
+/* } */
 
 .section-title{
     font-family: 'Ubuntu';
@@ -201,4 +201,8 @@
     /* font-weight:bold; */
     font-size: 30px;
     color: #522E93;
+}
+
+.gap{
+    height: 100px;
 }

@@ -67,6 +67,7 @@
         @endforeach
 
     </div>
+    
     <br>
 
     <div id="result-container">

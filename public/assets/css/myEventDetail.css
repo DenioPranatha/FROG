@@ -249,9 +249,9 @@ a.custom-card:hover {
     background-position: center;
 
 /* <<<<<<< main */
-    border-radius: 20px;
+    /* border-radius: 20px;
     border: 1px solid #CDCDCD;
-    filter: drop-shadow(4px 4px 8px #CDCDCD);
+    filter: drop-shadow(4px 4px 8px #CDCDCD); */
 /* ======= */
     /* border: 1px solid #CDCDCD;
     filter: drop-shadow(4px 4px 8px #CDCDCD);
@@ -279,7 +279,7 @@ a.custom-card:hover {
 
 .edit-desc{
 /* <<<<<<< main */
-    border: 1px solid #CDCDCD;
+    /* border: 1px solid #CDCDCD;
     filter: drop-shadow(4px 4px 8px #CDCDCD);
     font-size: 1.4vw;
 }
@@ -287,7 +287,7 @@ a.custom-card:hover {
 .edit-title{
     border: 1px solid #CDCDCD;
     filter: drop-shadow(4px 4px 8px #CDCDCD);
-    font-size: 1.4vw;
+    font-size: 1.4vw; */
 /* ======= */
     height: 120px;
     width: 100%;
@@ -311,9 +311,9 @@ a.custom-card:hover {
 textarea{
     resize: none;
 /* <<<<<<< main */
-    padding-left: 0.5vw;
+    /* padding-left: 0.5vw;
     padding-top: 0.5vw;
-    width: 40vw;
+    width: 40vw; */
 
 /* ======= */
     /* padding-left: 0.5vw; */
@@ -408,12 +408,15 @@ button{
 }
 
 .rincian-container{
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-self: center;
     justify-content: space-between;
-    width: 92vw;
+    width: 65vw;
     margin: 21px 0 30px 0;
+
 }
 
 .rec{
@@ -421,11 +424,11 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 21vw;
-    border: 2px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD;
+    width: 15vw;
+    border: 1px solid #CDCDCD;
+    box-shadow: 4px 4px 8px #CDCDCD;
     padding: 15px 0;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: transform .2s ease;
 }
 
