@@ -56,9 +56,14 @@
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
                     {{-- @include('productsResult') --}}
-                    @foreach($products as $product)
+                    {{-- denio ngubah dari sini --}}
+                    {{-- @foreach($products as $product)
                         @include('partials.productCart', ['product' => $product, 'event' => $event])
-                    @endforeach
+                    @endforeach --}}
+
+                    <div class="productsDiv">
+                        @include('productsResult')
+                    </div>
 
                     {{-- <span id="more">
                         <div class="catalog-container">
@@ -338,24 +343,21 @@
             // console.log(lim);
             $(this).fadeOut(100);
             var eventId = @json($event->id);
-            var url = '/eventDetail/result';
+            var url = '/eventDetail/' + eventId + '/result';
             var parameters = [];
             // console.log("halo");
-
-            parameters.push('id='  + encodeURIComponent(eventId));
 
             if(lim){
                 parameters.push('pg=' + encodeURIComponent(lim));
             }
-
 
             url += '?' + parameters.join('&');
 
             //load secara live, tapi yang diload satu container aja, yaitu result container
             //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
             //cari di eventsResult.blade.php
-            console.log(url);
-            $('#result-container').load(url);
+            console.log(url)
+            $('.productsDiv').load(url);
 
 
         });
