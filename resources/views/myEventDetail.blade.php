@@ -9,7 +9,7 @@
 @section('content')
 
     {{-- Content Main --}}
-    <div id="main-content" class="container-maincontent">
+    <div id="main-content" class="container-maincontent" style="display: {{ $isEdit == 0 ? 'block' : 'none' }}">
         <div class="desc-container">
             <div class="pic">
                 <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
@@ -49,9 +49,9 @@
     </div>
 
     {{-- Edit content --}}
-    <div id="edit-content" class="container-editcontent">
+    <div id="edit-content" class="container-editcontent" style="display: {{ $isEdit == 1 ? 'block' : 'none' }}">
 
-        <form action="/myEventDetail/edit" method="POST">
+        <form action="/myEventDetail/{{ $event->id }}/edit" method="POST">
             @csrf
             <div class="desc-container">
                 <div class="pic">
@@ -64,25 +64,10 @@
                     </div>
                     <div class="purple">
                         Day {{ $passed }}
-
                     </div>
                     <div class="progress-container">
                         <div class="date">0</div>
                         <div class="progress">
-
-                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="date">30</div>
-                    </div>
-                    <div class="desc-caption">
-                        <textarea id="edit-desc" placeholder="Input Your New Description" class="edit-desc rounded" style="height:10vw;"></textarea>
-                        {{-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia! Sed ab mollitia ex consequuntur consequatur amet dolore magni fugit, aperiam hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur. --}}
-                    </div>
-                    <div class="desc-point"><b>Created By:</b> Lorem Ipsum</div>
-                    <div class="desc-point"><b>Event Duration:</b> Lorem Ipsum - Lorem Ipsum</div>
-                    <div class="desc-point"><b>Charity Destination:</b> Lorem Ipsum</div>
-                    <div class="desc-point"><b>Category:</b> Lorem Ipsum</div>
-
                             <div class="progress-bar" role="progressbar" style="width: {{ $per }}%" aria-valuenow="{{ $per }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="date">{{ $range }}</div>

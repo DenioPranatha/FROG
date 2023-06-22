@@ -19,7 +19,7 @@ class EventSeeder extends Seeder
         // <!-- 1 -->
         Event::create([
             'destination_id' => 1,
-            'user_id' => 1,
+            'user_id' => 5,
             'name' => 'Charity Action of RTB',
             'slug' => 'Charity Action',
             'start_date' => '2023-03-23',
@@ -33,7 +33,7 @@ class EventSeeder extends Seeder
         // <!-- 2 -->
         Event::create([
             'destination_id' => 18,
-            'user_id' => 1,
+            'user_id' => 5,
             'name' => 'Pasaman Earthquake Fundraising',
             'slug' => 'Pasaman Earthquake',
             'start_date' => '2023-03-07',
@@ -47,11 +47,11 @@ class EventSeeder extends Seeder
         // <!-- 3 -->
         Event::create([
             'destination_id' => 9,
-            'user_id' => 1,
+            'user_id' => 5,
             'name' => 'Bantu Mereka yang Kena Banjir Yuk',
             'slug' => 'Bantu Banjir Yuk',
-            'start_date' => '2023-01-01',
-            'end_date' => '2023-01-20',
+            'start_date' => '2023-06-15',
+            'end_date' => '2023-07-11',
             'duration' => 19,
             'status' => 'accepted',
             'description' => 'Kami dari komununitas CareOthers ingin membantu sanak saudara-saudari kita yang telah terkena bencala alam Banjir yang terjadi di Jakarta dini hari tadi. Hasil Penggalangan dana ini nantinya akan diberikan kepada mereka dalam rupa persedian makanan, pakaian, serta sedikit uang tunai.',
@@ -61,7 +61,7 @@ class EventSeeder extends Seeder
         // <!-- 4 -->
         Event::create([
             'destination_id' => 15,
-            'user_id' => 2,
+            'user_id' => 5,
             'name' => 'Longsor Puncak, Bogor',
             'slug' => 'Longsor Puncak',
             'start_date' => '2023-02-12',
