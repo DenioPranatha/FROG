@@ -3,7 +3,7 @@
 @endsection
 
 @extends('layouts.main')
-{{-- gimana cara back 1 directory --}}
+
 @section('title', 'Event Detail')
 
 @section('content')
@@ -55,32 +55,9 @@
         <div class="slide">
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
-                    {{-- @include('productsResult') --}}
-                    {{-- denio ngubah dari sini --}}
-                    {{-- @foreach($products as $product)
-                        @include('partials.productCart', ['product' => $product, 'event' => $event])
-                    @endforeach --}}
-
                     <div class="productsDiv">
                         @include('productsResult')
                     </div>
-
-                    {{-- <span id="more">
-                        <div class="catalog-container">
-                            @for ( $i=0 ; $i<20 ; $i++)
-                            <a href="" class="custom-card">
-                                @include('partials.productCart')
-                            </a>
-                            @endfor
-                        </div>
-                    </span> --}}
-
-                    {{-- <div class="more-products">
-                        <div class="line1"></div>
-                        <button class="more" id="myBtn">More Products</button>
-                        <div class="line1"></div>
-                    </div> --}}
-
                 </section>
             </div>
 
@@ -340,25 +317,19 @@
         $(document).on('click', '#myBtn1', function(){
             //input berapa batch see more yg harus keload di kondisi sekarang
             var lim = $('#myBtn1').val();
-            // console.log(lim);
             $(this).fadeOut(100);
             var eventId = @json($event->id);
             var url = '/eventDetail/' + eventId + '/result';
             var parameters = [];
-            // console.log("halo");
-
             if(lim){
                 parameters.push('pg=' + encodeURIComponent(lim));
             }
-
             url += '?' + parameters.join('&');
 
             //load secara live, tapi yang diload satu container aja, yaitu result container
             //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
             //cari di eventsResult.blade.php
-            console.log(url)
             $('.productsDiv').load(url);
-
 
         });
 

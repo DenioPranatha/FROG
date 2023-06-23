@@ -1,4 +1,4 @@
-<a href="/eventDetail/{{ $myEvent->id }}" class="card-container">
+<a href="/myEventDetail/{{ $myEvent->id }}/0" class="card-container">
     <div class="card">
         <div class="card-image">
             <div class="event-image" style="background-image: url({{ asset('/assets/images/event').'/'.$myEvent->image}} )"></div>
