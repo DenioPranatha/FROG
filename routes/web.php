@@ -110,6 +110,14 @@ Route::get('/approvalDetail', function () {
     return view('approvalDetail');
 })->name('approvalDetail');
 
+Route::get('/destinationDetail', function () {
+    return view('destinationDetail');
+})->name('destinationDetail');
+
+Route::get('/destinationDetailAdmin', function () {
+    return view('admin.destinationDetailAdmin');
+})->name('destinationDetailAdmin');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
