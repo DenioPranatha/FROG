@@ -12,7 +12,11 @@
     <div id="main-content" class="container-maincontent" style="display: {{ $isEdit == 0 ? 'block' : 'none' }}">
         <div class="desc-container">
             <div class="pic">
-                <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+                @if(file_exists(public_path('assets/images/event/' . $event->image)))
+                    <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+                @else
+                    <div class="desc-img" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
+                @endif
                 <button id="change-view-button" class="donate" href="#section1">Edit Event</button>
             </div>
             <div class="desc">
@@ -96,56 +100,9 @@
         <div class="slide">
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
-                    {{-- <a href="#" class="add-product">
-
-                    </a> --}}
-                    {{-- @for($i = 0; $i < 16; $i++)
-                        @if ($i == 0) --}}
-                            {{-- <a href="#" class="custom-card"> --}}
-                                {{-- <div class="productCartPage">
-                                    <a href="addProduct" class="custom-card">
-                                        <div class="card">
-                                            <div class="add-icon">
-                                               <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
-                                            </div>
-                                            <div class="caption-add">
-                                                <p class="namaProduk">Add Product</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div> --}}
-                            {{-- </a> --}}
-                        {{-- @else
-                            <a href="" class="custom-card">
-                                @include('partials.productCart')
-                            </a>
-                        @endif
-                    @endfor --}}
-
-                    <div class="productCartPage">
-                        <a href="/addProduct" class="custom-card">
-                            <div class="card">
-                                <div class="add-icon">
-                                   <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
-                                </div>
-                                <div class="caption-add">
-                                    <p class="namaProduk">Add Product</p>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="productsDiv">
+                        @include('productsResult')
                     </div>
-                    @foreach ($products as $product)
-                        <a href="" class="custom-card">
-                            @include('partials.productCart', ['product' => $product])
-                        </a>
-                    @endforeach
-
-                    <div class="more-products">
-                        <div class="line1"></div>
-                        <button class="more">More Products</button>
-                        <div class="line1"></div>
-                    </div>
-
                 </section>
             </div>
 
@@ -235,6 +192,22 @@
                         </div>
                     </div>
 
+                    <div class="purchase-history">
+                        <div class="purchase-history-headline">
+                            {{-- <div class="purchasehistory-subheadline">Purchase History</div>
+                            <div class="see-all">
+                                <a href="allHistory">
+                                    See All
+                                </a>
+                            </div> --}}
+                        </div>
+                        <div class="card-container d-flex flex-wrap">
+                            {{-- @foreach ($histories as $history)
+                                @include('partials.historyCard', ['history' => $history])
+                            @endforeach --}}
+                        </div>
+                    </div>
+
                 </section>
             </div>
         </div>
@@ -311,9 +284,9 @@ function generateDateLabels(startDate, count) {
             //If, ada item date yang == x, masukin item total ke filtered data
             const filteredData = temp.map(item => item.total);
             labels["Value"].push(filteredData);
-                }else{
-                    labels["Value"].push(0);
-                }
+        }else{
+            labels["Value"].push(0);
+        }
                 //++ di date
                 currentDate.setDate(currentDate.getDate() + 1);
             }
@@ -432,18 +405,34 @@ function generateDateLabels(startDate, count) {
         console.log("halo1");
 
     $(document).ready(function(){
-
         $('.dropdown-item').on('click', function(){
             var graphDate = $(this).attr('value');
             console.log(graphDate);
             const dateLabels1 = generateDateLabels(graphDate, labelCount);
             myChart.data.labels = dateLabels1["Date"];
             myChart.data.datasets[0].data = dateLabels1["Value"];
-            console.log('masuk sini');
             myChart.update();
+        });
+    });
+
+    $(document).on('click', '#myBtn1', function(){
+            //input berapa batch see more yg harus keload di kondisi sekarang
+            var lim = $('#myBtn1').val();
+            $(this).fadeOut(100);
+            var eventId = @json($event->id);
+            var url = '/myEventDetail/' + eventId + '/0/result';
+            var parameters = [];
+            if(lim){
+                parameters.push('pg=' + encodeURIComponent(lim));
+            }
+            url += '?' + parameters.join('&');
+
+            //load secara live, tapi yang diload satu container aja, yaitu result container
+            //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
+            //cari di eventsResult.blade.php
+            console.log(url);
+            $('.productsDiv').load(url);
 
         });
-
-    });
     </script>
 @endsection

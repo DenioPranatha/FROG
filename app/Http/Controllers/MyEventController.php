@@ -96,6 +96,19 @@ class MyEventController extends Controller
             $top = Product::find($top[0]['pid']);
         }
 
+
+        $histories = PaymentDetail::whereHas('product', function($p) use ($event){
+            $p->where('event_id', $event->id);
+        })->get();
+
+        $pg = 1;
+        $count = count($products);
+        $products = $products->take(10);
+        //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
+        if($count <= 10) $pg = -1;
+
+        // dump($histories);
+
         return response(view('myEventDetail', [
             'event' => $event,
             'start' => $start,
@@ -107,9 +120,29 @@ class MyEventController extends Controller
             'user_count' => $user_count,
             'top' => $top,
             'graph_start' => $graph_start,
-            'isEdit' => $isEdit
+            'isEdit' => $isEdit,
+            'pg' => $pg,
+            'histories' => $histories
         ]));
 
+    }
+
+    public function showProductDetail(Request $request, Event $event)
+    {
+        // kalo pencet see more
+        // dump('masok');
+        $products = Product::where('event_id', $event->id)->get();
+
+        $pg = (int)$request->input('pg');
+        $pge = 10*$pg;
+        $c = count($products);
+        if($pge >= $c)$pg = -1;
+        // dump('hi');
+
+        return view('productsResult', [
+            'products' => $products->take($pge),
+            'pg' => $pg
+        ]);
 
     }
 
@@ -119,8 +152,6 @@ class MyEventController extends Controller
         $event->save();
 
         $url = '/myEventDetail'.'/'.$event->id.'/0';
-
-        // dd($url);
 
         return redirect($url)->with('success', 'Events updated successfully');
     }

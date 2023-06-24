@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\PaymentDetail;
 use App\Models\PaymentHeader;
 use App\Models\ProductCategory;
+use Carbon\Carbon;
 
 use Faker\Provider\ar_EG\Payment;
 use function PHPUnit\Framework\isEmpty;
@@ -74,10 +75,46 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function create()
-    // {
-    //     //
-    // }
+    public function create(Request $request)
+    {
+
+        // return $request->file('image')->store('event-image');
+
+        $validatedData = $request->validate([
+            'destination-id' => 'required',
+            'name' => 'required|max:40',
+            'duration' => 'required|integer',
+            'description' => 'required|max:450',
+            'image' => 'required|image|file|max:1024'
+        ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('event-images');
+        }
+
+        $i = auth()->user()->id;
+        $duration = $validatedData['duration'];
+        $cropped = substr($validatedData['name'], 21);
+        $start = Carbon::now();
+        $end = Carbon::now()->addDays($duration);
+
+        Event::create([
+            'destination_id' => $validatedData['destination-id'],
+            'user_id' => $i,
+            'name' => $validatedData['name'],
+            'slug' => $cropped,
+            'start_date' => $start,
+            'end_date' => $end,
+            'duration' => $duration,
+            'description' => $validatedData['description'],
+            'image' => $validatedData['image']
+        ]);
+
+        return redirect('/myevents')->with('success', 'Sign up successful! Please login!');
+
+
+
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -101,15 +138,8 @@ class EventController extends Controller
         $start = new \DateTime($event->start_date);
         $end = new \DateTime($event->end_date);
         $rn = new \DateTime();
-        //apakah sudah ada request graph-start
-        // if($request->query('graph-start')){
-        //     dump($request->query('graph-start'));
-        //     $graph_start = new \DateTime($request->query('graph-start'));
-        // }else{
-        // //tanggal start nya graph
         $graph_start = $start->format('Y-m-d');
         $graph_start = new \DateTime($graph_start);
-        // }
 
         //produk yang dimiliki event tsb
         $products = Product::all()->where('event_id', $event->id);
@@ -155,7 +185,6 @@ class EventController extends Controller
             $top = $top->where('quantity', $top->max('quantity'));
             $top = Product::find($top[0]['pid']);
         }
-
 
         $pg = 1;
         $count = count($products);
@@ -206,24 +235,18 @@ class EventController extends Controller
 
     public function showProductDetail(Request $request, Event $event)
     {
-        // kalo pencet see more ato akses dr url
-        // $id = (int)$request->query('id');
+        // kalo pencet see more
         $products = Product::all()->where('event_id', $event->id);
-        // dump($products);
 
         $pg = (int)$request->input('pg');
         $pge = 10*$pg;
         $c = count($products);
         if($pge >= $c)$pg = -1;
-        // dd($pge);
 
         return view('productsResult', [
             'products' => $products->take($pge),
-            // 'productCategories' => ProductCategory::all(),
-            // 'request' => $request,
             'pg' => $pg
         ]);
-
 
     }
 

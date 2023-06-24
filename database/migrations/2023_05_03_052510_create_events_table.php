@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('duration');
             $table->string('status', 55);
             $table->string('description', 455);
-            $table->string('image', 55);
+            $table->string('image', 255);
             $table->timestamps();
         });
     }

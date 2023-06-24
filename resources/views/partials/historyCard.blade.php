@@ -5,8 +5,8 @@
                 <div class="product-image" style="background-image: url({{ asset('assets/img/basreng.png') }})"></div>
             </div>
             <div class="history-title">
-                <p class="product-name">Basreng Pedas Rasa Jeruk</p>
-                <p class="quantity">Quantity : 2</p>
+                <p class="product-name">{{ $history->product->name }}</p>
+                <p class="quantity">Quantity : {{ $history->qty }}</p>
             </div>
         </div>
         <div class="line-ph"></div>
