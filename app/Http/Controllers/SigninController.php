@@ -36,10 +36,11 @@ class SigninController extends Controller
         return back()->with('loginError', 'Login failed!');
     }
 
-    // public function logout(Request $request){
-    //     Auth::logout();
-    //     $request->session()->invalidate();
-    //     $request->session()->regenerateToken();
-    //     return redirect('/index');
-    // }
+    public function signout(Request $request){
+        // dd($request);
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/index');
+    }
 }

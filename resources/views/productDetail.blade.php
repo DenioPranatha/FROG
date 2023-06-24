@@ -33,8 +33,8 @@
                             -
                         </div>
                         <div class="productQty d-flex justify-content-center align-items-center">
-                            <form action="" method="get">
-                                <input type="text" name="productQty" id="productQty">
+                            <form action="" method="get" class="ms-3">
+                                <input type="number" name="productQty" id="productQty" min="1" max="{{ $product->stock }}" oninput="checkStock(this)">
                             </form>
                         </div>
                         <div class="plus d-flex justify-content-center" id="plus">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="stockDiv">
-                        <p class="productStock">Stock:&nbsp;<b>{{ $product->stock }}</b></p>
+                        <p class="productStock" id="productStock">Stock:&nbsp;<b><span id="prodStock">{{ $product->stock }}</span></b></p>
                     </div>
                 </div>
                 <p class="productDesc">{{ $product->description }}</p>

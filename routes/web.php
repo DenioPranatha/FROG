@@ -99,6 +99,7 @@ Route::get('/allHistory', function () {
 
 Route::get('/signin', [SigninController::class, 'index'])->name('signin');
 Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin');
+Route::post('/signout', [SigninController::class, 'signout']);
 
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
