@@ -118,12 +118,10 @@ if(window.matchMedia("(min-width:576px)").matches){
         if(scrollPosition1 < (carousel1-(cardWidth1))){
             scrollPosition1 = scrollPosition1 + cardWidth1;
             $('.slide1').animate({scrollLeft: scrollPosition1}, 200);
-
             current1[0].className = current1[0].className.replace(" active active1", "");
             this.className += " active active1";
 
         }
-
 
     });
 

@@ -21,7 +21,7 @@ class SignupController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:3|max:55',
             'username' => 'required|min:3|max:25|unique:users',
-            'email' => 'required|email:dns|unique:users',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:55|confirmed',
             'password_confirmation' => 'required|min:6|max:55',
             'phone' => 'required|numeric|digits_between:9,13',

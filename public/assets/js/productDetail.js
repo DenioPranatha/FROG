@@ -1,12 +1,19 @@
 // kotak plus min
 let minBtn = document.getElementById('minus');
 let plusBtn = document.getElementById('plus');
+let stock = document.getElementById('prodStock').innerHTML;
 let qty = document.getElementById('productQty');
 
+stock = parseInt(stock);
 qty.value = 1;
 
 plusBtn.addEventListener('click', ()=>{
-    qty.value++;
+    if(qty.value>=stock){
+        qty.value = qty.value
+    }
+    else{
+        qty.value++;
+    }
 })
 
 minBtn.addEventListener('click',  ()=>{
@@ -17,6 +24,12 @@ minBtn.addEventListener('click',  ()=>{
         qty.value = 1;
     }
 })
+
+function checkStock(object){
+    if(object.value>stock){
+        object.value = stock;
+    }
+}
 
 let qtyCart = document.getElementById('qtyCart');
 let qtyBuy = document.getElementById('qtyBuy');
