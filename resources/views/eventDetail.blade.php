@@ -10,7 +10,11 @@
     <div id="section-donate"></div>
     <div class="desc-container">
         <div class="pic">
-            <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+            @if(file_exists(public_path('assets/images/event/' . $event->image)))
+                <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+            @else
+                <div class="desc-img" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
+            @endif
             <a class="donate" href="#section-donate">Donate now!</a>
         </div>
         <div class="desc">

@@ -66,10 +66,13 @@ Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('e
 Route::get('/eventDetail/{event:id}/result', [EventController::class, 'showProductDetail']);
 Route::get('/createEvent', [EventController::class, 'createForm'])->name('createEvent');
 
+
 Route::get('/myevents', [MyEventController::class, 'index'])->name('myEvents');
 Route::get('/myEventDetail/{event:id}/{isEdit}', [MyEventController::class, 'show'])->name('myEventDetail');
 Route::get('/myEventDetail/{event:id}/{isEdit}/result', [MyEventController::class, 'showProductDetail']);
 Route::post('/myEventDetail/{event:id}/edit', [MyEventController::class, 'edit']);
+Route::post('/createEvent', [EventController::class, 'create']);
+
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 

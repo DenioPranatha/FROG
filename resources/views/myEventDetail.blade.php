@@ -12,7 +12,11 @@
     <div id="main-content" class="container-maincontent" style="display: {{ $isEdit == 0 ? 'block' : 'none' }}">
         <div class="desc-container">
             <div class="pic">
-                <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+                @if(file_exists(public_path('assets/images/event/' . $event->image)))
+                    <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+                @else
+                    <div class="desc-img" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
+                @endif
                 <button id="change-view-button" class="donate" href="#section1">Edit Event</button>
             </div>
             <div class="desc">

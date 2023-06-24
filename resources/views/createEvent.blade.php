@@ -9,8 +9,7 @@
 @section('content')
 <div class="all-contain">
     <div class="container">
-            <form id="form" method="POST" class="needs-validation" novalidate>
-
+            <form id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
                 @csrf
                 <div class="container-left">
                     <div class="img-container">
@@ -20,7 +19,12 @@
                         <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer">
                             <i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i>
                         </label>
-                        <input type="file" id="img-input" accept=".jpg,.jpeg,.png" id="file" style="visibility:none;" onchange="showPreview(event)">
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="img-input" name="image" accept=".jpg,.jpeg,.png" style="visibility:none;" onchange="showPreview(event)">
+                        @error('image')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <div class="container-preview" id="preview-container">
                             <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()">
                             </label>
@@ -32,7 +36,7 @@
                 <div class="container-right">
                     <p>Add Event</p>
                     <div class="event-name-container">
-                        <input class="form-control" placeholder="Event Name" type="text" name="event-name" id="event-name" minlength="3" maxlength="40" required value="{{ old('event-name') }}" />
+                        <input class="form-control" placeholder="Event Name" type="text" name="name" id="event-name" minlength="3" maxlength="40" required value="{{ old('event-name') }}" />
                         <div id="invalid-feedback1" class="invalid-feedback">
                             Please Input your Product Name
                         </div>
@@ -44,11 +48,11 @@
                         </div>
                     </div>
                     <div class="destination-container">
-                        <select  name="destination-category" id="destination-category" class="form-control" required>
+                        <select  name="destination-id" id="destination-category" class="form-control" required>
                             <option value="" disabled selected>Choose Destination</option>
 
                             @foreach($destinations as $destination)
-                                <option value="">{{ $destination->name }}</option>
+                                <option value="{{ $destination->id }}">{{ $destination->name }}</option>
                             @endforeach
                         </select>
                         {{-- <i class="bi bi-caret-down-fill"></i> --}}
@@ -56,12 +60,7 @@
                             Please Select your Category
                         </div>
                     </div>
-                    <textarea class="form-control" name="product-desc" id="product-desc" placeholder="Event Description" maxlength="450" required >
-                        {{-- masih bingung --}}
-                        @if(request('product-desc'))
-                            {{ old('product-desc') }}
-                        @endif
-                    </textarea>
+                    <textarea class="form-control" name="description" id="product-desc" placeholder="Event Description" maxlength="450" required >{{ old('product-desc') ?? '' }}</textarea>
                     <div class="invalid-feedback desc-invalid">
                         Please Input your Description
                     </div>

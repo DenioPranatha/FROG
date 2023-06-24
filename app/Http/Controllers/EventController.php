@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\PaymentDetail;
 use App\Models\PaymentHeader;
 use App\Models\ProductCategory;
+use Carbon\Carbon;
 
 use Faker\Provider\ar_EG\Payment;
 use function PHPUnit\Framework\isEmpty;
@@ -74,10 +75,46 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function create()
-    // {
-    //     //
-    // }
+    public function create(Request $request)
+    {
+
+        // return $request->file('image')->store('event-image');
+
+        $validatedData = $request->validate([
+            'destination-id' => 'required',
+            'name' => 'required|max:40',
+            'duration' => 'required|integer',
+            'description' => 'required|max:450',
+            'image' => 'required|image|file|max:1024'
+        ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('event-images');
+        }
+
+        $i = auth()->user()->id;
+        $duration = $validatedData['duration'];
+        $cropped = substr($validatedData['name'], 21);
+        $start = Carbon::now();
+        $end = Carbon::now()->addDays($duration);
+
+        Event::create([
+            'destination_id' => $validatedData['destination-id'],
+            'user_id' => $i,
+            'name' => $validatedData['name'],
+            'slug' => $cropped,
+            'start_date' => $start,
+            'end_date' => $end,
+            'duration' => $duration,
+            'description' => $validatedData['description'],
+            'image' => $validatedData['image']
+        ]);
+
+        return redirect('/myevents')->with('success', 'Sign up successful! Please login!');
+
+
+
+    }
 
     /**
      * Store a newly created resource in storage.
