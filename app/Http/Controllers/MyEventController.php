@@ -107,6 +107,8 @@ class MyEventController extends Controller
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
         if($count <= 10) $pg = -1;
 
+        $namacat = "-";
+
         // dump($histories);
 
         return response(view('myEventDetail', [
@@ -122,7 +124,8 @@ class MyEventController extends Controller
             'graph_start' => $graph_start,
             'isEdit' => $isEdit,
             'pg' => $pg,
-            'histories' => $histories
+            'histories' => $histories,
+            'namacat' => $namacat
         ]));
 
     }
