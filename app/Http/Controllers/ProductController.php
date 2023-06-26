@@ -102,17 +102,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
-    {
-        //
-        return view('productDetail', [
-            // ini buat nunjukin rekomendasi dari event yg sama di product detail
-            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
 
-            // ini buat product detailnya
-            'product' => $product
-        ]);
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -150,14 +140,7 @@ class ProductController extends Controller
 
     public function result(Request $request)
     {
-        //
-        // dump("masuk sini");
-        // dd($request);
-        // dump($request);
-        // dd($request->has('cat_id'));
-
         // kalo pencet salah satu kategori dr home
-        // $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
         $products = Product::filter(request(['search-box', 'cat-id']))->get();
         if($request->query('cat-id')){
         //     $products = Product::where('category_id', $request->query('cat-id'))->get();
@@ -187,6 +170,18 @@ class ProductController extends Controller
             'search-box' => $request->query('search-box')
         ]);
 
+    }
+
+    public function show(Product $product)
+    {
+        //
+        return view('productDetail', [
+            // ini buat nunjukin rekomendasi dari event yg sama di product detail
+            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
+
+            // ini buat product detailnya
+            'product' => $product
+        ]);
     }
 
     public function add(Request $request){
