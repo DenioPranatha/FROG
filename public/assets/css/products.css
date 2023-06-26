@@ -65,11 +65,16 @@ input[type=text]{
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
     font-family: 'Poppins';
+    transition: all .2s ease-in-out;
 }
 
 .categoriesCart p {
     font-family: 'Poppins';
     font-size: 16px;
+}
+
+.categoriesCart:hover{
+    transform: scale(1.04);
 }
 
 a.categoriesCart {

@@ -28,6 +28,7 @@
     padding-bottom: 4vw;
     padding-left: 4vw;
     padding-right: 5vw;
+    width: 36vw;
     /* border: 1px solid orange; */
     gap: 1vw;
 
@@ -99,6 +100,11 @@
 }
 
 .box input{
+    width: 28vw;
+    filter: drop-shadow(4px 4px 8px #CDCDCD);
+}
+
+.box textarea{
     width: 28vw;
     filter: drop-shadow(4px 4px 8px #CDCDCD);
 }

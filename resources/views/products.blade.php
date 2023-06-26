@@ -20,7 +20,7 @@
                 </div>
             </form>
         </div>
-        <div class="categoriesDiv">
+        <div class="categoriesDiv" data-aos="fade-up">
             <div class="categories">
                 <a href="/products" class="categoriesCart"
                     @if ($cat_id == 0)
@@ -44,7 +44,7 @@
                 <input type="hidden" name="cat_id1" id="cat_id1" value="{{ $cat_id }}">
             </div>
         </div>
-        <div class="productsDiv">
+        <div class="productsDiv" data-aos="fade-up">
             {{-- <div class="products d-flex flex-wrap">
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])

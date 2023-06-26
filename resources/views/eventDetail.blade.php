@@ -9,7 +9,7 @@
 @section('content')
     <div id="section-donate"></div>
     <div class="desc-container">
-        <div class="pic">
+        <div class="pic" data-aos="fade-right">
             @if(file_exists(public_path('assets/images/event/' . $event->image)))
                 <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
             @else
@@ -17,7 +17,7 @@
             @endif
             <a class="donate" href="#section-donate">Donate now!</a>
         </div>
-        <div class="desc">
+        <div class="desc" data-aos="fade-left">
             <?php
                 $passed = $start->diff($rn);
                 $passed = $passed->days;
