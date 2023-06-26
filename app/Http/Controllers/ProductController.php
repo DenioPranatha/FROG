@@ -157,13 +157,17 @@ class ProductController extends Controller
         // dd($request->has('cat_id'));
 
         // kalo pencet salah satu kategori dr home
+        // $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+        $products = Product::filter(request(['search-box', 'cat-id']))->get();
         if($request->query('cat-id')){
-            $products = Product::where('category_id', $request->query('cat-id'))->get();
-            $cat_id = $request->cat_id;
+        //     $products = Product::where('category_id', $request->query('cat-id'))->get();
+            $cat_id = (int)$request->query('cat-id');
+            $namacat = ProductCategory::find($cat_id)->name;
         }
-        // kalo pencet all ato see more ato akses dr url
+        // // kalo pencet all ato see more ato akses dr url
         else{
-            $products = Product::all();
+        //     $products = Product::all();
+            $namacat = "All";
             $cat_id = 0;
         }
 
@@ -178,7 +182,9 @@ class ProductController extends Controller
             'productCategories' => ProductCategory::all(),
             'request' => $request,
             'cat_id' => $cat_id,
-            'pg' => $pg
+            'pg' => $pg,
+            'namacat' => $namacat,
+            'search-box' => $request->query('search-box')
         ]);
 
     }

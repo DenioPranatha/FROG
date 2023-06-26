@@ -1,5 +1,3 @@
-{{-- @dd($events) --}}
-
 @section('css')
     <link rel="stylesheet" href="/assets/css/index.css">
 @endsection

@@ -10,13 +10,26 @@ $(document).ready(function(){
     $(document).on('click', '#myBtn1', function(){
         //input berapa batch see more yg harus keload di kondisi sekarang
         var lim = $('#myBtn1').val();
+        var searchValue = $('#searchBox').val();
         $(this).fadeOut(100);
         var categoryValue = $('#cat_id1').val();
         // var categoryValue = $('.categoriesCart').val();
         // console.log("ini");
         // console.log(categoryValue);
         //Masukin ke function penggabung
-        loadFilteredContent(lim, categoryValue);
+        loadFilteredContent(lim, categoryValue, searchValue);
+    });
+
+    $('#searchBox').on('keyup', function(){
+        //input dari kolom search
+        var searchValue = $('#searchBox').val();
+        //input dari cat sekarang
+        var categoryValue = $('#cat_id1').val();
+        //input berapa batch see more yg harus keload
+        var lim = 1;
+
+        //Masukin ke function penggabung
+        loadFilteredContent(lim, categoryValue, searchValue);
     });
 
     // ketika category diklik
@@ -28,7 +41,7 @@ $(document).ready(function(){
     //     loadFilteredContent(lim, categoryValue);
     // });
 
-    function loadFilteredContent(lim, categoryValue) {
+    function loadFilteredContent(lim, categoryValue, searchValue) {
         var url = '/products/result';
         var parameters = [];
 
@@ -42,9 +55,13 @@ $(document).ready(function(){
         }
 
         // console.log(categoryValue);
-        if (categoryValue) {
+        if (categoryValue && categoryValue != '0') {
             parameters.push('cat-id=' + encodeURIComponent(categoryValue));
             // parameters.push('cat-id=' + categoryValue);
+        }
+
+        if (searchValue) {
+            parameters.push('search-box=' + encodeURIComponent(searchValue));
         }
 
         if (parameters.length > 0) {
