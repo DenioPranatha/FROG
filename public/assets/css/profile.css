@@ -97,6 +97,11 @@
     filter: drop-shadow(4px 4px 8px #CDCDCD);
 
     color: #FFFFFF;
+    transition: .2s all ease-in-out;
+}
+
+.left-side button:hover{
+    transform: scale(1.04);
 }
 
 .box input{
@@ -153,6 +158,12 @@ textarea{
     z-index: 2;
     position: absolute;
     margin-left: 13vw;
+
+    transition: .2s all ease-in-out;
+}
+
+.edit-photo:hover{
+    transform: scale(1.04);
 }
 
 .edit-photo i{
