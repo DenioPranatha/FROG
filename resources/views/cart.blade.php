@@ -124,9 +124,13 @@
                                         </div>
                                         <div class="eachProductPrice">
                                             <p class="eachProductPrice2">Rp{{ $cartDetail->product->price }}</p>
+                                            {{-- <p class="eachProductPrice2">Rp. {{ number_format( $cartDetail->product->price , 0 , ' ' , ' ' ) }}</p> --}}
+                                            {{-- Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }} --}}
                                         </div>
                                         <div class="eachProductTotal">
                                             <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p>
+                                            {{-- <p class="eachProductTotal2">Rp. {{ number_format( ($cartDetail->product->price)*($cartDetail->qty) , 0 , ' ' , ' ' ) }}</p> --}}
+                                            {{-- Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }} --}}
                                         </div>
                                     </div>
                                 @endif

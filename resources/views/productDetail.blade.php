@@ -25,7 +25,9 @@
             <div class="descDiv">
                 <p class="productName">{{ $product->name }}</p>
                 <a href="/eventDetail/{{ $product->event->id }}" class="eventName">{{ $product->event->name }}</a>
-                <p class="productPrice">Rp{{ $product->price }}</p>
+                {{-- <p class="productPrice">Rp{{ $product->price }}</p> --}}
+                <p class="productPrice">Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }}</p>
+                
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">
                     <div class="qtyDiv d-flex justify-content-center align-items-center">
