@@ -96,6 +96,19 @@ a.categoriesCart {
     padding: 5px 100px;
     padding-bottom: 30px;
 }
+
+.not-found{
+    width: 98vw;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 42px;
+}
+
 /* product */
 
 /* button */

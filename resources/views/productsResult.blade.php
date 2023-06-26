@@ -1,4 +1,4 @@
-<div id="result-container">
+@if(count($products) != 0)
     {{-- <div class="catalog-container">
         @foreach($products as $product)
             @include('partials.productCart', ['product' => $product])
@@ -38,5 +38,11 @@
     @else
         <div class="gap"></div>
     @endif
+@elseif(request('cat-id') && request('search-box'))
+    <div class="not-found justify-content-center">Event with keyword "{{ request('search-box') }}" and category "{{ $namacat }}" is not found</div>
+@elseif(request('search-box'))
+    <div class="not-found justify-content-center">Event with keyword "{{ request('search-box') }}" is not found</div>
+@else
+    <div class="not-found justify-content-center">Event with category "{{ $namacat }}" is not found</div>
+@endif
 
-</div>
