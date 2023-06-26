@@ -20,3 +20,32 @@ footer{
 .bottom{
     height: 15%;
 }
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+
+@media screen and (max-width: 428px){
+    footer{
+        background-color: black;
+        height: 250px;
+        padding: 15px 42px;
+        color: white;
+        font-family: 'Poppins';
+    
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .mid{
+        height: 50%;
+    }
+    
+    .right i{
+        font-size: 20px;
+    }
+    
+    .bottom{
+        height: 30%;
+    }
+}
