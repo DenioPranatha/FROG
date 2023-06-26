@@ -30,6 +30,8 @@
     /* border-radius: 0; */
     /* border: 1px solid #CDCDCD; */
     box-shadow: 4px 4px 8px #CDCDCD;
+
+    transition: all .2s ease-in-out;
 }
 
 .eventCartPage .card-img{

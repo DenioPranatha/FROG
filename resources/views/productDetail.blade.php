@@ -18,11 +18,11 @@
     {{-- <input type="hidden" name="product_id" value="{{ $product->id }}"> --}}
     <div class="productDetail">
         <div class="upperPart d-flex">
-            <div class="imgDiv">
+            <div class="imgDiv" data-aos="fade-right">
                 {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
                 <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div>
             </div>
-            <div class="descDiv">
+            <div class="descDiv" data-aos="fade-left">
                 <p class="productName">{{ $product->name }}</p>
                 <a href="/eventDetail/{{ $product->event->id }}" class="eventName">{{ $product->event->name }}</a>
                 {{-- <p class="productPrice">Rp{{ $product->price }}</p> --}}
@@ -107,7 +107,7 @@
                 </div>
                 <div class="otherLine ms-3"></div>
             </div>
-            <div class="products2 d-flex flex-wrap">
+            <div class="products2 d-flex flex-wrap" data-aos="fade-up">
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])
                 @endforeach

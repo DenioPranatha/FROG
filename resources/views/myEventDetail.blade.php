@@ -11,7 +11,7 @@
     {{-- Content Main --}}
     <div id="main-content" class="container-maincontent" style="display: {{ $isEdit == 0 ? 'block' : 'none' }}">
         <div class="desc-container">
-            <div class="pic">
+            <div class="pic" data-aos="fade-right">
                 @if(file_exists(public_path('assets/images/event/' . $event->image)))
                     <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
                 @else
@@ -19,7 +19,7 @@
                 @endif
                 <button id="change-view-button" class="donate" href="#section1">Edit Event</button>
             </div>
-            <div class="desc">
+            <div class="desc" data-aos="fade-left">
                 <?php
                     $passed = $start->diff($rn);
                     $passed = $passed->days;

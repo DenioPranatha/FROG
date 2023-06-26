@@ -8,7 +8,7 @@
 
 @section('content')
 {{-- @dd(auth()->user()->id) --}}
-    <div class="cartPage d-flex">
+    <div class="cartPage d-flex" data-aos="fade-up">
         <div class="leftCart">
             <div class="cartTitle">
                 Your Cart

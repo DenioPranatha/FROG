@@ -65,11 +65,16 @@ input[type=text]{
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
     font-family: 'Poppins';
+    transition: all .2s ease-in-out;
 }
 
 .categoriesCart p {
     font-family: 'Poppins';
     font-size: 16px;
+}
+
+.categoriesCart:hover{
+    transform: scale(1.04);
 }
 
 a.categoriesCart {
@@ -91,6 +96,19 @@ a.categoriesCart {
     padding: 5px 100px;
     padding-bottom: 30px;
 }
+
+.not-found{
+    width: 98vw;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 42px;
+}
+
 /* product */
 
 /* button */

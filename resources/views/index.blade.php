@@ -1,5 +1,3 @@
-{{-- @dd($events) --}}
-
 @section('css')
     <link rel="stylesheet" href="/assets/css/index.css">
 @endsection
@@ -117,10 +115,10 @@
             </div>
         </div>
         <div class="recommendDiv">
-            <div class="section-title-first">
+            <div class="section-title-first" data-aos="fade-up">
                 Recommended events for you
             </div>
-            <div id="carouselExample" class="carousel d-flex flex-wrap">
+            <div id="carouselExample" class="carousel d-flex flex-wrap" data-aos="fade-up">
                 <div class="carousel-inner">
                     {{-- <div class="carousel-item active">
                         @include('partials.eventCart', ['event' => $events[0]])
@@ -149,7 +147,7 @@
                     </button>
                 </div>
             </div>
-            <div class="recProductsDiv">
+            <div class="recProductsDiv" data-aos="fade-up">
                 <div class="section-title">
                     Recommended products for you
                 </div>
@@ -158,7 +156,7 @@
                         @include('partials.productCart', ['product' => $product])
                     @endforeach
                 </div>
-                <div class="btnDiv w-100 h-100 d-flex justify-content-center">
+                <div class="btnDiv w-100 h-100 d-flex justify-content-center" data-aos="fade-right">
                     <a class="btn btn-1" href="/products" role="button">
                         <div class="seeMore">
                             <p>See more</p>
@@ -167,7 +165,7 @@
                     </a>
                 </div>
             </div>
-            <div class="charityDestDiv">
+            <div class="charityDestDiv" data-aos="fade-up">
                 <div class="section-title2">
                     Charity Destination
                 </div>
@@ -205,10 +203,10 @@
                 </div>
             </div>
             <div class="categoriesDiv">
-                <div class="section-title3">
+                <div class="section-title3" data-aos="fade-up">
                     Categories
                 </div>
-                <div class="categories">
+                <div class="categories" data-aos="fade-up">
                     @foreach ($productCategories as $productCategory)
                         {{-- <a href="/products" class="categoriesCart">
                             <p>{{ $productCategory->name }}</p>

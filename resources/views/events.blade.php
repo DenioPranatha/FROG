@@ -22,8 +22,9 @@
         </div>
     </div>
 
-    <div class="header" data-aos="fade-up" data-aos-duration="1000">Popular Events</div>
-    <div id="carouselExample" class="carousel">
+    {{-- <div class="header" data-aos="fade-up" data-aos-duration="1000">Popular Events</div> --}}
+    <div class="header" data-aos="fade-up">Popular Events</div>
+    <div id="carouselExample" class="carousel" data-aos="fade-up">
         <div class="carousel-inner">
             @foreach($popular as $event)
             <div class="carousel-item2">
@@ -60,8 +61,8 @@
                 </button>
             </div>
         </form>
-        <button class="bubble-box" value="All">All</button>
 
+        <button class="bubble-box" value="All">All</button>
         @foreach ($cat as $c)
             <button class="bubble-box" value="{{ $c->name }}">{{ $c->name }}</button>
         @endforeach
@@ -70,7 +71,7 @@
 
     <br>
 
-    <div id="result-container1">
+    <div id="result-container1" data-aos="fade-up">
         @include('eventsResult')
     </div>
 

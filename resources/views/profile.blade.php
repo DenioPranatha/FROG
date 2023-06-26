@@ -9,34 +9,39 @@
 @section('content')
     <div id="main" class="outer-container-main">
         <div  class="container d-flex flex-row justify-content-center align-items-center">
-            <div class="left-side d-flex flex-column justify-content-center align-items-center">
+            <div class="left-side d-flex flex-column justify-content-center align-items-center" data-aos="fade-right">
                 <div class="img-container  rounded-circle" style="background-image: url({{ asset('/assets/img/Vector.png') }})"></div>
-                <h3>Alfredo Kusuma Wijaya</h3>
+                {{-- <h3>Alfredo Kusuma Wijaya</h3> --}}
+                <h3>{{ Auth::user()->name }}</h3>
                 <button id="button-edit">
                     <i class="bi bi-pencil-square" style="font-size: 1.5vw; margin-right:0.5vw"></i>
                     Edit Profile
                 </button>
             </div>
-            <div class="right-side d-flex flex-column justify-content-center align-items-center">
+            <div class="right-side d-flex flex-column justify-content-center align-items-center" data-aos="fade-left">
                 <div class="box d-flex flex-column">
                     <div class="content">
                         <h3>Username</h3>
-                        <p>Alfredo Kusuma Wijaya</p>
+                        {{-- <p>Alfredo Kusuma Wijaya</p> --}}
+                        <p>{{ Auth::user()->username }}</p>
                     </div>
 
                     <div class="content">
                         <h3>Email</h3>
-                        <p>Alfredowk@gmail.com</p>
+                        {{-- <p>Alfredowk@gmail.com</p> --}}
+                        <p>{{ Auth::user()->email }}</p>
                     </div>
 
                     <div class="content">
                         <h3>Phone Number</h3>
-                        <p>+620303030303</p>
+                        {{-- <p>+620303030303</p> --}}
+                        <p>+62{{ Auth::user()->phone }}</p>
                     </div>
 
                     <div class="content">
                         <h3>Address</h3>
-                        <p>Jl. Pegangsaan Timur No 56 RT.1/RW.1, Pegangsaan, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10310</p>
+                        {{-- <p>Jl. Pegangsaan Timur No 56 RT.1/RW.1, Pegangsaan, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10310</p> --}}
+                        <p>{{ Auth::user()->address }}</p>
                     </div>
                 </div>
 

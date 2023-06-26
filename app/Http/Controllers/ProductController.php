@@ -102,17 +102,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
-    {
-        //
-        return view('productDetail', [
-            // ini buat nunjukin rekomendasi dari event yg sama di product detail
-            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
 
-            // ini buat product detailnya
-            'product' => $product
-        ]);
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -150,20 +140,17 @@ class ProductController extends Controller
 
     public function result(Request $request)
     {
-        //
-        // dump("masuk sini");
-        // dd($request);
-        // dump($request);
-        // dd($request->has('cat_id'));
-
         // kalo pencet salah satu kategori dr home
+        $products = Product::filter(request(['search-box', 'cat-id']))->get();
         if($request->query('cat-id')){
-            $products = Product::where('category_id', $request->query('cat-id'))->get();
-            $cat_id = $request->cat_id;
+        //     $products = Product::where('category_id', $request->query('cat-id'))->get();
+            $cat_id = (int)$request->query('cat-id');
+            $namacat = ProductCategory::find($cat_id)->name;
         }
-        // kalo pencet all ato see more ato akses dr url
+        // // kalo pencet all ato see more ato akses dr url
         else{
-            $products = Product::all();
+        //     $products = Product::all();
+            $namacat = "All";
             $cat_id = 0;
         }
 
@@ -178,9 +165,23 @@ class ProductController extends Controller
             'productCategories' => ProductCategory::all(),
             'request' => $request,
             'cat_id' => $cat_id,
-            'pg' => $pg
+            'pg' => $pg,
+            'namacat' => $namacat,
+            'search-box' => $request->query('search-box')
         ]);
 
+    }
+
+    public function show(Product $product)
+    {
+        //
+        return view('productDetail', [
+            // ini buat nunjukin rekomendasi dari event yg sama di product detail
+            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
+
+            // ini buat product detailnya
+            'product' => $product
+        ]);
     }
 
     public function add(Request $request){

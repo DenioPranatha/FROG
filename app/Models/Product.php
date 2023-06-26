@@ -11,6 +11,25 @@ class Product extends Model
 
     protected $guarded = ['id'];
 
+    public function scopeFilter($query, array $filters){
+
+
+        $query->when($filters['search-box'] ?? false, function($query, $search){
+            // return $query->where('name', 'like', '%' . $search . '%')
+            // ->orWhere('description', 'like', '%' . $search . '%');
+            return $query->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('description', 'like', '%' . $search . '%');
+            });
+        });
+
+        $query->when($filters['cat-id'] ?? false, function($query, $cat){
+            return $query->where('category_id', $cat);
+        });
+
+        return $query;
+    }
+
     public function paymentDetail(){
         return $this->hasMany(PaymentDetail::class);
     }
