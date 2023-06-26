@@ -11,7 +11,7 @@
     <h3>Waiting for Approval</h3>
     <div class="card-container d-flex flex-row justify-content-left flex-wrap">
         @foreach ($events as $event)
-            <div class="card-test">
+            <div class="card-test" data-aos="fade-up">
                 @include('partials.eventCart', ['event' => $event])
             </div>
         @endforeach

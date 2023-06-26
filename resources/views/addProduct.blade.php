@@ -10,7 +10,7 @@
     <div class="container">
         <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate>
             @csrf
-            <div class="container-left">
+            <div class="container-left" data-aos="fade-right">
                 {{-- <p>Add image</p> --}}
                 <div class="img-container">
                     {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
@@ -28,7 +28,7 @@
                 </div>
                 <p>Add image</p>
             </div>
-            <div class="container-right">
+            <div class="container-right" data-aos="fade-left">
                 <p>Add Product</p>
                 <div class="product-name-container">
                     <input class="form-control @error('name') is-invalid @enderror" placeholder="Product Name" type="text" name="name" id="product-name" required value="{{ old('name') }}">

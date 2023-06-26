@@ -8,10 +8,10 @@
 
 @section('content')
 <div class="desc-container">
-    <div class="pic">
+    <div class="pic" data-aos="fade-right">
         <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
     </div>
-    <div class="desc">
+    <div class="desc" data-aos="fade-left">
         <div class="desc-headline">
             <b>RTB Chinese New Year Jualan</b>
         </div>

@@ -15,11 +15,15 @@
 
     border-radius: 20px;
     /* box-shadow: 4px 4px 8px #CDCDCD; */
+    transition: all .2s ease-in-out;
 }
 
 .btn-1:hover {
     background-color: #522E93;
+
+    transform: scale(1.04);
     color: #FFFFFF;
+
     padding: 0;
     /* font-family: 'M PLUS 1'; */
     font-style: normal;
@@ -599,12 +603,16 @@ input[type=text] {
     border: 1px solid #CDCDCD;
     border-radius: 20px;
     filter: drop-shadow(4px 4px 8px #CDCDCD);
-
+    transition: all .2s ease-in-out;
+    color: rgba(0, 0, 0, 0.73);
     /* border: 1px solid red; */
 }
 
 .categoriesCart:hover {
     cursor: pointer;
+    transform: scale(1.04);
+    background-color: #522E93;
+    color: white;
 }
 
 .categoriesCart p {
@@ -613,7 +621,7 @@ input[type=text] {
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    color: rgba(0, 0, 0, 0.73);
+    /* color: rgba(0, 0, 0, 0.73); */
 }
 
 .categories a {

@@ -11,7 +11,7 @@
     <div class="container">
             <form id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
                 @csrf
-                <div class="container-left">
+                <div class="container-left" data-aos="fade-right">
                     <div class="img-container">
                         {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
                         <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
@@ -33,7 +33,7 @@
                     </div>
                     <p>Add Event Image</p>
                 </div>
-                <div class="container-right">
+                <div class="container-right" data-aos="fade-left">
                     <p>Add Event</p>
                     <div class="event-name-container">
                         <input class="form-control" placeholder="Event Name" type="text" name="name" id="event-name" minlength="3" maxlength="40" required value="{{ old('event-name') }}" />

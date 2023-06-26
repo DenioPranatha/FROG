@@ -10,7 +10,7 @@
     <div class="container">
         <h1 class="section-title">Your Ongoing Events</h1>
 
-        <div class="card-container">
+        <div class="card-container" data-aos="fade-up">
             @if(count($ongoings) != 0)
                 @foreach ($ongoings as $ongoing)
                     @include('partials.ongoingEventCard', ['myEvent' => $ongoing])

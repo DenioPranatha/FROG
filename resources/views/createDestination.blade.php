@@ -9,7 +9,7 @@
 @section('content')
 <div class="container">
         <form id="form" class="needs-validation" novalidate>
-            <div class="container-left">
+            <div class="container-left" data-aos="fade-right">
                 <div class="img-container">
                     {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
                     <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
@@ -29,7 +29,7 @@
                 </div>
                 <p>Add Destination Image</p>
             </div>
-            <div class="container-right">
+            <div class="container-right" data-aos="fade-left">
                 <p>Create Destination</p>
                 <div class="destination-name-container">
                     <input class="form-control" placeholder="Destination Name" type="text" name="destination-name" id="destination-name" minlength="3" maxlength="15" required />
