@@ -31,7 +31,18 @@
                 <button type="submit" class="nav-link d-flex align-items-center logOut">Sign Out</button>
             </form>
             {{-- <a class="nav-link d-flex align-items-center" href="#"><p class="logOut">Sign Out</p></a> --}}
+
+        </div>
+        <div class="menu-toggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
     <div class="line w-100"></div>
 </nav>
+
+@section('js')
+<script type="text/javascript" src="{{URL::asset('assets/js/navbar.js')}}"></script>
+@endsection

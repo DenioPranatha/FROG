@@ -32,7 +32,7 @@
             </form> --}}
         </div>
         <div class="bannerDiv">
-            <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+            {{-- <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="3000">
                         <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Logo">
@@ -43,6 +43,74 @@
                     <div class="carousel-item" data-bs-interval="3000">
                         <img src="assets/img/banner.png" class="d-block w-100" alt="Brain Stroke Prediction Team">
                     </div>
+                </div>
+            </div> --}}
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval='3000'>
+                <div class="carousel-inner">
+                  <div class="carousel-item item active" data-bs-interval="3000" data-id='1'>
+                    <img src="assets/images/banner/banner-1-fix.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Social Support</h3>
+                        <p>Lets help them who are in need</p>
+                        <a class="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <div class="num"></div>
+                        <a class="carousel-control-next next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="carousel-item item" data-bs-interval="3000" data-id='2'>
+                    <img src="assets/images/banner/banner-2-fix.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Social Support</h3>
+                        <p>Lets help them who are in need</p>
+                        <a class="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <div class="num"></div>
+                        <a class="carousel-control-next next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="carousel-item item" data-bs-interval="3000" data-id='3'>
+                    <img src="assets/images/banner/banner-3-fix.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Social Support</h3>
+                        <p>Lets help them who are in need</p>
+                        <a class="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <div class="num"></div>
+                        <a class="carousel-control-next next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="carousel-item item" data-bs-interval="3000" data-id='4'>
+                    <img src="assets/images/banner/banner-4-fix.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Social Support</h3>
+                        <p>Lets help them who are in need</p>
+                        <button class="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <div class="num"></div>
+                        <button class="carousel-control-next next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -61,11 +129,19 @@
                         </div>
                     @endforeach
                 </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button> --}}
+                    <button class="carousel-control-prev recommend-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next recommend-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>

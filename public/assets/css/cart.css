@@ -490,8 +490,8 @@ a.btn:focus{
     justify-content: center;
     text-align: center;
 
-        box-shadow: 4px 4px 8px #CDCDCD;
-        border-radius: 20px;
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
 }
 
 .btnClass{
