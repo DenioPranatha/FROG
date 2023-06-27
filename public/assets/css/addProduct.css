@@ -305,3 +305,251 @@ button{
 .msg-desc{
     padding-left: 5vw;
 }
+
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+
+@media screen and (max-width: 428px){
+    .container-left{
+        width: 43vw;
+        height: fit-content;
+        background-color: #522E93;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6vw;
+        padding-right: 3.5vw;
+    
+        box-shadow: 4px 4px 8px #CDCDCD;
+
+        padding-top: 25px;
+    }
+    
+    .container-left p{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        color: white;
+        
+        margin-bottom: 20px;
+    }
+
+    .container{
+        /* background-color: red; */
+        /* border: 1px solid red; */
+        height: fit-content;
+        display: flex;
+        /* flex-direction: column; */
+        margin-top: 2vw;
+        margin-bottom: 6vw;
+        /* padding-left: 22px; */
+    
+        /* margin-left: 100px;
+        margin-right: 100px; */
+        /* border: 1px solid red; */
+    }
+
+    .needs-validation{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid black; */
+        width: 100%;
+    }
+
+    .container-left{
+        width: 100%;
+        height: 60vw;
+        background-color: #522E93;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5.6vw;     
+        padding-right: 3.5vw;
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+    }
+    
+    .container-left p{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        /* font-size: 2.5vw; */
+        font-size: 20px;
+        color: white;
+    
+    }
+
+    .container-right{
+        width: 100%;
+        height: fit-content;
+        /* height: 120vw; */
+        /* margin-top: 3vw; */
+        margin-left: 0vw;
+        /* padding-top: 1vw; */
+        background-color: white;
+        border: 3px solid #CDCDCD;
+        /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25); */
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5vw;
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border: 1px solid #522E93;
+
+        /* margin-bottom: 100px; */
+    }
+    
+    
+    .container-right p{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        color: #522E93;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 40px;
+        margin-bottom: 0.8vw;
+    }
+    
+    .container-right form{
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+        margin-top: -1vw;
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+    }
+    
+    .container-right input{
+        width: 80vw;
+        height: 8vw;
+        background: #FFFFFF;
+        border: 1px solid #522E93;
+        box-shadow: 2px 2px 0px #CDCDCD;
+        border-radius: 10px;
+        padding-left: 5vw;
+    
+        /* box-shadow: 2px 2px 0px #CDCDCD; */
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+        font-family: 'Poppins';
+        font-size: 16px;
+    }
+    
+    .container-right textarea{
+        width: 80vw;
+        height: 8vw;
+        background: #FFFFFF;
+        border: 1px solid #522E93;
+        box-shadow: 2px 2px 0px #CDCDCD;
+        border-radius: 10px;
+        resize: none;
+        padding-left: 5vw;
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+    }
+    
+    .container-right select{
+        width: 80vw;
+        height: 8vw;
+        background: #FFFFFF;
+        border: 1px solid #522E93;
+        box-shadow: 2px 2px 0px #CDCDCD;
+        border-radius: 10px;
+        /* padding-left: 10vw;   */
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+    }
+
+    select:required:invalid {
+        padding-left: 5vw;
+        color: #666;
+    }
+
+    #product-desc{
+        /* padding-top: 1vw; */
+        padding-left: 5vw;
+        width: 80vw;
+        height: 20vw;
+    }
+    
+    .container-right button{
+        width: 40vw;
+        height: 10vw;
+        background-color: #764EBE;
+        color: white;
+        background: #522E93;
+        border-radius: 20px;
+        border: none;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        box-shadow: 4px 4px 8px #CDCDCD;
+    }
+
+    .rp-container{
+        display: none;
+        margin-left: -300px;
+        width: 90vw;
+        height: 3vw;
+        border: none;
+        border-right: solid 1.5px #764EBE;
+    }
+    
+    .container-price p{
+        font-family: 'M PLUS 1';
+        font-style: normal;
+        font-size: 16px;
+    }
+    
+    .container-price input{
+        width: 34vw;
+    }
+    
+    #product-price{
+        /* padding-left: 4.8vw; */
+        /* width: 38vw;  */
+        width: 80vw;
+        height: 8vw;
+        /* display: none; */
+    }
+    #product-modal{
+        /* padding-left: 4.8vw; */
+        width: 80vw;
+        height: 8vw;
+    }
+
+    button{
+        width: 13vw;
+        height: 3vw;
+        background-color: #764EBE;
+        color: white;
+        background: #522E93;
+        border-radius: 20px;
+        border: none;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        box-shadow: 4px 4px 8px #CDCDCD;
+
+        margin-bottom: 20px;
+    }
+}
