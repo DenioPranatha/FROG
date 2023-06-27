@@ -168,3 +168,47 @@ a.categoriesCart {
 }
 /* button */
 
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+    .categoriesDiv{
+        /* display: none; */
+        box-sizing: border-box;
+        width: 100%;
+        padding-top: 65px;
+        /* padding-left: 1%; */
+        /* margin-left: 50px;x */
+        /* background-color: red; */
+
+        border: 1px solid black;
+    }
+    
+    .categories{
+        /* padding: 0px 42px; */
+        /* padding: 0px 100px; */
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 15px;
+    }
+
+    .productsDiv{
+        width: 100%;
+        /* height: 100%; */
+        /* background-color: blue; */
+        /* padding-left: 1%; */
+    }
+    
+    .products{
+        height: fit-content;
+        align-items: start;
+        /* padding: 0px 42px; */
+        padding: 5px 0px;
+        padding-bottom: 30px;
+        /* background-color: red; */
+        padding-left: 15px;
+    }
+}
+
