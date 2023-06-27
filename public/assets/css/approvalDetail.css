@@ -1,14 +1,18 @@
 *{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
 }
 
 .desc-container{
     width: 90vw;
-    margin: 40px;
+    /* margin: 40px; */
     display: flex;
     flex-direction: row;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    margin-bottom: 8vw;
+    /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+    font-family: 'Poppins';
+    margin-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 100px;
+    margin-top: 40px;
 }
 
 .desc{
@@ -30,7 +34,7 @@
 }
 
 .desc-headline{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
@@ -40,7 +44,7 @@
 }
 
 .desc-caption{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -51,7 +55,7 @@
 }
 
 .desc-caption{
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -70,7 +74,7 @@
     border: 3px solid #522E93;
     border-radius: 30px;
 
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -93,7 +97,7 @@
     border-radius: 30px;
     color: #FFFFFF;
 
-    font-family: 'M PLUS 1';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
