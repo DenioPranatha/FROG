@@ -171,6 +171,12 @@ input[type=file]{
     /* box-shadow: 4px 4px 8px #CDCDCD; */
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+
+    transition: .2s all ease-in-out;
+}
+
+.button-img:hover{
+    transform: scale(1.02);
 }
 
 .img-container{
@@ -272,6 +278,12 @@ input[type=file]{
     font-size: 18px;
     line-height: 27px;
     box-shadow: 4px 4px 8px #CDCDCD;
+
+    transition: .2s all ease-in-out;
+}
+
+.container-right button:hover{
+    transform: scale(1.04);
 }
 
 

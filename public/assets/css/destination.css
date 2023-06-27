@@ -69,6 +69,14 @@ input[type=text]{
     border-radius: 25px;
     font-size: 14px;
     margin-right: 10px;
+
+    transition: .2s all ease-in-out;
+}
+
+.categoriesCard:hover{
+    transform: scale(1.04);
+    background-color: #522E93;
+    color: white;
 }
 
 /* categories */
@@ -226,6 +234,12 @@ input[type=text]{
     height: 100%;
     margin-right: 20px;
     margin-bottom: 15px;
+
+    transition: .2s all ease-in-out;
+}
+
+.container-card:hover{
+    transform: scale(1.04);
 }
 
 .section-title2{
