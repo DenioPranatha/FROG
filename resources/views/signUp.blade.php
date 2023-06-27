@@ -31,7 +31,8 @@
 
                 <p class="heading">Create Your Account</p>
 
-                <form action="/signup" method="POST" id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center" novalidate>
+                {{-- <form action="/signup" method="POST" id="form" class="needs-validation d-flex flex-column justify-content-center align-items-center" novalidate> --}}
+                <form action="/signup" method="POST" id="form" class="needs-validation" novalidate>
                     @csrf
                     {{-- <div class="name d-flex flex-row">
                         <div class="firstname">
@@ -89,7 +90,7 @@
                             <i toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></i>
                         </div>
 
-                        <input id="pass_log_id" type="password" name="password" class="form-control rounded @error('password') is-invalid @enderror" placeholder="Password" required>
+                        <input id="pass_log_id" type="password" name="password" class="password form-control rounded @error('password') is-invalid @enderror" placeholder="Password" required>
                         @error('password')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -113,7 +114,7 @@
                     </div>
 
                     <div class="phone">
-                        <p>Phone<span>*</span></p>
+                        <p class="phone-label">Phone<span>*</span></p>
                         <div class="enamdua d-flex justify-content-center align-items-center">
                             <p>+62</p>
                         </div>
@@ -135,12 +136,14 @@
                         @enderror
                     </div>
 
-                    <button type="submit">Create Account</button>
-
-                    <div class="account d-flex flex-row">
-                        <p>Already Have an Account ?</p>
-
-                        <a href="/signin">Sign In</a>
+                    <div class="buttonalready">
+                        <button type="submit">Create Account</button>
+    
+                        <div class="account d-flex flex-row">
+                            <p>Already Have an Account ?</p>
+    
+                            <a href="/signin">Sign In</a>
+                        </div>
                     </div>
                 </form>
             </div>
