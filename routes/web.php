@@ -36,9 +36,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Route::get('/indexResult', [IndexController::class, 'result']);
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/index', [IndexController::class, 'index'])->name('index');
-Route::get('/index/result', [IndexController::class, 'result']);
 // Route::post('products', [IndexController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
@@ -75,6 +75,7 @@ Route::post('/createEvent', [EventController::class, 'create']);
 
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+Route::get('/destinationResult', [DestinationController::class, 'result']);
 
 Route::get('/createDestination', function () {
     return view('createDestination');

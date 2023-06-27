@@ -15,4 +15,16 @@ class DestinationController extends Controller
             'categories' => Category::all()
         ]);
     }
+
+    public function result(){
+
+        $destinations = Destination::all();
+
+
+        return view('destinationResult', [
+            'destinations' => $destinations,
+
+
+        ]);
+    }
 }

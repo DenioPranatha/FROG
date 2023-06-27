@@ -133,7 +133,7 @@ input[type=text] {
 /* banner */
 
 .bannerDiv {
-    padding-top: 70px;
+    /* padding-top: 70px; */
     /* background-color: yellow; */
     width: 100%;
     height: fit-content;
@@ -701,16 +701,16 @@ input[type=text] {
         font-size: 35px;
         /* border: 1px solid red; */
         /* padding-bottom: 30px; */
-    
+
         padding-left: 1%;
         padding-right: 1%;
 
         /* background-color: green; */
-    
+
     }
 
-    
-    
+
+
     .recommendDiv .carousel {
         display: flex;
         justify-content: center;
@@ -732,7 +732,7 @@ input[type=text] {
 
     /* title product */
     .section-title {
-        margin-left: -80px; 
+        margin-left: -80px;
         font-size: 110%;
         display: flex;
         align-items: flex-start;
@@ -757,7 +757,7 @@ input[type=text] {
         /* margin-top: -100px; */
         /* margin-left: -100px; */
     }
-    
+
     .recProductsDiv {
         padding-bottom: 80px;
         /* background-color: red; */
@@ -771,11 +771,11 @@ input[type=text] {
         align-items: center;
         width: 160px;
         height: 40px;
-    
+
         border-radius: 20px;
         box-shadow: 4px 4px 8px #CDCDCD;
     }
-    
+
     .seeMore p {
         font-family: 'Poppins';
         font-size: 16px;
@@ -784,7 +784,7 @@ input[type=text] {
     .seeMore i {
         width: 20%;
     }
-    
+
 
     /* carousel charity destination */
     .section-title2 {
@@ -806,9 +806,9 @@ input[type=text] {
         /* height: 900px; */
         padding-top: 5px;
         padding-bottom: 40px;
-    
+
         border: 1px solid black;
-    
+
         padding-left: 1%;
         padding-right: 1%;
     }
@@ -821,7 +821,7 @@ input[type=text] {
         height: 40px;
         box-shadow: none;
     }
-    
+
     .findDest p {
         font-family: 'Poppins';
         font-size: 16px;
@@ -834,10 +834,10 @@ input[type=text] {
     .slider {
         position: relative;
         padding-top: 0;
-    
+
         /* border: 1px solid red; */
     }
-    
+
     .slider .owl-item.active.center .slider-card {
         transform: scale(1);
         opacity: 1;
@@ -845,7 +845,7 @@ input[type=text] {
         color: #000000;
         border: 1px solid #CDCDCD;
     }
-    
+
     .slider-card {
         background: #fff;
         padding: 0px 0px;
@@ -858,13 +858,13 @@ input[type=text] {
         margin-left: 10px;
         margin-right: 10px;
     }
-    
-    
+
+
     .slider-card img {
         box-shadow: 4px 4px 8px #CDCDCD;
         border-radius: 0px;
     }
-    
+
     .owl-nav .owl-prev {
         position: absolute;
         top: calc(50% - 60px);
@@ -873,15 +873,15 @@ input[type=text] {
         font-size: 50px !important;
         z-index: 1;
     }
-    
+
     .owl-nav .owl-prev span {
         color: white;
     }
-    
+
     .owl-nav .owl-next span {
         color: white;
     }
-    
+
     .owl-nav .owl-next {
         position: absolute;
         top: calc(50% - 60px);
@@ -890,7 +890,7 @@ input[type=text] {
         font-size: 50px !important;
         z-index: 1;
     }
-    
+
     .owl-dots {
         display: none;
     }
@@ -900,7 +900,7 @@ input[type=text] {
         width: 100%;
         /* height: 500px; */
     }
-    
+
     .categories {
         /* padding: 0px 42px; */
         /* background-color: yellow; */
@@ -909,12 +909,12 @@ input[type=text] {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 50px;
-    
+
         padding-left: 5%;
         padding-right: 5%;
         /* border: 1px solid red; */
     }
-    
+
     .categoriesCart {
         background: #FFFFFF;
         /* border: 1px solid #CDCDCD; */
@@ -925,11 +925,11 @@ input[type=text] {
         padding: 8px 20px;
         margin-right: 15px;
         margin-bottom: 25px;
-    
+
         border: 1px solid #CDCDCD;
         border-radius: 20px;
         filter: drop-shadow(4px 4px 8px #CDCDCD);
-    
+
         /* border: 1px solid red; */
     }
 
@@ -941,7 +941,7 @@ input[type=text] {
         line-height: 26px;
         color: rgba(0, 0, 0, 0.73);
     }
-    
+
     .categories a {
         text-decoration: none;
     }
@@ -961,5 +961,5 @@ input[type=text] {
         justify-content: center;
         align-items: center;
     }
-    
+
 }
