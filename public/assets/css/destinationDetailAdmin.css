@@ -80,6 +80,11 @@
     line-height: 27px;
 
     color: #522E93;
+    transition: .2s all ease-in-out;
+}
+
+.button-one:hover{
+    transform: scale(1.04);
 }
 
 .button-two{
@@ -99,6 +104,11 @@
     line-height: 27px;
 
     color: #522E93;
+    transition: .2s all ease-in-out;
+}
+
+.button-two:hover{
+    transform: scale(1.04);
 }
 
 .button-container{

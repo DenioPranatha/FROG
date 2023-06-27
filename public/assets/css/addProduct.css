@@ -196,6 +196,11 @@ input[type=file]{
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     /* box-shadow: 4px 4px 8px #CDCDCD; */
+    transition: .2s all ease-in-out;
+}
+
+.button-img:hover{
+    transform: scale(1.01);
 }
 
 .img-container{
@@ -285,7 +290,7 @@ input[type=file]{
     margin-bottom: -1.2vw;
 }
 
-button{
+.container-right button{
     width: 13vw;
     height: 3vw;
     background-color: #764EBE;
@@ -300,6 +305,12 @@ button{
     font-size: 18px;
     line-height: 27px;
     box-shadow: 4px 4px 8px #CDCDCD;
+
+    transition: .2s all ease-in-out;
+}
+
+.container-right button:hover{
+    transform: scale(1.04);
 }
 
 .msg-desc{
