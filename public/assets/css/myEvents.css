@@ -18,18 +18,22 @@
     margin-bottom: 42px;
     /* font-weight:bold; */
     font-size: 30px;
-    color: #522E93;
+    /* color: #522E93; */
+    /* color: black; */
 }
 
 .card-container{
     margin-top: -8px;
     text-decoration: none;
     color: black;
+    /* width: 40px; */
+    /* background-color: red; */
 
     /* width: 1125px; */
 }
 
 .card{
+    /* background-color: red; */
     /* width: 1160px; */
     height: 296.5px;
     margin-bottom: 42px;
@@ -86,6 +90,8 @@
 
     filter: drop-shadow(4px 4px 8px #CDCDCD);
     border-radius: 10px;
+
+    /* background-color: red; */
 
 
 }
@@ -205,4 +211,58 @@
 
 .gap{
     height: 100px;
+}
+
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+    .container{
+        border: 1px solid red;
+        height: fit-content;
+        padding-bottom: 50px;
+        /* margin-left: 42px;
+        margin-bottom: 84px;
+
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 84px;
+
+        margin-bottom: 100px; */
+    }
+    .card-section-box-add{
+        display: flex;
+        justify-content:center;
+        /* margin-top: px; <-hapus */
+        border: 1px solid #FFFFFF;
+        /* width: 1160px; */
+        height: 150px;
+        background: #FFFFFF;
+        /* box-shadow: 4px 6px 0px #CDCDCD, 1px 0 .4em rgba(0, 0, 0, 0.25); */
+        /* border-radius: 8px; */
+    
+        /* padding-top: 15px; */
+    
+        width: 400px;
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+        /* padding-top: 40px; */
+    }
+
+    .section-title{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        line-height: 40px;
+        margin-top: 42px;
+        margin-bottom: 42px;
+        /* font-weight:bold; */
+        font-size: 25px;
+        /* color: #522E93; */
+        /* color: black; */
+    }
+    
+
 }
