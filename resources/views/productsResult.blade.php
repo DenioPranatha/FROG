@@ -11,8 +11,7 @@
     @endphp
 
     @if ($pg != -1)
-
-        <div class="fullBtn h-100 w-75 d-flex justify-content-around align-items-center">
+        <div class="fullBtn d-flex justify-content-around align-items-center">
             <div class="lineBtn"></div>
             <div class="btnDiv m-0 p-0 d-flex justify-content-center align-items-center" id="myBtn">
                 <button class="btn btn-1" id="myBtn1" value="{{ $i }}">
