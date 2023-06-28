@@ -77,6 +77,12 @@
     line-height: 30px;
     text-align: center;
     color: #522E93;
+
+    transition: .2s all ease-in-out;
+}
+
+.reject:hover{
+    transform: scale(1.04);
 }
 
 .approve{
@@ -93,5 +99,11 @@
     font-size: 16px;
     line-height: 30px;
     text-align: center;
+
+    transition: .2s all ease-in-out;
+}
+
+.approve:hover{
+    transform: scale(1.04);
 }
 

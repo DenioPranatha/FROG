@@ -118,6 +118,12 @@
     align-content: center;
     padding-left: 5px;
     background-color: #CDCDCD;
+
+    transition: .2s all ease-in-out;
+}
+
+.box-change-address:hover{
+    transform: scale(1.04);
 }
 
 .pen-icon {
@@ -551,7 +557,7 @@ button.boxbtn2{
     padding-left: 5px;
     padding-right: 5px;
 
-    
+
 }
 
 .title-checkout-summary{
@@ -668,6 +674,12 @@ button.boxbtn2{
 
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
+
+    transition: .2s all ease-in-out;
+}
+
+.pay-button:hover{
+    transform: scale(1.04);
 }
 
 .pay-button:hover{
@@ -843,7 +855,7 @@ input{
     text-decoration: none;
     outline: none;
 
-    
+
 
 }
 
