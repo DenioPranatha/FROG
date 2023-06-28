@@ -7,7 +7,6 @@
 @section('title', 'Destination')
 
 @section('content')
-    <div id="destinationResult">
         <div class="atas">
             <div class="searchDiv">
                 <form action="" method="POST" class="searchForm h-100 w-100 d-flex justify-content-start align-items-center">
@@ -21,71 +20,18 @@
                 </form>
             </div>
             <div class="categories">
-                <button type="submit" class="categoriesCard">
-                    All
-                </button>
+                <button class="categoriesCard purple-but" value="0"><p>All</p></button>
                 @foreach ($categories as $category)
-                    <button type="submit" class="categoriesCard">
-                        {{ $category->name }}
+                    <button class="categoriesCard" value="{{ $category->name }}">
+                        <p>{{ $category->name }}</p>
                     </button>
                 @endforeach
             </div>
+        </div>
 
+        <div id="destinationResult">
+            @include('noDestinationResult', ['destinations'=>$destinations])
         </div>
-        <div class="charityDestDiv">
-            <div class="section-title2">
-                Popular Destination
-            </div>
-            <section id="slider">
-                <div class="container">
-                    <div class="slider">
-                        <div class="owl-carousel">
-                            @foreach ($destinations as $destination)
-                                <a href="/destination">
-                                    <div class="slider-card">
-                                        <div class="kotakLuar d-flex justify-content-center align-items-center mb-4">
-                                            {{-- <div class="destImg" style="background-image: url({{ asset("/assets/img/banner.png") }})"></div> --}}
-                                            {{-- <img src="{{ asset("/assets/img/PantiAsuhan.png") }}" alt="" > --}}
-                                            <div class="destImg" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div>
-                                        </div>
-                                        <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
-                                        <div class="charityLoc pt-1 d-flex justify-content-center align-items-center">
-                                            <i class="bi bi-geo-alt"></i>
-                                            <p class="text-center">{{ $destination->location }}</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <br>
-        <div class="section-title3">
-            Destination Near You
-        </div>
-        <br>
-        <br>
-        <div class="container-all-card d-flex flex-wrap alig-items-left pt-2">
-            @for ($i = 0; $i < 7; $i++)
-                <a href="" class="kotak">
-                    <div class="container-card d-flex flex-row justify-content-center">
-                        <div class="card d-flex flex-row align-items-end" style="background-image: url({{ asset('/assets/img/PantiAsuhan.png') }})"></div>
-                        <div class="shadow d-flex align-items-end justify-content-center">
-                            <div class="text">
-                                <p class="head text-center">Panti Asuhan Bakti Kasih</p>
-                                <div class="bawah d-flex justify-content-center align-items-center">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <p class="sub text-center">Bogor, Jawa Barat</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            @endfor
-        </div>
-    </div>
 @endsection
 
 @section('js')

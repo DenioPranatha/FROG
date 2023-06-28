@@ -68,7 +68,10 @@ class EventController extends Controller
         $pg = (int)$request->query('pg');
         $pge = 10*$pg;
         $popEvents = Event::latest();
-        $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+        $events = Event::latest()
+        ->filter(request(['search-event', 'category-event']))
+        ->where('status', 'accepted')
+        ->get();
         $c = count($events);
         $events = $events->take($pge);
         $popular = $popEvents->get();
@@ -190,10 +193,13 @@ class EventController extends Controller
             $p->where('event_id', $event->id);
         })
         ->groupBy('product_id')
+        ->orderBy('quantity', 'desc')
         ->get();
-        if(!isEmpty($top)){
-            $top = $top->where('quantity', $top->max('quantity'));
-            $top = Product::find($top[0]['pid']);
+        if(!$top->isEmpty()){
+            $top = $top[0]['pid'];
+            $top = Product::find($top)->name;
+        }else{
+            $top = "-";
         }
 
         $pg = 1;

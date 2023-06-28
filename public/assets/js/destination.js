@@ -27,34 +27,47 @@ $(document).ready(function(){
 //   };
 
 $(document).ready(function(){
-    // ketika see more diclick
-    // $(document).on('click', '#myBtn1', function(){
-    //     //input dari kolom search
-    //     var searchValue = $('#searchBox').val();
-    //     var lim = $('#myBtn1').val();
-    //     $(this).fadeOut(100);
-    //     //Masukin ke function penggabung
-    //     loadFilteredContent(searchValue, lim);
-    // });
+    const initialContent = $('#destinationResult').html();
 
     //ketika kolom search diisi
     $('#searchBox').on('keyup', function(){
         //input dari kolom search
         var searchValue = $('#searchBox').val();
-        loadFilteredContent(searchValue);
+        var categoryValue = $('.categoriesCard.purple-but').attr('value');
+        loadFilteredContent(searchValue, categoryValue);
     });
 
-    function loadFilteredContent(searchValue) {
+    // ketika category diklik
+    $('.categoriesCard').on('click', function(){
+        $('.categoriesCard').removeClass('purple-but');
+        $(this).addClass('purple-but');
+        var categoryValue = $(this).attr('value');
+        var searchValue = $('#searchBox').val();
+
+        loadFilteredContent(searchValue, categoryValue);
+    });
+
+    function loadFilteredContent(searchValue, categoryValue) {
         var url = '/destinationResult';
         var parameters = [];
+        if (categoryValue && categoryValue != '0') {
+            parameters.push('category-destination=' + encodeURIComponent(categoryValue));
+        }
         if (searchValue) {
-            parameters.push('search-event=' + encodeURIComponent(searchValue));
+            parameters.push('search-destination=' + encodeURIComponent(searchValue));
         }
         if (parameters.length > 0) {
             url += '?' + parameters.join('&');
         }
+
         console.log(url);
-        $('#destinationResult').load(url);
+        if(url == '/destinationResult'){
+            $('#destinationResult').empty();
+            $('#destinationResult').html(initialContent);
+        }else{
+            $('#destinationResult').load(url);
+        }
+
     }
 
 });

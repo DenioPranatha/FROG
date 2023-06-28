@@ -289,8 +289,8 @@ input[type=text] {
     padding-bottom: 30px;
     /* border: 1px solid red; */
 
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 85px;
+    padding-right: 115px;
 
 }
 
@@ -300,27 +300,20 @@ input[type=text] {
     /* margin: 0 35px; */
     flex-wrap: nowrap;
     height: fit-content;
-    /* margin-left: 100px;
-    margin-right: 100px; */
+    /* border: 1px solid black; */
+    height: 210px;
 
 }
 
-/* .carousel .carousel-inner{
-    padding-left: 100px;
-    padding-right: 100px;
-} */
+
 
 .recommendDiv .carousel-inner {
     display: flex;
-    margin-left: 5px;
+    margin-left: 15px;
     height: 245px;
-    /* height: 100px; */
-    /* margin-left: 100px;
-    margin-right: 100px; */
-    /* padding-left: 100px; */
-    /* padding-right: 100px; */
-    /* margin-left: 100px; */
-    /* background-color: red; */
+    /* border: 1px solid black; */
+    padding-top: 5px;
+
 }
 
 .recommendDiv .carousel-item {
@@ -432,8 +425,6 @@ input[type=text] {
     /* height: 900px; */
     padding-top: 5px;
     padding-bottom: 40px;
-
-    border: 1px solid black;
 
     padding-left: 100px;
     padding-right: 100px;

@@ -1,33 +1,17 @@
-@if(count($events) != 0)
+@if(count($destinations) != 0)
 
-<div class="catalog-container">
-    @foreach($destinationss as $destination)
-        @include('partials.destinationCart', ['destination' => $destination])
-    @endforeach
-</div>
-
-{{-- buat variabel i (next batch) --}}
-<?php $i = $pg + 1; ?>
-
-
-@if ($pg != -1)
-    <div class="more-products">
-        <div class="line1"></div>
-
-        {{-- masukkin next batch berapa ketika klik button --}}
-        <button class="more" id="myBtn1" value={{ $i }}>More Events</button>
-        <div class="line1"></div>
+    <div class="container-all-card d-flex flex-wrap alig-items-left pt-2">
+        @foreach($destinations as $destination)
+            @include('partials.destinationCard', ['destination' => $destination])
+        @endforeach
     </div>
-@else
-    <div class="gap"></div>
-@endif
 
 
-@elseif(request('category-event') && request('search-event'))
-<div class="not-found justify-content-center">Event with keyword "{{ request('search-event') }}" and category "{{ request('category-event') }}" is not found</div>
-@elseif(request('search-event'))
-<div class="not-found justify-content-center">Event with keyword "{{ request('search-event') }}" is not found</div>
+@elseif(request('category-destination') && request('search-destination'))
+<div class="not-found justify-content-center">Destination with keyword "{{ request('search-destination') }}" and category "{{ request('category-destination') }}" is not found</div>
+@elseif(request('search-destination'))
+<div class="not-found justify-content-center">Destination with keyword "{{ request('search-destination') }}" is not found</div>
 @else
-<div class="not-found justify-content-center">Event with category "{{ request('category-event') }}" is not found</div>
+<div class="not-found justify-content-center">Destination with category "{{ request('category-destination') }}" is not found</div>
 @endif
 

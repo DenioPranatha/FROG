@@ -22,54 +22,15 @@
         </div>
         <div class="categoriesDiv" data-aos="fade-up">
             <div class="categories">
-                <a href="/products" class="categoriesCart"
-                    @if ($cat_id == 0)
-                        style="background-color: #522E93; color: white;"
-                    @endif
-                >
-                    <p>All</p>
-                </a>
+                <button class="categoriesCart purple-but" value="0"><p>All</p></button>
                 @foreach ($productCategories as $productCategory)
-                    <form action="/products" method="POST">
-                        @csrf
-                        <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
-                        <button type="submit" class="categoriesCart" value="{{ $cat_id }}"
-                            @if ($loop->iteration == $cat_id)
-                                style="background-color: #522E93; color: white;"
-                            @endif>
-                            <p>{{ $productCategory->name }}</p>
-                        </button>
-                    </form>
+                    <button class="categoriesCart" value="{{ $productCategory->id }}">
+                        <p>{{ $productCategory->name }}</p>
+                    </button>
                 @endforeach
-                <input type="hidden" name="cat_id1" id="cat_id1" value="{{ $cat_id }}">
             </div>
         </div>
         <div class="productsDiv" data-aos="fade-up">
-            {{-- <div class="products d-flex flex-wrap">
-                @foreach ($products as $product)
-                    @include('partials.productCart', ['product' => $product])
-                @endforeach
-                @if (count($products) == 0)
-                    <div class="w-100 p-4">
-                        <h5 class="w-100 d-flex justify-content-center">Product with category {{ $productCategories->where('id', $request->cat_id)->first()->name }} is not found</h5>
-                    </div>
-                @endif
-            </div> --}}
-            {{-- @dd($pg) --}}
-            {{-- @php
-            $i = $pg + 1;
-            @endphp
-            <div class="fullBtn h-100 w-100 d-flex justify-content-around align-items-center">
-                <div class="lineBtn"></div>
-                <div class="btnDiv m-0 p-0 d-flex justify-content-center align-items-center" id="myBtn">
-                    <button class="btn btn-1">
-                        <div class="seeMore">
-                            <p>More Products</p>
-                        </div>
-                    </button>
-                </div>
-                <div class="lineBtn"></div>
-            </div> --}}
             <div id="result-container">
                 @include('productsResult')
             </div>
