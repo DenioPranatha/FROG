@@ -285,7 +285,7 @@ input[type=file]{
     margin-bottom: -1.2vw;
 }
 
-button{
+.container-right button{
     width: 13vw;
     height: 3vw;
     background-color: #764EBE;

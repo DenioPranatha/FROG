@@ -183,8 +183,11 @@ a.categoriesCart {
         /* background-color: red; */
 
         border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
     }
-    
+
     .categories{
         /* padding: 0px 42px; */
         /* padding: 0px 100px; */
@@ -192,7 +195,9 @@ a.categoriesCart {
         display: flex;
         flex-wrap: wrap;
         font-size: 15px;
+        border: 1px solid red;
     }
+
 
     .productsDiv{
         width: 100%;
