@@ -455,6 +455,8 @@
     border: 1px solid #522E93;
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
+
+    transition: .2s all ease-in-out;
 }
 
 .btn:hover{
@@ -476,6 +478,7 @@
 
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
+    transform: scale(1.04);
 }
 
 a.btn:focus{
