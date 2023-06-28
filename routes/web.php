@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DestinationController;
@@ -105,15 +106,13 @@ Route::post('/signout', [SigninController::class, 'signout']);
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
 
-Route::get('/approval', function(){
-    return view('approval', [
-        'events' => Event::all()
-    ]);
-})->name('approval');
+Route::get('/approval', [ApprovalController::class, 'show'])->name('approval');
+Route::post('/approvalDetail/{event:id}/edit', [ApprovalController::class, 'edit']);
+Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail']);
 
-Route::get('/approvalDetail', function () {
-    return view('approvalDetail');
-})->name('approvalDetail');
+// Route::get('/approvalDetail', function () {
+//     return view('approvalDetail');
+// })->name('approvalDetail');
 
 Route::get('/destinationDetail', function () {
     return view('destinationDetail');

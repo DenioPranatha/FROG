@@ -10,6 +10,7 @@ use App\Models\PaymentDetail;
 use App\Models\PaymentHeader;
 use App\Models\ProductCategory;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 use Faker\Provider\ar_EG\Payment;
 use function PHPUnit\Framework\isEmpty;
@@ -31,10 +32,20 @@ class EventController extends Controller
         //pg = 2 ketika sekarang ada di batch kedua dan see more dibutuhin, dst
         //pg akan bertambah ketika see more diklik
         $pg = 1;
-        $popEvents = Event::latest();
+        // ngambil 10 event dgn penjualan produk tertinggi
+        $popEvents = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
+        ->join('products', 'events.id', '=', 'products.event_id')
+        ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+        ->groupBy('events.id')
+        ->orderBy('SUM', 'DESC')
+        ->take(10)
+        ->get();
+
         //masukin events yang difilter berdasarkan search-event dan category-event
         //function filter bisa diliat di scopeFilter Event.php
-        $events = Event::latest()->filter(request(['search-event', 'category-event']))->get();
+        $events = Event::filter(request(['search-event', 'category-event']))
+        ->where('status', 'accepted')
+        ->get();
         //panjang smua events sekarang
         $c = count($events);
         //ambil 10 dari smue events
@@ -45,7 +56,7 @@ class EventController extends Controller
 
         return response(view('events', [
             'events' => $events,
-            'popular' => $popEvents->get(),
+            'popular' => $popEvents,
             'cat' => Category::all(),
             'pg' => $pg
         ]));
@@ -107,12 +118,11 @@ class EventController extends Controller
             'end_date' => $end,
             'duration' => $duration,
             'description' => $validatedData['description'],
-            'image' => $validatedData['image']
+            'image' => $validatedData['image'],
+            'status' => "waiting"
         ]);
 
         return redirect('/myevents')->with('success', 'Sign up successful! Please login!');
-
-
 
     }
 
