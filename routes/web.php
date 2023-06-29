@@ -88,6 +88,7 @@ Route::get('/destinationAdmin', function(){
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cartMinus', [CartController::class, 'minus']);
 Route::post('/cartPlus', [CartController::class, 'plus']);
+Route::post('/cartDelete', [CartController::class, 'destroy']);
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
