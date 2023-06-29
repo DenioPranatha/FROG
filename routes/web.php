@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DestinationAdminController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
@@ -44,15 +45,6 @@ Route::get('/index', [IndexController::class, 'index'])->name('index');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::post('/products', [ProductController::class, 'index'])->name('products');
-// Route::resource('products', ProductController::class)->names([
-//     'index' => 'users.index',
-//     'create' => 'users.create',
-//     'store' => 'users.store',
-//     'show' => 'users.show',
-//     'edit' => 'users.edit',
-//     'update' => 'users.update',
-//     'destroy' => 'users.destroy',
-// ]);
 Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
 Route::post('/cartAdd', [ProductController::class, 'add']);
@@ -67,26 +59,15 @@ Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('e
 Route::get('/eventDetail/{event:id}/result', [EventController::class, 'showProductDetail']);
 Route::get('/createEvent', [EventController::class, 'createForm'])->name('createEvent');
 
-
 Route::get('/myevents', [MyEventController::class, 'index'])->name('myEvents');
 Route::get('/myEventDetail/{event:id}/{isEdit}', [MyEventController::class, 'show'])->name('myEventDetail');
 Route::get('/myEventDetail/{event:id}/{isEdit}/result', [MyEventController::class, 'showProductDetail']);
 Route::post('/myEventDetail/{event:id}/edit', [MyEventController::class, 'edit']);
 Route::post('/createEvent', [EventController::class, 'create']);
 
-
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 Route::get('/destinationResult', [DestinationController::class, 'result']);
 Route::get('/destinationDetail/{destination:id}', [DestinationController::class, 'show'])->name('destinationDetail');
-
-Route::get('/createDestination', function () {
-    return view('createDestination');
-})->name('createDestination');
-
-Route::get('/destinationAdmin', function(){
-    return view('admin.destinationAdmin');
-})->name('destinationAdmin');
-
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cartMinus', [CartController::class, 'minus']);
@@ -120,9 +101,10 @@ Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail']);
 //     return view('destinationDetail');
 // })->name('destinationDetail');
 
-Route::get('/destinationDetailAdmin', function () {
-    return view('admin.destinationDetailAdmin');
-})->name('destinationDetailAdmin');
+
+Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->name('destinationAdmin');
+Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminController::class, 'show'])->name('destinationDetailAdmin');
+Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'create'])->name('createDestinationAdmin');
 
 Auth::routes();
 

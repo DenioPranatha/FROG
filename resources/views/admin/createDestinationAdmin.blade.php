@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="assets/css/createDestination.css">
 @endsection
 
-@extends('layouts.main')
+@extends('admin.mainAdmin')
 
 @section('title', 'Create Destination')
 
@@ -14,7 +14,7 @@
                     {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
                     <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
                     {{-- <img id="img"> --}}
-                    {{-- <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></label>
+                {{-- <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></label>
                     <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;" onchange="showPreview(event)">
                     <div id="img"></div> --}}
                     <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer">
