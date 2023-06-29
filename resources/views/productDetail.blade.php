@@ -8,10 +8,10 @@
 
 @section('content')
 @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
+    {{-- <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+    </div> --}}
 @endif
 {{-- <form action="" method="post">
     @csrf --}}
@@ -27,7 +27,7 @@
                 <a href="/eventDetail/{{ $product->event->id }}" class="eventName">{{ $product->event->name }}</a>
                 {{-- <p class="productPrice">Rp{{ $product->price }}</p> --}}
                 <p class="productPrice">Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }}</p>
-                
+
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">
                     <div class="qtyDiv d-flex justify-content-center align-items-center">
@@ -55,7 +55,7 @@
                         <input type="hidden" name="qty" id="qtyCart">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
-                        <button onclick="addToCart()" class="btn p-0">
+                        <button onclick="addToCart();swal(value,'','success')" class="btn p-0" id="type-success" value="Product Has Been Added">
                             <div class="cart2 d-flex justify-content-center align-items-center">
                                 <div class="cartSvg">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,4 +119,8 @@
 
 @section('js')
     <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/swal.js')}}"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @endsection
