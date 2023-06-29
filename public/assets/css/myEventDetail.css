@@ -46,7 +46,6 @@
 }
 
 .fullBtn{
-    /* border: 1px solid black; */
     margin-top: 30px;
     margin-bottom: 80px;
     width: 80vw;
@@ -60,7 +59,6 @@
 .banner{
     width: 1200px;
     height: 300px;
-    border: 1px solid black;
     margin: auto;
 }
 
@@ -124,7 +122,6 @@
 
 .card-container{
     width: 100vw;
-    /* border: 1px solid black; */
     margin-left: 30px;
     margin-bottom: 84px;
     /* display: flex; */
@@ -289,9 +286,8 @@ a.custom-card:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 21px;
+    /* padding-left: 21px; */
     height: 400px;
-    /* border: 1px solid black; */
     width: 100%;
 }
 
@@ -451,8 +447,8 @@ button{
 
 .purple{
     color: #522E93;
-    margin-top: 21px;
-    margin-bottom: 21px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .purple-but{
@@ -471,7 +467,6 @@ button{
 }
 
 .rincian-container{
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -650,9 +645,7 @@ button{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 21px;
-    /* margin-top: 21px;
-    margin-bottom: 21px; */
+    margin-bottom: 10px;
 }
 
 .progress{
@@ -694,6 +687,19 @@ button{
     background-color: #673AB7;
     color: white;
 }
+
+/* product */
+.productsDiv{
+    width: 100%;
+}
+
+.products{
+    height: fit-content;
+    align-items: start;
+    padding: 5px 0px 0px 25px;
+    /* border: 1px solid black; */
+}
+/* product */
 
 .line1{
     border: 1px solid #522E93;
