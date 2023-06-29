@@ -7,6 +7,7 @@
 @section('title', 'Approval Detail')
 
 @section('content')
+
 <div class="desc-container">
     <div class="pic" data-aos="fade-right">
         @if(file_exists(public_path('assets/images/event/' . $event->image)))

@@ -74,6 +74,8 @@ input[type=text]{
 }
 
 .categoriesCart:hover{
+    background-color: #522E93;
+    color: white;
     transform: scale(1.04);
 }
 
