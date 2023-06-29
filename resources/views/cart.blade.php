@@ -103,7 +103,8 @@
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
-                                            <div class="eachProductImage" style="background-image: url({{ asset('/assets/images/product').'/'.$cartDetail->product->image}} )"></div>
+                                            {{-- <div class="eachProductImage" style="background-image: url({{ asset('/assets/images/product').'/'.$cartDetail->product->image}} )"></div> --}}
+                                            <div class="eachProductImage" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
                                             <div class="eachProductDesc">
                                                 <div class="productDescName">{{ $cartDetail->product->name }}</div>
                                                 <div class="productDescQtyText">Quantity:</div>

@@ -20,14 +20,15 @@
         <div class="upperPart d-flex">
             <div class="imgDiv" data-aos="fade-right">
                 {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
-                <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div>
+                <div class="productImage" style="background-image: url({{ asset('/storage').'/'.$product->image}} )"></div>
+                {{-- <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div> --}}
             </div>
             <div class="descDiv" data-aos="fade-left">
                 <p class="productName">{{ $product->name }}</p>
                 <a href="/eventDetail/{{ $product->event->id }}" class="eventName">{{ $product->event->name }}</a>
                 {{-- <p class="productPrice">Rp{{ $product->price }}</p> --}}
                 <p class="productPrice">Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }}</p>
-                
+
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">
                     <div class="qtyDiv d-flex justify-content-center align-items-center">

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('description', 455);
             $table->integer('price');
             $table->integer('modal');
-            $table->string('image', 55);
+            $table->string('image', 255);
             $table->timestamps();
         });
     }

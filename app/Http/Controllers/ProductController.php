@@ -79,12 +79,14 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:3|max:15',
             'category_id' => 'required',
+            'image' => 'required|image|file',
             'stock' => 'required|numeric|min:1',
             'price' => 'required|numeric|min:1',
             'modal' => 'required|numeric|min:1',
             'description' => 'required|max:450'
         ]);
 
+        $validatedData['image'] = $request->file('image')->store('product-images');
         $validatedData['event_id'] = 4;
         // $validatedData['image'] = ;
 
