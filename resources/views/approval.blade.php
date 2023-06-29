@@ -12,7 +12,20 @@
     <div class="card-container d-flex flex-row justify-content-left flex-wrap">
         @foreach ($events as $event)
             <div class="card-test" data-aos="fade-up">
-                @include('partials.eventCart', ['event' => $event])
+                <div class="eventCartPage">
+                    <a href="/approvalDetail/{{ $event->id }}" class="custom-card">
+                        <div class="card">
+                            @if(file_exists(public_path('assets/images/event/' . $event->image)))
+                                <div class="card-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+                            @else
+                                <div class="card-img" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
+                            @endif
+                            <div class="caption">
+                                <p>{{ $event->name }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         @endforeach
     </div>

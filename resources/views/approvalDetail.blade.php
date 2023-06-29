@@ -1,5 +1,5 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/approvalDetail.css">
+    <link rel="stylesheet" href="/assets/css/approvalDetail.css">
 @endsection
 
 @extends('layouts.main')
@@ -7,25 +7,33 @@
 @section('title', 'Approval Detail')
 
 @section('content')
+
 <div class="desc-container">
     <div class="pic" data-aos="fade-right">
-        <div class="desc-img" style="background-image: url({{ asset('assets/img/rtb.webp') }})"></div>
+        @if(file_exists(public_path('assets/images/event/' . $event->image)))
+            <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+        @else
+            <div class="desc-img" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
+        @endif
     </div>
     <div class="desc" data-aos="fade-left">
         <div class="desc-headline">
-            <b>RTB Chinese New Year Jualan</b>
+            <b>{{ $event->name }}</b>
         </div>
         <div class="desc-caption">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit, aut aliquid sapiente tenetur sequi adipisci excepturi culpa maiores veniam deserunt praesentium voluptate suscipit, maxime hic! Totam impedit necessitatibus deserunt libero quisquam dolorem eius ullam accusamus nisi quia!
+            {{ $event->description }}
         </div>
-        <div class="desc-point"><b>Created By:</b> Lorem Ipsum</div>
-        <div class="desc-point"><b>Event Duration:</b> Lorem Ipsum - Lorem Ipsum</div>
-        <div class="desc-point"><b>Charity Destination:</b> Lorem Ipsum</div>
-        <div class="desc-point"><b>Category:</b> Lorem Ipsum</div>
+        <div class="desc-point"><b>Created By:</b> {{ $event->user->username }}</div>
+        <div class="desc-point"><b>Event Duration:</b> {{ $event->duration }}</div>
+        <div class="desc-point"><b>Charity Destination:</b> {{ $event->destination->name }}</div>
+        <div class="desc-point"><b>Category:</b> {{ $event->destination->category->name }}</div>
 
         <div class="button-container d-flex flex-row justify-content-center align-items-center">
-            <button class="reject">Reject</button>
-            <button class="approve">Approve</button>
+            <form action="/approvalDetail/{{ $event->id }}/edit" method="POST">
+                @csrf
+                <button type="submit" class="reject" name="isApproved" value="0">Reject</button>
+                <button type="submit" class="approve" name="isApproved" value="1">Approve</button>
+            </form>
         </div>
     </div>
 </div>

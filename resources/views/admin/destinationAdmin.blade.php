@@ -22,10 +22,11 @@
             </div>
         </form>
         {{-- <button class="bubble-box" value="All">All</button> --}}
-        <button class="bubble-box" value="">Bencana Alam</button>
-        <button class="bubble-box" value="">Panti Asuhan</button>
-        <button class="bubble-box" value="">Panti Jompo</button>
-        <button class="bubble-box" value="">Fasilitas Umum</button>
+        <button class="bubble-box" value="">All</button>
+        <button class="bubble-box" value="">Natural Disaster</button>
+        <button class="bubble-box" value="">Orphanage</button>
+        <button class="bubble-box" value="">Health Assitance</button>
+        <button class="bubble-box" value="">Public Facilities</button>
     </div>
     <h1>Destination</h1>
     <div class="container-all-card d-flex flex-wrap alig-items-left">

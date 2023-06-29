@@ -80,4 +80,9 @@
     line-height: 27px;
 
     color: #522E93;
+    transition: .2s all ease-in-out;
+}
+
+.container button:hover{
+    transform: scale(1.04);
 }
