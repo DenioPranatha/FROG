@@ -689,14 +689,14 @@ button{
 }
 
 /* product */
-.productsDiv{
+/* .productsDiv{
     width: 100%;
-}
+} */
 
 .products{
     height: fit-content;
     align-items: start;
-    padding: 5px 0px 0px 25px;
+    padding: 5px 0px 0px 0px;
     /* border: 1px solid black; */
 }
 /* product */
