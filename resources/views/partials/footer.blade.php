@@ -12,23 +12,23 @@
         </svg>
     </div>
     <div class="mid w-100 d-flex pt-3 pb-2">
-        <div class="left h-100 w-75 d-flex flex-column align-items-start justify-content-between">
-            <div class="row align-items-start p-0 m-0">
-                <div class="col p-0 text-decoration-underline">Lorem Ipsum</div>
-                <div class="col p-0 ms-5 text-decoration-underline">Lorem Ipsum</div>
+        <div class="left h-100 w-75 d-flex flex-column align-items-start justify-content-start">
+            <div class="row align-items-start pt-2 pb-2 m-0">
+                <a href="/events" class="col p-0 text-decoration-underline">Events</a>
+                <a href="/products" class="col p-0 ms-5 text-decoration-underline">Products</a>
             </div>
-            <div class="row align-items-start p-0 m-0">
-                <div class="col p-0 text-decoration-underline">Lorem Ipsum</div>
-                <div class="col p-0 ms-5 text-decoration-underline">Lorem Ipsum</div>
+            <div class="row align-items-start pt-2 pb-2 m-0">
+                <a href="/destination" class="col p-0 text-decoration-underline">Destination</a>
+                <a href="/myevents" class="col p-0 ms-5 text-decoration-underline">My Event</a>
             </div>
-            <div class="row align-items-start p-0 m-0">
-                <div class="col p-0 text-decoration-underline">Lorem Ipsum</div>
-                <div class="col p-0 ms-5 text-decoration-underline">Lorem Ipsum</div>
+            <div class="row align-items-start pt-2 pb-2 m-0">
+                <a href="/products" class="col p-0 text-decoration-underline">Purchase</a>
+                <a href="/profile" class="col p-0 ms-5 text-decoration-underline">My Profile</a>
             </div>
         </div>
         <div class="right h-100 w-25 d-flex align-items-end p-0 m-0">
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-instagram ms-5"></i>
+            <i class="bi bi-facebook" style="font-size: 30px;"></i>
+            <i class="bi bi-instagram ms-5" style="font-size: 30px;"></i>
         </div>
     </div>
     <div class="bottom w-100 d-flex justify-content-center">

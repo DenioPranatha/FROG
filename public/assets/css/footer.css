@@ -21,6 +21,20 @@ footer{
     height: 15%;
 }
 
+.col{
+    /* border: 1px solid white; */
+    width: 100px;
+    text-decoration: none;
+    color: white;
+}
+
+.col:hover{
+    /* border: 1px solid white; */
+    /* width: 100px; */
+    text-decoration: none;
+    color: #522E93;
+}
+
 /* Responsive Website */
 
 /* Ukuran Mobile */
@@ -32,7 +46,7 @@ footer{
         padding: 15px 42px;
         color: white;
         font-family: 'Poppins';
-    
+
         padding-left: 5%;
         padding-right: 5%;
     }
@@ -40,11 +54,11 @@ footer{
     .mid{
         height: 50%;
     }
-    
+
     .right i{
         font-size: 20px;
     }
-    
+
     .bottom{
         height: 30%;
     }

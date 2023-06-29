@@ -103,9 +103,9 @@ class MyEventController extends Controller
 
         $pg = 1;
         $count = count($products);
-        $products = $products->take(10);
+        $products = $products->take(9);
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
-        if($count <= 10) $pg = -1;
+        if($count <= 9) $pg = -1;
 
         $namacat = "-";
 
@@ -138,13 +138,15 @@ class MyEventController extends Controller
 
         $pg = (int)$request->input('pg');
         $pge = 10*$pg;
+        $pge = $pge-1;
         $c = count($products);
         if($pge >= $c)$pg = -1;
         // dump('hi');
 
-        return view('productsResult', [
+        return view('myProductsResult', [
             'products' => $products->take($pge),
-            'pg' => $pg
+            'pg' => $pg,
+            'event' => $event
         ]);
 
     }

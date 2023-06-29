@@ -13,7 +13,7 @@ class approvalController extends Controller
 
         $events = Event::where('status', 'waiting')->get();
 
-        return view('approval',[
+        return view('admin.approval',[
             'events' => $events
         ]);
 
@@ -21,7 +21,7 @@ class approvalController extends Controller
 
     public function detail(Event $event){
 
-        return view('approvalDetail', [
+        return view('admin.approvalDetail', [
             'event' => $event
         ]);
 
@@ -47,10 +47,6 @@ class approvalController extends Controller
         $url = '/approval';
 
         return redirect($url)->with('success', 'Events updated successfully');
-
-        // return view('approvalDetail', [
-        //     'event' => $event
-        // ]);
 
     }
 }
