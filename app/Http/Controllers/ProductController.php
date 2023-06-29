@@ -167,7 +167,7 @@ class ProductController extends Controller
             'cat_id' => $cat_id,
             'pg' => $pg,
             'namacat' => $namacat,
-            'search-box' => $request->query('search-box')
+            'search-box' => $request->query('search-box'),
         ]);
 
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DestinationController;
@@ -36,9 +37,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Route::get('/indexResult', [IndexController::class, 'result']);
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/index', [IndexController::class, 'index'])->name('index');
-Route::get('/index/result', [IndexController::class, 'result']);
 // Route::post('products', [IndexController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
@@ -75,6 +76,7 @@ Route::post('/createEvent', [EventController::class, 'create']);
 
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+Route::get('/destinationResult', [DestinationController::class, 'result']);
 
 Route::get('/createDestination', function () {
     return view('createDestination');
@@ -104,15 +106,13 @@ Route::post('/signout', [SigninController::class, 'signout']);
 Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup');
 
-Route::get('/approval', function(){
-    return view('approval', [
-        'events' => Event::all()
-    ]);
-})->name('approval');
+Route::get('/approval', [ApprovalController::class, 'show'])->name('approval');
+Route::post('/approvalDetail/{event:id}/edit', [ApprovalController::class, 'edit']);
+Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail']);
 
-Route::get('/approvalDetail', function () {
-    return view('approvalDetail');
-})->name('approvalDetail');
+// Route::get('/approvalDetail', function () {
+//     return view('approvalDetail');
+// })->name('approvalDetail');
 
 Route::get('/destinationDetail', function () {
     return view('destinationDetail');
