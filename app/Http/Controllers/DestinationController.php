@@ -15,4 +15,15 @@ class DestinationController extends Controller
             'categories' => Category::all()
         ]);
     }
+
+    public function result(Request $request){
+
+        $destinations = Destination::filter(request(['search-destination', 'category-destination']))
+        ->get();
+
+        return view('destinationResult', [
+            'destinations' => $destinations,
+
+        ]);
+    }
 }

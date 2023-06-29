@@ -38,6 +38,27 @@ input[type=text]{
     line-height: 24px;
     color: rgba(0, 0, 0, 0.49);
 }
+
+.not-found{
+    width: 98vw;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 42px;
+}
+
+.purple-but{
+    background-color: #522E93;
+    color: #FFFFFF;
+}
+
+#purple-but:hover{
+    background-color: #673AB7;
+}
 /* search */
 
 /* categories */
@@ -61,10 +82,10 @@ input[type=text]{
     /* height: 100%; */
     height: 40px;
     padding: 0px 20px;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     border: 1px solid #CDCDCD;
     /* box-shadow: 4px 4px 8px #CDCDCD; */
-    color: rgba(0, 0, 0, 0.73);
+    /* color: rgba(0, 0, 0, 0.73); */
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     font-size: 14px;
