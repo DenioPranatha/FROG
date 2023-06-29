@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="container">
-        <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate>
+        <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate enctype="multipart/form-data">
             @csrf
             <div class="container-left" data-aos="fade-right">
                 {{-- <p>Add image</p> --}}
@@ -19,11 +19,16 @@
                     <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer">
                         <i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i>
                     </label>
-                    <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;" onchange="showPreview(event)">
+                    <input type="file" name="image" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;" onchange="showPreview(event)" class="@error('image') is-invalid @enderror">
+                    @error('image')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="container-preview" id="preview-container">
                         <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()">
                         </label>
-                        <img id="img"></img>
+                        <img id="img">
                     </div>
                 </div>
                 <p>Add image</p>

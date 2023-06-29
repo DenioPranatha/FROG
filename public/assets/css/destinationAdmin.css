@@ -115,6 +115,7 @@
     background-color: white;
     padding-top: 1vw;
     padding-left: 1vw;
+    padding-bottom: 6px;
 }
 
 .form-group{
@@ -171,8 +172,8 @@
     /* box-shadow: 4px 4px 8px #CDCDCD; */
     /* border-radius: 17.5px; */
     margin-right: 9px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 11px;
+    padding-right: 11px;
     padding-bottom: 2px;
     display: flex;
     align-items: center;

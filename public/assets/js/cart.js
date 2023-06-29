@@ -303,6 +303,7 @@ window.onscroll = function(){
     }
 };
 
+
 // let minus = document.getElementById('minus');
 // let numMinus = document.getElementById('numMinus');
 // let plus = document.getElementById("plus");

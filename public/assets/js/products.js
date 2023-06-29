@@ -12,7 +12,7 @@ $(document).ready(function(){
         var lim = $('#myBtn1').val();
         var searchValue = $('#searchBox').val();
         $(this).fadeOut(100);
-        var categoryValue = $('#cat_id1').val();
+        var categoryValue = $('.categoriesCart.purple-but').attr('value');
         // var categoryValue = $('.categoriesCart').val();
         // console.log("ini");
         // console.log(categoryValue);
@@ -24,7 +24,7 @@ $(document).ready(function(){
         //input dari kolom search
         var searchValue = $('#searchBox').val();
         //input dari cat sekarang
-        var categoryValue = $('#cat_id1').val();
+        var categoryValue = $('.categoriesCart.purple-but').attr('value');
         //input berapa batch see more yg harus keload
         var lim = 1;
 
@@ -33,13 +33,15 @@ $(document).ready(function(){
     });
 
     // ketika category diklik
-    // $('.categoriesCart').on('click', function(){
-    //     //input dari cat sekarang
-    //     var categoryValue = $(this).attr('value');
-    //     //input berapa batch see more yg harus keload
-    //     var lim = 1;
-    //     loadFilteredContent(lim, categoryValue);
-    // });
+    $('.categoriesCart').on('click', function(){
+        $('.categoriesCart').removeClass('purple-but');
+        $(this).addClass('purple-but');
+
+        var categoryValue = $(this).attr('value');
+        var searchValue = $('#searchBox').val();
+        var lim = 1;
+        loadFilteredContent(lim, categoryValue, searchValue);
+    });
 
     function loadFilteredContent(lim, categoryValue, searchValue) {
         var url = '/products/result';

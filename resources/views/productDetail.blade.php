@@ -20,7 +20,8 @@
         <div class="upperPart d-flex">
             <div class="imgDiv" data-aos="fade-right">
                 {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
-                <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div>
+                <div class="productImage" style="background-image: url({{ asset('/storage').'/'.$product->image}} )"></div>
+                {{-- <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div> --}}
             </div>
             <div class="descDiv" data-aos="fade-left">
                 <p class="productName">{{ $product->name }}</p>

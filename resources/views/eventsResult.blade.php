@@ -13,7 +13,6 @@
     @if ($pg != -1)
         <div class="more-products">
             <div class="line1"></div>
-
             {{-- masukkin next batch berapa ketika klik button --}}
             <button class="more" id="myBtn1" value={{ $i }}>More Events</button>
             <div class="line1"></div>
