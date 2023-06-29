@@ -103,6 +103,7 @@ Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail']);
 
 
 Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->name('destinationAdmin');
+Route::get('/destinationAdmin/result', [DestinationAdminController::class, 'result']);
 Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminController::class, 'show'])->name('destinationDetailAdmin');
 Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'create'])->name('createDestinationAdmin');
 
