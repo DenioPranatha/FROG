@@ -6,7 +6,7 @@
         <div class="container">
             <div class="slider">
                 <div class="owl-carousel">
-                    @foreach ($destinations as $destination)
+                    @foreach ($popDestinations as $destination)
                         <a href="/destination">
                             <div class="slider-card">
                                 <div class="kotakLuar d-flex justify-content-center align-items-center mb-4">
