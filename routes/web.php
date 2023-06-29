@@ -77,6 +77,7 @@ Route::post('/createEvent', [EventController::class, 'create']);
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 Route::get('/destinationResult', [DestinationController::class, 'result']);
+Route::get('/destinationDetail/{destination:id}', [DestinationController::class, 'show'])->name('destinationDetail');
 
 Route::get('/createDestination', function () {
     return view('createDestination');
@@ -115,9 +116,9 @@ Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail']);
 //     return view('approvalDetail');
 // })->name('approvalDetail');
 
-Route::get('/destinationDetail', function () {
-    return view('destinationDetail');
-})->name('destinationDetail');
+// Route::get('/destinationDetail', function () {
+//     return view('destinationDetail');
+// })->name('destinationDetail');
 
 Route::get('/destinationDetailAdmin', function () {
     return view('admin.destinationDetailAdmin');
