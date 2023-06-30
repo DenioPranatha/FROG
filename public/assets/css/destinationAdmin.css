@@ -244,7 +244,9 @@
 
     .container-all-card{
         /* border: 1px solid red; */
-        gap: 2vw;
+        gap: 3vw;
+        
+        margin-left: 0px;
     }
     
     .container-card{
@@ -258,7 +260,7 @@
     }
     
     .card{
-        width: 42vw;
+        width: 40vw;
         height: 50vw;
         gap: 2.5vw;
         background-repeat: no-repeat;
@@ -272,7 +274,7 @@
     }
 
     .shadow{
-        width: 45vw;
+        width: 40vw;
         height: 50vw;
         gap: 2.5vw;
     
@@ -283,13 +285,15 @@
     
         padding-left: 2vw;
         padding-bottom: 1.5vw;
+
+        margin-left: 10px;
     }
     
     .head{
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 21px;
         color: #FFFFFF;
 
@@ -300,7 +304,7 @@
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 26px;
         color: #FFFFFF;
         /* border: 1px solid red; */
