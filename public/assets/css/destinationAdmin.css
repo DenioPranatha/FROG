@@ -202,3 +202,12 @@
     cursor: pointer;
     margin-right: 0.8vw;
 }
+
+.purple-but{
+    background-color: #522E93;
+    color: #FFFFFF;
+}
+
+#purple-but:hover{
+    background-color: #673AB7;
+}

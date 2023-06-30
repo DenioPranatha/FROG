@@ -22,7 +22,8 @@ class DestinationController extends Controller
         return view('destination', [
             'popDestinations' => $popDestinations,
             'destinations' => Destination::all(),
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'isAdmin' => 0,
         ]);
     }
 
@@ -33,7 +34,7 @@ class DestinationController extends Controller
 
         return view('destinationResult', [
             'destinations' => $destinations,
-
+            'isAdmin' => 0,
         ]);
     }
 
