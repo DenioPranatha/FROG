@@ -42,6 +42,6 @@ class DestinationAdminController extends Controller
         // dd($request);
         $delete = Destination::find($request->id);
         $delete->delete();
-        return redirect()->back()->with('deleted','destination deleted successfully');
+        return redirect('/destinationAdmin')->with('deleted','destination deleted successfully');
     }
 }
