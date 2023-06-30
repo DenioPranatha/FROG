@@ -34,6 +34,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    @if (session()->has('fail'))
+        <div class="alert alert-danger alert-dismissible fade show p-3 m-2" style="width: 100%" role="alert">
+            {{ session('fail') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
     <h1>Destination</h1>
     <div id="destinationResult">

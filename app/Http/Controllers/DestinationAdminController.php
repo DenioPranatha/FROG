@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Destination;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class DestinationAdminController extends Controller
@@ -42,9 +43,20 @@ class DestinationAdminController extends Controller
 
     public function destroy(Request $request){
         // dd($request);
-        $delete = Destination::find($request->id);
-        $delete->delete();
-        return redirect('/destinationAdmin')->with('deleted','destination deleted successfully');
+        $events = Event::all();
+        $flag = 0;
+        foreach($events as $event){
+            if($event->destination_id == $request->id){
+                $flag = 1;
+            }
+        }
+        if($flag == 1){
+            return redirect('/destinationAdmin')->with('fail','destination can\'t be deleted because there are events point on this destination');
+        }else{
+            $delete = Destination::find($request->id);
+            $delete->delete();
+            return redirect('/destinationAdmin')->with('deleted','destination deleted successfully!');
+        }
     }
 
     public function store(Request $request){

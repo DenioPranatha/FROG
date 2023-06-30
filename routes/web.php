@@ -51,7 +51,7 @@ Route::post('/cartAdd', [ProductController::class, 'add']);
 Route::post('/buyNow', [ProductController::class, 'buy']);
 
 Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct');
-Route::get('/addProduct', [ProductController::class, 'create'])->name('addProduct');
+Route::get('/addProduct/{event:id}', [ProductController::class, 'create'])->name('addProduct');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
