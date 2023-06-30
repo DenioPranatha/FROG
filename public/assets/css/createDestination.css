@@ -286,6 +286,10 @@ input[type=file]{
     transform: scale(1.04);
 }
 
+.msg-desc{
+    padding-left: 5vw;
+}
+
 /* Responsive Website */
 
 /* Ukuran Mobile */

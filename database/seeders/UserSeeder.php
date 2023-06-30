@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
         // <!-- 1 -->
         User::create([
             'name' => 'Ardo Damarjati',
+            'image' => 'user1.png',
             'username' => 'ardod',
             'email' => 'damarjatiardo@gmail.com',
             'phone' => '083891725775',
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
         // <!-- 2 -->
         User::create([
             'name' => 'Denio Pranatha',
+            'image' => 'user2.png',
             'username' => 'deniop',
             'email' => 'deniopranatha@gmail.com',
             'phone' => '081232120178',
@@ -39,6 +41,7 @@ class UserSeeder extends Seeder
         // <!-- 3 -->
         User::create([
             'name' => 'Nicole Felice',
+            'image' => 'user3.png',
             'username' => 'nikolp',
             'email' => 'nicolefeliceee@gmail.com',
             'phone' => '081994097967',
@@ -49,6 +52,7 @@ class UserSeeder extends Seeder
         // <!-- 4 -->
         User::create([
             'name' => 'Riskyaaa',
+            'image' => 'user4.png',
             'username' => 'riskyap',
             'email' => 'riskyaputra3004@gmail.com',
             'phone' => '081376092561',

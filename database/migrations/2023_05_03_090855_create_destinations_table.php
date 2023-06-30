@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('name', 55);
             $table->string('description', 755);
-            $table->string('image', 55);
+            $table->string('image', 255);
             $table->string('location', 55);
             $table->string('link', 500);
             $table->Integer('person_count');

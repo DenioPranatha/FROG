@@ -24,9 +24,6 @@ class IndexController extends Controller
         ->take(10)
         ->get();
 
-        //karna sekarang masih dikit yang terjual, pake events all dulu aj
-        // $events = Event::all();
-
         // ngambil 15 produk dgn penjualan tertinggi
         $products = Product::select('products.*', DB::raw("SUM(payment_details.qty) as SUM"))
             ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
@@ -35,33 +32,42 @@ class IndexController extends Controller
             ->take(15)
             ->get();
 
+        // ngambil 10 destination dgn events terbanyak
+        $popDestinations = Destination::select('destinations.*', DB::raw("COUNT(events.id) as TOTAL"))
+            ->join('events', 'events.destination_id', '=', 'destinations.id')
+            ->groupBy('destinations.id')
+            ->orderBy('TOTAL', 'DESC')
+            ->take(10)
+            ->get();
+
         // dd($events);
         // dd(Product::all());
 
         return view('index', [
             'events' => $events,
             'products' => $products,
-            'destinations' => Destination::all(),
+            'destinations' => $popDestinations,
             'productCategories' => ProductCategory::all()
         ]);
     }
 
-    public function result(Request $request)
-    {
-        //
-        $pg = (int)$request->query('pg');
-        $pge = 10*$pg;
-        $popEvents = Event::latest();
-        $events = Event::latest()->filter(request(['search-event']))->get();
-        $c = count($events);
-        $events = $events->take($pge);
-        // $popular = $popEvents->get();
-        // $cat = Category::limit(3)->get();
-        if($pge >= $c)$pg = -1;
+    // public function result(Request $request)
+    // {
+    //     $pg = (int)$request->query('pg');
+    //     $pge = 10*$pg;
+    //     $popEvents = Event::latest();
+    //     $events = Event::latest()->filter(request(['search-event']))->get();
+    //     $c = count($events);
+    //     $events = $events->take($pge);
+    //     // $popular = $popEvents->get();
+    //     // $cat = Category::limit(3)->get();
+    //     if($pge >= $c)$pg = -1;
 
-        $eventsHtml = view('indexResult', compact('events', 'pg'))->render();
+    //     return view('searchResult', [
+    //         'events' => $events,
+    //         'pg' => $pg
 
-        return $eventsHtml;
-    }
+    //     ]);
+    // }
 
 }

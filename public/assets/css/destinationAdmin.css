@@ -20,6 +20,7 @@
 .container-all-card{
     /* border: 1px solid red; */
     gap: 2vw;
+    padding-left: 2.5vw;
 }
 
 .container-card{
@@ -36,6 +37,7 @@
     gap: 2.5vw;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     border-radius: 20px;
 
     box-shadow: 4px 4px 8px rgba(205, 205, 205, 1);
@@ -49,7 +51,7 @@
 .shadow{
     width: 25vw;
     height: 32vw;
-    gap: 2.5vw;
+    /* gap: 2.5vw; */
 
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.385394) 53.44%, #000000 99.99%);
     border-radius: 20px;
@@ -61,19 +63,19 @@
 }
 
 .head{
-    font-family: 'Ubuntu';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 21px;
     color: #FFFFFF;
 }
 
 .sub{
-    font-family: 'Ubuntu';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 26px;
     color: #FFFFFF;
     /* border: 1px solid red; */
@@ -81,6 +83,8 @@
 
 .trash{
     margin-bottom: 0.4vw;
+    margin-left: auto;
+    margin-right: 0.4vw;
 }
 
 .add{
@@ -112,7 +116,9 @@
     top: 57px;
     z-index: 1;
     background-color: white;
-    margin-top: 2vw;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    padding-bottom: 6px;
 }
 
 .form-group{
@@ -144,7 +150,7 @@
     outline:none;
 }
 
-.bubble-box, #bubble-box{
+/* .bubble-box, #bubble-box{
     position: relative;
     height: 35px;
     background: #FFFFFF;
@@ -160,6 +166,31 @@
     justify-content: center;
 
     transition: .2s all ease-in-out;
+} */
+.bubble-box, #bubble-box{
+    position: relative;
+    height: 35px;
+    background: #FFFFFF;
+    /* border: 1px solid #CDCDCD; */
+    /* box-shadow: 4px 4px 8px #CDCDCD; */
+    /* border-radius: 17.5px; */
+    margin-right: 9px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+    border: 1px solid #CDCDCD;
+    /* border: 1px solid red; */
+    /* width: 25px; */
+
+    font-family: 'Poppins';
+    font-size: 14px;
+    transition: .2s all ease-in-out;
 }
 
 .bubble-box:hover{
@@ -172,6 +203,16 @@
     border: none;
     background: transparent;
     cursor: pointer;
+    margin-right: 0.8vw;
+}
+
+.purple-but{
+    background-color: #522E93;
+    color: #FFFFFF;
+}
+
+#purple-but:hover{
+    background-color: #673AB7;
 }
 
 /* Responsive Website */

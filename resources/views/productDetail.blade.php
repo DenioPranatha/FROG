@@ -8,8 +8,14 @@
 
 @section('content')
 @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
+    <div class="alert alert-success alert-dismissible fade show p-3" style="width: 85%; margin:auto; margin-top:5px;" role="alert">
         {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session()->has('fail'))
+    <div class="alert alert-danger alert-dismissible fade show p-3" style="width: 85%; margin:auto; margin-top:5px;" role="alert">
+        {{ session('fail') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
@@ -20,14 +26,15 @@
         <div class="upperPart ">
             <div class="imgDiv" data-aos="fade-right">
                 {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
-                <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div>
+                <div class="productImage" style="background-image: url({{ asset('/storage').'/'.$product->image}} )"></div>
+                {{-- <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div> --}}
             </div>
             <div class="descDiv" data-aos="fade-left">
                 <p class="productName">{{ $product->name }}</p>
                 <a href="/eventDetail/{{ $product->event->id }}" class="eventName">{{ $product->event->name }}</a>
                 {{-- <p class="productPrice">Rp{{ $product->price }}</p> --}}
                 <p class="productPrice">Rp. {{ number_format( $product->price , 0 , ' ' , ' ' ) }}</p>
-                
+
                 <p class="qtyText">Quantity:</p>
                 <div class="qtyStockDiv d-flex justify-content-start align-items-center">
                     <div class="qtyDiv d-flex justify-content-center align-items-center">
@@ -55,6 +62,7 @@
                         <input type="hidden" name="qty" id="qtyCart">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
+                        <input type="hidden" name="user_id" value="{{ $product->event->user->id }}">
                         <button onclick="addToCart()" class="btn p-0">
                             <div class="cart2 d-flex justify-content-center align-items-center">
                                 <div class="cartSvg">

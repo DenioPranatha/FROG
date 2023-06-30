@@ -1,5 +1,17 @@
 @if(count($products) != 0)
     <div class="products d-flex flex-wrap">
+        <div class="productCartPage">
+            <a href="/addProduct/{{ $event->id }}" class="custom-card">
+                <div class="card">
+                    <div class="add-icon">
+                       <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
+                    </div>
+                    <div class="caption-add">
+                        <p class="namaProduk">Add Product</p>
+                    </div>
+                </div>
+            </a>
+        </div>
         @foreach ($products as $product)
             @include('partials.productCart', ['product' => $product])
         @endforeach
