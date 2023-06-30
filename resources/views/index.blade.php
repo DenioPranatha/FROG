@@ -180,14 +180,12 @@
                             <p>{{ $productCategory->name }}</p>
                         </a> --}}
 
-                        <form action="/products" method="POST">
+                        <form action="/products" method="GET">
                             @csrf
-                            <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
-
+                            <input type="hidden" name="cat-id" value="{{ $productCategory->id }}">
                             <button type="submit" class="categoriesCart">
                                 <p>{{ $productCategory->name }}</p>
                             </button>
-
                         </form>
 
                     @endforeach
