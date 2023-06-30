@@ -1124,3 +1124,655 @@ textarea{
     flex-direction: row;
 
 }
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+
+    .container{
+        position: relative;
+        display: flex;
+        left: 0px;
+
+        /* background-color: red; */
+    }
+    
+    .checkout-box{
+        position: relative;
+        margin-left: 2%;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        width: 96%;
+
+        /* background-color: red; */
+        /* border: 1px solid red; */
+    }
+    
+    .checkout-title{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 22px;
+        color: #522E93;
+        font-weight: bold;
+    }
+    
+    .checkout-linebar{
+        background-color: #522E93;
+        color: #522E93;
+        border-width: 1px;
+        height: 1px;
+        top: 2px;
+        margin-top: 4px;
+        width: 410px;
+        margin-bottom: 15px;
+    }
+    
+    
+    .title-shipping-address{
+        position: relative;
+        display: flex;
+        gap: 4px;
+        color: #522E93;
+    }
+    
+    
+    .location-icon {
+        width: 5%;
+    }
+    
+    .shipping-address{
+        margin-top: 0px;
+        align-items: flex-start;
+        /* font-family: 'Ubuntu', sans-serif; */
+        font-family: 'Poppins';
+        font-size: 18px;
+        color: black;
+        font-weight:500;
+    }
+    
+    
+    .box-address{
+        background-color: #CDCDCD;
+        width: 100%;
+        height: 115px;
+        margin-top: 8px;
+        position: relative;
+        display: flex;
+        margin-bottom: 20px;
+        padding-right: 10px;
+    }
+
+    
+
+    .nama{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 14px;
+        color: black;
+        font-weight: bolder;
+        padding-bottom: 6px;
+    }
+
+    .nomor-telepon{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 14px;
+        color: black;
+        padding-bottom: 6px;
+    }
+
+    .alamat{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 12px;
+        color: black;
+        padding-bottom: 10px;
+    }
+
+    .change-address{
+        width: 150px;
+        height: 80px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        padding-top: 30px;
+        /* background-color: red; */
+    }
+    
+    .box-change-address{
+        width: 180px;
+        height: 54px;
+        display: flex;
+        box-sizing: border-box;
+        border: 3px solid #522E93;
+        /* border-radius: 25px; */
+        border-radius: 20px;
+        align-items: center;
+        align-content: center;
+        padding-left: 5px;
+        background-color: #CDCDCD;
+    
+        transition: .2s all ease-in-out;
+    }
+
+    .title-shipping-address{
+        position: relative;
+        display: flex;
+        gap: 4px;
+        color: #522E93;
+
+        /* background-color: red; */
+        font-size: 14px;
+        margin-left: 6px;
+    }
+    
+    
+    .shipping-address{
+        margin-top: 0px;
+        align-items: flex-start;
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: black;
+        font-weight:500;
+    }
+
+
+    .pen-icon {
+        display: none;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .title-ordered-product{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        display: flex;
+    
+    }
+    
+    .ordered-icon{
+        width: 5%;
+    }
+    
+    .ordered-product{
+        /* display: none; */
+
+        margin-top: 0px;
+        align-items: flex-start;
+        /* font-family: 'Ubuntu', sans-serif; */
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: black;
+        font-weight:500;
+        margin-left: 4px;
+    }
+    
+    .product-box{
+        /* border: 1px solid blue; */
+        /* padding-top: 10px; */
+    }
+
+    .event-linebar{
+        background-color: #522E93;
+        border-width: 1px;
+        height: 2px;
+        top: 0px;
+        margin-top: 0px;
+        width: 395px;
+        margin-left: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .product-detail-box{
+        position: relative;
+        display: flex;
+        gap: 10px;
+        padding-top: 1px;
+        margin-bottom: 18px;
+
+        /* border: 1px solid red; */
+    }
+    
+    .gambar-produk {
+        margin-left: 15px;
+        width: 170px;
+        height: 70px;
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        box-shadow: 4px 4px 8px #CDCDCD;
+        border-radius: 10px;
+    }
+    
+    .detail{
+        width: 420px;
+        height: 80px;
+        padding-top: 0px;
+
+        /* background-color: red; */
+    }
+
+    .title-product{
+        /* font-family: 'M PLUS 1'; */
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: #522E93;
+        font-weight: bolder;
+        margin-left: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .quantity{
+        /* font-family: 'M PLUS 1'; */
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: black;
+        font-weight: 400;
+        margin-left: 3px;
+        margin-bottom: 3px;
+    }
+    
+    .span-quantity{
+        /* font-family: 'M PLUS 1'; */
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: black;
+        font-weight:bolder;
+        margin-left: 3px;
+        margin-bottom: 3px;
+    }
+    
+    .harga{
+        margin-left: 30px;
+        /* border: 1px solid black; */
+        width: 250px;
+        height: 80px;
+        padding-top: 8px;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .title-harga{
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Ubuntu', sans-serif;
+        color: black;
+    }
+    .title-event{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 14px;
+        color: #522E93;
+        font-weight: 700;
+        margin-left: 12px;
+        margin-bottom: 3px;
+    }
+    
+    .option-shipping-box{
+        position: relative;
+        display: flex;
+        gap: 4px;
+        padding-top: 15px;
+    }
+    
+    .title-option-shipping{
+        position: relative;
+        display: flex;
+        gap: 4px;
+    }
+    
+    .shipping-icon{
+        width: 15%;
+    }
+
+    .shipping-option-title{
+        margin-top: 0px;
+        align-items: flex-start;
+        /* font-family: 'Ubuntu', sans-serif;
+        font-size: 22px; */
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: black;
+        font-weight:500;
+    }
+    
+    .grid-box{
+        display: none;
+
+        width: 750px;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        display: flex;
+        gap: 12px;
+
+        /* background-color: red; */
+    }
+    
+    .box-1{
+        display: none;
+
+        width: 12.3%;
+        height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 0px;
+    
+        /* border: 1.5px solid #CDCDCD;
+        box-shadow: 4px 4px 0px #CDCDCD; */
+    
+        text-decoration: none;
+        background-color:#FFFFFF;
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+        border: 1.5px solid #CDCDCD;
+        box-shadow: 4px 4px 8px #CDCDCD;
+        border-radius: 10px;
+    }
+
+    .gambar-jne{
+        width: 80px;
+        height: 60px;
+        margin-left: 5px;
+        margin-top: 0px;
+    
+        position: relative;
+        justify-content: center;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* padding-bottom: 100px; */
+    }
+    
+    .gambar-pos{
+        margin-top: 0px;
+        margin-left: -4px;
+        width: 160px;
+        height: 50px;
+    
+        position: relative;
+        justify-content: center;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .gambar-jnt{
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 50px;
+        height: 50px;
+    
+        position: relative;
+        justify-content: center;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .gambar-tiki{
+        margin-top: 0px;
+        margin-left: 0px;
+        width: 130px;
+        height: 15px;
+    
+        position: relative;
+        justify-content: center;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .option-payment-box{
+        position: relative;
+        display: flex;
+        gap: 4px;
+        padding-top: 15px;
+    }
+    
+    .title-option-payment{
+        position: relative;
+        display: flex;
+        gap: 4px;
+    
+    }
+    
+    .payment-icon{
+        width: 10%;
+    }
+    
+    .payment-option-title{
+        margin-top: 0px;
+        align-items: flex-start;
+        /* font-family: 'Ubuntu', sans-serif;
+        font-size: 22px; */
+        font-family: 'Poppins';
+        font-size: 14px;
+        color: black;
+        font-weight:500;
+    }
+    
+    .gambar-bca{
+        width: 80px;
+        height: 55px;
+        margin-top: -5px;
+        margin-left: 0px;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .gambar-gopay {
+        margin-left: 0px;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        width: 110px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    
+    .gambar-dana{
+        margin-top: 0px;
+        margin-left: 0px;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        width: 100px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    
+    .gambar-spay{
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        width: 70px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+
+    .box-2 {
+        display: none;
+
+        width: 12.3%;
+        height: 90%;
+        /* width: 250px;
+        height: 100px; */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 0px;
+        /* border: 1.5px solid #CDCDCD;
+        box-shadow: 4px 4px 0px #CDCDCD; */
+    
+        text-decoration: none;
+        background-color:#FFFFFF;
+    
+        border: 1.5px solid #CDCDCD;
+        box-shadow: 4px 4px 8px #CDCDCD;
+        border-radius: 10px;
+    /*
+        width: 150px;
+        height: 130px; */
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .view-box-change-address{
+
+        border: 1px solid black;
+        width: 400px;
+        height: auto;
+    
+        margin-left: 404px;
+    
+        background-color: #FFFFFF;
+    
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    
+        margin-bottom: 30px;
+    
+        padding-left: 20px;
+        padding-top: 20px;
+        /* padding-top: 50px; */
+    
+        background: #FFFFFF;
+        border: 3px solid #522E93;
+    
+        border-radius: 10px;
+    
+        margin-top: 50px;
+    
+    }
+    
+    .current-address-title{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .new-address textarea{
+        /* display: none; */
+        width: 313px;
+        border-radius: 10px;
+    }
+
+    .summary-checkout{
+        display: block;
+        /* border: 2px solid red; */
+        width: 365px;
+        height: 310px;
+        align-items: baseline;
+        margin-top: 100px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 0px 0px #522E93;
+        border: 2px solid #522E93;
+        position: fixed;
+        display: block;
+        margin-left: 870px;
+        margin-top: 20px;
+    
+        box-shadow: 4px 4px 8px #522E93;
+        border-radius: 20px;
+    
+    }
+    
+    .box-summary {
+        margin-left: 10px;
+        margin-top: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+    
+    
+    }
+
+    .gabung-box{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        /* gap: 20px; */
+    }
+
+    .summary-checkout{
+        /* border: 2px solid red; */
+        /* background-color: red; */
+        width: 365px;
+        height: 310px;
+        align-items: baseline;
+        margin-top: 100px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 0px 0px #522E93;
+        border: 2px solid #522E93;
+        position: fixed;
+        display: block;
+        margin-left: 870px;
+        margin-top: 20px;
+    
+        box-shadow: 4px 4px 8px #522E93;
+        border-radius: 20px;
+    
+    }
+    
+    .box-summary {
+        background-color: red;
+        /* margin-left: 10px; */
+        margin-top: 30px;
+        /* padding-left: 5px; */
+        padding-right: 5px;
+    
+    
+    }
+    
+    .title-checkout-summary{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        color: #522E93;
+    }
+}

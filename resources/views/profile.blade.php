@@ -7,8 +7,8 @@
 @section('title', 'Profile')
 
 @section('content')
-    <div id="main" class="outer-container-main">
-        <div  class="container d-flex flex-row justify-content-center align-items-center">
+    <div id="main" class="outer-container-main" >
+        <div  class="container  justify-content-center align-items-center">
             <div class="left-side d-flex flex-column justify-content-center align-items-center" data-aos="fade-right">
                 <div class="img-container  rounded-circle" style="background-image: url({{ asset('/assets/img/Vector.png') }})"></div>
                 {{-- <h3>Alfredo Kusuma Wijaya</h3> --}}

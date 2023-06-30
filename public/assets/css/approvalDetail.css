@@ -107,3 +107,115 @@
     transform: scale(1.04);
 }
 
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+    .desc-container{
+        width: 90vw;
+        /* margin: 40px; */
+        margin-left: -2px;
+        display: flex;
+        flex-direction: column;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        margin-bottom: 8vw;
+
+        /* background-color: red; */
+    }
+    
+    .desc{
+        display: flex;
+        flex-direction: column;
+        gap: 5vw;
+        width: 100%;
+        padding-left: 2vw;
+        padding-right: 2vw;
+
+        /* border: 1px solid red; */
+        margin-left: 20px;
+        height: fit-content;
+    }
+    
+    .desc-img{
+        width: 100%;
+        height: 300px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+        border: 1px solid #CDCDCD;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .desc-headline{
+        font-family: 'M PLUS 1';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 36px;
+    
+        color: #000000;
+    }
+
+   
+    
+    .desc-caption{
+        font-family: 'M PLUS 1';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: justify;
+    
+        color: #000000;
+    }
+
+    .button-container{
+        margin-top: 3vw;
+        gap: 4vw;
+
+        /* border: 1px solid red; */
+    }
+    
+    .reject{
+        width: 25vw;
+        height: 10vw;
+        background: #FFFFFF;
+        border: 3px solid #522E93;
+        border-radius: 30px;
+    
+        font-family: 'M PLUS 1';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        color: #522E93;
+    
+        transition: .2s all ease-in-out;
+    }
+
+    
+    .approve{
+        width: 25vw;
+        height: 10vw;
+        border: 3px solid #522E93;
+        background: #522E93;
+        border-radius: 30px;
+        color: #FFFFFF;
+    
+        font-family: 'M PLUS 1';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+    
+        transition: .2s all ease-in-out;
+    }
+    
+
+}

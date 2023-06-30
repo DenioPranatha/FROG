@@ -41,10 +41,10 @@
             <div class="desc-caption">
                 {{ $event->description }}
             </div>
-            <div><b>Created By:</b> {{ $event->user->username }}</div>
-            <div><b>Event Duration:</b> {{ $start->format("d M Y") }} - {{ $end->format("d M Y")}}</div>
-            <div><b>Charity Destination:</b> {{ $event->destination->name }}</div>
-            <div><b>Category:</b> {{ $event->destination->category->name }}</div>
+            <div class="text"><b>Created By:</b> {{ $event->user->username }}</div>
+            <div class="text"><b>Event Duration:</b> {{ $start->format("d M Y") }} - {{ $end->format("d M Y")}}</div>
+            <div class="text"><b>Charity Destination:</b> {{ $event->destination->name }}</div>
+            <div class="text"><b>Category:</b> {{ $event->destination->category->name }}</div>
         </div>
     </div>
 

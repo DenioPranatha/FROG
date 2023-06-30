@@ -17,7 +17,7 @@
     @csrf --}}
     {{-- <input type="hidden" name="product_id" value="{{ $product->id }}"> --}}
     <div class="productDetail">
-        <div class="upperPart d-flex">
+        <div class="upperPart ">
             <div class="imgDiv" data-aos="fade-right">
                 {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
                 <div class="productImage" style="background-image: url({{ asset("assets/images/product"."/". $product->image) }})"></div>
@@ -107,7 +107,8 @@
                 </div>
                 <div class="otherLine ms-3"></div>
             </div>
-            <div class="products2 d-flex flex-wrap" data-aos="fade-up">
+            {{-- d-flex flex-wrap --}}
+            <div class="products2 " data-aos="fade-up">
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])
                 @endforeach
