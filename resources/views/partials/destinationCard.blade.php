@@ -1,6 +1,7 @@
 <a href="/destinationDetail/{{ $destination->id }}" class="kotak">
     <div class="container-card d-flex flex-row justify-content-center">
-        <div class="card d-flex flex-row align-items-end" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div>
+        {{-- <div class="card d-flex flex-row align-items-end" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div> --}}
+        <div class="card d-flex flex-row align-items-end" style="background-image: url({{ asset('/storage').'/'.$destination->image}} )"></div>
 
         <div class="shadow d-flex align-items-end justify-content-center">
             <div class="text">

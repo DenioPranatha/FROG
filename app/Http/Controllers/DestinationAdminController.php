@@ -24,7 +24,9 @@ class DestinationAdminController extends Controller
     }
 
     public function create(){
-        return view('admin.createDestinationAdmin');
+        return view('admin.createDestinationAdmin', [
+            'categories' => Category::all()
+        ]);
     }
 
     public function result(Request $request){
@@ -43,5 +45,21 @@ class DestinationAdminController extends Controller
         $delete = Destination::find($request->id);
         $delete->delete();
         return redirect('/destinationAdmin')->with('deleted','destination deleted successfully');
+    }
+
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'category_id' => 'required',
+            'name' => 'required|min:3|max:45',
+            'description' => 'required|max:750',
+            'image' => 'required|image|file',
+            'location' => 'required|min:3|max:50',
+            'link' => 'required|url|min:3|max:500',
+            'person_count' => 'required|numeric|min:1',
+            'contact' => 'required|numeric|digits_between:9,13'
+        ]);
+        $validatedData['image'] = $request->file('image')->store('destination-images');
+        Destination::create($validatedData);
+        return redirect('/destinationAdmin')->with('success', 'New destination has been added!');
     }
 }

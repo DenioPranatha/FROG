@@ -8,19 +8,19 @@
 
 @section('content')
 <div class="container">
-        <form id="form" class="needs-validation" novalidate>
+        <form action="/createDestinationAdmin" method="post" id="form" class="needs-validation" novalidate enctype="multipart/form-data">
+            @csrf
             <div class="container-left" data-aos="fade-right">
                 <div class="img-container">
-                    {{-- <button id="input-label" class="button-img" onclick="document.getElementById('img-input').click()"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></button>
-                    <input type="file" id="img-input" accept=".jpg,.jpeg,.png" onchange="showPreview(event)"> --}}
-                    {{-- <img id="img"> --}}
-                {{-- <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer"><i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i></label>
-                    <input type="file" accept=".jpg,.jpeg,.png" id="file" style="display:none; visibility:none;" onchange="showPreview(event)">
-                    <div id="img"></div> --}}
                     <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()" style="cursor: pointer">
                         <i class="bi bi-plus" style="font-size: 10vw; color:#673AB7;"></i>
                     </label>
-                    <input type="file" id="img-input" accept=".jpg,.jpeg,.png" id="file" style="visibility:none;" onchange="showPreview(event)">
+                    <input class="@error('image') is-invalid @enderror" name="image" type="file" id="img-input" accept=".jpg,.jpeg,.png" id="file" style="visibility:none;" onchange="showPreview(event)">
+                    @error('image')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="container-preview" id="preview-container">
                         <label for="file" id="input-label" class="button-img" onclick="document.getElementById('img-input').click()">
                         </label>
@@ -30,58 +30,81 @@
                 <p>Add Destination Image</p>
             </div>
             <div class="container-right" data-aos="fade-left">
+
                 <p>Create Destination</p>
+
                 <div class="destination-name-container">
-                    <input class="form-control" placeholder="Destination Name" type="text" name="destination-name" id="destination-name" minlength="3" maxlength="15" required />
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Product Name
-                    </div>
+                    <input value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Destination Name" type="text" name="name" id="destination-name" required />
+                    @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="contact-container">
-                    <input class="form-control" placeholder="Contact Person" type='tel' name="contact-name" id="contact" onkeypress="return onlyNumberKey(event)"  required />
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Product Name
-                    </div>
+                    <input value="{{ old('contact') }}" class="form-control @error('contact') is-invalid @enderror" placeholder="Contact Person" type='tel' name="contact" id="contact" onkeypress="return onlyNumberKey(event)"  required />
+                    @error('contact')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="person-container">
-                    <input class="form-control" placeholder="Person Count" type="number" name="person-name" id="person-name" min=1 max=28 onkeyup=imposeMinMax(this) required />
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Product Name
-                    </div>
+                    <input value="{{ old('person_count') }}" class="form-control @error('person_count') is-invalid @enderror" placeholder="Person Count" type="number" name="person_count" id="person-name" onkeyup=imposeMinMax(this) required />
+                    @error('person_count')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="category-container">
-                    <select  name="product-category" id="product-category" class="form-control" required>
+                    <select name="category_id" id="product-category" class="form-control @error('category_id') is-invalid @enderror" required>
                         <option value="" disabled selected>Destination Category</option>
-                        <option value="Category1">Category1</option>
-                        <option value="Category2">Category2</option>
-                        <option value="Category3">Category3</option>
-                        <option value="Category4">Category4</option>
-                        <option value="/destination">See All Description</option>
+                        @foreach ($categories as $category)
+                            @if (old('category_id') == $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                            @else
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endif
+                        @endforeach
                     </select>
-                    {{-- <i class="bi bi-caret-down-fill"></i> --}}
-                    <div class="invalid-feedback">
-                        Please Select your Category
-                    </div>
+                    @error('category_id')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="location-container">
-                    <input class="form-control" placeholder="Destination Location" type="text" name="location-name" id="location-name" minlength="3" maxlength="15" required />
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Product Name
-                    </div>
+                    <input value="{{ old('location') }}" class="form-control @error('location') is-invalid @enderror" placeholder="Destination Location" type="text" name="location" id="location-name" required />
+                    @error('location')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
+
                 <div class="maps-container">
-                    <input class="form-control" placeholder="Link Maps Location" type="text" name="maps-name" id="maps-name" minlength="3" maxlength="15" required />
-                    <div id="invalid-feedback1" class="invalid-feedback">
-                        Please Input your Product Name
+                    <input value="{{ old('link') }}" class="form-control @error('link') is-invalid @enderror" placeholder="Link Maps Location" type="text" name="link" id="maps-name" required />
+                    @error('link')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="product-desc" placeholder="Destination Description" required >{{ old('description') }}</textarea>
+                @error('description')
+                    <div class="invalid-feedback m-0 msg-desc">
+                        {{ $message }}
                     </div>
-                </div>
-                <textarea class="form-control" name="product-desc" id="product-desc" placeholder="Destination Description" maxlength="450" required ></textarea>
-                <div class="invalid-feedback desc-invalid">
-                    Please Input your Description
-                </div>
+                @enderror
+
                 <div class="d-flex justify-content-center align-items-center">
-                    {{-- <input type="submit" name="submit" value="Add Event"/> --}}
-                    <button type="submit" name="submit" value="Add Event">Add Event</button>
+                    <button type="submit" class="px-3 fs-6">Add Destination</button>
                 </div>
             </div>
         </form>
@@ -90,7 +113,7 @@
 
 @section('js')
     <script type="text/javascript" src="{{URL::asset('assets/js/createDestination.js')}}"></script>
-    <script>
+    {{-- <script>
         (function () {
             'use strict'
 
@@ -108,5 +131,5 @@
             }, false)
             })
         })()
-    </script>
+    </script> --}}
 @endsection

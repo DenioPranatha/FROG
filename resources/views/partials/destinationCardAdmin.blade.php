@@ -1,6 +1,6 @@
 <a href="/destinationDetailAdmin/{{ $destination->id }}">
     <div class="container-card d-flex flex-row">
-        <div class="card d-flex flex-row align-items-end" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div>
+        <div class="card d-flex flex-row align-items-end" style="background-image: url({{ asset('/storage').'/'.$destination->image}} )"></div>
 
         <div class="shadow d-flex flex-row align-items-end">
             <div class="text">

@@ -107,6 +107,7 @@ Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->n
 Route::get('/destinationAdmin/result', [DestinationAdminController::class, 'result']);
 Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminController::class, 'show'])->name('destinationDetailAdmin');
 Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'create'])->name('createDestinationAdmin');
+Route::post('/createDestinationAdmin', [DestinationAdminController::class, 'store'])->name('createDestinationAdmin');
 
 Auth::routes();
 
