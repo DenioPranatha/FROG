@@ -27,6 +27,14 @@
             <button class="bubble-box"  value="{{ $category->name }}">{{ $category->name }}</button>
         @endforeach
     </div>
+
+    @if (session()->has('deleted'))
+        <div class="alert alert-success alert-dismissible fade show p-3 m-2" style="width: 100%" role="alert">
+            {{ session('deleted') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <h1>Destination</h1>
     <div id="destinationResult">
         @include('destinationResult')

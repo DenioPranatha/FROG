@@ -94,14 +94,15 @@ Route::post('/approvalDetail/{event:id}/edit', [ApprovalController::class, 'edit
 Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail']);
 
 // Route::get('/approvalDetail', function () {
-//     return view('approvalDetail');
-// })->name('approvalDetail');
+    //     return view('approvalDetail');
+    // })->name('approvalDetail');
 
-// Route::get('/destinationDetail', function () {
-//     return view('destinationDetail');
-// })->name('destinationDetail');
+    // Route::get('/destinationDetail', function () {
+        //     return view('destinationDetail');
+        // })->name('destinationDetail');
 
 
+Route::post('/destinationDelete', [DestinationAdminController::class, 'destroy']);
 Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->name('destinationAdmin');
 Route::get('/destinationAdmin/result', [DestinationAdminController::class, 'result']);
 Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminController::class, 'show'])->name('destinationDetailAdmin');

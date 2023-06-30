@@ -37,4 +37,11 @@ class DestinationAdminController extends Controller
             'isAdmin' => 1,
         ]);
     }
+
+    public function destroy(Request $request){
+        // dd($request);
+        $delete = Destination::find($request->id);
+        $delete->delete();
+        return redirect()->back()->with('deleted','destination deleted successfully');
+    }
 }
