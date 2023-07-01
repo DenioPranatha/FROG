@@ -2,14 +2,15 @@
     <link rel="stylesheet" href="{{ asset('assets/css/destinationDetailAdmin.css') }}">
 @endsection
 
-@extends('admin.mainAdmin')
+{{-- @extends('admin.mainAdmin') --}}
+@extends('layouts.main')
 
 @section('title', 'Destination')
 
 @section('content')
 <div class="padding">
     <div class="container d-flex flex-column justify-content-center align-items-center">
-        <div class="destination-image" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image }})"></div>
+        <div class="destination-image" style="background-image: url({{ asset('/storage').'/'.$destination->image}} )"></div>
         <div class="destination-name">
             {{ $destination->name }}
         </div>
@@ -40,12 +41,16 @@
                     Location
                 </button>
             </a>
-            <button class="d-flex flex-row align-items-center justify-content-center button-two">
-                <svg width="18" height="27" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.4038 11.737L20.8621 14.4041L2.16167 3.6124L3.70333 0.945312L8.39 3.64323L10.4867 3.07281L17.1621 6.92698L17.7325 9.03906L22.4038 11.737ZM0.25 27.2924V8.7924H8.06625L18.75 14.9591V27.2924C18.75 28.1101 18.4251 28.8944 17.8469 29.4726C17.2687 30.0509 16.4844 30.3757 15.6667 30.3757H3.33333C2.51558 30.3757 1.73132 30.0509 1.15309 29.4726C0.57485 28.8944 0.25 28.1101 0.25 27.2924Z" fill="#522E93"/>
-                </svg>
-                Delete Destination
-            </button>
+            <form action="/destinationDelete" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{ $destination->id }}">
+                <button class="d-flex flex-row align-items-center justify-content-center button-two">
+                    <svg width="18" height="27" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.4038 11.737L20.8621 14.4041L2.16167 3.6124L3.70333 0.945312L8.39 3.64323L10.4867 3.07281L17.1621 6.92698L17.7325 9.03906L22.4038 11.737ZM0.25 27.2924V8.7924H8.06625L18.75 14.9591V27.2924C18.75 28.1101 18.4251 28.8944 17.8469 29.4726C17.2687 30.0509 16.4844 30.3757 15.6667 30.3757H3.33333C2.51558 30.3757 1.73132 30.0509 1.15309 29.4726C0.57485 28.8944 0.25 28.1101 0.25 27.2924Z" fill="#522E93"/>
+                    </svg>
+                    Delete Destination
+                </button>
+            </form>
         </div>
     </div>
 </div>

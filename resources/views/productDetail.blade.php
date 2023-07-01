@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/productDetail.css">
+    {{-- <link rel="stylesheet" href="/assets/css/productDetail.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/productDetail.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -8,16 +9,22 @@
 
 @section('content')
 @if (session()->has('success'))
-    {{-- <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
+    <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div> --}}
+    </div>
+@endif
+@if (session()->has('fail'))
+    <div class="alert alert-danger alert-dismissible fade show p-3" style="width: 85%; margin:auto; margin-top:5px;" role="alert">
+        {{ session('fail') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 @endif
 {{-- <form action="" method="post">
     @csrf --}}
     {{-- <input type="hidden" name="product_id" value="{{ $product->id }}"> --}}
     <div class="productDetail">
-        <div class="upperPart d-flex">
+        <div class="upperPart ">
             <div class="imgDiv" data-aos="fade-right">
                 {{-- <div class="productImage" style="background-image: url({{ asset("assets/img/gelang.png") }})"></div> --}}
                 <div class="productImage" style="background-image: url({{ asset('/storage').'/'.$product->image}} )"></div>
@@ -56,7 +63,7 @@
                         <input type="hidden" name="qty" id="qtyCart">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
-                        <button onclick="addToCart();swal(value,'','success')" class="btn p-0" id="type-success" value="Product Has Been Added">
+                        <button onclick="addToCart()" class="btn p-0">
                             <div class="cart2 d-flex justify-content-center align-items-center">
                                 <div class="cartSvg">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +115,8 @@
                 </div>
                 <div class="otherLine ms-3"></div>
             </div>
-            <div class="products2 d-flex flex-wrap" data-aos="fade-up">
+            {{-- d-flex flex-wrap --}}
+            <div class="products2 " data-aos="fade-up">
                 @foreach ($products as $product)
                     @include('partials.productCart', ['product' => $product])
                 @endforeach

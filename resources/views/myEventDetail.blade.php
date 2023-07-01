@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/myEventDetail.css">
+    {{-- <link rel="stylesheet" href="/assets/css/myEventDetail.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/myEventDetail.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -7,7 +8,6 @@
 @section('title', 'Event Detail')
 
 @section('content')
-
     {{-- Content Main --}}
     <div id="main-content" class="container-maincontent" style="display: {{ $isEdit == 0 ? 'block' : 'none' }}">
         <div class="desc-container">
@@ -101,7 +101,7 @@
             <div class="carousel-item">
                 <section class="catalog-container" id="section1">
                     <div class="productsDiv">
-                        @include('productsResult')
+                        @include('myProductsResult')
                     </div>
                 </section>
             </div>

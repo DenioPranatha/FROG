@@ -86,3 +86,101 @@
 .container button:hover{
     transform: scale(1.04);
 }
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+    .padding{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .container{
+        border: none;
+        width: 100%;
+        margin-top: 5vw;
+        margin-bottom: 10vw;
+        background-color: #522e93;
+        padding-top: 5vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        gap: 2vw;
+    }
+    
+    .destination-image{
+        border-radius: 15px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 70vw;
+        height: 45vw;
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .destination-name{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    
+        color: #FFFFFF;
+    }
+    
+    .destination-person{
+        gap: 1vw;
+        font-family: 'Poppins';
+        font-style:normal;
+        /* font-weight: 700; */
+        font-size: 13px;
+        margin-bottom: 4px;
+    
+        color: #FFFFFF;
+    }
+    
+    .destination-location{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-size: 13px;
+        color: #FFFFFF;
+
+        margin-bottom: 20px;
+    }
+
+    .destination-desc{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 100;
+        font-size: 12px;
+        text-align: justify;
+        line-height: 24px;
+        margin-bottom: 20px;
+    
+        color: #FFFFFF;
+    }
+    
+    .container button{
+        margin-top: 3vw;
+        margin-bottom: 10vw;
+    
+        gap: 0.5vw;
+        border: none;
+        width: 32vw;
+        height: 8vw;
+        border-radius: 15px;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 27px;
+    
+        color: #522E93;
+
+
+    }
+    
+    
+}

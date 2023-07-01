@@ -1,5 +1,5 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/addProduct.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/addProduct.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -10,6 +10,7 @@
     <div class="container">
         <form action="/addProduct" method="POST" id="form" class="needs-validation" novalidate enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="event_id" value="{{ $event->id }}">
             <div class="container-left" data-aos="fade-right">
                 {{-- <p>Add image</p> --}}
                 <div class="img-container">

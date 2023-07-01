@@ -24,9 +24,6 @@ class IndexController extends Controller
         ->take(10)
         ->get();
 
-        //karna sekarang masih dikit yang terjual, pake events all dulu aj
-        // $events = Event::all();
-
         // ngambil 15 produk dgn penjualan tertinggi
         $products = Product::select('products.*', DB::raw("SUM(payment_details.qty) as SUM"))
             ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
@@ -35,13 +32,21 @@ class IndexController extends Controller
             ->take(15)
             ->get();
 
+        // ngambil 10 destination dgn events terbanyak
+        $popDestinations = Destination::select('destinations.*', DB::raw("COUNT(events.id) as TOTAL"))
+            ->join('events', 'events.destination_id', '=', 'destinations.id')
+            ->groupBy('destinations.id')
+            ->orderBy('TOTAL', 'DESC')
+            ->take(10)
+            ->get();
+
         // dd($events);
         // dd(Product::all());
 
         return view('index', [
             'events' => $events,
             'products' => $products,
-            'destinations' => Destination::all(),
+            'destinations' => $popDestinations,
             'productCategories' => ProductCategory::all()
         ]);
     }

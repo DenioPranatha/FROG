@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/index.css">
+    {{-- <link rel="stylesheet" href="/assets/css/index.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -88,6 +89,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- <p>keren bet lo</p> --}}
             </div>
         </div>
         <div class="recommendDiv">
@@ -142,12 +144,21 @@
                         <div class="slider">
                             <div class="owl-carousel">
                                 @foreach ($destinations as $destination)
-                                    <a href="/destination">
+                                    @guest
+                                        <a href="/destinationDetail/{{ $destination->id }}">
+                                    @endguest
+                                    @can('user')
+                                        <a href="/destinationDetail/{{ $destination->id }}">
+                                    @endcan
+                                    @can('admin')
+                                        <a href="/destinationDetailAdmin/{{ $destination->id }}">
+                                    @endcan
+                                    {{-- <a href="/destinationDetail/{{ $destination->id }}"> --}}
                                         <div class="slider-card">
                                             <div class="kotakLuar d-flex justify-content-center align-items-center mb-4">
                                                 {{-- <div class="destImg" style="background-image: url({{ asset("/assets/img/banner.png") }})"></div> --}}
                                                 {{-- <img src="{{ asset("/assets/img/PantiAsuhan.png") }}" alt="" > --}}
-                                                <div class="destImg" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div>
+                                                <div class="destImg" style="background-image: url({{ asset('/storage').'/'.$destination->image}} )"></div>
                                             </div>
                                             <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
                                             <div class="charityLoc pt-1 d-flex justify-content-center align-items-center">
@@ -162,7 +173,15 @@
                     </div>
                 </section>
                 <div class="btnDiv w-100 h-100 d-flex justify-content-center">
-                    <a class="btn btn-1 btn-2" href="/destination" role="button">
+                    @guest
+                        <a class="btn btn-1 btn-2" href="/destination" role="button">
+                    @endguest
+                    @can('user')
+                        <a class="btn btn-1 btn-2" href="/destination" role="button">
+                    @endcan
+                    @can('admin')
+                        <a class="btn btn-1 btn-2" href="/destinationAdmin" role="button">
+                    @endcan
                         <div class="findDest">
                             <p>Find Destination</p>
                             <i class="bi bi-arrow-right-short"></i>
@@ -180,14 +199,12 @@
                             <p>{{ $productCategory->name }}</p>
                         </a> --}}
 
-                        <form action="/products" method="POST">
+                        <form action="/products" method="GET">
                             @csrf
-                            <input type="hidden" name="cat_id" value="{{ $productCategory->id }}">
-
+                            <input type="hidden" name="cat-id" value="{{ $productCategory->id }}">
                             <button type="submit" class="categoriesCart">
                                 <p>{{ $productCategory->name }}</p>
                             </button>
-
                         </form>
 
                     @endforeach

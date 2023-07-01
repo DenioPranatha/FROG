@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/products.css">
+    {{-- <link rel="stylesheet" href="assets/css/products.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/products.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -22,9 +23,9 @@
         </div>
         <div class="categoriesDiv" data-aos="fade-up">
             <div class="categories">
-                <button class="categoriesCart purple-but" value="0"><p>All</p></button>
+                <button class="categoriesCart {{ $cat_id == 0 ? 'purple-but' : '' }}" value="0"><p>All</p></button>
                 @foreach ($productCategories as $productCategory)
-                    <button class="categoriesCart" value="{{ $productCategory->id }}">
+                    <button class="categoriesCart {{ $cat_id == $productCategory->id ? 'purple-but' : '' }}" value="{{ $productCategory->id }}">
                         <p>{{ $productCategory->name }}</p>
                     </button>
                 @endforeach

@@ -10,7 +10,7 @@
 @section('content')
 <div class="padding">
     <div class="container d-flex flex-column justify-content-center align-items-center">
-        <div class="destination-image" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image }})"></div>
+        <div class="destination-image" style="background-image: url({{ asset('/storage').'/'.$destination->image}} )"></div>
         <div class="destination-name">
             {{ $destination->name }}
         </div>

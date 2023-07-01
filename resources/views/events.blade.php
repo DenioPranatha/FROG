@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/events.css">
+    {{-- <link rel="stylesheet" href="/assets/css/events.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/events.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -62,7 +63,7 @@
             </div>
         </form>
 
-        <button class="bubble-box" value="All">All</button>
+        <button class="bubble-box purple-but" value="All">All</button>
         @foreach ($cat as $c)
             <button class="bubble-box" value="{{ $c->name }}">{{ $c->name }}</button>
         @endforeach

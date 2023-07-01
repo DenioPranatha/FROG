@@ -1,5 +1,7 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/checkout.css">
+    {{-- <link rel="stylesheet" href="assets/css/checkout.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/checkout.css') }}">
+
     <link rel="stylesheet" href="sweetalert2.min.css">
 
     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>` --}}

@@ -1,4 +1,3 @@
-
 const myCarouselElement = document.querySelector('#carouselExample')
 
 const Carousel = new bootstrap.Carousel(myCarouselElement, {
@@ -15,11 +14,6 @@ if(window.matchMedia("(min-width:576px)").matches){
     var counter = 0;
     var scrollPosition = 0;
     var bannerPosition = 0;
-
-    // $('.banner').on(true, function(){
-
-
-    // });
 
     $('.carousel-control-next').on('click', function(){
         if(scrollPosition < (carousel-(cardWidth*5))){

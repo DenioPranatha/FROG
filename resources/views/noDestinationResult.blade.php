@@ -7,10 +7,10 @@
             <div class="slider">
                 <div class="owl-carousel">
                     @foreach ($popDestinations as $destination)
-                        <a href="/destination">
+                        <a href="/destinationDetail/{{ $destination->id }}">
                             <div class="slider-card">
                                 <div class="kotakLuar d-flex justify-content-center align-items-center mb-4">
-                                    <div class="destImg" style="background-image: url({{ asset('/assets/images/destination').'/'.$destination->image}} )"></div>
+                                    <div class="destImg" style="background-image: url({{ asset('/storage').'/'.$destination->image}} )"></div>
                                 </div>
                                 <h5 class="mb-0 text-center charityText"><b>{{ $destination->name }}</b></h5>
                                 <div class="charityLoc pt-1 d-flex justify-content-center align-items-center">

@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/profile.css">
+    {{-- <link rel="stylesheet" href="assets/css/profile.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -7,8 +8,8 @@
 @section('title', 'Profile')
 
 @section('content')
-    <div id="main" class="outer-container-main">
-        <div  class="container d-flex flex-row justify-content-center align-items-center">
+    <div id="main" class="outer-container-main" >
+        <div  class="container  justify-content-center align-items-center">
             <div class="left-side d-flex flex-column justify-content-center align-items-center" data-aos="fade-right">
                 @if (Auth::user()->image)
                     <div class="img-container  rounded-circle" style="background-image: url({{ asset('/storage') . '/' . Auth::user()->image }})"></div>
