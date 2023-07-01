@@ -85,7 +85,7 @@
     /* border: 1px solid red; */
     width: 80vw;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     margin: 0 0px;
     flex-wrap: wrap;
 }
@@ -689,9 +689,7 @@ button{
 }
 
 /* product */
-/* .productsDiv{
-    width: 100%;
-} */
+
 
 .products{
     height: fit-content;

@@ -13,21 +13,19 @@ use App\Models\Event;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
-        // kalo pencet salah satu kategori dr home
-        if($request->has('cat_id')){
-            $products = Product::where('category_id', $request->cat_id)->get();
-            $cat_id = $request->cat_id;
+        $products = Product::filter(request(['cat-id']))->get();
+        if($request->query('cat-id')){
+        //     $products = Product::where('category_id', $request->query('cat-id'))->get();
+            $cat_id = (int)$request->query('cat-id');
+            $namacat = ProductCategory::find($cat_id)->name;
         }
-        // kalo pencet all ato see more ato akses dr url
+        // // kalo pencet all ato see more ato akses dr url
         else{
-            $products = Product::all();
+        //     $products = Product::all();
+            $namacat = "All";
             $cat_id = 0;
         }
 
@@ -49,15 +47,12 @@ class ProductController extends Controller
             'productCategories' => ProductCategory::all(),
             'request' => $request,
             'cat_id' => $cat_id,
-            'pg' => $pg
+            'pg' => $pg,
+            'namacat' => $namacat,
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create(Event $event)
     {
         //
