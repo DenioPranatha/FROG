@@ -2,7 +2,8 @@
     <link rel="stylesheet" href="assets/css/createDestination.css">
 @endsection
 
-@extends('admin.mainAdmin')
+{{-- @extends('admin.mainAdmin') --}}
+@extends('layouts.main')
 
 @section('title', 'Create Destination')
 
