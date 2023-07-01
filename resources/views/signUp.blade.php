@@ -16,7 +16,8 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 
     {{-- main css --}}
-    <link rel="stylesheet" href="assets/css/signup.css">
+    {{-- <link rel="stylesheet" href="assets/css/signup.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/signup.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
@@ -138,10 +139,10 @@
 
                     <div class="buttonalready">
                         <button type="submit">Create Account</button>
-    
+
                         <div class="account d-flex flex-row">
                             <p>Already Have an Account ?</p>
-    
+
                             <a href="/signin">Sign In</a>
                         </div>
                     </div>

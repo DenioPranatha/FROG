@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/createDestination.css">
+    {{-- <link rel="stylesheet" href="assets/css/createDestination.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/createDestination.css') }}">
 @endsection
 
 {{-- @extends('admin.mainAdmin') --}}

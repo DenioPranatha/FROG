@@ -92,8 +92,8 @@ Route::post('/approvalDetail/{event:id}/edit', [ApprovalController::class, 'edit
 Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail'])->name('approvalDetail')->middleware('admin');
 
 Route::post('/destinationDelete', [DestinationAdminController::class, 'destroy'])->middleware('admin');
-Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->name('destinationAdmin')->middleware('admin');
 Route::get('/destinationAdmin/result', [DestinationAdminController::class, 'result'])->name('destinationAdmin')->middleware('admin');
+Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->name('destinationAdmin')->middleware('admin');
 Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminController::class, 'show'])->name('destinationDetailAdmin')->middleware('admin');
 Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'create'])->name('createDestinationAdmin')->middleware('admin');
 Route::post('/createDestinationAdmin', [DestinationAdminController::class, 'store'])->name('createDestinationAdmin')->middleware('admin');
