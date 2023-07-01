@@ -8,6 +8,7 @@ let eachProductPrice2 = document.getElementsByClassName('eachProductPrice2');
 // kotak plus min
 let minBtn = document.getElementsByClassName('minus');
 let plusBtn = document.getElementsByClassName('plus');
+let stock = document.getElementsByClassName('stock');
 let qty = document.getElementsByClassName('prodQty');
 let qtyForm = document.getElementsByClassName('qtyForm');
 
@@ -23,21 +24,39 @@ for(let i=0; i<minBtn.length; i++){
     total = 0
 
     plusBtn[i].addEventListener('click', ()=>{
-        priceTemp = eachProductPrice2[i].innerHTML.substring(2)
-        priceTemp = parseInt(priceTemp)
+        if(qty[i].value>=parseInt(stock[i].innerHTML)){
+            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = parseInt(priceTemp)
 
-        qty[i].value++;
+            qty[i].value = qty[i].value
 
-        numPlus[i].value = qty[i].value;
-        plusBtn[i].submit;
+            numPlus[i].value = qty[i].value;
+            plusBtn[i].submit;
 
-        // buat hitung total price
-        total = qty[i].value*priceTemp
-        total = 'Rp' + total.toString()
+            // buat hitung total price
+            total = qty[i].value*priceTemp
+            total = 'Rp' + total.toString()
 
-        eachProductTotal2[i].innerHTML = total
-        totalPayment.innerHTML = calculatePrice()
-        totalItem.innerHTML = calculateItem()
+            eachProductTotal2[i].innerHTML = total
+            totalPayment.innerHTML = calculatePrice()
+            totalItem.innerHTML = calculateItem()
+        }else{
+            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = parseInt(priceTemp)
+
+            qty[i].value++;
+
+            numPlus[i].value = qty[i].value;
+            plusBtn[i].submit;
+
+            // buat hitung total price
+            total = qty[i].value*priceTemp
+            total = 'Rp' + total.toString()
+
+            eachProductTotal2[i].innerHTML = total
+            totalPayment.innerHTML = calculatePrice()
+            totalItem.innerHTML = calculateItem()
+        }
     })
 
     minBtn[i].addEventListener('click',  ()=>{
@@ -86,6 +105,8 @@ for(let i=0; i<minBtn.length; i++){
     })
 }
 // kotak plus min
+
+
 
 
 // checkbox
