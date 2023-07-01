@@ -99,7 +99,7 @@ class EventController extends Controller
             'name' => 'required|max:40',
             'duration' => 'required|integer',
             'description' => 'required|max:450',
-            'image' => 'required|image|file|max:1024'
+            'image' => 'required|image|file'
         ]);
 
         if($request->file('image')){

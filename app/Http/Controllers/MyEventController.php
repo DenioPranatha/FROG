@@ -18,6 +18,7 @@ class MyEventController extends Controller
         $currentDate = Carbon::now()->toDateString();
         $ongoings = Event::where('user_id', $i)
         ->where('end_date', '>=', $currentDate)
+        ->where('status', 'accepted')
         ->get();
 
         $waitings = Event::where('user_id', $i)
@@ -26,6 +27,7 @@ class MyEventController extends Controller
 
         $finisheds = Event::where('user_id', $i)
         ->where('end_date', '<', $currentDate)
+        ->where('status', 'accepted')
         ->get();
 
         $rejecteds = Event::where('user_id', $i)
