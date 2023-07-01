@@ -56,7 +56,7 @@
 
                     <div class="name">
                         <p>Name<span>*</span></p>
-                        <input type="text" name="name" id="name" class="form-control rounded @error('name') is-invalid @enderror" placeholder="Name" value="{{ old('name') }}" required>
+                        <input type="text" name="name" id="name" class="form-control rounded @error('name') is-invalid @enderror" placeholder="Name" value="{{ old('name') }}" required autofocus>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
