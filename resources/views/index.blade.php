@@ -88,6 +88,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- <p>keren bet lo</p> --}}
             </div>
         </div>
         <div class="recommendDiv">
