@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/index.css">
+    {{-- <link rel="stylesheet" href="/assets/css/index.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
 @endsection
 
 @extends('layouts.main')
@@ -88,6 +89,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- <p>keren bet lo</p> --}}
             </div>
         </div>
         <div class="recommendDiv">
@@ -142,7 +144,16 @@
                         <div class="slider">
                             <div class="owl-carousel">
                                 @foreach ($destinations as $destination)
-                                    <a href="/destinationDetail/{{ $destination->id }}">
+                                    @guest
+                                        <a href="/destinationDetail/{{ $destination->id }}">
+                                    @endguest
+                                    @can('user')
+                                        <a href="/destinationDetail/{{ $destination->id }}">
+                                    @endcan
+                                    @can('admin')
+                                        <a href="/destinationDetailAdmin/{{ $destination->id }}">
+                                    @endcan
+                                    {{-- <a href="/destinationDetail/{{ $destination->id }}"> --}}
                                         <div class="slider-card">
                                             <div class="kotakLuar d-flex justify-content-center align-items-center mb-4">
                                                 {{-- <div class="destImg" style="background-image: url({{ asset("/assets/img/banner.png") }})"></div> --}}
@@ -162,7 +173,15 @@
                     </div>
                 </section>
                 <div class="btnDiv w-100 h-100 d-flex justify-content-center">
-                    <a class="btn btn-1 btn-2" href="/destination" role="button">
+                    @guest
+                        <a class="btn btn-1 btn-2" href="/destination" role="button">
+                    @endguest
+                    @can('user')
+                        <a class="btn btn-1 btn-2" href="/destination" role="button">
+                    @endcan
+                    @can('admin')
+                        <a class="btn btn-1 btn-2" href="/destinationAdmin" role="button">
+                    @endcan
                         <div class="findDest">
                             <p>Find Destination</p>
                             <i class="bi bi-arrow-right-short"></i>

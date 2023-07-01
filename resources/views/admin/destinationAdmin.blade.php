@@ -1,8 +1,10 @@
 @section('css')
-    <link rel="stylesheet" href="assets/css/destinationAdmin.css">
+{{-- <link rel="stylesheet" href="assets/css/destinationAdmin.css"> --}}
+<link rel="stylesheet" href="{{ asset('assets/css/destinationAdmin.css') }}">
 @endsection
 
-@extends('admin.mainAdmin')
+{{-- @extends('admin.mainAdmin') --}}
+@extends('layouts.main')
 
 @section('title', 'Destination')
 

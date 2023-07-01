@@ -8,8 +8,8 @@
     width: 85vw;
     margin-top: 3vw;
     margin-bottom: 10vw;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 70px;
+    margin-right: 30px;
     gap: 3vw;
     /* width: fit-content; */
 }
@@ -36,4 +36,6 @@
 .card-test{
     /* border: 1px solid red; */
     margin-bottom: 1vw;
+
+    margin-left: 14px;
 }

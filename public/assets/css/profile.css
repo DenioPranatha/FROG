@@ -8,6 +8,9 @@
     /* border: 1px solid; */
     gap: 2vw;
     margin-bottom: 2vw;
+    
+    display: flex;
+    flex-direction: row;
 }
 
 .left-side{
@@ -45,6 +48,7 @@
     font-size: 18px;
     line-height: 30px;
     color: #522E93;
+    
 }
 
 .box p{
@@ -70,6 +74,7 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 45px;
+
 }
 
 .img-container{
@@ -118,6 +123,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.2vw;
+
+    /* background-color: blue; */
 }
 
 .change-content h3{
@@ -171,5 +178,129 @@ textarea{
     color: white;
 }
 
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+    .container{
+        width: 80%;
+        height: 120%;
+
+        /* background-color: green; */
+        /* height: fit-content; */
+        /* border: 1px solid; */
+        gap: 2vw;
+        margin-bottom: 2vw;
+
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .left-side{
+        /* border: 1px red solid; */
+        width: 100%;
+        height: 50vw;
+        gap: 3vw;
+
+        /* background-color: blue; */
+    }
+    
+    .right-side{
+        /* border: 1px blue solid; */
+        width: 100%;
+        height: 42vw;
+
+        margin-top: 80px;
+    }
+    
+    .box{
+        padding-top: 3vw;
+        padding-bottom: 4vw;
+        padding-left: 4vw;
+        padding-right: 5vw;
+        width: 100%;
+        /* border: 1px solid orange; */
+        gap: 1vw;
+    
+        background: #FFFFFF;
+        border: 2px solid #CFCFCF;
+        border-radius: 15px;
+        box-shadow: 6px 6px 0px #522E93, inset 0px 0px 0px 2px #CDCDCD;
+
+        margin-top: -100px;
+    }
+
+    .left-side button{
+        margin-top: -2vw;
+        border: none;
+        width: 30vw;
+        height: 6.8vw;
+        background-color: #522E93;
+        border-radius: 15px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 30px;
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+    
+        color: #FFFFFF;
+        transition: .2s all ease-in-out;
+    }
+
+    .left-side h3{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 45px;
+    }
+
+    .bi-pencil-square{
+        display: none;
+    }
+
+   
+    /* Edit Profile Responsive */
+    #edit{
+        display: none;
+    }
+    
+    .edit-photo{
+        /* border: 1px solid red; */
+        background-color: #522E93;
+        width: 4vw;
+        height: 4vw;
+        border-radius: 10px;
+        align-self: flex-end;
+        z-index: 2;
+        position: absolute;
+        margin-left: 13vw;
+    
+        transition: .2s all ease-in-out;
+    }
+    
+    .edit-photo:hover{
+        transform: scale(1.04);
+    }
+    
+    .edit-photo i{
+        font-size: 2vw;
+        color: white;
+    }
+
+    .left-side h3{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 45px;
+    
+    }
+
+
+    
+}
 
 

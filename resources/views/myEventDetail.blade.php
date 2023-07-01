@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/myEventDetail.css">
+    {{-- <link rel="stylesheet" href="/assets/css/myEventDetail.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/myEventDetail.css') }}">
 @endsection
 
 @extends('layouts.main')

@@ -1,5 +1,6 @@
 @section('css')
-    <link rel="stylesheet" href="/assets/css/approvalDetail.css">
+    {{-- <link rel="stylesheet" href="/assets/css/approvalDetail.css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/approvalDetail.css') }}">
 @endsection
 
 @extends('layouts.main')
