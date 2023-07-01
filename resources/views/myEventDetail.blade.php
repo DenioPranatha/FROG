@@ -31,7 +31,11 @@
                     <b>{{ $event->name }}</b>
                 </div>
                 <div class="purple">
-                    Day {{ $passed }}
+                    @if($event->status != "finished")
+                        Day {{ $passed }}
+                    @else
+                        The event is finished.
+                    @endif
                 </div>
                 <div class="progress-container">
                     <div class="date">0</div>
@@ -109,7 +113,12 @@
             <div class="carousel-item">
                 <section class="stat-container" id="section2">
                     <div class="stat-headline">Funds Collected</div>
-                    <div class="stat-headline purple">Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}</div>
+                    <div class="stat-headline purple">
+                        Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}
+                        <a class="mx-4 btn purple-but" href="/allHistory/{{ $event->id }}">
+                            See All Transaction
+                        </a>
+                    </div>
                     <br>
                     <div class="stat-subheadline">Detail</div>
                     <div class="rincian-container">

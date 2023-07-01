@@ -8,7 +8,7 @@
     width: 85vw;
     margin-top: 3vw;
     margin-bottom: 10vw;
-    margin-left: 70px;
+    margin-left: 60px;
     margin-right: 30px;
     gap: 3vw;
     /* width: fit-content; */
@@ -27,7 +27,7 @@
 
 .card-container{
     /* border: 1px solid blue; */
-    width: 86vw;
+    width: 95vw;
     gap: 0.2vw;
     /* border: 1px solid black; */
     padding-left: 25px;

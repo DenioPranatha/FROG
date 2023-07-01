@@ -2,7 +2,7 @@
     <div class="card-ph">
         <div class="history-header">
             <div class="history-image">
-                <div class="product-image" style="background-image: url({{ asset('assets/img/basreng.png') }})"></div>
+                <div class="product-image" style="background-image: url({{ asset('/storage').'/'.$history->product->image}})"></div>
             </div>
             <div class="history-title">
                 <p class="product-name">{{ $history->product->name }}</p>
@@ -18,10 +18,17 @@
                 <p>Total Donation</p>
             </div>
             <div class="history-information-right">
-                <p>Alfredo Wijaya Kusuma</p>
-                <p>12 maret 2023</p>
-                <p class="price">Rp. 20.000</p>
-                <p class="price">Rp. 10.000</p>
+                <p>{{ $history->paymentHeader->user->name }}</p>
+                <?php
+                $dt = new DateTime($history->paymentHeader->date);
+                ?>
+                <p>{{ $dt->format("d M Y") }}</p>
+                <p class="price">
+                    Rp. {{ number_format( $history->product->price * $history->qty , 0 , ' ' , ' ' ) }}
+                </p>
+                <p class="price">
+                    Rp. {{ number_format( ($history->product->price - $history->product->modal) * $history->qty , 0 , ' ' , ' ' ) }}
+                </p>
             </div>
         </div>
     </div>

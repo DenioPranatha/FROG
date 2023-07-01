@@ -78,9 +78,7 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')-
 Route::post('/profile/{user:id}/edit', [ProfileController::class, 'edit']);
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 
-Route::get('/allHistory', function () {
-    return view('allHistory');
-})->name('allHistory');
+Route::get('/allHistory/{event:id}', [MyEventController::class, 'history'])->name('allHistory');
 
 Route::get('/signin', [SigninController::class, 'index'])->name('signin')->middleware('guest');
 Route::post('/signin', [SigninController::class, 'authenticate'])->name('signin')->middleware('guest');
