@@ -9,7 +9,7 @@
 
 @section('content')
 @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
+    <div class="alert alert-success alert-dismissible fade show p-3" style="width: 85%; margin:auto; margin-top:5px;" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>

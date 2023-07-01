@@ -108,6 +108,7 @@
                                             <div class="eachProductImage" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
                                             <div class="eachProductDesc">
                                                 <div class="productDescName">{{ $cartDetail->product->name }}</div>
+                                                <p class="stock d-none">{{ $cartDetail->product->stock }}</p>
                                                 <div class="productDescQtyText">Quantity:</div>
                                                 <div class="productDescQty d-flex justify-content-start align-items-center">
                                                     <div class="qtyDiv d-flex justify-content-center align-items-center">
@@ -126,7 +127,7 @@
                                                         </form>
                                                         <div class="productQty d-flex justify-content-center align-items-center">
                                                             <form action="" method="get" class="qtyForm">
-                                                                <input type="text" name="productQty" id="productQty" value="{{ $cartDetail->qty }}" class="prodQty">
+                                                                <input type="text" name="productQty" id="productQty" value="{{ $cartDetail->qty }}" class="prodQty" readonly>
                                                             </form>
                                                         </div>
                                                         <form action="/cartPlus" method="post">
