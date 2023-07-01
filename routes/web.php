@@ -38,43 +38,41 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/indexResult', [IndexController::class, 'result']);
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/index', [IndexController::class, 'index'])->name('index');
-// Route::post('products', [IndexController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::post('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
-Route::post('/cartAdd', [ProductController::class, 'add'])->middleware('auth');
-Route::post('/buyNow', [ProductController::class, 'buy'])->middleware('auth');
+Route::post('/cartAdd', [ProductController::class, 'add'])->middleware('auth')->middleware('not.admin');
+Route::post('/buyNow', [ProductController::class, 'buy'])->middleware('auth')->middleware('not.admin');
 
-Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct')->middleware('auth');
-Route::get('/addProduct/{event:id}', [ProductController::class, 'create'])->name('addProduct')->middleware('auth');
+Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct')->middleware('auth')->middleware('not.admin');
+Route::get('/addProduct/{event:id}', [ProductController::class, 'create'])->name('addProduct')->middleware('auth')->middleware('not.admin');
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/events/result', [EventController::class, 'result']);
 Route::get('/eventDetail/{event:id}', [EventController::class, 'show'])->name('eventDetail');
 Route::get('/eventDetail/{event:id}/result', [EventController::class, 'showProductDetail']);
 
-Route::get('/myevents', [MyEventController::class, 'index'])->name('myEvents')->middleware('auth');
-Route::get('/myEventDetail/{event:id}/{isEdit}', [MyEventController::class, 'show'])->name('myEventDetail')->middleware('auth');
-Route::get('/myEventDetail/{event:id}/{isEdit}/result', [MyEventController::class, 'showProductDetail'])->middleware('auth');
-Route::post('/myEventDetail/{event:id}/edit', [MyEventController::class, 'edit'])->middleware('auth');
-Route::get('/createEvent', [EventController::class, 'createForm'])->name('createEvent')->middleware('auth');
-Route::post('/createEvent', [EventController::class, 'create'])->middleware('auth');
+Route::get('/myevents', [MyEventController::class, 'index'])->name('myEvents')->middleware('auth')->middleware('not.admin');
+Route::get('/myEventDetail/{event:id}/{isEdit}', [MyEventController::class, 'show'])->name('myEventDetail')->middleware('auth')->middleware('not.admin');
+Route::get('/myEventDetail/{event:id}/{isEdit}/result', [MyEventController::class, 'showProductDetail'])->middleware('auth')->middleware('not.admin');
+Route::post('/myEventDetail/{event:id}/edit', [MyEventController::class, 'edit'])->middleware('auth')->middleware('not.admin');
+Route::get('/createEvent', [EventController::class, 'createForm'])->name('createEvent')->middleware('auth')->middleware('not.admin');
+Route::post('/createEvent', [EventController::class, 'create'])->middleware('auth')->middleware('not.admin');
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
-Route::get('/destinationResult', [DestinationController::class, 'result']);
+Route::get('/destinationResult', [DestinationController::class, 'result'])->name('destination');
 Route::get('/destinationDetail/{destination:id}', [DestinationController::class, 'show'])->name('destinationDetail');
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart')->middleware('auth');
-Route::post('/cartMinus', [CartController::class, 'minus'])->middleware('auth');
-Route::post('/cartPlus', [CartController::class, 'plus'])->middleware('auth');
-Route::post('/cartDelete', [CartController::class, 'destroy'])->middleware('auth');
+Route::get('/cart', [CartController::class, 'index'])->name('cart')->middleware('auth')->middleware('not.admin');
+Route::post('/cartMinus', [CartController::class, 'minus'])->middleware('auth')->middleware('not.admin');
+Route::post('/cartPlus', [CartController::class, 'plus'])->middleware('auth')->middleware('not.admin');
+Route::post('/cartDelete', [CartController::class, 'destroy'])->middleware('auth')->middleware('not.admin');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth')->middleware('not.admin');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 
@@ -93,15 +91,6 @@ Route::get('/approval', [ApprovalController::class, 'show'])->name('approval')->
 Route::post('/approvalDetail/{event:id}/edit', [ApprovalController::class, 'edit'])->name('approvalDetail')->middleware('admin');
 Route::get('/approvalDetail/{event:id}', [ApprovalController::class, 'detail'])->name('approvalDetail')->middleware('admin');
 
-// Route::get('/approvalDetail', function () {
-    //     return view('approvalDetail');
-    // })->name('approvalDetail');
-
-    // Route::get('/destinationDetail', function () {
-        //     return view('destinationDetail');
-        // })->name('destinationDetail');
-
-
 Route::post('/destinationDelete', [DestinationAdminController::class, 'destroy'])->middleware('admin');
 Route::get('/destinationAdmin', [DestinationAdminController::class, 'index'])->name('destinationAdmin')->middleware('admin');
 Route::get('/destinationAdmin/result', [DestinationAdminController::class, 'result'])->name('destinationAdmin')->middleware('admin');
@@ -110,5 +99,3 @@ Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'creat
 Route::post('/createDestinationAdmin', [DestinationAdminController::class, 'store'])->name('createDestinationAdmin')->middleware('admin');
 
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
