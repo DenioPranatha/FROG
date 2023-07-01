@@ -9,7 +9,7 @@
 
 @section('content')
 @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show p-3" style="width: 85%; margin:auto; margin-top:5px;" role="alert">
+    <div class="alert alert-success alert-dismissible fade show p-3 m-0" style="width: 25.5vw" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -63,7 +63,6 @@
                         <input type="hidden" name="qty" id="qtyCart">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
-                        <input type="hidden" name="user_id" value="{{ $product->event->user->id }}">
                         <button onclick="addToCart()" class="btn p-0">
                             <div class="cart2 d-flex justify-content-center align-items-center">
                                 <div class="cartSvg">
@@ -129,4 +128,8 @@
 
 @section('js')
     <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/swal.js')}}"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @endsection
