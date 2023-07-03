@@ -15,9 +15,9 @@ class MyEventController extends Controller
     public function index(){
         // dd(auth()->user()->id);
         $i = auth()->user()->id;
-        $currentDate = Carbon::now()->toDateString();
+        // $currentDate = Carbon::now()->toDateString();
         $ongoings = Event::where('user_id', $i)
-        ->where('end_date', '>=', $currentDate)
+        ->where('status', 'accepted')
         ->get();
 
         $waitings = Event::where('user_id', $i)
@@ -25,7 +25,7 @@ class MyEventController extends Controller
         ->get();
 
         $finisheds = Event::where('user_id', $i)
-        ->where('end_date', '<', $currentDate)
+        ->where('status', 'finished')
         ->get();
 
         $rejecteds = Event::where('user_id', $i)
@@ -97,12 +97,11 @@ class MyEventController extends Controller
         }
 
 
-        $histories = PaymentDetail::whereHas('product', function($p) use ($event){
-            $p->where('event_id', $event->id);
-        })->get();
+
 
         $pg = 1;
         $count = count($products);
+        $products = $products->load('event');
         $products = $products->take(9);
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
         if($count <= 9) $pg = -1;
@@ -124,7 +123,6 @@ class MyEventController extends Controller
             'graph_start' => $graph_start,
             'isEdit' => $isEdit,
             'pg' => $pg,
-            'histories' => $histories,
             'namacat' => $namacat
         ]));
 
@@ -140,8 +138,8 @@ class MyEventController extends Controller
         $pge = 10*$pg;
         $pge = $pge-1;
         $c = count($products);
+        $products = $products->load('event');
         if($pge >= $c)$pg = -1;
-        // dump('hi');
 
         return view('myProductsResult', [
             'products' => $products->take($pge),
@@ -149,6 +147,19 @@ class MyEventController extends Controller
             'event' => $event
         ]);
 
+    }
+
+    public function history(Event $event){
+
+        $histories = PaymentDetail::whereHas('product', function($p) use ($event){
+            $p->where('event_id', $event->id);
+        })->get();
+
+        // $histories = PaymentDetail::all();
+
+        return view('allHistory', [
+            'histories' => $histories
+        ]);
     }
 
     public function edit(Request $request, Event $event){

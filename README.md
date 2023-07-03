@@ -8,6 +8,7 @@ npm i cloudinary
 npm install jquery
 npm install chart.js
 npm install date-fns chartjs-adapter-date-fns --save
+composer require itsgoingd/clockwork
 
 yang perlu ditulis di tiap page:
 

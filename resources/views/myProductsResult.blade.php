@@ -1,17 +1,19 @@
 @if(count($products) != 0)
     <div class="products d-flex flex-wrap">
-        <div class="productCartPage">
-            <a href="/addProduct/{{ $event->id }}" class="custom-card">
-                <div class="card">
-                    <div class="add-icon">
-                       <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
+        @if($event->status == "accepted")
+            <div class="productCartPage">
+                <a href="/addProduct/{{ $event->id }}" class="custom-card">
+                    <div class="card">
+                        <div class="add-icon">
+                        <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="caption-add">
+                            <p class="namaProduk">Add Product</p>
+                        </div>
                     </div>
-                    <div class="caption-add">
-                        <p class="namaProduk">Add Product</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        @endif
         @foreach ($products as $product)
             @include('partials.productCart', ['product' => $product])
         @endforeach
@@ -37,13 +39,22 @@
     @else
         <div class="gap"></div>
     @endif
-@elseif(request('cat-id') && request('search-box'))
-    <div class="not-found justify-content-center">Event with keyword "{{ request('search-box') }}" and category "{{ $namacat }}" is not found</div>
-@elseif(request('search-box'))
-    <div class="not-found justify-content-center">Event with keyword "{{ request('search-box') }}" is not found</div>
-@elseif(request('cat-id'))
-    <div class="not-found justify-content-center">Event with category "{{ $namacat }}" is not found</div>
 @else
-    <div></div>
+    <div class="products d-flex flex-wrap">
+        @if($event->status == "accepted")
+            <div class="productCartPage">
+                <a href="/addProduct/{{ $event->id }}" class="custom-card">
+                    <div class="card">
+                        <div class="add-icon">
+                        <div class="add-img" style="background-image: url({{ asset('assets/img/add-button.svg') }})" ></div> <img class="add-img" src="assets/img/add-button.svg" alt="" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="caption-add">
+                            <p class="namaProduk">Add Product</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        @endif
+    </div>
 @endif
 

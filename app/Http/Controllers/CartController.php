@@ -18,8 +18,8 @@ class CartController extends Controller
         // dd($count);
         return view('cart', [
             'count' => $count,
-            'cartHeaders' => CartHeader::all(),
-            'cartDetails' => CartDetail::all(),
+            'cartHeaders' => CartHeader::all()->load('event'),
+            'cartDetails' => CartDetail::all()->load(['product', 'cartHeader']),
         ]);
     }
 

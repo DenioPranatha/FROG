@@ -9,7 +9,6 @@
     {{-- buat variabel i (next batch) --}}
     <?php $i = $pg + 1; ?>
 
-
     @if ($pg != -1)
         <div class="more-products">
             <div class="line1"></div>
@@ -20,7 +19,6 @@
     @else
         <div class="gap"></div>
     @endif
-
 
 @elseif(request('category-event') && request('search-event'))
     <div class="not-found justify-content-center">Event with keyword "{{ request('search-event') }}" and category "{{ request('category-event') }}" is not found</div>

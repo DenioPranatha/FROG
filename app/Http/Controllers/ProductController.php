@@ -16,6 +16,8 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
+        $products = Product::with('event')->filter(request(['cat-id']))->get();
+
         // $products = Product::select('products.*')
         //     ->join('events', 'events.id', '=', 'products.event_id')
         //     ->where()
@@ -26,7 +28,7 @@ class ProductController extends Controller
         // $rn = new \DateTime();
         // dd($rn);
 
-        $products = Product::filter(request(['cat-id']))->get();
+        // $products = Product::filter(request(['cat-id']))->get();
 
         // $products = Product::all();
         // dd($products[12]->event->end_date);
@@ -40,7 +42,7 @@ class ProductController extends Controller
             $cat_id = (int)$request->query('cat-id');
             $namacat = ProductCategory::find($cat_id)->name;
         }
-        // // kalo pencet all ato see more ato akses dr url
+        // kalo pencet all ato see more ato akses dr url
         else{
         //     $products = Product::all();
             $namacat = "All";
@@ -191,13 +193,17 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
-        return view('productDetail', [
-            // ini buat nunjukin rekomendasi dari event yg sama di product detail
-            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
+        if($product->event->status == "finished"){
+            return redirect()->back();
+        }else{
+            return view('productDetail', [
+                // ini buat nunjukin rekomendasi dari event yg sama di product detail
+                'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
 
-            // ini buat product detailnya
-            'product' => $product
-        ]);
+                // ini buat product detailnya
+                'product' => $product
+            ]);
+        }
     }
 
     public function add(Request $request){

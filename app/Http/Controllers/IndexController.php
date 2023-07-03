@@ -25,7 +25,7 @@ class IndexController extends Controller
         ->get();
 
         // ngambil 15 produk dgn penjualan tertinggi
-        $products = Product::select('products.*', DB::raw("SUM(payment_details.qty) as SUM"))
+        $products = Product::with('event')->select('products.*', DB::raw("SUM(payment_details.qty) as SUM"))
             ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
             ->groupBy('products.id')
             ->orderBy('SUM', 'DESC')
