@@ -98,4 +98,7 @@ Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminControll
 Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'create'])->name('createDestinationAdmin')->middleware('admin');
 Route::post('/createDestinationAdmin', [DestinationAdminController::class, 'store'])->name('createDestinationAdmin')->middleware('admin');
 
+Route::get('/invoice', function () {
+    return view('invoice');
+});
 Auth::routes();
