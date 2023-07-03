@@ -195,6 +195,7 @@
                     @csrf
                     <div class="btnClass d-flex justify-content-center">
                         <input type="hidden" name="checkedItems" id="checkedItems">
+                        <input type="hidden" name="checkedHeaders" id="checkedHeaders">
                         <button type="submit" class="btn" id="checkoutBtn">
                         {{-- <button type="submit" onclick="checkout()" class="btn" id="checkoutBtn"> --}}
                             Checkout Now!

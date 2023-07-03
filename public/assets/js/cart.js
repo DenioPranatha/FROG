@@ -328,10 +328,12 @@ window.onscroll = function(){
     }
 };
 
-var arr = []
+var product_id = []
+var cart_header_id = []
 let checkoutForm = document.getElementById("checkoutForm");
 let checkoutBtn = document.getElementById("checkoutBtn");
 let checkedItems = document.getElementById("checkedItems");
+let checkedHeaders = document.getElementById("checkedHeaders");
 let eachProduct = document.getElementsByClassName("eachProduct");
 
 
@@ -340,14 +342,16 @@ checkoutBtn.addEventListener('click', function(){
     // e.preventDefault();
 
     for(var i=0; i<eachProduct.length; i++){
-        // console.log(eachProduct[i].childNodes[5].classList[1])
+        // console.log(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].classList[1])
         if(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].checked == true){
             // console.log("hi")
-            arr.push(eachProduct[i].childNodes[5].classList[1])
+            product_id.push(eachProduct[i].childNodes[5].classList[1]);
+            cart_header_id.push(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].classList[1]);
         }
     }
-    // console.log(arr)
-    checkedItems.value = JSON.stringify(arr);
+    // console.log(product_id)
+    checkedItems.value = JSON.stringify(product_id);
+    checkedHeaders.value = JSON.stringify(cart_header_id);
     checkoutForm.submit();
 
 

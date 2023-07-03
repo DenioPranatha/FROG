@@ -129,7 +129,7 @@
                     <h2 class="ordered-product">Ordered Product</h2>
                 </div>
 
-                @for ($j = 0 ; $j < 2 ; $j++)
+                @for ($i = 0; $i < $eventCount; $i++)
                     <div class="product-box">
                         <h1 class="title-event">Charity Action Of RTB</h1>
                         <div class="event-linebar"></div>
@@ -150,6 +150,28 @@
                         @endfor
                     </div>
                 @endfor
+
+                {{-- @for ($j = 0 ; $j < 2 ; $j++)
+                    <div class="product-box">
+                        <h1 class="title-event">Charity Action Of RTB</h1>
+                        <div class="event-linebar"></div>
+
+                        @for ($i = 0; $i < 2 ; $i++)
+                            <div class="product-detail-box">
+                                <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
+                                </div>
+                                <div class="detail">
+                                    <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
+                                    <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
+                                </div>
+                                <div class="harga">
+                                    <h1 class="title-harga">Rp 200.000</h1>
+                                </div>
+                            </div>
+
+                        @endfor
+                    </div>
+                @endfor --}}
 
                 <div class="option-shipping-box">
                     <div class="title-option-shipping">
