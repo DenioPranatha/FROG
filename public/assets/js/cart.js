@@ -311,18 +311,46 @@ let rightCart = document.getElementById('rightCart');
 var body = document.body;
 var html = document.documentElement;
 var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
-var position = bodyH-541
+var position = bodyH-541;
 
 window.onscroll = function(){
+    console.log(window.scrollY);
+    console.log(bodyH);
     if(window.scrollY >= (bodyH-630)) { // change target to number
+        console.log("atas");
         rightCart.style.position = 'absolute';
         rightCart.style.top = position+'px';
     }
     else{
+        console.log("bawah");
         rightCart.style.position = 'fixed';
         rightCart.style.top = '15%';
     }
 };
+
+
+
+// // buat stop scroll yg bagian kanan
+// let rightCart = document.getElementById('rightCart');
+// var body = document.body;
+// var html = document.documentElement;
+// var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
+// var position = bodyH-541
+
+// window.onscroll = function(){
+//     console.log(window.scrollY);
+//     console.log(bodyH);
+//     if(window.scrollY >= (bodyH-630)) { // change target to number
+//         console.log("atas");
+//         rightCart.style.position = 'absolute';
+//         rightCart.style.top = position+'px';
+//     }
+//     else{
+//         console.log("bawah");
+//         rightCart.style.position = 'fixed';
+//         rightCart.style.top = '15%';
+//     }
+// };
 
 
 // let minus = document.getElementById('minus');
