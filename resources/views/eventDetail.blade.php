@@ -50,15 +50,15 @@
     </div>
 
     <div id="nav-cont" class="nav-cont nav nav-underline justify-content-center">
-        <button class="nav-button carousel-control-prev nav-link nav-item active active2" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">Products</button>
-        <button class="nav-button carousel-control-next nav-link nav-item" type="button" data-bs-target="#carouselExample" data-bs-slide="next">Statistics</button>
+        <button class="nav-button carousel-control-prev popular-prev nav-link nav-item active active2" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">Products</button>
+        <button class="nav-button carousel-control-next popular-next nav-link nav-item" type="button" data-bs-target="#carouselExample" data-bs-slide="next">Statistics</button>
     </div>
 
     <hr class="nav-line">
 
-    <div id="carouselExample" data-bs-spy="scroll" data-bs-target="#nav-cont" class="carousel" tabindex="0">
-        <div class="slide">
-            <div class="carousel-item">
+    <div id="carouselExample" data-bs-spy="scroll" data-bs-target="#nav-cont" class="carousel detail-carousel" tabindex="0">
+        <div class="slide detail-slide">
+            <div class="carousel-item detail-item">
                 <section class="catalog-container" id="section1">
                     <div class="productsDiv">
                         @include('productsResult')
@@ -66,7 +66,7 @@
                 </section>
             </div>
 
-            <div class="carousel-item">
+            <div class="carousel-item detail-item">
                 <section class="stat-container" id="section2">
                     <div class="stat-headline">Funds Collected</div>
                     <div class="stat-headline purple">Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}</div>
