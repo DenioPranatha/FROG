@@ -76,7 +76,11 @@
         @include('eventsResult')
     </div>
 
-    <div class="finished-header" data-aos="fade-up">Finished Events</div>
+    <div id="hi">
+
+    </div>
+
+    {{-- <div class="finished-header">Finished Events</div>
 
     <div class="finished" data-aos="fade-up">
         <div class="catalog-container">
@@ -85,6 +89,9 @@
             @endforeach
         </div>
     </div>
+    <div class="gap"></div>
+    <div class="gap"></div> --}}
+
 
 @endsection
 
