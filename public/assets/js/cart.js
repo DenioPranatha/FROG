@@ -314,19 +314,45 @@ var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClien
 var position = bodyH-541;
 
 window.onscroll = function(){
-    console.log(window.scrollY);
-    console.log(bodyH);
+    // console.log(window.scrollY);
+    // console.log(bodyH);
     if(window.scrollY >= (bodyH-630)) { // change target to number
-        console.log("atas");
+        // console.log("atas");
         rightCart.style.position = 'absolute';
         rightCart.style.top = position+'px';
     }
     else{
-        console.log("bawah");
+        // console.log("bawah");
         rightCart.style.position = 'fixed';
         rightCart.style.top = '15%';
     }
 };
+
+var arr = []
+let checkoutForm = document.getElementById("checkoutForm");
+let checkoutBtn = document.getElementById("checkoutBtn");
+let checkedItems = document.getElementById("checkedItems");
+let eachProduct = document.getElementsByClassName("eachProduct");
+
+
+
+checkoutBtn.addEventListener('click', function(){
+    // e.preventDefault();
+
+    for(var i=0; i<eachProduct.length; i++){
+        // console.log(eachProduct[i].childNodes[5].classList[1])
+        if(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].checked == true){
+            // console.log("hi")
+            arr.push(eachProduct[i].childNodes[5].classList[1])
+        }
+    }
+    // console.log(arr)
+    checkedItems.value = JSON.stringify(arr);
+    checkoutForm.submit();
+
+
+})
+
 
 
 

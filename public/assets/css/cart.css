@@ -566,6 +566,11 @@ a.btn:focus{
     margin-bottom: 65px;
 }
 
+/* .btnClass button{
+    border: none;
+    background-color: #FFFFFF;
+} */
+
 /* .btn-1 {
     background-color: #522E93;
     color: #FFFFFF;

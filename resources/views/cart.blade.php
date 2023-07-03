@@ -106,7 +106,7 @@
                                             </div>
                                             {{-- <div class="eachProductImage" style="background-image: url({{ asset('/assets/images/product').'/'.$cartDetail->product->image}} )"></div> --}}
                                             <div class="eachProductImage" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
-                                            <div class="eachProductDesc">
+                                            <div class="eachProductDesc {{ $cartDetail->product->id }}">
                                                 <div class="productDescName">{{ $cartDetail->product->name }}</div>
                                                 <p class="stock d-none">{{ $cartDetail->product->stock }}</p>
                                                 <div class="productDescQtyText">Quantity:</div>
@@ -191,11 +191,16 @@
                     <p class="totalPaymentText">Total Payment</p>
                     <p class="totalPayment">Rp0</p>
                 </div>
-                <div class="btnClass d-flex justify-content-center">
-                    <a href="checkout" class="btn">
-                        Checkout Now!
-                    </a>
-                </div>
+                <form action="/checkout" method="post" id="checkoutForm">
+                    @csrf
+                    <div class="btnClass d-flex justify-content-center">
+                        <input type="hidden" name="checkedItems" id="checkedItems">
+                        <button type="submit" class="btn" id="checkoutBtn">
+                        {{-- <button type="submit" onclick="checkout()" class="btn" id="checkoutBtn"> --}}
+                            Checkout Now!
+                        </button>
+                    </div>
+                </form>
             </div>
             {{-- <div class="coba">
                 akfdshaksdjf
