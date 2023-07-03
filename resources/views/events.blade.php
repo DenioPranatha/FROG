@@ -147,6 +147,15 @@
         @include('eventsResult')
     </div>
 
+    <div class="finished-header" data-aos="fade-up">Finished Events</div>
+
+    <div class="finished" data-aos="fade-up">
+        <div class="catalog-container">
+            @foreach($finisheds as $finished)
+                @include('partials.eventCart', ['event' => $finished])
+            @endforeach
+        </div>
+    </div>
 
 @endsection
 

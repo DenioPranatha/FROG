@@ -174,7 +174,7 @@
 }
 
 #result-container1{
-    padding: 42px 90px 42px 110px;
+    padding: 42px 90px 0px 110px;
 }
 
 a.custom-card,
@@ -731,7 +731,7 @@ body{
 }
 
 .gap{
-    height: 100px;
+    height: 42px;
 }
 
 #myChart, #myChart1{
@@ -807,6 +807,19 @@ body{
 }
 /* button */
 
+.finished{
+    /* border: 1px solid black; */
+    padding: 42px 90px 84px 110px;
+    /* width: 100px;
+    height: 100px; */
+}
+
+.finished-header{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    padding: 0px 100px;
+
+}
 
 
 /* Responsive Website */
@@ -1090,6 +1103,7 @@ body{
     }
 
     .detail-slide{
+    /* .slide{ */
         display: flex;
         width: 102vw;
         height: fit-content;
@@ -1324,6 +1338,7 @@ body{
     }
 
     .detail-slide section{
+    /* .slide section{ */
         flex: none;
         scroll-snap-align: start;
         scroll-margin-left: 50px;

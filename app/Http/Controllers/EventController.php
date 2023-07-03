@@ -36,6 +36,7 @@ class EventController extends Controller
         $popEvents = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
         ->join('products', 'events.id', '=', 'products.event_id')
         ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+        ->where('status', 'accepted')
         ->groupBy('events.id')
         ->orderBy('SUM', 'DESC')
         ->take(10)
@@ -46,6 +47,7 @@ class EventController extends Controller
         $events = Event::filter(request(['search-event', 'category-event']))
         ->where('status', 'accepted')
         ->get();
+        $finisheds = Event::where('status', 'finished')->get();
         //panjang smua events sekarang
         $c = count($events);
         //ambil 10 dari smue events
@@ -58,7 +60,8 @@ class EventController extends Controller
             'events' => $events,
             'popular' => $popEvents,
             'cat' => Category::all(),
-            'pg' => $pg
+            'pg' => $pg,
+            'finisheds' => $finisheds,
         ]));
     }
 
@@ -99,7 +102,7 @@ class EventController extends Controller
             'name' => 'required|max:40',
             'duration' => 'required|integer',
             'description' => 'required|max:450',
-            'image' => 'required|image|file|max:1024'
+            'image' => 'required|image|file'
         ]);
 
         if($request->file('image')){
@@ -204,6 +207,7 @@ class EventController extends Controller
 
         $pg = 1;
         $count = count($products);
+        $products = $products->load('event');
         $products = $products->take(10);
 
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
@@ -257,6 +261,7 @@ class EventController extends Controller
         $pg = (int)$request->input('pg');
         $pge = 10*$pg;
         $c = count($products);
+        $products = $products->load('event');
         if($pge >= $c)$pg = -1;
 
         return view('productsResult', [

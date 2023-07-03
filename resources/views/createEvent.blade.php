@@ -39,13 +39,13 @@
                     <div class="event-name-container">
                         <input class="form-control" placeholder="Event Name" type="text" name="name" id="event-name" minlength="3" maxlength="40" required value="{{ old('event-name') }}" />
                         <div id="invalid-feedback1" class="invalid-feedback">
-                            Please Input your Product Name
+                            Please Input your Event Name
                         </div>
                     </div>
                     <div class="duration-name-container">
                         <input class="form-control" placeholder="Duration" type="number" name="duration" id="duration" min='1' max="28" onkeyup=imposeMinMax(this) required value="{{ old('duration') }}"/>
                         <div id="invalid-feedback2" class="invalid-feedback">
-                            Please Input your Product Name
+                            Please Input Event Duration
                         </div>
                     </div>
                     <div class="destination-container">
@@ -58,12 +58,12 @@
                         </select>
                         {{-- <i class="bi bi-caret-down-fill"></i> --}}
                         <div class="invalid-feedback">
-                            Please Select your Category
+                            Please Select Charity Destination
                         </div>
                     </div>
                     <textarea class="form-control" name="description" id="product-desc" placeholder="Event Description" maxlength="450" required >{{ old('product-desc') ?? '' }}</textarea>
                     <div class="invalid-feedback desc-invalid">
-                        Please Input your Description
+                        Please Input Event Description
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
                         {{-- <input type="submit" name="submit" value="Add Event"/> --}}

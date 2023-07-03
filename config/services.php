@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // 'firebase' => [
+    //     'api_key' => 'AIzaSyBEQvBMUKsrTlN1g608cmEpTq9n05wc5xc',
+    //     'auth_domain' => 'frog-9592e.firebaseapp.com',
+    //     'database_url' => 'https://frog-9592e-default-rtdb.asia-southeast1.firebasedatabase.app/',
+    //     'storage_bucket' => 'frog-9592e.appspot.com',
+    // ]
+
 ];
