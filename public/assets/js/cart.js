@@ -335,6 +335,8 @@ let checkoutBtn = document.getElementById("checkoutBtn");
 let checkedItems = document.getElementById("checkedItems");
 let checkedHeaders = document.getElementById("checkedHeaders");
 let eachProduct = document.getElementsByClassName("eachProduct");
+let totalItems = document.getElementById("totalItems");
+let totalPayments = document.getElementById("totalPayments");
 
 
 
@@ -349,6 +351,30 @@ checkoutBtn.addEventListener('click', function(){
             cart_header_id.push(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].classList[1]);
         }
     }
+
+    // calc price
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        if(itemCheck[i].checked == true){
+            temp = eachProductTotal2[i].innerHTML.substring(2)
+            total += parseInt(temp)
+        }
+    }
+    total = total.toString()
+    totalPayments.value = total;
+
+    // calc item
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        if(itemCheck[i].checked == true){
+            temp = parseInt(qty[i].value)
+            total += temp
+        }
+    }
+    total = total.toString()
+    totalItems.value = total;
+
+
     // console.log(product_id)
     checkedItems.value = JSON.stringify(product_id);
     checkedHeaders.value = JSON.stringify(cart_header_id);
