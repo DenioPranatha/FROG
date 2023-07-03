@@ -36,6 +36,7 @@ class EventController extends Controller
         $popEvents = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
         ->join('products', 'events.id', '=', 'products.event_id')
         ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+        ->where('status', 'accepted')
         ->groupBy('events.id')
         ->orderBy('SUM', 'DESC')
         ->take(10)
@@ -46,6 +47,7 @@ class EventController extends Controller
         $events = Event::filter(request(['search-event', 'category-event']))
         ->where('status', 'accepted')
         ->get();
+        $finisheds = Event::where('status', 'finished')->get();
         //panjang smua events sekarang
         $c = count($events);
         //ambil 10 dari smue events
@@ -58,7 +60,8 @@ class EventController extends Controller
             'events' => $events,
             'popular' => $popEvents,
             'cat' => Category::all(),
-            'pg' => $pg
+            'pg' => $pg,
+            'finisheds' => $finisheds,
         ]));
     }
 

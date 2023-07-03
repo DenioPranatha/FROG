@@ -173,13 +173,17 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
-        return view('productDetail', [
-            // ini buat nunjukin rekomendasi dari event yg sama di product detail
-            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
+        if($product->event->status == "finished"){
+            return redirect()->back();
+        }else{
+            return view('productDetail', [
+                // ini buat nunjukin rekomendasi dari event yg sama di product detail
+                'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
 
-            // ini buat product detailnya
-            'product' => $product
-        ]);
+                // ini buat product detailnya
+                'product' => $product
+            ]);
+        }
     }
 
     public function add(Request $request){
