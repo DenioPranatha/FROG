@@ -271,4 +271,10 @@ html {
         opacity: 0;
         transform: translateX(0);
     } */
+
+    .container-fluid{
+        /* display: flex;
+        flex-direction: column; */
+        /* border: solid red 1px ; */
+    }
 }
