@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             'email' => 'damarjatiardo@gmail.com',
             'phone' => '083891725775',
             'address' => 'Jl. Hartono Raya No.3, RT.003/RW.006, Tangerang',
-            'password' => 'ardo1234'
+            'password' => Hash::make('ardo1234')
         ]);
 
         // <!-- 2 -->
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'email' => 'deniopranatha@gmail.com',
             'phone' => '081232120178',
             'address' => 'Jl. Kartika Plaza, Kuta, Kabupaten Badung',
-            'password' => 'denio1234'
+            'password' => Hash::make('denio1234')
         ]);
 
         // <!-- 3 -->
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
             'email' => 'nicolefeliceee@gmail.com',
             'phone' => '081994097967',
             'address' => 'Jl. Kapt. A. Bakaruddin No.88, Kota Jambi',
-            'password' => 'nikol1234'
+            'password' => Hash::make('nicole1234')
         ]);
 
         // <!-- 4 -->
@@ -68,7 +68,7 @@ class UserSeeder extends Seeder
             'email' => 'riskyaputra3004@gmail.com',
             'phone' => '081376092561',
             'address' => 'Jl. M. T. Haryono No.8, Kota Medan',
-            'password' => 'riskya1234'
+            'password' => Hash::make('riskya1234')
         ]);
     // USER
 
