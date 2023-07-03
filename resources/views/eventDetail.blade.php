@@ -30,7 +30,11 @@
                 <b>{{ $event->name }}</b>
             </div>
             <div class="purple">
-                Day {{ $passed }}
+                @if($event->status != "finished")
+                    Day {{ $passed }}
+                @else
+                    The event is finished.
+                @endif
             </div>
             <div class="progress-container">
                 <div class="date">0</div>

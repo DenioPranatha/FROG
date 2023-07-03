@@ -16,13 +16,33 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $products = Product::filter(request(['cat-id']))->get();
+        $products = Product::with('event')->filter(request(['cat-id']))->get();
+
+        // $products = Product::select('products.*')
+        //     ->join('events', 'events.id', '=', 'products.event_id')
+        //     ->where()
+        //     ->get();
+
+//         SELECT e.id, e.name, p.id, p.name, e.end_date, current_date FROM events e JOIN products p ON e.id = p.event_id
+// WHERE e.end_date > current_date;
+        // $rn = new \DateTime();
+        // dd($rn);
+
+        // $products = Product::filter(request(['cat-id']))->get();
+
+        // $products = Product::all();
+        // dd($products[12]->event->end_date);
+        // $products = $products->where(new \DateTime($products->event->end_date), '>', $rn)->get();
+        // $end = new \DateTime($products[12]->event->end_date);
+        // dd($end > $rn);
+
+
         if($request->query('cat-id')){
         //     $products = Product::where('category_id', $request->query('cat-id'))->get();
             $cat_id = (int)$request->query('cat-id');
             $namacat = ProductCategory::find($cat_id)->name;
         }
-        // // kalo pencet all ato see more ato akses dr url
+        // kalo pencet all ato see more ato akses dr url
         else{
         //     $products = Product::all();
             $namacat = "All";
@@ -173,13 +193,17 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
-        return view('productDetail', [
-            // ini buat nunjukin rekomendasi dari event yg sama di product detail
-            'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
+        if($product->event->status == "finished"){
+            return redirect()->back();
+        }else{
+            return view('productDetail', [
+                // ini buat nunjukin rekomendasi dari event yg sama di product detail
+                'products' => Product::where('event_id', $product->event_id)->where('id', '!=', $product->id)->take(5)->get(),
 
-            // ini buat product detailnya
-            'product' => $product
-        ]);
+                // ini buat product detailnya
+                'product' => $product
+            ]);
+        }
     }
 
     public function add(Request $request){
