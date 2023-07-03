@@ -62,6 +62,7 @@
                         @csrf
                         <input type="hidden" name="qty" id="qtyCart">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
+                        <input type="hidden" name="user_id" value="{{ $product->event->user->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
                         <button onclick="addToCart()" class="btn p-0">
                             <div class="cart2 d-flex justify-content-center align-items-center">
