@@ -16,7 +16,25 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
+        // $products = Product::select('products.*')
+        //     ->join('events', 'events.id', '=', 'products.event_id')
+        //     ->where()
+        //     ->get();
+
+//         SELECT e.id, e.name, p.id, p.name, e.end_date, current_date FROM events e JOIN products p ON e.id = p.event_id
+// WHERE e.end_date > current_date;
+        // $rn = new \DateTime();
+        // dd($rn);
+
         $products = Product::filter(request(['cat-id']))->get();
+
+        // $products = Product::all();
+        // dd($products[12]->event->end_date);
+        // $products = $products->where(new \DateTime($products->event->end_date), '>', $rn)->get();
+        // $end = new \DateTime($products[12]->event->end_date);
+        // dd($end > $rn);
+
+
         if($request->query('cat-id')){
         //     $products = Product::where('category_id', $request->query('cat-id'))->get();
             $cat_id = (int)$request->query('cat-id');
