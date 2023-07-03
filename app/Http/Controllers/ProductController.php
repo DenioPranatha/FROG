@@ -16,13 +16,13 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $products = Product::filter(request(['cat-id']))->get();
+        $products = Product::with('event')->filter(request(['cat-id']))->get();
         if($request->query('cat-id')){
         //     $products = Product::where('category_id', $request->query('cat-id'))->get();
             $cat_id = (int)$request->query('cat-id');
             $namacat = ProductCategory::find($cat_id)->name;
         }
-        // // kalo pencet all ato see more ato akses dr url
+        // kalo pencet all ato see more ato akses dr url
         else{
         //     $products = Product::all();
             $namacat = "All";

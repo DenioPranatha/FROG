@@ -101,6 +101,7 @@ class MyEventController extends Controller
 
         $pg = 1;
         $count = count($products);
+        $products = $products->load('event');
         $products = $products->take(9);
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
         if($count <= 9) $pg = -1;
@@ -137,6 +138,7 @@ class MyEventController extends Controller
         $pge = 10*$pg;
         $pge = $pge-1;
         $c = count($products);
+        $products = $products->load('event');
         if($pge >= $c)$pg = -1;
 
         return view('myProductsResult', [
