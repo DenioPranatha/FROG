@@ -57,13 +57,21 @@
 
 .box-address{
     background-color: #CDCDCD;
+    background-color: #522E93;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #CDCDCD;
+    color: #FFFFFF;
+
     width: 790px;
     height: 115px;
     margin-top: 8px;
     position: relative;
     display: flex;
-    margin-bottom: 20px;
-    padding-right: 10px;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    padding-right: 25px;
+    padding-left: 12px;
+    padding-top: 5px;
 }
 
 .rincian-data{
@@ -75,28 +83,32 @@
 
 .nama{
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: black;
+    font-family: 'poppins';
+    font-size: 16px;
+    color: white;
     font-weight: bolder;
     padding-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 .nomor-telepon{
     font-family: 'Ubuntu', sans-serif;
-    font-size: 17px;
-    color: black;
+    font-family: 'poppins';
+    font-size: 14px;
+    color: white;
     padding-bottom: 6px;
 }
 
 .alamat{
     font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-    color: black;
+    font-family: 'poppins';
+    font-size: 14px;
+    color: white;
     padding-bottom: 10px;
 }
 
 .change-address{
-    width: 180px;
+    width: 190px;
     height: 100px;
     position: relative;
     display: flex;
@@ -107,19 +119,23 @@
 }
 
 .box-change-address{
-    width: 180px;
-    height: 54px;
+    width: 190px;
+    height: 50px;
     display: flex;
     box-sizing: border-box;
-    border: 3px solid #522E93;
+    /* border: 3px solid #522E93; */
+    border: none;
     /* border-radius: 25px; */
     border-radius: 20px;
     align-items: center;
     align-content: center;
-    padding-left: 5px;
+    padding-left: 10px;
+    padding-right: 5px;
     background-color: #CDCDCD;
+    background-color: white;
 
     transition: .2s all ease-in-out;
+    float: right;
 }
 
 .box-change-address:hover{
@@ -145,7 +161,7 @@
     font-weight: 700;
     font-size: 16px;
     display: flex;
-
+    margin-bottom: 8px;
 }
 
 .ordered-icon{
@@ -160,20 +176,30 @@
     font-size: 20px;
     color: black;
     font-weight:500;
+    /* margin-bottom: 15px; */
 }
 
 .product-box{
     /* border: 1px solid blue; */
-    padding-top: 10px;
+    /* padding-top: 15px; */
+    padding-bottom: 18px;
+    /* margin-bottom: 15px; */
 }
 
 .title-event{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    /* font-family: 'Ubuntu', sans-serif; */
+    /* font-size: 18px; */
     color: #522E93;
-    font-weight: 700;
+    /* font-weight: 700; */
     margin-left: 12px;
     margin-bottom: 3px;
+
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 .event-linebar{
@@ -181,10 +207,10 @@
     border-width: 1px;
     height: 2px;
     top: 0px;
-    margin-top: 0px;
+    margin-top: 7px;
     width: 778px;
     margin-left: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .product-detail-box{
@@ -192,7 +218,7 @@
     display: flex;
     gap: 10px;
     padding-top: 1px;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .gambar-produk {
@@ -218,29 +244,40 @@
 .title-product{
     /* font-family: 'M PLUS 1'; */
     font-family: 'Poppins';
-    font-size: 18px;
+    /* font-size: 18px; */
     color: #522E93;
     font-weight: bolder;
     margin-left: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+    margin-top: 2px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
 }
 
 .quantity{
     /* font-family: 'M PLUS 1'; */
-    font-family: 'Poppins';
-    font-size: 16px;
+    /* font-family: 'Poppins'; */
+    /* font-size: 16px; */
     color: black;
-    font-weight: 400;
+    /* font-weight: 400; */
     margin-left: 3px;
     margin-bottom: 3px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 23px;
 }
 
 .span-quantity{
     /* font-family: 'M PLUS 1'; */
     font-family: 'Poppins';
-    font-size: 16px;
+    font-size: 14px;
     color: black;
-    font-weight:bolder;
+    font-weight: bolder;
     margin-left: 3px;
     margin-bottom: 3px;
 }
@@ -260,10 +297,17 @@
 .title-harga{
     align-items: center;
     text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-size: 18px; */
+    /* font-weight: 600; */
+    /* font-family: 'Ubuntu', sans-serif; */
     color: black;
+
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    /* font-weight: 600; */
+    font-size: 16px;
+    line-height: 21px;
 }
 
 .option-shipping-box{
@@ -330,26 +374,26 @@
 }
 
 .box-1:hover{
-    border: 2px solid #673AB7;
-    box-shadow: 4px 4px 0px #673AB7;
+    border: 1px solid #673AB7;
+    box-shadow: 2px 2px 8px #673AB7;
 
-    transform: scale(1.13);
+    transform: scale(1.05);
 
     transition: 0.3s;
 }
 
 
 .boxbtn{
-    border: 2px solid #673AB7;
-    box-shadow: 4px 4px 0px #673AB7;
+    border: 1px solid #673AB7;
+    box-shadow: 2px 2px 8px #673AB7;
 
-    transform: scale(1.13);
+    transform: scale(1.05);
 }
 
 button.boxbtn2{
-    border: 2px solid #673AB7;
-    box-shadow: 4px 4px 0px #673AB7;
-    transform: scale(1.13);
+    border: 1px solid #673AB7;
+    box-shadow: 2px 2px 8px #673AB7;
+    transform: scale(1.05);
 }
 
 .box-2 {
@@ -362,7 +406,7 @@ button.boxbtn2{
     position: relative;
     margin-top: 0px;
     /* border: 1.5px solid #CDCDCD;
-    box-shadow: 4px 4px 0px #CDCDCD; */
+    box-shadow: 2px 2px 8px #CDCDCD; */
 
     text-decoration: none;
     background-color:#FFFFFF;
@@ -380,10 +424,10 @@ button.boxbtn2{
 }
 
 .box-2:hover{
-    border: 2px solid #673AB7;
-    box-shadow: 4px 4px 0px #673AB7;
+    border: 1px solid #673AB7;
+    box-shadow: 2px 2px 8px #673AB7;
 
-    transform: scale(1.13);
+    transform: scale(1.05);
 
     transition: 0.3s;
 }
@@ -534,7 +578,7 @@ button.boxbtn2{
 .summary-checkout{
     border: 2px solid red;
     width: 365px;
-    height: 310px;
+    /* height: 310px; */
     align-items: baseline;
     margin-top: 100px;
     box-sizing: border-box;
@@ -554,8 +598,8 @@ button.boxbtn2{
 .box-summary {
     margin-left: 10px;
     margin-top: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 15px;
 
 
 }
@@ -576,16 +620,18 @@ button.boxbtn2{
     top: 0px;
     margin-top: 6px;
     margin-bottom: 15px;
-    width: 330px;
+    width: 320px;
+    margin-left: -3px;
 }
 
 .subtotal{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     gap: 10px;
     margin-bottom: 10px;
+    /* margin-left: ; */
 
 }
 
@@ -594,14 +640,14 @@ button.boxbtn2{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .shipping-subtotal{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 
@@ -610,43 +656,50 @@ button.boxbtn2{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .rp-1{
-    margin-left: 90px;
+    /* margin-left: 90px; */
+    /* right: 0; */
+    float: right;
+    padding-right: 12px;
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     margin-right: 2px;
 }
 
 .rp-2{
-    margin-left: 100px;
+    /* margin-left: 100px; */
+    float: right;
+    padding-right: 12px;
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     margin-right: 2px;
 }
 
 .total-payment{
     font-family: 'Ubuntu';
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     color: #522E93;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .rp-3{
-    margin-left: 97px;
+    /* margin-left: 97px; */
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 2px;
+    float: right;
+    padding-right: 12px;
 }
 
 .total-nominal{
@@ -667,10 +720,11 @@ button.boxbtn2{
     border: 1px solid #522E93;
     /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
     /* border-radius: 25px; */
-    padding-top: 15px;
+    padding-top: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
+    margin-bottom: 35px;
 
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
@@ -690,7 +744,7 @@ button.boxbtn2{
     border: 1px solid #673AB7;
     /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
     /* border-radius: 25px; */
-    padding-top: 15px;
+    padding-top: 10px;
 
     box-shadow: 4px 4px 8px #CDCDCD;
     border-radius: 20px;
@@ -753,6 +807,7 @@ button.boxbtn2{
 
 .box-address-change{
     background-color: #CDCDCD;
+    /* background-color: white; */
     width: 650px;
     height: 90px;
     margin-top: 8px;
@@ -1137,7 +1192,7 @@ textarea{
 
         /* background-color: red; */
     }
-    
+
     .checkout-box{
         position: relative;
         margin-left: 2%;
@@ -1148,14 +1203,14 @@ textarea{
         /* background-color: red; */
         /* border: 1px solid red; */
     }
-    
+
     .checkout-title{
         font-family: 'Ubuntu', sans-serif;
         font-size: 22px;
         color: #522E93;
         font-weight: bold;
     }
-    
+
     .checkout-linebar{
         background-color: #522E93;
         color: #522E93;
@@ -1166,20 +1221,20 @@ textarea{
         width: 410px;
         margin-bottom: 15px;
     }
-    
-    
+
+
     .title-shipping-address{
         position: relative;
         display: flex;
         gap: 4px;
         color: #522E93;
     }
-    
-    
+
+
     .location-icon {
         width: 5%;
     }
-    
+
     .shipping-address{
         margin-top: 0px;
         align-items: flex-start;
@@ -1189,8 +1244,8 @@ textarea{
         color: black;
         font-weight:500;
     }
-    
-    
+
+
     .box-address{
         background-color: #CDCDCD;
         width: 100%;
@@ -1202,7 +1257,7 @@ textarea{
         padding-right: 10px;
     }
 
-    
+
 
     .nama{
         font-family: 'Ubuntu', sans-serif;
@@ -1239,7 +1294,7 @@ textarea{
         padding-top: 30px;
         /* background-color: red; */
     }
-    
+
     .box-change-address{
         width: 180px;
         height: 54px;
@@ -1252,7 +1307,7 @@ textarea{
         align-content: center;
         padding-left: 5px;
         background-color: #CDCDCD;
-    
+
         transition: .2s all ease-in-out;
     }
 
@@ -1266,8 +1321,8 @@ textarea{
         font-size: 14px;
         margin-left: 6px;
     }
-    
-    
+
+
     .shipping-address{
         margin-top: 0px;
         align-items: flex-start;
@@ -1283,20 +1338,20 @@ textarea{
         width: 20px;
         height: 20px;
     }
-    
+
     .title-ordered-product{
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         display: flex;
-    
+
     }
-    
+
     .ordered-icon{
         width: 5%;
     }
-    
+
     .ordered-product{
         /* display: none; */
 
@@ -1309,7 +1364,7 @@ textarea{
         font-weight:500;
         margin-left: 4px;
     }
-    
+
     .product-box{
         /* border: 1px solid blue; */
         /* padding-top: 10px; */
@@ -1325,7 +1380,7 @@ textarea{
         margin-left: 12px;
         margin-bottom: 15px;
     }
-    
+
     .product-detail-box{
         position: relative;
         display: flex;
@@ -1335,20 +1390,20 @@ textarea{
 
         /* border: 1px solid red; */
     }
-    
+
     .gambar-produk {
         margin-left: 15px;
         width: 170px;
         height: 70px;
-    
+
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-    
+
         box-shadow: 4px 4px 8px #CDCDCD;
         border-radius: 10px;
     }
-    
+
     .detail{
         width: 420px;
         height: 80px;
@@ -1366,7 +1421,7 @@ textarea{
         margin-left: 3px;
         margin-bottom: 5px;
     }
-    
+
     .quantity{
         /* font-family: 'M PLUS 1'; */
         font-family: 'Poppins';
@@ -1376,7 +1431,7 @@ textarea{
         margin-left: 3px;
         margin-bottom: 3px;
     }
-    
+
     .span-quantity{
         /* font-family: 'M PLUS 1'; */
         font-family: 'Poppins';
@@ -1386,7 +1441,7 @@ textarea{
         margin-left: 3px;
         margin-bottom: 3px;
     }
-    
+
     .harga{
         margin-left: 30px;
         /* border: 1px solid black; */
@@ -1398,7 +1453,7 @@ textarea{
         text-align: center;
         padding-top: 20px;
     }
-    
+
     .title-harga{
         align-items: center;
         text-align: center;
@@ -1415,20 +1470,20 @@ textarea{
         margin-left: 12px;
         margin-bottom: 3px;
     }
-    
+
     .option-shipping-box{
         position: relative;
         display: flex;
         gap: 4px;
         padding-top: 15px;
     }
-    
+
     .title-option-shipping{
         position: relative;
         display: flex;
         gap: 4px;
     }
-    
+
     .shipping-icon{
         width: 15%;
     }
@@ -1443,7 +1498,7 @@ textarea{
         color: black;
         font-weight:500;
     }
-    
+
     .grid-box{
         display: none;
 
@@ -1457,7 +1512,7 @@ textarea{
 
         /* background-color: red; */
     }
-    
+
     .box-1{
         display: none;
 
@@ -1469,17 +1524,17 @@ textarea{
         justify-content: center;
         position: relative;
         margin-top: 0px;
-    
+
         /* border: 1.5px solid #CDCDCD;
         box-shadow: 4px 4px 0px #CDCDCD; */
-    
+
         text-decoration: none;
         background-color:#FFFFFF;
-    
+
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-    
+
         border: 1.5px solid #CDCDCD;
         box-shadow: 4px 4px 8px #CDCDCD;
         border-radius: 10px;
@@ -1490,7 +1545,7 @@ textarea{
         height: 60px;
         margin-left: 5px;
         margin-top: 0px;
-    
+
         position: relative;
         justify-content: center;
         border-radius: 0;
@@ -1499,13 +1554,13 @@ textarea{
         background-position: center;
         /* padding-bottom: 100px; */
     }
-    
+
     .gambar-pos{
         margin-top: 0px;
         margin-left: -4px;
         width: 160px;
         height: 50px;
-    
+
         position: relative;
         justify-content: center;
         border-radius: 0;
@@ -1513,7 +1568,7 @@ textarea{
         background-size: cover;
         background-position: center;
     }
-    
+
     .gambar-jnt{
         align-items: center;
         justify-content: center;
@@ -1521,7 +1576,7 @@ textarea{
         margin-top: 0px;
         width: 50px;
         height: 50px;
-    
+
         position: relative;
         justify-content: center;
         border-radius: 0;
@@ -1529,13 +1584,13 @@ textarea{
         background-size: cover;
         background-position: center;
     }
-    
+
     .gambar-tiki{
         margin-top: 0px;
         margin-left: 0px;
         width: 130px;
         height: 15px;
-    
+
         position: relative;
         justify-content: center;
         border-radius: 0;
@@ -1550,18 +1605,18 @@ textarea{
         gap: 4px;
         padding-top: 15px;
     }
-    
+
     .title-option-payment{
         position: relative;
         display: flex;
         gap: 4px;
-    
+
     }
-    
+
     .payment-icon{
         width: 10%;
     }
-    
+
     .payment-option-title{
         margin-top: 0px;
         align-items: flex-start;
@@ -1572,7 +1627,7 @@ textarea{
         color: black;
         font-weight:500;
     }
-    
+
     .gambar-bca{
         width: 80px;
         height: 55px;
@@ -1586,7 +1641,7 @@ textarea{
         background-size: cover;
         background-position: center;
     }
-    
+
     .gambar-gopay {
         margin-left: 0px;
         align-items: center;
@@ -1599,7 +1654,7 @@ textarea{
         background-position: center;
         background-size: 100% 100%;
     }
-    
+
     .gambar-dana{
         margin-top: 0px;
         margin-left: 0px;
@@ -1613,7 +1668,7 @@ textarea{
         background-position: center;
         background-size: 100% 100%;
     }
-    
+
     .gambar-spay{
         align-items: center;
         position: relative;
@@ -1641,17 +1696,17 @@ textarea{
         margin-top: 0px;
         /* border: 1.5px solid #CDCDCD;
         box-shadow: 4px 4px 0px #CDCDCD; */
-    
+
         text-decoration: none;
         background-color:#FFFFFF;
-    
+
         border: 1.5px solid #CDCDCD;
         box-shadow: 4px 4px 8px #CDCDCD;
         border-radius: 10px;
     /*
         width: 150px;
         height: 130px; */
-    
+
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1662,30 +1717,30 @@ textarea{
         border: 1px solid black;
         width: 400px;
         height: auto;
-    
+
         margin-left: 404px;
-    
+
         background-color: #FFFFFF;
-    
+
         position: relative;
         align-items: center;
         justify-content: center;
-    
+
         margin-bottom: 30px;
-    
+
         padding-left: 20px;
         padding-top: 20px;
         /* padding-top: 50px; */
-    
+
         background: #FFFFFF;
         border: 3px solid #522E93;
-    
+
         border-radius: 10px;
-    
+
         margin-top: 50px;
-    
+
     }
-    
+
     .current-address-title{
         font-family: 'Poppins';
         font-style: normal;
@@ -1693,7 +1748,7 @@ textarea{
         font-size: 20px;
         margin-bottom: 10px;
     }
-    
+
     .new-address textarea{
         /* display: none; */
         width: 313px;
@@ -1715,19 +1770,19 @@ textarea{
         display: block;
         margin-left: 870px;
         margin-top: 20px;
-    
+
         box-shadow: 4px 4px 8px #522E93;
         border-radius: 20px;
-    
+
     }
-    
+
     .box-summary {
         margin-left: 10px;
         margin-top: 30px;
         padding-left: 5px;
         padding-right: 5px;
-    
-    
+
+
     }
 
     .gabung-box{
@@ -1752,22 +1807,22 @@ textarea{
         display: block;
         margin-left: 870px;
         margin-top: 20px;
-    
+
         box-shadow: 4px 4px 8px #522E93;
         border-radius: 20px;
-    
+
     }
-    
+
     .box-summary {
         background-color: red;
         /* margin-left: 10px; */
         margin-top: 30px;
         /* padding-left: 5px; */
         padding-right: 5px;
-    
-    
+
+
     }
-    
+
     .title-checkout-summary{
         font-family: 'Ubuntu';
         font-style: normal;
