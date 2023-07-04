@@ -103,3 +103,24 @@
     line-height: 22px;
     margin-bottom: 5px;
 }
+
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+
+@media screen and (max-width: 428px){
+    .card-ph{
+        width: 70%;
+        /* background-color: red; */
+        margin-left: 120px;
+    }
+
+    .line-ph{
+        margin-bottom: 21px;
+        width: 398px;
+        margin-left: 40px;
+        border: 1.8px solid #522E93;
+    }
+
+}

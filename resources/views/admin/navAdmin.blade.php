@@ -29,6 +29,15 @@
             </a>
             <a class="nav-link d-flex align-items-center" href="#"><p class="logOut">Log Out</p></a>
         </div>
+
+        
+
+        <div class="menu-toggle">
+            <input type="checkbox"></>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
     <div class="line w-100"></div>
 </nav>
