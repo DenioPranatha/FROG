@@ -163,11 +163,17 @@
 
                                                 </div>
                                             </div>
-                                            <div class="eachProductPrice">
+                                            {{-- <div class="eachProductPrice">
                                                 <p class="eachProductPrice2">Rp{{ $cartDetail->product->price }}</p>
                                             </div>
                                             <div class="eachProductTotal">
                                                 <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p>
+                                            </div> --}}
+                                            <div class="eachProductPrice">
+                                                <p class="eachProductPrice2">@money( $cartDetail->product->price )</p>
+                                            </div>
+                                            <div class="eachProductTotal">
+                                                <p class="eachProductTotal2">@money(($cartDetail->product->price)*($cartDetail->qty))</p>
                                             </div>
                                         </div>
                                     @endif

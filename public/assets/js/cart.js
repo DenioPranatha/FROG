@@ -20,12 +20,25 @@ let numPlus = document.getElementsByClassName('numPlus');
 // alert(totalItem.value)
 // alert(totalPayment.value)
 
+const rupiah = (number)=>{
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0,
+        minimumFractionDigits: 0
+    }).format(number);
+}
+
+// console.log(rupiah(20000))
+
 for(let i=0; i<minBtn.length; i++){
     total = 0
+    // console.log(Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000);
 
     plusBtn[i].addEventListener('click', ()=>{
         if(qty[i].value>=parseInt(stock[i].innerHTML)){
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value = qty[i].value
@@ -35,13 +48,15 @@ for(let i=0; i<minBtn.length; i++){
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total = rupiah(total).toString()
 
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
         }else{
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value++;
@@ -51,7 +66,8 @@ for(let i=0; i<minBtn.length; i++){
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total =  rupiah(total).toString()
 
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
@@ -61,7 +77,8 @@ for(let i=0; i<minBtn.length; i++){
 
     minBtn[i].addEventListener('click',  ()=>{
         if (qty[i].value>1){
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value--;
@@ -71,20 +88,23 @@ for(let i=0; i<minBtn.length; i++){
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total = rupiah(total).toString()
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
         }
         else{
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value = 1;
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total = rupiah(total).toString()
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
@@ -93,12 +113,14 @@ for(let i=0; i<minBtn.length; i++){
     qtyForm[i].addEventListener("change", ()=>{
         // console.log('tes')
         // alert('hai')
-        priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+        // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+        priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
         priceTemp = parseInt(priceTemp)
 
         // buat hitung total price
         total = qty[i].value*priceTemp
-        total = 'Rp' + total.toString()
+        // total = 'Rp' + total.toString()
+        total = rupiah(total).toString()
         eachProductTotal2[i].innerHTML = total
         totalPayment.innerHTML = calculatePrice()
         totalItem.innerHTML = calculateItem()
@@ -277,13 +299,15 @@ function calculatePrice(){
     for(let i = 0; i<itemCheckLen; i++){
         // console.log("hai")
         if(itemCheck[i].checked == true){
-            temp = eachProductTotal2[i].innerHTML.substring(2)
+            // temp = eachProductTotal2[i].innerHTML.substring(2)
+            temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             // alert(temp)
             total += parseInt(temp)
         }
     }
     // alert(total)
-    total = 'Rp' + total.toString()
+    // total = 'Rp' + total.toString()
+    total = rupiah(total).toString()
     // alert(total)
     return total
 }
@@ -356,11 +380,13 @@ checkoutBtn.addEventListener('click', function(){
     total = 0
     for(let i = 0; i<itemCheckLen; i++){
         if(itemCheck[i].checked == true){
-            temp = eachProductTotal2[i].innerHTML.substring(2)
+            // temp = eachProductTotal2[i].innerHTML.substring(2)
+            temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             total += parseInt(temp)
         }
     }
-    total = total.toString()
+    // total = total.toString()
+    // total = rupiah(total).toString()
     totalPayments.value = total;
 
     // calc item

@@ -45,6 +45,8 @@ class CheckoutController extends Controller
         // dd(DB::raw('Distinct(count($product_id))'));
         // dd(count(array_unique($cart_header_id)));
         // dd($cart_header_id::distinct()->count('cart_header_id'));
+
+        // dd(gettype($request->totalPayments));
         return view('/checkout', [
             'product_id' => $product_id,
             'cart_header_id' => $cart_header_id,

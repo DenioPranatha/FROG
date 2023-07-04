@@ -27,9 +27,9 @@
 
                 <div class="box-address">
                     <div class="rincian-data">
-                        <h1 class="nama">Alfredo Wijaya Kesuma</h1>
-                        <h2 class="nomor-telepon">(+62) 812367780842</h2>
-                        <h3 class="alamat">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
+                        <h1 class="nama">{{ auth()->user()->name }}</h1>
+                        <h2 class="nomor-telepon">(+62) {{ auth()->user()->phone }}</h2>
+                        <h3 class="alamat">{{ auth()->user()->address }}
                         </h3>
                     </div>
 
@@ -143,7 +143,7 @@
                                         <div class="gambar-produk" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
                                         <div class="detail">
                                             <h1 class="title-product">{{ $cartDetail->product->name }}</h1>
-                                            <h1 class="quantity"> Quantity : <span class="span-quantity">{{ $cartDetail->qty }} Items</span></h1>
+                                            <h1 class="quantity"> Quantity: <span class="span-quantity">{{ $cartDetail->qty }} Items</span></h1>
                                         </div>
                                         <div class="harga">
                                             <h1 class="title-harga">Rp {{ ($cartDetail->product->price)*($cartDetail->qty) }}</h1>
@@ -247,12 +247,17 @@
                     <h1 class="title-checkout-summary">Checkout Summary</h1>
                     <div class="checkout-summary-linebar"></div>
 
-                    <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1>
+                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1> --}}
+                    <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">@money($totalPayment)</span></h1>
+                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">{{ $totalPayment }}</span></h1> --}}
+                    {{-- <h1>{{ $totalPayment }}</h1> --}}
 
-                    <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1>
+                    {{-- <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1> --}}
+                    <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
 
-                    <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1>
-
+                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1> --}}
+                    <h1 class="total-payment">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
+                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
 
                     <button type="button" class="pay-button" id="type-success" >
                         <h1 class="pay-now-title">Pay Now !</h1>
