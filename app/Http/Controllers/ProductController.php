@@ -10,21 +10,37 @@ use App\Models\CartDetail;
 use App\Models\CartHeader;
 use App\Models\Category;
 use App\Models\Event;
+use Carbon\Carbon;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 
 class ProductController extends Controller
 {
 
     public function index(Request $request)
     {
-        $products = Product::with('event')->filter(request(['cat-id']))->get();
+        // $products = Product::with('event')->filter(request(['cat-id']))->get();
+
+        // dd(Product::all()->first()->event->end_date);
+        // dd(Carbon::now()->toDateString());
+
+        $rn = Carbon::now()->toDateString();
+
+        $products = Product::with('event')->filter(request(['cat-id']))->whereHas('event', function(Builder $query) use($rn){
+            $query->where('end_date', '>', $rn);
+        })->get();
+
+        // dd($products);
 
         // $products = Product::select('products.*')
         //     ->join('events', 'events.id', '=', 'products.event_id')
-        //     ->where()
+        //     ->where('events.end_date', '>', Carbon::now()->toDateString())
         //     ->get();
 
-//         SELECT e.id, e.name, p.id, p.name, e.end_date, current_date FROM events e JOIN products p ON e.id = p.event_id
-// WHERE e.end_date > current_date;
+        // dd($products);
+
+
+        //         SELECT e.id, e.name, p.id, p.name, e.end_date, current_date FROM events e JOIN products p ON e.id = p.event_id
+        //          WHERE e.end_date > current_date;
         // $rn = new \DateTime();
         // dd($rn);
 
@@ -159,7 +175,14 @@ class ProductController extends Controller
     public function result(Request $request)
     {
         // kalo pencet salah satu kategori dr home
-        $products = Product::filter(request(['search-box', 'cat-id']))->get();
+        // $products = Product::filter(request(['search-box', 'cat-id']))->get();
+
+        $rn = Carbon::now()->toDateString();
+
+        $products = Product::with('event')->filter(request(['search-box', 'cat-id']))->whereHas('event', function(Builder $query) use($rn){
+            $query->where('end_date', '>', $rn);
+        })->get();
+
         if($request->query('cat-id')){
         //     $products = Product::where('category_id', $request->query('cat-id'))->get();
             $cat_id = (int)$request->query('cat-id');

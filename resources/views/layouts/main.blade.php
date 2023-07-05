@@ -7,10 +7,15 @@
     <title>@yield('title')</title>
 
     {{-- bootstrap css --}}
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/node_modules/aos/dist/aos.css">
-    <link rel="stylesheet" href="/node_modules/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/node_modules/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"> --}}
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap-icons/font/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('node_modules/aos/dist/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('node_modules/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
+
 
     {{-- font style --}}
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
@@ -19,11 +24,17 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
     {{-- main css --}}
-    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/productCart.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/eventCart.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/historyCard.css') }}">
+
+    {{-- <link rel="stylesheet" href="/assets/css/navbar.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
     <link rel="stylesheet" href="/assets/css/productCart.css">
     <link rel="stylesheet" href="/assets/css/eventCart.css">
-    <link rel="stylesheet" href="/assets/css/historyCard.css">
+    <link rel="stylesheet" href="/assets/css/historyCard.css"> --}}
     @yield('css')
 </head>
 <body>

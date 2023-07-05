@@ -15,7 +15,8 @@ if(window.matchMedia("(min-width:576px)").matches){
     var scrollPosition = 0;
     var bannerPosition = 0;
 
-    $('.carousel-control-next').on('click', function(){
+    // $('.carousel-control-next').on('click', function(){
+    $('.popular-next').on('click', function(){
         if(scrollPosition < (carousel-(cardWidth*5))){
             console.log('next');
             scrollPosition = scrollPosition + cardWidth;
@@ -24,7 +25,8 @@ if(window.matchMedia("(min-width:576px)").matches){
 
     });
 
-    $('.carousel-control-prev').on('click', function(){
+    // $('.carousel-control-prev').on('click', function(){
+    $('.popular-prev').on('click', function(){
         if(scrollPosition > 0){
             console.log('prev');
             scrollPosition = scrollPosition - cardWidth;
@@ -128,3 +130,46 @@ $(document).ready(function(){
     }
 
 });
+
+// page number for carousel banner
+var totalItems = $('.item').length;
+var currentIndex = $('div.item.active').index() + 1;
+
+var down_index = 1;
+$('.num').html(''+currentIndex+''+'/'+''+totalItems+'');
+
+    $(".next").click(function(){
+        currentIndex_active = $('div.item.active').index() + 2
+    if (totalItems >= currentIndex_active)
+    {
+        down_index= $('div.item.active').index() + 2;
+        $('.num').html(''+currentIndex_active+''+'/'+''+totalItems+'');
+    } else if (currentIndex_active > totalItems){
+        currentIndex_active = $('div.item.active').index() - 2;
+        down_index= $('div.item.active').index() - 2;
+        $('.num').html(''+currentIndex_active+''+'/'+''+totalItems+'');
+    }
+});
+
+    $(".prev").click(function(){
+    if (down_index > 1 )
+    {
+        down_index=down_index-1;
+        $('.num').html(''+down_index+''+'/'+''+totalItems+'');
+    } else if (down_index <= 1)
+    {
+        down_index=totalItems;
+        $('.num').html(''+down_index+''+'/'+''+totalItems+'')
+    }
+});
+
+
+$("#carouselExampleFade").on('slide.bs.carousel',function(e){
+    var data_slide = $('.carousel-fade .active').data('id') + 1;
+    if(data_slide < 5){
+        $('.num').html(''+data_slide+''+'/'+''+totalItems+'');
+    } else{
+        $('.num').html(''+(data_slide-4)+''+'/'+''+totalItems+'');
+    }
+    // alert(data_slide)
+})

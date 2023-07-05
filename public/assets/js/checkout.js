@@ -37,12 +37,14 @@ let summarycheckout = document.getElementById('summary-checkout');
 var body = document.body;
 var html = document.documentElement;
 var bodyH = Math.max(body.scrollHeight,  body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
-var position = bodyH-708;
+// var position = bodyH-708;
+var position = bodyH-670;
 var count = 0
 var count2 = 0
 
 window.onscroll = function(){
-    if(window.scrollY >= (bodyH-708)) { // change target to number
+    // if(window.scrollY >= (bodyH-708)) { // change target to number
+    if(window.scrollY >= (bodyH-670)) { // change target to number
         summarycheckout.style.position = 'absolute';
         summarycheckout.style.top = position+'px';
     }

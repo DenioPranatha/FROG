@@ -2,6 +2,97 @@
     scroll-behavior: auto;
 } */
 
+/* banner */
+
+.bannerDiv {
+    /* padding-top: 70px; */
+    /* background-color: yellow; */
+    width: 100%;
+    height: fit-content;
+    /* padding-left: 42px;
+    padding-right: 42px; */
+    /* padding-left: 100px;
+    padding-right: 100px; */
+    padding-bottom: 10px;
+    /* overflow: hidden; */
+}
+
+.carousel-fade .w-100{
+    height: 70vh;
+}
+
+.carousel-item img{
+    object-fit: cover;
+}
+
+.carousel-caption{
+    margin-left: 42px;
+    left: 0%;
+    text-align: left !important;
+    max-width: 600px;
+    right: auto;
+    padding:5px;
+
+    /* border: 1px solid red; */
+}
+
+.carousel-caption h3{
+    color: #FFF;
+    font-size: 30px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p{
+    margin-bottom: 40px;
+    color: #FFF;
+    font-size: 21px;
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.carousel-fade .carousel-control-prev,
+.carousel-fade .carousel-control-next
+{
+  width: 30px;
+  height: 30px;
+  margin-top: auto;
+  margin-left: 5px;
+  background-color: none;
+  opacity: .8;
+}
+
+.carousel-fade .carousel-control-next {
+  right: unset;
+  left: 90px;
+}
+
+.carousel-fade .carousel-control-prev-icon{
+    /* border: 10px solid red; */
+    background-image: url(../images/banner/prev.svg);
+}
+
+.carousel-fade .carousel-control-next-icon{
+    background-image: url(../images/banner/next.svg);
+}
+
+.num
+{
+    width: fit-content;
+    margin-left: 48px;
+    margin-top: -18px;
+    position: absolute;
+    z-index: 99;
+
+    color: #FFF;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+/* banner */
+
 .banner{
     width: 96vw;
     height: 300px;
@@ -40,7 +131,7 @@
     /* background-color: red; */
 }
 
-.carousel{
+.popular-carousel, .detail-carousel{
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
@@ -159,14 +250,20 @@ a.custom-card:hover {
     color: #673AB7;
 }
 
-.carousel-inner{
+.popular-carousel-inner{
     display: flex;
     padding-left: 25px;
     margin-right: 20px;
     /* border: 1px solid black; */
 }
-
+/*
 .carousel-item, .carousel-item1{
+    display: block;
+    flex: 0 0 15%;
+    margin-right: 20px;
+} */
+
+.detail-item ,.carousel-item1{
     display: block;
     /* flex: 0 0 15%; */
     margin-right: 20px;
@@ -179,7 +276,8 @@ a.custom-card:hover {
 
 }
 
-.carousel-control-prev, .carousel-control-next,
+/* .carousel-control-prev, .carousel-control-next, */
+.popular-prev, .popular-next,
 .carousel-control-prev1, .carousel-control-next1{
     display: flex;
     justify-content: center;
@@ -194,7 +292,8 @@ a.custom-card:hover {
     border-radius: 50%;
 }
 
-.carousel-control-prev:hover, .carousel-control-next:hover,
+/* .carousel-control-prev:hover, .carousel-control-next:hover, */
+.popular-prev:hover, .popular-next:hover,
 .carousel-control-prev1:hover, .carousel-control-next1:hover{
     opacity: 1;
 }
@@ -290,7 +389,7 @@ a.custom-card:hover {
     line-height: normal;
 }
 
-.slide{
+.detail-slide{
     display: flex;
     width: 102vw;
     height: fit-content;
@@ -301,7 +400,7 @@ a.custom-card:hover {
     overflow-x: scroll;
 }
 
-.slide::-webkit-scrollbar {
+.detail-slide::-webkit-scrollbar {
     display: none;
 }
 
@@ -309,7 +408,7 @@ a.custom-card:hover {
     display: none;
 }
 
-.slide, .slide1 {
+.detail-slide, .slide1 {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -328,7 +427,7 @@ a.custom-card:hover {
     overflow-x: scroll;
 }
 
-.slide section{
+.detail-slide section{
     flex: none;
     scroll-snap-align: start;
     scroll-margin-left: 50px;
@@ -782,7 +881,8 @@ body{
         /* background-color: red; */
     }
 
-    .carousel-control-prev, .carousel-control-next,
+    /* .carousel-control-prev, .carousel-control-next, */
+    .popular-prev, .popular-next,
     .carousel-control-prev1, .carousel-control-next1{
     display: flex;
     justify-content: center;
@@ -1008,7 +1108,8 @@ body{
         margin-bottom: 15px;
     }
 
-    .slide{
+    .detail-slide{
+    /* .slide{ */
         display: flex;
         width: 102vw;
         height: fit-content;
@@ -1085,7 +1186,7 @@ body{
     justify-content: center;
     }
 
-    .slide{
+    .detail-slide{
         display: flex;
         flex-direction: column;
         width: 102vw;
@@ -1242,7 +1343,8 @@ body{
         overflow-x: scroll;
     }
 
-    .slide section{
+    .detail-slide section{
+    /* .slide section{ */
         flex: none;
         scroll-snap-align: start;
         scroll-margin-left: 50px;

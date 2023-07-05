@@ -20,12 +20,25 @@ let numPlus = document.getElementsByClassName('numPlus');
 // alert(totalItem.value)
 // alert(totalPayment.value)
 
+const rupiah = (number)=>{
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0,
+        minimumFractionDigits: 0
+    }).format(number);
+}
+
+// console.log(rupiah(20000))
+
 for(let i=0; i<minBtn.length; i++){
     total = 0
+    // console.log(Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000);
 
     plusBtn[i].addEventListener('click', (event)=>{
         if(qty[i].value>=parseInt(stock[i].innerHTML)){
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value = qty[i].value
@@ -35,13 +48,15 @@ for(let i=0; i<minBtn.length; i++){
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total = rupiah(total).toString()
 
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
         }else{
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value++;
@@ -51,7 +66,8 @@ for(let i=0; i<minBtn.length; i++){
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total =  rupiah(total).toString()
 
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
@@ -102,7 +118,8 @@ for(let i=0; i<minBtn.length; i++){
 
     minBtn[i].addEventListener('click',  (event)=>{
         if (qty[i].value>1){
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value--;
@@ -112,20 +129,23 @@ for(let i=0; i<minBtn.length; i++){
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total = rupiah(total).toString()
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
         }
         else{
-            priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             priceTemp = parseInt(priceTemp)
 
             qty[i].value = 1;
 
             // buat hitung total price
             total = qty[i].value*priceTemp
-            total = 'Rp' + total.toString()
+            // total = 'Rp' + total.toString()
+            total = rupiah(total).toString()
             eachProductTotal2[i].innerHTML = total
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
@@ -158,12 +178,14 @@ for(let i=0; i<minBtn.length; i++){
     qtyForm[i].addEventListener("change", ()=>{
         // console.log('tes')
         // alert('hai')
-        priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+        // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
+        priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
         priceTemp = parseInt(priceTemp)
 
         // buat hitung total price
         total = qty[i].value*priceTemp
-        total = 'Rp' + total.toString()
+        // total = 'Rp' + total.toString()
+        total = rupiah(total).toString()
         eachProductTotal2[i].innerHTML = total
         totalPayment.innerHTML = calculatePrice()
         totalItem.innerHTML = calculateItem()
@@ -442,13 +464,15 @@ function calculatePrice(){
     for(let i = 0; i<itemCheckLen; i++){
         // console.log("hai")
         if(itemCheck[i].checked == true){
-            temp = eachProductTotal2[i].innerHTML.substring(2)
+            // temp = eachProductTotal2[i].innerHTML.substring(2)
+            temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             // alert(temp)
             total += parseInt(temp)
         }
     }
     // alert(total)
-    total = 'Rp' + total.toString()
+    // total = 'Rp' + total.toString()
+    total = rupiah(total).toString()
     // alert(total)
     return total
 }
@@ -476,18 +500,104 @@ let rightCart = document.getElementById('rightCart');
 var body = document.body;
 var html = document.documentElement;
 var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
-var position = bodyH-541
+var position = bodyH-541;
 
 window.onscroll = function(){
+    // console.log(window.scrollY);
+    // console.log(bodyH);
     if(window.scrollY >= (bodyH-630)) { // change target to number
+        // console.log("atas");
         rightCart.style.position = 'absolute';
         rightCart.style.top = position+'px';
     }
     else{
+        // console.log("bawah");
         rightCart.style.position = 'fixed';
         rightCart.style.top = '15%';
     }
 };
+
+var product_id = []
+var cart_header_id = []
+let checkoutForm = document.getElementById("checkoutForm");
+let checkoutBtn = document.getElementById("checkoutBtn");
+let checkedItems = document.getElementById("checkedItems");
+let checkedHeaders = document.getElementById("checkedHeaders");
+let eachProduct = document.getElementsByClassName("eachProduct");
+let totalItems = document.getElementById("totalItems");
+let totalPayments = document.getElementById("totalPayments");
+
+
+
+checkoutBtn.addEventListener('click', function(){
+    // e.preventDefault();
+
+    for(var i=0; i<eachProduct.length; i++){
+        // console.log(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].classList[1])
+        if(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].checked == true){
+            // console.log("hi")
+            product_id.push(eachProduct[i].childNodes[5].classList[1]);
+            cart_header_id.push(eachProduct[i].childNodes[1].childNodes[1].childNodes[1].classList[1]);
+        }
+    }
+
+    // calc price
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        if(itemCheck[i].checked == true){
+            // temp = eachProductTotal2[i].innerHTML.substring(2)
+            temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            total += parseInt(temp)
+        }
+    }
+    // total = total.toString()
+    // total = rupiah(total).toString()
+    totalPayments.value = total;
+
+    // calc item
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        if(itemCheck[i].checked == true){
+            temp = parseInt(qty[i].value)
+            total += temp
+        }
+    }
+    total = total.toString()
+    totalItems.value = total;
+
+
+    // console.log(product_id)
+    checkedItems.value = JSON.stringify(product_id);
+    checkedHeaders.value = JSON.stringify(cart_header_id);
+    checkoutForm.submit();
+
+
+})
+
+
+
+
+// // buat stop scroll yg bagian kanan
+// let rightCart = document.getElementById('rightCart');
+// var body = document.body;
+// var html = document.documentElement;
+// var bodyH = Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
+// var position = bodyH-541
+
+// window.onscroll = function(){
+//     console.log(window.scrollY);
+//     console.log(bodyH);
+//     if(window.scrollY >= (bodyH-630)) { // change target to number
+//         console.log("atas");
+//         rightCart.style.position = 'absolute';
+//         rightCart.style.top = position+'px';
+//     }
+//     else{
+//         console.log("bawah");
+//         rightCart.style.position = 'fixed';
+//         rightCart.style.top = '15%';
+//     }
+// };
 
 
 // let minus = document.getElementById('minus');

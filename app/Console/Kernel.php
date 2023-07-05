@@ -21,8 +21,7 @@ class Kernel extends ConsoleKernel
             ->where('end_date', '<', now())
             ->where('status', 'accepted')
             ->update(['status' => 'finished']);
-        })->everyMinute();
-
+        })->daily();
     }
 
     /**
