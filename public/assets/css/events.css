@@ -821,6 +821,14 @@ body{
 
 }
 
+.pruduct-title-responsive{
+    display: none;
+}
+
+.statistic-title-responsive{
+    display: none;
+}
+
 
 /* Responsive Website */
 
@@ -869,8 +877,8 @@ body{
         flex-wrap: nowrap;
         height: fit-content;
         /* margin-left: 85px; */
-        margin-left: 10px;
-        width: 100%;
+        margin-left: 5px;
+        width: 110%;
 
         /* background-color: red; */
     }
@@ -908,6 +916,7 @@ body{
 
     /* search  */
     .search-row{
+        /* background-color: red; */
         display: flex;
         /* width: 96vw;
         margin: 21px;
@@ -917,7 +926,25 @@ body{
         position: sticky;
         top: 57px;
         z-index: 1;
-        background-color: white;
+        background-color: white; 
+
+        /* transform: rotate(90deg); */
+        /* transform-origin: right top;
+        transform:rotate(-90deg) translateY(-100px); */
+    }
+
+    #bubble-box-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #bubble-box {
+        display: inline-block;
+    }
+
+    .bubble-box {
+        display: inline-block;
+        margin-right: 10px;
     }
 
     .form-group{
@@ -927,6 +954,7 @@ body{
     }
 
     .search{
+        /* background-color: red; */
         width: 20px;
         /* width: 10%; */
         /* background-color: red; */
@@ -1010,9 +1038,11 @@ body{
         justify-content: flex-start;
         flex-direction: column; */
         flex-wrap: wrap;
-        margin-left: 10px;
-        gap: 10px;
+        margin-left: 3px;
+        gap: 14px;
         padding-left: 20px;
+
+        margin-top: -20px;
     }
 
     .more-products{
@@ -1245,11 +1275,12 @@ body{
     }
 
     .rec{
+        /* background-color: red; */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 20vw;
+        width: 40vw;
         height: 25vw;
         border: 1px solid #CDCDCD;
         box-shadow: 4px 4px 8px #CDCDCD;
@@ -1277,7 +1308,7 @@ body{
 
     .stat-subheadline{
         font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 600;
         height: 30px;
         display: flex;
@@ -1288,11 +1319,13 @@ body{
     }
 
     .nav-cont .active, .nav-cont1 .active{
+        display: none;
         border-bottom: 3px solid #522E93;
         color: #522E93;
     }
 
     .nav-cont{
+        display: none;
         color: #522E93;
         background-color: white;
         position: sticky;
@@ -1305,6 +1338,7 @@ body{
     }
 
     .nav-cont1{
+        display: none;
         color: #522E93;
         height: 3rem;
         width: 19vw;
@@ -1352,6 +1386,7 @@ body{
 
     .nav-button,
     .nav-button1{
+    display: none;
     color: #522E93;
     position: relative;
     width: 6rem;
@@ -1382,6 +1417,92 @@ body{
         height: 100px !important;
     }
 
+    .pruduct-title-responsive{
+        display: block;
+        margin-left: 30px;
+        font-weight: bolder;
+    }
 
+    .statistic-title-responsive{
+        display: block;
+        margin-left: 18px;
+        font-weight: bolder;
 
+        margin-top: -40px;
+    }
+
+    .grafik-time{
+        display: none;
+    }
+
+    .stat-income{
+        display: none;
+    }
+
+    .seeMore{
+        /* display: none; */
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 180px;
+        /* padding-left: 50px; */
+    }
+
+    .fullBtn{
+        margin-top: 30px;
+        margin-bottom: 80px;
+        /* padding: 0px 115px 0px 85px; */
+        width: 100%;
+        padding-left: 120px;
+        /* border: 1px solid black; */
+    }
+
+    .lineBtn{
+        display: none;
+    }
+
+    .bannerDiv{
+        padding-left: 1%;
+        padding-right: 1%;
+        /* margin-top: 10px; */
+        padding-top: 0;
+        /* height: 10%; */
+        /* background-color: black; */
+        /* border: 5px solid red; */
+        /* height: fit-content; */
+        /* margin-left: 50px; */
+        /* padding-bottom: 4px; */
+    }
+
+    /* .bannerDiv img{
+        display: none;
+    } */
+
+    .carousel-fade .w-100{
+        height: 220px;
+    }
+
+    .section-title-first {
+        font-size: 50%;
+        margin-left: 20px;
+    }
+
+    .bubble-box .purple-but{
+        color: black;
+    }
+
+    .not-found{
+        /* background-color: red; */
+        width: 80vw;
+        text-align: center;
+        color: black;
+        font-size: 25px;
+        font-family: 'Poppins';
+        height: 300px;
+        align-items: center;
+        display: flex;
+        margin-bottom: 42px;
+
+        margin-left: 25px;
+    }
 }

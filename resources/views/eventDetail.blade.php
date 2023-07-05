@@ -60,6 +60,7 @@
 
     <hr class="nav-line">
 
+    <h3 class="pruduct-title-responsive">Product</h3>
     <div id="carouselExample" data-bs-spy="scroll" data-bs-target="#nav-cont" class="carousel detail-carousel" tabindex="0">
         <div class="slide detail-slide">
             <div class="carousel-item detail-item">
@@ -70,6 +71,7 @@
                 </section>
             </div>
 
+            <h3 class="statistic-title-responsive">Statistic</h3>
             <div class="carousel-item detail-item">
                 <section class="stat-container" id="section2">
                     <div class="stat-headline">Funds Collected</div>
@@ -95,7 +97,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="stat-subheadline">Income Graph</div>
+                    <div class="stat-subheadline stat-income">Income Graph</div>
 
                     <div class="grafik-time">
                         <div id="nav-cont1" class="nav-cont1 nav nav-underline justify-content-center">

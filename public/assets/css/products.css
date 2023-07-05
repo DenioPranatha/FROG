@@ -103,7 +103,7 @@ a.categoriesCart {
     text-align: center;
     color: black;
     font-size: 25px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Poppins';
     height: 300px;
     align-items: center;
     display: flex;
@@ -188,20 +188,31 @@ a.categoriesCart {
         /* margin-left: 50px;x */
         /* background-color: red; */
 
-        border: 1px solid black;
+        /* border: 1px solid black; */
         display: flex;
         flex-direction: row;
         justify-content: left;
     }
 
+    .searchDiv{
+        margin-left: -75px;
+        width: 560px;
+    }
+
     .categories{
+        /* background-color: red; */
+        display: none;
         /* padding: 0px 42px; */
         /* padding: 0px 100px; */
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         font-size: 15px;
-        border: 1px solid red;
+        /* border: 1px solid red; */
+    }
+
+    .categoriesCart{
+        display: none;
     }
 
 
@@ -221,5 +232,28 @@ a.categoriesCart {
         /* background-color: red; */
         padding-left: 15px;
     }
+
+    .not-found{
+        /* background-color: red; */
+        width: 98vw;
+        text-align: center;
+        color: black;
+        font-size: 25px;
+        font-family: 'Poppins';
+        height: 300px;
+        align-items: center;
+        display: flex;
+        margin-bottom: 42px;
+
+        margin-left: 6px;
+    }
+
+    .lineBtn{
+        display: none;
+        height: 2px;
+        width: 30%;
+        background-color: #522E93;
+    }
+    
 }
 

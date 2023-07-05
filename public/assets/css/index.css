@@ -747,6 +747,7 @@ input[type=text] {
     }
 
     .products {
+        /* background-color: red; */
         height: fit-content;
         align-items: start;
         justify-content: flex-start;
@@ -755,7 +756,7 @@ input[type=text] {
         /* width: 100vw; */
         /* padding: 0px 42px; */
         padding: 0px 100px;
-        padding-left: 1%;
+        padding-left: 3%;
         padding-right: 1%;
         padding-bottom: 30px;
 
@@ -945,6 +946,11 @@ input[type=text] {
         font-size: 80%;
         line-height: 26px;
         color: rgba(0, 0, 0, 0.73);
+        /* color: blue; */
+    }
+
+    .categoriesCart:hover p{
+        color: white;
     }
 
     .categories a {

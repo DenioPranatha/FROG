@@ -44,7 +44,7 @@ input[type=text]{
     text-align: center;
     color: black;
     font-size: 25px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Poppins';
     height: 300px;
     align-items: center;
     display: flex;
@@ -388,7 +388,8 @@ input[type=text]{
 /* Ukuran Mobile */
 @media screen and (max-width: 428px){
     .atas{
-        display: none;
+        /* display: none; */
+        display: block;
         /* background-color:#F3ECFF; */
         /* background-color:white; */
         /* background-color:red; */
@@ -396,13 +397,22 @@ input[type=text]{
         padding: 15px;
         padding-left: 5%;
         width: 100%;
+        margin-bottom: -20px;
         /* display: flex; */
         /* height: 40px; */
     }
+    
+    .searchForm{
+        /* background-color: red; */
+        width: 600px;
+    }
 
-
+    .searchDiv{
+        width: 370px;
+    }
 
     .categories{
+        /* display: block; */
         display: none;
         /* background-color: yellow; */
         width: 69%;
@@ -415,6 +425,7 @@ input[type=text]{
     }
 
     .categoriesCard{
+        /* display: block; */
         display: none;
         /* display: flex; */
         /* flex-wrap: nowrap; */
@@ -435,25 +446,29 @@ input[type=text]{
     }
 
     .searchLogo{
-        display: none;
-        background-color: red;
+        /* display: none; */
+        display: block  ;
+        /* background-color: red; */
     }
 
     .allbtn{
         display: none;
+        /* display: block; */
     }
 
-    .cobasearchbox input{
-        display: none;
-        width: 800px;
-        background-color: red;
+    .searchbox input{
+        /* display: none; */
+        display: block;
+        width: 10000px;
+        /* background-color: red; */
     }
 
 
-    .cobasearchbox{
-        display: none;
+    .searchbox{
+        /* display: none; */
+        display: block;
         border: 1px solid red;
-        width: 200px;
+        width: 100px;
     }
 
     .charityDestDiv{
@@ -619,6 +634,18 @@ input[type=text]{
 
         /* background-color: blue; */
         /* width: aut; */
+    }
+
+    .not-found{
+        width: 98vw;
+        text-align: center;
+        color: black;
+        font-size: 25px;
+        font-family: 'Poppins';
+        height: 300px;
+        align-items: center;
+        display: flex;
+        margin-bottom: 42px;
     }
 
 
