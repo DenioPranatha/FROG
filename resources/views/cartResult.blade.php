@@ -10,7 +10,7 @@
                 </label>
             </div>
             <div class="eachProductImage" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
-            <div class="eachProductDesc">
+            <div class="eachProductDesc {{ $cartDetail->product->id }}">
                 <div class="productDescName">{{ $cartDetail->product->name }}</div>
                 <p class="stock d-none">{{ $cartDetail->product->stock }}</p>
                 <div class="productDescQtyText">Quantity:</div>
@@ -50,11 +50,10 @@
                 </div>
             </div>
             <div class="eachProductPrice">
-                <p class="eachProductPrice2">Rp{{ $cartDetail->product->price }}</p>
+                <p class="eachProductPrice2">@money( $cartDetail->product->price )</p>
             </div>
             <div class="eachProductTotal">
-                <p class="eachProductTotal2">Rp{{ ($cartDetail->product->price)*($cartDetail->qty) }}</p>
-            </div>
+                <p class="eachProductTotal2">@money(($cartDetail->product->price)*($cartDetail->qty))</p>
         </div>
     @endif
 @endforeach
