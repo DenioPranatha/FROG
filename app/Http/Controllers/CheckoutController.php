@@ -25,28 +25,6 @@ class CheckoutController extends Controller
         $eventCount = count(array_unique($cart_header_id));
         $cartHeaders = CartHeader::find($cart_header_id);
 
-        // dd(CartHeader::find($cart_header_id));
-
-        // $products = array();
-
-        // foreach($product_id as $prod){
-        //     $products['product_id'] = $prod[$loop]
-        // }
-
-        // $products = CartDetail::where('product_id', $product_id)->where('cart_header_id', $cart_header_id)->get();
-
-        // $products = Product::find($product_id);
-        // $details = CartDetail::where($checkedItems);
-        // $headers = ;
-
-        // dd($headers);
-
-        // dd($products);
-        // dd(DB::raw('Distinct(count($product_id))'));
-        // dd(count(array_unique($cart_header_id)));
-        // dd($cart_header_id::distinct()->count('cart_header_id'));
-
-        // dd(gettype($request->totalPayments));
         return view('/checkout', [
             'product_id' => $product_id,
             'cart_header_id' => $cart_header_id,
@@ -55,7 +33,14 @@ class CheckoutController extends Controller
             'totalItem' => $request->totalItems,
             'totalPayment' => $request->totalPayments
         ]);
+        // return redirect('/checkout')->with('product_id', $product_id)->with('cart_header_id', $cart_header_id)->with('eventCount', $eventCount)->with('cartHeaders', $cartHeaders)->with('totalItem', $request->totalItems)->with('totalPayment', $request->totalPayments);
         // return redirect('/checkout');
 
+    }
+
+    public function saveAddress(Request $request){
+        // dump($request);
+        // return view('index');
+        dd($request);
     }
 }

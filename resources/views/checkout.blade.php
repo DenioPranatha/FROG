@@ -12,7 +12,6 @@
 @section('title', 'Check Out')
 
 @section('content')
-
     <div class="all-content">
 
         <div class="gabung-box">
@@ -34,7 +33,7 @@
                     </div>
 
                     <div class="change-address" id="change-address">
-                        <button type="button" class="box-change-address" class="box-change-address" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="togglepopup()">
+                        <button type="button" class="box-change-address" class="box-change-address" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <img src="assets/img/pen.svg" class="pen-icon">
                             <h2 class="title-shipping-address">Change Address</h2>
                         </button>
@@ -42,29 +41,23 @@
                 </div>
 
                 <!-- Modal -->
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content modal-css">
                             <div class="modal-header"></div>
                             <div class="modal-body modal-css">
+                                {{-- @dump($cartHeaders) --}}
 
-                                <form class="form-css needs-validation" novalidate>
+                                {{-- <form class="form-css needs-validation" novalidate> --}}
 
+                                <form action="/saveAddress" class="form-css needs-validation" method="post">
+                                    @csrf
                                     <div class="view-box-change-address">
-                                        {{-- <h1 class="current-address-title">Current Address</h1> --}}
-
-                                        {{-- <div class="box-address-change">
-                                            <div class="rincian-data-change">
-                                                <h1 class="nama-change">Alfredo Wijaya Kesuma</h1>
-                                                <h2 class="nomor-telepon-change">(+62) 812367780842</h2>
-                                                <h3 class="alamat-change">Jl. Pakuan No.3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810
-                                                </h3>
-                                            </div>
-                                        </div> --}}
 
                                         <h1 class="current-address-title">New Address</h1>
 
-                                        <div action="#" class="form-change needs-validation" novalidate name="newaddress-form" method="post" autocomplete="off">
+                                        {{-- <div action="#" class="form-change needs-validation" novalidate name="newaddress-form" method="post" autocomplete="off"> --}}
                                             <div class="name-container">
 
                                                 <div class="first-name">
@@ -72,19 +65,10 @@
                                                     <label for="fname"  class="first-name-title">Name</label><br>
                                                     {{-- <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="Name"> --}}
                                                     <input type="text" class="form-control first-name-box" id="first-name-box" required name="name" placeholder="Name" value="{{ auth()->user()->name }}">
-                                                    <div class="invalid-feedback fnameval" id ="fnameval">
+                                                    {{-- <div class="invalid-feedback fnameval" id ="fnameval">
                                                         Please input your name
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
-
-                                                {{-- <div class="last-name">
-
-                                                    <label for="lname"  class="last-name-title">Last name</label><br>
-                                                    <input type="text" class="form-control last-name-box"  id="last-name-box" required minlength = "3" maxlength = "25" name="lastname" autocomplete="off"  name="lname" placeholder="Last Name" >
-                                                    <div class="invalid-feedback lnameval" id="lnameval">
-                                                        Please input your last name
-                                                    </div>
-                                                </div> --}}
                                             </div>
 
                                             <div class="phone-number">
@@ -93,43 +77,58 @@
                                                 <div class="flex-num-plus">
                                                     <div class="plus">+62 |</div>
                                                     <div class="input-container">
-                                                        <input type="number" class="form-control phone-number-box" id="phone-number-box" required  min="999999999" max="99999999999999"  name="phonenumber" name="answer-1" autocomplete="off" placeholder="Phone Number">
-                                                        <div class="invalid-feedback numval" id="numval">
+                                                        {{-- <input type="number" class="form-control phone-number-box" id="phone-number-box" required  min="999999999" max="99999999999999"  name="phonenumber" name="answer-1" autocomplete="off" placeholder="Phone Number"> --}}
+                                                        <input type="number" class="form-control phone-number-box" id="phone-number-box" required name="phone" placeholder="Phone Number" value="{{ auth()->user()->phone }}">
+                                                        {{-- <div class="invalid-feedback numval" id="numval">
                                                             Please input your phone number
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="new-address">
                                                 <label for="naddress" class="new-address-title">Address</label><br>
-                                                <textarea type="text" class="form-control new-address-box" id="new-address-box" required  minlength="15" maxlength="100" name="newaddress" autocomplete="nope"  required name="naddress"  placeholder="Address..."></textarea>
-                                                <div class="invalid-feedback addressval" id="addressval">
+                                                {{-- <textarea type="text" class="form-control new-address-box" id="new-address-box" required  minlength="15" maxlength="100" name="newaddress" autocomplete="nope"  required name="naddress"  placeholder="Address..."></textarea> --}}
+                                                <textarea type="text" class="form-control new-address-box" id="new-address-box" required name="address" placeholder="Address...">{{ auth()->user()->address }}</textarea>
+                                                {{-- <div class="invalid-feedback addressval" id="addressval">
                                                     Please input your address
-                                                </div>
+                                                </div> --}}
 
                                             </div>
 
                                             <div class="button-grid">
                                                 <div class="save-button">
-                                                    <button type="submit" name="submit" class="save-button-box">Save Changes</button>
+                                                    {{-- <form action="/saveAddress" method="POST">
+                                                        @csrf --}}
+                                                        <button type="submit" class="save-button-box">Save Changes</button>
+                                                    {{-- </form> --}}
                                                     {{-- <button type="button" class="cancel-btn">Cancel</button> --}}
                                                     <button type="button" class=" btn-secondary cancel-btn" data-bs-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {{-- </div> --}}
                                     </div>
+                                {{-- </form> --}}
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                </div> --}}
+                {{-- <form action="/saveAddress" method="post">
+                    @csrf
+                    <button type="submit">button</button>
+                </form> --}}
 
                 <div class="title-ordered-product">
                     <img src="assets/img/cart.svg" class="ordered-icon">
                     <h2 class="ordered-product">Ordered Product</h2>
                 </div>
 
+
+
+                {{-- @dump($cartHeaders) --}}
                 @foreach ($cartHeaders as $cartHeader)
                     <div class="product-box">
                         <h1 class="title-event">{{ $cartHeader->event->name }}</h1>
@@ -275,7 +274,7 @@
     <script type="text/javascript" defer src="{{URL::asset('assets/js/checkout.js')}}"></script>
 
 
-    <script>
+    {{-- <script>
         (function () {
             'use strict'
 
@@ -293,7 +292,7 @@
             }, false)
             })
         })()
-    </script>
+    </script> --}}
 
     <script src="sweetalert2.all.min.js"></script>
 

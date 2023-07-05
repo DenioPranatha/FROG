@@ -112,70 +112,70 @@ iconSuccess.onclick = function() {
 }
 
 
-const fname = document.getElementById('first-name-box');
-const lname = document.getElementById('last-name-box');
-const pnumber = document.getElementById('phone-number-box');
-const naddress = document.getElementById('new-address-box');
+// const fname = document.getElementById('first-name-box');
+// const lname = document.getElementById('last-name-box');
+// const pnumber = document.getElementById('phone-number-box');
+// const naddress = document.getElementById('new-address-box');
 
-const fvalname = document.getElementById('fnameval');
-const lvalname = document.getElementById('lnameval');
-const valnum = document.getElementById('numval');
-const valaddress = document.getElementById('addressval');
+// const fvalname = document.getElementById('fnameval');
+// const lvalname = document.getElementById('lnameval');
+// const valnum = document.getElementById('numval');
+// const valaddress = document.getElementById('addressval');
 
-fname.addEventListener("input", (event) => {
-    if (fname.value.length < 3 ) {
-        fvalname.innerHTML = "You must fill range 3-25 characters";
-        fvalname.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (fname.value.length >= 3){
-        fvalname.style.display = "none";
-    } else if (fname.value.length < 1) {
-        fvalname.innerHTML = "Please input your first name";
-        fvalname.style.display = "block";
-    }
-});
+// fname.addEventListener("input", (event) => {
+//     if (fname.value.length < 3 ) {
+//         fvalname.innerHTML = "You must fill range 3-25 characters";
+//         fvalname.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (fname.value.length >= 3){
+//         fvalname.style.display = "none";
+//     } else if (fname.value.length < 1) {
+//         fvalname.innerHTML = "Please input your first name";
+//         fvalname.style.display = "block";
+//     }
+// });
 
-lname.addEventListener("input", (event) => {
-    if (lname.value.length < 3 ) {
-        lvalname.innerHTML = "You must fill range 3-25 characters";
-        lvalname.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (lname.value.length >= 3){
-        lvalname.style.display = "none";
-    } else if (lname.value.length < 1) {
-        lvalname.innerHTML = "Please input your last name";
-        lvalname.style.display = "block";
-    }
-});
+// lname.addEventListener("input", (event) => {
+//     if (lname.value.length < 3 ) {
+//         lvalname.innerHTML = "You must fill range 3-25 characters";
+//         lvalname.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (lname.value.length >= 3){
+//         lvalname.style.display = "none";
+//     } else if (lname.value.length < 1) {
+//         lvalname.innerHTML = "Please input your last name";
+//         lvalname.style.display = "block";
+//     }
+// });
 
-pnumber.addEventListener("input", (event) => {
-    if (pnumber.value.length < 9 ) {
-        valnum.innerHTML = "You must fill range 9-14 characters";
-        valnum.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (pnumber.value.length >= 9){
-        valnum.style.display = "none";
-    } else if (pnumber.value.length < 1) {
-        valnum.innerHTML = "Please input your phone number";
-        valnum.style.display = "block";
-    }
-});
+// pnumber.addEventListener("input", (event) => {
+//     if (pnumber.value.length < 9 ) {
+//         valnum.innerHTML = "You must fill range 9-14 characters";
+//         valnum.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (pnumber.value.length >= 9){
+//         valnum.style.display = "none";
+//     } else if (pnumber.value.length < 1) {
+//         valnum.innerHTML = "Please input your phone number";
+//         valnum.style.display = "block";
+//     }
+// });
 
-naddress.addEventListener("input", (event) => {
-    if (naddress.value.length > 0 && naddress.value.length < 15 ) {
-        valaddress.innerHTML = "You must fill range 15-100 characters";
-        valaddress.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (naddress.value.length >= 15){
-        valaddress.style.display = "none";
-    } else if (naddress.value.length < 1) {
-        valaddress.innerHTML = "Please input your addresssss";
-        valaddress.style.display = "block";
-    }
-});
+// naddress.addEventListener("input", (event) => {
+//     if (naddress.value.length > 0 && naddress.value.length < 15 ) {
+//         valaddress.innerHTML = "You must fill range 15-100 characters";
+//         valaddress.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (naddress.value.length >= 15){
+//         valaddress.style.display = "none";
+//     } else if (naddress.value.length < 1) {
+//         valaddress.innerHTML = "Please input your addresssss";
+//         valaddress.style.display = "block";
+//     }
+// });
 
 
