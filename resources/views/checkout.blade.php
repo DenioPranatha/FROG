@@ -294,7 +294,7 @@
                 </div>
             </div>
 
-            <div class="makancss-box">
+            {{-- <div class="makancss-box">
 
                 <h1 style="makancss">makan</h1>
                 <h1 style="makancss">makan</h1>
@@ -308,7 +308,7 @@
 
                 
 
-            </div>
+            </div> --}}
 
 
             
