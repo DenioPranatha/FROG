@@ -28,16 +28,35 @@ class CartController extends Controller
         $validatedData['qty'] = $request->num;
         CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
 
-        return redirect()->back();
+        return response()->json(['message' => 'Success']);
     }
 
     public function plus(Request $request){
-        // dd($request);
+        // dump($request);
         $validatedData['qty'] = $request->num;
         CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
 
-        return redirect()->back();
+        return response()->json(['message' => 'Success']);
     }
+
+    public function check(Request $request){
+        // dump($request);
+        $validatedData['is_checked'] = 1;
+        CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
+
+        dump("Masuk sini");
+        return response()->json(['message' => 'Success']);
+    }
+
+    public function uncheck(Request $request){
+        // dump($request);
+        $validatedData['is_checked'] = 0;
+        CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
+
+        dump("Masuk sini");
+        return response()->json(['message' => 'Success']);
+    }
+
 
     public function destroy(Request $request){
         // dd($request);

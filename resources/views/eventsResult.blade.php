@@ -20,15 +20,16 @@
 
     @endif
 
-    <div class="finished-header">Finished Events</div>
+    @if(count($finisheds) != 0)
+        <div class="finished-header">Finished Events</div>
 
-    {{-- <div class="finished" data-aos="fade-up"> --}}
-    <div class="catalog-container">
-        @foreach($finisheds as $finished)
-            @include('partials.eventCart', ['event' => $finished])
-        @endforeach
-    </div>
-    {{-- </div> --}}
+        <div class="catalog-container">
+            @foreach($finisheds as $finished)
+                @include('partials.eventCart', ['event' => $finished])
+            @endforeach
+        </div>
+
+    @endif
     <div class="gap"></div>
     <div class="gap"></div>
 

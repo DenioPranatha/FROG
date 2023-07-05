@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('cart_header_id');
             $table->foreignId('product_id');
             $table->integer('qty');
+            $table->integer('is_checked');
             $table->timestamps();
         });
     }
