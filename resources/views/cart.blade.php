@@ -9,6 +9,12 @@
 
 @section('content')
 {{-- @dd(auth()->user()->id) --}}
+@if (session()->has('error'))
+    <div class="alert alert-danger alert-dismissible fade show p-3" style="width: 93.5%; margin:auto; margin-top:5px;" role="alert">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
     @if ($count == 0)
         <div class="emptyCart d-flex justify-content-center ">
             <div class="picture" style="background-image: url({{ asset('/assets/img/emptyCart.svg') }}"></div>

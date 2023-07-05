@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\CartDetail;
 use App\Models\CartHeader;
-use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
@@ -25,14 +26,22 @@ class CheckoutController extends Controller
             $eventCount = count(array_unique($cart_header_id));
             $cartHeaders = CartHeader::find($cart_header_id);
 
-            return view('checkout', [
-                'product_id' => $product_id,
-                'cart_header_id' => $cart_header_id,
-                'eventCount' => $eventCount,
-                'cartHeaders' => $cartHeaders,
-                'totalItem' => $request->totalItems,
-                'totalPayment' => $request->totalPayments
-            ]);
+            if($eventCount == 0){
+                return redirect('cart')->with('error','Please select at least one product!');
+            }else{
+                return view('checkout', [
+                    'product_id' => $product_id,
+                    'cart_header_id' => $cart_header_id,
+                    'eventCount' => $eventCount,
+                    'cartHeaders' => $cartHeaders,
+                    'totalItem' => $request->totalItems,
+                    'totalPayment' => $request->totalPayments,
+                    // 'name' => auth()->user()->name,
+                    // 'phone' => auth()->user()->phone,
+                    // 'address' =>  auth()->user()->address
+                ]);
+            }
+
         } else{
             return redirect('cart');
         }
@@ -46,5 +55,17 @@ class CheckoutController extends Controller
         // dump($request);
         // return view('index');
         dd($request);
+        // if($request){
+        //     $name = $request->name;
+        //     $phone = $request->phone;
+        //     $address = $request->address;
+        // }
+        // else{
+        //     $name = auth()->user()->name;
+        //     $phone = auth()->user()->phone;
+        //     $address = auth()->user()->address;
+        // }
+        // Session::flash($name, $phone, $address);
+        // return redirect('checkout')->with('name', $name)->with('phone', $phone)->with('address', $address);
     }
 }
