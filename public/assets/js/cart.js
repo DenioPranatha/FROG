@@ -35,7 +35,7 @@ for(let i=0; i<minBtn.length; i++){
     total = 0
     // console.log(Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000);
 
-    plusBtn[i].addEventListener('click', ()=>{
+    plusBtn[i].addEventListener('click', (event)=>{
         if(qty[i].value>=parseInt(stock[i].innerHTML)){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
             priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
@@ -73,9 +73,50 @@ for(let i=0; i<minBtn.length; i++){
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
         }
+
+        var chi = event.target.parentElement.querySelector('#cart_header_id1').value;
+        var pi = event.target.parentElement.querySelector('#product_id1').value;
+        var num = event.target.parentElement.querySelector('#num1').value;
+
+        var url = '/cartPlus';
+        var parameters = [];
+
+        if(chi){
+            parameters.push('cart_header_id=' + encodeURIComponent(chi));
+        }
+        if(pi){
+            parameters.push('product_id=' + encodeURIComponent(pi));
+        }
+        if(num){
+            parameters.push('num=' + encodeURIComponent(num));
+        }
+
+        if (parameters.length > 0) {
+            url += '?' + parameters.join('&');
+        }
+
+        $('#result').load(url);
+
+        // $.ajax({
+        //     url: url,
+        //     type: 'POST',
+        //     data: postData,
+        //     success: function(response) {
+        //       // Handle the response here
+        //       $('#productGroup').html(response);
+        //     },
+        //     error: function(xhr, status, error) {
+        //       // Handle the error here
+        //       console.log("Woe error");
+        //       console.log(error);
+        //     //   console.log(xhr.status);
+        //       console.log(xhr.responseText);
+        //     }
+        // });
+
     })
 
-    minBtn[i].addEventListener('click',  ()=>{
+    minBtn[i].addEventListener('click',  (event)=>{
         if (qty[i].value>1){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
             priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
@@ -109,7 +150,31 @@ for(let i=0; i<minBtn.length; i++){
             totalPayment.innerHTML = calculatePrice()
             totalItem.innerHTML = calculateItem()
         }
+
+        var chi = event.target.parentElement.querySelector('#cart_header_id').value;
+        var pi = event.target.parentElement.querySelector('#product_id').value;
+        var num = event.target.parentElement.querySelector('#num').value;
+
+        var url = '/cartMinus';
+        var parameters = [];
+
+        if(chi){
+            parameters.push('cart_header_id=' + encodeURIComponent(chi));
+        }
+        if(pi){
+            parameters.push('product_id=' + encodeURIComponent(pi));
+        }
+        if(num){
+            parameters.push('num=' + encodeURIComponent(num));
+        }
+
+        if (parameters.length > 0) {
+            url += '?' + parameters.join('&');
+        }
+
+        $('#result').load(url);
     })
+
     qtyForm[i].addEventListener("change", ()=>{
         // console.log('tes')
         // alert('hai')
@@ -127,7 +192,6 @@ for(let i=0; i<minBtn.length; i++){
     })
 }
 // kotak plus min
-
 
 
 
@@ -179,6 +243,56 @@ function allEventChecked(){
     return true
 }
 
+function sendCheck(element){
+    console.log(element);
+    var chi = element.parentElement.querySelector('#cart_header_id').value;
+    var pi = element.parentElement.querySelector('#product_id').value;
+
+    var url = '/sendCheck';
+    var parameters = [];
+
+    if(chi){
+        parameters.push('cart_header_id=' + encodeURIComponent(chi));
+    }
+    if(pi){
+        parameters.push('product_id=' + encodeURIComponent(pi));
+    }
+
+    if (parameters.length > 0) {
+        url += '?' + parameters.join('&');
+    }
+
+    console.log(url);
+
+    $('#result').load(url);
+
+}
+
+function sendUncheck(element){
+    console.log(element);
+    var chi = element.parentElement.querySelector('#cart_header_id').value;
+    var pi = element.parentElement.querySelector('#product_id').value;
+
+    var url = '/sendUncheck';
+    var parameters = [];
+
+    if(chi){
+        parameters.push('cart_header_id=' + encodeURIComponent(chi));
+    }
+    if(pi){
+        parameters.push('product_id=' + encodeURIComponent(pi));
+    }
+
+    if (parameters.length > 0) {
+        url += '?' + parameters.join('&');
+    }
+
+    console.log(url);
+
+    $('#result').load(url);
+
+}
+
 
 // buat centang smua ato ga centang smua
 checkAll.addEventListener('click', ()=>{
@@ -189,6 +303,7 @@ checkAll.addEventListener('click', ()=>{
         }
         for(let i=0; i<itemCheckLen; i++){
             itemCheck[i].checked = true;
+            sendCheck(itemCheck[i]);
         }
     }
     else if(checkAll.checked == false){
@@ -197,6 +312,7 @@ checkAll.addEventListener('click', ()=>{
         }
         for(let i=0; i<itemCheckLen; i++){
             itemCheck[i].checked = false;
+            sendUncheck(itemCheck[i]);
         }
     }
     totalPayment.innerHTML = calculatePrice()
@@ -214,6 +330,7 @@ eventCheck.forEach((element)=>{
                 element.checked = true;
                 for(let i=0; i<itemCheck.length; i++){
                     itemCheck[i].checked = true;
+                    sendCheck(itemCheck[i]);
                 }
             // kalo ga smua event kechecked
             }else{
@@ -222,6 +339,7 @@ eventCheck.forEach((element)=>{
                 for(let i=0; i<itemCheck.length; i++){
                     if(itemCheck[i].classList.contains(element.id)){
                         itemCheck[i].checked = true;
+                        sendCheck(itemCheck[i]);
                     }
                 }
             }
@@ -232,6 +350,7 @@ eventCheck.forEach((element)=>{
             for(let i=0; i<itemCheck.length; i++){
                 if(itemCheck[i].classList.contains(element.id)){
                     itemCheck[i].checked = false;
+                    sendUncheck(itemCheck[i]);
                 }
             }
         }
@@ -242,9 +361,11 @@ eventCheck.forEach((element)=>{
 
 // buat item
 itemCheck.forEach((element)=>{
+    // tambah if
     element.addEventListener('click', ()=>{
         // check si item
         if(element.checked == true){
+            sendCheck(element);
             // kalo smua item ke checked
             if(allItemChecked() ==  true){
                 // kalo smua event kechecked
@@ -279,6 +400,7 @@ itemCheck.forEach((element)=>{
             }
         // uncheck si item
         }else{
+            sendUncheck(element);
             checkAll.checked = false;
             for(let i=0; i<eventCheckLen; i++){
                 if(element.classList.contains(eventCheck[i].id)){
@@ -291,6 +413,49 @@ itemCheck.forEach((element)=>{
         totalItem.innerHTML = calculateItem()
     })
 })
+
+//pas load, untuk mengautomasi kalo ada checked
+window.onload = function() {
+    itemCheck.forEach((element)=>{
+        if(element.checked == true){
+            if(allItemChecked() ==  true){
+                if(allEventChecked() == true){
+                    checkAll.checked = true;
+                    for(let i=0; i<eventCheckLen; i++){
+                        eventCheck[i].checked = true;
+                    }
+                }
+                else{
+                    checkAll.checked = true;
+                    for(let i=0; i<eventCheckLen; i++){
+                        eventCheck[i].checked = true;
+                    }
+                }
+            }else{
+                checkAll.checked = false;
+                for(let i=0; i<eventCheckLen; i++){
+                    if(itemEventChecked(eventCheck[i].id) == true){
+                        eventCheck[i].checked = true;
+                    }
+                    else{
+                        eventCheck[i].checked = false;
+                    }
+                }
+            }
+        }else{
+            checkAll.checked = false;
+            for(let i=0; i<eventCheckLen; i++){
+                if(element.classList.contains(eventCheck[i].id)){
+                    eventCheck[i].checked = false;
+                }
+            }
+
+        }
+        totalPayment.innerHTML = calculatePrice()
+        totalItem.innerHTML = calculateItem()
+    })
+
+};
 
 
 // buat hitung total payment

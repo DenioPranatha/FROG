@@ -68,8 +68,10 @@ Route::get('/destinationResult', [DestinationController::class, 'result'])->name
 Route::get('/destinationDetail/{destination:id}', [DestinationController::class, 'show'])->name('destinationDetail');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart')->middleware('auth')->middleware('not.admin');
-Route::post('/cartMinus', [CartController::class, 'minus'])->middleware('auth')->middleware('not.admin');
-Route::post('/cartPlus', [CartController::class, 'plus'])->middleware('auth')->middleware('not.admin');
+Route::get('/cartMinus', [CartController::class, 'minus'])->middleware('auth')->middleware('not.admin');
+Route::get('/cartPlus', [CartController::class, 'plus'])->middleware('auth')->middleware('not.admin');
+Route::get('/sendCheck', [CartController::class, 'check'])->middleware('auth')->middleware('not.admin');
+Route::get('/sendUncheck', [CartController::class, 'uncheck'])->middleware('auth')->middleware('not.admin');
 Route::post('/cartDelete', [CartController::class, 'destroy'])->middleware('auth')->middleware('not.admin');
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth')->middleware('not.admin');

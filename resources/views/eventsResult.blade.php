@@ -17,8 +17,21 @@
             <div class="line1"></div>
         </div>
     @else
-        <div class="gap"></div>
+
     @endif
+
+    @if(count($finisheds) != 0)
+        <div class="finished-header">Finished Events</div>
+
+        <div class="catalog-container">
+            @foreach($finisheds as $finished)
+                @include('partials.eventCart', ['event' => $finished])
+            @endforeach
+        </div>
+
+    @endif
+    <div class="gap"></div>
+    <div class="gap"></div>
 
 @elseif(request('category-event') && request('search-event'))
     <div class="not-found justify-content-center">Event with keyword "{{ request('search-event') }}" and category "{{ request('category-event') }}" is not found</div>
