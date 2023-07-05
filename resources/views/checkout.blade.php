@@ -70,7 +70,8 @@
                                                 <div class="first-name">
 
                                                     <label for="fname"  class="first-name-title">Name</label><br>
-                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="Name">
+                                                    {{-- <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="Name"> --}}
+                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required name="name" placeholder="Name" value="{{ auth()->user()->name }}">
                                                     <div class="invalid-feedback fnameval" id ="fnameval">
                                                         Please input your name
                                                     </div>
@@ -146,7 +147,7 @@
                                             <h1 class="quantity"> Quantity: <span class="span-quantity">{{ $cartDetail->qty }} Items</span></h1>
                                         </div>
                                         <div class="harga">
-                                            <h1 class="title-harga">Rp {{ ($cartDetail->product->price)*($cartDetail->qty) }}</h1>
+                                            <h1 class="title-harga">@money(($cartDetail->product->price)*($cartDetail->qty))</h1>
                                         </div>
                                     </div>
                                 @endif
