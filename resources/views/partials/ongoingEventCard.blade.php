@@ -11,7 +11,8 @@
             <div class="card-section-box-text d-flex align-items-center justify-content-center ">
                 <p>{{ $myEvent->name }}</p>
             </div>
-            <div class="card-section-box-icon d-flex align-items-center">
+            {{-- d-flex align-items-center --}}
+            <div class="card-section-box-icon ">
                 <a href="/addProduct">
                     <div class="card-section-box-icon1">
                         {{-- <img src="assets/img/add-product 2.svg" alt=""> --}}

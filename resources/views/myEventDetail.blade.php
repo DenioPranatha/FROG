@@ -100,6 +100,7 @@
 
     <hr class="nav-line">
 
+    <h3 class="pruduct-title-responsive" style="display: none">Product</h3>
     <div id="carouselExample" data-bs-spy="scroll" data-bs-target="#nav-cont" class="carousel" tabindex="0">
         <div class="slide">
             <div class="carousel-item">
@@ -110,17 +111,18 @@
                 </section>
             </div>
 
-            <div class="carousel-item">
+            <h3 class="statistic-title-responsive" style="display: none">Statistic</h3>
+            <div class="carousel-item contain-item">
                 <section class="stat-container" id="section2">
                     <div class="stat-headline">Funds Collected</div>
-                    <div class="stat-headline purple">
+                    <div class="stat-headline purple purple-transaction">
                         Rp. {{ number_format(  $total->sum('total') - $total->sum('modal') , 0 , ' ' , ' ' ) }}
-                        <a class="mx-4 btn purple-but" href="/allHistory/{{ $event->id }}">
+                        <a class="btn purple-but purple-a" href="/allHistory/{{ $event->id }}">
                             See All Transaction
                         </a>
                     </div>
                     <br>
-                    <div class="stat-subheadline">Detail</div>
+                    <div class="stat-subheadline detail-last">Detail</div>
                     <div class="rincian-container">
                         <div class="rec">
                             <div class="stat-subheadline">Participants</div>
@@ -140,7 +142,7 @@
                         </div>
                     </div>
                     <br>
-                    <div class="stat-subheadline">Income Graph</div>
+                    <div class="stat-subheadline income-graph">Income Graph</div>
 
                     <div class="grafik-time">
                         <div id="nav-cont1" class="nav-cont1 nav nav-underline justify-content-center">
