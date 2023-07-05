@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
             ->where('end_date', '<', now())
             ->where('status', 'accepted')
             ->update(['status' => 'finished']);
-        })->everyMinute();
+        })->daily();
     }
 
     /**
@@ -35,4 +35,8 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+
+    // protected $commands = [
+    //     'App\Console\Commands\Schedule',
+    // ];
 }

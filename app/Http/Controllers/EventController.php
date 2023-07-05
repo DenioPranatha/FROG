@@ -79,9 +79,13 @@ class EventController extends Controller
         $events = $events->take($pge);
         $popular = $popEvents->get();
         $cat = Category::limit(3)->get();
+        $finisheds = Event::latest()
+        ->filter(request(['search-event', 'category-event']))
+        ->where('status', 'finished')
+        ->get();
         if($pge >= $c)$pg = -1;
 
-        $eventsHtml = view('eventsResult', compact('events', 'popular', 'cat', 'pg'))->render();
+        $eventsHtml = view('eventsResult', compact('events', 'popular', 'cat', 'pg', 'finisheds'))->render();
 
         return $eventsHtml;
     }

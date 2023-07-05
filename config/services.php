@@ -32,10 +32,13 @@ return [
     ],
 
     // 'firebase' => [
-    //     'api_key' => 'AIzaSyBEQvBMUKsrTlN1g608cmEpTq9n05wc5xc',
-    //     'auth_domain' => 'frog-9592e.firebaseapp.com',
-    //     'database_url' => 'https://frog-9592e-default-rtdb.asia-southeast1.firebasedatabase.app/',
-    //     'storage_bucket' => 'frog-9592e.appspot.com',
+    //     'apiKey' => env('FIREBASE_API_KEY'),
+    //     'authDomain' => env('FIREBASE_AUTH_DOMAIN'),
+    //     'projectId' => env('FIREBASE_PROJECT_ID'),
+    //     'storageBucket' => env('FIREBASE_STORAGE_BUCKET'),
+    //     'messagingSenderId' => env('FIREBASE_MESSAGING_SENDER_ID'),
+    //     'appId' => env('FIREBASE_APP_ID'),
+    //     'measurementId' => env('FIREBASE_MEASUREMENT_ID'),
     // ]
 
 ];

@@ -162,6 +162,12 @@
     flex-wrap: wrap;
 }
 
+.catalog-container1{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 #section1{
     width: 90vw;
     padding: 42px 30px 42px 0px;
@@ -642,7 +648,7 @@ a.custom-card:hover {
     width: 81vw;
     justify-content: space-around;
     align-items: center;
-    margin: 42px 0px 84px 0px;
+    margin: 42px 0px 42px 0px;
 }
 
 .more{
@@ -817,7 +823,7 @@ body{
 .finished-header{
     font-family: 'Ubuntu', sans-serif;
     font-size: 30px;
-    padding: 0px 100px;
+    padding: 21px 0px;
 
 }
 
@@ -1023,7 +1029,7 @@ body{
         padding: 20px 5% 42px 5%;
         /* margin-left: 30px; */
         /* margin-right: 20px; */
-        gap: 40px;
+        gap: 24px;
     }
 
     #section1{

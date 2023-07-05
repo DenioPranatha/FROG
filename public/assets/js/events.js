@@ -126,6 +126,7 @@ $(document).ready(function(){
         //jadi hasil livesearch itu intinya harus ada dalam 1 container, bukan semua page nya yang berubah
         //cari di eventsResult.blade.php
         $('#result-container1').load(url);
+        // $('#h1').load(url);
     }
 
 });
