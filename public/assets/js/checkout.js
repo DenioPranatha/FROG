@@ -33,26 +33,26 @@ klikbutton2.forEach( klikbtn => {
 
 // Buat stop scroll
 // buat stop scroll yg bagian kanan
-let summarycheckout = document.getElementById('summary-checkout');
-var body = document.body;
-var html = document.documentElement;
-var bodyH = Math.max(body.scrollHeight,  body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
-// var position = bodyH-708;
-var position = bodyH-670;
-var count = 0
-var count2 = 0
+// let summarycheckout = document.getElementById('summary-checkout');
+// var body = document.body;
+// var html = document.documentElement;
+// var bodyH = Math.max(body.scrollHeight,  body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
+// // var position = bodyH-708;
+// var position = bodyH-670;
+// var count = 0
+// var count2 = 0
 
-window.onscroll = function(){
-    // if(window.scrollY >= (bodyH-708)) { // change target to number
-    if(window.scrollY >= (bodyH-670)) { // change target to number
-        summarycheckout.style.position = 'absolute';
-        summarycheckout.style.top = position+'px';
-    }
-    else{
-        summarycheckout.style.position = 'fixed';
-        summarycheckout.style.top = '10%';
-    }
-};
+// window.onscroll = function(){
+//     // if(window.scrollY >= (bodyH-708)) { // change target to number
+//     if(window.scrollY >= (bodyH-670)) { // change target to number
+//         summarycheckout.style.position = 'absolute';
+//         summarycheckout.style.top = position+'px';
+//     }
+//     else{
+//         summarycheckout.style.position = 'fixed';
+//         summarycheckout.style.top = '10%';
+//     }
+// };
 
 
 // Make PopUp Success

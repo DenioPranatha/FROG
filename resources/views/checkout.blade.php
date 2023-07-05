@@ -193,12 +193,16 @@
                     </div>
                 @endfor --}}
 
+                
+
                 <div class="option-shipping-box">
                     <div class="title-option-shipping">
                         <img src="assets/img/boxcar.svg" class="shipping-icon">
                         <h2 class="shipping-option-title">Shipping Options</h2>
                     </div>
                 </div>
+
+                
 
                 <div class="grid-box">
                     <button class="box-1">
@@ -215,6 +219,8 @@
                     </button>
 
                 </div>
+
+                
 
 
                 <div class="option-payment-box">
@@ -264,8 +270,62 @@
                     </button>
                 </div>
             </div>
+
+            <div class="summary-checkout-responsive" id="summary-checkout" style="display: block">
+                <div class="box-summary-responsive">
+                    <h1 class="title-checkout-summary-responsive">Checkout Summary</h1>
+                    <div class="checkout-summary-linebar-responsive"></div>
+    
+                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1> --}}
+                    <h1 class="subtotal-responsive">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">@money($totalPayment)</span></h1>
+                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">{{ $totalPayment }}</span></h1> --}}
+                    {{-- <h1>{{ $totalPayment }}</h1> --}}
+    
+                    {{-- <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1> --}}
+                    <h1 class="shipping-subtotal-responsive">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
+    
+                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1> --}}
+                    <h1 class="total-payment-responsive">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
+                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
+    
+                    <button type="button" class="pay-button-responsive" id="type-success" >
+                        <h1 class="pay-now-title-responsive">Pay Now !</h1>
+                    </button>
+                </div>
+            </div>
+
+            <div class="makancss-box">
+
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+                <h1 style="makancss">makan</h1>
+
+                
+
+            </div>
+
+
+            
+            
+            
+           
+            
+            
         </div>
+
+        
+
+        
+
     </div>
+
+    
 
 </div>
 @endsection

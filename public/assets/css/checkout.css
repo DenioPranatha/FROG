@@ -1,4 +1,9 @@
 
+.all-content{
+    /* background-color: blue; */
+    height: fit-content;
+}
+
 .container{
     position: relative;
     display: flex;
@@ -6,6 +11,7 @@
 }
 
 .checkout-box{
+    /* background-color: red; */
     position: relative;
     margin-left: 40px;
     margin-top: 20px;
@@ -576,6 +582,7 @@ button.boxbtn2{
 }
 
 .summary-checkout{
+    position: fixed;
     border: 2px solid red;
     width: 365px;
     /* height: 310px; */
@@ -585,7 +592,6 @@ button.boxbtn2{
     background: #FFFFFF;
     box-shadow: 4px 4px 0px 0px #522E93;
     border: 2px solid #522E93;
-    position: fixed;
     display: block;
     margin-left: 870px;
     margin-top: 20px;
@@ -1031,8 +1037,10 @@ input::placeholder{
 }
 
 .gabung-box{
+    /* background-color: red; */
     position: relative;
     display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 .modal-css{
@@ -1173,6 +1181,8 @@ textarea{
 }
 
 
+
+
 .save-button{
     /* border: 1px solid red; */
     display: flex;
@@ -1180,10 +1190,29 @@ textarea{
 
 }
 
+
+.summary-checkout-responsive{
+    background-color: RED;
+}
+
+
+.makancss-box{
+    border: 1px solid black;
+    background-color: black;
+
+    width: 500px;
+    height: 500px;
+}
+
 /* Responsive Website */
 
 /* Ukuran Mobile */
 @media screen and (max-width: 428px){
+    .all-content{
+        /* background-color: blue; */
+        height: fit-content;
+    }
+    
 
     .container{
         position: relative;
@@ -1386,7 +1415,7 @@ textarea{
         display: flex;
         gap: 10px;
         padding-top: 1px;
-        margin-bottom: 18px;
+        /* margin-bottom: 18px; */
 
         /* border: 1px solid red; */
     }
@@ -1721,6 +1750,7 @@ textarea{
         margin-left: 404px;
 
         background-color: #FFFFFF;
+        /* background-color: red; */
 
         position: relative;
         align-items: center;
@@ -1732,12 +1762,12 @@ textarea{
         padding-top: 20px;
         /* padding-top: 50px; */
 
-        background: #FFFFFF;
+        /* background: #FFFFFF; */
         border: 3px solid #522E93;
 
         border-radius: 10px;
 
-        margin-top: 50px;
+        margin-top: 90px;
 
     }
 
@@ -1781,11 +1811,10 @@ textarea{
         margin-top: 30px;
         padding-left: 5px;
         padding-right: 5px;
-
-
     }
 
     .gabung-box{
+        /* background-color: blue; */
         position: relative;
         display: flex;
         flex-direction: column;
@@ -1793,6 +1822,7 @@ textarea{
     }
 
     .summary-checkout{
+        /* position: fixed; */
         /* border: 2px solid red; */
         /* background-color: red; */
         width: 365px;
@@ -1803,7 +1833,6 @@ textarea{
         background: #FFFFFF;
         box-shadow: 4px 4px 0px 0px #522E93;
         border: 2px solid #522E93;
-        position: fixed;
         display: block;
         margin-left: 870px;
         margin-top: 20px;
@@ -1829,5 +1858,53 @@ textarea{
         font-weight: 700;
         font-size: 25px;
         color: #522E93;
+    }
+
+
+    /* Coba cara keren */
+
+    .summary-checkout-responsive{
+        display: block;
+        /* border: 2px solid red; */
+        /* width: 365px; */
+        /* height: 310px; */
+        /* align-items: baseline; */
+        /* margin-top: 100px; */
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 0px 0px #522E93;
+        border: 2px solid #522E93;
+        /* position: fixed;
+        display: block; */
+        /* margin-left: 870px; */
+        margin-top: 20px;
+
+        box-shadow: 4px 4px 8px #522E93;
+        border-radius: 20px;
+
+    }
+
+    .box-summary-responsive {
+        background-color: red;
+        margin-left: 10px;
+        margin-top: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+
+    .makancss{
+        border: 1px solid black;
+
+        width: 50px;
+        height: 50px;
+    }
+
+    .makancss-box{
+        border: 1px solid black;
+        background-color: black;
+    
+        width: 500px;
+        height: 500px;
     }
 }
