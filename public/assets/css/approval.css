@@ -39,3 +39,24 @@
 
     margin-left: 14px;
 }
+
+
+/* Responsive Website */
+
+/* Ukuran Mobile */
+@media screen and (max-width: 428px){
+    .container h3{
+        font-size: 24px;
+        margin-left: -20px;
+    }
+
+    .card-container{
+        /* border: 1px solid blue; */
+        width: 95vw;
+        gap: 0.2vw;
+        margin-left: -30px;
+        /* border: 1px solid black; */
+        /* padding-left: 25px; */
+    }
+
+}

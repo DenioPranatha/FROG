@@ -352,6 +352,11 @@
     .search{
         width: 20px;
     }
+
+    .search-row{
+        /* background-color: red; */
+        width: 30px;
+    }
     
     .search-button{
         text-decoration: none;
@@ -363,6 +368,21 @@
         width: 380px;
     }
 
+    #search-event{
+        border: 0px;
+        outline: none;
+        width: 330px;
+        /* padding: 0px 10px; */
+    }
+
+    .card p{
+        font-size: 15px;
+    }
+
+    .card svg{
+        width: 80px;
+    }
+    
     
     
 }    

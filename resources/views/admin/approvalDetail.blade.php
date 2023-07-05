@@ -26,7 +26,8 @@
             </div>
             <div class="desc-point"><b>Created By:</b> {{ $event->user->username }}</div>
             <div class="desc-point"><b>Event Duration:</b> {{ $event->duration }}</div>
-            <div class="desc-point"><b>Charity Destination:</b> {{ $event->destination->name }}</div>
+            <div class="desc-point"><b>Charity Destination:</b><br>
+                {{ $event->destination->name }}</div>
             <div class="desc-point"><b>Category:</b> {{ $event->destination->category->name }}</div>
 
             <div class="button-container d-flex flex-row justify-content-center align-items-center">

@@ -142,7 +142,7 @@
     }
     
     .desc-img{
-        width: 100%;
+        width: 135%;
         height: 300px;
         margin-left: 20px;
         margin-bottom: 20px;
@@ -164,15 +164,23 @@
         color: #000000;
     }
 
+    .desc-point{
+        /* background-color: red; */
+        width: 140%;
+    }
+
    
     
     .desc-caption{
-        font-family: 'M PLUS 1';
+        /* background-color: red; */
+        width: 140%;
+        font-family: 'poppins';
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
         line-height: 20px;
         text-align: justify;
+
     
         color: #000000;
     }
@@ -220,6 +228,30 @@
     
         transition: .2s all ease-in-out;
     }
+
+    .button-container{
+        /* background-color: red; */
+        width: 130%;
+
+        flex-direction: row;
+        display: flex;
+        margin-top: 25px;
+        
+        /* gap: 60px; */
+    }
+
+    .button-container button{
+        margin-left: 10px;
+        width: 120px;
+        margin-top: -100px;
+        padding-top: -30px;
+    }
+
+    /* .submit{
+        gap: 50px;
+        margin-left: 20px;
+        background-color: black;
+    } */
     
 
 }

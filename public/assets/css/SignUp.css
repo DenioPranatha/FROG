@@ -344,10 +344,10 @@ span{
 
     
     .box-white{
-        margin-top: 9vw;
+        margin-top: 12vw;
         margin-bottom: 9vw;
         background-color: white;
-        width: 95%;
+        width: 92%;
         /* height: 400PX; */
         /* height: 150vw; */
         height: fit-content;
@@ -379,6 +379,7 @@ span{
     }
 
     .content{
+        
         margin-left: -3vw;
         width: 100%;
         height: fit-content;
