@@ -54,6 +54,7 @@
             </div>
             <div class="eachProductTotal">
                 <p class="eachProductTotal2">@money(($cartDetail->product->price)*($cartDetail->qty))</p>
+            </div>
         </div>
     @endif
 @endforeach

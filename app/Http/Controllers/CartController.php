@@ -44,7 +44,7 @@ class CartController extends Controller
         $validatedData['is_checked'] = 1;
         CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
 
-        dump("Masuk sini");
+
         return response()->json(['message' => 'Success']);
     }
 
@@ -53,7 +53,6 @@ class CartController extends Controller
         $validatedData['is_checked'] = 0;
         CartDetail::where('cart_header_id', $request->cart_header_id)->where('product_id', $request->product_id)->update($validatedData);
 
-        dump("Masuk sini");
         return response()->json(['message' => 'Success']);
     }
 

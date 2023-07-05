@@ -19,14 +19,6 @@
                 <p class="text2">Looks like you haven't added anything to your cart yet</p>
             </div>
         </div>
-        {{-- <div class="btnDiv w-100 h-100 d-flex justify-content-center" data-aos="fade-right">
-            <a class="btn btn-1" href="/products" role="button">
-                <div class="seeMore">
-                    <p>Shop now</p>
-                    <i class="bi bi-arrow-right-short"></i>
-                </div>
-            </a>
-        </div> --}}
         <div class="btnDiv w-100">
             <a class="btn" href="/products">
                 <p>Shop Now!</p>
@@ -47,29 +39,23 @@
                         </label>
                     </div>
                     <div class="selectAllText">
-                        {{-- $tes = 0 --}}
-                        {{-- @dd($count) --}}
                         @php($total = 0)
                         @php($count = 0)
                         @foreach ($cartHeaders as $cartHeader)
                             @if ($cartHeader->user_id == auth()->user()->id)
                                 @foreach ($cartDetails as $cartDetail)
-                                    {{-- @if ($cartDetail->cartHeader->user->id == auth()->user()->id && $cartDetail->cartHeader->event_id == ($loop->parent->index+1)) --}}
-
                                     @if ($cartHeader->id == $cartDetail->cart_header_id)
                                         @php($count++)
                                     @endif
                                 @endforeach
                             @endif
                         @endforeach
-                        {{-- @dd($count) --}}
                         Select All ({{ $count }} Products)
                     </div>
                 </div>
 
                 @foreach ($cartHeaders as $cartHeader)
                     @if ($cartHeader->user_id == auth()->user()->id)
-                        {{-- <p>{{ $loop->index }}</p> --}}
                         <div class="cartCard">
                             <div class="selectEvent d-flex align-items-center">
                                 <div class="checkHelp">
@@ -96,8 +82,8 @@
                         </div>
                     @endif
                 @endforeach
-
             </div>
+
             <div class="rightCart" id="rightCart">
                 <div class="summaryTitle">
                     Order Summary
