@@ -112,6 +112,68 @@ iconSuccess.onclick = function() {
 }
 
 
+let nameLbl = document.getElementById('nama');
+let phoneLbl = document.getElementById('telpon');
+let addressLbl = document.getElementById('alamat');
+
+let changeBtn = document.getElementById('changeAdd');
+var storedName = localStorage.getItem('userInputName');
+var storedPhone = localStorage.getItem('userInputPhone');
+var storedAddress = localStorage.getItem('userInputAddress');
+
+// alert(addressLbl.value)
+// alert(storedPhone);
+// if(storedName) {
+//     nameLbl.innerHTML = storedName;
+// }
+// else if(storedPhone){
+//     phoneLbl.innerHTML = storedPhone;
+// }
+// else if(storedAddress){
+//     addressLbl.innerHTML = storedAddress;
+// }
+// else if(storedName!=null && storedPhone!=null){
+//     nameLbl.innerHTML = storedName;
+//     phoneLbl.innerHTML = storedPhone;
+// }
+// else if(storedName!=null && storedAddress!=null){
+//     nameLbl.innerHTML = storedName;
+//     addressLbl.innerHTML = storedAddress;
+// }
+// else if(storedPhone!=null && storedAddress!=null){
+//     phoneLbl.innerHTML = storedPhone;
+//     addressLbl.innerHTML = storedAddress;
+// }
+if(storedPhone!=null && storedAddress!=null && storedName!=null){
+    nameLbl.innerHTML = storedName;
+    phoneLbl.innerHTML = '(+62) '+ storedPhone;
+    addressLbl.innerHTML = storedAddress;
+}
+changeBtn.addEventListener('click', function(){
+
+    let nameInput = document.getElementById('first-name-box').value;
+    let phoneInput = document.getElementById('phone-number-box').value;
+    let addressInput = document.getElementById('new-address-box').value;
+    // alert('tes')
+
+    localStorage.setItem('userInputName', nameInput);
+    // alert(nameInput);
+    nameLbl.innerHTML = nameInput;
+
+    localStorage.setItem('userInputPhone', phoneInput);
+    phoneLbl.innerHTML = '(+62) '+ phoneInput;
+
+    localStorage.setItem('userInputAddress', addressInput);
+    addressLbl.innerHTML = addressInput;
+
+    // nameLbl.innerHTML = nameInput.value;
+    // phoneLbl.innerHTML = '(+62) '+ phoneInput.value;
+    // addressLbl.innerHTML = addressInput.value;
+    // alert(addressInput.value);
+    $('#exampleModal').modal('hide');
+})
+
+
 // const fname = document.getElementById('first-name-box');
 // const lname = document.getElementById('last-name-box');
 // const pnumber = document.getElementById('phone-number-box');

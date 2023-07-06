@@ -36,9 +36,9 @@ class CheckoutController extends Controller
                     'cartHeaders' => $cartHeaders,
                     'totalItem' => $request->totalItems,
                     'totalPayment' => $request->totalPayments,
-                    // 'name' => auth()->user()->name,
-                    // 'phone' => auth()->user()->phone,
-                    // 'address' =>  auth()->user()->address
+                    'name' => auth()->user()->name,
+                    'phone' => auth()->user()->phone,
+                    'address' =>  auth()->user()->address
                 ]);
             }
 
@@ -51,21 +51,28 @@ class CheckoutController extends Controller
 
     }
 
-    public function saveAddress(Request $request){
-        // dump($request);
-        // return view('index');
-        dd($request);
-        // if($request){
-        //     $name = $request->name;
-        //     $phone = $request->phone;
-        //     $address = $request->address;
-        // }
-        // else{
-        //     $name = auth()->user()->name;
-        //     $phone = auth()->user()->phone;
-        //     $address = auth()->user()->address;
-        // }
-        // Session::flash($name, $phone, $address);
-        // return redirect('checkout')->with('name', $name)->with('phone', $phone)->with('address', $address);
-    }
+    // public function saveAddress(Request $request){
+    //     // dump($request);
+    //     // return view('index');
+    //     // dd($request);
+    //     if($request){
+    //         $name = $request->name;
+    //         $phone = $request->phone;
+    //         $address = $request->address;
+    //     }
+    //     else{
+    //         $name = auth()->user()->name;
+    //         $phone = auth()->user()->phone;
+    //         $address = auth()->user()->address;
+    //     }
+    //     return view('checkout', [
+    //         'name' => $name,
+    //         'phone' => $phone,
+    //         'address' =>  $address
+    //     ]);
+    //     // Session::flash($name, $phone, $address);
+    //     // return redirect('checkout')->with('name', $name)->with('phone', $phone)->with('address', $address);
+    // }
+
+    
 }

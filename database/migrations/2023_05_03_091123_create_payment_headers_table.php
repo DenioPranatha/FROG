@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('payment_headers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('name', 55);
+            $table->string('phone', 20);
+            $table->string('address', 155);
             $table->date('date');
             $table->integer('total_price');
             $table->integer('total_modal');

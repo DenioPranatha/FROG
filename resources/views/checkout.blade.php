@@ -26,14 +26,15 @@
 
                 <div class="box-address">
                     <div class="rincian-data">
-                        <h1 class="nama">{{ auth()->user()->name }}</h1>
-                        <h2 class="nomor-telepon">(+62) {{ auth()->user()->phone }}</h2>
-                        <h3 class="alamat">{{ auth()->user()->address }}
+                        <h1 class="nama" id="nama">{{ $name }}</h1>
+                        <h2 class="nomor-telepon" id="telpon">(+62) {{ $phone }}</h2>
+                        <h3 class="alamat" id="alamat">{{ $address }}
                         </h3>
                     </div>
 
                     <div class="change-address" id="change-address">
                         <button type="button" class="box-change-address" class="box-change-address" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        {{-- <button type="button" value="{{ auth()->user()->id }}" class="box-change-address changeAdd" class="box-change-address" data-bs-toggle="modal"> --}}
                             <img src="assets/img/pen.svg" class="pen-icon">
                             <h2 class="title-shipping-address">Change Address</h2>
                         </button>
@@ -41,7 +42,6 @@
                 </div>
 
                 <!-- Modal -->
-
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content modal-css">
@@ -51,8 +51,7 @@
 
                                 {{-- <form class="form-css needs-validation" novalidate> --}}
 
-                                <form action="/saveAddress" class="form-css needs-validation" method="post">
-                                    @csrf
+                                <form action="" class="form-css needs-validation">
                                     {{-- {{csrf_field()}} --}}
                                     <div class="view-box-change-address">
 
@@ -65,7 +64,7 @@
 
                                                     <label for="fname"  class="first-name-title">Name</label><br>
                                                     {{-- <input type="text" class="form-control first-name-box" id="first-name-box" required minlength = "3" maxlength = "25" name="firstname" autocomplete="off" name="fname" placeholder="Name"> --}}
-                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required name="name" placeholder="Name" value="{{ auth()->user()->name }}">
+                                                    <input type="text" class="form-control first-name-box" id="first-name-box" required name="name" placeholder="Name" value="{{ $name }}">
                                                     {{-- <div class="invalid-feedback fnameval" id ="fnameval">
                                                         Please input your name
                                                     </div> --}}
@@ -79,7 +78,7 @@
                                                     <div class="plus">+62 |</div>
                                                     <div class="input-container">
                                                         {{-- <input type="number" class="form-control phone-number-box" id="phone-number-box" required  min="999999999" max="99999999999999"  name="phonenumber" name="answer-1" autocomplete="off" placeholder="Phone Number"> --}}
-                                                        <input type="number" class="form-control phone-number-box" id="phone-number-box" required name="phone" placeholder="Phone Number" value="{{ auth()->user()->phone }}">
+                                                        <input type="number" class="form-control phone-number-box" id="phone-number-box" required name="phone" placeholder="Phone Number" value="{{ $phone }}">
                                                         {{-- <div class="invalid-feedback numval" id="numval">
                                                             Please input your phone number
                                                         </div> --}}
@@ -90,7 +89,7 @@
                                             <div class="new-address">
                                                 <label for="naddress" class="new-address-title">Address</label><br>
                                                 {{-- <textarea type="text" class="form-control new-address-box" id="new-address-box" required  minlength="15" maxlength="100" name="newaddress" autocomplete="nope"  required name="naddress"  placeholder="Address..."></textarea> --}}
-                                                <textarea type="text" class="form-control new-address-box" id="new-address-box" required name="address" placeholder="Address...">{{ auth()->user()->address }}</textarea>
+                                                <textarea type="text" class="form-control new-address-box" id="new-address-box" required name="address" placeholder="Address...">{{ $address }}</textarea>
                                                 {{-- <div class="invalid-feedback addressval" id="addressval">
                                                     Please input your address
                                                 </div> --}}
@@ -99,11 +98,7 @@
 
                                             <div class="button-grid">
                                                 <div class="save-button">
-                                                    {{-- <form action="/saveAddress" method="POST">
-                                                        @csrf --}}
-                                                        <button type="submit" class="save-button-box">Save Changes</button>
-                                                    {{-- </form> --}}
-                                                    {{-- <button type="button" class="cancel-btn">Cancel</button> --}}
+                                                    <button type="button" class="save-button-box" id="changeAdd">Save Changes</button>
                                                     <button type="button" class=" btn-secondary cancel-btn" data-bs-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
@@ -294,10 +289,58 @@
             })
         })()
     </script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <script src="sweetalert2.all.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- <script>
+        $(document).on('click', '.changeAdd', function(e){
+            e.preventDefault();
+            var user_id = $(this).val();
+            console.log(user_id);
+            $('#exampleModal').modal('show');
+            $.ajax({
+                type: "POST",
+                url: "/edit-address",
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        })
+    </script> --}}
+
+    {{-- <script>
+        $(document).on('click', '.changeAdd' function(e){
+            e.preventDefault();
+            // var data = {
+            //     'name' : $('#first-name-box').val(),
+            //     'phone' : $('#phone-number-box').val(),
+            //     'address' : $('#new-address-box').val()
+            // }
+
+            $.ajax({
+                type: "POST",
+                url: "/changeAddress",
+                data: "data",
+                dataType: "json",
+                success: function (response) {
+                    // console.log(response);
+                    $('#nama').html($('#first-name-box').val())
+                    $('#telpon').html($('#phone-number-box').val())
+                    $('#alamat').html($('#new-address-box').val())
+                }
+            });
+        })
+        $(document).ready(function () {
+            $(#changeAdd).click(function(e){
+                e.preventDefault();
+                let inputNama = document.getElementById('first-name-box').value;
+                console.log(inputNama)
+            });
+        });
+    </script> --}}
 
 
 @endsection
