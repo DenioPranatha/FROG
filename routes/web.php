@@ -76,6 +76,7 @@ Route::post('/cartDelete', [CartController::class, 'destroy'])->middleware('auth
 
 Route::get('/checkout', [CheckoutController::class, 'store'])->name('checkout')->middleware('auth')->middleware('not.admin');
 Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('auth')->middleware('not.admin');
+Route::post('/payNow', [CheckoutController::class, 'pay'])->middleware('auth')->middleware('not.admin');
 // Route::post('/saveAddress', [CheckoutController::class, 'saveAddress'])->middleware('auth')->middleware('not.admin');
 // Route::post('/edit-address', [CheckoutController::class, 'edit'])->middleware('auth')->middleware('not.admin');
 

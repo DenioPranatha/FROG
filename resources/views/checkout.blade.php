@@ -255,9 +255,67 @@
                     <h1 class="total-payment">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
                     {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
 
-                    <button type="button" class="pay-button" id="type-success" >
-                        <h1 class="pay-now-title">Pay Now !</h1>
-                    </button>
+                    {{-- @dd($product_id) --}}
+                    {{-- @dd(date('Y-m-d')) --}}
+                    {{-- @dd($totalPayment+10000) --}}
+                    <form action="/payNow" method="post" id="payForm">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        {{-- <input type="hidden" name="product_id" value="{{ $product_id }}"> --}}
+                        @foreach ($product_id as $prod_id)
+                            <input type="hidden" name="arrayProductId[]" value="{{ $prod_id }}">
+                        @endforeach
+                        @foreach ($cartHeaders as $cartHeader)
+                            @foreach ($cartHeader->cartDetail as $cartDetail)
+                                @for ($i = 0; $i < count($product_id); $i++)
+                                    @if ($cartDetail->product_id == $product_id[$i])
+                                        <input type="hidden" name="arrayCartDetail[]" value="{{ $cartDetail }}">
+                                    @endif
+                                @endfor
+                            @endforeach
+                        @endforeach
+                        {{-- @foreach ($cartDetails as $cs)
+                            <input type="hidden" name="arrayQty[]" value="{{ $cs->quantity }}">
+                        @endforeach --}}
+                        {{-- @php
+                            $qtyArray = [];
+                        @endphp --}}
+
+                        {{-- @foreach ($cartHeaders as $cartHeader)
+                            @foreach ($cartHeader->cartDetail as $cartDetail)
+                                @for ($i = 0; $i < count($product_id); $i++)
+                                    @if ($cartDetail->product_id == $product_id[$i])
+                                        @php
+                                            $qtyArray[] = $cartDetail->qty;
+                                            // $qtyArray[] = [$cartDetail->qty];
+
+                                        @endphp
+
+                                    @endif
+                                @endfor
+                            @endforeach
+                        @endforeach --}}
+
+                        {{-- @foreach ($qtyArray as $qty)
+                            @foreach ($qty as $value)
+                                <input type="hidden" name="qty[]" value="{{ $value }}">
+                            @endforeach
+                        @endforeach --}}
+                        {{-- <input type="hidden" name="qty[]" value="{{ implode(',', $qtyArray) }}"> --}}
+                        {{-- <input type="hidden" name="qty[]" value="{{ implode(',', $qty) }}"> --}}
+
+                        <input type="hidden" name="name" id="nameHidden">
+                        <input type="hidden" name="phone" id="phoneHidden">
+                        <input type="hidden" name="address" id="addressHidden">
+                        <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
+                        <input type="hidden" name="total_price" id="total_price" value="{{ ($totalPayment+10000) }}">
+                        {{-- <input type="hidden" name="total_modal" id="total_modal"> --}}
+                        <input type="hidden" name="status" value="Unpaid">
+
+                        <button onclick="pay(event)" class="pay-button" id="type-success" >
+                            <h1 class="pay-now-title">Pay Now !</h1>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('address', 155);
             $table->date('date');
             $table->integer('total_price');
-            $table->integer('total_modal');
+            // $table->integer('total_modal');
+            $table->enum('status', ['Unpaid', 'Paid']);
             $table->timestamps();
         });
     }
