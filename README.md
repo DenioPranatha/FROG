@@ -9,6 +9,7 @@ npm install jquery
 npm install chart.js
 npm install date-fns chartjs-adapter-date-fns --save
 composer require itsgoingd/clockwork
+composer require midtrans/midtrans-php
 
 yang perlu ditulis di tiap page:
 
