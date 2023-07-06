@@ -389,7 +389,7 @@
 }
 
 
-.boxbtn{
+button.boxbtn{
     border: 1px solid #673AB7;
     box-shadow: 2px 2px 8px #673AB7;
 
@@ -1191,18 +1191,139 @@ textarea{
 }
 
 
+
 .summary-checkout-responsive{
-    background-color: RED;
+    /* display: block; */
+    display: none;
+    width: 365px;
+    height: 310px;
+    align-items: baseline;
+    background: #FFFFFF;
+    border: 2px solid #522E93;
+    box-shadow: 4px 4px 8px #522E93;
+    border-radius: 20px;
+    /* position: fixed; */
+    /* border: 2px solid red; */
+    /* margin-top: 100px; */
+    /* box-sizing: border-box; */
+    /* margin-left: 870px; */
+    /* margin-top: 20px; */
+
+
+}
+
+.box-summary-responsive {
+    margin-left: 10px;
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 15px;
+
+
+}
+
+.title-checkout-summary-responsive{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #522E93;
+}
+
+.checkout-summary-linebar-responsive{
+    background-color: #522E93;
+    /* color: #522E93; */
+    border-width: 1px;
+    height: 2px;
+    top: 0px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    width: 320px;
+    margin-left: -3px;
+}
+
+.subtotal-responsive{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    gap: 10px;
+    margin-bottom: 10px;
+    /* margin-left: ; */
+
+}
+
+.shipping-subtotal-responsive{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.total-payment-responsive{
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    color: #522E93;
+    margin-bottom: 25px;
+}
+
+.pay-button-responsive{
+    margin-left: 60px;
+    width: 220px;
+    height: 51px;
+    background: #522E93;
+    border: 1px solid #522E93;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
+    padding-top: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 35px;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+
+    transition: .2s all ease-in-out;
+}
+
+.pay-button-responsive:hover{
+    transform: scale(1.04);
+}
+
+.pay-button-responsive:hover{
+    margin-left: 60px;
+    width: 220px;
+    height: 51px;
+    background: #673AB7;
+    border: 1px solid #673AB7;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
+    padding-top: 10px;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+}
+
+.pay-now-title-responsive{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: -11px;
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
 }
 
 
-.makancss-box{
-    border: 1px solid black;
-    background-color: black;
-
-    width: 500px;
-    height: 500px;
-}
 
 /* Responsive Website */
 
@@ -1785,33 +1906,14 @@ textarea{
         border-radius: 10px;
     }
 
-    .summary-checkout{
-        display: block;
-        /* border: 2px solid red; */
-        width: 365px;
-        height: 310px;
-        align-items: baseline;
-        margin-top: 100px;
-        box-sizing: border-box;
-        background: #FFFFFF;
-        box-shadow: 4px 4px 0px 0px #522E93;
-        border: 2px solid #522E93;
-        position: fixed;
-        display: block;
-        margin-left: 870px;
-        margin-top: 20px;
 
-        box-shadow: 4px 4px 8px #522E93;
-        border-radius: 20px;
 
-    }
-
-    .box-summary {
+    /* .box-summary {
         margin-left: 10px;
         margin-top: 30px;
         padding-left: 5px;
         padding-right: 5px;
-    }
+    } */
 
     .gabung-box{
         /* background-color: blue; */
@@ -1823,33 +1925,31 @@ textarea{
 
     .summary-checkout{
         /* position: fixed; */
-        /* border: 2px solid red; */
-        /* background-color: red; */
+        display: block;
+        border: 2px solid red;
         width: 365px;
-        height: 310px;
-        align-items: baseline;
-        margin-top: 100px;
+        /* height: 310px; */
+        /* align-items: baseline; */
+        /* margin-top: 100px; */
         box-sizing: border-box;
         background: #FFFFFF;
         box-shadow: 4px 4px 0px 0px #522E93;
         border: 2px solid #522E93;
-        display: block;
-        margin-left: 870px;
-        margin-top: 20px;
-
+        /* margin-left: 870px; */
+        /* margin-top: 20px; */
+    
         box-shadow: 4px 4px 8px #522E93;
         border-radius: 20px;
-
+    
     }
-
+    
     .box-summary {
-        background-color: red;
-        /* margin-left: 10px; */
+        margin-left: 10px;
         margin-top: 30px;
-        /* padding-left: 5px; */
-        padding-right: 5px;
-
-
+        padding-left: 10px;
+        padding-right: 15px;
+    
+    
     }
 
     .title-checkout-summary{
@@ -1865,46 +1965,142 @@ textarea{
 
     .summary-checkout-responsive{
         display: block;
-        /* border: 2px solid red; */
-        /* width: 365px; */
-        /* height: 310px; */
-        /* align-items: baseline; */
-        /* margin-top: 100px; */
-        box-sizing: border-box;
+        margin-left: 30px;
+        margin-top: -40px;
+        margin-bottom: 30px;
+        width: 365px;
+        height: 270px;
+        align-items: baseline;
         background: #FFFFFF;
-        box-shadow: 4px 4px 0px 0px #522E93;
         border: 2px solid #522E93;
-        /* position: fixed;
-        display: block; */
-        /* margin-left: 870px; */
-        margin-top: 20px;
-
         box-shadow: 4px 4px 8px #522E93;
         border-radius: 20px;
-
+        /* position: fixed; */
+        /* border: 2px solid red; */
+        /* margin-top: 100px; */
+        /* box-sizing: border-box; */
+        /* margin-left: 870px; */
+        /* margin-top: 20px; */
+    
+    
     }
-
+    
     .box-summary-responsive {
-        background-color: red;
         margin-left: 10px;
         margin-top: 30px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-
-    .makancss{
-        border: 1px solid black;
-
-        width: 50px;
-        height: 50px;
-    }
-
-    .makancss-box{
-        border: 1px solid black;
-        background-color: black;
+        padding-left: 10px;
+        padding-right: 15px;
     
-        width: 500px;
-        height: 500px;
+    
     }
+    
+    .title-checkout-summary-responsive{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        color: #522E93;
+    }
+    
+    .checkout-summary-linebar-responsive{
+        background-color: #522E93;
+        /* color: #522E93; */
+        border-width: 1px;
+        height: 2px;
+        top: 0px;
+        margin-top: 6px;
+        margin-bottom: 15px;
+        width: 320px;
+        margin-left: -3px;
+    }
+    
+    .subtotal-responsive{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        gap: 10px;
+        margin-bottom: 10px;
+        /* margin-left: ; */
+    
+    }
+    
+    .shipping-subtotal-responsive{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .total-payment-responsive{
+        font-family: 'Ubuntu';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        color: #522E93;
+        margin-bottom: 25px;
+    }
+    
+    .pay-button-responsive{
+        margin-left: 60px;
+        width: 220px;
+        height: 51px;
+        background: #522E93;
+        border: 1px solid #522E93;
+        /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+        /* border-radius: 25px; */
+        padding-top: 10px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 35px;
+    
+        box-shadow: 4px 4px 8px #CDCDCD;
+        border-radius: 20px;
+    
+        transition: .2s all ease-in-out;
+    }
+    
+    .pay-button-responsive:hover{
+        transform: scale(1.04);
+    }
+    
+    .pay-button-responsive:hover{
+        margin-left: 60px;
+        width: 220px;
+        height: 51px;
+        background: #673AB7;
+        border: 1px solid #673AB7;
+        /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+        /* border-radius: 25px; */
+        padding-top: 10px;
+    
+        box-shadow: 4px 4px 8px #CDCDCD;
+        border-radius: 20px;
+    }
+    
+    .pay-now-title-responsive{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: -11px;
+    
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    
+    }
+
+    /* .boxbtn{
+        border: 1px solid #673AB7;
+        box-shadow: 2px 2px 8px #673AB7;
+    
+        transform: scale(1.05);
+    } */
+    
 }

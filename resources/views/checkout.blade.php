@@ -272,7 +272,7 @@
                 </div>
             </div>
 
-            <div class="summary-checkout-responsive" id="summary-checkout" style="display: block">
+            <div class="summary-checkout-responsive" id="summary-checkout">
                 <div class="box-summary-responsive">
                     <h1 class="title-checkout-summary-responsive">Checkout Summary</h1>
                     <div class="checkout-summary-linebar-responsive"></div>
@@ -289,7 +289,7 @@
                     <h1 class="total-payment-responsive">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
                     {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
     
-                    <button type="button" class="pay-button-responsive" id="type-success" >
+                    <button type="button" class="pay-button-responsive" id="type-success1" >
                         <h1 class="pay-now-title-responsive">Pay Now !</h1>
                     </button>
                 </div>

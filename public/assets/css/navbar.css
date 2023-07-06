@@ -267,10 +267,10 @@ html {
         transition: all 1s;
     }
 
-    /* nav .navbar.slide {
+    nav .navbar.slide {
         opacity: 0;
         transform: translateX(0);
-    } */
+    }
 
     /* .container-fluid{
         display: flex;

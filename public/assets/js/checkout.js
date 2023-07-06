@@ -33,14 +33,14 @@ klikbutton2.forEach( klikbtn => {
 
 // Buat stop scroll
 // buat stop scroll yg bagian kanan
-// let summarycheckout = document.getElementById('summary-checkout');
-// var body = document.body;
-// var html = document.documentElement;
-// var bodyH = Math.max(body.scrollHeight,  body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
-// // var position = bodyH-708;
-// var position = bodyH-670;
-// var count = 0
-// var count2 = 0
+let summarycheckout = document.getElementById('summary-checkout');
+var body = document.body;
+var html = document.documentElement;
+var bodyH = Math.max(body.scrollHeight,  body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight);
+// var position = bodyH-708;
+var position = bodyH-670;
+var count = 0
+var count2 = 0
 
 // window.onscroll = function(){
 //     // if(window.scrollY >= (bodyH-708)) { // change target to number
@@ -57,6 +57,7 @@ klikbutton2.forEach( klikbtn => {
 
 // Make PopUp Success
 const iconSuccess = document.querySelector('#type-success');
+const iconSuccess1 = document.querySelector('#type-success1');
 const valbox1click = document.getElementsByClassName('box-1');
 const valbox2click = document.getElementsByClassName('box-2');
 
@@ -71,6 +72,47 @@ for(i = 0; i < valbox1click.length; i++){
 }
 
 iconSuccess.onclick = function() {
+
+    if(count > 0 && count2 > 0) {
+        Swal.fire(
+            'Thankyou!',
+            'Your transaction has been successfully processed',
+            'success',
+        ).then(okay => {
+            if(okay) {
+                window.location.href = "index";
+            }
+        })
+
+    }
+    else if(count >= 10 && count2 == 0){
+        // alert("you must choose your payment method");
+        Swal.fire(
+            'Warning!!',
+            'You must choose your payment method!',
+            'warning'
+          )
+    }
+    else if(count == 0 && count2 >= 12){
+        // alert("you must choose your shipping options");
+        Swal.fire(
+            'Warning!',
+            'You must choose your shipping options',
+            'warning'
+          )
+    }
+    else {
+        // alert("you must choose shipping options and payment");
+        Swal.fire(
+            'Warning!',
+            'You must choose shipping options and payment method',
+            'warning'
+          )
+    }
+
+}
+
+iconSuccess1.onclick = function() {
 
     if(count > 0 && count2 > 0) {
         Swal.fire(

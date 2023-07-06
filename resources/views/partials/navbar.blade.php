@@ -108,7 +108,7 @@
                 <span></span>
             </div>
         </div>
-        <div class="line w-100"></div>
+            <div class="line w-100"></div>
     </nav>
 @endcan
 

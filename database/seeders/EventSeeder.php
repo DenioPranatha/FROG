@@ -81,7 +81,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-02-17',
             'end_date' => '2023-03-10',
             'duration' => 21,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'Kami dari Frog community ingin melakukan penggalangan data yang bertujuan untuk membantu adik-adik kita yatim piatu untuk membeli berbagai perlengkapan sekolah yang mereka butuhkan, seperti berbagai alat tulis, buku catatan, serta buku pelajaran',
             'image' => 'event-5.jpg'
         ]);
@@ -95,7 +95,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-07-01',
             'end_date' => '2023-07-29',
             'duration' => 28,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Kami dari karang taruna desa selayang berkeinginan untuk membantu orang tua kita yang ada di panti jompo kasih sayang. Dengan bantuan kita bersama, semoga mereka dapat merasakan kebahagiaan dan rasa peduli dari kita. Dana yang telah terkumpul nantinya akan digunakan untuk memberikan pakaian kepada mereka',
             'image' => 'event-6.jpg'
         ]);
@@ -109,7 +109,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-03-23',
             'end_date' => '2023-04-20',
             'duration' => 28,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Kami dari Osis SMA Negri 7 Tangsel akan melakukan gerakan untuk membantu saudara-saudari kita yang terkena bencana banjir sungai kapuas yang terjadi di Kalimantan Tengah. Kami berharap ketersedian kita semua untuk ikut serta melakukan penggalangan dana guna membantu saudara-saudari kiita disana',
             'image' => 'event-7.jpg'
         ]);
@@ -151,7 +151,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-04-30',
             'end_date' => '2023-05-24',
             'duration' => 24,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'Kami dari Mahasiswa Binus University melakukan penggalangan dana untuk membantu teman-teman kita yang berada di panti asuhan Alqi Cerita untuk membantu mereka melengkapi berbagai kebutuhan yang sekiranya mereka butuhkan',
             'image' => 'event-10.jpg'
         ]);
@@ -196,7 +196,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-04-29',
             'end_date' => '2023-05-20',
             'duration' => 21,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Panti asuhan saat ini merupakan salah satu tempat yang sangat berpengaruh bagi mereka yang kehilangan orang yang dikasihi atau ditelantarkan. Maka dari itu kami selaku penyelenggara Bantuan Sosial Panti ingin mengajak saudara sekalian membantu mereka yang tinggal di panti untuk dapat memenuhi kebutuhan sehari-hari mereka, sehingga mereka dapat hidup layak dan berkecukupan.',
             'image' => 'event-13.jpg'
         ]);
@@ -631,7 +631,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-06-07',
             'end_date' => '2023-07-02',
             'duration' => 25,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'Aksi Peduli Anak Yatim merupakan suatu aksi penggalangan dana yang bertujuan utama untuk membantu anak-anak yatim yang tinggal di panti asuhan seluruh Indonesia. Hasil penggalangan dana pada aksi ini akan sepenuhnya digunakan untuk pemenuhan kebutuhan hidup para yatim yang tinggal di panti asuhan.',
             'image' => 'event-42.jpg'
         ]);
@@ -646,7 +646,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-07-27',
             'end_date' => '2023-08-20',
             'duration' => 24,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'BEM Charitas mengadakan kegiatan penggalangan dana yang bertujuan untuk membantu mereka yang membutuhkan. Pada aksi kali ini kami BEM Charitas akan menyalurkan seluruh hasil dari kegiatan ini kepada panti asuhan Alqi Ceria. Dana tersebut akan digunakan untuk pemenuhan kebutuhan hidup anak-anak panti disana.',
             'image' => 'event-43.jpg'
         ]);
@@ -661,7 +661,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-05-09',
             'end_date' => '2023-06-01',
             'duration' => 23,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Aksi Sekolah Sejahtera merupakan aksi yang bertujuan untuk membantu sekolah-sekolah di Indonesia yang mengalami kerusakan. Aksi ini merupakan salah satu bukti peran nyata kepedulian kita terhadap pendidikan indonesia. Hasil dari aksi ini akan digunakan untuk renovasi sekolah yang rusak, sehingga seluruh siswa-siswi dapat menempuh pendidikan dengan baik.',
             'image' => 'event-44.jpg'
         ]);
