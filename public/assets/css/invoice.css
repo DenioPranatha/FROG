@@ -186,3 +186,56 @@
     color: #522e93;
     font-weight: 600;
 }
+
+.pay-button{
+    /* margin-left: 60px; */
+    width: 200px;
+    height: 51px;
+    background: #522E93;
+    border: 1px solid #522E93;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
+    padding-top: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* margin-bottom: 35px; */
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+
+    transition: .2s all ease-in-out;
+}
+
+.pay-button:hover{
+    transform: scale(1.04);
+}
+
+.pay-button:hover{
+    width: 200px;
+    height: 51px;
+    background: #673AB7;
+    border: 1px solid #673AB7;
+    /* box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.25); */
+    /* border-radius: 25px; */
+    padding-top: 10px;
+
+    box-shadow: 4px 4px 8px #CDCDCD;
+    border-radius: 20px;
+}
+
+.pay-now-title{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: -11px;
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}

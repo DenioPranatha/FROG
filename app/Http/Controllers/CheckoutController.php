@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use midtrans;
+use Midtrans\Snap;
+use Midtrans\Config;
 use App\Models\Product;
 use App\Models\CartDetail;
 use App\Models\CartHeader;
+use Illuminate\Http\Request;
 use App\Models\PaymentDetail;
 use App\Models\PaymentHeader;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
@@ -33,6 +37,18 @@ class CheckoutController extends Controller
             if($eventCount == 0){
                 return redirect('cart')->with('error','Please select at least one product!');
             }else{
+                // dd($request);
+                // $totalPrice = $request->totalPayments;
+                // $validatedDataHeader['user_id'] = auth()->user()->id;
+                // $validatedDataHeader['name'] = auth()->user()->name;
+                // $validatedDataHeader['phone'] = auth()->user()->phone;
+                // $validatedDataHeader['address'] = auth()->user()->address;
+                // $validatedDataHeader['date'] = $request->date;
+                // $validatedDataHeader['total_price'] = $request->totalPayments;
+                // $validatedDataHeader['status'] = $request->status;
+
+                // $paymentHeader = PaymentHeader::create($validatedDataHeader);
+
                 return view('checkout', [
                     'product_id' => $product_id,
                     'cart_header_id' => $cart_header_id,
@@ -56,6 +72,10 @@ class CheckoutController extends Controller
     }
 
     public function pay(Request $request){
+        // $paymentHeader2 = PaymentHeader::find(81);
+        // $paymentHeader2->update([
+        //     'status' => 'Paid'
+        // ]);
         // dd($request);
         $totalPrice = $request->total_price;
         $validatedDataHeader['user_id'] = $request->user_id;
@@ -69,6 +89,7 @@ class CheckoutController extends Controller
         $paymentHeader = PaymentHeader::create($validatedDataHeader);
 
         $phid = $paymentHeader->id;
+        $ph = PaymentHeader::find($phid);
         // dd($request->arrayProductId);
         $product_id = $request->arrayProductId;
         $products = Product::find($product_id);
@@ -111,13 +132,13 @@ class CheckoutController extends Controller
         }
 
         // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.server_key');
+        Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
+        Config::$isProduction = false;
         // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
+        Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
+        Config::$is3ds = true;
 
         $params = array(
             'transaction_details' => array(
@@ -131,11 +152,37 @@ class CheckoutController extends Controller
             ),
         );
 
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        dd($snapToken);
+        $snapToken = Snap::getSnapToken($params);
+        // dd($snapToken);
 
-        return redirect('index');
+        return view('invoice',[
+            'snapToken' => $snapToken,
+            'paymentHeader' => $ph,
+            'paymentDetails' => PaymentDetail::where('payment_header_id', $phid)->get()
+        ]);
 
+    }
+
+    public function callback(Request $request){
+        // dd($request);
+        $serverKey = config('midtrans.server_key');
+        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+        if($hashed == $request->signature_key){
+            if($request->transaction_status == 'capture'){
+                $paymentHeader = PaymentHeader::find($request->order_id);
+                $paymentHeader->update([
+                    'status' => 'Paid'
+                ]);
+            }
+        }
+    }
+
+    public function invoice(){
+        return view('invoice');
+    }
+
+    public function invoicePaid(){
+        return view('invoicePaid');
     }
 
     // public function saveAddress(Request $request){

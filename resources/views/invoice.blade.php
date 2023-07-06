@@ -1,3 +1,11 @@
+@section('midtrans')
+    <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
+    <script type="text/javascript"
+    src="https://app.sandbox.midtrans.com/snap/snap.js"
+    data-client-key="{{ config('midtrans.client_key') }}"></script>
+    <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
+@endsection
+
 @section('css')
     {{-- <link rel="stylesheet" href="/assets/css/events.css"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/invoice.css') }}">
@@ -21,28 +29,28 @@
                 <h3>Order Notes</h3>
                 <div class="box-notes d-flex flex-column">
                     <div class="name">
-                        <p>Name : Alfredo Wijaya Kusuma</p>
+                        <p>Name : {{ $paymentHeader->name }}</p>
                     </div>
                     <div class="phone-number">
-                        <p>Phone Number : (+62) 812367780842</p>
+                        <p>Phone Number : (+62) {{ $paymentHeader->phone }}</p>
                     </div>
                     <div class="address">
-                        <p>Address : Jl. Pakuan No. 3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810</p>
+                        <p>Address : {{ $paymentHeader->address }}</p>
                     </div>
                 </div>
             </div>
             <div class="number-time d-flex flex-row">
                 <div class="order d-flex flex-column">
                     <h3>Order Number</h3>
-                    <p>Fr-1</p>
+                    <p>Fr-{{ $paymentHeader->id }}</p>
                 </div>
                 <div class="time d-flex flex-column">
                     <h3>Payment Time</h3>
-                    <p>03/07/2023</p>
+                    <p>{{ $paymentHeader->date }}</p>
                 </div>
             </div>
             <div class="order-detail d-flex flex-column">
-                <h3>Order Detail's (2 Products)</h3>
+                <h3>Order Detail's ({{ count($paymentDetails) }} Products)</h3>
                 <div class="detail-content d-flex flex-row">
                     <div class="no">No.</div>
                     <div class="product">Product</div>
@@ -52,15 +60,17 @@
                 </div>
                 <div class="line-indetail">
                 </div>
-                @for ($i=1; $i<3; $i++)
-                <div class="detail-content d-flex flex-row">
-                    <div class="no">1</div>
-                    <div class="product">Basreng Pedas</div>
-                    <div class="quantity-order">10</div>
-                    <div class="total">Rp. 500.000</div>
-                    <div class="event">Charity RTB</div>
-                </div>
-                @endfor
+
+                @foreach ($paymentDetails as $paymentDetail)
+                    <div class="detail-content d-flex flex-row">
+                        <div class="no">{{ $loop->iteration }}</div>
+                        <div class="product">{{ $paymentDetail->product->name }}</div>
+                        <div class="quantity-order">{{ $paymentDetail->qty }}</div>
+                        <div class="total"> @money(($paymentDetail->product->price)*($paymentDetail->qty)) </div>
+                        <div class="event">{{ $paymentDetail->product->event->name }}</div>
+                    </div>
+                @endforeach
+
             </div>
             <div class="last-content d-flex flex-row">
                 <div class="last-head d-flex flex-column">
@@ -77,20 +87,52 @@
                 <div class="last-main d-flex flex-column">
                     {{-- subtotal --}}
                     <div class="main-content">
-                        Rp. 600.000
+                        @money(($paymentHeader->total_price)-10000)
                     </div>
                     {{-- shipping --}}
                     <div class="main-content">
-                        Rp. 10.000
+                        @money(10000)
                     </div>
                     {{-- total --}}
                     <div class="main-content bold">
-                       Rp. 610.000
+                        @money(($paymentHeader->total_price))
                     </div>
                 </div>
             </div>
-            <h3 class="status">Payment Status  :  Paid</h3>
+            <h3 class="status">Payment Status  :  {{ $paymentHeader->status }}</h3>
+
+            <button class="pay-button" id="pay-button">
+                <h1 class="pay-now-title">Pay Now !</h1>
+            </button>
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+        // For example trigger on button clicked, or any time you need
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function () {
+        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+            window.snap.pay('{{ $snapToken }}', {
+                onSuccess: function(result){
+                /* You may add your own implementation here */
+                    // alert("payment success!"); console.log(result);
+                },
+                onPending: function(result){
+                /* You may add your own implementation here */
+                    alert("wating your payment!"); console.log(result);
+                },
+                onError: function(result){
+                /* You may add your own implementation here */
+                    alert("payment failed!"); console.log(result);
+                },
+                onClose: function(){
+                /* You may add your own implementation here */
+                    // alert('you closed the popup without finishing the payment');
+                }
+            })
+        });
+    </script>
 @endsection

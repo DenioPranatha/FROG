@@ -12,6 +12,7 @@
 @section('title', 'Check Out')
 
 @section('content')
+{{-- @dd() --}}
     <div class="all-content">
 
         <div class="gabung-box">
