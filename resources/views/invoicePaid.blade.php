@@ -1,11 +1,3 @@
-@section('midtrans')
-    <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
-    <script type="text/javascript"
-    src="https://app.sandbox.midtrans.com/snap/snap.js"
-    data-client-key="{{ config('midtrans.client_key') }}"></script>
-    <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
-@endsection
-
 @section('css')
     {{-- <link rel="stylesheet" href="/assets/css/events.css"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/invoice.css') }}">
@@ -101,40 +93,7 @@
                 </div>
             </div>
             <h3 class="status">Payment Status  :  {{ $paymentHeader->status }}</h3>
-
-            <button class="pay-button" id="pay-button">
-                <h1 class="pay-now-title">Pay Now !</h1>
-            </button>
         </div>
     </div>
 </div>
-@endsection
-
-@section('js')
-    <script type="text/javascript">
-        // For example trigger on button clicked, or any time you need
-        var payButton = document.getElementById('pay-button');
-        payButton.addEventListener('click', function () {
-        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-            window.snap.pay('{{ $snapToken }}', {
-                onSuccess: function(result){
-                /* You may add your own implementation here */
-                    // alert("payment success!"); console.log(result);
-                    window.location.href = '/invoicePaid/{{ $paymentHeader->id }}'
-                },
-                onPending: function(result){
-                /* You may add your own implementation here */
-                    alert("wating your payment!"); console.log(result);
-                },
-                onError: function(result){
-                /* You may add your own implementation here */
-                    alert("payment failed!"); console.log(result);
-                },
-                onClose: function(){
-                /* You may add your own implementation here */
-                    // alert('you closed the popup without finishing the payment');
-                }
-            })
-        });
-    </script>
 @endsection

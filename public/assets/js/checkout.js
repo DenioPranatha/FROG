@@ -53,9 +53,9 @@ for(i = 0; i < valbox1click.length; i++){
     valbox1click[i].onclick = () => {
         count = 10;
     }
-    valbox2click[i].onclick = () => {
-        count2 = 12;
-    }
+    // valbox2click[i].onclick = () => {
+    //     count2 = 12;
+    // }
 }
 
 // iconSuccess.onclick = function() {
@@ -147,49 +147,65 @@ let addressHidden = document.getElementById('addressHidden');
 
 function pay(event){
     event.preventDefault();
-    if(count > 0 && count2 > 0) {
-        Swal.fire(
-            'Thankyou!',
-            'Your transaction has been successfully processed',
-            'success',
-        ).then(okay => {
-            if(okay) {
-                nameHidden.value = nameLbl.innerHTML;
-                phoneHidden.value = phoneLbl.innerHTML.substring(5);
-                addressHidden.value = addressLbl.innerHTML;
-                // total_price.value = addressLbl.innerHTML;
-                // total_modal.value = addressLbl.innerHTML;
+    // if(count > 0 && count2 > 0) {
+    if(count > 0) {
+        // Swal.fire(
+        //     'Thankyou!',
+        //     'Your transaction has been successfully processed',
+        //     'success',
+        // ).then(okay => {
+        //     if(okay) {
+        //         nameHidden.value = nameLbl.innerHTML;
+        //         phoneHidden.value = phoneLbl.innerHTML.substring(5);
+        //         addressHidden.value = addressLbl.innerHTML;
+        //         // total_price.value = addressLbl.innerHTML;
+        //         // total_modal.value = addressLbl.innerHTML;
 
-                payForm.submit();
-                // window.location.href = "index";
-            }
-        })
+        //         payForm.submit();
+        //         // window.location.href = "index";
+        //     }
+        // })
+        nameHidden.value = nameLbl.innerHTML;
+        phoneHidden.value = phoneLbl.innerHTML.substring(5);
+        addressHidden.value = addressLbl.innerHTML;
+        // total_price.value = addressLbl.innerHTML;
+        // total_modal.value = addressLbl.innerHTML;
+
+        payForm.submit();
+        // window.location.href = "index";
 
     }
-    else if(count >= 10 && count2 == 0){
-        // alert("you must choose your payment method");
+    else{
         Swal.fire(
             'Warning!!',
-            'You must choose your payment method!',
+            'You must choose your shipping options!',
             'warning'
         )
     }
-    else if(count == 0 && count2 >= 12){
-        // alert("you must choose your shipping options");
-        Swal.fire(
-            'Warning!',
-            'You must choose your shipping options',
-            'warning'
-        )
-    }
-    else {
-        // alert("you must choose shipping options and payment");
-        Swal.fire(
-            'Warning!',
-            'You must choose shipping options and payment method',
-            'warning'
-        )
-    }
+    // else if(count >= 10 && count2 == 0){
+    //     // alert("you must choose your payment method");
+    //     Swal.fire(
+    //         'Warning!!',
+    //         'You must choose your payment method!',
+    //         'warning'
+    //     )
+    // }
+    // else if(count == 0 && count2 >= 12){
+    //     // alert("you must choose your shipping options");
+    //     Swal.fire(
+    //         'Warning!',
+    //         'You must choose your shipping options',
+    //         'warning'
+    //     )
+    // }
+    // else {
+    //     // alert("you must choose shipping options and payment");
+    //     Swal.fire(
+    //         'Warning!',
+    //         'You must choose shipping options and payment method',
+    //         'warning'
+    //     )
+    // }
 
 
 }

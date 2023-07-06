@@ -214,7 +214,7 @@
                 </div>
 
 
-                <div class="option-payment-box">
+                {{-- <div class="option-payment-box">
                     <div class="title-option-payment">
                         <img src="assets/img/payment.svg" class="payment-icon">
                         <h2 class="payment-option-title">Payment Method Options</h2>
@@ -235,7 +235,7 @@
                         <div class="gambar-spay" style="background-image: url({{ asset("assets/img/spay.png") }})" ></div>
                     </button>
 
-                </div>
+                </div> --}}
 
             </div>
 

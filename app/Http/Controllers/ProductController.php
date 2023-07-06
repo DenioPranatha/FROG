@@ -11,7 +11,8 @@ use App\Models\CartHeader;
 use App\Models\Category;
 use App\Models\Event;
 use Carbon\Carbon;
-use Illuminate\Contracts\Database\Eloquent\Builder;
+// use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Query\Builder;
 
 class ProductController extends Controller
 {
@@ -144,10 +145,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
-    {
-        //
-    }
+    // public function edit(Product $product)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -156,10 +157,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
+    // public function update(Request $request, Product $product)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -167,10 +168,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
-    {
-        //
-    }
+    // public function destroy(Product $product)
+    // {
+    //     //
+    // }
 
     public function result(Request $request)
     {

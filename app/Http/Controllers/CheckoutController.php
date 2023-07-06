@@ -124,17 +124,17 @@ class CheckoutController extends Controller
             $validatedDataDetail['item_modal'] = $product->modal;
             PaymentDetail::create($validatedDataDetail);
 
-            // potong stok
-            $newStock = $product->stock - $qty;
-            $product->update([
-                'stock' => $newStock
-            ]);
+            // // potong stok
+            // $newStock = $product->stock - $qty;
+            // $product->update([
+            //     'stock' => $newStock
+            // ]);
         }
 
         // Set your Merchant Server Key
         Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        Config::$isProduction = false;
+        Config::$isProduction = config('midtrans.is_production');
         // Set sanitization on (default)
         Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
@@ -146,9 +146,9 @@ class CheckoutController extends Controller
                 'gross_amount' => $totalPrice,
             ),
             'customer_details' => array(
-                'name' => $request->name,
-                'phone' => $request->phone,
-                'address' => $request->address,
+                'first_name' => $request->name,
+                'last_name' => '',
+                'phone' => '+62 '.$request->phone
             ),
         );
 
@@ -168,11 +168,22 @@ class CheckoutController extends Controller
         $serverKey = config('midtrans.server_key');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
-            if($request->transaction_status == 'capture'){
+            if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement'){
                 $paymentHeader = PaymentHeader::find($request->order_id);
                 $paymentHeader->update([
                     'status' => 'Paid'
                 ]);
+
+                $paymentDetails = PaymentDetail::where('payment_header_id', $request->order_id)->get();
+                foreach($paymentDetails as $pd){
+                    $product_id = $pd->product_id;
+                    $product = Product::find($product_id);
+                    // potong stok
+                    $newStock = $product->stock - $pd->qty;
+                    $product->update([
+                        'stock' => $newStock
+                    ]);
+                }
             }
         }
     }
@@ -181,8 +192,11 @@ class CheckoutController extends Controller
         return view('invoice');
     }
 
-    public function invoicePaid(){
-        return view('invoicePaid');
+    public function invoicePaid($id){
+        return view('invoicePaid', [
+            'paymentHeader' => PaymentHeader::find($id),
+            'paymentDetails' => PaymentDetail::where('payment_header_id', $id)->get()
+        ]);
     }
 
     // public function saveAddress(Request $request){
