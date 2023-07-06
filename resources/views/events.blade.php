@@ -134,9 +134,9 @@
             </div>
         </form>
 
-        <button class="bubble-box " value="All">All</button>
+        <button class="bubble-box bbox-resposive"   value="All">All</button>
         @foreach ($cat as $c)
-            <button class="bubble-box" value="{{ $c->name }}">{{ $c->name }}</button>
+            <button class="bubble-box bbox-resposive"  value="{{ $c->name }}">{{ $c->name }}</button>
         @endforeach
 
     </div>
