@@ -314,7 +314,8 @@
                         <input type="hidden" name="status" value="Unpaid">
 
                         <button onclick="pay(event)" class="pay-button" id="type-success" >
-                            <h1 class="pay-now-title">Pay Now !</h1>
+                            {{-- <h1 class="pay-now-title">Pay Now !</h1> --}}
+                            <h1 class="pay-now-title">Checkout Now !</h1>
                         </button>
                     </form>
                 </div>

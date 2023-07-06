@@ -11,8 +11,8 @@ use App\Models\CartHeader;
 use App\Models\Category;
 use App\Models\Event;
 use Carbon\Carbon;
-// use Illuminate\Contracts\Database\Eloquent\Builder;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Contracts\Database\Eloquent\Builder;
+// use Illuminate\Database\Query\Builder;
 
 class ProductController extends Controller
 {
@@ -26,7 +26,7 @@ class ProductController extends Controller
 
         $rn = Carbon::now()->toDateString();
 
-        $products = Product::with('event')->filter(request(['cat-id']))->whereHas('event', function(Builder $query) use($rn){
+        $products = Product::with('event')->filter(request(['cat-id']))->where('stock', '>', 0)->whereHas('event', function(Builder $query) use($rn){
             $query->where('end_date', '>', $rn);
         })->get();
 
@@ -180,7 +180,7 @@ class ProductController extends Controller
 
         $rn = Carbon::now()->toDateString();
 
-        $products = Product::with('event')->filter(request(['search-box', 'cat-id']))->whereHas('event', function(Builder $query) use($rn){
+        $products = Product::with('event')->filter(request(['search-box', 'cat-id']))->where('stock', '>', 0)->whereHas('event', function(Builder $query) use($rn){
             $query->where('end_date', '>', $rn);
         })->get();
 
@@ -232,8 +232,13 @@ class ProductController extends Controller
 
     public function add(Request $request){
         // dd($request);
+        $product_id = $request->product_id;
+        $product = Product::find($product_id);
         if($request->user_id == auth()->user()->id){
             return redirect()->back()->with('fail', 'Product can\'t be added to cart since it is your own product!');
+        }
+        if($product->stock - $request->qty < 0){
+            return redirect()->back()->with('fail', 'There are not enough stock!');
         }
         else{
 

@@ -93,6 +93,10 @@
                 </div>
             </div>
             <h3 class="status">Payment Status  :  {{ $paymentHeader->status }}</h3>
+            <a href="/products" class="pay-button" id="type-success" >
+                {{-- <h1 class="pay-now-title">Pay Now !</h1> --}}
+                <h1 class="pay-now-title">Shop again</h1>
+            </a>
         </div>
     </div>
 </div>
