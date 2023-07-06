@@ -113,7 +113,8 @@
 
                         <button type="submit" class="btn" id="checkoutBtn">
                         {{-- <button type="submit" onclick="checkout()" class="btn" id="checkoutBtn"> --}}
-                            Checkout Now!
+                            {{-- Checkout Now! --}}
+                            See Summary
                         </button>
                     </div>
                 </form>

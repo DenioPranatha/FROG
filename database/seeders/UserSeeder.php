@@ -70,6 +70,16 @@ class UserSeeder extends Seeder
             'address' => 'Jl. M. T. Haryono No.8, Kota Medan',
             'password' => Hash::make('riskya1234')
         ]);
+
+        User::create([
+            'name' => 'Nicole Felice',
+            'image' => 'user1.png',
+            'username' => 'nicole',
+            'email' => 'nicole@gmail.com',
+            'phone' => '81994352967',
+            'address' => 'Jalan Pegangsaan Timur No. 56',
+            'password' => Hash::make('nicole')
+        ]);
     // USER
 
     }

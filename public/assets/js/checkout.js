@@ -1,15 +1,3 @@
-// import Swal from 'sweetalert2'
-
-// import Swal from 'sweetalert2/dist/sweetalert2.js'
-
-// import 'sweetalert2/src/sweetalert2.scss'
-
-// const Swal = require('sweetalert2')
-
-// const swal = window.swal = require('sweetalert2');
-
-
-// # Cara2
 const klikbutton = document.querySelectorAll('.box-1');
 
 klikbutton.forEach( klikbtn => {
@@ -66,94 +54,96 @@ for(i = 0; i < valbox1click.length; i++){
     valbox1click[i].onclick = () => {
         count = 10;
     }
-    valbox2click[i].onclick = () => {
-        count2 = 12;
-    }
+    // valbox2click[i].onclick = () => {
+    //     count2 = 12;
+    // }
 }
 
-iconSuccess.onclick = function() {
+// iconSuccess.onclick = function() {
 
-    if(count > 0 && count2 > 0) {
-        Swal.fire(
-            'Thankyou!',
-            'Your transaction has been successfully processed',
-            'success',
-        ).then(okay => {
-            if(okay) {
-                window.location.href = "index";
-            }
-        })
+//     if(count > 0 && count2 > 0) {
+//         Swal.fire(
+//             'Thankyou!',
+//             'Your transaction has been successfully processed',
+//             'success',
+//         ).then(okay => {
+//             if(okay) {
+//                 window.location.href = "index";
+//             }
+//         })
 
-    }
-    else if(count >= 10 && count2 == 0){
-        // alert("you must choose your payment method");
-        Swal.fire(
-            'Warning!!',
-            'You must choose your payment method!',
-            'warning'
-          )
-    }
-    else if(count == 0 && count2 >= 12){
-        // alert("you must choose your shipping options");
-        Swal.fire(
-            'Warning!',
-            'You must choose your shipping options',
-            'warning'
-          )
-    }
-    else {
-        // alert("you must choose shipping options and payment");
-        Swal.fire(
-            'Warning!',
-            'You must choose shipping options and payment method',
-            'warning'
-          )
-    }
+//     }
+//     else if(count >= 10 && count2 == 0){
+//         // alert("you must choose your payment method");
+//         Swal.fire(
+//             'Warning!!',
+//             'You must choose your payment method!',
+//             'warning'
+//           )
+//     }
+//     else if(count == 0 && count2 >= 12){
+//         // alert("you must choose your shipping options");
+//         Swal.fire(
+//             'Warning!',
+//             'You must choose your shipping options',
+//             'warning'
+//           )
+//     }
+//     else {
+//         // alert("you must choose shipping options and payment");
+//         Swal.fire(
+//             'Warning!',
+//             'You must choose shipping options and payment method',
+//             'warning'
+//           )
+//     }
 
-}
+// ini konflik riskya
+// iconSuccess1.onclick = function() {
 
-iconSuccess1.onclick = function() {
+//     if(count > 0 && count2 > 0) {
+//         Swal.fire(
+//             'Thankyou!',
+//             'Your transaction has been successfully processed',
+//             'success',
+//         ).then(okay => {
+//             if(okay) {
+//                 window.location.href = "index";
+//             }
+//         })
 
-    if(count > 0 && count2 > 0) {
-        Swal.fire(
-            'Thankyou!',
-            'Your transaction has been successfully processed',
-            'success',
-        ).then(okay => {
-            if(okay) {
-                window.location.href = "index";
-            }
-        })
+//     }
+//     else if(count >= 10 && count2 == 0){
+//         // alert("you must choose your payment method");
+//         Swal.fire(
+//             'Warning!!',
+//             'You must choose your payment method!',
+//             'warning'
+//           )
+//     }
+//     else if(count == 0 && count2 >= 12){
+//         // alert("you must choose your shipping options");
+//         Swal.fire(
+//             'Warning!',
+//             'You must choose your shipping options',
+//             'warning'
+//           )
+//     }
+//     else {
+//         // alert("you must choose shipping options and payment");
+//         Swal.fire(
+//             'Warning!',
+//             'You must choose shipping options and payment method',
+//             'warning'
+//           )
+//     }
 
-    }
-    else if(count >= 10 && count2 == 0){
-        // alert("you must choose your payment method");
-        Swal.fire(
-            'Warning!!',
-            'You must choose your payment method!',
-            'warning'
-          )
-    }
-    else if(count == 0 && count2 >= 12){
-        // alert("you must choose your shipping options");
-        Swal.fire(
-            'Warning!',
-            'You must choose your shipping options',
-            'warning'
-          )
-    }
-    else {
-        // alert("you must choose shipping options and payment");
-        Swal.fire(
-            'Warning!',
-            'You must choose shipping options and payment method',
-            'warning'
-          )
-    }
+// }
+// ini konflik riskya
 
-}
+// }
 
-
+// ini untuk ganti addressnya kalo di save change
 let nameLbl = document.getElementById('nama');
 let phoneLbl = document.getElementById('telpon');
 let addressLbl = document.getElementById('alamat');
@@ -163,29 +153,6 @@ var storedName = localStorage.getItem('userInputName');
 var storedPhone = localStorage.getItem('userInputPhone');
 var storedAddress = localStorage.getItem('userInputAddress');
 
-// alert(addressLbl.value)
-// alert(storedPhone);
-// if(storedName) {
-//     nameLbl.innerHTML = storedName;
-// }
-// else if(storedPhone){
-//     phoneLbl.innerHTML = storedPhone;
-// }
-// else if(storedAddress){
-//     addressLbl.innerHTML = storedAddress;
-// }
-// else if(storedName!=null && storedPhone!=null){
-//     nameLbl.innerHTML = storedName;
-//     phoneLbl.innerHTML = storedPhone;
-// }
-// else if(storedName!=null && storedAddress!=null){
-//     nameLbl.innerHTML = storedName;
-//     addressLbl.innerHTML = storedAddress;
-// }
-// else if(storedPhone!=null && storedAddress!=null){
-//     phoneLbl.innerHTML = storedPhone;
-//     addressLbl.innerHTML = storedAddress;
-// }
 if(storedPhone!=null && storedAddress!=null && storedName!=null){
     nameLbl.innerHTML = storedName;
     phoneLbl.innerHTML = '(+62) '+ storedPhone;
@@ -214,6 +181,78 @@ changeBtn.addEventListener('click', function(){
     // alert(addressInput.value);
     $('#exampleModal').modal('hide');
 })
+
+let payForm = document.getElementById('payForm');
+let nameHidden = document.getElementById('nameHidden');
+let phoneHidden = document.getElementById('phoneHidden');
+let addressHidden = document.getElementById('addressHidden');
+// let total_price = document.getElementById('total_price');
+// let total_modal = document.getElementById('total_modal');
+
+function pay(event){
+    event.preventDefault();
+    // if(count > 0 && count2 > 0) {
+    if(count > 0) {
+        // Swal.fire(
+        //     'Thankyou!',
+        //     'Your transaction has been successfully processed',
+        //     'success',
+        // ).then(okay => {
+        //     if(okay) {
+        //         nameHidden.value = nameLbl.innerHTML;
+        //         phoneHidden.value = phoneLbl.innerHTML.substring(5);
+        //         addressHidden.value = addressLbl.innerHTML;
+        //         // total_price.value = addressLbl.innerHTML;
+        //         // total_modal.value = addressLbl.innerHTML;
+
+        //         payForm.submit();
+        //         // window.location.href = "index";
+        //     }
+        // })
+        nameHidden.value = nameLbl.innerHTML;
+        phoneHidden.value = phoneLbl.innerHTML.substring(5);
+        addressHidden.value = addressLbl.innerHTML;
+        // total_price.value = addressLbl.innerHTML;
+        // total_modal.value = addressLbl.innerHTML;
+
+        payForm.submit();
+        // window.location.href = "index";
+
+    }
+    else{
+        Swal.fire(
+            'Warning!!',
+            'You must choose your shipping options!',
+            'warning'
+        )
+    }
+    // else if(count >= 10 && count2 == 0){
+    //     // alert("you must choose your payment method");
+    //     Swal.fire(
+    //         'Warning!!',
+    //         'You must choose your payment method!',
+    //         'warning'
+    //     )
+    // }
+    // else if(count == 0 && count2 >= 12){
+    //     // alert("you must choose your shipping options");
+    //     Swal.fire(
+    //         'Warning!',
+    //         'You must choose your shipping options',
+    //         'warning'
+    //     )
+    // }
+    // else {
+    //     // alert("you must choose shipping options and payment");
+    //     Swal.fire(
+    //         'Warning!',
+    //         'You must choose shipping options and payment method',
+    //         'warning'
+    //     )
+    // }
+
+
+}
 
 
 // const fname = document.getElementById('first-name-box');
