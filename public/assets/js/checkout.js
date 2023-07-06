@@ -154,70 +154,132 @@ iconSuccess1.onclick = function() {
 }
 
 
-const fname = document.getElementById('first-name-box');
-const lname = document.getElementById('last-name-box');
-const pnumber = document.getElementById('phone-number-box');
-const naddress = document.getElementById('new-address-box');
+let nameLbl = document.getElementById('nama');
+let phoneLbl = document.getElementById('telpon');
+let addressLbl = document.getElementById('alamat');
 
-const fvalname = document.getElementById('fnameval');
-const lvalname = document.getElementById('lnameval');
-const valnum = document.getElementById('numval');
-const valaddress = document.getElementById('addressval');
+let changeBtn = document.getElementById('changeAdd');
+var storedName = localStorage.getItem('userInputName');
+var storedPhone = localStorage.getItem('userInputPhone');
+var storedAddress = localStorage.getItem('userInputAddress');
 
-fname.addEventListener("input", (event) => {
-    if (fname.value.length < 3 ) {
-        fvalname.innerHTML = "You must fill range 3-25 characters";
-        fvalname.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (fname.value.length >= 3){
-        fvalname.style.display = "none";
-    } else if (fname.value.length < 1) {
-        fvalname.innerHTML = "Please input your first name";
-        fvalname.style.display = "block";
-    }
-});
+// alert(addressLbl.value)
+// alert(storedPhone);
+// if(storedName) {
+//     nameLbl.innerHTML = storedName;
+// }
+// else if(storedPhone){
+//     phoneLbl.innerHTML = storedPhone;
+// }
+// else if(storedAddress){
+//     addressLbl.innerHTML = storedAddress;
+// }
+// else if(storedName!=null && storedPhone!=null){
+//     nameLbl.innerHTML = storedName;
+//     phoneLbl.innerHTML = storedPhone;
+// }
+// else if(storedName!=null && storedAddress!=null){
+//     nameLbl.innerHTML = storedName;
+//     addressLbl.innerHTML = storedAddress;
+// }
+// else if(storedPhone!=null && storedAddress!=null){
+//     phoneLbl.innerHTML = storedPhone;
+//     addressLbl.innerHTML = storedAddress;
+// }
+if(storedPhone!=null && storedAddress!=null && storedName!=null){
+    nameLbl.innerHTML = storedName;
+    phoneLbl.innerHTML = '(+62) '+ storedPhone;
+    addressLbl.innerHTML = storedAddress;
+}
+changeBtn.addEventListener('click', function(){
 
-lname.addEventListener("input", (event) => {
-    if (lname.value.length < 3 ) {
-        lvalname.innerHTML = "You must fill range 3-25 characters";
-        lvalname.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (lname.value.length >= 3){
-        lvalname.style.display = "none";
-    } else if (lname.value.length < 1) {
-        lvalname.innerHTML = "Please input your last name";
-        lvalname.style.display = "block";
-    }
-});
+    let nameInput = document.getElementById('first-name-box').value;
+    let phoneInput = document.getElementById('phone-number-box').value;
+    let addressInput = document.getElementById('new-address-box').value;
+    // alert('tes')
 
-pnumber.addEventListener("input", (event) => {
-    if (pnumber.value.length < 9 ) {
-        valnum.innerHTML = "You must fill range 9-14 characters";
-        valnum.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (pnumber.value.length >= 9){
-        valnum.style.display = "none";
-    } else if (pnumber.value.length < 1) {
-        valnum.innerHTML = "Please input your phone number";
-        valnum.style.display = "block";
-    }
-});
+    localStorage.setItem('userInputName', nameInput);
+    // alert(nameInput);
+    nameLbl.innerHTML = nameInput;
 
-naddress.addEventListener("input", (event) => {
-    if (naddress.value.length > 0 && naddress.value.length < 15 ) {
-        valaddress.innerHTML = "You must fill range 15-100 characters";
-        valaddress.style.display = "block";
-      // invalid_txt.style.display = "none";
-    }
-    else if (naddress.value.length >= 15){
-        valaddress.style.display = "none";
-    } else if (naddress.value.length < 1) {
-        valaddress.innerHTML = "Please input your addresssss";
-        valaddress.style.display = "block";
-    }
-});
+    localStorage.setItem('userInputPhone', phoneInput);
+    phoneLbl.innerHTML = '(+62) '+ phoneInput;
+
+    localStorage.setItem('userInputAddress', addressInput);
+    addressLbl.innerHTML = addressInput;
+
+    // nameLbl.innerHTML = nameInput.value;
+    // phoneLbl.innerHTML = '(+62) '+ phoneInput.value;
+    // addressLbl.innerHTML = addressInput.value;
+    // alert(addressInput.value);
+    $('#exampleModal').modal('hide');
+})
+
+
+// const fname = document.getElementById('first-name-box');
+// const lname = document.getElementById('last-name-box');
+// const pnumber = document.getElementById('phone-number-box');
+// const naddress = document.getElementById('new-address-box');
+
+// const fvalname = document.getElementById('fnameval');
+// const lvalname = document.getElementById('lnameval');
+// const valnum = document.getElementById('numval');
+// const valaddress = document.getElementById('addressval');
+
+// fname.addEventListener("input", (event) => {
+//     if (fname.value.length < 3 ) {
+//         fvalname.innerHTML = "You must fill range 3-25 characters";
+//         fvalname.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (fname.value.length >= 3){
+//         fvalname.style.display = "none";
+//     } else if (fname.value.length < 1) {
+//         fvalname.innerHTML = "Please input your first name";
+//         fvalname.style.display = "block";
+//     }
+// });
+
+// lname.addEventListener("input", (event) => {
+//     if (lname.value.length < 3 ) {
+//         lvalname.innerHTML = "You must fill range 3-25 characters";
+//         lvalname.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (lname.value.length >= 3){
+//         lvalname.style.display = "none";
+//     } else if (lname.value.length < 1) {
+//         lvalname.innerHTML = "Please input your last name";
+//         lvalname.style.display = "block";
+//     }
+// });
+
+// pnumber.addEventListener("input", (event) => {
+//     if (pnumber.value.length < 9 ) {
+//         valnum.innerHTML = "You must fill range 9-14 characters";
+//         valnum.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (pnumber.value.length >= 9){
+//         valnum.style.display = "none";
+//     } else if (pnumber.value.length < 1) {
+//         valnum.innerHTML = "Please input your phone number";
+//         valnum.style.display = "block";
+//     }
+// });
+
+// naddress.addEventListener("input", (event) => {
+//     if (naddress.value.length > 0 && naddress.value.length < 15 ) {
+//         valaddress.innerHTML = "You must fill range 15-100 characters";
+//         valaddress.style.display = "block";
+//       // invalid_txt.style.display = "none";
+//     }
+//     else if (naddress.value.length >= 15){
+//         valaddress.style.display = "none";
+//     } else if (naddress.value.length < 1) {
+//         valaddress.innerHTML = "Please input your addresssss";
+//         valaddress.style.display = "block";
+//     }
+// });
 
 

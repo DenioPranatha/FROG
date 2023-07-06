@@ -30,9 +30,9 @@
 
                 {{-- udah login --}}
                 @auth
-                <form action="/signout" method="POST">
+                <form action="/signout" id="signOutUser" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link d-flex align-items-center logOut">Sign Out</button>
+                    <button onclick="souser()" class="nav-link d-flex align-items-center logOut" id="logOutUser">Sign Out</button>
                 </form>
 
                 {{-- blm login --}}
@@ -87,9 +87,9 @@
 
                 {{-- udah login --}}
                 @auth
-                <form action="/signout" method="POST">
+                <form action="/signout" id="signOutAuth" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link d-flex align-items-center logOut">Sign Out</button>
+                    <button onclick="soauth()" class="nav-link d-flex align-items-center logOut" id="logOutAuth">Sign Out</button>
                 </form>
 
                 {{-- blm login --}}
@@ -145,9 +145,9 @@
 
                 {{-- udah login --}}
                 @auth
-                <form action="/signout" method="POST">
+                <form action="/signout" id="signOutAdmin" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link d-flex align-items-center logOut">Sign Out</button>
+                    <button onclick="soadmin()" class="nav-link d-flex align-items-center logOut" id="logOutAdmin">Sign Out</button>
                 </form>
 
                 {{-- blm login --}}
@@ -164,5 +164,6 @@
 @endcan
 
 @section('js')
-<script type="text/javascript" src="{{URL::asset('assets/js/navbar.js')}}"></script>
+{{-- <script type="text/javascript" src="{{URL::asset('assets/js/navbar.js')}}"></script> --}}
+<script src="{{ asset('assets/js/navbar.js') }}"></script>
 @endsection
