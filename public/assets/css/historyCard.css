@@ -111,16 +111,41 @@
 
 @media screen and (max-width: 428px){
     .card-ph{
-        width: 70%;
+        width: 400px;
         /* background-color: red; */
-        margin-left: 120px;
+        margin-left: -40px;
     }
 
     .line-ph{
         margin-bottom: 21px;
-        width: 398px;
+        width: 320px;
         margin-left: 40px;
         border: 1.8px solid #522E93;
+    }
+
+    .history-information-left p{
+        /* background-color: red; */
+        width: 120px;
+        font-size: 12px;
+    }
+
+    .history-information-right{
+        /* background-color: red; */
+        width: 500px;
+        margin-left: 100px;
+        text-align: right;
+    }
+    
+    .history-information-right p{
+        /* background-color: red; */
+        /* font-family: 'M PLUS 1'; */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        /* line-height: 22px; */
+        /* margin-bottom: 5px; */
+        /* margin-left: 40px; */
     }
 
 }

@@ -30,21 +30,22 @@ var position = bodyH-670;
 var count = 0
 var count2 = 0
 
-window.onscroll = function(){
-    // if(window.scrollY >= (bodyH-708)) { // change target to number
-    if(window.scrollY >= (bodyH-670)) { // change target to number
-        summarycheckout.style.position = 'absolute';
-        summarycheckout.style.top = position+'px';
-    }
-    else{
-        summarycheckout.style.position = 'fixed';
-        summarycheckout.style.top = '10%';
-    }
-};
+// window.onscroll = function(){
+//     // if(window.scrollY >= (bodyH-708)) { // change target to number
+//     if(window.scrollY >= (bodyH-670)) { // change target to number
+//         summarycheckout.style.position = 'absolute';
+//         summarycheckout.style.top = position+'px';
+//     }
+//     else{
+//         summarycheckout.style.position = 'fixed';
+//         summarycheckout.style.top = '10%';
+//     }
+// };
 
 
 // Make PopUp Success
 const iconSuccess = document.querySelector('#type-success');
+const iconSuccess1 = document.querySelector('#type-success1');
 const valbox1click = document.getElementsByClassName('box-1');
 const valbox2click = document.getElementsByClassName('box-2');
 
@@ -53,9 +54,9 @@ for(i = 0; i < valbox1click.length; i++){
     valbox1click[i].onclick = () => {
         count = 10;
     }
-    valbox2click[i].onclick = () => {
-        count2 = 12;
-    }
+    // valbox2click[i].onclick = () => {
+    //     count2 = 12;
+    // }
 }
 
 // iconSuccess.onclick = function() {
@@ -96,6 +97,49 @@ for(i = 0; i < valbox1click.length; i++){
 //             'warning'
 //           )
 //     }
+
+// ini konflik riskya
+// iconSuccess1.onclick = function() {
+
+//     if(count > 0 && count2 > 0) {
+//         Swal.fire(
+//             'Thankyou!',
+//             'Your transaction has been successfully processed',
+//             'success',
+//         ).then(okay => {
+//             if(okay) {
+//                 window.location.href = "index";
+//             }
+//         })
+
+//     }
+//     else if(count >= 10 && count2 == 0){
+//         // alert("you must choose your payment method");
+//         Swal.fire(
+//             'Warning!!',
+//             'You must choose your payment method!',
+//             'warning'
+//           )
+//     }
+//     else if(count == 0 && count2 >= 12){
+//         // alert("you must choose your shipping options");
+//         Swal.fire(
+//             'Warning!',
+//             'You must choose your shipping options',
+//             'warning'
+//           )
+//     }
+//     else {
+//         // alert("you must choose shipping options and payment");
+//         Swal.fire(
+//             'Warning!',
+//             'You must choose shipping options and payment method',
+//             'warning'
+//           )
+//     }
+
+// }
+// ini konflik riskya
 
 // }
 
@@ -147,49 +191,65 @@ let addressHidden = document.getElementById('addressHidden');
 
 function pay(event){
     event.preventDefault();
-    if(count > 0 && count2 > 0) {
-        Swal.fire(
-            'Thankyou!',
-            'Your transaction has been successfully processed',
-            'success',
-        ).then(okay => {
-            if(okay) {
-                nameHidden.value = nameLbl.innerHTML;
-                phoneHidden.value = phoneLbl.innerHTML.substring(5);
-                addressHidden.value = addressLbl.innerHTML;
-                // total_price.value = addressLbl.innerHTML;
-                // total_modal.value = addressLbl.innerHTML;
+    // if(count > 0 && count2 > 0) {
+    if(count > 0) {
+        // Swal.fire(
+        //     'Thankyou!',
+        //     'Your transaction has been successfully processed',
+        //     'success',
+        // ).then(okay => {
+        //     if(okay) {
+        //         nameHidden.value = nameLbl.innerHTML;
+        //         phoneHidden.value = phoneLbl.innerHTML.substring(5);
+        //         addressHidden.value = addressLbl.innerHTML;
+        //         // total_price.value = addressLbl.innerHTML;
+        //         // total_modal.value = addressLbl.innerHTML;
 
-                payForm.submit();
-                // window.location.href = "index";
-            }
-        })
+        //         payForm.submit();
+        //         // window.location.href = "index";
+        //     }
+        // })
+        nameHidden.value = nameLbl.innerHTML;
+        phoneHidden.value = phoneLbl.innerHTML.substring(5);
+        addressHidden.value = addressLbl.innerHTML;
+        // total_price.value = addressLbl.innerHTML;
+        // total_modal.value = addressLbl.innerHTML;
+
+        payForm.submit();
+        // window.location.href = "index";
 
     }
-    else if(count >= 10 && count2 == 0){
-        // alert("you must choose your payment method");
+    else{
         Swal.fire(
             'Warning!!',
-            'You must choose your payment method!',
+            'You must choose your shipping options!',
             'warning'
         )
     }
-    else if(count == 0 && count2 >= 12){
-        // alert("you must choose your shipping options");
-        Swal.fire(
-            'Warning!',
-            'You must choose your shipping options',
-            'warning'
-        )
-    }
-    else {
-        // alert("you must choose shipping options and payment");
-        Swal.fire(
-            'Warning!',
-            'You must choose shipping options and payment method',
-            'warning'
-        )
-    }
+    // else if(count >= 10 && count2 == 0){
+    //     // alert("you must choose your payment method");
+    //     Swal.fire(
+    //         'Warning!!',
+    //         'You must choose your payment method!',
+    //         'warning'
+    //     )
+    // }
+    // else if(count == 0 && count2 >= 12){
+    //     // alert("you must choose your shipping options");
+    //     Swal.fire(
+    //         'Warning!',
+    //         'You must choose your shipping options',
+    //         'warning'
+    //     )
+    // }
+    // else {
+    //     // alert("you must choose shipping options and payment");
+    //     Swal.fire(
+    //         'Warning!',
+    //         'You must choose shipping options and payment method',
+    //         'warning'
+    //     )
+    // }
 
 
 }

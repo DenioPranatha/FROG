@@ -284,13 +284,14 @@ html {
         transition: all 1s; */
     }
 
-    .nav-link{
-        /* border: 1px solid red; */
-        /* transform: translateX(100%); */
+    /* .nav-link{
+        border: 1px solid red;
+        transform: translateX(100%);
         width: 100%;
     }
 
-    nav .nav2.slide {
+    nav .nav2.slide { */
+    nav .navbar.slide {
         opacity: 0;
         transform: translateX(0);
     }

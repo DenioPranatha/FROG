@@ -44,12 +44,12 @@
                 @endauth
 
             </div>
-            <div class="menu-toggle">
+            {{-- <div class="menu-toggle">
                 <input type="checkbox" />
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div> --}}
         </div>
         <div class="line w-100"></div>
     </nav>
@@ -108,7 +108,7 @@
                 <span></span>
             </div>
         </div>
-        <div class="line w-100"></div>
+            <div class="line w-100"></div>
     </nav>
 @endcan
 
