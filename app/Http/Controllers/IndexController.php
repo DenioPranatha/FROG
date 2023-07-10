@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Event;
 use App\Models\Product;
 use App\Models\Destination;
 use Illuminate\Http\Request;
-use App\Models\ProductCategory;
-use App\Http\Controllers\Controller;
 use App\Models\PaymentDetail;
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
@@ -19,14 +20,19 @@ class IndexController extends Controller
         $events = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
         ->join('products', 'events.id', '=', 'products.event_id')
         ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+        ->where('events.status', '=', 'accepted')
         ->groupBy('events.id')
         ->orderBy('SUM', 'DESC')
         ->take(10)
         ->get();
 
         // ngambil 15 produk dgn penjualan tertinggi
+        $rn = Carbon::now()->toDateString();
         $products = Product::with('event')->select('products.*', DB::raw("SUM(payment_details.qty) as SUM"))
             ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+            ->join('events', 'events.id', '=', 'products.event_id')
+            ->where('events.end_date', '>', $rn)
+            ->where('products.stock', '>', 0)
             ->groupBy('products.id')
             ->orderBy('SUM', 'DESC')
             ->take(15)
@@ -71,3 +77,6 @@ class IndexController extends Controller
     // }
 
 }
+
+
+
