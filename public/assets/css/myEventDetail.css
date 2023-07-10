@@ -43,7 +43,7 @@
 
 .seeMoreBut{
     /* background-color: red; */
-} 
+}
 
 .btnDiv{
     /* background-color: red; */
@@ -123,6 +123,7 @@
 .add-img{
     /* width: 1px;
     height: 10px; */
+    margin-left: 20px;
     margin-top: 50px;
     margin-bottom: 21px;
 }
@@ -859,7 +860,7 @@ button{
         position: sticky;
         top: 57px;
         z-index: 1;
-        background-color: white; 
+        background-color: white;
 
         /* transform: rotate(90deg); */
         /* transform-origin: right top;
@@ -1384,7 +1385,7 @@ button{
         width: 180px;
         /* margin-left: -20px; */
         /* background-color: red; */
-        
+
         /* margin-bottom: 100px; */
         /* padding-left: 50px; */
     }
