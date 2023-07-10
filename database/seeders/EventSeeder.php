@@ -22,8 +22,8 @@ class EventSeeder extends Seeder
             'user_id' => 5,
             'name' => 'Charity Action of RTB',
             'slug' => 'Charity Action',
-            'start_date' => '2023-03-23',
-            'end_date' => '2023-04-20',
+            'start_date' => '2023-06-23',
+            'end_date' => '2023-07-20',
             'duration' => 28,
             'status' => 'accepted',
             'description' => 'Kami dari komunitas Rumah Talenta BCA mengadakan kegiatan amal untuk membantu adik-adik kita yang ada di beberapa panti asuhan terdekat. Tujuan dari event penggalangan dana ini adalah agar adik-adik kita yang tinggal di panti asuhan tersebut dapat terbantu dari sisi pagan pada bulan suci Ramadhan',
@@ -36,8 +36,8 @@ class EventSeeder extends Seeder
             'user_id' => 5,
             'name' => 'Pasaman Earthquake Fundraising',
             'slug' => 'Pasaman Earthquake',
-            'start_date' => '2023-03-07',
-            'end_date' => '2023-04-01',
+            'start_date' => '2023-07-07',
+            'end_date' => '2023-08-01',
             'duration' => 25,
             'status' => 'accepted',
             'description' => 'Kami dari komunitas peduli bencana ingin melakukan penggalangan dana atas terjadinya bencana alam gempa bumi di Pasamanan yang telah terjadi beberapa hari yang lalu. Tujuan penggalangan dana ini untuk membantu para warga yang terkena efek bencana alam tersebut seperti membantu memperbaiki kerusakan rumah mereka',
@@ -50,8 +50,8 @@ class EventSeeder extends Seeder
             'user_id' => 5,
             'name' => 'Bantu Mereka yang Kena Banjir Yuk',
             'slug' => 'Bantu Banjir Yuk',
-            'start_date' => '2023-06-15',
-            'end_date' => '2023-07-11',
+            'start_date' => '2023-06-25',
+            'end_date' => '2023-07-21',
             'duration' => 19,
             'status' => 'accepted',
             'description' => 'Kami dari komununitas CareOthers ingin membantu sanak saudara-saudari kita yang telah terkena bencala alam Banjir yang terjadi di Jakarta dini hari tadi. Hasil Penggalangan dana ini nantinya akan diberikan kepada mereka dalam rupa persedian makanan, pakaian, serta sedikit uang tunai.',
@@ -78,10 +78,10 @@ class EventSeeder extends Seeder
             'user_id' => 2,
             'name' => 'Care Taman Sukacita',
             'slug' => 'Care Taman Sukacita',
-            'start_date' => '2023-02-17',
-            'end_date' => '2023-03-10',
+            'start_date' => '2023-06-17',
+            'end_date' => '2023-07-10',
             'duration' => 21,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'Kami dari Frog community ingin melakukan penggalangan data yang bertujuan untuk membantu adik-adik kita yatim piatu untuk membeli berbagai perlengkapan sekolah yang mereka butuhkan, seperti berbagai alat tulis, buku catatan, serta buku pelajaran',
             'image' => 'event-5.jpg'
         ]);
@@ -95,7 +95,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-07-01',
             'end_date' => '2023-07-29',
             'duration' => 28,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Kami dari karang taruna desa selayang berkeinginan untuk membantu orang tua kita yang ada di panti jompo kasih sayang. Dengan bantuan kita bersama, semoga mereka dapat merasakan kebahagiaan dan rasa peduli dari kita. Dana yang telah terkumpul nantinya akan digunakan untuk memberikan pakaian kepada mereka',
             'image' => 'event-6.jpg'
         ]);
@@ -109,7 +109,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-03-23',
             'end_date' => '2023-04-20',
             'duration' => 28,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Kami dari Osis SMA Negri 7 Tangsel akan melakukan gerakan untuk membantu saudara-saudari kita yang terkena bencana banjir sungai kapuas yang terjadi di Kalimantan Tengah. Kami berharap ketersedian kita semua untuk ikut serta melakukan penggalangan dana guna membantu saudara-saudari kiita disana',
             'image' => 'event-7.jpg'
         ]);
@@ -134,8 +134,8 @@ class EventSeeder extends Seeder
             'user_id' => 4,
             'name' => 'Gerakan Bantu Tanah Longsor Payung',
             'slug' => 'Longsor Payung',
-            'start_date' => '2023-04-17',
-            'end_date' => '2023-05-15',
+            'start_date' => '2023-06-27',
+            'end_date' => '2023-07-25',
             'duration' => 28,
             'status' => 'accepted',
             'description' => 'Kami dari Karang Taruna Serdang berkeingan untuk membantu saudara-saudari kita yang terkena dampak tanah longsong yang terjadi di payung.Diharapkan ketersediaan kita semua untuk menyukseskan penggalangan dana ini',
@@ -148,10 +148,10 @@ class EventSeeder extends Seeder
             'user_id' => 4,
             'name' => 'Gerakan Panti Asuhan Alqi Ceria',
             'slug' => 'Panti Alqi Ceria',
-            'start_date' => '2023-04-30',
-            'end_date' => '2023-05-24',
+            'start_date' => '2023-06-30',
+            'end_date' => '2023-07-24',
             'duration' => 24,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'Kami dari Mahasiswa Binus University melakukan penggalangan dana untuk membantu teman-teman kita yang berada di panti asuhan Alqi Cerita untuk membantu mereka melengkapi berbagai kebutuhan yang sekiranya mereka butuhkan',
             'image' => 'event-10.jpg'
         ]);
@@ -196,7 +196,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-04-29',
             'end_date' => '2023-05-20',
             'duration' => 21,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Panti asuhan saat ini merupakan salah satu tempat yang sangat berpengaruh bagi mereka yang kehilangan orang yang dikasihi atau ditelantarkan. Maka dari itu kami selaku penyelenggara Bantuan Sosial Panti ingin mengajak saudara sekalian membantu mereka yang tinggal di panti untuk dapat memenuhi kebutuhan sehari-hari mereka, sehingga mereka dapat hidup layak dan berkecukupan.',
             'image' => 'event-13.jpg'
         ]);
@@ -208,8 +208,8 @@ class EventSeeder extends Seeder
             'user_id' => 3,
             'name' => 'Gerakan Sosial SMP Ursula',
             'slug' => 'Sosial SMP Ursula',
-            'start_date' => '2023-05-12',
-            'end_date' => '2023-06-09',
+            'start_date' => '2023-06-22',
+            'end_date' => '2023-07-19',
             'duration' => 28,
             'status' => 'accepted',
             'description' => 'SMA Ursula saat ini sedang mengadakan gerakan sosial berskala nasional yang bertujuan untuk membantu teman-teman kita yang berkekurangan. Kami selaku penyelenggara mengajak saudara sekalian untuk ikut berpartisipasi dalam gerakan ini, sehingga semakin banyak teman-teman berkekurangan yang terbantu. ',
@@ -253,9 +253,9 @@ class EventSeeder extends Seeder
             'user_id' => 3,
             'name' => 'Bantuan Longsor Desa Lau',
             'slug' => 'Longsor Desa Lau',
-            'start_date' => '2023-05-20',
-            'end_date' => '2023-06-02',
-            'duration' => 13,
+            'start_date' => '2023-06-30',
+            'end_date' => '2023-07-22',
+            'duration' => 23,
             'status' => 'accepted',
             'description' => 'Kami bagian dari komunitas relawan longsor mengadakan kegiatan penggalangan dana untuk bencana longsor yang terjadi di wilayah Desa Lau. Kami mengharapkan peran serta teman-teman sekalian dalam penggalangan dana ini, sehingga seluruh warga yang terdampak bencana tersebut dapat terbantu.',
             'image' => 'event-17.jpg'
@@ -538,8 +538,8 @@ class EventSeeder extends Seeder
             'user_id' => 2,
             'name' => 'Karang taruna Berbgai',
             'slug' => 'Karang taruna Berbgai',
-            'start_date' => '2023-05-23',
-            'end_date' => '2023-06-18',
+            'start_date' => '2023-06-23',
+            'end_date' => '2023-07-18',
             'duration' => 26,
             'status' => 'accepted',
             'description' => 'Kami dari Perkumpulan Karang Taruna Indonesia mengadakan kegiatan berbagi untuk anak-anak di Panti As-Nashroh. seluruh dana dan hasil dari aksi ini akan sepenuhnya dialokasikan untuk kebutuhan mereka agar mereka bisa hidup dengan layak dan berkecukupan.',
@@ -631,7 +631,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-06-07',
             'end_date' => '2023-07-02',
             'duration' => 25,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'Aksi Peduli Anak Yatim merupakan suatu aksi penggalangan dana yang bertujuan utama untuk membantu anak-anak yatim yang tinggal di panti asuhan seluruh Indonesia. Hasil penggalangan dana pada aksi ini akan sepenuhnya digunakan untuk pemenuhan kebutuhan hidup para yatim yang tinggal di panti asuhan.',
             'image' => 'event-42.jpg'
         ]);
@@ -646,7 +646,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-07-27',
             'end_date' => '2023-08-20',
             'duration' => 24,
-            'status' => 'waiting',
+            'status' => 'accepted',
             'description' => 'BEM Charitas mengadakan kegiatan penggalangan dana yang bertujuan untuk membantu mereka yang membutuhkan. Pada aksi kali ini kami BEM Charitas akan menyalurkan seluruh hasil dari kegiatan ini kepada panti asuhan Alqi Ceria. Dana tersebut akan digunakan untuk pemenuhan kebutuhan hidup anak-anak panti disana.',
             'image' => 'event-43.jpg'
         ]);
@@ -661,7 +661,7 @@ class EventSeeder extends Seeder
             'start_date' => '2023-05-09',
             'end_date' => '2023-06-01',
             'duration' => 23,
-            'status' => 'rejected',
+            'status' => 'accepted',
             'description' => 'Aksi Sekolah Sejahtera merupakan aksi yang bertujuan untuk membantu sekolah-sekolah di Indonesia yang mengalami kerusakan. Aksi ini merupakan salah satu bukti peran nyata kepedulian kita terhadap pendidikan indonesia. Hasil dari aksi ini akan digunakan untuk renovasi sekolah yang rusak, sehingga seluruh siswa-siswi dapat menempuh pendidikan dengan baik.',
             'image' => 'event-44.jpg'
         ]);

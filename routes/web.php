@@ -74,8 +74,14 @@ Route::get('/sendCheck', [CartController::class, 'check'])->middleware('auth')->
 Route::get('/sendUncheck', [CartController::class, 'uncheck'])->middleware('auth')->middleware('not.admin');
 Route::post('/cartDelete', [CartController::class, 'destroy'])->middleware('auth')->middleware('not.admin');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth')->middleware('not.admin');
+Route::get('/checkout', [CheckoutController::class, 'store'])->name('checkout')->middleware('auth')->middleware('not.admin');
 Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('auth')->middleware('not.admin');
+Route::post('/payNow', [CheckoutController::class, 'pay'])->middleware('auth')->middleware('not.admin');
+// Route::get('/invoice', [CheckoutController::class, 'invoice'])->middleware('auth')->middleware('not.admin');
+Route::get('/invoicePaid/{id}', [CheckoutController::class, 'invoicePaid'])->middleware('auth')->middleware('not.admin');
+
+// Route::post('/saveAddress', [CheckoutController::class, 'saveAddress'])->middleware('auth')->middleware('not.admin');
+// Route::post('/edit-address', [CheckoutController::class, 'edit'])->middleware('auth')->middleware('not.admin');
 
 // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile/{user:id}/edit', [ProfileController::class, 'edit']);
@@ -101,7 +107,7 @@ Route::get('/destinationDetailAdmin/{destination:id}', [DestinationAdminControll
 Route::get('/createDestinationAdmin', [DestinationAdminController::class, 'create'])->name('createDestinationAdmin')->middleware('admin');
 Route::post('/createDestinationAdmin', [DestinationAdminController::class, 'store'])->name('createDestinationAdmin')->middleware('admin');
 
-Route::get('/invoice', function () {
-    return view('invoice');
-});
+// Route::get('/invoice', function () {
+//     return view('invoice');
+// });
 Auth::routes();
