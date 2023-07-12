@@ -70,7 +70,7 @@
 
                     </div>
 
-                    <button type="submit">Sign In</button>
+                    <button type="submit" onclick="signinStorage()">Sign In</button>
 
                     <div class="account d-flex flex-row">
                         <p>Don't have an account ?</p>
