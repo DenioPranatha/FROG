@@ -1,8 +1,11 @@
 const menuToggle = document.querySelector('.menu-toggle input');
 const nav = document.querySelector('nav .nav2');
 menuToggle.addEventListener('click', function(){
+    console.log("masuk");
     nav.classList.toggle('slide');
 });
+
+console.log("Masuk");
 
 // $(document).ready(function(){
 //     // ketika see more diclick
