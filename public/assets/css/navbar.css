@@ -241,32 +241,56 @@ html {
 /* ukuran Mobile */
 @media screen and (max-width: 428px){
 
-    /* body {
-    overflow-x: hidden;
-    } */
+    body {
+    /* overflow-x: hidden; */
+    }
 
     .menu-toggle{
         display: flex;
     }
 
-    nav .navbar{
+    nav .nav2{
+        margin-top: 130px;
+        border: 1px solid blue;
         position: absolute;
+        transform: translateX(100%);
+        transition: all 1s;
         right: 0;
+    }
+
+    nav .nav-main{
+        border: 1px solid red;
+        /* gap: 10vw; */
+        position: absolute;
+        /* right: ; */
+        height: 500vh !important;
+        display: flex;
+        flex-direction: column !important;
+
+        /* display: none; */
+        /* right: 0;
         top: 0;
         width: 80%;
         height: 100vh;
         justify-content: space-evenly;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         background-color: black;
-        border: 5px red;
+        border: 5px red solid;
         z-index: -1;
 
         transform: translate(100%);
-        transition: all 1s;
+        transition: all 1s; */
     }
 
+    /* .nav-link{
+        border: 1px solid red;
+        transform: translateX(100%);
+        width: 100%;
+    }
+
+    nav .nav2.slide { */
     nav .navbar.slide {
         opacity: 0;
         transform: translateX(0);
@@ -274,7 +298,7 @@ html {
 
     /* .container-fluid{
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         border: solid red 1px ;
     } */
 }
