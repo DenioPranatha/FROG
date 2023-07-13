@@ -184,6 +184,20 @@ class CheckoutController extends Controller
                         'stock' => $newStock
                     ]);
                 }
+
+                // if(CartDetail::where('cart_header_id', $request->cart_header_id)->count() == 1){
+                //     $deleteCH = CartHeader::find($request->cart_header_id);
+                //     $deleteCH->delete();
+
+
+                //     $deleteP = CartDetail::where('product_id', $request->product_id)->where('cart_header_id', $request->cart_header_id);
+                //     $deleteP->delete();
+                // }
+                // // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
+                // else{
+                //     $deleteP = CartDetail::where('product_id', $request->product_id);
+                //     $deleteP->delete();
+                // }
             }
         }
     }
