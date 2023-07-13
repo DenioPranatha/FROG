@@ -58,15 +58,16 @@
 }
 
 .box-notes{
-    background-color: #cdcdcd;
-    padding: 1.2vw 1.2vw 1.2vw 1.2vw;
+    background-color: #522e93;
+    padding: 1.8vw 1.8vw 1.8vw 1.8vw;
+    border-radius: 15px;
     gap: 8px;
 }
 
 .box-notes p{
     font-family: 'Ubuntu';
     font-size: 16px;
-    color: black;
+    color: white;
     font-weight: 500;
 }
 

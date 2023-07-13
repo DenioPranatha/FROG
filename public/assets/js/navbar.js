@@ -1,8 +1,6 @@
 const menuToggle = document.querySelector('.menu-toggle input');
-const nav = document.querySelector('nav .navbar');
-
+const nav = document.querySelector('nav .nav2');
 menuToggle.addEventListener('click', function(){
-    console.log('masok');
     nav.classList.toggle('slide');
 });
 
