@@ -36,6 +36,7 @@ for(let i=0; i<minBtn.length; i++){
     // console.log(Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000);
 
     plusBtn[i].addEventListener('click', (event)=>{
+        event.preventDefault();
         if(qty[i].value>=parseInt(stock[i].innerHTML)){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
             priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
@@ -117,6 +118,7 @@ for(let i=0; i<minBtn.length; i++){
     })
 
     minBtn[i].addEventListener('click',  (event)=>{
+        event.preventDefault();
         if (qty[i].value>1){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
             priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000

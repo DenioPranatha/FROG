@@ -1,6 +1,6 @@
 @foreach ($cartDetails as $cartDetail)
     @if ($cartHeader->id == $cartDetail->cart_header_id)
-        <div class="eachProduct d-flex align-items-center">
+        <a href="/productDetail/{{ $cartDetail->product->id }}" class="eachProduct d-flex align-items-center text-decoration-none">
             <div class="checkHelp">
                 <label class="checkDiv">
                     <input type="checkbox" name="itemCheck" class="itemCheck {{ $cartDetail->cart_header_id }}" {{ $cartDetail->is_checked == 1 ? 'checked' : ''}}>
@@ -55,7 +55,7 @@
             <div class="eachProductTotal">
                 <p class="eachProductTotal2">@money(($cartDetail->product->price)*($cartDetail->qty))</p>
             </div>
-        </div>
+        </a>
     @endif
 @endforeach
 
