@@ -13,7 +13,7 @@
             </div>
             {{-- d-flex align-items-center --}}
             <div class="card-section-box-icon ">
-                <a href="/addProduct">
+                <a href="/addProduct/{{ $myEvent->id }}">
                     <div class="card-section-box-icon1">
                         {{-- <img src="assets/img/add-product 2.svg" alt=""> --}}
                         <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
