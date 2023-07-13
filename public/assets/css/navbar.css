@@ -85,15 +85,12 @@ html {
     font-size: 14px;
     font-weight: 900;
     /* padding: 0px 42px; */
-
     font-family: 'Poppins';
-
     /* border: 1px solid red; */
 }
 
 .navbar a{
     font-family: 'Poppins';
-
     /* border: 1px solid red; */
 }
 
@@ -103,11 +100,7 @@ html {
     height: 43px;
     /* margin: 0%; */
     /* padding: 0%; */
-
     /* border: 1px solid red; */
-
-
-
 }
 
 .line{
@@ -169,6 +162,7 @@ html {
 }
 /* navbar */
 
+
 /* Hamburger Menu */
 .menu-toggle{
     display: none;
@@ -228,7 +222,6 @@ html {
 
 
 
-
 /* Responsive Breakpoint */
 
 /* Ukuran Tablet */
@@ -274,7 +267,7 @@ html {
 
     /* .container-fluid{
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         border: solid red 1px ;
     } */
 }

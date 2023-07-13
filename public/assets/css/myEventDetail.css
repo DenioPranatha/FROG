@@ -43,7 +43,9 @@
 
 .seeMoreBut{
     /* background-color: red; */
-} 
+    /* border: 1px solid black; */
+    width: 80vw;
+}
 
 .btnDiv{
     /* background-color: red; */
@@ -477,6 +479,11 @@ button{
     color: #FFFFFF;
 }
 
+.purple-but:hover{
+    background-color: #673AB7;
+    color: white;
+}
+
 .stat-subheadline{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 18px;
@@ -644,7 +651,7 @@ button{
 }
 
 .donate:hover{
-    background-color: #522E93;
+    background-color: #673AB7;
     color: white;
 }
 
@@ -859,7 +866,7 @@ button{
         position: sticky;
         top: 57px;
         z-index: 1;
-        background-color: white; 
+        background-color: white;
 
         /* transform: rotate(90deg); */
         /* transform-origin: right top;
@@ -1384,7 +1391,7 @@ button{
         width: 180px;
         /* margin-left: -20px; */
         /* background-color: red; */
-        
+
         /* margin-bottom: 100px; */
         /* padding-left: 50px; */
     }

@@ -2,8 +2,16 @@ const menuToggle = document.querySelector('.menu-toggle input');
 const nav = document.querySelector('nav .navbar');
 
 menuToggle.addEventListener('click', function(){
+    console.log('masok');
     nav.classList.toggle('slide');
-})
+});
+
+// $(document).ready(function(){
+//     // ketika see more diclick
+//     $(document).on('click', '#menu-toggle', function(){
+
+//     });
+// });
 
 // Mendapatkan semua kunci yang ada dalam Local Storage
 var keys = Object.keys(localStorage);

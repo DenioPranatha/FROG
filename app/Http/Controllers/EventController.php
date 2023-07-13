@@ -50,11 +50,11 @@ class EventController extends Controller
         $finisheds = Event::where('status', 'finished')->get();
         //panjang smua events sekarang
         $c = count($events);
-        //ambil 10 dari smue events
-        $events = $events->take(10);
+        //ambil 25 dari smue events
+        $events = $events->take(25);
 
-        //jika panjang smua kurang dari atau sama dengan 10, maka $pg = -1
-        if($c <= 10)$pg = -1;
+        //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
+        if($c <= 25)$pg = -1;
 
         return response(view('events', [
             'events' => $events,
@@ -69,7 +69,7 @@ class EventController extends Controller
     {
         //
         $pg = (int)$request->query('pg');
-        $pge = 10*$pg;
+        $pge = 25*$pg;
         $popEvents = Event::latest();
         $events = Event::latest()
         ->filter(request(['search-event', 'category-event']))
@@ -100,6 +100,8 @@ class EventController extends Controller
     {
 
         // return $request->file('image')->store('event-image');
+        $cropped = str($request->input('name'));
+        $cropped = substr($cropped, 0, 21);
 
         $validatedData = $request->validate([
             'destination-id' => 'required',
@@ -115,7 +117,6 @@ class EventController extends Controller
 
         $i = auth()->user()->id;
         $duration = $validatedData['duration'];
-        $cropped = substr($validatedData['name'], 21);
         $start = Carbon::now();
         $end = Carbon::now()->addDays($duration);
 
@@ -212,10 +213,10 @@ class EventController extends Controller
         $pg = 1;
         $count = count($products);
         $products = $products->load('event');
-        $products = $products->take(10);
+        $products = $products->take(25);
 
         //jika panjang smua kurang dari atau sama dengan 25, maka $pg = -1
-        if($count <= 10) $pg = -1;
+        if($count <= 25) $pg = -1;
 
         return response(view('eventDetail', [
             'event' => $event,
