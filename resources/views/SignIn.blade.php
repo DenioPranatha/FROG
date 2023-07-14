@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ asset('assets/img/frog.svg') }}" type="image/x-icon">
     <title>Sign In</title>
 
     {{-- bootstrap css --}}
@@ -69,7 +70,7 @@
 
                     </div>
 
-                    <button type="submit">Sign In</button>
+                    <button type="submit" onclick="signinStorage()">Sign In</button>
 
                     <div class="account d-flex flex-row">
                         <p>Don't have an account ?</p>

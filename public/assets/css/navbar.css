@@ -44,6 +44,7 @@ body {
 	font-family: 'Poppins';
     /* tambahan dari Denio */
     scroll-behavior: auto;
+    overflow-x: hidden;
     /* background-color:#F3ECFF; */
 }
 
@@ -85,7 +86,6 @@ html {
     font-size: 14px;
     font-weight: 900;
     /* padding: 0px 42px; */
-
     font-family: 'Poppins';
 
     /* border: 1px solid red; */
@@ -97,6 +97,16 @@ html {
     /* border: 1px solid red; */
 }
 
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.hei{
+    height: 100%;
+}
+
+
 .container-fluid{
     /* background-color: yellow; */
     padding: 0px 42px;
@@ -105,8 +115,6 @@ html {
     /* padding: 0%; */
 
     /* border: 1px solid red; */
-
-
 
 }
 
@@ -241,59 +249,44 @@ html {
 /* ukuran Mobile */
 @media screen and (max-width: 428px){
 
-    body {
-    /* overflow-x: hidden; */
-    }
+    /* body {
+    overflow-x: hidden;
+    } */
 
     .menu-toggle{
         display: flex;
     }
 
-    nav .nav2{
-        margin-top: 130px;
-        border: 1px solid blue;
+    nav .navbar{
         position: absolute;
-        transform: translateX(100%);
-        transition: all 1s;
         right: 0;
-    }
-
-    nav .nav-main{
-        border: 1px solid red;
-        /* gap: 10vw; */
-        position: absolute;
-        /* right: ; */
-        height: 500vh !important;
-        display: flex;
-        flex-direction: column !important;
-
-        /* display: none; */
-        /* right: 0;
         top: 0;
-        width: 80%;
+        width: 75%;
         height: 100vh;
-        justify-content: space-evenly;
+        padding-top: 50px;
+        justify-content: flex-start;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        background-color: black;
-        border: 5px red solid;
+        background-color: white;
+        border: 5px red;
         z-index: -1;
 
         transform: translate(100%);
-        transition: all 1s; */
+        transition: all 1s;
     }
 
-    /* .nav-link{
-        border: 1px solid red;
-        transform: translateX(100%);
-        width: 100%;
+    nav .navbar a{
+        height: 70px;
     }
 
-    nav .nav2.slide { */
     nav .navbar.slide {
-        opacity: 0;
+        /* opacity: 0; */
         transform: translateX(0);
+    }
+
+    .hei{
+        height: auto;
     }
 
     /* .container-fluid{

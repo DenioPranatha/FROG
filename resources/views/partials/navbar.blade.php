@@ -13,16 +13,16 @@
                     </defs>
                 </svg>
             </a>
-            <div class="navbar nav2 h-100">
-                <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active('index') }}" aria-current="page" href="{{ route('index') }}">Home</a>
-                <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active(['events', 'products', 'destination', 'eventDetail', 'productDetail', 'destinationDetail']) }}" href="{{ route('events') }}">Events</a>
-                <a class="nav-link nav-text h-100 d-flex align-items-center {{ set_active(['myEvents', 'myEventDetail', 'addProduct', 'createEvent']) }}" href="{{ route('myEvents') }}">My Events</a>
-                <a class="nav-link h-100 d-flex align-items-center cart" href="{{ route('cart') }}">
+            <div class="navbar nav2 hei">
+                <a class="nav-link nav-text hei {{ set_active('index') }}" aria-current="page" href="{{ route('index') }}">Home</a>
+                <a class="nav-link nav-text hei {{ set_active(['events', 'products', 'destination', 'eventDetail', 'productDetail', 'destinationDetail']) }}" href="{{ route('events') }}">Events</a>
+                <a class="nav-link nav-text hei {{ set_active(['myEvents', 'myEventDetail', 'addProduct', 'createEvent']) }}" href="{{ route('myEvents') }}">My Events</a>
+                <a class="nav-link hei cart" href="{{ route('cart') }}">
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.8125 3.75H4.545C5.1825 3.75 5.73875 4.17875 5.90375 4.79375L6.3825 6.59M6.3825 6.59C13.3458 6.39486 20.3024 7.16894 27.0525 8.89C26.0225 11.9575 24.7988 14.9375 23.3975 17.8125H9.375M6.3825 6.59L9.375 17.8125M9.375 17.8125C8.38044 17.8125 7.42661 18.2076 6.72335 18.9108C6.02009 19.6141 5.625 20.5679 5.625 21.5625H25.3125M7.5 25.3125C7.5 25.5611 7.40123 25.7996 7.22541 25.9754C7.0496 26.1512 6.81114 26.25 6.5625 26.25C6.31386 26.25 6.0754 26.1512 5.89959 25.9754C5.72377 25.7996 5.625 25.5611 5.625 25.3125C5.625 25.0639 5.72377 24.8254 5.89959 24.6496C6.0754 24.4738 6.31386 24.375 6.5625 24.375C6.81114 24.375 7.0496 24.4738 7.22541 24.6496C7.40123 24.8254 7.5 25.0639 7.5 25.3125ZM23.4375 25.3125C23.4375 25.5611 23.3387 25.7996 23.1629 25.9754C22.9871 26.1512 22.7486 26.25 22.5 26.25C22.2514 26.25 22.0129 26.1512 21.8371 25.9754C21.6613 25.7996 21.5625 25.5611 21.5625 25.3125C21.5625 25.0639 21.6613 24.8254 21.8371 24.6496C22.0129 24.4738 22.2514 24.375 22.5 24.375C22.7486 24.375 22.9871 24.4738 23.1629 24.6496C23.3387 24.8254 23.4375 25.0639 23.4375 25.3125Z" stroke="#522E93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <a class="nav-link h-100 d-flex align-items-center profile" href="{{ route('profile') }}">
+                <a class="nav-link hei profile" href="{{ route('profile') }}">
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.4775 23.4062C21.6041 22.2498 20.474 21.312 19.1765 20.6667C17.8789 20.0214 16.4492 19.6862 15 19.6875C13.5508 19.6862 12.1211 20.0214 10.8235 20.6667C9.52593 21.312 8.39591 22.2498 7.52249 23.4062M22.4775 23.4062C24.1819 21.8902 25.3839 19.8919 25.9265 17.6764C26.469 15.4608 26.3253 13.1326 25.5143 11.0006C24.7033 8.86858 23.2634 7.03347 21.3855 5.73862C19.5076 4.44377 17.2804 3.75037 14.9994 3.75037C12.7183 3.75037 10.4912 4.44377 8.61324 5.73862C6.73533 7.03347 5.2954 8.86858 4.4844 11.0006C3.67341 13.1326 3.52968 15.4608 4.07226 17.6764C4.61484 19.8919 5.81811 21.8902 7.52249 23.4062M22.4775 23.4062C20.42 25.2415 17.757 26.2539 15 26.25C12.2425 26.2542 9.58028 25.2418 7.52249 23.4062M18.75 12.1875C18.75 13.1821 18.3549 14.1359 17.6516 14.8391C16.9484 15.5424 15.9945 15.9375 15 15.9375C14.0054 15.9375 13.0516 15.5424 12.3483 14.8391C11.6451 14.1359 11.25 13.1821 11.25 12.1875C11.25 11.1929 11.6451 10.2391 12.3483 9.53585C13.0516 8.83259 14.0054 8.4375 15 8.4375C15.9945 8.4375 16.9484 8.83259 17.6516 9.53585C18.3549 10.2391 18.75 11.1929 18.75 12.1875Z" stroke="#522E93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -32,24 +32,24 @@
                 @auth
                 <form action="/signout" id="signOutUser" method="POST">
                     @csrf
-                    <button onclick="souser()" class="nav-link d-flex align-items-center logOut" id="logOutUser">Sign Out</button>
+                    <button onclick="souser()" class="nav-link logOut" id="logOutUser">Sign Out</button>
                 </form>
 
                 {{-- blm login --}}
                 @else
                 <a href="/signin" class="text-decoration-none">
-                    <button type="submit" class="nav-link d-flex align-items-center logOut">Sign In</button>
+                    <button type="submit" class="nav-link logOut">Sign In</button>
                 </a>
 
                 @endauth
 
             </div>
-            {{-- <div class="menu-toggle">
+            <div class="menu-toggle">
                 <input type="checkbox" />
                 <span></span>
                 <span></span>
                 <span></span>
-            </div> --}}
+            </div>
         </div>
         <div class="line w-100"></div>
     </nav>

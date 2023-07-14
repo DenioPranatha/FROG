@@ -34,7 +34,7 @@
         </div>
 
         @if(count($waitings) != 0)
-            <h1 class="section-title-finished">Waiting Approval Events</h1>
+            <h1 class="section-title-finished">Waiting for Approval</h1>
             <div class="card-container">
                 @foreach ($waitings as $waiting)
                     @include('partials.myEventCard', ['myEvent' => $waiting])

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('midtrans')
     <title>@yield('title')</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- <link rel="shortcut icon" href="/assets/img/frog.svg" type="image/x-icon"> --}}
+    <link rel="shortcut icon" href="{{ asset('assets/img/frog.svg') }}" type="image/x-icon">
 
     {{-- bootstrap css --}}
     {{-- <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -53,6 +55,7 @@
     <script src="/node_modules/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script src="/node_modules/chart.js/dist/chart.umd.js"></script>
     <script src="/node_modules/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="{{ asset('assets/js/navbar.js') }}"></script>
 
     @yield('js')
 

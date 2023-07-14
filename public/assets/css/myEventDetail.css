@@ -478,6 +478,11 @@ button{
     color: #FFFFFF;
 }
 
+.purple-but:hover{
+    background-color: #673AB7;
+    color: white;
+}
+
 .stat-subheadline{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 18px;
@@ -645,7 +650,7 @@ button{
 }
 
 .donate:hover{
-    background-color: #522E93;
+    background-color: #673AB7;
     color: white;
 }
 

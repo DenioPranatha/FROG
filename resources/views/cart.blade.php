@@ -70,9 +70,9 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <div class="eventCart">
+                                <a href="/eventDetail/{{ $cartHeader->event->id }}" class="eventCart text-decoration-none">
                                     {{ $cartHeader->event->name }}
-                                </div>
+                                </a>
                             </div>
                             <div class="lineCart"></div>
                             <div class="productCart d-flex ">

@@ -131,47 +131,6 @@ class ProductController extends Controller
         return redirect('/products')->with('success', 'New post has been added!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit(Product $product)
-    // {
-    //     //
-    // }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    // public function update(Request $request, Product $product)
-    // {
-    //     //
-    // }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy(Product $product)
-    // {
-    //     //
-    // }
 
     public function result(Request $request)
     {
@@ -317,4 +276,47 @@ class ProductController extends Controller
         return redirect('/checkout')->with('success', 'New post has been added!');
         // return view("checkout");
     }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    // public function edit(Product $product)
+    // {
+    //     //
+    // }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    // public function update(Request $request, Product $product)
+    // {
+    //     //
+    // }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    // public function destroy(Product $product)
+    // {
+    //     //
+    // }
 }
