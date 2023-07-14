@@ -178,6 +178,11 @@ textarea{
     color: white;
 }
 
+.container-edit{
+    display: flex;
+    flex-direction: row;
+}
+
 
 /* Responsive Website */
 
@@ -191,7 +196,7 @@ textarea{
         /* height: fit-content; */
         /* border: 1px solid; */
         gap: 2vw;
-        margin-bottom: 2vw;
+        margin-bottom: 10vw;
 
         display: flex;
         flex-direction: column;
@@ -202,6 +207,8 @@ textarea{
         width: 100%;
         height: 50vw;
         gap: 3vw;
+        
+        margin-bottom: 20px;
 
         /* background-color: blue; */
     }
@@ -219,10 +226,14 @@ textarea{
         padding-bottom: 4vw;
         padding-left: 4vw;
         padding-right: 5vw;
+
+        margin-bottom: 30px;
+
         width: 100%;
         /* border: 1px solid orange; */
         gap: 1vw;
     
+        /* background: red; */
         background: #FFFFFF;
         border: 2px solid #CFCFCF;
         border-radius: 15px;
@@ -249,12 +260,31 @@ textarea{
         transition: .2s all ease-in-out;
     }
 
+    .left-side-edit button{
+        margin-top: -2vw;
+        border: none;
+        width: 40vw;
+        height: 7.5vw;
+        background-color: #522E93;
+        border-radius: 15px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 30px;
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+    
+        color: #FFFFFF;
+        transition: .2s all ease-in-out;
+    }
+
     .left-side h3{
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 600;
         font-size: 28px;
         line-height: 45px;
+        margin-top: -5px;
     }
 
     .bi-pencil-square{
@@ -298,6 +328,69 @@ textarea{
         line-height: 45px;
     
     }
+
+    .edit-btn{
+        margin-bottom: 20px;
+    }
+
+    .change-content{
+        display: flex;
+        flex-direction: column;
+        gap: 0.2vw;
+    
+        /* background-color: blue;  */
+    }
+    
+    .change-content h3{
+        font-family: 'Poppins';
+        font-size: 14px;
+    }
+
+    .change-content input{
+        font-family: 'Poppins';
+        font-size: 15px;
+        width: 60vw;
+        height: 7vw;
+        color: #522E93;
+        border: 1px solid #522E93;
+        padding-left: 1vw;
+    }
+
+    .change-content textarea{
+        font-family: 'Poppins';
+        font-size: 15px;
+        width: 60vw;
+        height: 15vw;
+        color: #522E93;
+        border: 1px solid #522E93;
+        padding-left: 1vw;
+    }
+
+    .edit-box{
+        margin-top: 0px;
+    }
+
+    .container-edit{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .left-side-edit{
+        /* border: 1px red solid; */
+        width: 100%;
+        height: 50vw;
+        gap: 3vw;
+        
+        margin-bottom: 10px;
+
+        /* background-color: blue; */
+    }
+
+    .outer-container-edit{
+        /* background-color: red; */
+        height: 140vw;
+    }
+
 
 
     
