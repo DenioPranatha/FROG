@@ -173,31 +173,51 @@ class CheckoutController extends Controller
                 $paymentHeader->update([
                     'status' => 'Paid'
                 ]);
+                // return view('home')
 
                 $paymentDetails = PaymentDetail::where('payment_header_id', $request->order_id)->get();
                 foreach($paymentDetails as $pd){
+                    // dump($request);
                     $product_id = $pd->product_id;
                     $product = Product::find($product_id);
+
                     // potong stok
                     $newStock = $product->stock - $pd->qty;
                     $product->update([
                         'stock' => $newStock
                     ]);
+
+                    // hapus dari cart
+                    // $event_id = $product->event_id;
+
+                    // $ch = CartHeader::where('user_id', auth()->user()->id)->where('event_id', $event_id)->first();
+                    // // $ch = CartHeader::where('user_id', 6)->where('event_id', $event_id)->get();
+                    // $chid = $ch->id;
+                    // // dd($chid);
+
+                    // if(CartDetail::where('cart_header_id', $chid)->count() == 1){
+                    //     $deleteCH = CartHeader::find($chid);
+                    //     $deleteCH->delete();
+
+
+                    //     $deleteP = CartDetail::where('product_id', $product_id)->where('cart_header_id', $chid);
+                    //     $deleteP->delete();
+                    //     // $deleteP->update([
+                    //     //     'qty' => 10
+                    //     // ]);
+                    // }
+                    // // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
+                    // else{
+                    //     $deleteP = CartDetail::where('product_id', $product_id);
+                    //     $deleteP->delete();
+                    //     // $deleteP->update([
+                    //     //     'qty' => 10
+                    //     // ]);
+                    // }
+
+
                 }
 
-                // if(CartDetail::where('cart_header_id', $request->cart_header_id)->count() == 1){
-                //     $deleteCH = CartHeader::find($request->cart_header_id);
-                //     $deleteCH->delete();
-
-
-                //     $deleteP = CartDetail::where('product_id', $request->product_id)->where('cart_header_id', $request->cart_header_id);
-                //     $deleteP->delete();
-                // }
-                // // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
-                // else{
-                //     $deleteP = CartDetail::where('product_id', $request->product_id);
-                //     $deleteP->delete();
-                // }
             }
         }
     }
