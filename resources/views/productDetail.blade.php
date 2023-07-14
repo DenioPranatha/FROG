@@ -65,6 +65,7 @@
                         <input type="hidden" name="user_id" value="{{ $product->event->user->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
                         <button onclick="addToCart()" class="btn p-0">
+                        {{-- <button class="btn p-0" id="type-success"> --}}
                             <div class="cart2 d-flex justify-content-center align-items-center">
                                 <div class="cartSvg">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +129,7 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></>
     <script type="text/javascript" src="{{URL::asset('/assets/js/swal.js')}}"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
