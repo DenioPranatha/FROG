@@ -170,6 +170,7 @@ class CheckoutController extends Controller
         if($hashed == $request->signature_key){
             if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement'){
                 $paymentHeader = PaymentHeader::find($request->order_id);
+                $user_id = $paymentHeader->user_id;
                 $paymentHeader->update([
                     'status' => 'Paid'
                 ]);
@@ -188,32 +189,37 @@ class CheckoutController extends Controller
                     ]);
 
                     // hapus dari cart
-                    // $event_id = $product->event_id;
+                    $event_id = $product->event_id;
+
+                    // $product->update([
+                    //     'stock' => 200
+                    // ]);
 
                     // $ch = CartHeader::where('user_id', auth()->user()->id)->where('event_id', $event_id)->first();
-                    // // $ch = CartHeader::where('user_id', 6)->where('event_id', $event_id)->get();
-                    // $chid = $ch->id;
-                    // // dd($chid);
+                    $ch = CartHeader::where('user_id', $user_id)->where('event_id', $event_id)->first();
+                    $chid = $ch->id;
 
-                    // if(CartDetail::where('cart_header_id', $chid)->count() == 1){
-                    //     $deleteCH = CartHeader::find($chid);
-                    //     $deleteCH->delete();
+                    // dd($chid);
+
+                    if(CartDetail::where('cart_header_id', $chid)->count() == 1){
+                        $deleteCH = CartHeader::find($chid);
+                        $deleteCH->delete();
 
 
-                    //     $deleteP = CartDetail::where('product_id', $product_id)->where('cart_header_id', $chid);
-                    //     $deleteP->delete();
-                    //     // $deleteP->update([
-                    //     //     'qty' => 10
-                    //     // ]);
-                    // }
-                    // // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
-                    // else{
-                    //     $deleteP = CartDetail::where('product_id', $product_id);
-                    //     $deleteP->delete();
-                    //     // $deleteP->update([
-                    //     //     'qty' => 10
-                    //     // ]);
-                    // }
+                        $deleteP = CartDetail::where('product_id', $product_id)->where('cart_header_id', $chid);
+                        $deleteP->delete();
+                        // $deleteP->update([
+                        //     'qty' => 10
+                        // ]);
+                    }
+                    // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
+                    else{
+                        $deleteP = CartDetail::where('product_id', $product_id);
+                        $deleteP->delete();
+                        // $deleteP->update([
+                        //     'qty' => 10
+                        // ]);
+                    }
 
 
                 }
@@ -227,6 +233,8 @@ class CheckoutController extends Controller
     }
 
     public function invoicePaid($id){
+    // public function invoicePaid(Request $request){
+        // dd($request);
         return view('invoicePaid', [
             'paymentHeader' => PaymentHeader::find($id),
             'paymentDetails' => PaymentDetail::where('payment_header_id', $id)->get()

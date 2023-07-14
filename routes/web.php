@@ -79,6 +79,7 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('auth
 Route::post('/payNow', [CheckoutController::class, 'pay'])->middleware('auth')->middleware('not.admin');
 // Route::get('/invoice', [CheckoutController::class, 'invoice'])->middleware('auth')->middleware('not.admin');
 Route::get('/invoicePaid/{id}', [CheckoutController::class, 'invoicePaid'])->middleware('auth')->middleware('not.admin');
+// Route::post('/coba', [CheckoutController::class, 'invoicePaid'])->middleware('auth')->middleware('not.admin');
 
 // Route::post('/saveAddress', [CheckoutController::class, 'saveAddress'])->middleware('auth')->middleware('not.admin');
 // Route::post('/edit-address', [CheckoutController::class, 'edit'])->middleware('auth')->middleware('not.admin');
