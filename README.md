@@ -111,6 +111,7 @@ php artisan serve
 ## Website Preview
 // Ini nanti ceritanya gambar preview home Frog //
 ### Home
+![img 1](https://github.com/ArdoD/FROG/blob/main/public/assets/img/Home-ss.jpeg)
 <!-- ![img 1](https://github.com/nicolefelice/frog/blob/master/public/assets/img/Home-ss.jpeg) -->
 The Home page is the initial page that users will get to see when the user has successfully signed in. On the home page, users can view events in Frog and directly access the event details page by simply clicking on the item. In addition, through the home menu, users can also see and access products in Frog, not only that on the home page users can also search for information about fundraising destinations along with the details, just by clicking find destination or clicking the destination item.
 ### Products
