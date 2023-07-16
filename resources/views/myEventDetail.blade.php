@@ -140,7 +140,10 @@
                         </div>
                         <div class="rec">
                             <div class="stat-subheadline">Best Seller</div>
-                            <div class="stat-subheadline purple">{{ ($top ? "-" : $top->name) }}</div>
+                            {{-- <div class="stat-subheadline purple">{{ ($top ? "-" : $top->name) }}</div> --}}
+                            {{-- @dd($top) --}}
+                            {{-- <div class="stat-subheadline purple">{{ ($top ? $top : "-") }}</div> --}}
+                            <div class="stat-subheadline purple">{{ $top }}</div>
                         </div>
                     </div>
                     <br>
