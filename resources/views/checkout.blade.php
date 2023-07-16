@@ -14,7 +14,6 @@
 @section('content')
 {{-- @dd() --}}
     <div class="all-content">
-
         <div class="gabung-box">
 
             <div class="checkout-box">
@@ -123,74 +122,72 @@
                     <h2 class="ordered-product">Ordered Product</h2>
                 </div>
 
+                {{-- kalo dari tombol buy now di product detail --}}
+                @if(session('buy_now') === '1')
+                    {{-- @dd("ini buy now") --}}
+                    {{-- <h1>ini buy now</h1> --}}
 
-
-                {{-- @dump($cartHeaders) --}}
-                @foreach ($cartHeaders as $cartHeader)
                     <div class="product-box">
-                        <h1 class="title-event">{{ $cartHeader->event->name }}</h1>
+                        <h1 class="title-event">{{ $event->name }}</h1>
                         <div class="event-linebar"></div>
+                        <div class="product-detail-box">
+                            {{-- <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})"></div> --}}
+                            <div class="gambar-produk" style="background-image: url({{ asset('/storage').'/'.$product->image}} )"></div>
+                            <div class="detail">
+                                <h1 class="title-product">{{ $product->name }}</h1>
+                                <h1 class="quantity"> Quantity: <span class="span-quantity">{{ $qty }} Items</span></h1>
+                            </div>
+                            <div class="harga">
+                                <h1 class="title-harga">@money(($product->price)*($qty))</h1>
+                            </div>
+                        </div>
+                    </div>
 
-                        {{-- @dd($cartHeader->cartDetail) --}}
-                        @foreach ($cartHeader->cartDetail as $cartDetail)
-                            @for ($i = 0; $i < count($product_id); $i++)
-                                @if ($cartDetail->product_id == $product_id[$i])
-                                    <div class="product-detail-box">
-                                        {{-- <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})"></div> --}}
-                                        <div class="gambar-produk" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
-                                        <div class="detail">
-                                            <h1 class="title-product">{{ $cartDetail->product->name }}</h1>
-                                            <h1 class="quantity"> Quantity: <span class="span-quantity">{{ $cartDetail->qty }} Items</span></h1>
+
+                {{-- kalo dari tombol checkout di halaman cart --}}
+                @else
+                    @foreach ($cartHeaders as $cartHeader)
+                        <div class="product-box">
+                            <h1 class="title-event">{{ $cartHeader->event->name }}</h1>
+                            <div class="event-linebar"></div>
+
+                            {{-- @dd($cartHeader->cartDetail) --}}
+                            @foreach ($cartHeader->cartDetail as $cartDetail)
+                                @for ($i = 0; $i < count($product_id); $i++)
+                                    @if ($cartDetail->product_id == $product_id[$i])
+                                        <div class="product-detail-box">
+                                            {{-- <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})"></div> --}}
+                                            <div class="gambar-produk" style="background-image: url({{ asset('/storage').'/'.$cartDetail->product->image}} )"></div>
+                                            <div class="detail">
+                                                <h1 class="title-product">{{ $cartDetail->product->name }}</h1>
+                                                <h1 class="quantity"> Quantity: <span class="span-quantity">{{ $cartDetail->qty }} Items</span></h1>
+                                            </div>
+                                            <div class="harga">
+                                                <h1 class="title-harga">@money(($cartDetail->product->price)*($cartDetail->qty))</h1>
+                                            </div>
                                         </div>
-                                        <div class="harga">
-                                            <h1 class="title-harga">@money(($cartDetail->product->price)*($cartDetail->qty))</h1>
-                                        </div>
+                                    @endif
+                                @endfor
+
+                            @endforeach
+
+                            {{-- @for ($i = 0; $i < 3 ; $i++)
+                                <div class="product-detail-box">
+                                    <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
                                     </div>
-                                @endif
-                            @endfor
-
-                        @endforeach
-
-                        {{-- @for ($i = 0; $i < 3 ; $i++)
-                            <div class="product-detail-box">
-                                <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
+                                    <div class="detail">
+                                        <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
+                                        <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
+                                    </div>
+                                    <div class="harga">
+                                        <h1 class="title-harga">Rp 200.000</h1>
+                                    </div>
                                 </div>
-                                <div class="detail">
-                                    <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
-                                    <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
-                                </div>
-                                <div class="harga">
-                                    <h1 class="title-harga">Rp 200.000</h1>
-                                </div>
-                            </div>
 
-                        @endfor --}}
-                    </div>
-                @endforeach
-
-                {{-- @for ($j = 0 ; $j < 2 ; $j++)
-                    <div class="product-box">
-                        <h1 class="title-event">Charity Action Of RTB</h1>
-                        <div class="event-linebar"></div>
-
-                        @for ($i = 0; $i < 2 ; $i++)
-                            <div class="product-detail-box">
-                                <div class="gambar-produk" style="background-image: url({{ asset("assets/img/basreng.png") }})">
-                                </div>
-                                <div class="detail">
-                                    <h1 class="title-product">Basreng Ekstra Pedas Daun Jeruk</h1>
-                                    <h1 class="quantity"> Quantity : <span class="span-quantity"> 2 Items</span></h1>
-                                </div>
-                                <div class="harga">
-                                    <h1 class="title-harga">Rp 200.000</h1>
-                                </div>
-                            </div>
-
-                        @endfor
-                    </div>
-                @endfor --}}
-
-                
+                            @endfor --}}
+                        </div>
+                    @endforeach
+                @endif
 
                 <div class="option-shipping-box">
                     <div class="title-option-shipping">
@@ -198,8 +195,6 @@
                         <h2 class="shipping-option-title">Shipping Options</h2>
                     </div>
                 </div>
-
-                
 
                 <div class="grid-box">
                     <button class="box-1">
@@ -216,139 +211,145 @@
                     </button>
 
                 </div>
+            </div>
 
-                
+            @if(session('buy_now') === '1')
+                <div class="summary-checkout" id="summary-checkout">
+                    <div class="box-summary">
+                        <h1 class="title-checkout-summary">Checkout Summary</h1>
+                        <div class="checkout-summary-linebar"></div>
+
+                        <h1 class="subtotal">Subtotal ({{ $qty }} Barang) <span class="rp-1">@money(($product->price)*($qty))</span></h1>
+                        <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
+
+                        <h1 class="total-payment">Total Payment <span class="rp-3">@money((($product->price)*($qty))+10000)</span></h1>
+                        <form action="/payNow" method="post" id="payForm">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                            <input type="hidden" name="productId" value="{{ $product->id }}">
+                            <input type="hidden" name="qty" value="{{ $qty }}">
 
 
-                {{-- <div class="option-payment-box">
-                    <div class="title-option-payment">
-                        <img src="assets/img/payment.svg" class="payment-icon">
-                        <h2 class="payment-option-title">Payment Method Options</h2>
+                            <input type="hidden" name="name" id="nameHidden">
+                            <input type="hidden" name="phone" id="phoneHidden">
+                            <input type="hidden" name="address" id="addressHidden">
+                            <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
+                            <input type="hidden" name="total_price" id="total_price" value="{{ (($product->price)*($qty))+10000 }}">
+                            <input type="hidden" name="status" value="Unpaid">
+
+                            <button onclick="pay(event)" class="pay-button" id="type-success" >
+                                <h1 class="pay-now-title">Checkout Now !</h1>
+                            </button>
+                        </form>
                     </div>
                 </div>
 
-                <div class="grid-box">
-                    <button class="box-2">
-                        <div class="gambar-bca" style="background-image: url({{ asset("assets/img/bca.png") }})" ></div>
-                    </button>
-                    <button class="box-2">
-                        <div class="gambar-gopay" style="background-image: url({{ asset("assets/img/gopay.png") }})" ></div>
-                    </button>
-                    <button class="box-2">
-                        <div class="gambar-dana" style="background-image: url({{ asset("assets/img/dana.png") }})" ></div>
-                    </button>
-                    <button class="box-2" >
-                        <div class="gambar-spay" style="background-image: url({{ asset("assets/img/spay.png") }})" ></div>
-                    </button>
+            @else
+                <div class="summary-checkout" id="summary-checkout">
+                    <div class="box-summary">
+                        <h1 class="title-checkout-summary">Checkout Summary</h1>
+                        <div class="checkout-summary-linebar"></div>
 
-                </div> --}}
+                        {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1> --}}
+                        <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">@money($totalPayment)</span></h1>
+                        {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">{{ $totalPayment }}</span></h1> --}}
+                        {{-- <h1>{{ $totalPayment }}</h1> --}}
 
-            </div>
+                        {{-- <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1> --}}
+                        <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
 
-            <div class="summary-checkout" id="summary-checkout">
-                <div class="box-summary">
-                    <h1 class="title-checkout-summary">Checkout Summary</h1>
-                    <div class="checkout-summary-linebar"></div>
+                        {{-- <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1> --}}
+                        <h1 class="total-payment">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
+                        {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
 
-                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1> --}}
-                    <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">@money($totalPayment)</span></h1>
-                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">{{ $totalPayment }}</span></h1> --}}
-                    {{-- <h1>{{ $totalPayment }}</h1> --}}
-
-                    {{-- <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1> --}}
-                    <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
-
-                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1> --}}
-                    <h1 class="total-payment">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
-                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
-
-                    {{-- @dd($product_id) --}}
-                    {{-- @dd(date('Y-m-d')) --}}
-                    {{-- @dd($totalPayment+10000) --}}
-                    <form action="/payNow" method="post" id="payForm">
-                        @csrf
-                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                        {{-- <input type="hidden" name="product_id" value="{{ $product_id }}"> --}}
-                        @foreach ($product_id as $prod_id)
-                            <input type="hidden" name="arrayProductId[]" value="{{ $prod_id }}">
-                        @endforeach
-                        @foreach ($cartHeaders as $cartHeader)
-                            @foreach ($cartHeader->cartDetail as $cartDetail)
-                                @for ($i = 0; $i < count($product_id); $i++)
-                                    @if ($cartDetail->product_id == $product_id[$i])
-                                        <input type="hidden" name="arrayCartDetail[]" value="{{ $cartDetail }}">
-                                    @endif
-                                @endfor
+                        {{-- @dd($product_id) --}}
+                        {{-- @dd(date('Y-m-d')) --}}
+                        {{-- @dd($totalPayment+10000) --}}
+                        <form action="/payNow" method="post" id="payForm">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                            {{-- <input type="hidden" name="product_id" value="{{ $product_id }}"> --}}
+                            @foreach ($product_id as $prod_id)
+                                <input type="hidden" name="arrayProductId[]" value="{{ $prod_id }}">
                             @endforeach
-                        @endforeach
-                        {{-- @foreach ($cartDetails as $cs)
-                            <input type="hidden" name="arrayQty[]" value="{{ $cs->quantity }}">
-                        @endforeach --}}
-                        {{-- @php
-                            $qtyArray = [];
-                        @endphp --}}
-
-                        {{-- @foreach ($cartHeaders as $cartHeader)
-                            @foreach ($cartHeader->cartDetail as $cartDetail)
-                                @for ($i = 0; $i < count($product_id); $i++)
-                                    @if ($cartDetail->product_id == $product_id[$i])
-                                        @php
-                                            $qtyArray[] = $cartDetail->qty;
-                                            // $qtyArray[] = [$cartDetail->qty];
-
-                                        @endphp
-
-                                    @endif
-                                @endfor
+                            @foreach ($cartHeaders as $cartHeader)
+                                @foreach ($cartHeader->cartDetail as $cartDetail)
+                                    @for ($i = 0; $i < count($product_id); $i++)
+                                        @if ($cartDetail->product_id == $product_id[$i])
+                                            <input type="hidden" name="arrayCartDetail[]" value="{{ $cartDetail }}">
+                                        @endif
+                                    @endfor
+                                @endforeach
                             @endforeach
-                        @endforeach --}}
+                            {{-- @foreach ($cartDetails as $cs)
+                                <input type="hidden" name="arrayQty[]" value="{{ $cs->quantity }}">
+                            @endforeach --}}
+                            {{-- @php
+                                $qtyArray = [];
+                            @endphp --}}
 
-                        {{-- @foreach ($qtyArray as $qty)
-                            @foreach ($qty as $value)
-                                <input type="hidden" name="qty[]" value="{{ $value }}">
-                            @endforeach
-                        @endforeach --}}
-                        {{-- <input type="hidden" name="qty[]" value="{{ implode(',', $qtyArray) }}"> --}}
-                        {{-- <input type="hidden" name="qty[]" value="{{ implode(',', $qty) }}"> --}}
+                            {{-- @foreach ($cartHeaders as $cartHeader)
+                                @foreach ($cartHeader->cartDetail as $cartDetail)
+                                    @for ($i = 0; $i < count($product_id); $i++)
+                                        @if ($cartDetail->product_id == $product_id[$i])
+                                            @php
+                                                $qtyArray[] = $cartDetail->qty;
+                                                // $qtyArray[] = [$cartDetail->qty];
 
-                        <input type="hidden" name="name" id="nameHidden">
-                        <input type="hidden" name="phone" id="phoneHidden">
-                        <input type="hidden" name="address" id="addressHidden">
-                        <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
-                        <input type="hidden" name="total_price" id="total_price" value="{{ ($totalPayment+10000) }}">
-                        {{-- <input type="hidden" name="total_modal" id="total_modal"> --}}
-                        <input type="hidden" name="status" value="Unpaid">
+                                            @endphp
 
-                        <button onclick="pay(event)" class="pay-button" id="type-success" >
-                            {{-- <h1 class="pay-now-title">Pay Now !</h1> --}}
-                            <h1 class="pay-now-title">Checkout Now !</h1>
+                                        @endif
+                                    @endfor
+                                @endforeach
+                            @endforeach --}}
+
+                            {{-- @foreach ($qtyArray as $qty)
+                                @foreach ($qty as $value)
+                                    <input type="hidden" name="qty[]" value="{{ $value }}">
+                                @endforeach
+                            @endforeach --}}
+                            {{-- <input type="hidden" name="qty[]" value="{{ implode(',', $qtyArray) }}"> --}}
+                            {{-- <input type="hidden" name="qty[]" value="{{ implode(',', $qty) }}"> --}}
+
+                            <input type="hidden" name="name" id="nameHidden">
+                            <input type="hidden" name="phone" id="phoneHidden">
+                            <input type="hidden" name="address" id="addressHidden">
+                            <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
+                            <input type="hidden" name="total_price" id="total_price" value="{{ ($totalPayment+10000) }}">
+                            {{-- <input type="hidden" name="total_modal" id="total_modal"> --}}
+                            <input type="hidden" name="status" value="Unpaid">
+
+                            <button onclick="pay(event)" class="pay-button" id="type-success" >
+                                {{-- <h1 class="pay-now-title">Pay Now !</h1> --}}
+                                <h1 class="pay-now-title">Checkout Now !</h1>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="summary-checkout-responsive" id="summary-checkout">
+                    <div class="box-summary-responsive">
+                        <h1 class="title-checkout-summary-responsive">Checkout Summary</h1>
+                        <div class="checkout-summary-linebar-responsive"></div>
+
+                        {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1> --}}
+                        <h1 class="subtotal-responsive">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">@money($totalPayment)</span></h1>
+                        {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">{{ $totalPayment }}</span></h1> --}}
+                        {{-- <h1>{{ $totalPayment }}</h1> --}}
+
+                        {{-- <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1> --}}
+                        <h1 class="shipping-subtotal-responsive">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
+
+                        {{-- <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1> --}}
+                        <h1 class="total-payment-responsive">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
+                        {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
+
+                        <button type="button" class="pay-button-responsive" id="type-success1" >
+                            <h1 class="pay-now-title-responsive">Pay Now !</h1>
                         </button>
-                    </form>
+                    </div>
                 </div>
-            </div>
-
-            <div class="summary-checkout-responsive" id="summary-checkout">
-                <div class="box-summary-responsive">
-                    <h1 class="title-checkout-summary-responsive">Checkout Summary</h1>
-                    <div class="checkout-summary-linebar-responsive"></div>
-    
-                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">Rp</span><span class="nominal">{{ $totalPayment }}</span></h1> --}}
-                    <h1 class="subtotal-responsive">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">@money($totalPayment)</span></h1>
-                    {{-- <h1 class="subtotal">Subtotal ({{ $totalItem }} Barang) <span class="rp-1">{{ $totalPayment }}</span></h1> --}}
-                    {{-- <h1>{{ $totalPayment }}</h1> --}}
-    
-                    {{-- <h1 class="shipping-subtotal">Shipping Subtotal <span class="rp-2">Rp</span><span class="shipping-nominal">10.000</span></h1> --}}
-                    <h1 class="shipping-subtotal-responsive">Shipping Subtotal <span class="rp-2">@money(10000)</span></h1>
-    
-                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">Rp</span><span class="total-nominal">{{ $totalPayment+10000 }}</span></h1> --}}
-                    <h1 class="total-payment-responsive">Total Payment <span class="rp-3">@money($totalPayment+10000)</span></h1>
-                    {{-- <h1 class="total-payment">Total Payment <span class="rp-3">{{ $totalPayment }}</span></h1> --}}
-    
-                    <button type="button" class="pay-button-responsive" id="type-success1" >
-                        <h1 class="pay-now-title-responsive">Pay Now !</h1>
-                    </button>
-                </div>
-            </div>
+            @endif
 
             {{-- <div class="makancss-box">
 
@@ -362,28 +363,19 @@
                 <h1 style="makancss">makan</h1>
                 <h1 style="makancss">makan</h1>
 
-                
+
 
             </div> --}}
 
 
-            
-            
-            
-           
-            
-            
+
+
+
+
+
+
         </div>
-
-        
-
-        
-
     </div>
-
-    
-
-</div>
 @endsection
 
 @section('js')

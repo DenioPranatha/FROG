@@ -32,7 +32,7 @@ class CheckoutController extends Controller
             $cart_header_id = json_decode($request->checkedHeaders);
             // dd($cart_header_id);
             $eventCount = count(array_unique($cart_header_id));
-            $cartHeaders = CartHeader::find($cart_header_id);
+            $cartHeaders = CartHeader::with('event')->find($cart_header_id);
 
             if($eventCount == 0){
                 return redirect('cart')->with('error','Please select at least one product!');
@@ -170,34 +170,45 @@ class CheckoutController extends Controller
         if($hashed == $request->signature_key){
             if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement'){
                 $paymentHeader = PaymentHeader::find($request->order_id);
+                $user_id = $paymentHeader->user_id;
                 $paymentHeader->update([
                     'status' => 'Paid'
                 ]);
+                // return view('home')
 
                 $paymentDetails = PaymentDetail::where('payment_header_id', $request->order_id)->get();
                 foreach($paymentDetails as $pd){
+                    // dump($request);
                     $product_id = $pd->product_id;
                     $product = Product::find($product_id);
+
                     // potong stok
                     $newStock = $product->stock - $pd->qty;
                     $product->update([
                         'stock' => $newStock
                     ]);
+
+                    // hapus dari cart
+                    $event_id = $product->event_id;
+
+                    $ch = CartHeader::where('user_id', $user_id)->where('event_id', $event_id)->first();
+                    $chid = $ch->id;
+
+                    if(CartDetail::where('cart_header_id', $chid)->count() == 1){
+                        $deleteCH = CartHeader::find($chid);
+                        $deleteCH->delete();
+
+
+                        $deleteP = CartDetail::where('product_id', $product_id)->where('cart_header_id', $chid);
+                        $deleteP->delete();
+                    }
+                    // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
+                    else{
+                        $deleteP = CartDetail::where('product_id', $product_id);
+                        $deleteP->delete();
+                    }
                 }
 
-                // if(CartDetail::where('cart_header_id', $request->cart_header_id)->count() == 1){
-                //     $deleteCH = CartHeader::find($request->cart_header_id);
-                //     $deleteCH->delete();
-
-
-                //     $deleteP = CartDetail::where('product_id', $request->product_id)->where('cart_header_id', $request->cart_header_id);
-                //     $deleteP->delete();
-                // }
-                // // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
-                // else{
-                //     $deleteP = CartDetail::where('product_id', $request->product_id);
-                //     $deleteP->delete();
-                // }
             }
         }
     }
@@ -207,6 +218,8 @@ class CheckoutController extends Controller
     }
 
     public function invoicePaid($id){
+    // public function invoicePaid(Request $request){
+        // dd($request);
         return view('invoicePaid', [
             'paymentHeader' => PaymentHeader::find($id),
             'paymentDetails' => PaymentDetail::where('payment_header_id', $id)->get()

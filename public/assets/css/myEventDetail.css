@@ -42,7 +42,9 @@
 }
 
 .seeMoreBut{
+    margin-top: 20px;
     /* background-color: red; */
+    width: 84%;
 }
 
 .btnDiv{
@@ -1024,6 +1026,8 @@ button{
     .desc-container{
         /* width: 90vw; */
         margin-left: 0px;
+        padding-left: 8px;
+        padding-right: 8px;
         width: 100%;
         /* margin: 40px 100px 40px 100px; */
         display: flex;
@@ -1045,9 +1049,9 @@ button{
     }
 
     .desc-img{
-        width: 100%;
+        width: 92%;
         height: 300px;
-        margin-left: 15px;
+        margin-left: 18px;
         border: 1px solid #CDCDCD;
         border-radius: 20px;
         box-shadow: 4px 4px 8px #CDCDCD;
@@ -1066,7 +1070,7 @@ button{
         line-height: normal;
         /* background-color: red; */
         margin-right: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .detail-slide{
@@ -1086,7 +1090,7 @@ button{
         background-color: #522E93;
         color: white;
         text-decoration: none;
-        width: 320px;
+        width: 280px;
         height: 2.5rem;
         justify-content: center;
         align-items: center;
@@ -1514,4 +1518,15 @@ button{
        /* margin-right: 200px; */
         /* margin-left: -100px; */
    }
+
+   .edit-title{
+    padding: 10px;
+    width: 92%;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #CDCDCD, inset 0px 0px 0px 0px #CDCDCD;
+    font-size: 18px;
+/* >>>>>>> main */
+    }
+
 }

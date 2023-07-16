@@ -128,14 +128,20 @@
 @media screen and (max-width: 428px){
 
     .productCartPage{
+        /* background-color: red; */
+        padding-left: 5px;
+        /* padding-right: 12px; */
+        /* margin-right: 10px; */
         margin-right: 10px;
-        margin-bottom: 20px;
+        /* margin-left: 15px; */
+        margin-bottom: 30px;
     }
 
     .productCartPage .card {
         font-family: 'Poppins';
         position: relative;
-        width: 170px;
+        width: 150px;
+        /* width: 170px; */
         height: 200px;
         background: #FFFFFF;
         border: 1px solid #CDCDCD;
@@ -158,6 +164,7 @@
     }
     
     .productCartPage .caption {
+        /* background-color: red; */
         padding: 5px;
         font-family: 'Poppins';
         font-style: normal;
@@ -177,7 +184,7 @@
         /* font-family: 'M PLUS 1'; */
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 22px;
         color: #000000;
     }
@@ -186,7 +193,7 @@
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 400;
-        font-size: 11px;
+        font-size: 10px;
         line-height: 14px;
         display: flex;
         align-items: flex-end;
@@ -201,7 +208,7 @@
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 20px;
         color: #522E93;
     }

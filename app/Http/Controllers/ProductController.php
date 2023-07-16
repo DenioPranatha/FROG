@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Session;
 // use Illuminate\Database\Query\Builder;
 
 class ProductController extends Controller
@@ -271,11 +272,33 @@ class ProductController extends Controller
     }
 
     public function buy(Request $request){
-        // dump($request);
-        // redirect('/checkout');
-        return redirect('/checkout')->with('success', 'New post has been added!');
-        // return view("checkout");
+        // dd($request);
+        // "qty" => "1"
+        // "event_id" => "9"
+        // "product_id" => "41"
+
+        // 'product_id' => $request->product_id,
+        // 'cart_header_id' => $cart_header_id,
+        // 'eventCount' => $eventCount,
+        // 'cartHeaders' => $cartHeaders,
+        // 'totalItem' => $request->totalItems,
+        // 'totalPayment' => $request->totalPayments,
+        $event = Event::find($request->event_id);
+        $product = Product::find($request->product_id);
+
+        Session::put('buy_now', '1');
+        return view('checkout', [
+            'name' => auth()->user()->name,
+            'phone' => auth()->user()->phone,
+            'address' =>  auth()->user()->address,
+            'qty' => $request->qty,
+            'event' => $event,
+            'product' => $product
+        ]);
+        // return redirect('/checkout')->with('success', 'New post has been added!');
     }
+
+
 
 
     /**

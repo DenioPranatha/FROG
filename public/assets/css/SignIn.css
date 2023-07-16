@@ -159,7 +159,7 @@ button{
     z-index: 2;
     background-color: #522E93;
     margin-top: 0.85vw;
-    margin-left: 0.1vw;
+    /* margin-left: 0.1vw; */
     width: 3vw;
     height: 2.7vw;
     border-radius: 5px 0px 0px 5px;
@@ -194,7 +194,7 @@ input::-ms-clear {
         background-color: #522E93;
     }
 
-    
+
     .box-white{
         margin-top: 45vw;
         margin-bottom: 9vw;
@@ -223,7 +223,7 @@ input::-ms-clear {
         background-repeat: no-repeat;
         background-position: center;
     }
-    
+
     .line{
         height: 88%;
         width: 0.1vw;
@@ -268,7 +268,7 @@ input::-ms-clear {
         /* border: 1px solid red; */
         border-right: 1px solid;
     }
-    
+
     .enamdua p{
         margin-bottom: 0vw;
         color: white;
@@ -317,9 +317,9 @@ input::-ms-clear {
     .testalert{
         width: 67.5vw;
     }
-    
+
     /* .testalert .alert .alert-danger .alert-dismissible{
         width: 100.5vw;
     } */
-    
+
 }
