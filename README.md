@@ -134,4 +134,3 @@ On the destination page, users can search for information about fundraising dest
 ### Add Product
 <!-- ![img 10](https://github.com/nicolefelice/frog/blob/master/public/assets/img/createProduct-ss.jpeg) -->
 On this page, users can add products to the event they have created. To be able to add products, users must fill in the form that has been given completely and match with the existing conditions. After that, users can add products by clicking add product.
-
