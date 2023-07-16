@@ -160,6 +160,10 @@
     color: #522E93;
 }
 
+.eventCart:hover{
+    color: #673AB7;
+}
+
 .lineCart{
     height: 1px;
     background-color: #522E93;

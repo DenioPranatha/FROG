@@ -36,6 +36,7 @@ for(let i=0; i<minBtn.length; i++){
     // console.log(Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000);
 
     plusBtn[i].addEventListener('click', (event)=>{
+        event.preventDefault();
         if(qty[i].value>=parseInt(stock[i].innerHTML)){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
             priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
@@ -117,6 +118,7 @@ for(let i=0; i<minBtn.length; i++){
     })
 
     minBtn[i].addEventListener('click',  (event)=>{
+        event.preventDefault();
         if (qty[i].value>1){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
             priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
@@ -458,6 +460,10 @@ window.onload = function() {
 };
 
 
+// console.log(eachProductTotal2[0].innerHTML);
+// // console.log(eachProductTotal2[1].innerHTML);
+// console.log(eachProductTotal2[0].innerHTML.replace(/\./g, "").substring(2));
+
 // buat hitung total payment
 function calculatePrice(){
     total = 0
@@ -465,8 +471,10 @@ function calculatePrice(){
         // console.log("hai")
         if(itemCheck[i].checked == true){
             // temp = eachProductTotal2[i].innerHTML.substring(2)
-            temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            // temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            temp = eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2);
             // alert(temp)
+            console.log(temp);
             total += parseInt(temp)
         }
     }
@@ -546,7 +554,8 @@ checkoutBtn.addEventListener('click', function(){
     for(let i = 0; i<itemCheckLen; i++){
         if(itemCheck[i].checked == true){
             // temp = eachProductTotal2[i].innerHTML.substring(2)
-            temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            // temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            temp = eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2);
             total += parseInt(temp)
         }
     }
