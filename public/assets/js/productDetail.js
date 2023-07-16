@@ -45,3 +45,24 @@ function buyNow(){
     qtyBuy.value = qty.value;
     buyBtn.submit();
 }
+
+//swal
+// const iconsuccess = document.getElementById('type-success');
+// const text = document.getElementById('type-success').value;
+// const testing = document.getElementById('testing');
+
+
+// iconsuccess.onclick = function() {
+//     if(true){
+//         swal("Product Has Been Added", " ", "success", {
+//             buttons: false,
+//             timer: 5000,
+//         });
+//         addToCart();
+//     } else{
+//         swal("Product Failed to Added", " ", "error", {
+//             buttons: false,
+//             timer: 5000,
+//         });
+//     }
+// }
