@@ -130,7 +130,7 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></>
+    <script type="text/javascript" src="{{URL::asset('/assets/js/productDetail.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('/assets/js/swal.js')}}"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
