@@ -6,6 +6,7 @@ use App\Models\CartDetail;
 use App\Models\CartHeader;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -16,6 +17,7 @@ class CartController extends Controller
         // dd(auth()->user()->id);
         // dd(CartHeader::where('user_id', auth()->user()->id)->get()->count());
         // dd($count);
+        Session::put('buy_now', '2');
         return view('cart', [
             'count' => $count,
             'cartHeaders' => CartHeader::all()->load('event'),

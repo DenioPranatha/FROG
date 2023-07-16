@@ -92,6 +92,7 @@
                         <input type="hidden" name="qty" id="qtyBuy">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
+                        <input type="hidden" name="buy_now" value="1">
                         <button onclick="buyNow()" class="btn p-0 ms-3">
                             <div class="buy2 d-flex justify-content-center align-items-center">
                                 <div class="buyText">Buy Now!</div>

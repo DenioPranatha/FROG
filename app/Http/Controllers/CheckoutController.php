@@ -191,15 +191,8 @@ class CheckoutController extends Controller
                     // hapus dari cart
                     $event_id = $product->event_id;
 
-                    // $product->update([
-                    //     'stock' => 200
-                    // ]);
-
-                    // $ch = CartHeader::where('user_id', auth()->user()->id)->where('event_id', $event_id)->first();
                     $ch = CartHeader::where('user_id', $user_id)->where('event_id', $event_id)->first();
                     $chid = $ch->id;
-
-                    // dd($chid);
 
                     if(CartDetail::where('cart_header_id', $chid)->count() == 1){
                         $deleteCH = CartHeader::find($chid);
@@ -208,20 +201,12 @@ class CheckoutController extends Controller
 
                         $deleteP = CartDetail::where('product_id', $product_id)->where('cart_header_id', $chid);
                         $deleteP->delete();
-                        // $deleteP->update([
-                        //     'qty' => 10
-                        // ]);
                     }
                     // kalo produk yg mau dihapus dari event a dan di event a masi ada produk lain
                     else{
                         $deleteP = CartDetail::where('product_id', $product_id);
                         $deleteP->delete();
-                        // $deleteP->update([
-                        //     'qty' => 10
-                        // ]);
                     }
-
-
                 }
 
             }
