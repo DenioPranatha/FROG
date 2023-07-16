@@ -32,7 +32,7 @@ class CheckoutController extends Controller
             $cart_header_id = json_decode($request->checkedHeaders);
             // dd($cart_header_id);
             $eventCount = count(array_unique($cart_header_id));
-            $cartHeaders = CartHeader::find($cart_header_id);
+            $cartHeaders = CartHeader::with('event')->find($cart_header_id);
 
             if($eventCount == 0){
                 return redirect('cart')->with('error','Please select at least one product!');
