@@ -54,7 +54,11 @@ input[type=text]{
 .purple-but{
     background-color: #522E93;
     /* color: #FFFFFF; */
-    color: black;
+    color: white;
+}
+
+button.categoriesCard.purple-but{
+    background-color: #522E93;
 }
 
 #purple-but:hover{
@@ -401,7 +405,7 @@ input[type=text]{
         /* display: flex; */
         /* height: 40px; */
     }
-    
+
     .searchForm{
         /* background-color: red; */
         width: 600px;

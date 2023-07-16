@@ -46,7 +46,7 @@ Route::post('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
 Route::post('/cartAdd', [ProductController::class, 'add'])->middleware('auth')->middleware('not.admin');
-Route::post('/buyNow', [ProductController::class, 'buy'])->middleware('auth')->middleware('not.admin');
+// Route::post('/buyNow', [ProductController::class, 'buy'])->middleware('auth')->middleware('not.admin');
 
 Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct')->middleware('auth')->middleware('not.admin');
 Route::get('/addProduct/{event:id}', [ProductController::class, 'create'])->name('addProduct')->middleware('auth')->middleware('not.admin');

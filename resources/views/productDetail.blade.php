@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <p class="productDesc">{{ $product->description }}</p>
-                <div class="btnGroup d-flex justify-content-center align-items-center">
+                <div class="btnGroup d-flex justify-content-left align-items-center">
 
                     <form action="/cartAdd" method="post" id="cartBtn">
                         @csrf
@@ -87,7 +87,7 @@
                         </div>
                     </a> --}}
 
-                    <form action="/buyNow" method="POST" id="buyBtn">
+                    {{-- <form action="/buyNow" method="POST" id="buyBtn">
                         @csrf
                         <input type="hidden" name="qty" id="qtyBuy">
                         <input type="hidden" name="event_id" id="event_id" value="{{ $product->event->id }}">
@@ -98,7 +98,7 @@
                                 <div class="buyText">Buy Now!</div>
                             </div>
                         </button>
-                    </form>
+                    </form> --}}
 
 
                     {{-- <a href="/checkout" class="btn p-0 ms-3">
