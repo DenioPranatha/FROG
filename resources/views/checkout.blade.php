@@ -14,7 +14,6 @@
 @section('content')
 {{-- @dd() --}}
     <div class="all-content">
-
         <div class="gabung-box">
 
             <div class="checkout-box">
@@ -376,16 +375,7 @@
 
 
         </div>
-
-
-
-
-
     </div>
-
-
-
-</div>
 @endsection
 
 @section('js')
