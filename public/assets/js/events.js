@@ -59,6 +59,7 @@ var interval = setInterval(function() {
 
 // jquery untuk searching
 $(document).ready(function(){
+    var timer;
     // ketika see more diclick
     $(document).on('click', '#myBtn1', function(){
         //input dari kolom search
@@ -75,6 +76,12 @@ $(document).ready(function(){
 
     //ketika kolom search diisi
     $('#search-event').on('keyup', function(){
+        clearTimeout(timer);
+        var ms = 200; // milliseconds
+        var val = this.value;
+        timer = setTimeout(function() {
+            lookup(val);
+        }, ms);
         //input dari kolom search
         var searchValue = $('#search-event').val();
         //input dari cat sekarang
