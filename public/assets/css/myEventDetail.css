@@ -42,7 +42,9 @@
 }
 
 .seeMoreBut{
+    margin-top: 20px;
     /* background-color: red; */
+    width: 84%;
 }
 
 .btnDiv{
