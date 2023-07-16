@@ -105,6 +105,7 @@
     text-align: center;
 
     transition: .2s all ease-in-out;
+    margin-left: 15px;
 }
 
 .approve:hover{
@@ -127,7 +128,7 @@
 
         /* background-color: red; */
     }
-    
+
     .desc{
         display: flex;
         flex-direction: column;
@@ -140,7 +141,7 @@
         margin-left: 20px;
         height: fit-content;
     }
-    
+
     .desc-img{
         width: 135%;
         height: 300px;
@@ -153,14 +154,14 @@
         background-size: cover;
         background-position: center;
     }
-    
+
     .desc-headline{
         font-family: 'M PLUS 1';
         font-style: normal;
         font-weight: 500;
         font-size: 22px;
         line-height: 36px;
-    
+
         color: #000000;
     }
 
@@ -169,8 +170,8 @@
         width: 140%;
     }
 
-   
-    
+
+
     .desc-caption{
         /* background-color: red; */
         width: 140%;
@@ -181,7 +182,7 @@
         line-height: 20px;
         text-align: justify;
 
-    
+
         color: #000000;
     }
 
@@ -191,14 +192,14 @@
 
         /* border: 1px solid red; */
     }
-    
+
     .reject{
         width: 25vw;
         height: 10vw;
         background: #FFFFFF;
         border: 3px solid #522E93;
         border-radius: 30px;
-    
+
         font-family: 'M PLUS 1';
         font-style: normal;
         font-weight: 600;
@@ -206,11 +207,11 @@
         line-height: 30px;
         text-align: center;
         color: #522E93;
-    
+
         transition: .2s all ease-in-out;
     }
 
-    
+
     .approve{
         width: 25vw;
         height: 10vw;
@@ -218,14 +219,14 @@
         background: #522E93;
         border-radius: 30px;
         color: #FFFFFF;
-    
+
         font-family: 'M PLUS 1';
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
         line-height: 30px;
         text-align: center;
-    
+
         transition: .2s all ease-in-out;
     }
 
@@ -236,7 +237,7 @@
         flex-direction: row;
         display: flex;
         margin-top: 25px;
-        
+
         /* gap: 60px; */
     }
 
@@ -252,6 +253,6 @@
         margin-left: 20px;
         background-color: black;
     } */
-    
+
 
 }
