@@ -19,7 +19,7 @@
                 {{-- <h3>Alfredo Kusuma Wijaya</h3> --}}
                 <h3>{{ Auth::user()->name }}</h3>
                 <button id="button-edit">
-                    <i class="bi bi-pencil-square" style="font-size: 1.5vw; margin-right:0.5vw"></i>
+                    <i class="edit-btn bi bi-pencil-square" style="font-size: 1.5vw; margin-right:0.5vw"></i>
                     Edit Profile
                 </button>
             </div>
@@ -60,8 +60,8 @@
         {{-- <form action=""> --}}
         <form id="edit-profile" action="/profile/{{ Auth::user()->id }}/edit" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="container d-flex flex-row justify-content-center align-items-center" style="display: none">
-                <div class="left-side d-flex flex-column justify-content-center align-items-center">
+            <div class="container container-edit d-flex  justify-content-center align-items-center" style="display: none">
+                <div class="left-side left-side-edit d-flex flex-column justify-content-center align-items-center">
                     <div class="change-container d-flex flex-row">
                         @if (Auth::user()->image)
                             <div id="frame" class="img-container  rounded-circle" style="background-image: url({{ asset('/storage') . '/' . Auth::user()->image }})"></div>
@@ -74,13 +74,13 @@
                         </div>
                     </div>
                     <h3>{{ Auth::user()->name }}</h3>
-                    <button id="save" type="submit">
+                    <button id="save" class="button-changes" type="submit">
                         <svg style="margin-bottom:0.2vw;margin-right:0.2vw" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M21 7v12q0 .825-.588 1.413T19 21H5q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h12l4 4Zm-2 .85L16.15 5H5v14h14V7.85ZM12 18q1.25 0 2.125-.875T15 15q0-1.25-.875-2.125T12 12q-1.25 0-2.125.875T9 15q0 1.25.875 2.125T12 18Zm-6-8h9V6H6v4ZM5 7.85V19V5v2.85Z"/></svg>
                         Save Changes
                     </button>
                 </div>
                 <div class="right-side d-flex flex-column justify-content-center align-items-center">
-                    <div class="box d-flex flex-column">
+                    <div class="box edit-box d-flex flex-column">
                         <div class="change-content">
                             <h3>Username</h3>
                             <input type="text" class="change-input rounded" placeholder="Username" name="new-username" value='{{Auth::user()->username}}'>

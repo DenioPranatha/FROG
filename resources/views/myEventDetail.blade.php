@@ -13,9 +13,9 @@
         <div class="desc-container">
             <div class="pic" data-aos="fade-right">
                 @if(file_exists(public_path('assets/images/event/' . $event->image)))
-                    <div class="desc-img" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
+                    <div class="desc-img img-edit" style="background-image: url({{ asset('/assets/images/event').'/'.$event->image}} )"></div>
                 @else
-                    <div class="desc-img" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
+                    <div class="desc-img img-edit" style="background-image: url({{ asset('/storage') . '/' . $event->image }} )"></div>
                 @endif
                 <button id="change-view-button" class="donate" href="#section1">Edit Event</button>
             </div>
@@ -93,6 +93,8 @@
         </form>
     </div>
 
+    <br>
+    <br>
     <div id="nav-cont" class="nav-cont nav nav-underline justify-content-center">
         <button class="nav-button carousel-control-prev nav-link nav-item active active2" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">Products</button>
         <button class="nav-button carousel-control-next nav-link nav-item" type="button" data-bs-target="#carouselExample" data-bs-slide="next">Statistics</button>
