@@ -20,14 +20,26 @@ let numPlus = document.getElementsByClassName('numPlus');
 // alert(totalItem.value)
 // alert(totalPayment.value)
 
-const rupiah = (number)=>{
-    return new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR",
-        maximumFractionDigits: 0,
-        minimumFractionDigits: 0
+// const rupiah = (number)=>{
+//     return new Intl.NumberFormat("id-ID", {
+//         style: "currency",
+//         currency: "IDR",
+//         maximumFractionDigits: 0,
+//         minimumFractionDigits: 0
+//     }).format(number);
+
+// }
+
+const rupiah = (number) => {
+    const formattedNumber = new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      maximumFractionDigits: 0,
+      minimumFractionDigits: 0,
     }).format(number);
-}
+
+    return formattedNumber.replace(/\s/g, '');
+  };
 
 // console.log(rupiah(20000))
 
@@ -39,8 +51,10 @@ for(let i=0; i<minBtn.length; i++){
         event.preventDefault();
         if(qty[i].value>=parseInt(stock[i].innerHTML)){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
-            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            // priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            priceTemp = eachProductPrice2[i].innerHTML.replace(/\./g, "").substring(2)
             priceTemp = parseInt(priceTemp)
+
 
             qty[i].value = qty[i].value
 
@@ -57,8 +71,10 @@ for(let i=0; i<minBtn.length; i++){
             totalItem.innerHTML = calculateItem()
         }else{
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
-            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            // priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            priceTemp = eachProductPrice2[i].innerHTML.replace(/\./g, "").substring(2)
             priceTemp = parseInt(priceTemp)
+            // alert(priceTemp);
 
             qty[i].value++;
 
@@ -118,10 +134,12 @@ for(let i=0; i<minBtn.length; i++){
     })
 
     minBtn[i].addEventListener('click',  (event)=>{
+        // alert(rupiah(10000))
         event.preventDefault();
         if (qty[i].value>1){
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
-            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            // priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            priceTemp = eachProductPrice2[i].innerHTML.replace(/\./g, "").substring(2)
             priceTemp = parseInt(priceTemp)
 
             qty[i].value--;
@@ -139,7 +157,8 @@ for(let i=0; i<minBtn.length; i++){
         }
         else{
             // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
-            priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            // priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            priceTemp = eachProductPrice2[i].innerHTML.replace(/\./g, "").substring(2)
             priceTemp = parseInt(priceTemp)
 
             qty[i].value = 1;
@@ -181,7 +200,8 @@ for(let i=0; i<minBtn.length; i++){
         // console.log('tes')
         // alert('hai')
         // priceTemp = eachProductPrice2[i].innerHTML.substring(2)
-        priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+        // priceTemp = Number(eachProductPrice2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+        priceTemp = eachProductPrice2[i].innerHTML.replace(/\./g, "").substring(2)
         priceTemp = parseInt(priceTemp)
 
         // buat hitung total price
@@ -317,7 +337,7 @@ checkAll.addEventListener('click', ()=>{
             sendUncheck(itemCheck[i]);
         }
     }
-    totalPayment.innerHTML = calculatePrice()
+    totalPayment.innerHTML = calculatePrice2()
     totalItem.innerHTML = calculateItem()
 })
 
@@ -356,7 +376,7 @@ eventCheck.forEach((element)=>{
                 }
             }
         }
-        totalPayment.innerHTML = calculatePrice()
+        totalPayment.innerHTML = calculatePrice2()
         totalItem.innerHTML = calculateItem()
     })
 })
@@ -411,7 +431,7 @@ itemCheck.forEach((element)=>{
             }
 
         }
-        totalPayment.innerHTML = calculatePrice()
+        totalPayment.innerHTML = calculatePrice2()
         totalItem.innerHTML = calculateItem()
     })
 })
@@ -453,7 +473,24 @@ window.onload = function() {
             }
 
         }
-        totalPayment.innerHTML = calculatePrice()
+        // alert(eachProductTotal2[0])
+        total = 0
+        for(let i = 0; i<itemCheckLen; i++){
+            // console.log("hai")
+            if(itemCheck[i].checked == true){
+                // temp = eachProductTotal2[i].innerHTML.substring(2)
+                // temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+                temp = eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2);
+                // alert(temp)
+                console.log(temp);
+                total += parseInt(temp)
+            }
+        }
+        // alert(total)
+        // total = 'Rp' + total.toString()
+        total = rupiah(total).toString()
+        totalPayment.innerHTML = total
+        // totalPayment.innerHTML = calculatePrice()
         totalItem.innerHTML = calculateItem()
     })
 
@@ -473,13 +510,37 @@ function calculatePrice(){
             // temp = eachProductTotal2[i].innerHTML.substring(2)
             // temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
             temp = eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2);
-            // alert(temp)
-            console.log(temp);
+            console.log(eachProductTotal2[i].innerHTML)
+            // console.log(eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2));
+            // alert(eachProductTotal2[i]);
             total += parseInt(temp)
         }
     }
     // alert(total)
     // total = 'Rp' + total.toString()
+    // console.log();
+    total = rupiah(total).toString()
+    // alert(total)
+    return total
+}
+
+function calculatePrice2(){
+    total = 0
+    for(let i = 0; i<itemCheckLen; i++){
+        // console.log("hai")
+        if(itemCheck[i].checked == true){
+            // temp = eachProductTotal2[i].innerHTML.substring(2)
+            // temp = Number(eachProductTotal2[i].innerHTML.replace(/[^0-9.-]+/g,""))*1000
+            temp = eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2);
+            // alert(temp)
+            // console.log(eachProductTotal2[i].innerHTML.replace(/\./g, "").substring(2));
+            // alert(eachProductTotal2[i]);
+            total += parseInt(temp)
+        }
+    }
+    // alert(total)
+    // total = 'Rp' + total.toString()
+    // console.log();
     total = rupiah(total).toString()
     // alert(total)
     return total
