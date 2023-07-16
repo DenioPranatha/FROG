@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\PaymentDetail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 
 class MyEventController extends Controller
@@ -83,19 +84,94 @@ class MyEventController extends Controller
         ->get();
 
         //mencari top product
-        $top = PaymentDetail::
-        addselect(PaymentDetail::raw('SUM(qty) as quantity'))
-        ->addselect(PaymentDetail::raw('product_id as pid'))
-        ->whereHas('product', function($p) use ($event){
-            $p->where('event_id', $event->id);
-        })
-        ->groupBy('product_id')
-        ->get();
-        if(!isEmpty($top)){
-            $top = $top->where('quantity', $top->max('quantity'));
-            $top = Product::find($top[0]['pid']);
+        // $top = PaymentDetail::
+        // addselect(PaymentDetail::raw('SUM(qty) as quantity'))
+        // ->addselect(PaymentDetail::raw('product_id as pid'))
+        // ->whereHas('product', function($p) use ($event){
+        //     $p->where('event_id', $event->id);
+        // })
+        // ->groupBy('product_id')
+        // ->get();
+
+
+
+        $pd = PaymentDetail::select('products.name')
+            ->join('products', 'products.id', '=', 'payment_details.product_id')
+            ->join('events', 'events.id', '=', 'products.event_id')
+            ->where('events.id', '=', $event->id)
+            ->get();
+
+        if($pd->count() > 0) {
+            // Jika sudah ada penjualan
+            $top = PaymentDetail::select('products.name', DB::raw("SUM(payment_details.qty) as SUM"))
+                ->join('products', 'products.id', '=', 'payment_details.product_id')
+                ->join('events', 'events.id', '=', 'products.event_id')
+                ->where('events.id', '=', $event->id)
+                ->groupBy('products.id')
+                ->orderBy('SUM', 'DESC')
+                ->take(1)
+                ->get();
+
+            // SELECT e.name, p.name, SUM(pd.qty) as total
+            // FROM payment_details pd JOIN products p ON pd.product_id = p.id
+            // JOIN events e ON e.id = p.event_id
+            // WHERE e.id = 1
+            // GROUP BY p.id
+            // ORDER BY total DESC
+
+            $paymentDetail = $top[0];
+            $top = $paymentDetail->name;
+
+        } else {
+            // jika blom ada penjualan sama sekali pada event itu
+            $top = '-';
+
         }
 
+
+
+
+        // dd($top);
+
+        // $events = Event::select('events.*', DB::raw("SUM(payment_details.qty) as SUM"))
+        // ->join('products', 'events.id', '=', 'products.event_id')
+        // ->join('payment_details', 'products.id', '=', 'payment_details.product_id')
+        // ->where('events.status', '=', 'accepted')
+        // ->groupBy('events.id')
+        // ->orderBy('SUM', 'DESC')
+        // ->take(10)
+        // ->get();
+
+
+        // if(!isEmpty($top)){
+
+        // dd($top->where('quantity', $top->max('quantity')));
+        // if(($top->isNotEmpty())){
+
+        // if(!isEmpty($top)){
+        //     $top = $top->where('quantity', $top->max('quantity'));
+        //     $top = Product::find($top[0]['pid']);
+        // }
+
+        // dd(!empty($top));
+        // if (!isEmpty($top)) {
+        // if ($top->isNotEmpty()) {
+        //     $top = $top->where('quantity', $top->max('quantity'));
+        //     $top = Product::find($top[0]['pid']);
+        // }
+
+        // dd(is_int(count($top)))
+
+        // @dd(count($top));
+
+        // @dump(count($top))
+
+
+        // if(count($top)){
+        //     $top = $top->where('quantity', $top->max('quantity'));
+        //     $top = Product::find($top[0]['pid']);
+
+        // }
 
 
 

@@ -175,6 +175,7 @@
 }
 
 .card-section-box-finished{
+    /* display: none; */
     display: flex;
     justify-content:space-around;
     margin-top: -8px;
@@ -223,6 +224,7 @@
 /* Ukuran Mobile */
 @media screen and (max-width: 428px){
     .container{
+        /* background-color: red; */
         /* border: 1px solid red; */
         height: fit-content;
         padding-bottom: 50px;
@@ -236,6 +238,7 @@
         margin-bottom: 100px; */
     }
     .card-section-box-add{
+        /* background-color: red; */
         display: flex;
         justify-content:center;
         /* margin-top: px; <-hapus */
@@ -255,9 +258,7 @@
         /* padding-top: 40px; */
     }
 
-    /* .card{
-        width: 400px;
-    } */
+
 
     .card-section-box{
        
@@ -266,7 +267,9 @@
         /* margin-top: px; <-hapus */
         border: 1px solid #FFFFFF;
         /* width: 1160px; */
-        height: 150px;
+        height: 60px;
+        /* height: 150px; */
+        /* background-color: red; */
         background: #FFFFFF;
         /* box-shadow: 4px 6px 0px #CDCDCD, 1px 0 .4em rgba(0, 0, 0, 0.25); */
         /* border-radius: 8px; */
@@ -310,16 +313,20 @@
         margin-top: 42px;
         margin-bottom: 42px;
         /* font-weight:bold; */
-        font-size: 25px;
-        /* color: #522E93; */
+        font-size: 30px;
+        color: #522E93;
         /* color: black; */
     }
 
     .card{
         /* background-color: red; */
         /* width: 1160px; */
-        height: 296.5px;
+        height: fit-content;
+        /* height: 296.5px; */
         margin-bottom: 42px;
+        margin-left: 2px;
+        /* margin-right: 30px; */
+        /* padding-left: 20px; */
         /* border: none; */
         /* border: 1px solid red; */
         display: flex;
@@ -327,7 +334,7 @@
         /* box-shadow: 4px 0px 0px #CDCDCD; */
         transition: all .2s ease-in-out;
     
-        width: 400px;
+        width: 300px;
         filter: drop-shadow(4px 4px 8px #CDCDCD);
         border-radius: 10px;
         /* border: 1px solid black; */
@@ -335,6 +342,7 @@
 
     .event-image{
         width: 400px;
+        height: 130px;
     }
     
 
@@ -354,5 +362,52 @@
         width: 30px;
     }
 
+    .card-section-box-finished{
+        display: flex;
+        justify-content:center;
+        /* margin-top: px; <-hapus */
+        border: 1px solid #FFFFFF;
+        /* width: 1160px; */
+        height: 60px;
+        /* height: 150px; */
+        /* background-color: red; */
+        background: #FFFFFF;
+        /* box-shadow: 4px 6px 0px #CDCDCD, 1px 0 .4em rgba(0, 0, 0, 0.25); */
+        /* border-radius: 8px; */
+    
+        /* padding-top: 15px; */
+    
+        width: 400px;
+    
+        filter: drop-shadow(4px 4px 8px #CDCDCD);
+        border-radius: 10px;
+        /* padding-top: 40px; */
+    }
+
+    
+    .card-section-box-text-finished p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 41px;
+        margin-top: 15px;
+        color: black;
+    }
+    
+    .section-title-finished{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        line-height: 40px;
+        margin-top: 84px;
+        margin-bottom: 42px;
+        /* font-weight:bold; */
+        font-size: 30px;
+        color: #522E93;
+    }
+    
+    .gap{
+        height: 100px;
+    }
 
 }

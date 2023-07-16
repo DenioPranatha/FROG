@@ -46,7 +46,7 @@ Route::post('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/result', [ProductController::class, 'result']);
 Route::get('/productDetail/{product:id}', [ProductController::class, 'show'])->name('productDetail');
 Route::post('/cartAdd', [ProductController::class, 'add'])->middleware('auth')->middleware('not.admin');
-Route::post('/buyNow', [ProductController::class, 'buy'])->middleware('auth')->middleware('not.admin');
+// Route::post('/buyNow', [ProductController::class, 'buy'])->middleware('auth')->middleware('not.admin');
 
 Route::post('/addProduct', [ProductController::class, 'store'])->name('addProduct')->middleware('auth')->middleware('not.admin');
 Route::get('/addProduct/{event:id}', [ProductController::class, 'create'])->name('addProduct')->middleware('auth')->middleware('not.admin');
@@ -79,6 +79,7 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('auth
 Route::post('/payNow', [CheckoutController::class, 'pay'])->middleware('auth')->middleware('not.admin');
 // Route::get('/invoice', [CheckoutController::class, 'invoice'])->middleware('auth')->middleware('not.admin');
 Route::get('/invoicePaid/{id}', [CheckoutController::class, 'invoicePaid'])->middleware('auth')->middleware('not.admin');
+// Route::post('/coba', [CheckoutController::class, 'invoicePaid'])->middleware('auth')->middleware('not.admin');
 
 // Route::post('/saveAddress', [CheckoutController::class, 'saveAddress'])->middleware('auth')->middleware('not.admin');
 // Route::post('/edit-address', [CheckoutController::class, 'edit'])->middleware('auth')->middleware('not.admin');

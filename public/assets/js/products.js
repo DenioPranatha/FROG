@@ -6,6 +6,7 @@
 // })
 
 $(document).ready(function(){
+    var timer;
     // ketika see more diclick
     $(document).on('click', '#myBtn1', function(){
         //input berapa batch see more yg harus keload di kondisi sekarang
@@ -21,6 +22,13 @@ $(document).ready(function(){
     });
 
     $('#searchBox').on('keyup', function(){
+        clearTimeout(timer);
+        var ms = 200; // milliseconds
+        var val = this.value;
+        timer = setTimeout(function() {
+        lookup(val);
+        }, ms);
+
         //input dari kolom search
         var searchValue = $('#searchBox').val();
         //input dari cat sekarang
